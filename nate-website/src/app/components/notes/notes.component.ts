@@ -6,13 +6,28 @@ import { Note, Notes } from 'src/app/interfaces/notes.model';
 export const notesArray: Note[]= [
   {
     name: 'Abstract Algebra',
-    desc: 'Covers "all" undergraduate algebra: Groups, Rings, Modules, Fields, Commutative algebra, Algebraic Number Theory, and Representation of finite groups. Special topics include Quiver Theory and Category theory. Includes basic preliminary chapter. Homological Algebra coming soon!',
-    link: '././assets/pdfs/notes/EYNTKA_algebra.pdf'
+    desc: 'Covers "all" undergraduate algebra: Groups, Rings, Modules, Fields (including Galois Theory), Commutative algebra, Classical Algebraic Geometry, Algebraic Number Theory, and Representation of finite groups, and Homological algebra with an extra chapter on spectral sequences. Special topics include Quiver Theory and Category theory.',
+    link: '././assets/pdfs/notes/EYNTKA_Algebra.pdf'
+  },
+  {
+    name: 'Class Field Theory',
+    desc: 'Local Fields, Places, Analytic Number Theory, and Class Field Theory using Ray class groups and the Idele group. Culminates with the Artin Reciprocity and Chebotarev Density Theorem. ',
+    link: '././assets/pdfs/notes/EYNTKA_class_field_theory.pdf'
+  },
+  {
+    name: 'Algebraic Geometry',
+    desc: 'With an assumption of clasical algebraic geometry being covered (up to book 1 of Shafarevich\' Basic Algebraic Geometry and Michael Atiyah\'s Commutative Algebra), this book will hold my Modern Algebraic Geometry Knowledge. The first part is dedicated to the basics: sheaf theory, schemes and their properties, cohomology of quasicoherent sheaves, and partical appliations to curves and modules. Further parts shall focus on more specialized topics',
+    link: '././assets/pdfs/notes/EYNTKA_algGeo.pdf'
   },
   {
     name: 'Differential Geometry',
     desc: 'Various properties of Topological and Smooth Manifolds, smooth maps, tangent maps and bundles, Rank-Nullity Theorem and consequences, Sard\'s Theorem and Transversality, Vector Bundles, Differential Forms and integration on Manifolds, Riemann Manifolds. Preliminaires include inverse and implicit function theorem and Partition of Unity',
     link: '././assets/pdfs/notes/EYNTKA_differential_geometry.pdf'
+  },
+  {
+    name: 'Algebraic Topology',
+    desc: 'Homotopy, homotopy equivalences,  cell-complexes. Fundamental groups, covering spaces, van-kampen\'s theorem, Deck Transformations, interesting consequences. Homology, Delta and singular complexes, relative homology, snake lemma and Mayer-Vietoris, Cellular Homology, Euler-Characteristic and applications. Cohomology, cup and cap product, Poincare Duality. Homotopy Theory and Spectral Sequences coming soon!',
+    link: '././assets/pdfs/notes/EYNTKA_algebraic_topology.pdf'
   },
   {
     name: 'Real Analysis',
@@ -35,9 +50,14 @@ export const notesArray: Note[]= [
     link: '././assets/pdfs/notes/EYNTKA_logic.pdf'
   },
   {
-    name: 'Point-Set Topology',
+    name: 'Topology',
     desc: 'Definition and Property of Topologies, Continuity, Seperation and Countability Axioms, Subspace/Product/Quotient Topology, Weak Topology, Metric Spaces, Connectedness and Compactness, Urysohn Lemma and Consequences, Fundamental Group, Topological Group. Dimension Theory coming soon!',
     link: '././assets/pdfs/notes/EYNTKA_topology.pdf'
+  },
+  {
+    name: 'K-Theory',
+    desc: 'Accumulation of K-theory notes, currently only covering K_0 group and a strong focus on the algebraic interpretation with some references to Scheme Theory.',
+    link: '././assets/pdfs/notes/EYNTKA_K-Theory.pdf'
   },
   {
     name: 'Probability',
@@ -48,11 +68,6 @@ export const notesArray: Note[]= [
     name: 'PDEs',
     desc: 'Notes focusing on solving wave equations in increasing degrees of complexity. Existence and uniqueness of solutions to linear and non-linear wave equations, Litttle-Paley Theory, Distribution Theory, Klainerman-Sobelev Inequality. Future goal of adding Maxell-Klein-Gordon equations and Strichartz type estimates.',
     link: '././assets/pdfs/notes/EYNTKA_PDEs.pdf'
-  },
-  {
-    name: 'Algebraic Topology',
-    desc: 'Homotopy, homotopy equivalences,  cell-complexes. Fundamental groups, covering spaces, van-kampen\'s theorem, Deck Transformations, interesting consequences. Homology, Delta and singular complexes, relative homology, snake lemma and Mayer-Vietoris, Cellular Homology, Euler-Characteristic and applications. Cohomology, cup and cap product, Poincare Duality. Homotopy Theory and Spectral Sequences coming soon!',
-    link: '././assets/pdfs/notes/EYNTKA_algebraic_topology.pdf'
   },
 ];
 

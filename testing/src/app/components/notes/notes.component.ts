@@ -21,7 +21,7 @@ export const notesArray: Note[]= [
   },
   {
     name: 'Complex Analysis',
-    desc: 'Complex numbers, functions, and Mobius transformations. Complex Differentiation, power series, analytic functions. Complex integration, Meromorphic functions, Residue theorem, and Argument Principle. Holomorphic Function spaces, Montel and Marty\'s Theorem, Riemann Mapping Theorem. Factorization of Holomorphic Functions and Riemann-zeta function. Elliptic functions and Weiestrass p-function. Riemann surfaces and Harmonic Functions. Higher-dimensional complex differentiation.',
+    desc: 'Complex numbers, functions, and Mobius transformations. Complex Differentiation, power series, analytic functions. Complex integration, Meromorphic functions, Residue theorem, and Argument Principle. Holomorphic Function spaces, Montel and Marty\'s Theorem, Riemann Mapping Theorem. Factorization of Holomorphic Functions and Riemann-zeta function. Elliptic functions and Weiestrass p-function. Riemann surfaces and Harmonic Functions. Higher-dimensional complex differentiation. Some introduction to the relation between complex analysis and algebraic geometry.',
     link: '././assets/pdfs/notes/EYNTKA_complex_analysis.pdf'
   },
   {

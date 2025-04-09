@@ -1,0 +1,38 @@
+<div class="section-blog">
+  <div class="container">
+    <div class="page-heading"><h2>Blog</h2>
+      <p>Papers, Thoughts, Ideas</p>
+      <mat-divider class="divider"></mat-divider>
+    </div>
+
+    <div class="flexx blog-info">
+      <div>
+        <div>
+          <h3 class="mb-20">Overview</h3>
+          <p>
+            I am usually overflowing with ideas; this blog section will be a catalogue
+            to organize my ideas and to write down results that don't fit well in
+            a textbook format. There are also scattered results from my
+            research projects that I would like to properly compile into papers and make
+            available here.
+          </p>
+        </div>
+
+            <div class="row" class="blogs-info" style="padding-bottom: 4em;"> </div>
+            <div class="blogs-info" *ngFor="let blog of blogs">
+                <div class="row flexx">
+                        <a class="col-sm-3" [href]="blog?.link">
+                            <h4 [innerHtml]="blog?.name"></h4>
+                        </a>
+                    <div class="col-sm-9" >
+                        <p [innerHtml]="blog?.desc"></p>
+                    </div>
+                </div>
+                <mat-divider class="divider-table"></mat-divider>
+            </div>
+        <div style="padding-bottom: 7em;"></div>
+
+      </div>
+    </div>
+  </div>
+</div>

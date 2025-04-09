@@ -1,0 +1,302 @@
+\documentclass[oneside]{article}
+\author{Nathanael Chwojko-Srawley}
+\title{Why Invariant is Important}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         packages                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\usepackage{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{stackengine}
+\usepackage{scalerel}
+\usepackage{amsmath, amssymb} % Used to write better mathematical expressions (ex. \mathbb{R})
+\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
+\usepackage{mathrsfs}
+\usepackage{euscript}
+\usepackage[font=itshape]{quoting}
+\usepackage{mathtools}
+  \usepackage{enumitem}
+\usepackage{amsthm}           % Used to create theorem enviroments.
+\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{hhline}
+%\usepackage{luatexja}
+%\usepackage{fontspec}
+\usepackage{dsfont}
+\usepackage{wasysym}          % emoji's!
+\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
+%\usepackage{subcaption}      % More options with sub-captions.
+\usepackage{setspace}         % More flexibility on spacing in document.
+\usepackage{hyperref}         % let's me put hyperlinks
+%\usepackage{tikz}             % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+%\usepackage{quiver}           % for better commutative diagrams
+\usepackage{bookmark}         % creating heading shortcut bar on the left as in word
+\usepackage{longtable}        % create tables that extend past one page
+%\usepackage{siunitx}         % required for alignment
+%\usepackage{multirow}        % for multiple rows
+\usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
+%\usepackage{fancyvrb}        % Let's you write code (different style than listings).
+\usepackage{tcolorbox}        % Makes nice boxes for thms, cor, prop, or anything else.
+%\usepackage{enumitem}        % More flexibility on enumeration (don't know much).
+\usepackage{xcolor}           % Colour text.
+\usepackage{wrapfig}          % To wrap text around figure
+\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
+\usepackage{thmtools}         % Customize theorem environment (in preamble).
+%\usepackage{marvosym}        % Provide ``basic'' symbols (hazard, religious, smiley face etc.)
+\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+%\usepackage[english]{babel}  % If I want to blindtext in english.
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+%\usepackage[symbol]{footmisc} % For daggers and asterisk for footnotes. 1: *, 2: dagger, etc.
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+%\usepackage{pst-plot}          %To make nice plots: https://tex.stackexchange.com/questions/47594/how-can-i-make-a-graph-of-a-function#47596
+\usepackage[answerdelayed]{exercise}
+\usepackage{etoolbox}          % for Dynkin diagrams
+\usepackage{dynkin-diagrams}   % for Dynkin diagrams
+
+% \usepackage{CJKutf8} % for some chinese
+
+% to import figures via: https://github.com/gillescastel/inkscape-figures
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+% This command is the ONLY command imported via the packages snippet, think of it as a tiny package written out
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                     Custom Commands                      ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% mathbb
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\H}{\mathbb{H}}
+
+% mathcal
+\newcommand{\co}{\mathfrak{o}} %mathcal{o} looks like wreath product, so I changed it to mathfrak
+\newcommand{\CA}{\mathcal{A}}
+\newcommand{\CB}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\CD}{\mathcal{D}}
+\newcommand{\CF}{\mathcal{F}}
+\newcommand{\CG}{\mathcal{G}}
+\newcommand{\CH}{\mathcal{H}}
+\newcommand{\CI}{\mathcal{I}}
+\newcommand{\CL}{\mathcal{L}}
+\newcommand{\CN}{\mathcal{N}}
+\newcommand{\CO}{\mathcal{O}}
+\newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\CQ}{\mathcal{Q}}
+\newcommand{\CR}{\mathcal{R}}
+\newcommand{\CK}{\mathcal{K}}
+\newcommand{\CS}{\mathcal{S}}
+\newcommand{\CT}{\mathcal{T}}
+\newcommand{\CV}{\mathcal{V}}
+\newcommand{\CZ}{\mathcal{Z}}
+
+%mathscr
+\newcommand{\ff}{\mathscr{F}}
+
+%Euscript
+\newcommand{\EF}{\EuScript{F}}
+\newcommand{\EL}{\EuScript{L}}
+\newcommand{\EO}{\EuScript{O}}
+\newcommand{\EC}{\EuScript{C}}
+
+%mathfrak (lowercase)
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\fd}{\mathfrak{d}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+
+%mathfrak (upper case)
+\newcommand{\FA}{\mathfrak{A}}
+\newcommand{\FB}{\mathfrak{B}}
+\newcommand{\FP}{\mathfrak{P}}
+\newcommand{\FC}{\mathfrak{C}}
+\newcommand{\FD}{\mathfrak{D}}
+\newcommand{\FM}{\mathfrak{M}}
+\newcommand{\FN}{\mathfrak{N}}
+\newcommand{\FO}{\mathfrak{O}}
+
+% operatorname
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\nm}{\operatorname{Nm}}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\ab}{\operatorname{ab}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\GL}{\operatorname{GL}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\Rep}{\operatorname{Rep}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Mod}{\operatorname{Mod}}
+\newcommand{\Grp}{\operatorname{Grp}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Emb}{\operatorname{Emb}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Inn}{\operatorname{Inn}}
+\newcommand{\Ind}{\operatorname{Ind}}
+\newcommand{\Out}{\operatorname{Out}}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\Nil}{\operatorname{Nil}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\Syl}{\operatorname{Syl}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\conj}{\operatorname{conj}}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\stab}{\operatorname{stab}}
+\newcommand{\kdim}{\operatorname{kdim}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\Obj}{\operatorname{Obj}}
+\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Frac}{\operatorname{Frac}}
+\newcommand{\Frob}{\operatorname{Frob}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\mSpec}{\operatorname{mSpec}}
+\newcommand{\Char}{\operatorname{char}}
+\newcommand{\fHom}[1]{\operatorname{Hom}(#1, \_\_)}
+\newcommand{\cofHom}[1]{\operatorname{Hom}(\_\_, #1)}
+\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\Span}{\operatorname{span}}
+
+%shorthands
+\renewcommand{\bf}[1]{\textbf{#1}}
+\newcommand{\qn}{\quad\newline}
+\newcommand{\oln}{\overline}
+\renewcommand{\phi}{\varphi}
+\newcommand{\placeholder}{\_\_\_\_\_}
+\newcommand{\set}[2]{\left\{#1 \ \middle|\ #2\right\}}
+
+% connectors
+\renewcommand{\mid}{\big|}
+\newcommand{\sse}{\subseteq}
+\newcommand{\subg}{\leqslant}
+\newcommand{\supg}{\geqslant}
+\newcommand{\ssne}{\subsetneq}
+\newcommand{\isosubg}{\lesssim}
+\newcommand{\nsse}{\not\subseteq}
+\newcommand{\nsubg}{\trianglelefteq}
+\newcommand{\nsupg}{\trianglerighteq}
+\newcommand{\csubg}{\blacktriangleleft}
+%\newcommand{\subgne}{\lneqslant}
+
+% limits
+\newcommand{\Lim}{\varprojlim}
+\newcommand{\colim}{\varinjlim}
+\newcommand{\coLim}{\varinjlim}
+\newcommand{\Dlim}{\lim\limits_{\longrightarrow}}
+\newcommand{\coDlim}{\lim\limits_{\longleftarrow}}
+
+
+%for saturated ideals in the localization section (I don't like these, I think I'll delete)
+\newcommand{\LIm}{{}^{\iota} }
+\newcommand{\LPre}{{}^{\pi} }
+
+% Arrows
+\newcommand{\rw}{\rightarrow}
+\newcommand{\Rw}{\Rightarrow}
+\newcommand{\lw}{\leftarrow}
+\newcommand{\Lw}{\Leftarrow}
+\newcommand{\lrw}{\leftrightarrow}
+\newcommand{\LRw}{\Leftrightarrow}
+\newcommand{\rrw}{\rightrightarrows}
+\newcommand{\acton}{\curvearrowright}
+\newcommand{\actson}{\curvearrowright}
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+% dcups
+\newcommand{\dcup}{\sqcup}
+\newcommand{\Dcup}{\bigsqcup}
+
+%a nice large circle
+\newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%somehow not a default command
+\def\rddots{\mathstrut^{.^{.^{.}}}}
+
+%% new delimiter
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                          proofs                          ║
+%  ╚══════════════════════════════════════════════════════════╝
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tcolorbox}        % Makes nice boxes for thms, cor, prop, or anything else.
+
+
+\def\prooftext{Proof} % If English
+\NewDocumentEnvironment{Proof}{ O{} }
+{
+  \colorlet{colexam}{black!55!black} % Global example color
+  \newtcolorbox[number within=section]{testproofbox}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+    % Example Frame Start
+    empty,% Empty previously set parameters
+    title={\emph{\prooftext} \thetcbcounter: #1},% use \thetcbcounter to access the testexample counter text
+    % Attaching a box requires an overlay
+    attach boxed title to top left,
+       % Ensures proper line breaking in longer titles
+       minipage boxed title,
+    % (boxed title style requires an overlay)
+    boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+    coltitle=colexam,fonttitle=\bfseries,
+    before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+       before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+    % Handles box when it exists on one page only
+    overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: first page
+    overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: middle page
+    overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: last page
+    overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+  \begin{testproofbox}
+}
+{\end{testproofbox}\endlist}
+
+\begin{document}
+While doing some exercises on coordinate changes, I finally realized why why care so much about certain
+operations being invariant under group operations. A group of a space usually represents all the
+``perspectives'' of the space. an operation or a function or a shape being invariant under the group operation
+means its invariant from \emph{perspective}!
+
+\end{document}

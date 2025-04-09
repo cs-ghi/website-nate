@@ -11,6 +11,7 @@ export class ContactFormComponent implements OnInit {
 
   subjects: {value:string, viewValue:string}[] = [
     {value: 'research', viewValue: 'Research Collaboration'},
+    {value: 'tutoring', viewValue: 'Tutoring Service'},
     {value: 'discussion', viewValue:'Discussion'},
     {value: 'errata', viewValue: 'Errata'},
     {value: 'other', viewValue: 'Other'},
@@ -31,8 +32,8 @@ export class ContactFormComponent implements OnInit {
   isLoading: boolean = false; // disable the submit button if we're loading
   responseMessage: string = ""; // the response message to show to the user
   myForm: any;
-  
-  
+
+
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.form = this.formBuilder.group({
       name: this.name,

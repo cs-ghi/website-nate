@@ -1,24 +1,24 @@
 <div class="section-notes">
     <div class="container">
-        <div class="page-heading"><h2>Notes</h2>
+        <div class="page-heading"><h2>Textbooks</h2>
             <p>EYNTKA Series</p>
             <mat-divider class="divider"></mat-divider>
         </div>
             <div class=row class="notes-info">
                 <h3 class="mb-20">Overview</h3>
                 <p>
-                    Each document has everything I've learnt in a subject matter, from courses, textbooks and personal research, that I had
+                    Each document has everything I've learnt in a subject matter, from courses, textbooks and personal results, that I had
                     time to put down. They include some of my personal discoveries in the form of exercises or remarks, and many of my
-                    intuitions. Hence, I named my series of documents "Everything You need To Know About" (EYNTKA). I update my notes on a regular basis with new information and fixes.
-                    
-                    <li>Future Notes: Algebraic Geometry, PDEs, Algebraic Topology, Harmonic Analysis</li>
+                    intuitions. Hence, I named my series of documents "Everything You need To Know About" (EYNTKA). I update my notes on a
+                    regular basis with new information and fixes.
+
                     <!-- <li> All notes are linked in PDF format (tex file not included).</li> -->
                     <li>Disclaimer: Apologies for any typos in the notes! Feel free to send me any corrections.</li>
                     </p>
 
                     <!-- <p class="disclaimer-click"> <br><br> Please click on the headings below to download the notes.</p> -->
             </div>
-            
+
             <div class="row" class="notes-info" style="padding-bottom: 4em;"> </div>
             <div class="notes-info" *ngFor="let note of notes">
                 <div class="row flexx">
@@ -26,11 +26,11 @@
                             <h4 [innerHtml]="note?.name"></h4>
                         </a>
                     <div class="col-sm-9" >
-                        <p [innerHtml]="note?.desc"></p> 
-                    </div>                
+                        <p [innerHtml]="note?.desc"></p>
+                    </div>
                 </div>
                 <mat-divider class="divider-table"></mat-divider>
-            </div> 
+            </div>
         <div style="padding-bottom: 7em;"></div>
 
     </div>

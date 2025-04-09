@@ -1,0 +1,741 @@
+\documentclass[oneside]{article}
+
+\title{Why study Complex analysis?}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         packages                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\usepackage{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{stackengine}
+\usepackage{scalerel}
+\usepackage{amsmath, amssymb} % Used to write better mathematical expressions (ex. \mathbb{R})
+\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
+\usepackage{mathrsfs}
+\usepackage{euscript}
+\usepackage[font=itshape]{quoting}
+\usepackage{mathtools}
+  \usepackage{enumitem}
+\usepackage{amsthm}           % Used to create theorem enviroments.
+\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{hhline}
+%\usepackage{luatexja}
+%\usepackage{fontspec}
+\usepackage{dsfont}
+\usepackage{wasysym}          % emoji's!
+\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
+%\usepackage{subcaption}      % More options with sub-captions.
+\usepackage{setspace}         % More flexibility on spacing in document.
+\usepackage{hyperref}         % let's me put hyperlinks
+%\usepackage{tikz}             % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+%\usepackage{quiver}           % for better commutative diagrams
+\usepackage{bookmark}         % creating heading shortcut bar on the left as in word
+\usepackage{longtable}        % create tables that extend past one page
+%\usepackage{siunitx}         % required for alignment
+%\usepackage{multirow}        % for multiple rows
+\usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
+%\usepackage{fancyvrb}        % Let's you write code (different style than listings).
+\usepackage{tcolorbox}        % Makes nice boxes for thms, cor, prop, or anything else.
+\tcbuselibrary{theorems}
+%\usepackage{enumitem}        % More flexibility on enumeration (don't know much).
+\usepackage{xcolor}           % Colour text.
+\usepackage{wrapfig}          % To wrap text around figure
+\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
+\usepackage{thmtools}         % Customize theorem environment (in preamble).
+%\usepackage{marvosym}        % Provide ``basic'' symbols (hazard, religious, smiley face etc.)
+\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+%\usepackage[english]{babel}  % If I want to blindtext in english.
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+%\usepackage[symbol]{footmisc} % For daggers and asterisk for footnotes. 1: *, 2: dagger, etc.
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+%\usepackage{pst-plot}          %To make nice plots: https://tex.stackexchange.com/questions/47594/how-can-i-make-a-graph-of-a-function#47596
+\usepackage[answerdelayed]{exercise}
+\usepackage{etoolbox}          % for Dynkin diagrams
+\usepackage{dynkin-diagrams}   % for Dynkin diagrams
+
+% \usepackage{CJKutf8} % for some chinese
+
+% to import figures via: https://github.com/gillescastel/inkscape-figures
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+% This command is the ONLY command imported via the packages snippet, think of it as a tiny package written out
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       book format                        ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\pagestyle{fancy}
+\setlength\headheight{20pt}
+\fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+\fancyfoot[R,RO]{\thepage}{}
+
+%chapter header format
+\titleformat{\chapter}[display]{\bfseries\Huge\itshape}{\thechapter}{0.5ex}
+{
+    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \centering
+}
+[
+\vspace{-0.5ex}
+\rule{\textwidth}{0.3pt}
+]
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                        devnagari                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% For devnagari font for that one example
+\newcommand\dn{\catcode`\~=12
+           \fontspec[Script=Devanagari,Mapping=velthuis-sanskrit]{Nakula}}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                     Custom Commands                      ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% mathbb
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\H}{\mathbb{H}}
+
+% mathcal
+\newcommand{\co}{\mathfrak{o}} %mathcal{o} looks like wreath product, so I changed it to mathfrak
+\newcommand{\CA}{\mathcal{A}}
+\newcommand{\CB}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\CD}{\mathcal{D}}
+\newcommand{\CF}{\mathcal{F}}
+\newcommand{\CG}{\mathcal{G}}
+\newcommand{\CH}{\mathcal{H}}
+\newcommand{\CI}{\mathcal{I}}
+\newcommand{\CL}{\mathcal{L}}
+\newcommand{\CN}{\mathcal{N}}
+\newcommand{\CO}{\mathcal{O}}
+\newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\CQ}{\mathcal{Q}}
+\newcommand{\CR}{\mathcal{R}}
+\newcommand{\CK}{\mathcal{K}}
+\newcommand{\CS}{\mathcal{S}}
+\newcommand{\CT}{\mathcal{T}}
+\newcommand{\CV}{\mathcal{V}}
+\newcommand{\CZ}{\mathcal{Z}}
+
+%mathscr
+\newcommand{\ff}{\mathscr{F}}
+
+%Euscript
+\newcommand{\EF}{\EuScript{F}}
+\newcommand{\EL}{\EuScript{L}}
+\newcommand{\EO}{\EuScript{O}}
+\newcommand{\EC}{\EuScript{C}}
+
+%mathfrak (lowercase)
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\fd}{\mathfrak{d}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+
+%mathfrak (upper case)
+\newcommand{\FA}{\mathfrak{A}}
+\newcommand{\FB}{\mathfrak{B}}
+\newcommand{\FP}{\mathfrak{P}}
+\newcommand{\FC}{\mathfrak{C}}
+\newcommand{\FD}{\mathfrak{D}}
+\newcommand{\FM}{\mathfrak{M}}
+\newcommand{\FN}{\mathfrak{N}}
+\newcommand{\FO}{\mathfrak{O}}
+
+% operatorname
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\nm}{\operatorname{Nm}}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\ab}{\operatorname{ab}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\GL}{\operatorname{GL}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\Rep}{\operatorname{Rep}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Mod}{\operatorname{Mod}}
+\newcommand{\Grp}{\operatorname{Grp}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Emb}{\operatorname{Emb}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Inn}{\operatorname{Inn}}
+\newcommand{\Ind}{\operatorname{Ind}}
+\newcommand{\Out}{\operatorname{Out}}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\Nil}{\operatorname{Nil}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\Syl}{\operatorname{Syl}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\conj}{\operatorname{conj}}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\stab}{\operatorname{stab}}
+\newcommand{\kdim}{\operatorname{kdim}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\Obj}{\operatorname{Obj}}
+\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Frac}{\operatorname{Frac}}
+\newcommand{\Frob}{\operatorname{Frob}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\mSpec}{\operatorname{mSpec}}
+\newcommand{\Char}{\operatorname{char}}
+\newcommand{\fHom}[1]{\operatorname{Hom}(#1, \_\_)}
+\newcommand{\cofHom}[1]{\operatorname{Hom}(\_\_, #1)}
+\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\Span}{\operatorname{span}}
+
+%shorthands
+\renewcommand{\bf}[1]{\textbf{#1}}
+\newcommand{\qn}{\quad\newline}
+\newcommand{\oln}{\overline}
+\renewcommand{\phi}{\varphi}
+\newcommand{\placeholder}{\_\_\_\_\_}
+\newcommand{\set}[2]{\left\{#1 \ \middle|\ #2\right\}}
+
+% connectors
+\renewcommand{\mid}{\big|}
+\newcommand{\sse}{\subseteq}
+\newcommand{\subg}{\leqslant}
+\newcommand{\supg}{\geqslant}
+\newcommand{\ssne}{\subsetneq}
+\newcommand{\isosubg}{\lesssim}
+\newcommand{\nsse}{\not\subseteq}
+\newcommand{\nsubg}{\trianglelefteq}
+\newcommand{\nsupg}{\trianglerighteq}
+\newcommand{\csubg}{\blacktriangleleft}
+%\newcommand{\subgne}{\lneqslant}
+
+% limits
+\newcommand{\Lim}{\varprojlim}
+\newcommand{\colim}{\varinjlim}
+\newcommand{\coLim}{\varinjlim}
+\newcommand{\Dlim}{\lim\limits_{\longrightarrow}}
+\newcommand{\coDlim}{\lim\limits_{\longleftarrow}}
+
+
+%for saturated ideals in the localization section (I don't like these, I think I'll delete)
+\newcommand{\LIm}{{}^{\iota} }
+\newcommand{\LPre}{{}^{\pi} }
+
+% Arrows
+\newcommand{\rw}{\rightarrow}
+\newcommand{\Rw}{\Rightarrow}
+\newcommand{\lw}{\leftarrow}
+\newcommand{\Lw}{\Leftarrow}
+\newcommand{\lrw}{\leftrightarrow}
+\newcommand{\LRw}{\Leftrightarrow}
+\newcommand{\rrw}{\rightrightarrows}
+\newcommand{\acton}{\curvearrowright}
+\newcommand{\actson}{\curvearrowright}
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+% dcups
+\newcommand{\dcup}{\sqcup}
+\newcommand{\Dcup}{\bigsqcup}
+
+%a nice large circle
+\newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%somehow not a default command
+\def\rddots{\mathstrut^{.^{.^{.}}}}
+
+%% new delimiter
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                        tcolorbox                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\tcbuselibrary{most}
+
+%colors
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{reddish}{HTML}{A01A3A}
+
+%Wanna implement this, but not working: https://tex.stackexchange.com/questions/547979/problem-numbering-environment
+
+% create tcolor boxes
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{thm}{Theorem}%
+{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{th}
+\newtcbtheorem[number within=section]{lem}{Lemma}%
+{colback=blue!5,colframe=black!35!black,fonttitle=\bfseries}{lm}
+\newtcbtheorem[number within=section]{prop}{Proposition}%
+{colback=white!5,colframe=white!35!black,fonttitle=\bfseries}{pr}
+\newtcbtheorem[number within=section]{cor}{Corollary}%
+{colback=blue!5,colframe=blue!35!black,fonttitle=\bfseries}{co}
+\newtcbtheorem[number within=section]{axiom}{Axiom}%
+{colback=black!5,colframe=yellow!35!black,fonttitle=\bfseries}{ax}
+\newtcbtheorem[number within=section]{defn}{Definition}%
+{colback=red!5,colframe=red!35!black,fonttitle=\bfseries}{df}
+
+
+%insure the exercises are properly numbered
+\counterwithin{Exercise}{section}
+\counterwithin{Answer}{section}
+
+
+%Custom enviroments
+ \newenvironment{note}
+ {\begin{tcolorbox}[enhanced, sharp corners, colback=white , borderline={0.2pt}{0pt}{black}]
+   \begin{quote}\textbf{Note}:
+   }{
+   \end{quote}\end{tcolorbox}}
+
+ \newenvironment{intuition}
+ {\begin{quote}\textbf{Intuition}:
+   }{
+   \end{quote}}
+
+\newenvironment{titledBox}[1]
+ {\begin{tcolorbox}[enhanced, sharp corners, colback=white , borderline={0.2pt}{0pt}{black}]
+   \begin{quote}\textbf{#1}
+   }{
+   \end{quote}\end{tcolorbox}}
+
+\def\exampletext{Example} % If English
+\colorlet{colexam}{red!55!black} % Global example color
+
+
+\newtcbtheorem[auto counter, number within=section]{example}{Example}{%
+    empty,% Empty previously set parameters
+    title={\exampletext \thetcbcounter},% use \thetcbcounter to access the counter
+    attach boxed title to top left,
+    minipage boxed title,
+    boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+    coltitle=colexam,
+    fonttitle=\bfseries,
+    before=\par\medskip\noindent,
+    parbox=false,
+    boxsep=0pt,
+    left=3mm,
+    right=0mm,
+    top=2pt,
+    breakable,
+    pad at break=0mm,
+    before upper=\csname @totalleftmargin\endcsname0pt,
+    overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+    overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); }%
+}{ex}
+
+
+
+\def\prooftext{Proof} % If English
+\NewDocumentEnvironment{Proof}{ O{} }
+{
+  \colorlet{colexam}{black!55!black} % Global example color
+  \newtcolorbox[number within=section]{testproofbox}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+    % Example Frame Start
+    empty,% Empty previously set parameters
+    title={\emph{\prooftext} \thetcbcounter: #1},% use \thetcbcounter to access the testexample counter text
+    % Attaching a box requires an overlay
+    attach boxed title to top left,
+       % Ensures proper line breaking in longer titles
+       minipage boxed title,
+    % (boxed title style requires an overlay)
+    boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+    coltitle=colexam,fonttitle=\bfseries,
+    before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+       before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+    % Handles box when it exists on one page only
+    overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: first page
+    overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: middle page
+    overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: last page
+    overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+  \begin{testproofbox}
+}
+{\end{testproofbox}\endlist}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    for Dynkin diagrams                   ║
+%  ╚══════════════════════════════════════════════════════════╝
+\def\row#1/#2!{#1_{\IfStrEq{#2}{}{n}{#2}} & \dynkin{#1}{#2}\\}
+\newcommand{\tble}[1]{
+   \renewcommand*\do[1]{\row##1!}
+   \[
+      \begin{array}{ll}\docsvlist{#1}\end{array}
+   \]
+}
+
+\setlength{\parindent}{0pt} % don't like indentation infront of paragraphs
+\setlength{\parskip}{1ex}   %so that there is still space between paragarphs
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       bibliography                       ║
+%  ╚══════════════════════════════════════════════════════════╝
+\usepackage{csquotes}
+\usepackage{comment}
+\usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+
+\addbibresource{bibliography.bib}
+
+
+\author{Nathanael Chwojko-Srawley}
+
+
+
+%import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.avg,
+\begin{document}
+
+
+``What is your intuition on complex analysis?'' It is a question I asked many times, often receiving answers
+depending on the domain of mathematics the person seem to enjoy the most: ``It's about solving complicated
+integrals'', ``It is a special case of harmonic analysis'', ``it is useful for analytic number theory'', ``it
+is the study of Riemann surfaces''. None of these answer felt satisfactory to me: many answers felt like it
+deferred the responsibility for its purpose to another field of mathematics. Though each of these has given me
+some motivation for its study, these explanations did not feel like they gave a good reason for why complex
+analysis produces such rigid, one may even sometimes say magical, results. This requirement that the
+intuitions should explain the ``beauty'' of complex analysis has kept me wobbly on my footing for complex
+analysis, never feeling I can justify calling such a field \emph{analysis} when compared to the flexible
+results offered in real analysis.
+
+I believe I came across an explanation that finally grounds me and unifies all previous explanations given to
+me. This article will expand the following sentence
+\begin{center}
+  \addtolength{\leftskip}{2cm}  % Adjust left margin
+\addtolength{\rightskip}{2cm} % Adjust right margin
+  Complex analysis is the completion of polynomials with the tools of real analysis applied to it.
+\end{center}
+
+\begin{titledBox}{Level of Math Knowledge}
+  This article shall try its best to be as accessible as possible. A lot of the intuition shall stem
+  from an understanding of what is real analysis and the basic properties of polynomials. In fact, the reader
+  who has already taken a course in complex analysis may find this article most useful to unify their
+  framework on complex analysis.
+\end{titledBox}
+
+\section{Polynomials}
+
+To understand complex analysis, we start with the initial objects of study: polynomials. They naturally arise
+in many contexts in mathematics:
+\begin{enumerate}
+  \item (Algebra) Polynomials are the objects that hold \emph{relation information}: given some variables $x_1, ..., x_n$,
+    by using $+$ and $\cdot$  we combine them to form polynomials which represent \emph{relations} in algebra. For those more
+    familiar with some abstract algebra, any ring is the quotient of a free ring where the kernel consists of
+    the polynomials representing all relationships on the generators. Thus, understanding the properties of
+    polynomials is of keen interest to algebraist.
+  \item (Analysis) Polynomials can approximate continuous functions on any (compact) neighbourhood to an
+    arbitrary degree of precision (by the Stone–Weierstrass theorem). In particular, on compact intervals we can take
+    a \emph{sequence} of polynomials that uniformally converges to the continuous function. Thus,
+    understanding the properties of polynomials is of keen interest to analysists
+   \item (Geometry) Polynomials can inherently create shapes from their zero sets and their
+     graphs\footnote{which themselves are just zero sets of a polynomial}. As
+     polynomials are determined by their coefficients, they are determined by only finitely many values.
+     From this perspective, polynomials form some of the ``simplest'' shapes that can be studied. Thus,
+     understanding the properties of polynomials is of keen interest to geometers.
+ \end{enumerate}
+
+
+Let us focus on the special case where there is only one variable. Any polynomial $p(z)$ is naturally studied
+when over the complex numbers $\C$: every polynomial over $\C$ breaks down
+into linear terms:
+\[
+  p(z) = c(z-a_1)(z-a_2)\cdots (z-a_n)
+\]
+Thus, the information about $p(z)$ is encoded in the multi-set $\{c, a_1, ..., a_n\}$\footnote{We may want to
+recover this set by taking $p(z) = 0$, but there is a complication here where if $a_i = a_j$ for some $i,j$.
+Then the zero set ``forgets'' this information; for this the notion of \emph{schemes} more naturally keeps
+track of multiplicity information} where $c$ is some constant multiple. Thus, the complex numbers are the
+natural domain to study polynomials.
+
+It is thus productive to use all the tools of mathematics in understanding the properties of polynomials. We
+may continue the study of polynomials over $\C$\footnote{Or more algebraically, over an algebraically closed
+field $\oln{k}$ of characteristic $0$} in a purely algebraic direction and go towards results such as
+\emph{galois theory} and \emph{number theory}. We may also treat them geometrically, leading to \emph{algebraic
+geometry} and \emph{scheme theory}. From an analysis perspective, we may treat polynomials as a family of
+functions and ask multiple analytic questions. This approach will require a bit more care due to the
+``infinite'' nature of analysis as compared to the ``finite'' nature of polynomials.
+
+
+\section{From Polynomials to Complex Analysis}
+
+We wish to be able to study polynomials through the traditional analytic tools (limits, convergence, family of
+functions, bounding, interpolation, etc). We may want to study the family of polynomials as well as define a
+natural topology for the important open/closed sets given by polynomials; this is called the
+\emph{Zariski Topology}\footnote{It is given by taking the zero sets of polynomials as the collection of
+closed sets}. However, this approach has a couple of blockers, namely:
+
+\begin{itemize}
+  \item The Zariski topology is too coarse for analysis. The euclidean topology is ``made'' for
+    the ideas of analysis: limits have single points, it is a metric space\footnote{Most spaces of functions
+    shall be metric spaces, though often they have the further structure of a Banach or Fr\'echet spaces}, properties such as
+    compactness can be described using simple analytic properties such as limits or closed and bounded, and
+    continuous functions have many flexible properties (consider results such as Urysohn's lemma, that any
+    closed set is the zero-set of a continuous function, or a functions is continuous if and only if it
+    preserves limits). These properties are \emph{not} present in the natural topology induced by polynomials,
+    the Zariski topology: most open sets are \emph{dense}, limits usually converge to infinitely many points,
+    compactness becomes a much weaker property (the stronger notion of \emph{properness} needs to be
+    used), and so forth.
+
+  \item Polynomials are not \emph{complete}: The limit of polynomials can be an arbitrary continuous function
+    on a compact interval (in the euclidean topology). Even more simply, if we keep adding a term $a_nx^n$ to a polynomial $a_0 + a_1x
+    + a_2x^2 + \cdots$, the result is \emph{not} a polynomial.
+  \item Similarly to the previous point, there are ``not enough'' polynomials for some fundamental results
+    expected in analysis: the subset of polynomials functions on the unit ball is not closed (there are not
+    enough polynomials to converge to) and there are not enough polynomials to have limit when uniformally
+    converging\footnote{In particular, uniformally converging on compact sets, a technicality due to unstable
+    boundary behaviour which would be covered in a course in complex analysis}.
+\end{itemize}
+
+The solution to this is by taking the ``right completion'' of polynomials in such a way that polynomials can
+be embedded in this completion and retain most of their properties. The completion ought to be as minimal
+as possible to be ``as close'' to polynomials as possible, while being large enough so that we can work with
+our usual real-analysis tools:
+
+\begin{enumerate}
+  \item We first allow \emph{infinite polynomials}, namely power series. For those who are comfortable with
+    limits from category theory, we take the set of polynomials and add all the limits of the diagrams:
+    \[
+      \colim_{n \to \infty} p_n(x)
+    \]
+    where $p_n(x)$ is a polynomial of degree $n$ whose coefficients match the coefficients of the polynomials of
+    degree $k< n$.
+
+    It must be noted that since we are not working with infinite sums, we must specify that we are going to
+    work with \emph{convergent} power series. Convergent power series shall depend on the domain of
+    convergence, which need not be all of $\C$ (ex. $\sum_n^\infty \frac{z^{n!}}{n^2}$).
+   \item The next condition comes from how much of our results depend on an open (or closed) subset of our
+     space (the above examples gives an example of why this is important). For this reason, instead of looking at functions
+     that are power series, it would be better to focus on functions that are \emph{locally convergent power series},
+     that is there exists a neighborhood $U$ of a point such that $f|_U$ is equal to a power series.
+
+     Functions that are locally a convergent power series are called \emph{analytic}.
+\end{enumerate}
+
+These two conditions give enough functions for the collection to be closed under uniform convergence, namely
+if $f_n$ is a sequence of analytic functions and  $f_n \to f$ uniformally (on compact sets), then $f$ shall
+still be analytic by Weiestrass Convergence Theorem. This family of functions on an open subset
+$U \sse \C$ is called the \emph{Holomorphic functions}, and we shall denote it as $\CH(U)$. The family
+$\CH(U)$ forms a complete metric space\footnote{Even stronger, it forms a Fr\'echet space, which ought to be
+  thought as spaces that are not nice enough to define a single norm, but nice enough to replace the norm by a
+sequence of compatible semi-norms}, giving us a natural space in which we may ask analytic questions!
+
+The first thing we should do is to see which properties of polynomials extend to properties of holomorphic
+functions. As it turns out, we have done a good job finding a proper embedding for our polynomials and they
+share many similar properties:
+\begin{itemize}
+  \item Polynomials over $\C$ are certainly unbounded (they shall go to infinity). By Louisville's Theorem, the
+    same applies to holomorphic functions
+  \item If a holomorphic function $f$ is bounded by a polynomial in growth (i.e. $|f(z)| \le |p(z)|$), then
+    $f$ is a polynomial. This mirrors how a polynomial cannot be bounded by another polynomial unless it is of
+    lower order or equal to it.
+  % \item Polynomials on $\C$ are a subset of  rational polynomials on $\mathbb{P}_\C^1$, and many results become
+  %      simpler when working with rational polynomials. Similarly, Holomorphic
+  %      functions are a subset of meromorphic on $\CP^1$ and mirror many of the same properties of rational
+  %      polynomials.
+  \item A polynomial is determined by its roots up to a constant multiple. By \emph{Weierstrass factorization
+    theorem}, every holomorphic decomposes into an infinite product of the form:
+    \[
+      f(z) = z^me^{g(z)}\prod_k^{\infty} \left[\left(1 - \frac{z}{a_k}\right)e^{p(z)}\right]
+    \]
+    where $g(z)$ is a polynomial.
+  \item Though a holomorphic functions can decomposed as above, it is not determined by its roots (for example, $e^z$ has no
+    roots). The next best result is  \emph{Cauchy's integral formula} which allows us to ``extract''
+    information from holomorphic functions about the value at points.
+  % \item Using the above result, any entire \emph{meromorphic function} (a holomorphic function with singularities,
+  %   the simplest such examples is $1/z$) must be the quotient of two entire holomorphic functions. In
+  %   particular
+    \item Polynomials form an integral domains and rational polynomials form a field. Similarly, the family of
+      holomorphic functions forms an integral domain, while the family of meromorphic functions forms a field.
+      From an analysis perspective this is \emph{very} surprising: if $f,g$
+      are real differentiable function and $fg = 0$, then it is very much not the case that we can conclude
+      that $f = 0$ or $g = 0$. This reflects how holomorphic functions do indeed ``naturally'' extend
+      the polynomials and the algebraic structures they form!
+  \item The polynomial automorphisms of $\C$ are linear, and the holomorphic automorphisms of $\C$ are also
+    linear. Hence, extending to holomorphic functions does not add additional automorphisms of $\C$.
+  \item The open subsets of the Zariski topology are usually \emph{dense} where its compliment is of
+    codimension $\le 1$. In the case of $1$ dimension, only a finite set of points is outside any
+    (nontrivial) open set. Similarly, many holomorphic functions have an \emph{analytic continuation} that
+    extends the definition of a holomorphic function defined on a (euclidean) open $U \sse \C$ to all of $\C$ minus possibly a
+    countable set of (non-clustered) points\footnote{a point is said to be a \emph{cluster point} if any
+      open neighborhood around the point contains infinitely many points. It is non-clustered, or sparse,
+    otherwise}. Though it must be noted there is an analytic blocker to extend this result to all power series
+    (consider again $\sum_n^\infty z^{n!}/n^2$ which grows too quickly to be defined on $\C$).
+\end{itemize}
+
+These results should give a sense of how we have done a good job in finding the right analytic space to
+embed polynomials!
+
+We can ask if there is any results from complex analysis that comes back to the
+study of polynomials. This is indeed the case in multiple ways, but let us highlight one (infamous) example: the
+\emph{Riemann-zeta function} is the power series function:
+\[
+  \zeta(s) = \sum_k^\infty \frac{1}{s^k}
+\]
+Through it, we can find many important results about the polynomials that govern the properties of primes.
+Unfortunately, going into details would require going over the connection between polynomials and primes,
+a topic better left for another blog, (or to get the full details
+see~\cite[chapter~3]{nathanaelchwojko-srawleyEverythingYouNeed} for my exposition on this topic). More
+generally number theory, through the use of analytic number theory and elliptic functions, has produced some
+incredible results in the theory of polynomials from the theory of complex analysis.
+
+
+
+\section{From Complex Analysis to Other Fields}
+
+In a complex analysis class, holomorphic functions are not introduced as the completion of polynomials: we say
+that $f: \C \to \C$ is \emph{complex differentiable} or \emph{holomorphic} at $z \in \C$ if the
+derivative-limit exists, that is holomorphic function are locally complex-linear. It is then
+proven that a function is holomorphic on open $U \sse \C$ if and only if it is locally a power series. This
+approach is certainly pedagogically better as a lot of the intuition given by the above extensively leans on
+knowledge of real analysis, while latter relies only on calculus. An advantage of the pedagogical approach is the direct
+connection to the geometric properties of holomorphic functions (as they allow us to define differential forms),
+and the direct connection to the ``dynamics'' of holomorphic functions (they contribute to the theory of
+harmonic functions). As holomorphic functions is the analytic setting of polynomials, we can ask how complex
+analysis allows us to be a bridge between polynomials and geometry and harmonic analysis. This is a very deep
+connection and cannot be comprehensively summarized, but for the readers enjoyment I've compiled some
+interesting snippets that should demonstrate how powerful a tool complex analysis is.
+
+
+\subsection{To Geometry}
+
+
+
+The approach via differentiation naturally shows that such functions have a
+natural \emph{geometric} structure. Namely, we may define \emph{holomorphic forms} $f(z)dz$. Then any first
+course in complex analysis shows that $f$ is holomorphic on $U$ if and only if $f(z)dz$ is closed (that is, a
+$1$-form $\omega$ on $\R^2$ is closed if and only if $\omega = f(z)dz$ for a holomorphic function $f$). Thus,
+($1$-dimensional) holomorphic functions can be defined purely geometrically!
+
+We may hope that the study of $1$-dimensional complex manifolds, historically called Riemann surfaces, gives information
+about polynomials. In fact, an absolutely incredible connection happens. First, when working with
+\emph{compact sets} we usually expect a level of finiteness with what we are working with, be it boundedness,
+growth, extreme values, and so forth. In the case of compact Riemann surfaces, the functions and
+characterization of them reduces to the study of polynomials! In particular:
+
+\begin{center}
+    \addtolength{\leftskip}{2cm}  % Adjust left margin
+    \addtolength{\rightskip}{2cm} % Adjust right margin
+  Every compact Riemann surface is the zero set of an algebraic curve, and meromorphic functions reduce to
+  rational polynomials
+\end{center}
+
+These results have major consequences in both algebra in geometry! For example, though not immediately
+obvious, the study of equations of the form
+\[
+  y^2 = x^3 + ax + b
+\]
+is in fact the study of Compact Riemann surfaces of genus $1$, i.e. the study of tori! Such connections are
+heavily exploited in the modern theory of algebraic geometry and would be further explored in a class on
+algebraic curves or complex geometry.
+
+% Let us tie this with how complex analysis is usually
+
+\subsection{To Harmonic Analysis}
+
+One of the first results in the theory of holomorphic functions is that a holomorphic function $f$ satisfies
+the \emph{Cauchy-Riemann equations}
+\[
+  \frac{\partial f}{\partial x} = - i\frac{\partial f}{\partial y}
+\]
+In particular, if $f = u+iv$ is the decomposition of $f$ into to real functions, $u$ and $v$ are \emph{harmonic
+function}:
+\[
+  \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = \Delta u = 0
+\]
+where $\Delta$ is the Laplace operator. A classical exercise is to show that every harmonic function is the
+real part of a holomorphic function. Thus, holomorphic functions have the \emph{dynamics} of harmonic PDEs,
+that is, given a point $z \in U \sse \C$, the properties of the paths as this point travels in the field given
+by $f$ will behave like those functions satisfying the Laplace operator. Hence, complex functions have
+\emph{harmonic dynamics}! A couple of striking consequences are shown in every first course in
+complex analysis:
+
+\begin{itemize}
+  \item Every harmonic function is smooth, hence every holomorphic functions is smooth. Namely, it suffices to
+    show it is once complex-differentiable to show it is infinitely complex-differentiable
+  \item It satisfies the mean value property: The value at any point $f(z)$ is equal to the average around
+    the point:
+    \[
+      f(a) = \int_{|z-a|=r} f(\gamma)d\gamma
+    \]
+  \item From this, we can also deduce that if $K \sse \C$ is closed and $U$ is holomorphic on $\int K$, it is
+    harmonic on $K$ and it achieves it maximum/minimum on the boundary $\partial K$!
+\end{itemize}
+
+Using these results, we can ``see'' why $z^2+1$ must have a roots in $\C$. Taking a circle of radius
+$1$, we see that the functions ``rises'' when going in the $x$-direction up to $2$. By the Cauchy-Riemann
+equations and the mean value property, it must similarly ``dip'' in the $y$-direction\footnote{This intuition
+  is a crude intuition and ultimately is relies on the rigidity of $z^2+1$, but it should still be an
+enlightening example}; we can see how it would have roots at $\pm i$; see
+\href{https://www.youtube.com/watch?v=T647CGsuOVU}{this video} for an excellent visualization of this
+phenomenon!
+
+
+\section{Conclusion}
+
+Complex analysis touches so many fields. Depending on the readers interests, different aspects of complex
+analysis will resonate to them. What is ultimately satisfying to me is that the ``weirdness'' of holomorphic
+functions and their rather extreme rigidity as compared to real smooth functions can be put at the feet of the
+rigidity of polynomials and the closeness between polynomials and holomorphic functions. This article
+scratches the surface of this connection, for example no time has been spent elucidating the connection
+between elliptic curves and harmonic functions\footnote{Fourier analysis makes some very interesting
+appearances!}, and almost no time has been spent elucidating the bridges
+algebra and geometry its connection to complex analysis\footnote{The connection to Riemann surfaces shows a
+  small part of this connection, showing how a crude invariant of curves is their genus number, however the
+Riemann-Roch theorem had no time to make an appearance!}. The reader interested in seeing the details of these
+ideas expanded upon can checkout the multitude of textbook on complex analysis, or you can
+checkout~\cite{NateComplexAnalysis} to see my exposition on the topics.
+
+
+
+\printbibliography
+
+
+
+
+
+\end{document}
