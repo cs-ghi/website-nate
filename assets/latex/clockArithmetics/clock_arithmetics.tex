@@ -356,13 +356,13 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 \begin{document}
 
 \begin{center}
-  \Huge{Clock-Arithmetic's and Mysteries of Prime Numbers}
+  \Huge{Clock Arithmetic and the Mysteries of Prime Numbers}
 \end{center}
 
 \begin{titledBox*}{Foreword}
   \qn
-  This article is made for my patient friends to whom I give math riddles which requires knowledge of modular
-  arithmetic, or as I often call it \emph{clock arithmetic}. This article is here for ease of reference of the
+  This article is written for my patient friends to whom I give math riddles that require knowledge of modular
+  arithmetic, or as I often call it \emph{clock arithmetic}. This article serves as an easy reference for the
   necessary concepts and requires no mathematical background. For this entire article, we will only care about
   which hour the hour-hand is on; no AM or PM, and no adding half an hour (or anything that isn't an increment
   of 60 minutes).
@@ -371,36 +371,36 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
   Note that any exercise can be skipped; they are just there for fun!
 \end{titledBox*}
 
-\section{Clock-Arithmetic's: Addition and Multiplication}
+\section{Clock Arithmetic: Addition and Multiplication}
 
 
 We all have (at least) two ideas of addition in our heads. The first one is the usual notion of adding
 quantities\footnote{A mathematician would say \emph{discrete quantities} to distinguish between
-  \emph{continuous} quantities, which would describe something like water were the amount we add is on a
+  \emph{continuous} quantities, which would describe something like water where the amount we add is on a
 ``continuous'' spectrum of possible amounts rather than ``discrete'' indivisible chunks of amounts}: If I have
 $4$ bottles and add $10$ bottles, I have $14$ bottles. In other words
 \[
   4+10 = 14
 \]
 The other notion of addition we often use comes from when we are calculating what time it is. Consider a
-$12$-hour clock. If it is $4$ o-clock, in $5$ hour it will be $9$ o-clock. If instead we add $10$ hours, it
+$12$-hour clock. If it is $4$ o-clock, in $5$ hours it will be $9$ o-clock. If instead we add $10$ hours, it
 will be $2$ o-clock. In other words, we just comfortably did
 \[
   4+10 = 2
 \]
 in our heads. This is certainly different from before, but it still makes sense! Using the same symbol ``$+$''
 may cause confusion, so to distinguish the two types of addition, we shall write $+_{12}$ for ``12 hour
-clock'' addition, and keep $+$ like before. Thus, we can write:
+clock'' addition, and keep $+$ as before. Thus, we can write:
 \[
   4+10 = 14 \qquad \text{and} \qquad 4+_{12}10 = 2
 \]
-Let us call the addition using $+$ \emph{natural-arithmetic's} and the addition using $+_{12}$
-\emph{clock-arithmetic's}. As good mathematicians, we should see what similarities and difference these
+Let us call the addition using $+$ \emph{natural arithmetic} and the addition using $+_{12}$
+\emph{clock arithmetic}. As good mathematicians, we should see what similarities and differences these
 different ideas of additions have.
 
 The first thing we should try to do is add a bunch of hours to each other and see what we get. Let us start by
 just picking two random numbers and playing around with them. If it is $2$ o-clock, then if I add $5$ it will
-be $7$ o-clock. But if I add $17$, it will \emph{sill} be $7$ o-clock. More generally, adding any multiple of
+be $7$ o-clock. But if I add $17$, it will \emph{still} be $7$ o-clock. More generally, adding any multiple of
 $12$ will not change the result of my addition:
 \[
   2\Plus{12} 5 = 7,\quad 2\Plus{12}17 = 7, \quad 2\Plus{12}29=7,\quad 2\Plus{12}41 = 7\cdots
@@ -409,7 +409,7 @@ So adding $5,(5+1\cdot 12), (5+2\cdot 12), ...$ to $2$ gives the same result. Si
 $1$ and $12$, if I add $b$, or I add $(b + k\cdot 12)$ for some $k = 1,2,...$ I get the same result.
 
 We would like to remember that adding a number $n$ or adding a number
-$n+k\cdot 12$ gives the same result. Mathematician's usually use the symbol $\Equiv{12}$ between two such
+$n+k\cdot 12$ gives the same result. Mathematicians usually use the symbol $\Equiv{12}$ between two such
 numbers:
 \[
   5\Equiv{12}17\Equiv{12}29\Equiv{12}\cdots
@@ -419,7 +419,7 @@ differently, two numbers $a,b$ are equivalent if they give you the same time on 
 \[
   n\Plus{12}a = m \qquad \text{and} \qquad n\Plus{12}b= m
 \]
-Therefore, in clock-arithmetic's we only need to to work with the following numbers:
+Therefore, in clock arithmetic we only need to work with the following numbers:
 \[
   1,2,3,4,5,6,7,8,9,10,11,12
 \]
@@ -429,8 +429,8 @@ numbers using $+_{12}$ will give another number in the above list:
   1\Plus{12}1 = 2\qquad 11\Plus{12}7 = 6 \qquad 9\Plus{12}12 = 9
 \]
 The last of these three examples is somehow different than the others; it is the only equation where one of
-the number on the left hand side of the addition $+_{12}$ that also appears on the right hand side of the
-equality; namely $9$ appears on on both sides. In fact, if we try adding any other number to $9$, we get that only adding $12$ returns $9$:
+the numbers on the left hand side of the addition $+_{12}$ also appears on the right hand side of the
+equality; namely $9$ appears on both sides. In fact, if we try adding any other number to $9$, we see that only adding $12$ returns $9$:
 \[\begin{array}{|lcl|lcl|lcl|}
   \hline
 9\Plus{12}1 &=& 10 & 9\Plus{12}5 &=& 2 & 9\Plus{12}9 &=& 6 \\
@@ -446,42 +446,42 @@ number, and $12$ is the \emph{only} number that does this!
 \[
   n \Plus{12}12 = n
 \]
-Notice that in natural-arithmetic's, this is exactly the behaviour of $0$! Namely, for any natural number $n$:
+Notice that in natural arithmetic, this is exactly the behaviour of $0$! Namely, for any natural number $n$:
 \[
   n + 0 = n
 \]
-With this parallel in mind, when we are doing clock-arithmetic's, we should think of $12$ as being the same
+With this parallel in mind, when we are doing clock arithmetic, we should think of $12$ as being the same
 as $0$. Mathematicians would even go so far as re-labeling $12$ as $0$ so that the $12$ numbers of
-clock-arithmetic's are:
+clock arithmetic are:
 \[
   0,1,2,3,4,5,6,7,8,9,10,11
 \]
-Re-labeling $12$ as $0$ has another advantage when we consider \emph{multiplication} in clock-arithmetic's.
-When multiplying by $12$, it will be the same as multiplying by $0$! Remember that in natural-arithmetic's,
+Re-labeling $12$ as $0$ has another advantage when we consider \emph{multiplication} in clock arithmetic.
+If we are to think of $12$ as being $0$ in clock arithmetic, we should at least check that this behavior is also respected by multiplication. Remember that in natural arithmetic,
 multiplying any number $n$\footnote{For those who have contested this by asking ``what if we let $n$ be
   infinity'', there is \href{NOT_YET}{this article} addressing exactly how to think about infinity and why we
 shouldn't conclude $0\cdot \infty = 0$ without putting in more care} by $0$ gives $0$:
 \[
   n\cdot 0 = 0
 \]
-If we should think of $12$ as being $0$ in clock-arithmetic's, we should at least check that this same
-behaviour is respected.
-
-
 Let us first test if this is the case by doing an example. If it is $3$ o-clock and we
 multiply by $12$, then we are adding $3$ o-clock to itself $12$ times, which would bring us $36$ hours
-forward, which on a clock-face this is $12$ o-clock. But we already saw that we should think of $12$ as being
-$0$! Hence, we see that adding $3$ to itself $12$ time will give us back $0$. In fact, if we start with any
+forward, which on a clock-face is $12$ o-clock. But we already saw that we should think of $12$ as being
+$0$! Hence, we see that adding $3$ to itself $12$ times will give us back $0$. In fact, if we start with any
 number $n$ between $0$ and $11$, adding the number to itself $12$ times will always bring us back to the $12$
-o-clock position! Therefore, $12$ really \emph{does} behave like $0$ in clock-arithmetic's! If $\cdot_{12}$
-represents multiplication in clock-arithmetic's, we just showed that
+o-clock position! Therefore, $12$ really \emph{does} behave like $0$ in clock arithmetic! If $\cdot_{12}$
+represents multiplication in clock arithmetic, we just showed that multiplying by 12 is like multiplying by 0. For example:
+\[
+  3\Cdot{12}12 = 12
+\]
+Which in our re-labeled system (where 12 is 0) becomes:
 \[
   3\Cdot{12}0 = 0
 \]
 \begin{exercise}{Multiplying by other numbers}{zeroDiv}
-  When multiplying in natural-arithmetic's we get that $a\cdot b= 0$ if and only if $a = 0$ or $b= 0$. In
-  clock-arithmetic's, it is now possible that $a\cdot_{12}b=  0$ but $a,b \ne 0$! Can you think of two
-  non-zeros numbers $a,b$ where $a\cdot_{12}b = 0$?
+  When multiplying in natural arithmetic we get that $a\cdot b= 0$ if and only if $a = 0$ or $b= 0$. In
+  clock arithmetic, it is now possible that $a\cdot_{12}b=  0$ but $a,b \ne 0$! Can you think of two
+  non-zero numbers $a,b$ where $a\cdot_{12}b = 0$?
 \end{exercise}
 
 
@@ -506,9 +506,9 @@ represents multiplication in clock-arithmetic's, we just showed that
 \end{exercise}
 
 \newpage
-\section{From Clock-Arithmetic's to Modular-Arithmetic's}
+\section{From Clock Arithmetic to Modular Arithmetic}
 
-So we just shows how we can think of we can think of clock-arithmetic's which has $12$ numbers.
+So we just showed how we can think of clock arithmetic which has $12$ numbers.
 A mathematician would then naturally ask the following question:
 \begin{center}
   What if we replace $12$ with any other natural number\footnote{A natural number is of the form $1,2,3,...,
@@ -517,9 +517,9 @@ A mathematician would then naturally ask the following question:
   (see\cite{NateAlgebra} if you want my exposition on abstract algebra)}?
 \end{center}
 Let us do exactly this and see what we get! First off, instead of writing $+_{12}$, we shall now write
-$+_{n}$. Let us call the arithmetic's for all $+_{n}$ \emph{modular-arithmetic's}. With this vocabulary,
-clock-arithmetic's is a special case of modular-arithmetic's. To distinguish the different modular-arithmetic's, we
-would usually say we are working \emph{modulo $n$}. Clock-arithmetic's would be modular-arithmetic's' modulo
+$+_{n}$. Let us call the arithmetic for all $+_{n}$ \emph{modular arithmetic}. With this vocabulary,
+clock arithmetic is a special case of modular arithmetic. To distinguish the different modular arithmetics, we
+would usually say we are working \emph{modulo $n$}. Clock arithmetic would be modular arithmetic modulo
 $12$. When working modulo $n$, we can imagine a clock face with $n$ positions. For example, if $n =5$, then we
 can think of having a clock with $5$ hours:
 \[
@@ -535,18 +535,18 @@ can think of having a clock with $5$ hours:
     }
 \end{tikzpicture}
 \]
-On this clock, $3+_{5}3 = 1$ and $2\cdot_{5}4 = 3$. When working modulo $n$, will always have $n$ numbers:
+On this clock, $3+_{5}3 = 1$ and $2\cdot_{5}4 = 3$. When working modulo $n$, we will always have $n$ numbers:
 \[
   0,1,2,..., n-1
 \]
-Just like for clock-arithmetic's, we have that we can treat $n$ like $0$.
+Just like for clock arithmetic, we have that we can treat $n$ like $0$.
 
-\begin{exercise}{Zero in Modular-Arithmetics}{0InModArithmetics}
+\begin{exercise}{Zero in Modular Arithmetic}{0InModArithmetics}
   Let $a,n$ be any natural numbers. For a moment, let us not label $n$ as $0$. Convince yourself that:
   \[
     a\cdot_{n}n = n
   \]
-  This shows that in modular-arithmetic's mod $n$, we can \emph{always} treat $n$ as $0$, and hence why we
+  This shows that in modular arithmetic mod $n$, we can \emph{always} treat $n$ as $0$, and hence why we
   will always write $0$ instead of $n$.
 \end{exercise}
 
@@ -560,20 +560,20 @@ Just like for clock-arithmetic's, we have that we can treat $n$ like $0$.
     a\cdot_p b = 0 \qquad \text{if and only if} \qquad a = 0\text{ or } b= 0
   \]
   This shows that primes are somehow ``special''. Mathematicians even have a different word for when $n = p$
-  is a prime: modular arithmetic's modulo $p$ where $p$ is a prime is called a \emph{finite field}.
+  is a prime: modular arithmetic modulo $p$ where $p$ is a prime is called a \emph{finite field}.
 \end{exercise}
 
 \newpage
 \section{Application: Equations}
 
-So now that we defined modular arithmetic's, what can we do with it? The biggest reason mathematicians care
-about modular arithmetic's is that it allows us to give a lot more information about equations we are trying
+So now that we defined modular arithmetic, what can we do with it? The biggest reason mathematicians care
+about modular arithmetic is that it allows us to give a lot more information about equations we are trying
 to solve!
 
-For example, consider $x^2+x+1$. If I ask you to tell me whether there is a positive or negative natural
-number $n$ that solves this equation (i.e. an $n$ such that $n^2+n+1 =0$), it may take you a little while to
-figure out if such a number exists. A natural starting point is to just convince yourself that no small
-natural number can solve it. By plugging in  $\pm1, \pm2, \pm3$ we get:
+For example, consider $x^2+x+1$. If I ask you to tell me whether there is an integer $n$, numbers of the for
+$\pm1, \pm2, \pm3, ...$, that solves this equation (i.e. an $n$ such that $n^2+n+1 =0$), it may take you a
+little while to figure out if such a number exists. A natural starting point is to just convince yourself that
+no small integer can solve it. By plugging in  $\pm1, \pm2, \pm3$ we get:
 \[
 \begin{array}{|c|c|c|}
 \hline
@@ -593,13 +593,13 @@ x & \text{Calculation} & \text{Result} \\
 \hline
 \end{array}
 \]
-Doing this for the first 100 numbers and their negatives would give you that the equation never equals $0$,
+Doing this for the first 100 integers and their negatives would give you that the equation never equals $0$,
 however there is no guarantee that you will \emph{never} find a big enough number $n$ such that $n^2+n+1=0$.
-Using modular arithmetics, is is in fact straight forwards to show that \emph{no} solutions exist.
+Using modular arithmetic, it is in fact straightforward to show that \emph{no} solutions exist.
 
 To show this, let's say that there \emph{does} exist an $n$ such that $n^2+n+1=0$\footnote{This is a usual
 trick called \emph{proof by contradiction}}. What we will do is show that this equation will \emph{fail} when
-we consider modular-arithmetic's modulo $2$. In modulo $2$, the number $n$ would be equivalent to:
+we consider modular arithmetic modulo $2$. In modulo $2$, the number $n$ would be equivalent to:
 \[
   n\Equiv{2} 0 \qquad \text{or} \qquad n\Equiv{2}1
 \]
@@ -624,12 +624,12 @@ even more obvious since $(0\Cdot{2}0) \Plus{2}0\Plus{2} 1 = 1$ which is again no
 So we arrived at a contradiction, because $0\ne 1$\footnote{The suspicious reader may ask why is $0\ne 1$. In
   fact, there is nothing wrong with the arithmetic system where $0 = 1$, however if we let $0 = 1$ we get that
 every number equals $0$ (convince yourself), and then nothing interesting happens.}. What this tells us is
-that we made a wrong assumption earlier in the proof, and indeed this started by assuming that there exists a
-(positive or negative) natural number $n$ such that $n^2+n+1=0$. Thus, it is \emph{impossible} that such a
-natural number exists! Notice how easy this was to prove: we only had to check \emph{2} possible numbers as
+that we made a wrong assumption earlier in the proof, and indeed this started by assuming that there exists an
+integer $n$ such that $n^2+n+1=0$. Thus, it is \emph{impossible} that such an
+integer exists! Notice how easy this was to prove: we only had to check \emph{2} possible numbers as
 compared to the infinite possibilities when trying to solve the equation with natural numbers!
 
-This ``reduction to finitely many cases'' is one of the \textbf{key} property of modular arithmetic's that
+This ``reduction to finitely many cases'' is one of the \textbf{key} properties of modular arithmetic that
 mathematicians abuse to no end.
 
 
@@ -638,8 +638,8 @@ mathematicians abuse to no end.
 Consider the equation $x^2 = p$ for some prime number $p$. Then obviously no natural number solves this
 equation, because no natural number can be the square-root of a prime\footnote{This is because the square-root
   of a prime number is \emph{irrational}; see~\cite{fuchsIntroductionProofsProof} for a friendly introduction
-to this notion}. However, this question get's more interesting if we instead consider it in \emph{modular
-arithmetic's} modulo $n$.
+to this notion}. However, this question gets more interesting if we instead consider it in \emph{modular
+arithmetic} modulo $n$.
 
 Let us demonstrate this with an example. Consider $p = 3$. Let us see if in modulo $n$, we can find a number
 $m$ such that $m\Cdot{n} m = p$ (i.e. if $p$ has a square-root modulo $n$). The following is a table where $n$
@@ -647,87 +647,75 @@ goes over the first few prime numbers:
 
 \begin{longtable}{|c||c|c|c|c|c|c|c|c|c|c|c|}
 \hline
-n & $1^2$ & $2^2$ & $3^2$ & $4^2$ & $5^2$ & $6^2$ & $7^2$ & $8^2$ & $9^2$ & $10^2$ & $11^2$ \\
+n & $1^2$ & $2^2$ & $3^2$ & $4^2$ & $5^2$ & $6^2$ & $7^2$ & $8^2$ & $9^2$ & $10^2$\\
 \hline
-2 & 1 & & & & & & & & & & \\
+2 & 1 & & & & & & & & & \\
 \hline
-3 & 1 & 1 & & & & & & & & & \\
+3 & 1 & 1 & & & & & & & & \\
 \hline
-4 & 1 & 0 & 1 & & & & & & & & \\
+4 & 1 & 0 & 1 & & & & & & & \\
 \hline
-5 & 1 & 4 & 4 & 1 & & & & & & & \\
+5 & 1 & 4 & 4 & 1 & & & & & & \\
 \hline
-6 & 1 & 4 & *\textbf{3}* & 4 & 1 & & & & & & \\
+6 & 1 & 4 & *\textbf{3}* & 4 & 1 & & & & & \\
 \hline
-7 & 1 & 4 & 2 & 2 & 4 & 1 & & & & & \\
+7 & 1 & 4 & 2 & 2 & 4 & 1 & & & & \\
 \hline
-8 & 1 & 4 & 1 & 0 & 1 & 4 & 1 & & & & \\
+8 & 1 & 4 & 1 & 0 & 1 & 4 & 1 & & & \\
 \hline
-9 & 1 & 4 & 0 & 7 & 7 & 0 & 4 & 1 & & & \\
+9 & 1 & 4 & 0 & 7 & 7 & 0 & 4 & 1 & & \\
 \hline
-10 & 1 & 4 & 9 & 6 & 5 & 6 & 9 & 4 & 1 & & \\
+10 & 1 & 4 & 9 & 6 & 5 & 6 & 9 & 4 & 1 & \\
 \hline
-11 & 1 & 4 & 9 & 5 & *\textbf{3}* & *\textbf{3}* & 5 & 9 & 4 & 1 & \\
+11 & 1 & 4 & 9 & 5 & *\textbf{3}* & *\textbf{3}* & 5 & 9 & 4 & 1 \\
 \hline
 \end{longtable}
 
 Let us focus on the cases where $n = p$ is a prime number. Notice that $5\Cdot{11}5 = 3$, since $5\cdot 5 =25
 = 3+2\cdot 11$. Hence, for a mysterious reason, there \emph{does} exist a square-root of $3$ in modulo $11$,
-and there \emph{doesn't} exist a square-root of $3$ modulo the other prime numbers $2,3,5,7$. There in fact
+and there \emph{doesn't} appear to be a square-root of $3$ modulo the other small primes like $5$ and $7$. There in fact
 exists many other prime numbers $n$ such that $3$ has a square-root modulo $n$, infinitely many of them in fact. But
 why $11$? Why was the prime $3$ somehow linked to the prime $11$?
 
-This is a rather fascinating result: prime somehow have \emph{relations} between each other! Two primes are
-somehow tied to each other depending on whether we can square-root on mod the other!! Euler in the 19th
+This is a rather fascinating result: primes somehow have \emph{relations} between each other! Two primes are
+somehow tied to each other depending on whether we can take the square root of one modulo the other! Euler in the 19th
 century had the exact same realization, and did thousands of such computations looking for patterns. It turns out
 to be a rather hard problem, and it wasn't until Gauss around 50 years later that gave a definitive and
 satisfactory explanation how such primes relate via square-rooting: the result is now called \emph{quadratic
-reciprocity}. Unfortunately, answering this question would require a lot more than what this articles covers
+reciprocity}. Unfortunately, answering this question would require a lot more than what this article covers
 (all the details are in \cite{NateAlgebra}, and requires a good deal of build-up before being proven in
 chapter~22.4). However, I strongly encourage the reader play around with this; after a few hours or a few
-days, the reader will most likely stumble upon the same same pattern that many other mathematicians who worked
+days, the reader will most likely stumble upon the same pattern that many other mathematicians who worked
 on the problem (including Euler) have discovered!
 \newpage
 \section{Final Mystery}
 
 
-The problem in the above section of turned out to be one of the first corner-stones in number theory, as it
-somehow connects different prime numbers to each other via equations; that is somehow prime numbers are not
-completely ``random'' but can have subtle connections that are not obvious at first glance!!
+The problem in the above section turned out to be one of the first cornerstones in number theory, as it
+somehow connects different prime numbers to each other via equations; that is, somehow prime numbers are not
+completely ``random'' but can have subtle connections that are not obvious at first glance!
 
-This next and final problem we shall present
+This next and final problem we shall present:
 \begin{center}
-  Are there infinitely or finitely many prime such that
+  Are there infinitely or finitely many primes $p$ such that
   \[
     p-3\Equiv{5}0
   \]
-  where $3$ and $5$ can be replace with any number $a,b$ where $\gcd(a,b) = 1$ (i.e. they have no common
+  where $3$ and $5$ can be replaced with any numbers $a,b$ where $\gcd(a,b) = 1$ (i.e. they have no common
   factors).
 \end{center}
  This question was pondered by Dirichlet in 1837, and essentially is asking about how prime numbers are
- ``distributed'' (i.e., is there meaningful ways in which we can group prime numbers together). Just like the
+ ``distributed'' (i.e., is there a meaningful way in which we can group prime numbers together). Just like the
  above problem, I strongly encourage the reader to think about this problem for a couple of hours and just see
  what they can come up with. The result has been proven, and a full proof requires a good deal more than what
- can be covered in an expository article like this (though for completeness, a proof can found
+ can be covered in an expository article like this (though for completeness, a proof can be found
  in~\cite{NateCFT}).
 
-
-% here ($p\equiv a \mod m$ infinitely many times for coprime $a,m$)
-
-% \newpage
-% \section{*Formalities}
-%
-% This section is to be less hand-wavy and more exact with everything that was just defind (ex. what exactly
-% \emph{are} the numbers modulo $0$).
 
 
 
 \newpage
 \printbibliography % needs package 'biblatex'
-
-
-
-
 
 \end{document}
 
