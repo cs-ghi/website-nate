@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber clock_arithmetics"] 1750110624 "clock_arithmetics.bcf" "clock_arithmetics.bbl" "clock_arithmetics" 1750111395 0
+["biber clock_arithmetics"] 1750110624 "clock_arithmetics.bcf" "clock_arithmetics.bbl" "clock_arithmetics" 1750204955 0
   "./bibliography.bib" 1750110569 1398 75382c8ffc1821ca8586a36a31221cd9 ""
-  "clock_arithmetics.bcf" 1750111394 107980 5bb6c578cb9e983e42bdd4b921ffb38f "pdflatex"
+  "clock_arithmetics.bcf" 1750204955 107980 5bb6c578cb9e983e42bdd4b921ffb38f "pdflatex"
   (generated)
   "clock_arithmetics.bbl"
   "clock_arithmetics.blg"
   (rewritten before read)
-["pdflatex"] 1750111391 "clock_arithmetics.tex" "clock_arithmetics.pdf" "clock_arithmetics" 1750111395 0
+["pdflatex"] 1750204952 "clock_arithmetics.tex" "clock_arithmetics.pdf" "clock_arithmetics" 1750204955 0
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -304,10 +304,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684428852 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "clock_arithmetics.aux" 1750111394 4757 63b549477548b4ba0ef2e6b7e6f1be91 "pdflatex"
+  "clock_arithmetics.aux" 1750204955 4851 a6a9414345974515134e85184678cec5 "pdflatex"
   "clock_arithmetics.bbl" 1750110627 4210 aeeff221759a183b8f4be1b8601dd0a5 "biber clock_arithmetics"
-  "clock_arithmetics.run.xml" 1750111394 2398 fde24318077fa077f0de2e5fcb436915 "pdflatex"
-  "clock_arithmetics.tex" 1750111387 32703 08d660907bc42e6295c3140dad20cc2e ""
+  "clock_arithmetics.run.xml" 1750204955 2398 fde24318077fa077f0de2e5fcb436915 "pdflatex"
+  "clock_arithmetics.tex" 1750204947 34189 d5e2d6a7bee2c4b346f19db48abadbfc ""
   (generated)
   "clock_arithmetics.aux"
   "clock_arithmetics.bcf"
