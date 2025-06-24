@@ -1,4 +1,4 @@
-\documentclass[oneside]{article}
+\documentclass[oneside]{book}
 \author{Nathanael Chwojko-Srawley}
 
 
@@ -9,6 +9,7 @@
 \usepackage{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
 \usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
 \usepackage{stackengine}
+\usepackage{colortbl}
 \usepackage{scalerel}
 \usepackage{amsmath, amssymb} % Used to write better mathematical expressions (ex. \mathbb{R})
 \usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
@@ -248,7 +249,7 @@
 %a nice large circle
 \newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
 \makeatletter
-\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot{\mathpalette\bigcdot@{2}}
 \newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
 \makeatother
 
@@ -366,6 +367,17 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
   linkcolor=LinkColour,
   urlcolor=blue,
 }
+
+\pagestyle{plain}
+% \setlength\headheight{20pt}
+% \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+% \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+% \fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+% \fancyfoot[R,RO]{\thepage}{}
+
+\renewcommand{\thesection}{\arabic{section}}
+\setcounter{secnumdepth}{1}  % Only number sections (not subsections)
+
 \begin{document}
 
 \begin{center}
@@ -396,14 +408,14 @@ $4$ bottles and add $10$ bottles, I have $14$ bottles. In other words
   4+10 = 14
 \]
 The other notion of addition we often use comes from when we are calculating what time it is. Consider a
-$12$-hour clock. If it is $4$ o-clock, in $5$ hours it will be $9$ o-clock. If instead we add $10$ hours, it
-will be $2$ o-clock. In other words, we just comfortably did
+$12$-hour clock. If it is $4$ o'clock, in $5$ hours it will be $9$ o'clock. If instead we add $10$ hours, it
+will be $2$ o'clock. In other words, we just comfortably did
 \[
   4+10 = 2
 \]
 in our heads. This is certainly different than the previous equality, but it still makes sense! Using the same symbol ``$+$''
 may cause confusion, so to distinguish the two types of addition, we shall write $+_{12}$ for ``12 hour
-clock'' addition, and keep $+$ as before. Thus, we can write:
+clock'' addition, and keep $+$ for quantity addition. Thus, we can write:
 \[
   4+10 = 14 \qquad \text{and} \qquad 4+_{12}10 = 2
 \]
@@ -412,25 +424,66 @@ Let us call the addition using $+$ \emph{natural arithmetic} and the addition us
 different ideas of additions have.
 
 The first thing we should try to do is add various hours to each other and see what we get. Let us start by
-just picking two random numbers and playing around with them. If it is $2$ o-clock, then if I add $5$ it will
-be $7$ o-clock. But if I add $17$ hors to $2$ o-clock, it will \emph{still} be $7$ o-clock. More generally, adding any multiple of
-$12$ will not change the result of my addition:
+just picking two random numbers and playing around with them. If it is $3$ o'clock, then if I add $5$ it will
+be $8$ o'clock. But if I add $17$ hours to $3$ o'clock, it will \emph{still} be $8$ o'clock. More generally,
+adding any multiple of $12$ will not change the result of my addition:
 \[
-  2\Plus{12} 5 = 7,\quad 2\Plus{12}17 = 7, \quad 2\Plus{12}29=7,\quad 2\Plus{12}41 = 7\cdots
+  3\Plus{12} 5 = 8\quad\quad 3\Plus{12}17 = 8 \quad\quad 3\Plus{12}29=8\quad\quad 3\Plus{12}41 = 8\cdots
 \]
-So adding $5,(5+1\cdot 12), (5+2\cdot 12), ...$ to $2$ gives the same result. Similarly, if I have any number $n$ between
-$1$ and $12$, if I add $b$, or I add $(b + k\cdot 12)$ for some $k = 1,2,...$ I get the same result.
+So adding $5,(5+1\cdot 12), (5+2\cdot 12), ...$ to $3$ gives the same result. Similarly, if I have any number
+$n$ between $1$ and $12$, if I add $b$, or I add $(b + k\cdot 12)$ for some $k = 1,2,...$ I get the same
+result.
+\[
+  \begin{tikzpicture}[scale=1.5]
+  % Draw the clock circle
+  \draw[thick] (0,0) circle (2.5);
 
-We would like to remember that adding a number $n$ or adding a number $n+k\cdot 12$ to any given hour gives
+  % Draw hour marks and numbers
+  \foreach \hour in {1,2,...,12} {
+    \draw[thick] ({90-30*\hour}:2.3) -- ({90-30*\hour}:2.5);
+    \node at ({90-30*\hour}:2.0) {\large \hour};
+  }
+
+  % Starting position n = 3 (highlighted in red)
+  \node[circle, fill=red, text=white, minimum size=0.8cm] at ({90-30*3}:2.0) {\textbf{3}};
+
+  % Arrow showing +12 hours (one full rotation)
+  \draw[->, very thick, blue, opacity=0.7] (0,0) circle (1.5);
+  \node[blue, font=\large\bfseries] at (0,-3.2) {+12 hours (1 full rotation)};
+
+  % Arrow showing +24 hours (two full rotations)
+  \draw[->, very thick, dkgreen, opacity=0.7] (0,0) circle (1.2);
+  \draw[->, very thick, dkgreen, opacity=0.7] (0,0) circle (1.0);
+  \node[dkgreen, font=\large\bfseries] at (0,-3.8) {+24 hours (2 full rotations)};
+
+
+  % Mathematical notation
+  \node[align=center, font=\large] at (5,1) {
+    $3 \Plus{12} 12 = 3 $ \\[0.3cm]
+    $3 \Plus{12} 24 = 3 $ \\[0.3cm]
+  };
+
+  % Legend
+  \node[align=left, font=\normalsize] at (5,-2) {
+    \textcolor{red}{$\bigcdot$} Starting position (n = 3) \\
+    \textcolor{blue}{$\to$} Adding 12 hours \\
+    \textcolor{dkgreen}{$\to$} Adding 24 hours
+  };
+
+\end{tikzpicture}
+\]
+
+We would like to remember that adding $k\cdot 12$ to any given hour gives
 the same result. Mathematicians usually use the symbol $\Equiv{12}$ between two such numbers:
 \[
   5\Equiv{12}17\Equiv{12}29\Equiv{12}\cdots
 \]
 where we say that $5$ is \emph{equivalent} to $17$, which is \emph{equivalent} to $29$, and so on. Put
-differently, two numbers $a,b$ are equivalent if they give you the same time on the clock-face after addition:
+differently, two numbers $n+a,n+b$ are equivalent if they give you the same time on the clock-face after addition:
 \[
   n\Plus{12}a = m \qquad \text{and} \qquad n\Plus{12}b= m
 \]
+
 Therefore, in clock arithmetic we only need to work with the following numbers:
 \[
   1,2,3,4,5,6,7,8,9,10,11,12
@@ -452,10 +505,9 @@ equality; namely $9$ appears on both sides. In fact, if we try adding any other 
 \hline
 \end{array}\]
 
-The natural next question to ask is if this works for any number, not just $9$. Try doing this for any $n$
-between $1$ and $12$ (including $12$), and you'll see that adding $12$ to any number in
-clock arithmetic gives back the same
-number, and $12$ is the \emph{only} number that does this!
+The natural next question to ask is if adding $12$ to any number $n$, not just $9$, will return $n$. Try doing
+this for any $n$ between $1$ and $12$ (including $12$), and you'll see that adding $12$ to any number in clock
+arithmetic gives back the same number, and $12$ is the \emph{only} number that does this!
 \[
   n \Plus{12}12 = n
 \]
@@ -469,40 +521,59 @@ clock arithmetic are:
 \[
   0,1,2,3,4,5,6,7,8,9,10,11
 \]
-Re-labeling $12$ as $0$ has another advantage when we consider \emph{multiplication}.
-If we are to think of $12$ as being $0$ in clock arithmetic, we should at least check that this behavior is also respected by multiplication. Remember that in natural arithmetic,
-multiplying any number $n$\footnote{For those who have contested this by asking ``what if we let $n$ be
-  infinity'', there is \href{NOT_YET}{this article} addressing exactly how to think about infinity and why we
-shouldn't conclude $0\cdot \infty = 0$ without putting in more care} by $0$ gives $0$:
-\[
-  n\cdot 0 = 0
-\]
-Let us first test if this is the case with an example. First, we would want it so tha
-multiplying by $1$ will always give the same time. If it is $12$ o-clock and we add $1$
-multiple of $3$, it is $3$ o-clock. If we add $12$ multiples of $3$, then we are adding
-$3$ o-clock to itself $12$ times. This brings us $36$ hours forward, which on a clock-face
-is $12$ o-clock. But we already saw that we should think of $12$ as being $0$! Hence, we
-see that adding $3$ to itself $12$ times will return $0$. In fact, if we start with any
-number $n$ between $0$ and $11$, adding the number to itself $12$ times will always bring
-us back to the $12$ o-clock position! Therefore, $12$ really \emph{does} behave like $0$
-in clock arithmetic! If $\cdot_{12}$ represents multiplication in clock arithmetic, we
-just showed that multiplying by $12$ is like multiplying by 0. To go back to our example
-using $3$:
+This gives us a good understanding of addition in clock arithmetic: any number $n$ can be re-written as one of
+the above $12$ numbers since $n$ is equivalent to one of these, and then it becomes easy to perform
+arithmetic's.
+
+What about multiplication? Is there a natural way to multiply hours with each other. In natural arithmetic, we
+know that multiplying $n$ by some natural number $m$ means we are adding $n$ to itself $m$ times. Furthermore,
+$n\cdot 0 = 0$\footnote{For those who have contested this by asking ``what if we let $n$ be infinity'', there
+  is \href{NOT_YET}{this article} addressing exactly how to think about infinity and why we shouldn't conclude
+$0\cdot \infty = 0$ without putting in more care}. Inspired by these properties, let us define multiplication
+$n\Cdot{12} m$ to mean that we are starting at $12$ o'clock (which we should think of as $0$ o'clock), and
+we are moving forward $n$ hours a total of $m$ times.
+
+This matches our intuition on repeated addition. One difference from natural arithmetic and clock arithmetic
+is that in clock arithmetic there are numbers that are equivalent to each other. We should verify that if we
+multiply by two equivalent numbers, we ought to get back equivalent results. More precisely, if $n\Cdot{12}m = a$ and
+$n\Cdot{12}m' = b$, then if $m\Equiv{12}m'$ we want that $a\Equiv{12}b$ (try this out with some numbers!)
+
+% Re-labeling $12$ as $0$ has another advantage when we consider \emph{multiplication}.
+% If we are to think of $12$ as being $0$ in clock arithmetic, we should at least check that this behavior is also respected by multiplication. Remember that in natural arithmetic,
+% multiplying any number $n$ by $0$ gives $0$:
+% \[
+%   n\cdot 0 = 0
+% \]
+Let us start by showing that multiplying by $0$ and multiplying by any number equivalent to $0$ gives the same
+result (ex. $n\Cdot{12} 0 = n\Cdot{12} 12 = 0$). Let us first test if this is the case with an example. Let $n
+= 3$. Certainly if we add no multiples of $3$ we stay at $12$ o'clock (again, this should be thought of as $0$
+o'clock). If we add $12$ multiples of $3$, then we are adding $3$ o'clock to itself $12$ times. This brings us
+$36$ hours forward, which on a clock-face is $12$ o'clock. But we already saw that we should think of $12$ as
+being $0$! Hence, we see that adding $3$ to itself $12$ times will return $0$. In fact, if we start with any
+number $n$ between $0$ and $11$, adding the number to itself $12$ times will always bring us back to the $12$
+o'clock position! Therefore, $12$ really \emph{does} behave like $0$ in clock arithmetic! We just showed that
+multiplying by $12$ is like multiplying by 0. To go back to our example using $3$:
 \[
   3\Cdot{12}12 = 12
 \]
-because $36$ hours after $12$ o-clock is again $12$ o-clock. In our re-labeled system (where 12
+because $36$ hours after $12$ o'clock is again $12$ o'clock. In our re-labeled system (where 12
 is 0) this becomes:
 \[
   3\Cdot{12}0 = 0
 \]
+\begin{exercise}{Multiplying by equivalent numbers}{equivNum}
+  The above shows that if $0\Equiv{12} m$, then $n\Cdot{12}m = 0$. Show this is true more generally:
+  \begin{center}
+      Let $n\Cdot{12}m = a$ and $n\Cdot{12}m' = b$. If $m\Equiv{12}m'$, then $a\Equiv{12}b$
+  \end{center}
+\end{exercise}
+
 \begin{exercise}{Multiplying by other numbers}{zeroDiv}
   When multiplying in natural arithmetic we get that $a\cdot b= 0$ if and only if $a = 0$ or $b= 0$. In
   clock arithmetic, it is now possible that $a\cdot_{12}b=  0$ but $a,b \ne 0$!
 
   \qn
-  Can you think of two
-  non-zero numbers $a,b$ where $a\cdot_{12}b = 0$?
+  Can you think of two non-zero numbers $a,b$ where $a\cdot_{12}b = 0$?
 \end{exercise}
 
 
@@ -520,7 +591,7 @@ is 0) this becomes:
   \[
     1\Minus{12}2 = 11
   \]
-  that is, if it is $1$ o-clock, two hours ago it was $11$ o-clock. Convince yourself that:
+  that is, if it is $1$ o'clock, two hours ago it was $11$ o'clock. Convince yourself that:
   \[
     a\Minus{12}12 = a
   \]
@@ -538,7 +609,7 @@ A mathematician would then naturally ask the following question:
   \emph{abstract algebra} (see\cite{NateAlgebra} if you want my exposition on abstract
       algebra)}?
 \end{center}
-Let us do exactly this and see what we get. First off, instead of writing $+_{12}$, we shall now write
+Let us do exactly this and see what we get. First of all, instead of writing $+_{12}$, we shall now write
 $+_{n}$. Let us call the arithmetic for all $+_{n}$ \emph{modular arithmetic}. With this vocabulary,
 clock arithmetic is a special case of modular arithmetic. To distinguish the different modular arithmetics, we
 would usually say we are working \emph{modulo $n$}. Clock arithmetic would be modular arithmetic modulo
@@ -573,7 +644,7 @@ Just as for clock arithmetic, we can treat $n$ like $0$.
 \end{exercise}
 
 
-\begin{exercise}{Special Property when Modulo Prime}{propModPrime}
+\begin{exercise}{Special Property when Modulo is Prime}{propModPrime}
   Remember in exercise~\ref{ex:zeroDiv} that in modulo $12$, we can find two natural numbers $a,b$ where
   $a\cdot_{12} b= 0$, but $a,b\ne 0$.
 
@@ -581,18 +652,23 @@ Just as for clock arithmetic, we can treat $n$ like $0$.
   \[
     a\cdot_n b = 0 \qquad \text{if and only if} \qquad a = 0\text{ or } b= 0
   \]
-  This shows that primes are somehow ``special''. Mathematicians even have a different word for when $n = p$
-  is a prime: modular arithmetic modulo $p$ where $p$ is a prime is called a \emph{finite field}.
+  This shows that primes are somehow ``special'' in that they behave more like natural arithmetic. Mathematicians even have a different word for when $n$
+  is a prime: modular arithmetic modulo $n$ where $n$ is a prime is called a \emph{finite field}.
 \end{exercise}
 
 \newpage
-\section{Application: Solving Equations}
+\chapter*{Applications}
 
-So now that we have defined modular arithmetic, what can we do with it? The principal reason mathematicians care
-about modular arithmetic is that it allows us to give a lot more information about equations we are trying
-to solve!
+So now that we have defined modular arithmetic, what can we do with it? The rest of this article will now go
+over some interesting problems that demonstrate the usefulness of modular arithmetic, as well as reveal some
+hidden patterns in prime numbers
 
-For example, consider $x^2+x+1$. A natural question to ask is whether there is an integer $n$ (numbers of the for
+\section{Solving Equations}
+
+
+The principal reason mathematicians care about modular arithmetic is that it allows us to give a lot more
+information about equations we are trying to solve. For example, consider $x^2+x+1$. A natural question to ask
+is whether there is an integer $n$ (numbers of the for
 $\pm1, \pm2, \pm3, ...$) that solves this equation. In other words, we are looking for an $n$ such that
 \[
   n^2+n+1 =0
@@ -617,25 +693,31 @@ x & \text{Calculation} & \text{Result} \\
 \hline
 -3 & (-3)^2 + (-3) + 1 & 7 \\
 \hline
+\vdots & \vdots & \vdots\\
+\hline
 \end{array}
 \]
 Doing this for the first 100 integers and their negatives would show you that the equation never equals $0$,
 however there is no guarantee that you will \emph{never} find a big enough number $n$ such that $n^2+n+1=0$.
 Using modular arithmetic, it is in fact straightforward to show that \emph{no} solutions exist.
 
-To show this, let's say that there \emph{does} exist an $n$ such that $n^2+n+1=0$\footnote{This is a usual
-trick called \emph{proof by contradiction}}. What we will do is show that this equation will \emph{fail} when
-we consider modular arithmetic modulo $2$. In modulo $2$, the number $n$ would be equivalent to:
+To show this, let's assume that there \emph{does} exist an $n$ such that $n^2+n+1=0$\footnote{This is a usual
+trick called \emph{proof by contradiction}. This idea is to assume the statement we want to prove false is
+true, and show this creates a contradiction}. Then since $n^2+n+1=0$, certainly $n^2+n+1\Equiv{2}0$: if we let
+$n^2+n+1=m$ then $m\Equiv{2} 0$ means that $m$ is a multiple of $2$, but $0$ is certainly a multiple of $2$
+since $0\cdot 2=  0$. What we will show is that it is \emph{impossible} to find an integer $n$ such that
+$n^2+n+1\Equiv{2}0$, in other words this equation has no solutions modulo $2$.
+
+First of all, for any integer $n$:
 \[
   n\Equiv{2} 0 \qquad \text{or} \qquad n\Equiv{2}1
 \]
-For example, if $n = -177$ (which the reader could check doesn't solve the equation, but it is just for
-demonstration), then:
+For example, if $n = -177$, then:
 \[
   -177 = 1 + 2\cdot (-89) \Equiv{2} 1
 \]
-(look at exercise~\ref{ex:subtraction} if the subtraction is confusing). We can keep $1$ and $0$
-the same because they happen to be small enough so that we don't need to shrink them. Thus, armed with the
+(look at exercise~\ref{ex:subtraction} if the subtraction is confusing). Thus, every natural number is
+equivalent to either $1$ or $0$. Thus, armed with the
 possible values of $n$ modulo $2$, we get one of two possible equations:
 \[
   (1\Cdot{2}1) \Plus{2} 1 \Plus{2} 1 = 0 \qquad \text{or} \qquad (0\Cdot{2}0) \Plus{2}0\Plus{2} 1 = 0
@@ -652,8 +734,9 @@ So we arrived at a contradiction, because $0\ne 1$\footnote{The suspicious reade
 every number equals $0$ (convince yourself), and then nothing interesting happens.}. What this tells us is
 that we made a wrong assumption earlier in the proof; and indeed this started by assuming that there exists an
 integer $n$ such that $n^2+n+1=0$. Thus, it is \emph{impossible} that such an
-integer exists! Notice how easy this was to prove: we only had to check \emph{2} possible numbers as
-compared to the infinite possibilities when trying to solve the equation with natural numbers!
+integer exists! Notice how easy this was to prove: we only had to check \emph{two} possible numbers in modular
+arithmetic modulo $2$ as compared to the infinite possibilities when trying to solve the equation with natural
+numbers!
 
 This ``reduction to finitely many cases'' is one of the \textbf{key} properties of modular arithmetic that
 mathematicians abuse to no end.
@@ -661,7 +744,7 @@ mathematicians abuse to no end.
 
 \section{Application: Patterns in Prime Numbers}
 
-Consider the equation $x^2 = p$ for some prime number $p$. Then obviously no natural number solves this
+Let us now show that modular arithmetic reveals hidden patterns in primes. Consider the equation $x^2 = p$ for some prime number $p$. Then certainly no natural number solves this
 equation, because no natural number can be the square-root of a prime\footnote{This is because the square-root
   of a prime number is \emph{irrational}; see~\cite{fuchsIntroductionProofsProof} for a friendly introduction
 to this notion}. However, this question gets more interesting if we instead consider it in \emph{modular
@@ -673,7 +756,7 @@ because $4^2 = 16$. If $m$ is a prime, then there is no \emph{natural number} $a
 = p$.
 
 So in natural arithmetics, square-roots of prime do not exist. Let us see if we can find
-a square-root in modular arithmetic for some modulo $n$. Let us demonstrate this with an
+a square-root in modular arithmetic in some modulo $n$. Let us demonstrate this with an
 example. Consider $p = 3$. Let us see if in modulo $n$, we can find a number $m$ such that
 $m\Cdot{n} m = p$ (i.e. if $p$ has a square-root modulo $n$). The following is a table
 where $n$ goes over the first few prime numbers:
@@ -714,22 +797,22 @@ Prcisely because $5\Cdot{11}5 = 3$.
 Hence, for a mysterious reason, there \emph{does} exist a square-root of $3$ in modulo $11$,
 and there \emph{doesn't} appear to be a square-root of $3$ modulo $5$ or $7$ (among many
 other primes). But
-why $11$? Why was the prime $3$ somehow linked to the prime $11$? The reader an check that
+why $11$? Why was the prime $3$ somehow linked to the prime $11$? The reader can check that
 there are in fact other primes in which $3$ also has a square-root; so how can we
 determine for which primes $3$ has a square-root?
 
-This is a rather fascinating result: some primes have square-roots in modulo $p$, while
-other don't, in other words primes somehow have \emph{relations} between each other! To be
-precise, two primes are
-tied to each other depending on whether we can take the square root of one modulo the other! Euler in the 19th
-century had the exact same realization, and did thousands of such computations looking for patterns. It turns out
-to be a rather hard problem, and it wasn't until Gauss around 50 years later that gave a definitive and
-satisfactory explanation how such primes relate via square-rooting: the result is now called \emph{quadratic
-reciprocity}. Unfortunately, answering this question would require a lot more than what this article covers
-(all the details are in \cite{NateAlgebra}, and requires a good deal of build-up before being proven in
-chapter~22.4). However, I strongly encourage the reader play around with this; after a few hours or a few
-days, the reader will most likely stumble upon the same pattern that many other mathematicians who worked
-on the problem (including Euler) have discovered!
+This is a rather fascinating result: some primes have square-roots in modulo $p$, while other don't, in other
+words primes somehow have \emph{relations} between each other! To be precise, two primes are tied to each
+other depending on whether we can take the square root of one modulo the other! Euler in the 19th century had
+the exact same realization, and did thousands of such computations looking for patterns. It turns out to be a
+rather hard problem, and it wasn't until Gauss around 50 years later that gave a definitive and satisfactory
+explanation how such primes relate via square-rooting: the result is now called \emph{quadratic reciprocity}.
+As it turns out, there is a reason this question couldn't be quickly solved by Euler; answering this question
+would require a lot more math than this article covers (all the details are in \cite{NateAlgebra}, and
+requires a good deal of build-up before being proven in chapter~22.4). However, I strongly encourage the
+reader play around with this; after a few hours or a few days, the reader will most likely stumble upon the
+same pattern that many other mathematicians who worked on the problem (including Euler) have discovered!
+
 \section{Final Mystery}
 
 
@@ -743,19 +826,37 @@ Here is the final problem we shall present:
     \[
       p\Equiv{5}3
     \]
-    In other words, are there finitley many or infiniely many primes for which $p$ o-clock
-    in a $5$ hour clock will be the same time as $3$ o-clock.
+    In other words, are there finitely many or infinitely many primes for which $p$ o'clock
+    in a $5$ hour clock will be the same time as $3$ o'clock.
 
     \qn
     The numbers $3$ and $5$ can be replaced with any numbers $a,b$ where $\gcd(a,b) = 1$ (i.e. they have no common
     factors).
   \end{titledBox*}
- This question was pondered by Dirichlet in 1837. Essentially is asking about how prime numbers are
- ``distributed'' (i.e., is there a meaningful way in which we can group prime numbers). Just like the
- above problem, I strongly encourage the reader to think about this problem for a couple of hours and just see
- what they can come up with. The result has been proven, and a full proof requires more
- math than what can be covered in an expository article like this (for
-     completeness, a proof can be found in~\cite{NateCFT}).
+
+For example,
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+prime & 2 & \cellcolor{green!20}3 & 5 & 7 & 11 & \cellcolor{green!20}13 & 17 & 19 & \cellcolor{green!20}23
+      & 29 & 31 & 37 & 41 & \cellcolor{green!20}43 & 47&\cellcolor{green!20} 53 & 59 &$\cdots$ \\
+\hline
+$p\Equiv{5}m$&2 & \cellcolor{green!20}3 & 0 & 2 & 1 & \cellcolor{green!20}3 & 2 & 4 & \cellcolor{green!20}3
+             & 4 & 1 & 2 & 1 & \cellcolor{green!20}3 & 2 & \cellcolor{green!20} 3 & 4 &$\cdots$\\
+\hline
+\end{tabular}
+\caption{First 17 primes and their values modulo 5}
+\end{table}
+
+
+This question was pondered by Dirichlet in 1837. Essentially, it is asking if there is a meaningful way in
+which prime numbers can be grouped together. A mathematician would say that this is asking how the primes
+numbers are \emph{distributed}. Just like the above problem, I strongly encourage the reader to think about
+this problem for a couple of hours and just see what they can come up with. Is the same true if one of the
+numbers is replaced by a non-prime number? The result has been proven, and a full proof requires more math
+than what can be covered in an expository article like this (for completeness, a proof can be found
+in~\cite{NateCFT}).
 
 
 
