@@ -888,20 +888,20 @@ somehow connects different prime numbers to each other via equations; that is, p
 completely ``random'' but can have subtle connections that are not obvious at first glance!
 
 In the same vein, here is the final problem we shall present:
-  \begin{titledBox*}{}
-      Are there infinitely, or finitely, many primes $p$ such that
-    \[
-      p\Equiv{5}3
-    \]
-    In other words, are there finitely many or infinitely many primes for which $p$ o'clock
-    in a $5$ hour clock will be the same time as $3$ o'clock.
+\begin{titledBox*}{}
+    Are there $0$, finitely many, or infinitely many primes $p$ such that
+  \[
+    p\Equiv{5}3
+  \]
+  In other words, how many primes are there for which $p$ o'clock
+  in a $5$ hour clock will be the same time as $3$ o'clock.
 
-    \qn
-    The numbers $3$ and $5$ can be replaced with any numbers $a,b$ where $\gcd(a,b) = 1$ (i.e. they have no common
-    factors).
-  \end{titledBox*}
+  \qn
+  The numbers $3$ and $5$ can be replaced with any numbers $a,b$ where $\gcd(a,b) = 1$ (i.e. they have no common
+  factors).
+\end{titledBox*}
 
-For example,
+Doing the first few primes, we see that the answer is at least finitely many:
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -920,12 +920,18 @@ $p\Equiv{5}m$&2 & \cellcolor{green!20}3 & 0 & 2 & 1 & \cellcolor{green!20}3 & 2 
 This question was pondered by Dirichlet in 1837. Essentially, it is asking if there is a meaningful way in
 which prime numbers can be grouped together. A mathematician would say that this is asking how the primes
 numbers are \emph{distributed}. Just like the above problem, I strongly encourage the reader to think about
-this problem for a couple of hours and just see what they can come up with. Is the same true if one of the
-numbers is replaced by a non-prime number? The result has been proven, and a full proof requires more math
-than what can be covered in an expository article like this (for completeness, a proof can be found
-in~\cite[chapter~3.4]{NateCFT}).
+this problem for a couple of hours and just see what they can come up with. The result has been proven, and a
+full proof requires more math than what can be covered in an expository article like this (for completeness, a
+proof can be found in~\cite[chapter~3.4]{NateCFT}). I hope the reader will still ponder the problem just as
+many mathematicians have done before, for it is by trying to solve such hard questions that mathematicians
+discover novel insights.
 
 
+\begin{exercise}{Common Factors}{commonFactors}
+  Consider the same question, but instead let $a,b$ have common factors. Will there always be infinitely many
+  or finitely many primes $p$ such that $p\Equiv{b}a$? This question is solvable; can the reader provide
+  a proof?
+\end{exercise}
 
 
 

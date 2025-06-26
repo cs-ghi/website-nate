@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber clock_arithmetic"] 1750965662 "clock_arithmetic.bcf" "clock_arithmetic.bbl" "clock_arithmetic" 1750968946 0
+["biber clock_arithmetic"] 1750965662 "clock_arithmetic.bcf" "clock_arithmetic.bbl" "clock_arithmetic" 1750970715 0
   "./bibliography.bib" 1750965615 1695 7553fb27899ab35af537a49f4b37dfb4 ""
-  "clock_arithmetic.bcf" 1750968945 108052 543ef779b6a1443f5d08834d9978b388 "pdflatex"
+  "clock_arithmetic.bcf" 1750970714 108052 543ef779b6a1443f5d08834d9978b388 "pdflatex"
   (generated)
   "clock_arithmetic.bbl"
   "clock_arithmetic.blg"
   (rewritten before read)
-["pdflatex"] 1750968941 "clock_arithmetic.tex" "clock_arithmetic.pdf" "clock_arithmetic" 1750968946 0
+["pdflatex"] 1750970711 "clock_arithmetic.tex" "clock_arithmetic.pdf" "clock_arithmetic" 1750970715 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1136768653 1536 c09172c8f235393e6235bb4758357c41 ""
@@ -314,10 +314,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684428852 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "clock_arithmetic.aux" 1750968945 5639 7f7c16eca7d9b593d2383517d323d291 "pdflatex"
+  "clock_arithmetic.aux" 1750970714 5716 15e9bfdc2e16a49341d6c11c97bc88e8 "pdflatex"
   "clock_arithmetic.bbl" 1750965665 5402 e779eded59314139de04af230088d25c "biber clock_arithmetic"
-  "clock_arithmetic.run.xml" 1750968945 2391 7ee436163d4b5b2af5cb515b26c80607 "pdflatex"
-  "clock_arithmetic.tex" 1750968940 42501 eb6ca43f5ee9c5c715f86c19f4bf9882 ""
+  "clock_arithmetic.run.xml" 1750970714 2391 7ee436163d4b5b2af5cb515b26c80607 "pdflatex"
+  "clock_arithmetic.tex" 1750970711 42932 33c520cc2dac8bde024a98a1b6476b16 ""
   (generated)
   "clock_arithmetic.aux"
   "clock_arithmetic.bcf"
