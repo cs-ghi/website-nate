@@ -1,12 +1,30 @@
-\documentclass[oneside]{book}
-\author{Nathanael Chwojko-Srawley}
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
 
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{Clock Arithmetic and some Mysteries of Prime Numbers}
+\author{Nathanael Chwojko-Srawley}
+\date{\today}
 
 %  ╔══════════════════════════════════════════════════════════╗
 %  ║                         packages                         ║
 %  ╚══════════════════════════════════════════════════════════╝
 
-\usepackage{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
 \usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
 \usepackage{stackengine}
 \usepackage{colortbl}
@@ -59,18 +77,38 @@
 
 % \usepackage{CJKutf8} % for some chinese
 
-% to import figures via: https://github.com/gillescastel/inkscape-figures
-\usepackage{import}
-\usepackage{pdfpages}
-\usepackage{transparent}
 
-% This command is the ONLY command imported via the packages snippet, think of it as a tiny package written out
-\newcommand{\incfig}[2][1]{%
-    \def\svgwidth{#1\columnwidth}
-    \import{./figures/}{#2.pdf_tex}
+% \renewcommand{\thesection}{\arabic{section}}
+%header information
+\pagestyle{fancy}
+
+\setlength\headheight{20pt}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+\fancyfoot[R,RO]{\thepage}{}
+
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
 }
 
-\pdfsuppresswarningpagegroup=1
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
+
 
 \newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
 \newcommand{\Equiv}[1]{\equiv_{\scalemath{0.6}{#1}}}
@@ -368,33 +406,21 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
   urlcolor=blue,
 }
 
-\pagestyle{plain}
-% \setlength\headheight{20pt}
-% \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-% \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-% \fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
-% \fancyfoot[R,RO]{\thepage}{}
-
-\renewcommand{\thesection}{\arabic{section}}
-\setcounter{secnumdepth}{1}  % Only number sections (not subsections)
+\setcounter{secnumdepth}{1}  % start numbering at section, no chapter
 
 \begin{document}
+\maketitle
 
-\begin{center}
-  \Huge{Clock Arithmetic and some Mysteries of Prime Numbers}
-\end{center}
+\vspace{2em}
+This article is written for my patient friends to whom I give math riddles that require knowledge of modular
+arithmetic, or as I often call it \emph{clock arithmetic}. This article serves as an easy reference for the
+necessary concepts and requires no mathematical background. For this entire article, we will only care about
+which hour the hour-hand is on; no AM or PM, and no adding half an hour (or anything that isn't an increment
+of 60 minutes).
 
-\begin{titledBox*}{Foreword}
-  \qn
-  This article is written for my patient friends to whom I give math riddles that require knowledge of modular
-  arithmetic, or as I often call it \emph{clock arithmetic}. This article serves as an easy reference for the
-  necessary concepts and requires no mathematical background. For this entire article, we will only care about
-  which hour the hour-hand is on; no AM or PM, and no adding half an hour (or anything that isn't an increment
-  of 60 minutes).
-
-  \qn
-  Note that any exercise an applications can be skipped; they are just there for fun!
-\end{titledBox*}
+\qn
+All exercises and applications can be skipped; they are there for fun!
+\vspace{2em}
 
 \section{Clock Arithmetic: Addition and Multiplication}
 
@@ -409,7 +435,7 @@ $4$ bottles and add $10$ bottles, I have $14$ bottles. In other words
 \]
 The other notion of addition we often use is when we are calculating what time it is. Consider a
 $12$-hour clock. If it is $4$ o'clock, in $5$ hours it will be $9$ o'clock. If instead we add $10$ hours, it
-will be $2$ o'clock. In other words, we just comfortably did
+will be $2$ o'clock. In other words, we comfortably did
 \[
   4+10 = 2
 \]
@@ -449,12 +475,12 @@ result.
 
   % Arrow showing +12 hours (one full rotation) with downward arrow
   \draw[->, very thick, blue, opacity=0.7] (0,0) circle (1.5);
-  \draw[->, very thick, blue, opacity=0.7] (1.5,0) -- (1.52,-0.7);
+  \draw[->, very thick, blue, opacity=0.7] (1.5,0) -- (1.5,-0.7);
   \node[blue, font=\large\bfseries] at (0,-3.2) {+12 hours (1 full rotation)};
 
   % Arrow showing +24 hours (single curve representing two rotations)
   \draw[->, very thick, dkgreen, opacity=0.7] (0,0) circle (1.2);
-  \draw[->, very thick, dkgreen, opacity=0.7] (1.2,0) -- (1.22,-0.7);
+  \draw[->, very thick, dkgreen, opacity=0.7] (1.2,0) -- (1.2,-0.7);
   \node[dkgreen, font=\large\bfseries] at (0.9,0) {\textbf{×2}};
   \node[dkgreen, font=\large\bfseries] at (0,-3.8) {+24 hours (2 full rotations)};
 
@@ -552,7 +578,7 @@ o'clock). If we add $12$ multiples of $3$, then we are adding $3$ o'clock to its
 $36$ hours forward, which on a clock-face is $12$ o'clock. But we already saw that we should think of $12$ as
 being $0$! Hence, we see that adding $3$ to itself $12$ times will return $0$. In fact, if we start with any
 number $n$ between $0$ and $11$, adding the number to itself $12$ times will always bring us back to the $12$
-o'clock position! Therefore, $12$ really \emph{does} behave like $0$ in clock arithmetic! We just showed that
+o'clock position! Therefore, $12$ really \emph{does} behave like $0$ in clock arithmetic! We showed that
 multiplying by $12$ is like multiplying by 0. To go back to our example using $3$:
 \[
   3\Cdot{12}12 = 12
@@ -600,7 +626,7 @@ is 0) this becomes:
 
 \section{From Clock Arithmetic to Modular Arithmetic}
 
-We just showed how we can think of clock arithmetic which has $12$ numbers.
+We showed how we can think of clock arithmetic which has $12$ numbers.
 A mathematician would then naturally ask the following question:
 \begin{center}
   What if we replace $12$ with any other natural number\footnote{A natural number is of the form $1,2,3,...,
@@ -696,7 +722,7 @@ of a field; otherwise there is always two numbers $[a],[b] \in \Z/n\Z$ such that
 
 
 \newpage
-\chapter*{Applications}
+\chapter{Applications}
 
 Now that we have defined modular arithmetic, what can we do with it? The rest of this article will now go
 over some interesting problems that demonstrate the usefulness of modular arithmetic, as well as reveal some
@@ -713,7 +739,7 @@ $\pm1, \pm2, \pm3, ...$) that solves this equation. In other words, we are looki
   n^2+n+1 =0
   \]
 It may take you a little while to figure out if such a number exists. A natural starting
-point is to just convince yourself that no small integer can solve it. By plugging in
+point is to convince yourself that no small integer can solve it. By plugging in
 $\pm1, \pm2, \pm3$ we get:
 \[
 \begin{array}{|c|c|c|}
@@ -784,8 +810,8 @@ mathematicians abuse to no end.
 \end{exercise}
 
 \begin{exercise}{No Integer Solution II}{noIntSolII}
-  This question is \emph{very} hard, and is here to show that the modulo technique is insufficient of a tool
-  for finding integer solutions to \emph{any} equations. Consider the polynomial
+  This question is \emph{very} hard (a graduate level problem), and is here to show that the modulo technique
+  is insufficient of a tool for finding integer solutions to \emph{any} equations. Consider the polynomial
   \[
     3x^3 + 4y^3 + 5z^5=0
   \]
@@ -798,7 +824,7 @@ mathematicians abuse to no end.
   level topic, but the curious reader may checkout~\cite{NateEllipticCurve} for my exposition on the topic.
 \end{exercise}
 
-\section{Application: Patterns in Prime Numbers}
+\section{Patterns in Prime Numbers}
 
 Let us now show that modular arithmetic reveals hidden patterns in primes. Consider the equation $x^2 = p$ for some prime number $p$. Then certainly no natural number solves this
 equation, because no natural number can be the square-root of a prime\footnote{This is because the square-root
@@ -919,8 +945,8 @@ $p\Equiv{5}m$&2 & \cellcolor{green!20}3 & 0 & 2 & 1 & \cellcolor{green!20}3 & 2 
 
 This question was pondered by Dirichlet in 1837. Essentially, it is asking if there is a meaningful way in
 which prime numbers can be grouped together. A mathematician would say that this is asking how the primes
-numbers are \emph{distributed}. Just like the above problem, I strongly encourage the reader to think about
-this problem for a couple of hours and just see what they can come up with. The result has been proven, and a
+numbers are \emph{distributed}. Like the above problem, I strongly encourage the reader to think about
+this problem for a couple of hours and see what they can come up with. The result has been proven, and a
 full proof requires more math than what can be covered in an expository article like this (for completeness, a
 proof can be found in~\cite[chapter~3.4]{NateCFT}). I hope the reader will still ponder the problem just as
 many mathematicians have done before, for it is by trying to solve such hard questions that mathematicians
@@ -932,7 +958,6 @@ discover novel insights.
   or finitely many primes $p$ such that $p\Equiv{b}a$? This question is solvable; can the reader provide
   a proof?
 \end{exercise}
-
 
 
 \newpage
