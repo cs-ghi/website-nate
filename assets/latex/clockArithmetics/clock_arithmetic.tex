@@ -892,7 +892,7 @@ other if one prime has a square-root when doing modular arithmetic modulo the ot
 century, Euler and Gauss had the exact same realization, and did thousands of such computations looking for
 patterns. Gauss provided a rigorous proof explaining the behaviour in a theorem that is now called
 \emph{quadratic reciprocity}. It is one of the theorem with the most distinct proofs in mathematics (currently
-having over 200 different proofs known proofs). Presenting one of these proofs would require some more math
+having over 200 different known proofs). Presenting one of these proofs would require some more math
 than this article covers (all the details are in \cite{NateAlgebra}, and requires a good deal of build-up
 before being proven in chapter~22.4). However, I strongly encourage the reader play around with this; after a
 few hours, the reader will most likely stumble upon the same pattern that many other mathematicians who worked
@@ -901,7 +901,7 @@ on the problem (including Euler) have discovered!
 \begin{exercise}{Two solutions modulo 11?}{twoSolMod11}
   Looking at the row for modulo $11$, it is clear that there are in fact two numbers that are the square-root
   of $3$, in particular there is also $6\cdot 6 =36 = 33 + 3 = (11\cdot 3) + 3$. This is because in modulo
-  $11$, $6 \Equiv{11}-5$, showing this is in fact the same solution times $-1$. Show that:
+  $11$ we have $6 \Equiv{11}-5$, showing this is in fact the same solution times $-1$. Show that:
   \[
     6\Cdot{11}6 = (-5)\Cdot{11}(-5) = ( -1\Cdot{11}-1 )\Cdot{11}( 5\Cdot{11}5 ) = ( 5\Cdot{11}5 )
   \]
@@ -917,7 +917,7 @@ completely ``random'' but can have subtle connections that are not obvious at fi
 
 In the same vein, here is the final problem we shall present:
 \begin{titledBox*}{}
-    Are there $0$, finitely many, or infinitely many primes $p$ such that
+    Is there $1$, finitely many, or infinitely many primes $p$ such that
   \[
     p\Equiv{5}3
   \]
@@ -947,7 +947,7 @@ $p\Equiv{5}m$&2 & \cellcolor{green!20}3 & 0 & 2 & 1 & \cellcolor{green!20}3 & 2 
 
 This question was pondered by Dirichlet in 1837. Essentially, it is asking if there is a meaningful way in
 which prime numbers can be grouped together. A mathematician would say that this is asking how the primes
-numbers are \emph{distributed}. Like the above problem, I strongly encourage the reader to think about
+numbers are \emph{distributed}. Like the previous problem, I strongly encourage the reader to think about
 this problem for a couple of hours and see what they can come up with. The result has been proven, and a
 full proof requires more math than what can be covered in an expository article like this (for completeness, a
 proof can be found in~\cite[chapter~3.4]{NateCFT}). I hope the reader will still ponder the problem just as
@@ -956,11 +956,11 @@ discover novel insights.
 
 
 \begin{exercise}{Common Factors}{commonFactors}
-  Consider the same question, but instead let $a,b$ have common factors. Will there always be infinitely many
+  Consider the same question, but instead let $a,b$ have common factors (ex. $4,10$ have a common factor of
+  $2$). Will there always be infinitely many
   or finitely many primes $p$ such that $p\Equiv{b}a$? This question is solvable; can the reader provide
   a proof?
 \end{exercise}
-
 
 \newpage
 \printbibliography % needs package 'biblatex'
