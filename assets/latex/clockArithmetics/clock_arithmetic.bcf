@@ -2362,10 +2362,11 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">NateAlgebra</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">NateEllipticCurve</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">fuchsIntroductionProofsProof</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">NateAlgebra</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">NateCFT</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">NateAlgebra</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">NateEllipticCurve</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">fuchsIntroductionProofsProof</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">NateAlgebra</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">NateCFT</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
