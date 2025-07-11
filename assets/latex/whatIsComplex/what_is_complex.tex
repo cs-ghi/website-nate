@@ -1,6 +1,25 @@
-\documentclass[oneside]{article}
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
 
-\title{Why study Complex analysis?}
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{Why study complex analysis?}
+\author{Nathanael Chwojko-Srawley}
+\date{\today}
 
 %  ╔══════════════════════════════════════════════════════════╗
 %  ║                         packages                         ║
@@ -77,21 +96,33 @@
 %  ╚══════════════════════════════════════════════════════════╝
 
 \pagestyle{fancy}
+
 \setlength\headheight{20pt}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
 \fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
 \fancyfoot[R,RO]{\thepage}{}
 
-%chapter header format
-\titleformat{\chapter}[display]{\bfseries\Huge\itshape}{\thechapter}{0.5ex}
-{
-    \rule{\textwidth}{1pt}
-    \vspace{1ex}
-    \centering
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
 }
-[
-\vspace{-0.5ex}
-\rule{\textwidth}{0.3pt}
-]
+
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
 
 
 %  ╔══════════════════════════════════════════════════════════╗
@@ -340,11 +371,11 @@
    }{
    \end{quote}\end{tcolorbox}}
 
-\def\exampletext{Example} % If English
+\def\exampletext{Exercise} % If English
 \colorlet{colexam}{red!55!black} % Global example color
 
 
-\newtcbtheorem[auto counter, number within=section]{example}{Example}{%
+\newtcbtheorem[auto counter, number within=section]{example}{Exercise}{%
     empty,% Empty previously set parameters
     title={\exampletext \thetcbcounter},% use \thetcbcounter to access the counter
     attach boxed title to top left,
@@ -431,6 +462,7 @@
 %import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.avg,
 \begin{document}
 
+\maketitle
 
 ``What is your intuition on complex analysis?'' It is a question I asked many times, often receiving answers
 depending on the domain of mathematics the person seem to enjoy the most: ``It's about solving complicated
@@ -695,6 +727,11 @@ is in fact the study of Compact Riemann surfaces of genus $1$, i.e. the study of
 heavily exploited in the modern theory of algebraic geometry and would be further explored in a class on
 algebraic curves or complex geometry.
 
+\begin{example}{Rational Maps and Biholomorphism}{ritionalMapAndBiholo}
+  The reader familiar with birational maps may recall they need only be defined on an open dense set. Prove
+  that if $f: C \to C'$ is a map between Riemann surfaces that is surjective and is injective on a dense open
+  subset, then $f$ is a biholomorphism.
+\end{example}
 % Let us tie this with how complex analysis is usually
 
 \subsection{To Harmonic Analysis}

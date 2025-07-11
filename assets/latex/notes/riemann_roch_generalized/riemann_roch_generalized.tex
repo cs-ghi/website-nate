@@ -1,12 +1,25 @@
-\documentclass{book}
-%\documentclass{book}
-%If you're going to print this, perhaps get ride of oneside so that \parts{} will have their own page!
-\title{
-	\begin{huge}
-		\bf{Riemann Roch Generalized}
-	\end{huge}
-	}
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
+
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{Riemann Roch Generalized}
 \author{Nathanael Chwojko-Srawley}
+\date{\today}
 
 %\date{} % If you want to specify a date
 
@@ -105,27 +118,33 @@
 %  ╚══════════════════════════════════════════════════════════╝
 
 \pagestyle{fancy}
+
 \setlength\headheight{20pt}
+
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
 \fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
 \fancyfoot[R,RO]{\thepage}{}
 
-\titleformat
-{\chapter} % command
-[display] % shape
-{\bfseries\Huge\itshape} % format
-{\thechapter} % label
-{0.5ex} % sep
-{
-    \rule{\textwidth}{1pt}
-    \vspace{1ex}
-    \centering
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
 }
-[
-\vspace{-0.5ex}
-\rule{\textwidth}{0.3pt}
-]
+
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
 
 \setlength{\parindent}{0pt} % don't like indentation infront of paragraphs
 \setlength{\parskip}{1ex}   %so that there is still space between paragarphs
@@ -180,8 +199,8 @@
 \newcommand{\CV}{{\mathcal{V}}}
 \newcommand{\CZ}{{\mathcal{Z}}}
 % EXCPETION:
-\newcommand{\CP}{{\mathcal{P}}}
-% \newcommand{\CP}{\mathbb{C}\mathrm{P}}
+% \newcommand{\CP}{{\mathcal{P}}}
+\newcommand{\CP}{\mathbb{C}\mathrm{P}}
 \newcommand{\RP}{\mathbb{R}\mathrm{P}}
 
 
@@ -253,6 +272,7 @@
 \newcommand{\GL}{{\operatorname{GL}}}
 \newcommand{\Nm}{{\operatorname{Nm}}}
 \newcommand{\SL}{{\operatorname{SL}}}
+\newcommand{\Pf}{{\operatorname{Pf}}}
 
 \renewcommand{\Re}{{\operatorname{Re}}}
 \renewcommand{\Im}{{\operatorname{Im}}}
@@ -619,8 +639,53 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 \begin{document}
 \maketitle
 
-Rapid fire concepts we konw:
-\begin{enumerate}
+
+Consider the Gauss-Bonnet theorem (\href{https://en.wikipedia.org/wiki/Gauss%E2%80%93Bonnet_theorem}{this}):
+\[
+  \int_M KdA = \int_{\partial M}k_g ds = 2\pi \chi(M)
+\]
+where $M$ is a $2$-dimensional compact Riemann manifold, $K$ the Gaussian curvature, $k_g$ the geodesic
+curvature, and $\chi(M)$ the Euler characteristic. This can be thought of as a special case of The
+Riemann-Roch Theorem!
+
+There is also a more direct topological generalization of the Gauss-Bonnet theorem known as the Chern theorem,
+or Chern–Gauss–Bonnet theorem, to $2n$-dimensional Riemann manifolds without boundary:
+\[
+  \chi(M) = \int_M e(\Omega)
+\]
+where $\chi(M)$ is the Euler characteristic, $\Omega$ is the curvature form (or Levi-Civita connection), and
+$e(\Omega)$ is the Euler class:
+\[
+  e(\Omega) = \frac{1}{(2\pi)^n}\operatorname{Pf}(\Omega)
+\]
+where $\operatorname{Pf}$ if the \emph{Pfaffian}; namely as $\Omega$ can always be represented as
+a skew-symmetric matrix (when the dimension of $M$ is even, hence the $2n$) it can always be written as the
+square of a polynomial in matrix entries, namely if $A$ is the skew-symmetric matrix:
+\[
+  \operatorname{Pf}(A)^2 = \det(A)
+\]
+for example:
+\[
+  A = \begin{pmatrix}
+  0 & a\\
+  -a & b\\
+  \end{pmatrix} \qquad \Pf(A) = a
+\]
+\[
+  B = \begin{pmatrix}
+  0 & a & b & c\\
+  -a & 0 & d & e\\
+  -b & -d & 0 & f\\
+  -c & -e & -f & 0\\
+  \end{pmatrix} \qquad \Pf(B) = af-be+dc
+\]
+
+
+Atiyah–Singer index theorem seems to generalize what I'm working on further.
+
+
+Rapid fire concepts we know:
+\begin{itemize}
   \item We shall take varieties and schemes for granted
   \item We shall be working with algebraic curves, usually algebraic plane curves; hence curves given by
     $f(x,y)$ for coordinate functions $x,y$.
@@ -657,7 +722,7 @@ Rapid fire concepts we konw:
       on the components, which then gluing gives the desired result
     \end{Proof}
   \item Residue is winding number
-\end{enumerate}
+\end{itemize}
 
 
 \section{Poincar\'e-Hopf Formula}\label{sec:poincareHopfFormula}
@@ -681,7 +746,118 @@ this really cool generlization of the proof that i got in \cite{NateComplexAnaly
 \begin{Proof}
   exercise
 \end{Proof}
-Then you can deduce the usual equation~(\ref{eq:residueThm}) by setting $\omega=  \frac{df}{f}$.
+
+Then you can deduce the usual equation~(\ref{eq:residueThm}) by setting $\omega=  \frac{df}{f}$.  Now, we can
+ask the follow: for a trivial $\omega \in K^1(C)$, what is:
+\[
+  \sum_{p \in C} \nu_p(\omega)
+\]
+A general differential form on a compact Riemann surface has more flexibility than functions, and the
+order at $p$ is certainly well-defined the same way the residue of a differential form is well defined, so
+this is a meaningful question. As one-dimensional differential forms are co-vector fields, this is equivalent
+to a problem on vector-fields, and we know that one interpretation of the Euler-characteristic on surfaces is
+to count the zero-points (which are sink and source points) and the saddle points (notice how closely this
+naturally relates to curvature; this is why it comes up naturally in the Gauss-Bonnet Theorem) and  so we get:
+\[
+  \sum_{p \in C} \nu_p(\omega) = -\chi(C)
+\]
+
+\begin{itemize}
+  \item There is an interesting word on the schematic representation of curves,
+    \cite[p.28]{a.griffithsIntroductionAlgebraicCurves}
+  \item Note that meromorphic functions on complex manifold need not be able to map to $\CP^1$, consider $z/w$
+    from $\C^2$.
+    \item The end of chapter I, section 10, has a very very simple proof on when one can embedd a Riemann
+      surface into $\CP^n$!
+\end{itemize}
+
+\section{About Normalization}
+
+
+\begin{itemize}
+  \item He starts with a general plane curve, defines singular points to be when the three partial are zero
+    (hence no linear term when translated to $[0:0:1]$, or in his notation $[1:0:0]$). We can then consider
+    any curve $f(x,y) = F(1,x,y)$ when considering the canonical embedding $(x,y) \mapsto [1:x:y]$. Then it
+    must be double/triple/tuple if the lowest degree is $\ge 2$, $\ge 3$, $\ge k$. It is or ordinary if all
+    the tangent line are distinct.
+    \item We can now consider irreducible components. If it is over a UFD, then the GCD is well-defined and so
+      we get that $f,g$ have no common factors if $(f) + (g) = (1)$ so that if $(f) + (g) = (h)$ then $f = Fh$
+      and $g = Gh$ so that $fG = gF$. We can detect this using the resultant, and hence we can detect singular
+      points over non-characteristic $0$ fields using the discriminant. We can then proceed to show that if
+      $C$ is a curve, $S$ the singular points, and $C^* = C\setminus S$ the compliment of the singular points,
+      then $C^*$ is connected, not necessarily compact, $S$ is finite.
+      \item Next comes normalization which he defines as follows:
+        \index{Normalization}
+        \begin{defn}{Normalization}{normalization}
+          Suppose $C$ is a irreducible plane algebraic curve, $S$ the set of its singular points. Then there
+          exits a compact Riemann surface $\tilde{C}$ and a holomorphic mapping
+          \[
+            \sigma: \tilde{C} \to \CP^2
+          \]
+          such that
+          \begin{enumerate}
+            \item $\sigma(\tilde{C}) = C$
+            \item $\sigma^{-1}(S)$ is a finite set
+            \item $\sigma: \tilde{C}\setminus \sigma^{-1}(S) \to C\setminus S$ is injective
+          \end{enumerate}
+          Then $(\tilde{C}, \sigma)$ is the normalization of $C$, and we write just $\tilde{C}$ if it is
+          unambiguous in context.
+        \end{defn}
+      \item We get the following result equivalent to birational maps:
+        \begin{lem}{Dense Injective, then Biholomorphic}{densInjThenBiholo}
+          Suppose $\tilde{C}, \tilde{C}'$ are Riemann surfaces and
+          \[
+            h: \tilde{C} \to \tilde{C}'
+          \]
+          is a surjective holomorphic mapping which is injective on a dense open subset of $\tilde{C}$. Then
+          $h$ is a biholomorphic mapping.
+        \end{lem}
+
+        \begin{Proof}
+          Prove it is biholomorphic in every neighbourhood.
+        \end{Proof}
+      \item Then
+        \begin{thm}{Uniqueness of Normalization}{uniquenessofNormalization}
+          The normalization of an algebraic curve $C$ is unique up to isomorphism (it commies in the way you
+          expect)
+        \end{thm}
+
+        \begin{Proof}
+          use above lemma.
+        \end{Proof}
+        The goal now is to prove a normalization always exists.
+      \item Next Griffith's defines $\C\{x\}$ which is not quite $\C[[x]]$ because it is the set of all
+        \emph{convergent} power series of the form $\sum_k^\infty a_kx^k$. Similarly for $\C\{x,y\}$ which is
+        convergent $\sum_{i,j} a_{ij}x^iy^j$. Then a Weierstrass polynomial is a polynomial of the form. He
+        denotes the later by $\CO$.
+        \[
+          w = y^d + a_1(x)y^{d-1} + \cdots + a_d(x)
+        \]
+        where
+        \[
+          a_j(x) \in \C\{x\}\qquad a_j(0) = 0 \qquad j = 1,...,d
+        \]
+        Then he goes on to prove the \emph{Weierstrass Propagation theorem} which say that under the
+        appropriate generic conditions , any $f \in \CO$ can be written as $f = u\cdot w$ where $u$ is a unit
+        (so $1/u \in \CO$ and $w$ is a Weierstrass polynomial.
+
+      \item Proving this, we get the following great corollary:
+        \begin{cor}{Ring Structure of Analytic Func}{ringStructureofAnalyticFunc}
+          $\CO$ is a UFD, hence any $f \in \CO$ can be expressed up to unit $u$ as:
+          \[
+            f = uf_1f_2\cdots f_n
+          \]
+          where each $f_i$ is irreducible in $\CO$.
+        \end{cor}
+
+        \begin{Proof}
+          Note that proving $\C\{x\}$ is a UFD is easy because any $f(x) = x^mh(x)$ with $h(x)$ a unit with
+          nonzero constant. For the rest checkout \cite{a.griffithsIntroductionAlgebraicCurves}.
+        \end{Proof}
+      \item An important realization is that being irreducible in $\C\{x\}[y]$ and $\C\{x,y\}$ is the same
+        thing.
+
+\end{itemize}
 
 \printbibliography
 \end{document}
