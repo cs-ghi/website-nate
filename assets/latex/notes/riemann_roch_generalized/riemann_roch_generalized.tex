@@ -349,6 +349,7 @@
 \newcommand{\Supp}{{\operatorname{Supp}}}
 \newcommand{\Tens}[1]{#1\otimes --}
 \newcommand{\fHom}[1]{\operatorname{Hom}(#1, --)}
+\newcommand{\genus}{{\operatorname{genus}}}
 
 \newcommand{\mSpec}{{\operatorname{mSpec}}}
 
@@ -866,6 +867,129 @@ naturally relates to curvature; this is why it comes up naturally in the Gauss-B
           \item Using this, we can locally normalize, and then use that to globally normalize
          \item Next Griffith looks at intersection numbers and B\'ezout Theorem.
 \end{itemize}
+
+\subsection*{Ramification Divisors and the Riemann-Hurwitz Formula}
+
+Let $\nu_f(p)$ be the order of a point of a holomorphic mapping $f: C \to C'$ between Riemann surfaces. As
+such a map is always surjective if it is non-constant, we have $\nu_f(p) \ge 1$. It ramifies if $\nu_f(p)
+> 1$, and as ramified points are isolated we know that $\set{p \in C}{\nu_f(p) > 1}$ is finite. Thus we have
+the well-defined:
+\index{Ramification Divisor}
+\begin{defn}{Ramification Divisor}{ramificationDiv}
+  The \emph{ramification divisor} of $f$ is :
+  \[
+    R = \sum_{p \in C} (\nu_f(p)-1)p \in\Div(C)
+  \]
+\end{defn}
+
+Recall that if $D = \sum_{p \in C} n_p\cdot p$ is a divisor, $\deg D = \sum_{p \in C} n_p$.
+
+\begin{thm}{Riemann-Hurwitz Formula}{riemann-hurwitzFormula}
+  Let $C,C'$ be compact Riemann surfaces where:
+  \[
+    \genus(C) = g \qquad \text{and} \qquad \genus(C') = g'
+  \]
+  Let $f: C \to C'$ be a nonconstant holomorphic mapping of degree $n$. Let $R$ e the ramificatio ndivisor of
+  $f$. Then:
+  \[
+    \deg R = 2(g+n-ng'-1)
+  \]
+\end{thm}
+
+\begin{Proof}
+  First, we shall use the fact that on any compact Riemann surface , there exists a nontrivial meromorphic
+  differential. This could be intuitively seen by the correspondence between compact Riemann surfaces and
+  curves, and on any curve we have a non-trivial meromorphic differential.
+
+  Hence, choose $\omega \in K^1(C')$, and let $f^*\omega$ be its pullback. Locally we have:
+  \[
+    \omega = z^\nu
+  \]
+  and
+  \[
+    \omega = g(\omega)d\omega
+  \]
+  Hence:
+  \[
+    f^*\omega = \nu g(z^\nu)z^{\nu-1}dz
+  \]
+  and so the order of each point is:
+  \[
+    \nu_{f^*\omega}(p) = \nu_f(p)\nu_\omega(f(p)) + \nu_f(p)-1
+  \]
+  and so the divisor of $(f^*\omega)$ is :
+  \begin{align*}
+    (f^*\omega) &= \sum_p \nu_f(p)\nu_\omega(f(p))p + R\\
+                &= \sum_q \nu_\omega(q) \left(\sum_{f(p) = q} \nu_f(p)p\right) + R\\
+                &= \sum_q \nu_\omega(q)f^{-1}q+R\\
+                &= f^{-1} \left(\sum_q \nu_\omega(q)q\right) + R
+                &= f^{-1}\left((\omega)\right) + R
+  \end{align*}
+  Thus:
+  \[
+    \deg(f^*\omega) = \deg f^{-1}( (\omega)) + \deg R
+  \]
+  Then from the Poincar\'e-Hopf formula:
+  \[
+    \deg(f^*\omega) = 2g -2 \qquad \deg (\omega) = 2g' - 2
+  \]
+  Thus directly computing we get:
+  \begin{align*}
+    \deg f^{-1} ( (\omega)) &= \sum_q \nu_\omega(q) \left(\sum_{f(p) = q} \nu_f(p)\right)\\
+    &= \deg(\omega)\deg f\\
+    (2g'-2)n
+  \end{align*}
+  then substituting we get:
+  \[
+    2g -2 = (2g'-2)n + \deg R
+  \]
+  re-arranging gives our desired result.
+\end{Proof}
+
+From this we can immediately conclude:
+
+\begin{cor}{Holomorhpic Map and Genus}{holomorhpicMapandGenus}
+  Let $f: C \to C'$ be a holomorphic map between genus surfaces of genus $g,g'$.Then if $n\ge 1$:
+  \[
+    g \ge g'
+  \]
+\end{cor}
+
+\begin{Proof}
+  Apply the formula.
+\end{Proof}
+
+\begin{cor}{Compact Riemann Surface As Algebraic Equation}{compRiemannSurfaceAlgEq}
+  Let $C$ be a compact Riemann surface and let
+  \[
+    x,y: C \to \CP^1
+  \]
+  be holomorphic mapping where $\deg x = d$. Then there exists a polynomial equation $f$ such that $f(x,y) =
+  0$.
+\end{cor}
+
+\begin{Proof}
+  \cite[p.94]{a.griffithsIntroductionAlgebraicCurves}
+\end{Proof}
+
+Next, we cover the genus formula.
+
+\begin{thm}{Genus Formula}{genusFormula}
+  Let $C \sse \CP^2$ be an irreducible lgebraic curve of degree $d$ with $\delta$ singular points all being
+  ordinary double points, and let $\sigma: \tilde{C} \to C$ be its normalization where $\genus (\tilde{C})
+  = g$. Then:
+  \[
+    g = \frac{(d-1)(d-2)}{2} - \delta
+  \]
+\end{thm}
+
+\begin{Proof}
+  \cite[p.95]{a.griffithsIntroductionAlgebraicCurves}.
+\end{Proof}
+
+\section{The Riemann-Roch Theorem}\label{sec:RiemannRochThm}
+
+HERE
 
 \printbibliography
 \end{document}
