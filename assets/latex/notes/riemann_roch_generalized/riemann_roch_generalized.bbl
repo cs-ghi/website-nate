@@ -34,42 +34,19 @@
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{abstract}{With an assumption of classical algebraic geometry being covered (up to book 1 of Shafarevich' Basic Algebraic Geometry and Michael Atiyah's Commutative Algebra), this book will hold my Modern Algebraic Geometry Knowledge. The first part is dedicated to the basics: sheaf theory, schemes and their properties, cohomology of quasicoherent sheaves, and partial applications to curves and modules. Further parts shall focus on more specialized topics}
       \field{title}{Everything You Need To Know About Algebraic Geometry}
+      \field{volumes}{1}
       \verb{urlraw}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
       \endverb
       \verb{url}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
       \endverb
-    \endentry
-    \entry{a.griffithsIntroductionAlgebraicCurves}{book}{}
-      \name{author}{1}{}{%
-        {{hash=b1ee7454cc96df7b52971176aa513999}{%
-           family={A.\bibnamedelimi Griffiths},
-           familyi={A\bibinitperiod\bibinitdelim G\bibinitperiod},
-           given={Phillip},
-           giveni={P\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {American Mathematical Society}%
-      }
-      \strng{namehash}{b1ee7454cc96df7b52971176aa513999}
-      \strng{fullhash}{b1ee7454cc96df7b52971176aa513999}
-      \strng{bibnamehash}{b1ee7454cc96df7b52971176aa513999}
-      \strng{authorbibnamehash}{b1ee7454cc96df7b52971176aa513999}
-      \strng{authornamehash}{b1ee7454cc96df7b52971176aa513999}
-      \strng{authorfullhash}{b1ee7454cc96df7b52971176aa513999}
-      \field{sortinit}{V}
-      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{series}{Mathematical Monographs}
-      \field{title}{Introduction to Algebraic Curves}
-      \field{volume}{78}
     \endentry
     \entry{NateComplexAnalysis}{book}{}
       \name{author}{1}{}{%
@@ -86,18 +63,46 @@
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
       \field{extraname}{2}
-      \field{sortinit}{X}
-      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{abstract}{Complex numbers, functions, and Mobius transformations. Complex Differentiation, power series, analytic functions. Complex integration, Meromorphic functions, Residue theorem, and Argument Principle. Holomorphic Function spaces, Montel and Marty's Theorem, Riemann Mapping Theorem. Factorization of Holomorphic Functions and Riemann-zeta function. Elliptic functions and Weiestrass p-function. Riemann surfaces and Harmonic Functions. Higher-dimensional complex differentiation.}
       \field{edition}{1}
       \field{title}{Everything You Need To Know About Complex Analysis}
+      \field{pages}{233}
+      \range{pages}{1}
       \verb{urlraw}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_complex_analysis.pdf
       \endverb
       \verb{url}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_complex_analysis.pdf
       \endverb
+    \endentry
+    \entry{a.griffithsIntroductionAlgebraicCurves}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3af9d163e7683fd184fac8482e37744b}{%
+           family={Griffiths},
+           familyi={G\bibinitperiod},
+           given={Phillip\bibnamedelima A.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{fullhash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{bibnamehash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{authorbibnamehash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{authornamehash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{authorfullhash}{3af9d163e7683fd184fac8482e37744b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Mathematical Monographs}
+      \field{title}{Introduction to Algebraic Curves}
+      \field{volume}{78}
     \endentry
   \enddatalist
 \endrefsection

@@ -99,7 +99,7 @@
 
 \usepackage{csquotes}
 % \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
-\usepackage{biblatex}
+\usepackage[backend=biber]{biblatex}
 
 \addbibresource{bibliography.bib}
 
@@ -338,6 +338,7 @@
 \newcommand{\Tor}{{\operatorname{Tor}}}
 
 \newcommand{\Char}{{\operatorname{char}}}
+\newcommand{\PDiv}{{\operatorname{PDiv}}}
 \newcommand{\Frac}{{\operatorname{Frac}}}
 \newcommand{\Frob}{{\operatorname{Frob}}}
 \newcommand{\Proj}{{\operatorname{Proj}\,}}
@@ -975,7 +976,7 @@ From this we can immediately conclude:
 Next, we cover the genus formula.
 
 \begin{thm}{Genus Formula}{genusFormula}
-  Let $C \sse \CP^2$ be an irreducible lgebraic curve of degree $d$ with $\delta$ singular points all being
+  Let $C \sse \CP^2$ be an irreducible algebraic curve of degree $d$ with $\delta$ singular points all being
   ordinary double points, and let $\sigma: \tilde{C} \to C$ be its normalization where $\genus (\tilde{C})
   = g$. Then:
   \[
@@ -989,7 +990,573 @@ Next, we cover the genus formula.
 
 \section{The Riemann-Roch Theorem}\label{sec:RiemannRochThm}
 
-HERE
+Let $C$ be a compact Riemann surface. Define the divisor to be the formal sum:
+\[
+  D = \sum_i^k n_ip_i \in \Div(C)
+\]
+A divisor is called \emph{effective} if each coefficient  is $\ge 0$. and we write $D\ge 0$. Any divisor can
+be expressedas the difference of two effective divisors. We now define the Riemann-Roch space:
+\[
+  \CL(D) = \set{f \in K(C)}{(f)  \ge -D}
+\]
+That is, $\CL(D)$ contains all $f \in K(C)$ wheter $f$ has a pole of multiplicity at most $n_i$ at $p_i$ if
+$n_i >0$ and a zero of multiplicity at least $|n_i|$ at $p_i$ if $n_i < 0$. We can then dfine:
+\[
+  l(D) = \dim \CL(D)
+\]
+We then define a similar notion for divisors:
+\[
+  K^1(D) = \set{\omega \in K^1(C)}{(\omega) \ge D}
+\]
+where now, if $n_i < 0$ then $\omega$ can have a $p_i$ as a pole of multiplicity at most $|n_i|$ and if $n_i
+> 0$ then $\omega$ must have a $p_i$ as a zero of multiplicity at least $n_i$. Again , $K^19D)$ is a vector
+space and :
+\[
+  \dim K^1(D) = i(D)
+\]
+We shall usually be focusing on effect divisors; $D \ge 0$; in that case we have that $\C \sse \CL(D)$.
+Furthermore, to be more align with the usual differential geometry notation, we shall write $\Omega^1(D)$
+instead of $K^1(D)$. Then for $D \ge 0$, $\omega \in \Omega^1(D)$ means $\omega$ is holomorphic and has a zero
+of appropriate multiplicity at $p_i$ for appropriate points given by $D$.
+
+
+\index{Linearly Equivalent}
+\begin{defn}{Linearly Equivalent}{linlyEquiv}
+  Let $D,E \in \Div(C)$. Then $D$,$E$ are \emph{linearly equivalent} if there exists a $f \in K(C)$ such that
+  \[
+    (f) = D - E
+  \]
+  and we write $D \sim E$.
+\end{defn}
+
+We can also write $D = (f) + E$ for some $(f)$, and hence we are really saying that $D\sim E$ is they
+are equal up to principal divisor. Hence, two divisor are linearly equivalent if they belong to the same coset
+in $\Div(C)/\PDiv(C)$.
+
+\begin{prop}{Dimension and Linear Equivlaence}{dimensionandLinEquivlaence}
+  Let $D,E \in \Div(C)$, $D\sim E$. Then:
+  \[
+    \CL(D)\cong \CL(E) \qquad \Omega^1(D) \cong \Omega^1(E) \qquad \deg D = \deg E
+  \]
+\end{prop}
+
+\begin{Proof}
+  Say $D\sim E$. Then there exists an $f \in K(E)$ such that
+  \[
+    (f) = D-E
+  \]
+  Now pick $g \in CL(D)$ so that $(g) + D \ge 0$. Then:
+  \begin{align*}
+    (fg) + E = (f) + (g) + E = D-E+(g)+E = (g) + D \ge 0
+  \end{align*}
+  Thus, there is a mapping:
+  \[
+    \CL(D) \to \CL(D) \qquad g \mapsto fg
+  \]
+  This mapping is certainly linear, and it is bijective as the inverse is:
+  \[
+    \CL(E) \to \CL(D) \qquad g \mapsto \frac{g}{f}
+  \]
+  Thus, $\C(D) \cong \CL(E)$. Similarly, we certainly get that $\Omega^1(D) \cong \Omega^1(E)$. TO show the
+  degree's are the same, recall that for any $ f\in K(C)$:
+  \[
+    \sum_{p \in C} \nu_p(f) = 0
+  \]
+  Then:
+  \[
+    \sum \nu_p(f) = \deg (f) = \deg D - \deg E
+  \]
+  hence $\deg E = \deg D$, as we sought to show.
+\end{Proof}
+
+\begin{prop}{Brill-Noether Reciprocity}{brill-noetherReciprocity}
+  Let $\omega \in \Omega^1(C)$ and $(\omega) = D+E$. Then:
+  \[
+    \CL(D) \cong \Omega^1(E) \qquad \CL(E) \cong \Omega^1(D)
+  \]
+\end{prop}
+
+\begin{Proof}
+  Let $f \in \CL(D)$ so that $(f) \ge -D$> Then:
+  \[
+    (f\omega) = (f) + (\omega) \ge D +D +E  =E
+  \]
+  THus define:
+  \[
+    \CL(D )> \Omega^1(E) \qquad f \mapsto f\omega
+  \]
+  which is certainly a vector-space homomoprhism with inverse:
+  \[
+    \Omega^1(E) \to \CL(D) \qquad \phi \mapsto \frac{\phi}{\omega}
+  \]
+  showing they are isomorphic. By symmetry, we have the similar isomorphism by swapping $E$ and $D$,
+  completing the proof.
+\end{Proof}
+
+\index{Laurent Principal Part}
+\begin{defn}{Laurent Principal Part}{laurentPrincipalPart}
+  Let $\sum_{i=-n}^\infty a_iz^i$ be a Laurent series. Then its singular part
+  \[
+    \sum_{i=-n}^{-1} a_iz^i
+  \]
+  is the \emph{Laurent principal part}, or just \emph{principal part}. If $a_{-n} \ne 0$, then $N$ is called
+  the order of the Laurent principal part.
+\end{defn}
+
+Now suppose $C$ is a Riemann surface, $D$ an effective divisor. Let $z_i, i = 1,2,..., k$ be local coordiantes
+near $p_i$ and $z_i(p_i) = 0$. The nif for every $p_i$, there e is given a Laurent principal part of order
+$n_i$:
+\[
+  \eta_i = \frac{a_{in_i}}{z_i^{n_i}} + \cdots + \frac{a_{i1}}{z_i}
+\]
+we can ask the following question: under what condition does there exists an $f \in K(C)$  such that in a
+neighbourhood of each $p_i$, $f$ has $\eta_i$ as a Laurent principal part? This is called the
+\emph{Mittag-Leffler problem}, and answering it will allow us to deduce the Riemann-Roch Theorem.
+
+First off, a meromorphic function on a compact Riemann surface $C$ is up to a constant uniquely determined by
+its Laurent principal part, for if $f_1, f_2 \in K(C)$ that have the same Laurent principal part then $f_1
+- f_2$ is holomorphic on $C$, and hence is constant. Thus, we may identify $\CL(D)/\C$ as a subspace of
+$\C^d$, $d =\deg D$, as follows. Fix $D = \sum_i^k n_ip_i \ge 0$, and let $_i$ be s coordinate function
+around $p_i$ where $z_i(p_i) = 0$. Then for $ f\in \CL(D)$, let $\eta_i$ be the principal part at $p_i$. Then
+we know that:
+\[
+  \eta_i  = \frac{a_{in}}{z^{n_i}} + \cdots + \frac{a_i2}{z_i^2} + \frac{a_{i1}}{z_i}
+\]
+where $a_{in_i}, ..., a_{i1} \in \C$. Now let $P_i$ be the $n_i$-dimensional vector space over $\C$ spanned by
+$\{1/z_i^{n_i}, ..., 1/z_i^2, 1/z\}$. Then we have the injective vector-space homomorphism:
+\[
+  \frac{\CL(D)}{\C} \to P_1\oplus \cdots P_k \qquad [f] \mapsto (\eta_1, ..., \eta_k)
+\]
+Then by identifying each $P_i$ with $\C^{n_i}$, we get that this space is a subspace of  $\C^d$. Note that
+surjectivity is not so obvious or even necessary because we don't know if these maps are compatible (ex. the
+gluing conditions can impose restrictions).
+
+
+\subsection{Dimension of $\Omega^1(C)$}\label{sec:dimOfDiffFormsOfDiv}
+
+The goal is to show the following:
+
+\begin{thm}{Dimension of Differential Forms}{dimOfDiffForms}
+  Let $C$ be a compact Riemann surface of genus $g$. Then:
+  \[
+    \dim \Omega^1(C) = g
+  \]
+\end{thm}
+
+Note that this is easy in the case where $g = 0$, this is the Riemann sphere and we showed that the only
+holomorphic differential forms on the Riemann sphere are constant. The proof will proceed in two parts:
+
+\begin{prop}{Dimension of Differential Form: I}{dimOfDiffFormI}
+  Let $C$ be a compact Riemann surface of genus $g$. Then:
+  \[
+    \dim \Omega^1(C) \ge g
+  \]
+\end{prop}
+
+The key idea is that we can ``embed'' the space of homogeneous functions of the right degree (minus the
+singularities) into $\Omega^1(C)$ by essentially taking it's differential with a bit of normalization.
+
+\begin{Proof}
+  First, by normalization, for a compact Riemann surface $C$, there exits a holomorphic mapping $\pi: C \to
+  \P^2$ such that $C' = \pi(C)$ is an irreducible algebraic curve of degree $d$ in $\P^2$ possessing $\delta$
+  ordinary double points, say $p_1, ..., p_\delta$, and no other singular points.
+  Then if $d = 1$ or $d = 2$, then by the genus formula $g= 0$. Thus we
+  shall assume $d \ge 3$.
+
+  Now suppose $C$ is mapped holomorphically onto $\P^2$. We may apply a transformation of coordinates so that
+  $C'$ is not argent to the lint at infinity $L_\infty$ in $\P^2$,  that $L_\infty$ doe snot pass through  the
+  point s $p_1, ..., p_\delta$, and that $C'$ does not pass through $[0:0:1]$ (so the origin, $(0,0)$).
+  Indeed, these conditions can be guaranteed due to the following. We can guarantee that $C'$ and $L_\infty$
+  for we can always find a linear transformation so that $C'$ intersects a line at $d$ distinct points. Taking
+  this line to be $L_\infty$, suppose $C'$ and $L_\infty$ are tangent. Then at the point of tangency, their
+  intersection number would be $2$,and so we get by B\'ezout that $(C'\cdot L_\infty) \ge d+1$, a contradiction.
+  We can then do a similar reasoning to guarantee $L-\infty$ does not pass through $p_1, ..., p_\delta$.
+  Finally, for the $[0:0:1]$ condition, take a point which is on $L_\infty$ but not on $C'$, and apply
+  a transformation so that the point becomes $[0:0:1]$. Then we got our desired coordiantes.
+
+  We can now write out our affine equation for $C'$ such that $f(x,y) = 0$. Let $\Gamma = p_1 + \cdots
+  + p_\delta$, and let $S^{d-3}$ represent the set of homogeneous polynomials with complex coefficients of
+  degree $d-3$ in three variables. Let:
+  \[
+    S^{d-3}(-\Gamma) = \set{G(\zeta^0, \zeta^1, \zeta^2) \in S^{d-3}}{G(p_i) = 0,\ \forall i  =1,2, ...,
+    \delta}
+  \]
+  Note that by some counting arguments we get:
+  \[
+    \dim s^{d-3} = \frac{(d-1)(d-2)}{2}
+  \]
+  On the other hand, as the collection of polynomials that vanish at $p_i$ is equivalent to the fact that the
+  coefficients of this polynomial satisfy a linear equation, we get:
+  \[
+    \dim S^{d-3}(-\Gamma) \ge \frac{(d-1)(d-2)}{2}-\delta \overset{!}{=} g
+  \]
+  where $\overset{!}{=}$ comes form the genus formula, \cref{th:genusFormula}. Thus, if we show there is an
+  injective homomorphism from $S^{d-3}(-\Gamma)$ into $\Omega^1(C)$, we have that:
+  \[
+    \dim \Gamma^1(C) \ge \dim S^{d-3}(-\Gamma) = g
+  \]
+  To that end, for any $G \in S^{d-3}(-\Gamma)$. We need to find a form $\omega_G \in \Omega^1(C)$ for it to
+  map to. What we will do is find a pullback of a form $\alpha$ along $\pi$. Let $g(x,y) = G(1,x,y)$, $U_0 =
+  \{[1,x,y] \in \P^2\}$ and $U_1 = \{[u,1,v]\in \P^2\}$. Define the following:
+  \[
+    \alpha_g = \begin{cases}
+      \left.\frac{g(x,y)dx}{\frac{\partial f(x,y)}{\partial y}}\right|_{C'}, & \text{on } C' \cap U_0, \text{ when
+        } \left.\frac{\partial f(x,y)}{\partial y}\right|_{C'} \neq 0 \\[8pt]
+      \left.-\frac{g(x,y)dy}{\frac{\partial f(x,y)}{\partial x}}\right|_{C'}, & \text{on } C' \cap U_0 \text{ when
+        } \left.\frac{\partial f(x,y)}{\partial y}\right|_{C'} = 0 \\[8pt]
+      \left.-\frac{g\left(\frac{1}{u}, \frac{v}{u}\right) \frac{dv}{u^2}}{\frac{\partial f}{\partial
+        y}\left(\frac{1}{u}, \frac{v}{u}\right)}\right|_{C'}, & \text{on } C' \cap U_1
+    \end{cases}
+  \]
+  where $\frac{\partial f}{\partial y}(1/u, v/u)$ is the value of $\frac{\partial f}{\partial y}$ at $(1/u,
+  v/u)$. As $C'$ doe not has through the point $[0,0,1]$, $\alpha$ is defined over all of $C'$. It is in fact
+  uniquely defined. Indeed, inside $U_0$ the affine equation is $f(x,y) = 0$ and thus on $C'$:
+  \[
+    \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy = 0
+  \]
+  and thus:
+  \[
+    \left.\frac{dx}{\frac{\partial f(x,y)}{\partial y}}\right|_{C'} = \left. -\frac{dy}{\frac{\partial
+        f(x,y)}{\partial x}}\right|_{C'}
+  \]
+  Thus, we have the linear homomorphism:
+  \[
+    S^{d-3}(-\Gamma) \to K^1(C) \qquad G \mapsto \omega_G = \pi^*(\alpha_g)
+  \]
+  Note this map is injective since if $\omega_G = 0$, then $C'$ is contained in the curve $g(x,h) = 0$, but
+  this is impossible since $\deg G = d-3$. We must prove that $\omega_G$ is indeed holomorphic, and hence it
+  maps into $\Omega^1(C)$, which shall complete the proof.
+
+  To that end, we must that there are no poles. If a point 4p$ of 4\omega_G$ on $\pi^{-1}(C'\cap U_0)$ can
+    become a pole of $\omega_G$, then:
+    \[
+      \left. \frac{\partial f(x,y)}{\partial y}\right|_{p'} = \left.\frac{\partial f(x,y)}{\partial x}\right|_{p'}
+        = 0
+    \]
+    where $p' = \pi(p)$. Then $p'$ is a double point of $C'$, so $p' \in \Gamma$, so
+    \[
+      g(x,y)|_{p'} = 0
+    \]
+    But $p'$ is a second-order zero of $F$, and hence a first order zero of $\partial f/\partial x$, so:
+    \[
+      \alpha|_{p'} = \left.-\frac{g(x,y)dy}{\frac{\partial f(x,y)}{\partial x}}\right|_{C'} \ne \infty
+    \]
+    hence $\omega_G$ is holomorphic at $p$.
+
+    Now consider $\omega_G$ on $\pi^{-1}(C'\cap L_\infty)$. Then by definition of $\alpha$:
+    \[
+      \alpha = - \left.\frac{u^{d-3}g \left(\frac{1}{u}, \frac{v}{u}\right)du}{u^{d-1} \frac{\partial f}{\partial y}
+      \left(\frac{1}{u}, \frac{v}{u}\right)}\right|_{C'}
+    \]
+    to simplify notation, denote the denominator as $h(u,v)$. Then we must show $h(u,v) \ne 0$ on $C'\cap
+    L_\infty$. To see this, note that the equation of $C'$ on $U_1$ is
+    \[
+      k(u,v) = u^d f \left(\frac{1}{u}, \frac{v}{u}\right) = 0
+    \]
+    And notice:
+    \[
+      \frac{\partial k(u,v)}{\partial v} = u^d \frac{\partial f}{\partial u} \left( \frac{1}{u},
+      \frac{v}{u}\right) \cdot \frac{1}{u} = h(u,v)
+    \]
+    With this setup, suppose $p' \in C' \cap L_\infty$ such that
+    \[
+      h(u,v)|_{p'} = 0
+    \]
+    Then since $p'$ is not a double point of $C'$, it must be that :
+    \[
+      \left.\frac{\partial k(,uv)}{\partial u}\right|_{p'} \ne 0
+    \]
+    Since $p' \in L_\infty$, the coordinates of $p'$ must be of the form $[0,1,v]$. then we can write the
+    tangent line to $C'$ at $p'$ as :
+    \[
+      \left.\frac{\partial k(u,v)}{\partial u}\right||_{p'}(u-0) = 0
+    \]
+    But then the tangent line is simply $L_\infty$, which contradicts our choice of coordinates, hence no such
+    point exits, and $\omega_G$ is holomorphic, as we sought to show.
+\end{Proof}
+
+Let us now show the other direction of $\dim \Omega^1(C) \le g$. This direction shall require some
+differential geometry reasoning.
+
+Let $C$ be a compact Riemann surface of genus $g$ with $\gamma_1, \gamma_2, ..., \gamma_{2g-1}, \gamma_{2g}$
+framing a $\Z$-basis of the homology group $H_1(C, \Z)$. Then if $\gamma$ is a closed curve on $C$,
+\[
+  \gamma = \sum_{i=1}^{2g} n_i\gamma_i + \partial \Omega
+\]
+where $\Omega$ is a region on $C$. Let $[\gamma]$ represent the homology class containing $\gamma$.
+
+
+\begin{prop}{Natural Dual of Homology Group}{HomGrpNaturalDual}
+  Let $\gamma$ be a closed differential one-form on $C$. Then the mapping:
+  \[
+    \eta_\lambda: H_1(C, \Z) \to \C \qquad [\gamma] \mapsto \int_\gamma \lambda
+  \]
+  is well-defined
+\end{prop}
+
+\begin{Proof}
+  The key is that $\gamma$ is closed. If $`g'$ is homologous to $\gamma$< then $\gamma-\gamma' = \partial
+  \Omega$ where $\Omega$ is a region on $C$. By stokes theorem
+  \[
+    \eta_\lambda(\gamma) - \eta_\lambda(\gamma') = \int_{\gamma-\gamma'} \lambda = \int_{\partial\Omega}
+    \lambda = \iint_{\Omega} d\lambda = 0
+  \]
+\end{Proof}
+
+\begin{prop}{Exactness}{exactness}
+  Let $\lambda$ be a closed differential one-form on $C$. Then if for all $i$,
+  \[
+    \int_{\gamma_i}\lambda = 0
+  \]
+  then $\lambda$ is exact.
+\end{prop}
+
+\begin{Proof}
+  We must find $f$ such that $d f = \lambda$. Let $p_0 \in C$ be some fixed point. Then for any point $p \in
+  C$, choose a path $\gamma$ from $p_0$ to $p$ and define:
+  \[
+    f(p)  = \int_\gamma \lambda
+  \]
+  If this is well-defined, this is the function we need. Indeed, if $\gamma'$ is another path from $p_0$ to
+  $p$< then $\gamma -  \gamma'$ is a closed curve on $C$, and hence:
+  \[
+    \gamma - \gamma' = \sum_i^{2g}n_i\gamma_i + \partial \Omega
+  \]
+  where $ni \in \Z$ and $\Omega$ is a region on $C$. Then as:
+  \[
+    \int_{\gamma_i} \lambda  =0 \qquad \forall i = 1, ..., 2g
+  \]
+  and
+  \[
+    \int_{\partial \Omega} \lambda = \iint_\Omega d\lambda = 0
+  \]
+  we get:
+  \[
+    \int_\gamma \lambda = \int_{\gamma'} \lambda
+  \]
+  Thus, $f$ is a well-defined smooth function on $C$, and by the FTA we get $d f  = \lambda$,  as we sought to
+  show.
+\end{Proof}
+
+\begin{prop}{Cauchy Riemann For Differential Forms}{cuachRiemannDiffForms}
+  Let $C$ be a compact Riemann surface, and $\omega, \phi \in \Omega^{1}(C)$. Then if:
+  \[
+    \omega + \overline{\phi} = d f
+  \]
+  then
+  \[
+    \omega = \phi = 0
+  \]
+\end{prop}
+
+\begin{Proof}
+  Let $\omega = h(z) dz$ and $\phi = g(z) dz$. Then as $C$ is one-dimensional:
+  \[
+    \omega \wedge  \phi = 0
+  \]
+  and
+  \[
+    \frac{i}{2} \phi \wedge  \overline{\phi} = |g(z)|^2 \frac{i}{2} dz \wedge  d \overline{z}
+    = |g(z)|^2 du \wedge  dv
+  \]
+  We shall show $\phi = 0$. For the sake of contradiction suppose $\phi \ne 0$. Then:
+  \[
+    \frac{/i}{2} \iint_C \phi \wedge  \overline{\phi} = \iint_C |g(z)|^2 du \wedge dv  >0
+  \]
+  But then:
+  \[
+    \phi \wedge  \overline{\phi} = \phi \wedge  \omega + \phi \wedge  \overline{\phi} = \phi \wedge  (\omega
+    + \overline{\phi} = \phi \wedge  df
+  \]
+  If we show $\iint_C \phi \wedge  df = 0$, we are done. Indeed, notice that:
+  \[
+    d(f\phi) = df \wedge  \phi + f \wedge  d\phi
+  \]
+  As $\phi \in \Omega^1(C)$, $g$ is holomorphic, and so:
+  \[
+    \frac{\partial g}{\partial \overline{z}} = 0
+  \]
+  Thus:
+  \begin{align*}
+   d\phi = d(gdz) = dg \wedge  dz\\
+   &= \left(\frac{\partial g}{\partial z}dz + \frac{\partial g}{\partial \overline{z}}d \overline{z}\right)
+   \wedge  dz = 0
+  \end{align*}
+  Hence:
+  \[
+    \phi \wedge  df = -df  \wedge  \phi = -d(f\phi)
+  \]
+  Note that $f\phi$ is a differential one-form, so:
+  \[
+    \iint_C d(f\phi) = 0
+  \]
+  But then:
+  \[
+    \iint_C \phi \wedge  df = - \iint_C d(f\phi) = 0
+  \]
+  By a similar argument $\omega =0$, completing the proof.
+\end{Proof}
+
+\begin{prop}{Dimension of Differential Form: II}{dimOfDiffFormII}
+  Let $C$ be a compact Riemann surface of genus $g$. Then:
+  \[
+    \dim \Omega^1(C) \le g
+  \]
+\end{prop}
+
+\begin{Proof}
+  For the sake of contradiction suppose $\dim \Omega^1(C) \ge g+1$ so that there are $g+1$ elements
+  $\omega_1, ..., \omega_{g+1} \in \Omega^1(C)$ that are $\C$-linearly independent. Take the equations:
+  \[
+    \int_{\gamma_i} \sum_{j=1}^{g+1} (\lambda^j\omega_j + \eta^j \overline{\omega}_j) = 0 \qquad
+    i=1,2,..., 2g
+  \]
+  where each $\gamma_i$ is given by choosing a $\Z$-basis for $H_1(C, \Z)$. By  treating
+  $\lambda^1, ..., \lambda^{g+1}, \eta^1 ..., \eta^{g+1}$, then the above is $2g$ linear equations with
+  $2g+2$ unknowns.s This system must then have a trivial solutions, suppose $\lambda_0^1, ...,
+  \lambda_0^{g+1}, \eta_0^1, ..., \eta_0^{g+1}$ i as solution. Then choosing:
+  \[
+    \omega = \sum_{j=1}^{g+1} \lambda_0^j\omega_j \in \Omega^1(C) \qquad \phi = \sum_{j=1}^{g+1}
+    \overline{\eta_0^j}\omega_j \in \Omega^1(C)
+  \]
+  then for all $i = 1,2,..., 2g$:
+  \[
+    k\int_{\gamma_i} (\omega  +\overline{\phi}) = \int_{\gamma_i} \sum_{j=1}^{g+1}
+    (\lambda_0^j \overline{\omega}_j + \eta_0^j \omega_j) = 0
+  \]
+  This implies it is exact, hence there exists a $C^\infty$ function $f$ such that
+  \[
+    \omega + \overline{\phi} = df
+  \]
+  But then by~\cref{pr:cuachRiemannDiffForms} $\omega = \phi = 0$. But then as $\lambda_0^1, ...,
+  \lambda_0^{g+1}, \eta_0^1, ..., \eta_0^{g+1}$ is a non-trivial solution so that they are not all$0$,
+  this contradicts the linear independence of $\omega_1, ..., \omega_{g+1}$, as we sought to
+  show.
+\end{Proof}
+
+\begin{thm}{Dimension of Differential Forms}{dimensionofDifferentialForms}
+  Let $C$ be a compact Riemann surface of genus $g$. Then:
+  \[
+    \dim \Omega^1(C) = g
+  \]
+\end{thm}
+
+\begin{Proof}
+  combine~\cref{pr:dimOfDiffFormI} and \cref{pr:dimOfDiffFormII}.
+\end{Proof}
+
+
+\subsection{Two Important Theorems}
+
+Really interesting and I will get back to this
+
+
+\subsection{Riemann Inequality}
+
+\begin{thm}{Riemann Inequality}{riemannInequality}
+  Let $C$ be a compact Riemann surface of genus $g$, $D \in \Div(C)$, and $\deg D = d$. Then;
+  \[
+    l(D) \ge d-g+1
+  \]
+\end{thm}
+
+\begin{Proof}
+  Like before, let us link Riemann surfaces to curves to get the required context. Let
+  \[
+    \pi: C \to C' \sse \CP^2
+  \]
+  be the normalization map with $\delta$ ordinary double points $p_1, ..., p_\delta$. Griffith's offers the
+  following visualization:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/Normalization_by_Griffiths.png}
+  \caption{normalizatoin}
+  \label{fig:normalization_by_griffiths}
+\end{figure}
+  Let $\pi{-1}(p_i) = p_i' + p_i''$. Then let:
+  \[
+    \Delta = \sum_{i=1}^\delta (p_i' + p_i'') \in \Div(C)
+  \]
+  Then by a change of coordinates in $\CP^2$, without loss of generality we may assume neither $\pi(D)$ nor
+  $\pi(\Delta)$ contain the point at infinity (like in the above figure). Now, let $C'$ be given by the
+  equation $F(\xi^0, \xi^1, \xi^2) = 0$, $\deg F = m$. Let $D = D'-D''$ where $D', D'' \ge 0$ and let
+  \[
+    \deg D' = d' \qquad \deg D'' = d''
+  \]
+  Let $S^n$ be the vector-space of complex homogeneous polynomials in three variables of degree $n$. Then:
+  \[
+    \dim S^n = \frac{1}{2} (n+1)(n+2)
+  \]
+  Now let's consider a polynomial $G(\xi^0, \xi^1, \xi^2) \in S^n$ satisfying:
+  \begin{enumerate}
+    \item $F\nmid G$
+    \item $G\cdot C \ge D' + \Delta$ where $G\cdot C = (\pi^*(G(\xi^0, \xi^1, \xi^2)))$ (that is, the divisor
+      induced by the zeros of $\pi^*(G)$ on $C$). Not that $G\cdot C \in \Div(C)$.
+  \end{enumerate}
+  We shall elaborate why we would want such a polynomial, then show such a polynomial exists.
+
+  \textcolor{red}{finish off, \cite[p.113]{a.griffithsIntroductionAlgebraicCurves}}
+\end{Proof}
+
+\begin{cor}{Comparing Degree and Genus}{comparingDegAndGenus}
+  If $d \ge g$, then
+  \[
+    l(D) \ne 0
+  \]
+  Hence if $l(D) = 0$, then:
+  \[
+    d \le g-1
+  \]
+\end{cor}
+
+\begin{Proof}
+  immediate
+\end{Proof}
+
+\begin{prop}{Meromorphic Differentials and Riemann Inequality}{meromorphicDifferentialsandRiemannInequality}
+  \[
+    i(D) \ge g-d-1
+  \]
+\end{prop}
+
+\begin{Proof}
+  Let $F,m,D', D'', d', d''$, and $\Delta$ be as in~\cref{th:riemannInequality}. \textcolor{red}{finish here}.
+\end{Proof}
+
+\begin{cor}{Comparing Degree and Genus -- Meromorphic Differential}{compDegAndGenusMeromorphicDiff}
+  If $d \le g-2$, then $i(D) \ne 0$, hence if $i(D) = 0$ then
+  \[
+    d \ge g-1
+  \]
+\end{cor}
+
+\begin{Proof}
+  immediate
+\end{Proof}
+
+Finally this leads us to:
+
+\begin{thm}{Riemann-Roch Theorem}{riemann-rochthm}
+  Let $C$ be a compact Riemann surface of genus $g$ and :
+  \[
+    D = \sum_{i=1}^k n_ip_i \in \Div(C)
+  \]
+  Then:
+  \[
+    l(D) = d-g+i(D) +1
+  \]
+\end{thm}
+
+\begin{Proof}
+  \textcolor{red}{see \cite[p.118]{a.griffithsIntroductionAlgebraicCurves}}
+\end{Proof}
+
+(then do the exercises for $C = \P^1$ direct prove, and the elliptic curve exercise)
+
+
+
+
 
 \printbibliography
 \end{document}
