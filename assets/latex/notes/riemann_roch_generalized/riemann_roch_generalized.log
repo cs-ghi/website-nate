@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  14 JUL 2025 17:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  15 JUL 2025 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1359,7 +1359,7 @@ Package biblatex Info: ... and expl3
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
 \c@tcb@cnt@thm=\count578
-Package hyperref Info: Option `colorlinks' set `true' on input line 628.
+Package hyperref Info: Option `colorlinks' set `true' on input line 630.
 \@indexfile=\write6
 \openout6 = `riemann_roch_generalized.idx'.
 
@@ -1370,24 +1370,24 @@ Package csquotes Info: ... none found.
 (./riemann_roch_generalized.aux)
 \openout1 = `riemann_roch_generalized.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 641.
-LaTeX Font Info:    ... okay on input line 641.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 643.
+LaTeX Font Info:    ... okay on input line 643.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1443,7 +1443,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@lstlisting=\count585
-Package hyperref Info: Link coloring ON on input line 641.
+Package hyperref Info: Link coloring ON on input line 643.
  (./riemann_roch_generalized.out) (./riemann_roch_generalized.out)
 \@outlinefile=\write7
 \openout7 = `riemann_roch_generalized.out'.
@@ -1473,27 +1473,27 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'riemann_roch_generalized.bbl' found.
  (./riemann_roch_generalized.bbl)
-Package biblatex Info: Reference section=0 on input line 641.
-Package biblatex Info: Reference segment=0 on input line 641.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 646.
+Package biblatex Info: Reference section=0 on input line 643.
+Package biblatex Info: Reference segment=0 on input line 643.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 648.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 646.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 648.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 646.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 648.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 646.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 648.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (16.46422pt too wide) in paragraph at lines 725--725
+Overfull \hbox (16.46422pt too wide) in paragraph at lines 727--727
 [] 
  []
 
@@ -1501,29 +1501,29 @@ Overfull \hbox (16.46422pt too wide) in paragraph at lines 725--725
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.793 ...begin{defn}{Normalization}{normalization}
+l.795 ...begin{defn}{Normalization}{normalization}
                                                    [3
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.807         \end{defn}
+l.809         \end{defn}
                         ]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.809 ...e, then Biholomorphic}{densInjThenBiholo}
+l.811 ...e, then Biholomorphic}{densInjThenBiholo}
                                                   
-Overfull \hbox (16.46422pt too wide) in paragraph at lines 820--820
+Overfull \hbox (16.46422pt too wide) in paragraph at lines 822--822
 [] 
  []
 
 
-Overfull \hbox (16.46422pt too wide) in paragraph at lines 829--829
+Overfull \hbox (16.46422pt too wide) in paragraph at lines 831--831
 [] 
  []
 
 [4]
-Overfull \hbox (16.46422pt too wide) in paragraph at lines 858--858
+Overfull \hbox (16.46422pt too wide) in paragraph at lines 860--860
 [] 
  []
 
@@ -1531,94 +1531,109 @@ Overfull \hbox (16.46422pt too wide) in paragraph at lines 858--858
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1024 ...n{defn}{Linearly Equivalent}{linlyEquiv}
+l.1026 ...n{defn}{Linearly Equivalent}{linlyEquiv}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1036 ...Equivlaence}{dimensionandLinEquivlaence}
+l.1038 ...Equivlaence}{dimensionandLinEquivlaence}
                                                    [8]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1072 ...r Reciprocity}{brill-noetherReciprocity}
+l.1074 ...r Reciprocity}{brill-noetherReciprocity}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1097 ...nt Principal Part}{laurentPrincipalPart}
+l.1099 ...nt Principal Part}{laurentPrincipalPart}
                                                    [9]
-Overfull \hbox (36.92572pt too wide) in paragraph at lines 1124--1127
+Overfull \hbox (36.92572pt too wide) in paragraph at lines 1126--1129
 \OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 a[]; :::; a[] \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 C$\OT1/cmr/m/n/10 . Now let $\OML/cmm/m/it/10 P[]$ \OT1/cmr/m/n/10 be the $\OML/cmm/m/it/10 n[]$\OT1/cmr/m/n/10 -dimensional vec-tor space over $\U/msb/m/n/10 C$ \OT1/cmr/m/n/10 spanned by $\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =z[]; :::; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =z[]; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =z\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 .
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1135.
+(hyperref)                removing `math shift' on input line 1137.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 1135.
+(hyperref)                removing `\Omega' on input line 1137.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1135.
+(hyperref)                removing `superscript' on input line 1137.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1135.
+(hyperref)                removing `math shift' on input line 1137.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1139 ...n of Differential Forms}{dimOfDiffForms}
+l.1141 ...n of Differential Forms}{dimOfDiffForms}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1149 ...of Differential Form: I}{dimOfDiffFormI}
+l.1151 ...of Differential Form: I}{dimOfDiffFormI}
                                                    [10] [11] [12]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1289 ...al of Homology Group}{HomGrpNaturalDual}
+l.1291 ...al of Homology Group}{HomGrpNaturalDual}
                                                    [13]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1306 \begin{prop}{Exactness}{exactness}
+l.1308 \begin{prop}{Exactness}{exactness}
                                          
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1341 ...fferential Forms}{cuachRiemannDiffForms}
-                                                   [14] [15] [16]
-<images/Normalization_by_Griffiths.png, id=187, 2564.58125pt x 1234.6125pt>
+l.1343 ...fferential Forms}{cuachRiemannDiffForms}
+                                                   [14] [15] [16] [17]
+<images/Normalization_by_Griffiths.png, id=211, 2564.58125pt x 1234.6125pt>
 File: images/Normalization_by_Griffiths.png Graphic file (type png)
 <use images/Normalization_by_Griffiths.png>
-Package pdftex.def Info: images/Normalization_by_Griffiths.png  used on input line 1473.
+Package pdftex.def Info: images/Normalization_by_Griffiths.png  used on input line 1558.
 (pdftex.def)             Requested size: 330.96376pt x 159.31842pt.
- [17 <./images/Normalization_by_Griffiths.png>] [18] [19] (./riemann_roch_generalized.aux)
+ [18] [19 <./images/Normalization_by_Griffiths.png>] [20] [21] [22]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1789 ...nus 0 then Rational}{genus0thenRational}
+                                                   [23]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1823 ...ion Representation}{genus1WeierstassEqn}
+                                                   [24] [25] [26] (./riemann_roch_generalized.ind [27] [28
+
+
+]) [29
+
+] (./riemann_roch_generalized.aux)
 Package rerunfilecheck Info: File `riemann_roch_generalized.out' has not changed.
-(rerunfilecheck)             Checksum: 1F7230CFB976FA097B1BDD573F44C193;941.
+(rerunfilecheck)             Checksum: 95685B06F4E5BEC34B566C6E6C92A996;1358.
 Package logreq Info: Writing requests to 'riemann_roch_generalized.run.xml'.
 \openout1 = `riemann_roch_generalized.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55910 strings out of 476025
- 1288773 string characters out of 5790017
- 2204814 words of memory out of 5000000
- 75372 multiletter control sequences out of 15000+600000
+ 55970 strings out of 476025
+ 1289709 string characters out of 5790017
+ 2213406 words of memory out of 5000000
+ 75409 multiletter control sequences out of 15000+600000
  524623 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,12n,110p,741b,1784s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on riemann_roch_generalized.pdf (19 pages, 1243551 bytes).
+ 101i,13n,110p,741b,1757s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
+Output written on riemann_roch_generalized.pdf (29 pages, 1284321 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 210 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 413 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 

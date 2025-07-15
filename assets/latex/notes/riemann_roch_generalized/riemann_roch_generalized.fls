@@ -1905,6 +1905,10 @@ INPUT ./images/Normalization_by_Griffiths.png
 INPUT images/Normalization_by_Griffiths.png
 INPUT ./images/Normalization_by_Griffiths.png
 INPUT ./images/Normalization_by_Griffiths.png
+INPUT ./riemann_roch_generalized.ind
+INPUT riemann_roch_generalized.ind
+INPUT ./riemann_roch_generalized.ind
+INPUT riemann_roch_generalized.ind
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT riemann_roch_generalized.aux
@@ -1933,5 +1937,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb

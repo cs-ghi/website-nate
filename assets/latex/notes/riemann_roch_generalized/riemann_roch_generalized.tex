@@ -273,6 +273,7 @@
 \newcommand{\Nm}{{\operatorname{Nm}}}
 \newcommand{\SL}{{\operatorname{SL}}}
 \newcommand{\Pf}{{\operatorname{Pf}}}
+\newcommand{\DR}{{\operatorname{DR}}}
 
 \renewcommand{\Re}{{\operatorname{Re}}}
 \renewcommand{\Im}{{\operatorname{Im}}}
@@ -340,6 +341,7 @@
 \newcommand{\Char}{{\operatorname{char}}}
 \newcommand{\PDiv}{{\operatorname{PDiv}}}
 \newcommand{\Frac}{{\operatorname{Frac}}}
+\newcommand{\Rank}{{\operatorname{Rank}}}
 \newcommand{\Frob}{{\operatorname{Frob}}}
 \newcommand{\Proj}{{\operatorname{Proj}\,}}
 \newcommand{\RMod}{{}_R\operatorname{Mod}}
@@ -1009,7 +1011,7 @@ We then define a similar notion for divisors:
   K^1(D) = \set{\omega \in K^1(C)}{(\omega) \ge D}
 \]
 where now, if $n_i < 0$ then $\omega$ can have a $p_i$ as a pole of multiplicity at most $|n_i|$ and if $n_i
-> 0$ then $\omega$ must have a $p_i$ as a zero of multiplicity at least $n_i$. Again , $K^19D)$ is a vector
+> 0$ then $\omega$ must have a $p_i$ as a zero of multiplicity at least $n_i$. Again , $K^1(D)$ is a vector
 space and :
 \[
   \dim K^1(D) = i(D)
@@ -1081,11 +1083,11 @@ in $\Div(C)/\PDiv(C)$.
   \[
     (f\omega) = (f) + (\omega) \ge D +D +E  =E
   \]
-  THus define:
+  Thus define:
   \[
     \CL(D )> \Omega^1(E) \qquad f \mapsto f\omega
   \]
-  which is certainly a vector-space homomoprhism with inverse:
+  which is certainly a vector-space homomorphism with inverse:
   \[
     \Omega^1(E) \to \CL(D) \qquad \phi \mapsto \frac{\phi}{\omega}
   \]
@@ -1103,8 +1105,8 @@ in $\Div(C)/\PDiv(C)$.
   the order of the Laurent principal part.
 \end{defn}
 
-Now suppose $C$ is a Riemann surface, $D$ an effective divisor. Let $z_i, i = 1,2,..., k$ be local coordiantes
-near $p_i$ and $z_i(p_i) = 0$. The nif for every $p_i$, there e is given a Laurent principal part of order
+Now suppose $C$ is a Riemann surface, $D$ an effective divisor. Let $z_i, i = 1,2,..., k$ be local coordinates
+near $p_i$ and $z_i(p_i) = 0$. Then if for every $p_i$, there e is given a Laurent principal part of order
 $n_i$:
 \[
   \eta_i = \frac{a_{in_i}}{z_i^{n_i}} + \cdots + \frac{a_{i1}}{z_i}
@@ -1172,7 +1174,7 @@ singularities) into $\Omega^1(C)$ by essentially taking it's differential with a
   intersection number would be $2$,and so we get by B\'ezout that $(C'\cdot L_\infty) \ge d+1$, a contradiction.
   We can then do a similar reasoning to guarantee $L-\infty$ does not pass through $p_1, ..., p_\delta$.
   Finally, for the $[0:0:1]$ condition, take a point which is on $L_\infty$ but not on $C'$, and apply
-  a transformation so that the point becomes $[0:0:1]$. Then we got our desired coordiantes.
+  a transformation so that the point becomes $[0:0:1]$. Then we got our desired coordinates.
 
   We can now write out our affine equation for $C'$ such that $f(x,y) = 0$. Let $\Gamma = p_1 + \cdots
   + p_\delta$, and let $S^{d-3}$ represent the set of homogeneous polynomials with complex coefficients of
@@ -1266,7 +1268,7 @@ singularities) into $\Omega^1(C)$ by essentially taking it's differential with a
     \[
       \left.\frac{\partial k(,uv)}{\partial u}\right|_{p'} \ne 0
     \]
-    Since $p' \in L_\infty$, the coordinates of $p'$ must be of the form $[0,1,v]$. then we can write the
+    Since $p' \in L_\infty$, the coordinates of $p'$ must be of the form $[0,1,v]$. Then we can write the
     tangent line to $C'$ at $p'$ as :
     \[
       \left.\frac{\partial k(u,v)}{\partial u}\right||_{p'}(u-0) = 0
@@ -1448,7 +1450,88 @@ where $\Omega$ is a region on $C$. Let $[\gamma]$ represent the homology class c
 
 \subsection{Two Important Theorems}
 
-Really interesting and I will get back to this
+Let $H_1(C, \Z)$ be the collection of closed forms of a genus $g$ Riemann surface. It will have a basis
+spanned by $2g$ elements. We have a natural dual definition:
+
+\index{1st Cohomology Group}
+\begin{defn}{1st Cohomology Group}{1stCohomGrp}
+  Let $C$ be a compact Riemann surface. Then the first cohomology group of $C$ is:
+  \[
+    H^1(C, \C) = \Hom_\C(H-1(C, \Z), \C)
+  \]
+\end{defn}
+Then we saw in~\cref{pr:HomGrpNaturalDual} that we have a map:
+\begin{gather*}
+  \eta: \{\text{closed differential one-forms on $C$}\} \to H^1(C, \C) \\
+  \lambda \mapsto \eta_\lambda
+\end{gather*}
+and furthermore this map is injective by~\cref{pr:exactness}. Let $H_\DR(C)$ be the equivalence classes of
+closed one forms mod exact one forms. Then by~\cref{pr:exactness}, we have in fact that the above $\eta$ is
+a map from $H_\DR(C) \hookrightarrow H^1(C, \C)$. Then, by the ``Hodge'' condition, we have that:
+\begin{gather*}
+  \Omega^1(C) \oplus \overline{\Omega^1(C)}\hookrightarrow H_\DR(C)\\
+  \omega \oplus \overline{\phi} \mapsto \omega + \overline{\phi}
+\end{gather*}
+
+is also injective. We thus get a triple of injective maps:
+\[
+  \Omega^1(C) \oplus \overline{\Omega^1(C)}\hookrightarrow H_\DR(C) \hookrightarrow H^1(C, \C)
+\]
+Note that the vector spaces on both ends are $2g$, and hence all these spaces are isomorphic!The first
+isomorphism is a special case of the \emph{Hodge Theorem}, and the second isomorphism is a special case of
+\emph{DeRham's Theorem}.
+
+\index{Period Vector}
+\begin{defn}{Period Vector}{periodVec}
+  Let $C$ be a compact Riemann surface of genus $g$, $\omega_1, ..., \omega_g$ a basis for $\Omega^1(C)$, and
+  $\gamma-1, ..., \gamma_{2g}$ a $\Z$-basis for $H_1(C, \Z)$.Then the $2g$ g-dimensional vector:
+  \[
+    \pi_i = \begin{pmatrix}
+      \int_{\gamma_i}\omega_1\\
+    \vdots\\
+    \int_{\gamma_i}\omega_g\\
+    \end{pmatrix}
+  \]
+  are called a \emph{system of period vectors of C}. The matrix:
+  \[
+    \Omega = (\pi_1, ..., \pi_{2g})_{g\times 2g}
+  \]
+  is called the \emph{period matrix} of $C$
+\end{defn}
+
+\begin{prop}{Period Matrix Nonsingular}{periodMatrixNonsingular}
+  The $2g$ period vectors are $\R$-linearly independent.
+\end{prop}
+
+\begin{Proof}
+  For the sake of contradiction, suppose $\pi_1, ..., \pi_{2g}$ are $\R$-linearly dependent so that there
+  exits $a_1, ..., a_{2g} \in \R$ not all zero st
+  \[
+    a_1\pi_1 + \cdots + a_{2g}\pi_{2g} = 0
+  \]
+  We make take the complex conjugate of this  (note conjugating an integral brings the conjugation to the
+  inside) and get the matrix:
+  \[
+    \Omega^* \begin{pmatrix}
+      \pi_1 & \cdots & \pi_{2g}\\
+      \overline{\pi}_1 & \cdots & \overline{\pi}_{2g}\\
+    \end{pmatrix}_{2g\times 2g}
+  \]
+  By our assumption, $\Rank(\Omega^*) < 2g$, hence there is a vector in the kernel
+  \[
+    \int_{\gamma_i} \left(\sum_{j=1}^g \lambda^j\omega_j + \sum_{j=1}^g \eta^j \overline{\omega}_j\right)
+    = 0 \qquad (i = 1, .., 2g)
+  \]
+  Let $\omega = \sum_{j=1}^g \lambda^j\omega_j$ and $\phi = \sum_{j=1}^g \oln{\eta}^j \overline{\omega}_j$.
+  Then:
+  \[
+    \int_{\gamma_i} (\omega + \overline{\phi}) = 0 \qquad (i = 1,..., 2g)
+  \]
+  But then we know $\omega = \phi = 0$, contradicting the linear independence of $\omega_1, ..., \omega_g$,
+  as we sought to show.
+\end{Proof}
+
+
 
 
 \subsection{Riemann Inequality}
@@ -1459,6 +1542,8 @@ Really interesting and I will get back to this
     l(D) \ge d-g+1
   \]
 \end{thm}
+
+see~\cite[p.113]{a.griffithsIntroductionAlgebraicCurves} for full details.
 
 \begin{Proof}
   Like before, let us link Riemann surfaces to curves to get the required context. Let
@@ -1492,11 +1577,23 @@ Really interesting and I will get back to this
   \begin{enumerate}
     \item $F\nmid G$
     \item $G\cdot C \ge D' + \Delta$ where $G\cdot C = (\pi^*(G(\xi^0, \xi^1, \xi^2)))$ (that is, the divisor
-      induced by the zeros of $\pi^*(G)$ on $C$). Not that $G\cdot C \in \Div(C)$.
+      induced by the zeros of $\pi^*(G)$ on $C$). Note that $G\cdot C \in \Div(C)$.
   \end{enumerate}
-  We shall elaborate why we would want such a polynomial, then show such a polynomial exists.
+  We shall elaborate why we would want such a polynomial, then show such a polynomial exists. First, for $p
+  \in C$, let $p' = \pi(p) \in C'$. Then a neighbourhood of $p$ gets mapped under $\pi$ into a curve component
+  of $C'$ near $p'$; denote it by $B_p$. Then after a possible coordinate change, we may take $p'$ to be
+  $[1:0:0]$. Label the equation after this coordinate change $G_p$. As the multiple points of $C'$ are ordinary
+  double points, the equation of $B_p$ near $p'$ is:
+  \[
+    y = a_0 + a_1x^2  +\cdots
+  \]
+  Putting this into $G_p(1,x,y)$, we get a power series in terms of $x$. Now, let $n(p)$ denote the degree of
+  the lowest term. We then get:
+  \[
+    G\cdot C = \sum_{p \in C} n(p)p
+  \]
+  the right hand side is certainly a finite sum. (I'll finish rest later)
 
-  \textcolor{red}{finish off, \cite[p.113]{a.griffithsIntroductionAlgebraicCurves}}
 \end{Proof}
 
 \begin{cor}{Comparing Degree and Genus}{comparingDegAndGenus}
@@ -1549,14 +1646,384 @@ Finally this leads us to:
 \end{thm}
 
 \begin{Proof}
-  \textcolor{red}{see \cite[p.118]{a.griffithsIntroductionAlgebraicCurves}}
+  see~\cite[p.118]{a.griffithsIntroductionAlgebraicCurves}
+
+  \qn
+  Let us first assume $D\ge 0$ and prove
+  \[
+    l(D) \le d-g+i(D) + 1
+  \]
+  And then take cases and judiciously use the Riemann inequality and its corollary to get the results. Suppose
+  $\eta = (\eta_1, ..., \eta_k)$ where:
+  \[
+    \eta_i = \frac{a^{in_i}}{z_i^{ni}} + \cdots + \frac{a_{i1}}{z_i}
+  \]
+  is a Laurent principal part near $p_i$. The linear space consisting of all these $\eta$ is isomorphic to
+  $\C^d$. Then thinking of $\eta$ as a vector in $\C^d$, consider:
+  \begin{gather*}
+    \Res: \C^d \times \Omega^1(C) \to \C\\
+    (\eta, \omega) \mapsto \sum_{i=1}^k \Res_{p_i}(\eta_i\omega)
+  \end{gather*}
+  This is certainly a bilinear mapping. Let us show that:
+  \[
+    \Res(\eta, \omega) = 0,\ \forall \eta \in \C^d \qquad \text{if and only if} \qquad \omega \in \Omega^1(D)
+  \]
+  If $\omega \in \Omega^1(D)$, then $\eta_i\omega$ does not have $p_i$ as a pole for all $i = 1,..., k$,
+  hence:
+  \[
+    \Res_{p_i}(\eta_i\omega) = 0
+  \]
+  and so the sum of residues is zero, giving the $\Lw$ direction. For the $\Rw$ direction, assume otherwise so
+  that $\omega \in \Omega^1(C)$ such that $\Res(\eta, \omega) = 0$ for all $\eta \in \C^d$ but $\omega \notin
+  \Omega^1(D)$. Then near $p_i$, let
+  \[
+    \omega = b_{i0}z_i^{m_i} + b_{i1}z_1^{m_i+1} + \cdots
+  \]
+  where $m_i \in \Z$, $b_{i0} \ne 0$. By assumption, $m_i < n_i$. Then there is a Laurent Principal part near
+  $p_i$
+  \[
+    \xi_i = (\xi_{i1}, ..., \xi_{ik})
+  \]
+  such that
+  \[
+    \xi_{ii} = \frac{1}{z_i^{m_i+1}} \qquad \xi_{ij} = 0\ (i\ne j)
+  \]
+  As $m_i+1 \le n_i$, $\C^d$, by treating these as $\C^d$ we have $\xi_i \in \C^d$. However:
+  \[
+    0 = \Res(\xi_i, \omega) = \Res_{p_i} \frac{b_{i0}}{z_i} = b_{i0} \ne 0
+  \]
+  a contradiction. Thus, $m_i \ge n_i$, and so $\omega \in \Omega^1(D)$.
+
+  Next, recall the following fact (or see exercise ref:HERE). Let $B: V\times W \to \C$ be a bilinear map
+  between two finite dimensional vector spaces, in particular $\dim V = n$ and $\dim W = m$. Then $B$ is called non-degenerated if given $w \in W$, $B(v,w)
+  = 0$ for all $v \in V$ implies $w = 0$. Then given $L \sse V$ satisfies $B(L\times W ) = 0$, then:
+  \[
+    \dim L \le n-m
+  \]
+  Then by the property we just found earlier about the residue map, we have a non-nondegenerate bilinear map:
+  \[
+    \Res_1: \C^d \times \frac{\Omega^1(C)}{\Omega^1(D)} \to \C
+  \]
+  Now recall we can interpret $\CL(D)/\C$ as a subspace of $\C^d$, and by what we've just shown:
+  \[
+    \Res_1 \left(\frac{\CL(D)}{\C}\times \frac{\Omega^1(C)}{\Omega^1(D)}\right) = 0
+  \]
+  Then:
+  \[
+    \dim \left( \frac{\CL(D)}{\C}\right) \le \dim \C^d - \dim \left(\frac{\Omega^1(C)}{\Omega^1(D)}\right)
+  \]
+  That is:
+  \[
+    l(D) -1 \le d - \dim \Omega^1(C) + i(D)
+  \]
+  By~\cref{th:dimOfDiffForms}, $\dim \Omega^1(C) = g$, and so we get:
+  \[
+    l(D)\le d-g+i(D) + 1
+  \]
+  This was the hardest part of the proof. We now cases cases on $l(D)$ and $i(D)$ to finish:
+  \begin{enumerate}
+    \item Consider $l(D) \ne 0$, $i(D) = 0$. As $l(D) \ne 0$, there exists an $f \in K(C)$ such that $(f)
+      + D \ge 0$. Let $E = (f) + D$. Then $(f) = E-D$, so $E\sim D$. Then
+      \[
+        l(D) = l(E) \qquad i(D) = i(E) \qquad \deg D = \deg E
+      \]
+      Thus, we may assume  $D \ge 0$. Thus we get our inequality, and by the Riemann inequality:
+      \[
+        d-g+i(D) +1 = d-g+1 \overset{\text{R.}}{\le} l(D) \le d-g+1
+      \]
+      giving equality
+    \item  Consider $l(D) \ne 0$, $i(D) \ne 0$. As $l(D) \ne 0$, we may do the same trick to assume $D\ge 0$.
+      Since $i(D) \ne 0$, there exits a $\omega \in \Omega^1(C)$ such that
+      \[
+        (\omega) \ge D
+      \]
+      Let $E = (\omega) - D$ so that $E \ge 0$. Then by~\cref{pr:brill-noetherReciprocity}
+      and~\cref{pr:meromorphicDifferentialsandRiemannInequality} we get:
+      \[
+        i(D) = l(E) \le \deg E -g+1+i(E)
+      \]
+      By the Poincar\'e-Hopf formula, $\deg(\omega) = 2g - 2$ so
+      \[
+        \deg E = \deg(\omega) - \deg(D) = 2g-2-d
+      \]
+      As $i(E) = l(D)$, we get:
+      \[
+        i(D) \le 2g-2-d-g+1+l(D)
+      \]
+      re-arranging and combining we  get:
+      \[
+        l(D) \ge d-g+i(D) + 1
+      \]
+      giving us the other wise
+     \item Consider $l(D) = 0 $, $i(D) \ne 0$. Since $i(D) \ne 0$, there exists a $\omega \in \Omega^1(C)$ such
+       that $(\omega) = D+E$ where $E \ge 0$. Then by~\cref{pr:brill-noetherReciprocity}
+       \[
+        l(E) = i(D) \ne 0 \qquad i(E) = l(D) = 0
+       \]
+       Thus, by case (1) applied to $E$ we get:
+       \[
+        l(E) = \deg E - g + i(E) + 1
+       \]
+       Note that
+       \[
+        \deg E = \deg(\omega) - \deg D = 2g-2-d
+       \]
+       Then substituting and rewriting $l(E)$, $i(E)$ as $i(D)$ and $l(D)$, we get the equality.
+     \item Consider $l(D) = 0$, $i(D) = 0$. Then by~\cref{co:comparingDegAndGenus}
+       and~\cref{co:compDegAndGenusMeromorphicDiff}
+       \[
+        d = g-1
+       \]
+       which is the desired equation.
+  \end{enumerate}
 \end{Proof}
 
 (then do the exercises for $C = \P^1$ direct prove, and the elliptic curve exercise)
 
+\section{Application of Riemann-Roch Theorem}\label{sec:applicationRiemannRoch}
+
+It shall cover genus $0,1,2,3,4$.
+
+\subsection{Genus 0}
+
+\begin{prop}{Genus 0 then Rational}{genus0thenRational}
+  Let $C$ be a compact Riemann surface of genus $0$. Then
+  \[
+    C \cong \P^1
+  \]
+\end{prop}
+
+\begin{Proof}
+  Let $p \in C$, $D = (p) \in \Div(C)$. Then:
+  \[
+    0 \le i(D) \le i(0) = \dim \Omega^1(C) = 0
+  \]
+  Thus $i(D) = 0$. By the Riemann-Roch theorem:
+  \[
+    l(D) = d-g+i(D) + 1 = 1-0+0+1 = 2
+  \]
+  Thus, $\CL(p)$ contains two linearly independent function, one of which can be chosen to be $f_1 = 1$. The
+  other function must be a meromorphic function (as $C$ is a compact Riemann surface) and must have $p$ as
+  a pole of order $1$; call this function $f_2$. Then by definition $f_2^{-1}(\infty) = p$. Hence it follows
+  that this is a holomorphic mapping:
+  \[
+    f_2: C \to \P^1
+  \]
+  where $\deg f_2 = \#\{f_2^{-1}(\infty)\} = 1$ implying that $f_2$ is in fact biholomorphic
+  (recall~\cref{lm:densInjThenBiholo}). Thus:
+  \[
+    C \cong \P^1
+  \]
+  as we sought to show.
+\end{Proof}
+
+
+\subsection{Genus 1}
+
+\begin{prop}{Genus 1 Weierstrass Equation Representation}{genus1WeierstassEqn}
+   Let $C$ be a compact Riemann surface of genus $1$. Then $C$ can be represented by a smooth algebraic curve
+   of degree $3$ in $\P^3$
+\end{prop}
+
+\begin{Proof}
+  We shall construct a holomorphic injective map $f: C \hookrightarrow \P^2$ where $f$ shall be a smooth
+  algebraic curve of degree $3$. First, for any nonzero $\omega \in \Omega^1(C)$, by Poincar\'e-Hopf formula
+  we have:
+  \[
+    \deg(\omega) = 2g - 2 = 2-2= 0
+  \]
+  Hence, if $\omega(p) = 0$, then it would have to have a pole, but it is holomorphic! Thus, for any $D > 0$,
+  $i(D) = 0$. Thus, letting $D = 2p$, we get:
+  \[
+    i(D) = 0
+  \]
+  Thus by the Riemann-Roch theorem we have that:
+  \[
+    l(2p) = d-g+i(2p) + 1 = 2-1+0+1 = 2
+  \]
+  Hence $\CL(D)$ has non-constant meromorphic functions which only have $p$ as a singular point of order $\le
+  2$. In fact, it \emph{must} be of order $2$, as by the Riemann-Roch theorem:
+  \[
+    l(p) = 1-1+1=  1
+  \]
+  Hence $\CL(p)$ only has constant functions; and so the order of any meromorphic function with single pole $p$
+  is at least $2$. Let $x \in \CL(2p)$ be such a function. Then near $p$ we have:
+  \[
+    x = \frac{c_2}{t^2} + \frac{c1}{t} + h_1(t)
+  \]
+  for a local coordinate near $p$ where $t(p) = 0$ and $c_2 \ne 0$. Let's start by showing that it must be
+  that $c_1 = 0$. As $\dim \Omega^1(C) = g = 1$, take a $\omega \in \Omega^1(C)$ that is nonzero so that under
+  $t$
+  \[
+    \omega = g(t)dt \qquad g(0) \ne 0
+  \]
+  Then $x\omega$ has no poles other than $p$, so by the Residue Theorem (the sum of all residues is $0$):
+  \[
+    0 = \Res_p(x\omega) = c_1
+  \]
+  Thus, with a suitable change of coordinates we get:
+  \[
+    x = \frac{1}{z^2} + h(z)
+  \]
+  Note that this $x$ has many similar properties to the Weierstrass function, as we shall see later.
+
+  Now, for any $\omega \in \Omega^1(C)$, let
+  \[
+    y = \frac{dx}{\omega}
+  \]
+  which is well defined as $\omega(p) \ne 0$ for all $p \in C$. Define:
+  \begin{gather*}
+    f: C \to \P^2 \\
+    q \mapsto [1: x(q): y(q)] \qquad (p \mapsto [0:0:1])
+  \end{gather*}
+  Note that our chosen point $p$ was mapped to the point at infinity. Certainly $f$ is holomorphic, we must just show it is injective and that $f(C)$ is a curve of degree $3$.
+
+  Starting by showing $f(C)$ is a degree $3$ curve in $\P^2$, consider $x: C \to \P^1$. Then by construction
+  $x^{-1}(\infty) = 2p$. Thus:
+  \[
+    \deg x = 2
+  \]
+  Thus, the ramification can never exceed $1$, and hence the ramification index at its ramification points
+  never exceeds $1$. In particular, the coefficients of every point for the ramification divisor of $x$ must
+  be $1$. By the Riemann-Hurwitz formula;
+  \[
+    \deg R = 2(\deg x + g-1) = 2(2+1-1) = 4
+  \]
+  As $p$ ramified, there are $3$ other Ramification points:
+  \[
+    R = p_1 + p_2 + P_3 + p
+  \]
+  each $p_i$ being mutually distinct:
+
+  \begin{center}
+    FIG HERE
+  \end{center}
+  let $x(p_i) = a_i$. Let us figure out what type of ramification we have. To be succinct with tracking roots
+  and poles, for a meromorphic differential form $\alpha \in K^1(C)$, let $(\alpha)_0$ and
+  $(\alpha)_\infty$ represented the zeros and poles (including multiplicity) respectively. As $\omega$ has no
+  zeros or poles then since $y = dx/\omega$ we get:
+  \[
+    (y)_0 = (dx)_0 \qquad (y)_\infty = (x)_\infty
+  \]
+  Hence, $(y)_0$ and $(y)_\infty$ can only contain the points of $x$ with ramification index $1$, that is
+  $p_1, p_2, P_3, p$. Thus, each of these ``zero'' and ``pole'' divisors are shared between the two.
+
+  To calculate, suppose $z_i (i = 1,2,3)$ are local coordinates near $p_i$ where $z_i(p_i) = 0$. Since the multiplicity of
+  $x$ at $p_i$ is $2$,
+  \[
+    x - a_i = z_i^2h_i(z_i)
+  \]
+  where $h_i$ is a holomorphic function and $h_i(0) \ne 0$. Thus:
+  \begin{align*}
+   dx &= 2z_ih_i(z_i)dz_i + z_i^2 h_i'(z_i)dz_i\\
+   z_i(2h_i(z_i) + z_ih_i'(z_i))dz_i
+  \end{align*}
+  But then evaluating at $z_i = 0$:
+  \[
+    (2h_i(z_i) + z_ih_i'(z_i))|_{z_i=0} = 2h_i(0) \ne 0
+  \]
+  and so $p_i$ is a simple zero of $dx$. For the pont $p$, choosing a local coordiante function $z$ near $p$
+  as we did before we get:
+  \[
+    x = \frac{1}{z^2} + h(z)
+  \]
+  Neurally, $dx$ has $p$ as a pole of order $3$, and so we found:
+  \[
+    (y)_0 = p_1 = P_2 + P_3 \qquad (y)_\infty = 3p \qquad (y) = p_1 + p_2 + p_3 - 3p
+  \]
+  We now know the roots/pole information our desired function must have. Let $g(x) \in K(\P^1)$ be given by:
+  \[
+    g(x) = (x-a_1)(x-a_2)(x-a_3)
+  \]
+  Considering $g$ as a function on $C$ (that is $x^*g$), then as near the points $p_i$ and $p$ in coordinates
+  $z_i$ and $z$:
+  \[
+    x-a_i = z_i^2h_i(z_i) \qquad x = \frac{1}{z^2}h(z)
+  \]
+  we get:
+  \[
+    (g)_0 = 2p_1 + 2p_2 + 2p_3 \qquad (g)_\infty = 6p
+  \]
+  since each $p_i$ takes $p_i$ as a zero of order $2$, an near $p$ every $(x-a_i)$ takes $p$ as  pole of order
+  $2$.
+
+  Now, we see that the divisor of $g$ is just the divisor of $y^2$, and so:
+  \[
+    \left(\frac{y^2}{g}\right) = 0
+  \]
+  showing $y^2/g$ is holomorphic on $C$, and as $C$ is compact $y^2/g = a\in \C$ where $a\ne 0$. To choose
+  a better constant replace $y$ by $y/\sqrt{a}$. Then we get:
+  \[
+    y^2 = g(x)
+  \]
+  But now, we just showed that under $f$ that $C$ lies in the image of a curve of degree $3$:
+  \[
+    C' = \set{[1:x:y] \in \P^2}{y^2-g(x) = 0} \cup \{[0:0:1]\}
+  \]
+  Giving us the degree. Let us now check that $f$ is an injective mapping except at $\infty$.
+
+  To that end, we shall need a bit more structure on $C$. We shall define a natural involution map on $C$. Let
+  \begin{gather*}
+    j: C \to C\\
+    q_1 \mapsto q_2
+  \end{gather*}
+  where $q_1, q_2 = x^{-1}(p_r)$ are an arbitrary $p_r \in C'$ (where I chose subscript $r$ for no particular
+  reason, we're running out of letters).  Then certainly $j^2 = \id$. It is thus it's own inverse, and so it
+  is easy to verify it is an automorphism. Using this, we shall show some properties of $j^*$ on $K(C)$,
+  $K^1(C)$ and  $\Omega^1(C)$. Certainly by definition of $j$:
+  \[
+    j^*(x) = x \qquad j^*(d ) =dx
+  \]
+  Let's show $j^*y = -y$. As $y = dx/\omega$:\[
+    j^*y = \frac{j^*(dx)}{j^*(\omega)}= \frac{dx}{d^*(\omega)}
+  \]
+  Hence, we show $j^*(\omega) = -\omega$. As $\dim \Omega^1(C) = g= 1$, we get $\Omega^1(C) \cong \C$. Then
+  notice that $j$ can be thought of as a linear transformation on $]C$ so that $j^2 = 1$  implies $(j^*)^2 =
+  1$, (hence it is diagonalizable) hence the eigenvalues of $j^*$ are either $1$ or $-1$. Suppose $j^*$ has
+  eigenvalue $1$ so that $j^*\omega =\omega$. Then there exists a holomorphic differential $\phi$ on $\P^1$ such that
+  \[
+    \omega = \phi\circ x = x^*\phi
+  \]
+  (exercise). But there is no nonzero holomorphic differential on $\P^1$, hence $j^*\omega = -\omega$.
+
+  With the properties of $j$ established, consider $q_1, q_2 \in C$ where $f(q_1) = f(q_2)$. We want to show
+  that $q_1 = q_2$. Naturally if either $q_1, q_2$ is $p$ then by construction $f(q_1) = f(q_2) = \infty$ and
+  so $q_1 = q_2 = p$; thus we assume neither $q_1, q_2$ is $p$. By definition:
+  \begin{align*}
+    f(q_1) &= [1:x(q_1): y(q_1)]\\
+    f(q_2) &= [2:x(q_2): y(q_2)]\\
+  \end{align*}
+  and as these are equal $x(q_1) = x(q_2)$ and $y(q_1) = y(q_2)$. Now if $q_1 \ne q_2$, as $x(q_1) = x(q_2)$
+  it must be that $j(q_1) = q_2$. Thus, we have by definition of the pullback:
+  \[
+    j^*y(q_1) = y(q_2)
+  \]
+  however as $j^*(y) = -y$
+  \[
+    j^*y(q_1) = -y(q_1) = -y(q_2)
+  \]
+  and so
+  \[
+    y(q_2) = -y(q_2)
+  \]
+telling us $y(q_2) = 0$. But $(y)_0 = p_1+p_2+p_3$, so $q_2 \in \{p_1, p_2, p_3\}$. Thus:
+\[
+  q_1 = j(q_2) = q_2
+\]
+but this contradicts $q_1 \ne q2$, thus it must be that they are equal, showing $f$ is injective.
+
+Let's now show surjectivity. We shall use a connectedness argument. First, $y^2-g(x) = 0$ is certainly an
+irreducible polynomial, hence it forms an irreducible subset, hence a connected subset. Next, $C$ is compact,
+and as $f$ is holomorphic $f(C)$ is closed. As $f$ is holomorphic, $f(C)$ is also open (by the holomorphic
+open mapping theorem), and so $f(C) = C'$.
+
+Finally, we prove $C'$ is smooth.
+\end{Proof}
 
 
 
 
+\printindex
+\newpage
 \printbibliography
 \end{document}
