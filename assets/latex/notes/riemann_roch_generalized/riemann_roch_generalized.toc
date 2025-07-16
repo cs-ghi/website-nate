@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Poincar\'e-Hopf Formula}{3}{section.1}%
+\contentsline {section}{\numberline {2}About Normalization}{4}{section.2}%
+\contentsline {section}{\numberline {3}The Riemann-Roch Theorem}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Dimension of $\Omega ^1(C)$}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Two Important Theorems}{18}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Riemann Inequality}{19}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Application of Riemann-Roch Theorem}{24}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Genus 0}{24}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Genus 1}{25}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Genus $\ge 2$: Canonical Map}{29}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Hyperelliptic Compact Riemann Surfaces}{32}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Genus 2 always hyperelliptic}{35}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Genus 3}{36}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Genus 4}{38}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Abel's Theorem and its Applications}{38}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Applications of Abel's Theorem}{41}{subsection.4.9}%

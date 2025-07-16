@@ -19,7 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{NateAlgGeo}{book}{}
+    \entry{NateEllipticCurve}{book}{}
       \name{author}{1}{}{%
         {{hash=17e33e23808fa6250bed45d881448509}{%
            family={Chwojko-Srawley},
@@ -34,6 +34,34 @@
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
       \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Everything You Need To Know About Elliptic Curves}
+      \field{year}{NA}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_elliptic_curves.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_elliptic_curves.pdf
+      \endverb
+    \endentry
+    \entry{NateAlgGeo}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{2}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -62,7 +90,7 @@
       \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -78,6 +106,39 @@
       \verb{url}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_complex_analysis.pdf
       \endverb
+    \endentry
+    \entry{silvermanAdvancedTopicsArithmetic1994}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9b408ab4d6636cf13a892a83656d6ccb}{%
+           family={Silverman},
+           familyi={S\bibinitperiod},
+           given={Joseph\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{9b408ab4d6636cf13a892a83656d6ccb}
+      \strng{fullhash}{9b408ab4d6636cf13a892a83656d6ccb}
+      \strng{bibnamehash}{9b408ab4d6636cf13a892a83656d6ccb}
+      \strng{authorbibnamehash}{9b408ab4d6636cf13a892a83656d6ccb}
+      \strng{authornamehash}{9b408ab4d6636cf13a892a83656d6ccb}
+      \strng{authorfullhash}{9b408ab4d6636cf13a892a83656d6ccb}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-94328-2 978-1-4612-0851-8}
+      \field{series}{Graduate Texts in Mathematics}
+      \field{title}{Advanced Topics in the Arithmetic of Elliptic Curves}
+      \field{year}{1994}
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-1-4612-0851-8
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-1-4612-0851-8
+      \endverb
+      \warn{\item book entry 'silvermanAdvancedTopicsArithmetic1994' (bibliography.bib): Invalid format '1994-00-00 1994' of date field 'date' - ignoring}
     \endentry
     \entry{a.griffithsIntroductionAlgebraicCurves}{book}{}
       \name{author}{1}{}{%

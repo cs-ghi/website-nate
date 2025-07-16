@@ -1,11 +1,34 @@
 \begin{theindex}
 
-  \item 1st Cohomology Group, \hyperpage{17}
+  \item 1st Cohomology Group, \hyperpage{18}
 
   \indexspace
 
-  \item Laurent Principal Part, \hyperpage{9}
-  \item Linearly Equivalent, \hyperpage{8}
+  \item Abel-Jacobi Map, \hyperpage{40}
+  \item Abel-Jacobi Theorem, \hyperpage{40}
+
+  \indexspace
+
+  \item Canonical Curve, \hyperpage{31}
+  \item Canonical Map, \hyperpage{29}
+
+  \indexspace
+
+  \item Degree of Smooth Curve, \hyperpage{36}
+
+  \indexspace
+
+  \item Hyperelliptic and Nonhyperelliptic, \hyperpage{31}
+  \item Hyperplane Section of Riemann Surface, \hyperpage{36}
+
+  \indexspace
+
+  \item Jacobian Variety, \hyperpage{39}
+
+  \indexspace
+
+  \item Laurent Principal Part, \hyperpage{10}
+  \item Linearly Equivalent, \hyperpage{9}
 
   \indexspace
 
@@ -13,10 +36,11 @@
 
   \indexspace
 
-  \item Period Vector, \hyperpage{17}
+  \item Period Vector, \hyperpage{18}
+  \item Picard Variety, \hyperpage{40}
 
   \indexspace
 
-  \item Ramification Divisor, \hyperpage{5}
+  \item Ramification Divisor, \hyperpage{6}
 
 \end{theindex}

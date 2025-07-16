@@ -642,7 +642,10 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 %import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.svg,
 \begin{document}
 \maketitle
+\tableofcontents
 
+\qn
+\qn
 
 Consider the Gauss-Bonnet theorem (\href{https://en.wikipedia.org/wiki/Gauss%E2%80%93Bonnet_theorem}{this}):
 \[
@@ -997,12 +1000,12 @@ Let $C$ be a compact Riemann surface. Define the divisor to be the formal sum:
   D = \sum_i^k n_ip_i \in \Div(C)
 \]
 A divisor is called \emph{effective} if each coefficient  is $\ge 0$. and we write $D\ge 0$. Any divisor can
-be expressedas the difference of two effective divisors. We now define the Riemann-Roch space:
+be expressed as the difference of two effective divisors. We now define the Riemann-Roch space:
 \[
   \CL(D) = \set{f \in K(C)}{(f)  \ge -D}
 \]
-That is, $\CL(D)$ contains all $f \in K(C)$ wheter $f$ has a pole of multiplicity at most $n_i$ at $p_i$ if
-$n_i >0$ and a zero of multiplicity at least $|n_i|$ at $p_i$ if $n_i < 0$. We can then dfine:
+That is, $\CL(D)$ contains all $f \in K(C)$ whether $f$ has a pole of multiplicity at most $n_i$ at $p_i$ if
+$n_i >0$ and a zero of multiplicity at least $|n_i|$ at $p_i$ if $n_i < 0$. We can then define:
 \[
   l(D) = \dim \CL(D)
 \]
@@ -1922,7 +1925,7 @@ It shall cover genus $0,1,2,3,4$.
   \[
     (2h_i(z_i) + z_ih_i'(z_i))|_{z_i=0} = 2h_i(0) \ne 0
   \]
-  and so $p_i$ is a simple zero of $dx$. For the pont $p$, choosing a local coordiante function $z$ near $p$
+  and so $p_i$ is a simple zero of $dx$. For the pont $p$, choosing a local coordinate function $z$ near $p$
   as we did before we get:
   \[
     x = \frac{1}{z^2} + h(z)
@@ -2017,8 +2020,776 @@ irreducible polynomial, hence it forms an irreducible subset, hence a connected 
 and as $f$ is holomorphic $f(C)$ is closed. As $f$ is holomorphic, $f(C)$ is also open (by the holomorphic
 open mapping theorem), and so $f(C) = C'$.
 
-Finally, we prove $C'$ is smooth.
+Finally, we prove $C'$ is smooth. We can show this directly by computing . By everything shown so far, we know
+that the projective equation of $C'$ can be written as:
+\[
+  F = \xi^0(\xi^2)^2 - (\xi^1 - a_1\xi^0)(\xi^1-a_2\xi^0)(\xi^1-a_3\xi^0) = 0
+\]
+Thus:
+\begin{align*}
+\frac{\partial F}{\partial \xi^0} &= (\xi^2)^2 + a_1(\xi^1 - a_2\xi^0)(\xi^1 - a_3\xi^0)\\
+                                  &+ a_2(\xi^1 - a_1\xi^0)(\xi^1 - a_3\xi^0)\\
+                                  &+ a_3(\xi^1 - a_1\xi^0)(\xi^1 - a_2\xi^0)
+\end{align*}
+\begin{align*}
+  \frac{\partial F}{\partial \xi^1} &= -(\xi^1 - a_2\xi^0)(\xi^1 - a_3\xi^0)\\
+                                    &-(\xi^1 - a_1\xi^0)(\xi^1 - a_3\xi^0)\\
+                                    &-(\xi^1 - a_1\xi^0)(\xi^1 - a_2\xi^0)
+\end{align*}
+\[
+  \frac{\partial F}{\partial \xi^2} = 2\xi^0\xi^2
+\]
+
+If $\partial F/\partial \xi^i$ $(i = 1, 2, 3)$ are all zero, by the Euler formula, $F = 0$. Now from
+\[
+2\xi^0\xi^2 = 0
+\]
+we get
+\[
+\xi^0(\xi^2)^2 = 0,
+\]
+and substituting this expression into $F = 0$, we also get
+\[
+(\xi^1 - a_1\xi^0)(\xi^1 - a_2\xi^0)(\xi^1 - a_3\xi^0) = 0.
+\]
+
+At least one of the three factors on the left side of this expression is therefore equal to 0. Having only one factor equal to 0 however, contradicts
+\[
+\frac{\partial F}{\partial \xi^1} = 0.
+\]
+
+Thus at least two of the factors are equal to 0. But then $\xi^0 = \xi^1 = 0$ because $a_1, a_2, a_3$ are mutually distinct. Substituting into
+\[
+\frac{\partial F}{\partial \xi^0} = 0,
+\]
+we get $\xi^2 = 0$, i.e., we get
+\[
+\xi^0 = \xi^1 = \xi^2 = 0,
+\]
+and this is impossible. Thus, $C'$ is smooth. As $f$ is biholomorphic, we have that $C$ is biholomorphic to
+a smooth degree $3$ curve, as we sought to show.
 \end{Proof}
+
+\subsection{Genus $\ge 2$: Canonical Map}
+
+In higher dimensions, there are generally many kinds of mapping from a compact Riemann surface into an
+$n$-dimensional projective space. However all compact Riemann surface of genus $g \ge 2$, they exits as
+special holomorphic mapping from this compact Riemann surface into $\P^{g-1}$ that is called he
+\emph{canonical map}.
+
+
+\index{Canonical Map}
+\begin{defn}{Canonical Map}{cannonicalMap}
+  Let $C$ be a compact Riemann surface of genus $g\ge 2$ an $\{\omega_1, ..., \omega_g\}$ a basis for
+  $\Omega^1(C)$. Then:
+  \begin{align*}
+    \phi_K: C \to \P^{g-1}\\
+    p \mapsto [\omega_1(p): \cdots : \omega_g(p)]
+  \end{align*}
+\end{defn}
+
+Note that this is well-defined. It is certainly not coordinate dependent, and if, for the sake of
+contradiction, there is a $p$ where $\omega_i(p) = 0$ for all $p$ (which implies $p$ maps to $[0:\cdots: 0]$
+which doesn't exist), then notice that $\Omega^1(p) = \Omega^1(C)$ so
+\[
+  i(p) = \dim \Omega^1(C) = g
+\]
+and by the Riemann Roch-theorem
+\[
+  l(p) = 1-g+g+1=  2
+\]
+and so there exits nonconstant meromorphic function $f \in \CL(p)$ where $f^{-1}(\infty) = p$. Thus
+\[
+  \deg f  = 1
+\]
+giving us that $f:  \to \P^1$ is an isomorphism, but that is not possible as $\P^1$ has genus $0$.
+
+\begin{prop}{Non-degeneracy of Canonical Map}{non-degeneracyofCannonicalMap}
+  Let $\phi_K$ be the canonical map. Then $\phi_K$ is non-degenerate.
+\end{prop}
+
+\begin{Proof}
+  Assume $\phi_K$ is degenerate so that there exists $\lambda_\alpha \in \C$ not all zero st for all $p \in C$
+  \[
+    \sum_\alpha^g \lambda_\alpha\omega_\alpha(p) = 0
+  \]
+  Then:
+  \[
+    \sum_\alpha^g \lambda_\alpha\omega_\alpha
+  \]
+  contradicting that $\{\omega_1, ..., \omega_g\}$ is a basis of $\Omega^1(C)$, as we sought to show.
+\end{Proof}
+
+\begin{prop}{Degree 2 Mapping Condition}{deg2MappingCond}
+  Let $C$ be a Riemann surface of genus $g\ge 2$ and let $\phi_K$ be the canonical mapping. Then if
+  \[
+    \phi_K(p) = \phi_K(q)
+  \]
+  for some distinct $p,q \in C$, then there exists a holomorphic mapping of degree $2$ from $C$ into $\P^1$
+\end{prop}
+
+\begin{Proof}
+  If $\phi_K(p)  = \phi_K(q)$ ,then $\omega_\alpha(p) = \lambda\omega_\alpha(q)$ for all $\alpha = 1,..., g$
+  for some $0 \ne \lambda  \in \C$. Let $D = p+q$. Let us find $i(D)$. We shall start by showing that:
+  \[
+    \Omega^1(D)  = \Omega^1(p)
+  \]
+  Indeed, for any $\omega \in \Omega^1(C)$, if
+  \[
+    \omega = \sum_{\alpha=1}^g \mu_\alpha\omega_\alpha
+  \]
+  for $\mu_\alpha \in \C$, $\alpha = 1,..., g$, then:
+  \begin{align*}
+    \omega(p) = 0 &\LRw \sum_{\alpha=1}^g \mu_\alpha\omega_\alpha(p) = 0\\
+      &\LRw \sum_{\alpha=1}^g \lambda\mu_\alpha\omega_\alpha(q) = 0\\
+      &\LRw \omega(q) = 0
+  \end{align*}
+  Thus, $\Omega^1(p) = \Omega^1(p+q) = \Omega^1(D)$. Hence, to calculate $i(D)$ it suffices to calculate
+  $i(p)$.
+
+  To that end, consider :
+  \[
+    \lambda_2\omega_1(p) + \lambda_2\omega_2(p) + \cdots + \lambda_g\omega_g(p) = 0
+  \]
+  for $\lambda_1, ..., \lambda_g \in \C$. Note not all these could be zero or else we would have a point
+  map to $[0:\cdots :0]$. Hence, this linear equation \emph{must} have $g-1$ linearly independent
+  solution vectors $(\lambda_1, ..., \lambda_g) \in \C^g$, giving rise to $g-1$ linearly independent
+  elements in $\Omega^1(p)$. Thus:
+  \[
+    i(D) = i(p) = g-1
+  \]
+  Applying the Riemann-Roch there to $D = p+q$, we get:
+  \[
+    l(D) = 2-g+(g-1)+1 = 2
+  \]
+  Thus, there exist a  nonconstant meromorphic function $f \in \CL(p+q)$. Thus there is a holomorphic $f: C
+  \to \P^1$where $f^{-1}(\infty) = p+q$. Note that $f^{-1}(\infty)$ cannot e a single point $p$ or
+  $q$ otherwise we get $C \cong \P^1$, contradicting the fact that the genus $g$ of $C$ is $\ge 2$. Thus,
+  it must be that:
+  \[
+    \deg f = 2
+  \]
+  as we sought to show.
+\end{Proof}
+
+This gives a rough division of Riemann surface of genus $g> 1$:
+
+\index{Hyperelliptic and Nonhyperelliptic}
+\begin{defn}{Hyperelliptic and Nonhyperelliptic}{hyperellipticandNonhyperelliptic}
+  Let $C$ be a compact Riemann surface of genus $g \ge 2$. Then it is \emph{hyperelliptic}if there
+  exists a holomorphic mapping of degree $2$ $f: C \to \P^1$. Otherwise, $C$ is said to be
+  \emph{nonhyperelliptic}.
+\end{defn}
+
+We can deal with the nonhyperelliptic example holistically and then see the hyperelliptic examples by
+examining different genera:
+
+\index{Canonical Curve}
+\begin{defn}{Canonical Curve}{cannonicalCurve}
+  Let $C$ be a nonhyperelliptic compact Riemann surface of genus $g \ge 2$ with canonical map $\phi_K:
+  C \to \P^{g-1}$. Then
+  \[
+    \phi_K(C) \sse \P^{g-1}
+  \]
+  is called the \emph{canonical curve}.
+\end{defn}
+Note that we put $g\ge 2$, but we shall show shortly that all $g= 2$ compact Riemann surface are
+hyperelliptic, but this shall not necessarily be the case for $g\ge 3$.
+
+\begin{prop}{Canonical Curve Smooth}{cannonicalCurveSmooth}
+  Let $C$ be a nonhyperelliptic compact Riemann surface. Then the canonical map $\phi_K$ is injective and
+  $\phi_K(C)$ is smooth.
+\end{prop}
+
+\begin{Proof}
+  \Cref{pr:deg2MappingCond} show's $\phi_K$ must be injective, it remains to show $\phi_K$ is
+  smooth.
+
+  \cite[p.136]{a.griffithsIntroductionAlgebraicCurves}
+\end{Proof}
+
+
+\subsection{Hyperelliptic Compact Riemann Surfaces}\label{sec:hyperellipticCompactRiemannSurface}
+
+\begin{prop}{Algebraic Characterization of Hyperelliptic Riemann Surface}{charHyperellitpicRiemannSurface}
+  Let $C$ be a hyperelliptic compact Riemann surface. Then it can be represented as the normalization of
+  a plane algebraic curve of degree $2g+2$ where $g$ is the genus of $C$. By a suitable linear projection,
+  this plane curve will be a $2$-sheered covering of a straight line (i.e. $\C$).
+\end{prop}
+
+\begin{Proof}
+  Let $C$ be a hyperelliptic compact Riemann surface of genus $g$. We shall construct a holomorphic mapping $f:
+  C \to \P^2$ such that $f(C)$ can be given by a plane algebraic curve of degree $2g+2$.
+
+  As $C$ is hyperelliptic, the exist a degree $2$ holomorphic mapping $x: C \to \P^1$. Let $R$ be the
+  ramification divisor of $x$. By the Riemann-Hurwitz formula (\cref{th:riemann-hurwitzFormula}):
+  \[
+    \deg R = 2(2+g-1) = 2g+2
+  \]
+  As $x$ is degree $2$, the coefficients of every point in $R$ must be equal to $1$, hence we must have:
+  \[
+    R = p_1 + p_2 + \cdots + p_{2g+2}
+  \]
+  where each $p_i$ is distinct on $C$. Now suppose:
+  \[
+  x^{-1}(\infty) = p+q \qquad x(p_i) = a_i
+  \]
+  so that $x$ can be visualized as:
+  \begin{center}
+    FIG HERE
+  \end{center}
+  Then as in~\cref{pr:genus1WeierstassEqn} we can define $j: C \to C$ $j(q_1) = q_2$. Just like before, $j \in
+  \Aut(C)$ and $j^2 = 1$. Define again $j^*: K(C) \to K(C)$ by $j^*(a) = a\circ j$, which like before can be
+  extended to $K^1(C)$ and restricted down to $\Omega^1(C)$. Then as $\Omega^1(C) \cong \C^g$, this is
+  a linear involution of $C^g$ with eigenvalues $1$ or $-1$. If the eigenvalue is $1$, then the eigenvector
+  corresponding to $1$ will be a holomorphic differential form, inducing a nontrivial differential form on
+  $\P^1$ a contradiction. Thus it must be that :
+  \[
+    j^*: \Omega^1(C) \to \Omega^1(C) \qquad \omega \mapsto -\omega
+  \]
+
+  With the setup complete, let us show that such a function does exist by the Riemann-Roch Theorem. Let
+  \[
+    D = (g+1)p + (g+1)q \in \Div(C)
+  \]
+  Recall that for nay $\omega \in K^1(C)$ by the Poincar\'e-Hopf formula $\deg(\omega) = 2g-2 < \deg G$, and
+  so it cannot be that $(\omega) - D \ge 0$, and so $i(D) = 0$. Then by Riemann-Roch:
+  \[
+    l(D) = (2g+2)-g+1 = g+3
+  \]
+  Thus
+  \[
+    \CL(D) \cong \C^{g+3}
+  \]
+  As $x(p) = x(q) = \infty$, it must be that $j(D) = D$, so $j^*$ can be seen as a linear transformation on
+  $\CL(D)$. Then a $(j^*)^2 = 1$ and $j^*$ also has eigenvalues $\pm 1$, we can split $\CL(D)$ into
+  eigenspaces:
+  \[
+      \CL(D) = \CL(D)^+ \oplus \CL(D)^-
+  \]
+  where $\CL(D)^+$ and $\CL(D)^-$ are the eigenspace for eigenvalue $+1$ and $-1$ respectively. Note that the
+  meromorphic functions in $\CL(D)^+$ can be factored as the composition of $x$ and a meromorphic function on
+  $\P^1$ with pole poles only at $p,q$, and the order of the pole at either point not exceeding $g+1$. Thus,
+  as meromorphic functions on $C$, the functions $1,x,x^2, ..., x^{g+1}$ form a basis for $\CL(D)^+$. Thus:
+  \[
+    \dim \C(D)^+ = g+2
+  \]
+  As $l(D) = g+3$, it follows that
+  \[
+    \dim \C(D)^- = 1
+  \]
+  In particular, there exists a meromorphic function $y \in \CL(D)$ such that
+  \[
+    j^*(y) = -y
+  \]
+  With this build-up, let us compare divisors to prove that there exists a function $g(x) =
+  (x-a_1)(x-a_2)\cdots (x-a_{2g+2})$ such that
+  \[
+    y^2 = cg(x)
+  \]
+  where $0\ne c \in \C$. Let's first find $(y^2)$, in particular it suffices to find $(y)$. since
+  \[
+    j^*(y) = -y \qquad j(p_i) = p_i \qquad (i = 1,2,...,2g+2)
+  \]
+  we get:
+  \[
+    y(p_i) = -y(p_i)
+  \]
+  and so
+  \[
+    y(p_i) = 0
+  \]
+  Thus
+  \[
+    \deg(y)_0 \ge \deg \left(\sum_{i=1}^{2g+2}p_i\right) = 2g+2
+  \]
+  But by the Residue Theorem
+  \[
+    \deg(y)_0 = \deg(y)\infty = 2g+2
+  \]
+  Thus
+  \[
+    (y)_0 = \sum_{i=1}^{2g+2} p_i \qquad (y)_\infty = D
+  \]
+  For $(g(x))$, by definition $(x)_\infty = p+q$ and $(x-a_i)_{\infty} = p+q$ for all $i = 1,2..., 2g+2$.
+  Thus:
+  \[
+    (g(x))_\infty = (2g+2)p + (2g+2)q = 2D
+  \]
+  Giving the pole divisor. For the root divisor, suppose $z_i$ are local coordinate near $p_i$ for each $i$
+  where $z_i(p_i) = 0$. Then:
+  \[
+    x-a_i = z_i^2h_i(z_i)
+  \]
+  where $h_i(0) \ne 0$ is holomorphic. But then:
+  \[
+  (g(x))_0 = \sum_{i=1}^{2g+2}2p_i
+  \]
+  and so $(y^2) = (g(x))$, giving that $y^2/g(x)$ is holomorphic on $C$, which as is compact makes $y^2/g(x)
+  = c\ne 0$ constant. By replacing $y$ with $y/\sqrt{c}$ we get
+    \[
+      y^2 = g(x)
+    \]
+    From this, we can define the map:
+    \begin{align*}
+      f&: C \to \P^2\\
+      t &\mapsto [1: x(t): y(t)]\\
+      p,q &\mapsto [0:0:1]
+    \end{align*}
+    As $C$ is connected, the solution to an algebraic equation is irreducible (hence connected), $f$ is
+    holomorphic (hence an open map) and $C$ is compact (hence $f$ is a closed map), it must be that $f$ is
+    surjective.
+
+    Finally, it is easy to see that each $a_I$ are distinct, hence $C$ is smooth in $\C^2 = \{[1:x:y] \in
+    \P^2\}$ but singular at $[0:0:1]$ (which distinguishes from the case of $g=1$). A linear projection $(x,y)
+    \to x$ gives the $2$-sheered covering, giving everything asked for by the proposition, completing the
+    proof.
+\end{Proof}
+
+
+\begin{prop}{Canonical Map -- Hyperelliptic Case}{canonicalMap--HyperellipticCase}
+  Let $C$ be a hyperelliptic curve and let $x,y$ be as in~\cref{pr:charHyperellitpicRiemannSurface}. Then
+  \[
+    \omega_1 = \frac{dx}{y},\ \omega_2 = \frac{(xdx)}{y},\ ...,\ \omega_g = \frac{(x^{g-1}dx)}{y}
+  \]
+  forms a basis for $\Omega^1(C)$.
+\end{prop}
+
+\begin{Proof}
+  \cite[p.142]{a.griffithsIntroductionAlgebraicCurves}
+\end{Proof}
+
+We thus get a very simple expression for the canonical map:
+\begin{gather*}
+  \phi_K: C \to \P^{g+1}\\
+  t \mapsto [1: x(t): \cdots : x(t)^{g-1}]
+\end{gather*}
+
+Hence, $\phi_K$ factors in the following way:
+\[
+\begin{tikzcd}
+                                      & \P^{g-1}            \\
+C \arrow[r, "x"] \arrow[ru, "\phi_k"] & \P^1 \arrow[u, "r"]
+\end{tikzcd}
+\]
+where
+\begin{gather*}
+  r: \P^1 \to \P^{g-1}\\
+  x \mapsto [1:x:\cdots: x^{g-1}]
+\end{gather*}
+
+Note that the converse of~\cref{pr:charHyperellitpicRiemannSurface} is true: given any $2g+2$ mutually distinct complex numbers $a_1, a_2, ...,
+a_{2g+2}$, and letting:
+\[
+  C' = \{y^2 = \prod{i=1}^{2g+2}(x-a_i)= 0 \}\cup [0:0:1] \sse \P^2
+\]
+then the normalization of $C$ of $C'$ is a hyperelliptic compact Riemann surface of genus $g$, giving an
+equivalence. Combining this with the commutative diagram given above, we see that $C$ is uniquely determined
+by the equivalence of vectors in $\C^{2g+2}$ with (pairwise) distinct coordinates:
+\[
+  \{(a_1, ..., a_{2g+2})\}
+\]
+where $(a_1, ..., a_{2g+2})\sim (b_1, ..., b_{2g+2})$ if each coordinate is related by the same linear automorphisms
+of $\P^1$, that is there exists $a,b,c,d \in \C$ $(ad-bc \ne 0$) such that
+\[
+  \frac{aa_i + b}{ca_i+d} = b_i \qquad (i = 1,2,..., 2g+2)
+\]
+(recall the classification of $\Aut(\P^1)$). Naturally, if replaced by $\lambda a,\lambda b,\lambda c,\lambda
+d$ the result is unchanged, hence without loss of generality we may assume one of them is fixed.
+
+
+\subsection{Genus 2 always hyperelliptic}
+
+\begin{prop}{Genus 2 is Hyperelliptic}{genus2isHyperelliptic}
+  Let $C$ be a compact Riemann surface of genus $2$. Then $C$ is hyperelliptic.
+\end{prop}
+
+\begin{Proof}
+  Let $C$ be a compact Riemann surface of genus $2$. Then by~\cref{pr:deg2MappingCond} it suffices to show
+  that $\phi_K$ is not injective. But if $\phi_K: C \to \P^{g-1}=\P^1$ were injective, $C$ would have genus $0$,
+  completing the proof.
+\end{Proof}
+
+Thus, we always get $C$ in $\P^1$ as:
+\[
+  y^2 = \prod_{i=1}^6 (x-a_i)
+\]
+for pairwise distinct $a_1, .., a_6$ and forms
+\[
+  \omega_1 = \frac{dx}{y} \qquad \omega_2 = \frac{xdx}{y}
+\]
+where:
+\[
+  \phi_: C \to \P^1 \qquad t \mapsto [\omega_1: \omega_2] = [1: x(t)]
+\]
+
+\subsection{Genus 3}
+
+We shall see in (it says at \cite[p.212]{a.griffithsIntroductionAlgebraicCurves}) that almost all genus 3
+curves are canonical curves (it will be because any smooth forth-degree plane algebraic curve (where $2g-2=4$)
+has genus $g= 3$ and hence is canonical). Let us start by showing that the canonical curve of genus $3$ is a smooth plane
+algebraic curve of degree $3$.
+
+let $H\sse \P^n$ be a hyperplane given by:
+\[
+  L(\xi) = \sum_{i=0}^n l_i\xi^i = 0
+\]
+Let $C$ be a smooth algebraic curve in $\P^n$. Let $H$ not contain any irreducible branches of $C$.  Then pick
+the elements of $\Div(C)$ in the following way. Choose a generic linear function:
+\[
+  L'(\xi) = \sum_{i=0}^n l_i' \xi^i
+\]
+where by generic we mean:
+\[
+  \{L' = 0\} \cap C \cap \{L=0\} = \emptyset
+\]
+Then we get:
+\[
+  \frac{L}{L'} \in K(\P^n) \qquad \frac{L}{L'}|_C \in K(C)
+\]
+Then the set of all the zeros of $(L/L')|_C$ is given a name
+
+
+We give a name to this set:
+
+\index{Hyperplane Section of Riemann Surface}
+\begin{defn}{Hyperplane Section of Riemann Surface}{hyperplaneSecRiemannSurface}
+  Let $C,H$ be as above. Then:
+  \[
+    H\cdot C = \left( \left.\frac{L}{L'}\right|_C\right)_0
+  \]
+  is the \emph{hyperplane section} of $C$.
+\end{defn}
+
+Intuitively:
+\[
+  H\cdot C = C\cap \{L(\xi) = 0\}
+\]
+Certainly this definition is independent of choice of $L'$.
+\index{Degree of Smooth Curve}
+\begin{defn}{Degree of Smooth Curve}{degofSmoothCurve}
+  Let $C$ be a smooth curve in $\P^n$. Then $\deg(H\cdot C)$ is called the \emph{degree} of $C$ and is denoted
+  $\deg C$.
+\end{defn}
+
+This too is well-defined as it is independent of choice of hyperplane $H$ since if there exists another $H_1$:
+\[
+  \deg (H_1\cdot C) = \deg \left(\left.\frac{L_1}{L'}\right|_C\right)_0 = \deg
+    \left(\left.\frac{L_1}{L'}\right|_C\right)_\infty = \deg \left(\left.\frac{L}{L'}\right|_C\right)_\infty
+        =\deg \left(\left.\frac{L}{L'}\right|_C\right)_0  = \deg(H\cdot C)
+\]
+Note that when $n = 2$, then $H$ is a straight line in $\P^2$ not containing any irreducible curve components
+of $C$, and so by B\'ezout's theorem we know the curve degree is just the same as the plane curve degree given
+earlier.
+
+In this section, we shall identify any nonhyperelliptic compact Riemann surface of genus $g > 1$ with its
+image under the canonical map, that is the canonical curve in $\P^{g-1}$ which is a smooth surface. We can
+do this as $C$ is nonhyperelliptic and hence the canonical map is injective.
+
+\begin{prop}{Degree and Genus}{degandGenus}
+  Let $C$ be a canonical curve of genus $g$. Then:
+  \[
+    \deg C = 2g-2
+  \]
+\end{prop}
+
+\begin{Proof}
+  Let $\omega_1,..., \omega_g$ be a basis for $\Omega^1(C)$ so that
+  \[
+    C = \set{[1w_1(p), ..., \omega_g(p)]}{p \in C}
+  \]
+   Suppose:
+   \[
+     H = \left\{ \sum_{i=0}^{g-1} l_i\xi^i=0\right\} \qquad H' = \left\{ \sum_{i=0}^{g-1} l_i'\xi^i=0\right\}
+   \]
+   Then by going through the definition we see that  $H\cdot C = (\omega)_0$ where $\omega = \sum_{i=0}^{g-1}
+   l_i\omega_i$. As $\omega \in \Omega^1(C)$, $(\omega)_0 = (\omega)$, and hence:
+   \[
+    H\cdot C = (\omega)
+   \]
+   Thus
+   \[
+    \deg C  =\deg(H\cdot C) = \deg(\omega) = 2g-g
+   \]
+   as we sought to show.
+\end{Proof}
+
+\begin{prop}{Genus 3 By Degree 4 Curve}{genus3ByDeg4Curve}
+  Let $C$ be a canonical curve of genus $3$. The n it is a smooth plane algebraic curve of degree $4$.
+\end{prop}
+
+\begin{Proof}
+  It is smooth by~\cref{pr:deg2MappingCond}. As the canonical curve of genus $3$ must be in $\P^2$, by the proceeding we have:
+  \[
+    \deg(C) = 2g-2 = 2\cdot 3 - 2 = 4
+  \]
+  as we sought to show.
+\end{Proof}
+
+Note that if $F$ is a degree $4$ algebraic curve, then by the genus formula:
+\[
+  g = \frac{(d-1)(d-2)}{2} = \frac{3\cdot 2}{2} = 3
+\]
+From this we can do the same classification trick as in section~\ref{sec:hyperellipticCompactRiemannSurface}
+to show that the converse is mostly true (having to take into account that some canonical embeddings are not
+injective). Thus, it is as to verify that
+\[
+  F(x, y, z) = x^4 + y^4 + z^4 + \lambda x^2 y^2 + \mu y^2 z^2 + \nu z^2 x^2
+\]
+is a canonical curve.
+
+
+
+\subsection{Genus 4}
+
+Canonical genus $4$ curves have the amazing property that they can be characterized by the intersection of
+quadric\footnote{I've not seen the word ``quadric'' before. It means a degree $2$ hypersurface embedded in
+$D$ dimensions. Quadratic seems perfectly fine, but it seems that quadric is just a little more specific} and
+a cubic hypersurface in $\P^3$.
+
+Just like before, suppose $C$ Is a smooth algebraic curve in $\P^n$ and $H = \{\xi^0 = 0\}$ is a hypersurface.
+Let $D = H\cdot C  \in \Div(C)$.  Notice that $\bigoplus_{k=0}^\infty \CL(kD)$ and $\C[\xi^0, ..., \xi^n]$ are
+graded rings. Let $F(\xi) \in \C[\xi^0, ..., \xi^n]$ be a homogeneous polynomial and define:
+\[
+  r(F(\xi)) = \left.\frac{F(\xi)}{\left(\xi^0\right)^k}\right|_{C} \in \CL(k(D))
+\]
+Then extended $r$ linearly to all of $\C[\xi^0, ..., \xi^n]$, we get  ring homomorphism:
+\[
+  r: \C[\xi^0, ...,\xi^n] \twoheadrightarrow \bigoplus_{k=0}^\infty \CL(kD)
+\]
+I claimed this map is surjective; this was shown in~\cite{NateAlgGeo} (but a judicious application of Noether
+Theorem also works).
+
+\textcolor{red}{I'l finish typing this up later: } \cite[p.148]{a.griffithsIntroductionAlgebraicCurves}
+
+\subsection{Abel's Theorem and its Applications}
+
+
+Let $C$ be ea compact Riemann surface of genus $g\ge 1$. Then $H_1(C, \Z)$ is a free abelian group of rank
+$2g$. Choose a canonical basis $\gamma_1, \gamma_2, ..., \gamma_{2g-1}, \gamma_{2g}$ for $H_1(C, \Z)$
+satisfying the intersection requirements:
+\[
+  \gamma_i\cdot \gamma_{g+1} = 1 \qquad \gamma_{g+i}\cdot \gamma_i = -1
+\]
+for all $i$, and $0$ otherwise; that is it is the usual vertical and horizontal circles around the handles
+when visualized in $\R^3$. Recall the period vector:
+\[
+  \pi_j = \begin{pmatrix}
+    \int_{\gamma_j} \omega_1\\
+  \vdots\\
+  \int_{\gamma_j}\omega_g\\
+  \end{pmatrix} \in \C^g
+\]
+ for $j = 1, ..., 2g$. Recall that we proved that this vector is well-defined as the paths are closed and that
+ the period matrix is nonsingular (\cref{pr:periodMatrixNonsingular}). Thus, with $\Z$-coordinates, we get
+ a lattice in $\C^g$:
+ \[
+   \Lambda = \set{\sum_{j=1}^{2g} m_j\pi_j}{m_j \in \Z} \sse \C^g
+ \]
+We thus can define the following:
+
+\index{Jacobian Variety}
+\begin{defn}{Jacobian Variety}{jacobianVariety}
+  Let $C$ be a compact Riemann surface. Then the $g$-dimensional complex torus $\C^g/\Lambda$ is called the
+  \emph{Jacobian variety} of $C$ and will be denoted $J(C)$.
+\end{defn}
+
+This variety will be useful for find ending when are divisor principal, give a measure of the lack thereof.
+Namely, given a $D \in \Div(C)$, does there exist a $f \in K^*(C)$ such that
+\[
+  (f) = D
+\]
+First off, as we are working over compact Riemann surfaces, we can look at divisor of degree $0$. Let:
+\begin{gather*}
+  \deg: \Div(C) \to \Z\\
+  D \mapsto \deg D
+\end{gather*}
+
+Let $\Div^0(C) = \ker(\deg)$. Then if $(f) = D$, it must be that $D \in \Div^0(C)$. The converse is not always
+true, and Abel's theorem will outline exactly how to associate these two.
+
+To that end, let us start by defining a map from $\Div(C)$ to $J(C)$. Let $q \in C$ be any fixed point and let $\omega
+\in \Omega^1(C)$ be a holomorphic differential. Then for a point $p \in C$, we can define:
+\begin{equation}\label{eq:intDiff}
+  \int_q^p \omega
+\end{equation}
+Sine there is nontrivial winding, the difference of two paths from $q$ to $p$ is a homology class that can be
+written as
+\[
+  \sum_{j=1}^{2g} m_j\gamma_j
+\]
+hence two values of equation~(\ref{eq:intDiff}) will differ by:
+\[
+  \sum_{j=1}^{2g} m_j \int_{\gamma_j} \omega
+\]
+By letting $\omega$ run through the basis of $\Omega^1(C)$, we get the following:
+\index{Abel-Jacobi Map}
+\begin{defn}{Abel-Jacobi Map}{abel-JacobiMap}
+  Let $C$ be a compact Riemann surface, $q \in C$. Then the \emph{Abel-Jacobi map}
+  \[
+    u: \Div(C) \to J(C)
+  \]
+  is given by:
+  \[
+    u(D) = \begin{pmatrix}
+      \sum_{i=1}^k n_i \int_q^{p_i} \omega_1\\
+    \vdots\\
+    \sum_{i=1}^k n_i \int_q^{p_i}\omega_g\\
+    \end{pmatrix}
+  \]
+  where $D = \sum_{i=1}^k n_ip_i$.
+\end{defn}
+
+Certainly this is a homomorphism for if $D = \sum_{i=1}^k p_i - \sum_{i=1}^k q_i \in \in \Div^0(C)$ then by
+the rules of integration bounds we get the homomorphism rule. We shall see that $(f) = D$ for $D \in
+\Div^0(C)$ if and only if
+\[
+  u(D) = 0
+\]
+Or, slightly more generally:
+\index{Abel-Jacobi Theorem}
+\begin{thm}{Abel-Jacobi Theorem}{abel-jacobiThm}
+  Let $C$ be a compact Riemann surface. Then the sequence:
+  \[
+  K^*(C) \xrightarrow{(-)} \Div^0(C) \xrightarrow{u} J(C) \to 0
+  \]
+  is exact
+\end{thm}
+
+We shall not give full proof of this, but \cite{a.griffithsIntroductionAlgebraicCurves} proves it. From this we get:
+
+\index{Picard Variety}
+\begin{defn}{Picard Variety}{picardVar}
+  Let $C$ be a compact Riemann surface and $(-): K^*(C) \to \Div^0(C)$. Then:
+  \[
+    \Pic(C) = \frac{\Div^0(C)}{\im \left((-)\right)}
+  \]
+\end{defn}
+The Abel-Jacobi map then becomes an isomerism.
+
+(a lot is done here in proving it, rather interesting!!)
+
+(the Riemann bilinear relations puts important constrictions on the period matrix that shows how it reflects
+some of its topological properties!) (this gives us:)
+
+\begin{thm}{Torelli Theorem}{torelliThm}
+  Let $C, C'$ be compact Riemann surfaces. Then a necessary and sufficient conditions for $C\cong C'$ as
+  biholomorphisms is that the have the same normalized period matrix under a suitable choice of canonical
+  homology bases
+\end{thm}
+
+\begin{Proof}
+  \cite[p.174]{a.griffithsIntroductionAlgebraicCurves}
+\end{Proof}
+
+(then it goes onto prove Jacobi inversion theorem; that $u: \Div^0(C) \to J(C)$ is surjective)
+
+\subsection{Applications of Abel's Theorem}\label{sec:abelThmApplication}
+
+Let $C$ be a nonhyperelliptic compact Riemann surface of genus $3$; without loss of generality we may identify
+$C$ with its canonical curve in $\P^2$. The n$C$ is a fourth-degree smooth plane algebraic curve. Let $L$ be
+a straight line in $\P^2$. Then:
+\[
+  D = L\cdot C = p_1 + p_2 + p_3 + p_4 \in C^{(4)}
+\]
+is a hyperplane section. Let $E \in \C^{(4)}$. Then $u(E) = u(D)$ if and only if there exists a line $L'$ such that
+\[
+  E = L'\cdot C
+\]
+hence, $E$ must be a hyperplane. Indeed, if $E = L'\cdot C$, let $L$ and $L'$ be given by linear equations
+$l,l'$ so that $L = \{l = 0\}$ and $L' = \{l' = 0\}$. Letting:
+\[
+  f = \left.\frac{l'}{l}\right|_{C} \in K(C)
+\]
+then $(f) = E-D$, and so $0 = u(E)-u(D)$, hence $u(E) = u(D)$. Conversely, if $u(D) = u(E)$, then we need to
+show that:
+\[
+  E \equiv q_1 + q_2 + q_3 + q_4
+\]
+is a hyperplane section. Suppose that $L'$ is the unique line passing through $q_1, q_2$. Then:
+\[
+  L'\cdot C = q_1 + q_2 + q' + q''
+\]
+If $L'\cdot C \ne E$, then it must be that :
+\[
+  q_3 + q_4 - q' -q'' \ne 0
+\]
+If $u(D) = u(E)$, then $u(E) = u(L'\cdot C)$ (as $D$ and $L'\cdot C$ are both hyperplanes sections), and so:
+\[
+  u(q_3+q_4 - q'-q'') = 0
+\]
+Thus by the Abel-Jacobi Theorem there exists an $f$ such that
+\[
+  (f) = q_3 + q_4 -q'-q''
+\]
+Now, consider $f: C \to \P^1$ as a holomorphic mapping. Then $f$ has either degree $1$ or $2$ (depending on
+water one of $\{q_3, q_3\}$ is equal to one of $\{q', q''\}$). Implying that $C$ is either Riemann sphere or
+a hyperelliptic Riemann surface, but that contradicts the fact that $C$ is nonhyperelliptic of genus $3$.
+Thus:
+\[
+  E = L'\cdot C
+\]
+Thus, given a hyperplane section $D$ of a canonical curve of genus $3$, $|D|$ can be identified with the set
+of hyperplanes of $\P^2$, that is:
+\[
+  |D| \cong \P^2
+\]
+Giving us a full geometric picture!
+
+Next, if $g = 1$, we can rather easily classify all such surfaces up to biholomorphism. We first have:
+
+\begin{thm}{Jacobi Variety in Genus 1}{jacobiVarietyinGenus1}
+  Let $C$ be a compact Riemann surface of genus $1$. Then it is biholomorphic to its Jacobian variety
+  \[
+    C \cong J(C)
+  \]
+  Given a normalized period matrix
+  \[
+    \Pi = (1\ z){1\times x}
+  \]
+  Then $C \cong \C/\Lambda$, where $\Lambda$ is the lattice spanned by $1$ and $z$.
+\end{thm}
+
+\begin{Proof}
+  In~\cite[p.193]{a.griffithsIntroductionAlgebraicCurves}, this was a consequence in the discussion of the
+  Jacobi inversion theorem in the case of $d= 1$, where immediately concludes:
+  \[
+    u: C \to J(C)
+  \]
+  is a biholomorphic mapping.
+\end{Proof}
+
+\begin{thm}{Up To Projective Special Automorphism}{upToProjSpecialAutomorphism}
+  Let $C = \C/\Lambda$ and $C' = \C/\Lambda'$ where:
+  \begin{align*}
+    \Lambda &= \set{m + nz}{m,n \in \Z} & \im z > 0\\
+    \Lambda' &= \set{m + nz'}{m,n \in \Z} & \im z' > 0
+  \end{align*}
+  hen $C \cong C'$ if and only if and only if
+  \[
+    z = \frac{\alpha z' + \beta}{\gamma z' + \delta}
+  \]
+   where $\alpha,\beta,\gamma,\delta \in \Z$ and
+   \[
+    \alpha\delta-\beta\gamma = 1
+   \]
+\end{thm}
+
+\begin{Proof}
+  In~\cite[p.194]{a.griffithsIntroductionAlgebraicCurves}, but can also be found
+  in~\cite{silvermanAdvancedTopicsArithmetic1994} or~\cite{NateEllipticCurve}.
+\end{Proof}
+
+(then he goes onto finish off with some commentary about elliptic integrals, the ``usual'' representation
+a $p(x) = 4x^3 + ax + b$, uses B\'ezouts theorem to get the number of flex points of an $n$th degree curve
+(that is $3n(n-2)$ counting multiplicity), and he uses all of this to show the original connection to
+integrating ellipses. The last thing he does is show some algebraic properties of $x(u)$; just like was shown
+a Weierstrass equation section in a complex analysis course).
+
+
+
+
+
 
 
 
