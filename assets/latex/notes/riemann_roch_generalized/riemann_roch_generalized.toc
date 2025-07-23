@@ -14,3 +14,5 @@
 \contentsline {subsection}{\numberline {4.7}Genus 4}{38}{subsection.4.7}%
 \contentsline {subsection}{\numberline {4.8}Abel's Theorem and its Applications}{38}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Applications of Abel's Theorem}{41}{subsection.4.9}%
+\contentsline {section}{\numberline {5}Riemann Roch in Modern Language}{43}{section.5}%
+\contentsline {section}{\numberline {6}Generalized Riemann Roch: Vector Bundles}{43}{section.6}%

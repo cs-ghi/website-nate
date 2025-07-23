@@ -172,8 +172,10 @@
 \newcommand{\V}{{\mathbb{V}}}
 \newcommand{\Z}{{\mathbb{Z}}}
 \newcommand{\BI}{{\mathbb{I}}}
+\newcommand{\BG}{{\mathbb{G}}}
 \renewcommand{\H}{{\mathbb{H}}}
 \renewcommand{\P}{{\mathbb{P}}}
+\newcommand{\BGL}{{\mathbb{GL}}}
 
 
 % mathcal
@@ -255,6 +257,7 @@
 % operatorname -- 2 letters (lowercase and upper case)
 \newcommand{\ab}{{\operatorname{ab}}}
 \newcommand{\ad}{{\operatorname{ad}}}
+\newcommand{\an}{{\operatorname{an}}}
 \newcommand{\ch}{{\operatorname{ch}}}
 \newcommand{\ev}{{\operatorname{ev}}}
 \newcommand{\id}{{\operatorname{id}}}
@@ -308,7 +311,8 @@
 \newcommand{\kdim}{{\operatorname{kdim}}}
 \newcommand{\diag}{{\operatorname{diag}}}
 
-\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\trdeg}{{\operatorname{trdeg}}}
+\newcommand{\smooth}{{\operatorname{smooth}}}
 \newcommand{\coker}{{\operatorname{coker}}}
 \newcommand{\codim}{{\operatorname{codim}}}
 
@@ -326,12 +330,13 @@
 \newcommand{\Int}{{\operatorname{int}}}
 \newcommand{\Irr}{{\operatorname{Irr}}}
 \newcommand{\Jac}{{\operatorname{Jac}}}
-\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Mor}{{\operatorname{Mor}}}
 \newcommand{\Nil}{{\operatorname{Nil}}}
 \newcommand{\Obj}{{\operatorname{Obj}}}
 \newcommand{\Out}{{\operatorname{Out}}}
 \newcommand{\Pic}{{\operatorname{Pic}\,}}
 \newcommand{\Rep}{{\operatorname{Rep}}}
+\newcommand{\Zar}{{\operatorname{Zar}}}
 \newcommand{\Res}{{\operatorname{Res}}}
 \newcommand{\Spl}{{\operatorname{Spl}}}
 \newcommand{\Syl}{{\operatorname{Syl}}}
@@ -355,6 +360,8 @@
 \newcommand{\genus}{{\operatorname{genus}}}
 
 \newcommand{\mSpec}{{\operatorname{mSpec}}}
+
+\newcommand\cH{\check{\mathrm{H}}}
 
 
 % connectors
@@ -2789,17 +2796,157 @@ a Weierstrass equation section in a complex analysis course).
 
 \section{Riemann Roch in Modern Language}
 
+here
 
 
 \section{Generalized Riemann Roch: Vector Bundles}
 
-Let us sta
+Let $X$ be a complex irreducible algebraic variety (not necessarily smooth). Define:
+\begin{enumerate}
+	\item $X_\Zar$: $X$ with the Zariski topology (abbreviated to $Z$-topology) and $\CO_X$ the germs of algebraic functions
+	\item $X_\C$: $X$ with the complex topology (abbreviated to $\C$-topology)and $\CO_X$ the germs of algebraic functions
+	\item $X^\an$: $X$ with the complex topology and $\CO_X$ the germs of holomorphic functions
+	\item $X_\smooth$: $X$ with the complex topology and $\CO_X$ the germs of $C^\infty$-functions
+\end{enumerate}
+
+Then a vector bundle $p: E \to X$ can either be locally trivial in the $\Z$-topology or the $\C$-topology. As $X$
+is irreducible, it is connected, so the rank is a well-defined. If $E \to X$ has rank $r$, then:
+\begin{enumerate}
+  \item (covering) there exists an open covering $\{U_\alpha \to X\}_\alpha$ along with isomorphisms:
+    \[
+      \phi_\alpha: p^{-1}(U_\alpha) \to U_\alpha \times \C^r
+    \]
+    We shall sometimes denote $p^{-1}(U_\alpha)$ as $E|_{U_\alpha}$.
+   \item (local trivialization) For every $\alpha$, the following diagram commutes:
+     \[
+     \begin{tikzcd}
+     p^{-1}(U_\alpha) \arrow[rd, "p"'] \arrow[rr, "\sim"] &   & U_\alpha \times \C^r \arrow[ld, "\pi_1"] \\
+                                                          & X &
+     \end{tikzcd}
+     \]
+   \item (gluing -- cocycle condition)
+    \[
+    \begin{tikzcd}
+    p^{-1}(U_\alpha) \arrow[r, "\varphi_\alpha"] \arrow[d] & U_\alpha \prod \mathbb{C}^r \arrow[d] \\
+    p^{-1}(U_\alpha \cap U_\beta) \arrow[r, "\varphi_\alpha"] \arrow[d, equal] & (U_\alpha \cap U_\beta) \prod \mathbb{C}^r \arrow[d, "g_\alpha^\beta"] \\
+    p^{-1}(U_\beta \cap U_\alpha) \arrow[r, "\varphi_\beta"] \arrow[d] & (U_\beta \cap U_\alpha) \prod \mathbb{C}^r \arrow[d] \\
+    p^{-1}(U_\beta) \arrow[r, "\varphi_\beta"] & U_\beta \prod \mathbb{C}^r
+    \end{tikzcd}
+    \]
+    where by commutativity $g_\alpha^\beta = \phi_\beta \circ \phi^{-1}_\alpha|_{p^{-1}(U_\alpha\cap
+    U_\beta)}$.
+\end{enumerate}
+
+Note then that
+\[
+  g_\alpha^\beta|_{U_\alpha\cap U_\beta} = \id \qquad \text{and} \qquad g_\alpha^\beta|_{\C^r} \in
+  \GL_r(\Gamma(U_\alpha\cap U_\beta), \CO_X)
+\]
+On a triple overlap, we get:
+\[
+  g_\beta^\gamma\circ g_\alpha^\beta = g_\alpha^\beta \qquad \text{and} \qquad (g_\beta^\alpha)^{-1}
+  = g_\alpha^\beta
+\]
+Hence, the collection $\{g_\alpha^\beta\}$ forms a $1$-cocycle in $Z^1(\{U_\alpha \to X\},\BGL)$ where
+$\BGL$ or $\BGL(X)$ is:
+\[
+  \Gamma(U, \BGL_r(X)) = \GL_r(\Gamma(U, \CO_X))
+\]
+where the right hand side is the group of invertible linear maps on the free module $\Gamma(U, \CO_X)^r
+\cong \Gamma(U, \CO_X^r)$. When $r = 1$, we often denote $\BGL_1(X)$ as $\BG_m$ or $\CO_X^*$.
 
 
+Let's talk about choice. Say $\{\psi_\alpha\}_\alpha$ is another trivialization. Without loss of generality we
+may refine each cover so that $\{\phi_\alpha\}_\alpha$ and $\{\psi_\alpha\}_\alpha$ use the same cover. Then
+there exists an isomorphism: $\sigma_\alpha: U_\alpha\times \C^r \to U_\alpha\times \C^r$ where the following
+diagram commutes:
+\[
+  \begin{tikzcd}
+                                                                     & U_\alpha\times \C^r \arrow[dd, "\sigma_\alpha"] \\
+p^{-1}(U_\alpha) \arrow[ru, "\phi_\alpha"] \arrow[rd, "\psi_\alpha"] &                                                 \\
+                                                                     & U_\alpha\times \C^r
+\end{tikzcd}
+\]
+Then $\{\sigma_\alpha\}_\alpha$ form $0$-cochains in $C^0(\{U_\alpha \to X\}, \BGL_r)$. if
+$\{h_\alpha^\beta\}$ is the gluing information for the $\{\psi_\alpha\}$ then:
+
+\begin{align*}
+  \varphi_\beta &= g_\alpha^\beta \circ \varphi_\alpha
+  \psi_\beta &= h_\alpha^\beta \circ \psi_\alpha
+  \psi_\alpha &= \sigma_\alpha \circ \varphi_\alpha.
+\end{align*}
+
+Thus: $\sigma_\beta \circ \varphi_\beta = \psi_\beta = h_\alpha^\beta \circ \sigma_\alpha \circ
+\varphi_\alpha$, so:
+\[
+    \varphi_\beta = (\sigma_\beta^{-1} \circ h_\alpha^\beta \circ \sigma_\alpha) \circ \varphi_\alpha,
+\]
+and so the transition between $g_\alpha^\beta$ and $h_\alpha^\beta$ is:
+\[
+  g_\alpha^\beta = \sigma_\beta^{-1} \circ h_\alpha^\beta \circ \sigma_\alpha
+\]
+We thus get a conjugation equivalence relation $\sim$ on $Z^1(\{U_\alpha \to X\}, \BGL_r)$ which trivializes
+co-cycles:
+\[
+  Z^1/\sim = H^1(\{U_\alpha \to X\}, \BGL_r)
+\]
+This is not a group as $\BGL_r$ is not abelian, however it is a pointed set (the trivial bundle is singled
+out, pointed out). By passing through the limit over the covers by refinement, we can label the limit
+$\cH^1(X, \BGL_r)$ and we then have:
+
+\begin{thm}{Vector Bundle Classification Through Cohomology}{vecBundleClassificationThroughCohom}
+    Let $X$ be an algebraic curve of type (I)-(IV). Then the set of isomorphisms classes of rank $r$ of vector
+    bundles is isomorphic to $\cH^1(X, \BGL_r)$
+\end{thm}
+
+\begin{Proof}
+  the above work
+\end{Proof}
+
+This group is indeed the right choice, for if $1 \to G' \to G \to G'' \to 1$ is an exact sequence of of
+sheaves of groups (not necessarily commutative), then
+\[
+\begin{tikzcd}[
+    column sep=3.3em,
+    row sep=5em
+]
+  1 \arrow[r] &
+  G'(X) \arrow[r] &
+  G(X) \arrow[r] &
+  G''(X) \arrow[dll,
+    rounded corners=12pt,
+    to path={
+      -- ([xshift=3ex]\tikztostart.east)
+      |- ($(\tikztostart)!0.5!(\tikztotarget)$)
+        node[pos=0, right, xshift=3pt, yshift=-5pt] {$\delta_0$}
+      -| ([xshift=-3ex]\tikztotarget.west)
+      -- (\tikztotarget)
+    }
+  ]
+  \\
+  & \check{H}^1(X, G') \arrow[r] &
+  \check{H}^1(X, G) \arrow[r] &
+  \check{H}^1(X, G'')
+\end{tikzcd}
+\]
+
+is an exact sequence of pointed sets. To compute $\delta_0(\sigma)$ where $\sigma \in G''(X)$, proceed as follows: Cover $X$ by suitable $U_\alpha$ and pick $s_\alpha \in G(U_\alpha)$ mapping to $\sigma|U_\alpha$ in $G''(U_\alpha)$. Set
+
+\[
+\delta_0(\sigma) = s_\alpha s_\beta^{-1} \text{ on } U_\alpha \cap U_\beta/\sim.
+\]
+Then $\delta_0(\sigma) \in \cH^1(X, G')$.
+
+Note that we took $\BGL_r(X)$, but we could have taken the automorphisms of any object, namely if $F$ is an
+object and $\Aut(F)$ is the automorphisms, we then call the $X$-torsor for $F$ an ``object $E$ over $X$''
+locally (on $X$) of the form $U\times F$ and glued by paired $(\id, g)$ where $g \in \Mor(U\cap V, \Aut(F))$.
+Then we just classified all $X$-torsors of $F$.
 
 
-
-
+(3)
+\[
+0 \longrightarrow \mathbb{G}_m \longrightarrow \mathbb{G}_{r+1} \longrightarrow \mathbb{P}\mathbb{G}\mathbb{L}_r \longrightarrow 0 \text{ is exact.}
+\]
 
 
 
