@@ -16,3 +16,4 @@
 \contentsline {subsection}{\numberline {4.9}Applications of Abel's Theorem}{41}{subsection.4.9}%
 \contentsline {section}{\numberline {5}Riemann Roch in Modern Language}{43}{section.5}%
 \contentsline {section}{\numberline {6}Generalized Riemann Roch: Vector Bundles}{43}{section.6}%
+\contentsline {section}{\numberline {7}Terms}{46}{section.7}%
