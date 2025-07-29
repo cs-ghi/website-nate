@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber areas_of_algebraic_geoemtry_reserach"] 1753573219 "areas_of_algebraic_geoemtry_reserach.bcf" "areas_of_algebraic_geoemtry_reserach.bbl" "areas_of_algebraic_geoemtry_reserach" 1753573444 0
+["biber areas_of_algebraic_geoemtry_reserach"] 1753573219 "areas_of_algebraic_geoemtry_reserach.bcf" "areas_of_algebraic_geoemtry_reserach.bbl" "areas_of_algebraic_geoemtry_reserach" 1753830477 0
   "./bibliography.bib" 1753573097 15468 72c43433fe0663a67bd7947adddc2865 ""
-  "areas_of_algebraic_geoemtry_reserach.bcf" 1753573444 108781 2621e607d86f3e5e19ddadd69b8896b0 "pdflatex"
+  "areas_of_algebraic_geoemtry_reserach.bcf" 1753830477 108781 2621e607d86f3e5e19ddadd69b8896b0 "pdflatex"
   (generated)
   "areas_of_algebraic_geoemtry_reserach.bbl"
   "areas_of_algebraic_geoemtry_reserach.blg"
   (rewritten before read)
-["makeindex areas_of_algebraic_geoemtry_reserach.idx"] 1753572615 "areas_of_algebraic_geoemtry_reserach.idx" "areas_of_algebraic_geoemtry_reserach.ind" "areas_of_algebraic_geoemtry_reserach" 1753573444 0
-  "areas_of_algebraic_geoemtry_reserach.idx" 1753573443 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex areas_of_algebraic_geoemtry_reserach.idx"] 1753572615 "areas_of_algebraic_geoemtry_reserach.idx" "areas_of_algebraic_geoemtry_reserach.ind" "areas_of_algebraic_geoemtry_reserach" 1753830477 0
+  "areas_of_algebraic_geoemtry_reserach.idx" 1753830476 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "areas_of_algebraic_geoemtry_reserach.ilg"
   "areas_of_algebraic_geoemtry_reserach.ind"
   (rewritten before read)
-["pdflatex"] 1753573441 "areas_of_algebraic_geoemtry_reserach.tex" "areas_of_algebraic_geoemtry_reserach.pdf" "areas_of_algebraic_geoemtry_reserach" 1753573444 0
+["pdflatex"] 1753830474 "areas_of_algebraic_geoemtry_reserach.tex" "areas_of_algebraic_geoemtry_reserach.pdf" "areas_of_algebraic_geoemtry_reserach" 1753830477 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -334,11 +334,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684428852 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "areas_of_algebraic_geoemtry_reserach.aux" 1753573444 2681 a933e43775e6c3a9f85f8757ef142f78 "pdflatex"
+  "areas_of_algebraic_geoemtry_reserach.aux" 1753830477 2681 a933e43775e6c3a9f85f8757ef142f78 "pdflatex"
   "areas_of_algebraic_geoemtry_reserach.bbl" 1753573221 13866 d8f676349cf5112025908f38f193fae0 "biber areas_of_algebraic_geoemtry_reserach"
   "areas_of_algebraic_geoemtry_reserach.ind" 1753572615 0 d41d8cd98f00b204e9800998ecf8427e "makeindex areas_of_algebraic_geoemtry_reserach.idx"
-  "areas_of_algebraic_geoemtry_reserach.run.xml" 1753573444 2531 8bdc861fa06a3187c8634eb2249a6365 "pdflatex"
-  "areas_of_algebraic_geoemtry_reserach.tex" 1753573439 36527 45870d1fa0b0b1354cd1ca31c647f78e ""
+  "areas_of_algebraic_geoemtry_reserach.run.xml" 1753830477 2531 8bdc861fa06a3187c8634eb2249a6365 "pdflatex"
+  "areas_of_algebraic_geoemtry_reserach.tex" 1753830472 36523 7d4fed54694801a83362ffe8e9b7443d ""
   "bibliography.bib" 1753573097 15468 72c43433fe0663a67bd7947adddc2865 ""
   (generated)
   "areas_of_algebraic_geoemtry_reserach.aux"
