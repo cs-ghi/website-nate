@@ -1,0 +1,927 @@
+\documentclass{book}
+%\documentclass{book}
+%If you're going to print this, perhaps get ride of oneside so that \parts{} will have their own page!
+\title{
+	\begin{huge}
+		\bf{Hirzebruch–Riemann–Roch theorem}
+	\end{huge}
+	}
+\author{Nathanael Chwojko-Srawley}
+
+%\date{} % If you want to specify a date
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         packages                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[answerdelayed]{exercise}
+\usepackage[font=itshape]{quoting}
+\usepackage[most]{tcolorbox}         % Makes nice boxes for thms, cor, prop, or anything else.
+\usepackage{amsmath, amssymb, amsthm} % Used to write better mathematical expressions (ex. \mathbb{R})
+\usepackage{array}                   % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+\usepackage{bbm}                     % for mathbbm{1}
+\usepackage{blindtext}
+\usepackage{commutative-diagrams}
+\usepackage{dsfont}
+\usepackage{dynkin-diagrams}         % for Dynkin diagrams
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{euscript}
+\usepackage{extarrows}               % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{fancyhdr}
+\usepackage{float}                   % package with ``H'' for figures and tables, ex. Images, tables, etc
+\usepackage{graphicx}                % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{hhline}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{inputenc}                % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{listings}                % Create nice colour code blocks (customized in preamble)
+\usepackage{longtable}               % create tables that extend past one page
+\usepackage{makeidx}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+% \usepackage{microtype}               % makes nice text. Fixes some under-/over- filled box problems.
+\usepackage{multicol}                % For multiple columns
+\usepackage{pgfplots}
+\usepackage{scalerel}
+\usepackage{setspace}                % More flexibility on spacing in document.
+\usepackage{stackengine}
+\usepackage{stackrel}                % for left-right arrows, staking symbol above and bellow
+\usepackage{thmtools}                % Customize theorem environment (in preamble).
+\usepackage{tikz-cd}                 % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tikz}                    % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{titlesec}
+\usepackage{wasysym}                 % emoji's!
+\usepackage{wrapfig}                 % To wrap text around figure
+\usepackage{xcolor}                  % Colour text.
+
+% \usepackage{comment}
+
+% \usepackage{CJKutf8} % for some chinese
+
+% \usepackage{dutchcal} % for lower case mathcal
+% \pdfsuppresswarningpagegroup=1
+
+% ╔═════════════════════════════════════════════════════╗
+% ║           for figures via inkspace                  ║
+% ╚═════════════════════════════════════════════════════╝
+
+% to import figures via: https://github.com/gillescastel/inkscape-figures
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+
+% This command is the ONLY command imported via the packages snippet, think of it as a tiny package written out
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                 bibliography and citing                   ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\usepackage{csquotes}
+% \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\usepackage[backend=biber]{biblatex}
+
+\addbibresource{bibliography.bib}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                    colours (colors)                       ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{reddish}{HTML}{A01A3A}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║               title/heading/footer format                ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\pagestyle{fancy}
+\setlength\headheight{20pt}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+\fancyfoot[R,RO]{\thepage}{}
+
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Huge\itshape} % format
+{\thechapter} % label
+{0.5ex} % sep
+{
+    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \centering
+}
+[
+\vspace{-0.5ex}
+\rule{\textwidth}{0.3pt}
+]
+
+\setlength{\parindent}{0pt} % don't like indentation infront of paragraphs
+\setlength{\parskip}{1ex}   %so that there is still space between paragarphs
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       Shortcuts                          ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+%\ExerciseLevelInToc
+
+% I like original mathcal better, but need lowercase.
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+
+% mathbb
+\newcommand{\A}{{\mathbb{A}}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\F}{{\mathbb{F}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\V}{{\mathbb{V}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\BI}{{\mathbb{I}}}
+\renewcommand{\H}{{\mathbb{H}}}
+\renewcommand{\P}{{\mathbb{P}}}
+
+
+% mathcal
+% \newcommand{\co}{{\mathfrak{o}}} %mathcal{o} looks like wreath product, so I changed it to mathfrak
+\newcommand{\co}{{\mathpzc{o}}}
+\newcommand{\CA}{{\mathcal{A}}}
+\newcommand{\CB}{{\mathcal{B}}}
+\newcommand{\CC}{{\mathcal{C}}}
+\newcommand{\CD}{{\mathcal{D}}}
+\newcommand{\CF}{{\mathcal{F}}}
+\newcommand{\CG}{{\mathcal{G}}}
+\newcommand{\CH}{{\mathcal{H}}}
+\newcommand{\CI}{{\mathcal{I}}}
+\newcommand{\CK}{{\mathcal{K}}}
+\newcommand{\CL}{{\mathcal{L}}}
+\newcommand{\CM}{{\mathcal{M}}}
+\newcommand{\CN}{{\mathcal{N}}}
+\newcommand{\CO}{{\mathcal{O}}}
+\newcommand{\CQ}{{\mathcal{Q}}}
+\newcommand{\CR}{{\mathcal{R}}}
+\newcommand{\CS}{{\mathcal{S}}}
+\newcommand{\CT}{{\mathcal{T}}}
+\newcommand{\CV}{{\mathcal{V}}}
+\newcommand{\CZ}{{\mathcal{Z}}}
+% EXCPETION:
+% \newcommand{\CP}{{\mathcal{P}}}
+\newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\RP}{\mathbb{R}\mathrm{P}}
+
+
+%Euscript
+\newcommand{\EB}{\EuScript{B}}
+\newcommand{\EC}{{\EuScript{C}}}
+\newcommand{\EF}{{\EuScript{F}}}
+\newcommand{\EL}{{\EuScript{L}}}
+\newcommand{\EO}{{\EuScript{O}}}
+
+
+%mathfrak (lowercase)
+\newcommand{\fa}{{\mathfrak{a}}}
+\newcommand{\fb}{{\mathfrak{b}}}
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fd}{{\mathfrak{d}}}
+\newcommand{\fm}{{\mathfrak{m}}}
+\newcommand{\fn}{{\mathfrak{n}}}
+\newcommand{\fo}{{\mathfrak{o}}}
+\newcommand{\fp}{{\mathfrak{p}}}
+\newcommand{\fq}{{\mathfrak{q}}}
+
+
+%mathfrak (upper case)
+\newcommand{\FA}{{\mathfrak{A}}}
+\newcommand{\FB}{{\mathfrak{B}}}
+\newcommand{\FC}{{\mathfrak{C}}}
+\newcommand{\FD}{{\mathfrak{D}}}
+\newcommand{\FK}{{\mathfrak{K}}}
+\newcommand{\FM}{{\mathfrak{M}}}
+\newcommand{\FN}{{\mathfrak{N}}}
+\newcommand{\FO}{{\mathfrak{O}}}
+\newcommand{\FP}{{\mathfrak{P}}}
+
+
+%mathscr
+\newcommand{\ff}{{\mathscr{F}}}
+\newcommand{\SA}{\mathscr{A}}
+\newcommand{\SC}{\mathscr{C}}
+\newcommand{\SF}{\mathscr{F}}
+\newcommand{\SG}{\mathscr{G}}
+\newcommand{\SH}{\mathscr{H}}
+\newcommand{\SI}{\mathscr{I}}
+\newcommand{\SK}{\mathscr{K}}
+\newcommand{\SN}{\mathscr{N}}
+\newcommand{\SQ}{\mathscr{Q}}
+\newcommand{\SR}{\mathscr{R}}
+\newcommand{\SV}{\mathscr{V}}
+\newcommand{\SZ}{\mathscr{Z}}
+
+
+% operatorname -- 2 letters (lowercase and upper case)
+\newcommand{\ab}{{\operatorname{ab}}}
+\newcommand{\alg}{{\operatorname{\alg}}}
+\newcommand{\ad}{{\operatorname{ad}}}
+\newcommand{\ch}{{\operatorname{ch}}}
+\newcommand{\ev}{{\operatorname{ev}}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\im}{{\operatorname{im}}}
+\newcommand{\nm}{{\operatorname{Nm}}}
+\newcommand{\op}{{\operatorname{op}}}
+\newcommand{\rk}{{\operatorname{rk}}}
+\newcommand{\sh}{{\operatorname{sh}}}
+\newcommand{\tr}{{\operatorname{tr}}}
+
+\newcommand{\Ab}{{\operatorname{Ab}}}
+\newcommand{\Br}{{\operatorname{Br}}}
+\newcommand{\Ch}{{\operatorname{Ch}}}
+\newcommand{\Cl}{{\operatorname{Cl}}}
+\newcommand{\GL}{{\operatorname{GL}}}
+\newcommand{\Nm}{{\operatorname{Nm}}}
+\newcommand{\SL}{{\operatorname{SL}}}
+
+\renewcommand{\Re}{{\operatorname{Re}}}
+\renewcommand{\Im}{{\operatorname{Im}}}
+
+
+%categories
+\newcommand{\Grp}{{\textbf{Grp}}}
+\newcommand{\Fld}{{\textbf{Fld}}}
+\newcommand{\Sh}{{\textbf{Sh}}}
+\newcommand{\Set}{{\textbf{Set}}}
+\newcommand{\Mod}{{\textbf{Mod}}}
+\newcommand{\PSh}{{\textbf{PSh}}}
+\newcommand{\Sch}{{\textbf{Sch}}}
+\newcommand{\Top}{{\textbf{Top}}}
+\newcommand{\RgSp}{{\textbf{RgSp}}}
+\newcommand{\Ring}{{\textbf{Ring}}}
+
+
+%operatorname -- 3+ letters (lowercase and upper case)
+\newcommand{\rad}{{\operatorname{rad}}}
+\newcommand{\sep}{{\operatorname{sep}}}
+\newcommand{\res}{{\operatorname{res}}}
+\newcommand{\sgn}{{\operatorname{sgn}}}
+\newcommand{\pre}{{\operatorname{pre}}}
+\newcommand{\ord}{{\operatorname{ord}}}
+\newcommand{\vol}{{\operatorname{vol}}}
+\newcommand{\lcm}{{\operatorname{lcm}}}
+\renewcommand{\div}{{\operatorname{div}}}
+
+\newcommand{\conj}{{\operatorname{conj}}}
+\newcommand{\disc}{{\operatorname{disc}}}
+\newcommand{\stab}{{\operatorname{stab}}}
+\newcommand{\kdim}{{\operatorname{kdim}}}
+\newcommand{\diag}{{\operatorname{diag}}}
+
+\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\coker}{{\operatorname{coker}}}
+\newcommand{\codim}{{\operatorname{codim}}}
+
+\newcommand{\Ann}{{\operatorname{Ann}}}
+\newcommand{\Aut}{{\operatorname{Aut}}}
+\newcommand{\Der}{{\operatorname{Der}}}
+\newcommand{\Div}{{\operatorname{Div}}}
+\newcommand{\Emb}{{\operatorname{Emb}}}
+\newcommand{\End}{{\operatorname{End}}}
+\newcommand{\Ext}{{\operatorname{Ext}}}
+\newcommand{\Gal}{{\operatorname{Gal}}}
+\newcommand{\Hom}{{\operatorname{Hom}}}
+\newcommand{\Ind}{{\operatorname{Ind}}}
+\newcommand{\Inn}{{\operatorname{Inn}}}
+\newcommand{\Int}{{\operatorname{int}}}
+\newcommand{\Irr}{{\operatorname{Irr}}}
+\newcommand{\Jac}{{\operatorname{Jac}}}
+\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Nil}{{\operatorname{Nil}}}
+\newcommand{\Obj}{{\operatorname{Obj}}}
+\newcommand{\Out}{{\operatorname{Out}}}
+\newcommand{\Pic}{{\operatorname{Pic}\,}}
+\newcommand{\Rep}{{\operatorname{Rep}}}
+\newcommand{\Res}{{\operatorname{Res}}}
+\newcommand{\Spl}{{\operatorname{Spl}}}
+\newcommand{\Syl}{{\operatorname{Syl}}}
+\newcommand{\Sym}{{\operatorname{Sym}}}
+\newcommand{\Tor}{{\operatorname{Tor}}}
+
+\newcommand{\Char}{{\operatorname{char}}}
+\newcommand{\PDiv}{{\operatorname{PDiv}}}
+\newcommand{\Frac}{{\operatorname{Frac}}}
+\newcommand{\Frob}{{\operatorname{Frob}}}
+\newcommand{\Proj}{{\operatorname{Proj}\,}}
+\newcommand{\RMod}{{}_R\operatorname{Mod}}
+\newcommand{\SExt}{{\mathcal{E}\emph{xt}}}
+\newcommand{\SHom}{{\emph{Hom}}}
+\newcommand{\Span}{{\operatorname{span}}}
+\newcommand{\Spec}{{\operatorname{Spec}\,}}
+\newcommand{\Supp}{{\operatorname{Supp}}}
+\newcommand{\Tens}[1]{#1\otimes --}
+\newcommand{\fHom}[1]{\operatorname{Hom}(#1, --)}
+
+\newcommand{\mSpec}{{\operatorname{mSpec}}}
+
+
+% connectors
+% \renewcommand{\mid}{\big|}
+\newcommand{\sse}{\subseteq}
+\newcommand{\subg}{\leqslant}
+\newcommand{\supg}{\geqslant}
+\newcommand{\ssne}{\subsetneq}
+\newcommand{\isosubg}{\lesssim}
+\newcommand{\nsse}{\not\subseteq}
+\newcommand{\nsubg}{\trianglelefteq}
+\newcommand{\nsupg}{\trianglerighteq}
+\newcommand{\csubg}{\blacktriangleleft}
+\renewcommand{\mid}{\big|}
+
+
+% Arrows
+\newcommand{\rw}{\rightarrow}
+\newcommand{\Rw}{\Rightarrow}
+\newcommand{\lw}{\leftarrow}
+\newcommand{\Lw}{\Leftarrow}
+\newcommand{\lrw}{\leftrightarrow}
+\newcommand{\LRw}{\Leftrightarrow}
+\newcommand{\acton}{\curvearrowright}
+\newcommand{\actson}{\curvearrowright}
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+% arrows for commutative diagram: create four new angled double-struck arrows
+\newcommand\myrot[1]{\mathrel{\rotatebox[origin=c]{#1}{$\Rightarrow$}}}
+\newcommand\NEarrow{\myrot{45}}
+\newcommand\NWarrow{\myrot{135}}
+\newcommand\SWarrow{\myrot{-135}}
+\newcommand\SEarrow{\myrot{-45}}
+
+
+%shorthands
+\newcommand{\oln}[1]{{\overline{#1}}}
+\renewcommand{\bf}[1]{\textbf{#1}}
+\newcommand{\qn}{\quad\newline}
+
+
+% limits
+\newcommand{\Lim}{{\varprojlim}}
+\newcommand{\coLim}{{\varinjlim}}
+\newcommand{\Dlim}{\lim\limits_{\longrightarrow}}
+\newcommand{\coDlim}{\lim\limits_{\longleftarrow}}
+\newcommand{\cofHom}[1]{\operatorname{Hom}(--, #1)}
+
+
+%for saturated ideals in the localization section (I don't like these, I think I'll delete)
+\newcommand{\LIm}{{}^e }
+\newcommand{\LPre}{{}^c }
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    Custom Commands                       ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% swap varphi and phi
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
+\newcommand{\placeholder}{\_\_\_\_\_}
+
+\newcommand{\set}[2]{\left\{#1 \ \middle|\ #2\right\}}
+
+%mod should not have the crazy amount of space to its right!
+\renewcommand{\mod}{\,\operatorname{mod}\,}
+
+% dcups
+\newcommand{\dcup}{\sqcup}
+\newcommand{\Dcup}{\coprod}
+% \newcommand{\Dcup}{\bigsqcup}
+
+\newcommand{\nbot}{\mathrel{\rlap{$\bot$}\mkern2mu/}}
+
+%a nice large circle
+\newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%somehow not a default command
+\def\rddots{\mathstrut^{.^{.^{.}}}}
+
+%% new delimiter
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                     environments                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+
+%remember the option: breakable
+
+% create tcolor boxes
+\newtcbtheorem[number within=section]{thm}{Theorem}%
+{
+colback=green!5,
+colframe=green!35!black,
+fonttitle=\bfseries,
+label type=theorem
+}{th}
+
+\newtcbtheorem[number within=section, use counter from=thm]{lem}{Lemma}%
+{
+colback=blue!5,
+colframe=black!35!black,
+fonttitle=\bfseries,
+label type=lemma
+}{lm}
+\newtcbtheorem[number within=section, use counter from=thm]{prop}{Proposition}%
+{
+colback=white!5,
+colframe=white!35!black,
+fonttitle=\bfseries,
+label type=proposition
+}{pr}
+\newtcbtheorem[number within=section, use counter from=thm]{cor}{Corollary}%
+{colback=blue!5,
+colframe=blue!35!black,
+fonttitle=\bfseries,
+label type=corollary
+}{co}
+\newtcbtheorem[number within=section, use counter from=thm]{axiom}{Axiom}%
+{colback=black!5,
+colframe=yellow!35!black,
+fonttitle=\bfseries,
+label type=axiom
+}{ax}
+\newtcbtheorem[number within=section, use counter from=thm]{defn}{Definition}%
+{colback=red!5,
+colframe=red!35!black,
+fonttitle=\bfseries,
+label type=definition
+}{df}
+
+
+% for <s-cr> to create \item[$\LRw$] instead of \item
+\newenvironment{equivEnumerate}
+ {\begin{enumerate}
+	}{
+\end{enumerate}}
+
+%insure the exercises are properly numbered
+\counterwithin{Exercise}{section}
+\counterwithin{Answer}{section}
+
+
+%Custom enviroments
+ \newenvironment{note}
+ {\begin{tcolorbox}[enhanced, sharp corners, colback=white , borderline={0.2pt}{0pt}{black}]
+   \begin{quote}\textbf{Note}:
+   }{
+   \end{quote}\end{tcolorbox}}
+
+ \newenvironment{intuition}
+ {\begin{quote}\textbf{Intuition}:
+   }{
+   \end{quote}}
+
+\newtcbtheorem[number within=section, use counter from=thm]{titledBox}{}{%
+  enhanced,
+  sharp corners,
+  colback=white,
+  colframe=black,
+  borderline={0.2pt}{0pt}{black},
+  left=2mm,
+  right=2mm,
+  top=2mm,
+  bottom=2mm,
+  title style={opacity=1},
+  attach title to upper,
+  before upper={\textbf{\tcbtitletext}\quad},
+  coltitle=black,
+  fonttitle=\bfseries,
+  separator sign={\quad}
+}{box}
+
+
+%better example and proof environments
+\def\exampletext{Example} % If English
+\colorlet{colexam}{red!55!black} % Global example color
+
+
+\newtcbtheorem[number within=section, use counter from=thm]{example}{Example}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+% Example Frame Start
+empty,% Empty previously set parameters
+title={\exampletext \thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
+% Attaching a box requires an overlay
+attach boxed title to top left,
+   % Ensures proper line breaking in longer titles
+   minipage boxed title,
+% (boxed title style requires an overlay)
+boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+coltitle=colexam,fonttitle=\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+   before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+% Handles box when it exists on one page only
+overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: first page
+overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: middle page
+overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: last page
+overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); }%
+}{ex}
+
+
+
+\def\prooftext{Proof} % If English
+\NewDocumentEnvironment{Proof}{ O{} }
+{
+    \colorlet{colexam}{black!55!black} % Global example color
+    \newtcolorbox[number within=section]{testproofbox}{%
+        empty,% Empty previously set parameters
+        title={\emph{\prooftext} \thetcbcounter: #1},
+        attach boxed title to top left,
+        minipage boxed title,
+        boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+        coltitle=colexam,
+        fonttitle=\bfseries,
+        before=\par\medskip\noindent,
+        parbox=false,
+        boxsep=0pt,
+        left=3mm,
+        right=0mm,
+        top=2pt,
+        breakable,
+        pad at break=0mm,
+        before upper=\csname @totalleftmargin\endcsname0pt,
+        % Removed height constraints
+        % Added flexible width
+        width=\dimexpr\textwidth-3mm\relax,
+        % Modified overlays
+        overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+    \begin{testproofbox}
+}
+{\end{testproofbox}\endlist}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    for Dynkin diagrams                   ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\def\row#1/#2!{#1_{\IfStrEq{#2}{}{n}{#2}} & \dynkin{#1}{#2}\\}
+\newcommand{\tble}[1]{
+   \renewcommand*\do[1]{\row##1!}
+   \[
+      \begin{array}{ll}\docsvlist{#1}\end{array}
+   \]
+}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         links                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\definecolor{LinkColour}{HTML}{A64A3B} % favourite
+% \definecolor{LinkColour}{HTML}{8C3D32} % 2nd place
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=magenta,
+  linkcolor=LinkColour,
+  urlcolor=blue,
+}
+
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                          misc                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\stackMath %to be able to stack text in math mode
+\pgfplotsset{compat=1.18}
+\makeindex
+
+%import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.svg,
+\begin{document}
+\maketitle
+\tableofcontents
+
+\textcolor{red}{I will try to have the introduction have as few prerequisites as possible so that what I'm
+doing can at least be explainable, but it will be inevitable to bring up scheme theory and k-theory in the
+paper so I will just drop the pretext of accessibility at that point}.
+
+A natural question to ask in complex and algebraic geometry is ``how many
+holomorphic/meromorphic/algebraic/analytic/etc functions are there on a (suitable) space $X$''. By letting
+$\CF(X)$ represent our choice of functions (the global sections of a [quasi-coherent] sheaf $\CF$), we shall
+denote this question a question about finding information about the $0$th sheaf cohomological group
+\[
+  H^0(X, \CF)
+\]
+which by~\cite{NateAlgGeo} is equal to $\CF(X)$. This group shall sometimes be trivial, and the reason
+for its trivialness can be described by higher order sheaf cohomology groups:
+\[
+  H^1(X, \CF), H^2(X, \CF), ...
+\]
+exactly how to extract this information is known as the \emph{Riemann Roch Problem}. To motivate the direction
+the problem took, let us answer this question in some simple cases.
+
+
+The simplest case would be to deal with polynomial functions over $X = \C$ which are determined by a finite
+set of roots (counting multiplicity) and a constant:
+\[
+  p(z) = c(z-a_1)\cdots (z-a_n)
+\]
+and similarly for rational functions. For future connection to sheaves let $\CO_X(X)$ represent all algebraic functions on $X$
+and $\CM_X(X)$ represent all rational functions on $X$; other common notation is $\C[X] = \CO_X(X)$ and $\C(X)
+= \CM_X(X)$ where $\C$ is often replaced with some other field $K$ or ring $R$. If we ask for holomorphic
+functions so that $(X,\CF) = (\C, \CH(\C))$, then, then the Weierstrass Factorization Theorem
+(see~\cite[section~4.2]{NateComplexAnalysis}) tells us that $f \in \CH(\C)$ factors as an infinite polynomial along with
+some correction factors
+\[
+  z^m e^{g(z)}\prod_k^\infty \left[ \left( 1- \frac{z}{a_k} \right)e^{p_k(z)} \right]
+\]
+where
+\[
+  p_k(z) =  \frac{z}{a_k} + \frac{1}{2} \left( \frac{z}{a_k} \right)^2 + \cdots + \frac{1}{m_k} \left( \frac{z}{a_{m_k}} \right)^m
+\]
+is the correction factor and the $a_k$ are accumulation points; in particular there are analytic concerns.
+A meromorphic function $f$ on $\C$ can be determined by two entire function $f = g/h$ (again
+see~\cite[section~4.2]{NateComplexAnalysis}); this is possible as for poles of $f$ we can define a function $h$ with the
+appropriate roots and multiplicities. In other words, determining meromorphic functions becomes
+a classification of non-accumulating sequences in $\C$. The situation requires even more analytic information in hyperbolic
+space $D^2$ (think of the existence of $\sum_n z^{n!}$ and $1/(1-z)$). To understand the algebraic behaviour, limiting the scope to
+\emph{compact spaces} such as Riemann surfaces or projective varieties gets much better as any holomorphic/meromorphic
+functions must have finitely many roots/poles by the Identity theorem (that if two functions agree on a set
+of accumulation points, they are equal), and so we can focus our efforts within the algebraic setting. This
+setting is plenty rich enough for study and often offers a good starting point to generalize to the
+non-compact case\footnote{Though these cases are still very much being studied, see
+\textcolor{red}{ref:HERE}}. In fact, by the efforts of Serre, Chow, and Grothendeick, the category of analytic
+functions on (suitable) compact spaces is equivalent to the category of algebraic functions on these spaces
+(\cite{hallGAGATheorems2022}, \cite{chowCompactComplexAnalytic1949}),
+meaning compact spaces are ``intrinsically'' algebraic. We shall prove some of the pertinent parts of this
+correspondence in \textcolor{red}{ref:HERE}.
+
+Let us try finding holomorphic/meromorphic functions on $X = \CP^1$ and see if they are
+determined by the points of $\CP^1$. Immediately, $\CP^1$ has only constant holomorphic functions by an easy
+generalization of Liouville or the maximum modulus principle on manifolds. By the Residue Theorem, the sum of
+the number of roots and poles of a meromorphic function must be $0$.
+
+Let us represent this formally. Let
+\[
+  D = \sum_i n_ip_i \qquad p_i \in \CP^1
+\]
+be a finite formal sum; we may think of it as the free (abelian) group $F^{\Z}(\CP^1)$. Call $D$
+a \emph{divisor}, and let let $\Div(\CP^1)$
+represent this group. A divisor can be thought of as an object that remembers which roots/poles with which
+multiplicity we are interested in. Define:
+\[
+  \div(f) =  \sum_i \nu_{p_i}(f)p_i
+\]
+where $\nu_{p_i}(f)$ is the order of the zero/pole, and is negative if it is a pole. This forms a subgroup of
+$\Div(\CP^1)$; represent it as $\PDiv(\CP^1)$ (``P'' for principal), and elements of this subgroup are called
+\emph{principal divisors}. This subgroup represents the divisors that are \emph{representable} as a
+meromorphic function. Let us find which divisors can be represented. Let:
+\[
+  \deg D = \sum_i n_i
+\]
+Notice that $\deg(-)$ is certainly a group homomorphism. By our earlier remark:
+\[
+  \deg(\div(f)) = 0
+\]
+which is a restriction applied to any meromorphic function on $\CP^1$. It is easy to see that this restriciotn
+would work on any compact Riemann surface (see~\cite[chapter~6]{NateComplexAnalysis}). If $\deg(D) = 0$, by our earlier remark
+we have that there exists an $f$ such that $\div(f) = D$, showing this conditions characterizes meromorphic
+functions $f \in \CM(\CP^1)$ (but it shall not on other Riemann surfaces). Now, consider the \emph{(Weil) divisor class group}
+\[
+  \Cl(\CP^1) = \frac{\Div(\CP^1)}{\PDiv(\CP^1)}
+\]
+for any $[D] \in \Cl(\CP^1)$,  $\deg([D])$ is well-defined as $\deg(D) = \deg(D + f)$ for any $f \in
+\PDiv(\CP^1)$. If $\deg(D) = \deg(D')$, then $\deg(D) - \deg(D) = \deg(D-D') = 0$, and hence $D-D'
+= \div(f)$. Therefore, we have that:
+\[
+  \Cl(\CP^1) \cong \Z
+\]
+which can be thought of as measuring the obstruction in a meromorphic function being defined by its
+points/roots. As sheaf cohomology measures obstruction of local information having global information, we
+shall have:
+\[
+  \Cl(\CP^1) \cong H^1(\CP^1, \CO_{\CP^1}^*)
+\]
+the details of this isomorphism and why $\CO_{\CP^1}^*$ shall be given in \textcolor{red}{ref:HERE}.
+
+
+Translating the result for $(\C, \CM_\C)$, we see that:
+\[
+  \Cl(\C) = \frac{\Div(\C)}{\PDiv(\C)} \cong 0
+\]
+as every divisor can be represented by a principal divisor. We can interpret this as there being no
+impediments to using local information to construct meromorphic functions, and we shall later also see that
+all cohomology groups shall be trivial. Notice that the ring $\C[x]$ is a UFD; this algebraic fact shall be
+given geometric meaning in \textcolor{red}{ref:HERE}.
+
+Let us look at the next simplest nontrivial example. Let $X = \C/\Lambda$ where $\Lambda\sse \C$ is a lattice spanned by the
+$\R$-linearly independent elements $(1,\tau)$ and let $\CF = \CM_X$ (all rational functions on $X$); $X$ is
+called an \emph{elliptic curve}, and so we shall label it as $E$. As mentioned earlier, if $f \in \CM_E$,
+$\div(f) = 0$. However, if $\deg(D) = 0$, this does not imply there exists an $f \in \CM_E$ such that $\div(f)
+= D$. To see this, let analyze $\CM_E$ a little more closely. As $\C/\Lambda$ is the quotient by $\Lambda$,
+any meromorphic function must respect the $\Lambda$ structure:
+\[
+  f(z+n+m\tau) = f(z) \qquad \forall n+m\tau \in \Lambda
+\]
+such a function is called \emph{doubly periodic} or \emph{elliptic function} (as they are defined on elliptic
+curves). Using this periodic condition, it is simple to see that
+$\div(f) = 0$ by looking at:
+\[
+  \frac{1}{2\pi i}\int_{\partial D} \frac{f'(z)}{f(z)}dz = 0
+\]
+where $D$ is the fundamental domain\footnote{If there are zero/poles on the path, we simply shift around
+appropriately}, namely the opposing edges cancel out. We can modify this integral to find other properties,
+for example:
+\[
+  \frac{1}{2\pi i}\int_{\partial D} z\frac{f'(z)}{f(z)}dz = n + m\tau \in \Lambda
+\]
+which is nonzero as $z$ is not doubly periodic. Replacing $z$ by other algebraic functions all end up in
+$\Lambda$, and so we see that if $D = \div(f)$:
+\[
+  \sum_i n_ip_i \equiv 0 \mod \Lambda
+\]
+where here $\sum_i n_ip_i\notin F^\Z(E)$ but $\sum_i n_ip_i \in E$, namely we are trying $p_i$ as a complex
+number multiplied by $n_i$ and summed. Certainly there is no such restriction on
+a general divisor $D \in \Div(E)$ of degree $0$. We thus have shown that there is a surjective map:
+\begin{equation}\label{eq:ellipticCrvIso}
+  \Cl^0(E) = \frac{\Div^0(E)}{\PDiv(E)} \twoheadrightarrow \C/\Lambda
+\end{equation}
+where $\Div^0(E)$ are all divisor of degree $0$. It is in fact an isomorphism, which comes from constructing
+an elliptic functions using the Weierstrass $\wp$-function, the details are
+in~\cite[chapter~5]{NateComplexAnalysis}. Thus, we get the short exact sequence:
+\[
+  0 \to \C/\Lambda \to \Div(E) \xrightarrow{\deg} \Z \to 0
+\]
+often called the \emph{Jacobi-Abel} exact sequence as $\C/\Lambda$ is a Jacobian variety, and a short exact sequence:
+\[
+  0 \to \Cl^0(E) \to \Cl(E) \xrightarrow{\deg} \Z \to 0
+\]
+that together fit into the commutative diagram:
+\[
+\begin{tikzcd}
+0 \arrow[r] & \mathrm{Div}^0(E) \arrow[r, hook] \arrow[d, two heads, "\pi"] & \mathrm{Div}(E) \arrow[r, "\deg"] \arrow[d, two heads, "\pi"] & \mathbb{Z} \arrow[r] \arrow[d, equals] & 0 \\
+0 \arrow[r] & \Cl^0(E) \arrow[r, hook] & \Cl(E) \arrow[r, "\deg"] & \mathbb{Z} \arrow[r] & 0
+\end{tikzcd}
+\]
+Continuing on to other Riemann surfaces, we shall loose the isomorphism given in
+equation~(\ref{eq:ellipticCrvIso}) and is the beginning of the study of Jacobian
+varieties (see~\cite[section~6.4]{NateComplexAnalysis}), while going in
+higher dimensions is the beginning of the study of Weil and Cartier Divisors (see~\cite{NateAlgGeo}), and
+study how far away a space is from being constructed by ``principal'' objects. Overall, the question becomes
+less about finding which functions exist and more about some global properties of the space $X$.
+
+To answer the Riemann Roch problem, a more granular approach to find which functions (of various kinds) exist
+on a space $X$ must be taken. As divisors keep track of root/pole information, they are a great tool in
+classifying functions that ``satisfy'' the properties of the divisor. To make this precise, define an order on
+divisors $\div(X)$ where (for now) $X$ is either a Riemann surface or a smooth projective curve. Define
+a partial order on $\Div(X)$ by saying $D_1
+\ge D_2$ if each coefficient of $D_2 - D_1$ is non-negative. Then we can consider:
+\[
+  \CO_X(D)(X) = \set{f \in \CM_X(X)^*}{\div(f) + D \ge 0}
+\]
+In other words, if $D =\sum_i n_ip_i$, then $\CO_X(D)(X)$ is all meromorphic functions $f$ where it has a pole at $p_i$ of
+order at most $n_i$ if $n_i > 0$ and roots at $p_i$ of order at least $|n_j|$ if $n_j < 0$ (and $\CO_X(D)$ is
+a [coherent] sheaf). From this, we can
+reformulate the Riemann Roch problem to a question about $H^0(X, \CO_X(D))$. The famous Riemann-Roch theorem as
+proven by Riemann and Roch (where Riemann proved the Riemann-inequality, and Roch provided the
+necessary work to make it an equality, see~\cite{a.griffithsIntroductionAlgebraicCurves}) is now known as
+\emph{Riemann Roch for curves} and is the equality:
+\begin{equation}\label{eq:riemannRoch1dIntro}
+  \dim H^0(X, \CO_X(D)) - \dim H^1(X, \CO_X(D)) = \deg(D)+1-g
+\end{equation}
+where $g$ is the genus of the Riemann surface or smooth projective curve
+(see~\cite{hartshorneAlgebraicGeometry2013} or~\cite{NateAlgGeo} for defining the genus of a curve via scheme
+theory, or for a
+direct computational proof using normalization see~\cite{NateComplexAnalysis}). In the original phrasing of the Riemann Roch
+theorem, the group $H^1(X, \CO_X(D))$ is replaced with  $H^0(X, \CO(K_X-D))^*$ where $K_X$ is the canonical
+divisor of $X$; these groups are isomorphic by Serre Duality (see~\cite[section~6.3]{NateAlgGeo}). Then this
+space is identified with the space of meromorphic $1$-forms (either through some simple techniques from
+complex analysis, see Brill-Noether Reciprocity in either~\cite{a.griffithsIntroductionAlgebraicCurves}
+or~\cite{NateComplexAnalysis}, or by combining of Poincar\'e duality with DeRham's Theorem, see
+either~\cite{leeIntroductionRiemannianManifolds2018} or~\cite{NateDiffGeo}). Switching to the traditional
+notation $l(D) = \dim H^0(X, \CO_X(D))$ and $i(D) = \dim H^0(X, \CO_X(K_X-D))^*$ we get:
+\[
+  l(D) - l(K-D) = \deg(D) + 1-g
+\]
+\textcolor{red}{idk if I will prove RR for curves or relegate it to a book}. As we phrased the Riemann-Roch
+problem in the beginning, this formula would then be asking for the value of $l(D)$. There are cases where
+$l(K-D)$ disappears (for example if $D = 0$ or $D = K$), and there are many cases we can compute. It is simple
+to compute the right hand side but in general it is harder to computer the left hand side. Thus, this formula
+becomes a new constriction that helps us find $l(D)$. There are a set of theorems known as \emph{vanishing
+theorems} that specify under which conditions $l(K-D)$ (or more generally, higher cohomology groups) vanish
+(see~\cite{deligneRelevementsModulop2etDecomposition1987}); under these conditions we exact recover $l(D)$.
+
+
+Let us work towards the intuition behind the generalization. The notation on left hand side in
+equation~(\ref{eq:riemannRoch1dIntro}) can be compactified by using the Euler-Poincar\'e characteristic (or
+simply the Euler characteristic): $\chi(X, \CO_X(D)) = \sum_{i=0}^\infty (-1)^i \dim H^i(X, \CO_X(D))$ so
+that:
+\[
+  \chi(X, \CO_X(D)) = \deg(D) + 1-g
+\]
+Note that $H^i(X, \CO_X(D)) = 0$ for $i > 1$, \textcolor{red}{cite? Reference for later?} giving the equality.
+The right hand side shall be drastically different, split into special invariants of vector bundles known as
+the Chern class and Todd class \textcolor{red}{mention the ``duality'' between them? see notes} . In fact, the
+Euler Characteristic shall also turn out to be an invariant on vector bundles, and hence the Riemann Roch
+theorem generalizes to a question about the existence of sections on vector bundles over a compact manifolds.
+We shall mention the generalization to smooth quasi-projective schemes over a field near the end, and also
+talk a bit about a recent paper (\cite{navarroRiemannRochFormulaProjective2017}) generalizing to finite
+dimensional Noetherian schemes.
+
+To motivate how vector bundles will enter the picture, it is worth-while seeing how $\CO_X(D)$ can be
+interpreted as a line bundle. To that end, recall that the projective curve $X = \P^1$ as defined in classical
+algebraic geometry only has constant global sections. Namely, if $U_0, U_1\cong \A^1$ is the usual cover with
+global sections (i.e. functions) $\CO_X(U_0) \cong \CO_X(U_1) = K[x]$ and the compatibility condition on
+$U_0\cap U_1$ is $f(z) = g(1/z)$, namely:
+\begin{center}
+  \[
+\begin{tikzcd}
+U_0                                               &               U_1 \\
+     U_0\cap U_1 \arrow[r, "\cong", no head] \arrow[u, hook] & U_0\cap U_1 \arrow[u, hook]
+\end{tikzcd}
+\qquad \text{i.e.} \qquad
+\begin{tikzcd}
+\A^1                                       &              \A^1 \\
+     \A^1\setminus\{0\} \arrow[u, hook] \arrow[r, "\cong", no head] & \A^1\setminus\{0\} \arrow[u, hook]
+\end{tikzcd}
+\]
+\end{center}
+gives:
+\begin{center}
+  \[
+\begin{tikzcd}
+\CO_X(U_0) \arrow[d]                                &              \CO_X(U_1) \arrow[d] \\
+                    \CO_X(U_0\cap U_1) \arrow[r, "\cong", no head] & \CO_X(U_0\cap U_1)
+\end{tikzcd}
+\qquad \text{i.e.} \qquad
+\begin{tikzcd}
+{K[x]} \arrow[d]                        & {K[y]} \arrow[d] \\
+{K[x, 1/x]} \arrow[r, "\cong", no head] & {K[y, 1/y]}
+\end{tikzcd}
+\]
+\end{center}
+where $x \mapsto 1/y$ and $1/x \mapsto y$, Then if $F([x':y']) \in
+\CO_{\P^1}(\P^1)$ is a global function, then $F([x:1]) \to f(x) \in \CO_X(U_0)$ and $F([1:y]) \to g(y) \in \CO_X(U_1)$
+are the restrictions of the function to $U_0$ and $U_1$ respectively, and by the above diagram it must be that
+these functions map to the same element in the restriction, namely:
+\[
+  f(z) \to f(x) = f(1/y) = g(y) \leftarrow g(y)
+\]
+but it is impossible that $f(1/y) = g(y)$ unless $f,g$ are the same constant. Thus, it must be that the only
+global functions on the projective line are constants:
+\[
+  \CO_{\P^1}(\P^1) = K
+\]
+The fundamental limitation here is that the restriction $f(x) = g(1/x)$ is very strong. What if we can loosen
+this restriction? For example what if
+\[
+  f(x) = xg\left(\frac{1}{x}\right)
+\]
+Then we can in fact form linear homogeneous functions! For example consider
+\[
+  F([x':y']) = ax'+by'
+\]
+Then $F$ maps to $f(x) = ax+b$ and $g(y) = a + by$. Then:
+\[
+  f(x) = x\left(a + b \frac{1}{x}\right) = ax+b = xg\left(\frac{1}{x}\right)
+\]
+which works! More generally, if the condition $f(x) = x^ng(1/x)$ allows for degree $n$ homogeneous
+polynomials. Denote the degree $n$-homogeneous polynomials by $\CO_{\P^1}(n)(\P^1)$.
+
+
+
+\textcolor{red}{also mention how the weil/cartier divisor stuff earlier isomorphic to line bundles, hence that
+discussion really about properties of line bundles}.
+
+% . Notice that they can be determined by taking some countable set of non-accumulating
+% of points of $\C$. For any proper simply connected open set $U \sse \C$ we have that it is
+% biholomorphic to the open unit disk $D^2$ by the Riemann mapping theorem, and so all holomorphic functions
+% with power series representations at $0$ that converge with radius $< 1$ are in $\CH(D)$; this includes
+% $\frac{1}{1-z}$ and pathological functions like $\sum_n z^{n!}$. In other words, these are much more
+% difficult and requires some more tools from analysis.
+
+
+\newpage
+\printbibliography
+\end{document}

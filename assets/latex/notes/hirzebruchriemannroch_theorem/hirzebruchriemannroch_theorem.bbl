@@ -1,0 +1,349 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{NateAlgGeo}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Everything You Need To Know About Algebraic Geometry}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
+      \endverb
+    \endentry
+    \entry{navarroRiemannRochFormulaProjective2017}{unpublished}{}
+      \name{author}{2}{}{%
+        {{hash=838c7dfb450390cb9973591a3494d1c4}{%
+           family={Navarro},
+           familyi={N\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8dac15d2317ed5f7468fe43c0491f376}{%
+           family={Navarro},
+           familyi={N\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{90c3e38da147322335269e2a97d97aaf}
+      \strng{fullhash}{90c3e38da147322335269e2a97d97aaf}
+      \strng{bibnamehash}{90c3e38da147322335269e2a97d97aaf}
+      \strng{authorbibnamehash}{90c3e38da147322335269e2a97d97aaf}
+      \strng{authornamehash}{90c3e38da147322335269e2a97d97aaf}
+      \strng{authorfullhash}{90c3e38da147322335269e2a97d97aaf}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{30}
+      \field{month}{5}
+      \field{title}{On the Riemann-Roch formula without projective hypothesis}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1705.10769
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1705.10769
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1705.10769
+      \endverb
+    \endentry
+    \entry{leeIntroductionRiemannianManifolds2018}{book}{}
+      \name{author}{1}{}{%
+        {{hash=36896354ee3aedc1a13d683ea773634e}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={John\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{fullhash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{bibnamehash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{authorbibnamehash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{authornamehash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{authorfullhash}{36896354ee3aedc1a13d683ea773634e}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-319-91754-2 978-3-319-91755-9}
+      \field{series}{Graduate Texts in Mathematics}
+      \field{title}{Introduction to Riemannian Manifolds}
+      \field{volume}{176}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-3-319-91755-9
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-3-319-91755-9
+      \endverb
+    \endentry
+    \entry{chowCompactComplexAnalytic1949}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f0d315c134b5efcf58bed4a890812564}{%
+           family={Chow},
+           familyi={C\bibinitperiod},
+           given={Wei-Liang},
+           giveni={W\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0d315c134b5efcf58bed4a890812564}
+      \strng{fullhash}{f0d315c134b5efcf58bed4a890812564}
+      \strng{bibnamehash}{f0d315c134b5efcf58bed4a890812564}
+      \strng{authorbibnamehash}{f0d315c134b5efcf58bed4a890812564}
+      \strng{authornamehash}{f0d315c134b5efcf58bed4a890812564}
+      \strng{authorfullhash}{f0d315c134b5efcf58bed4a890812564}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0002-9327}
+      \field{issue}{4}
+      \field{title}{On Compact Complex Analytic Varieties}
+      \field{volume}{71}
+      \field{year}{1949}
+      \field{dateera}{ce}
+      \field{pages}{893\bibrangedash 914}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.2307/2372375
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/2372375
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/2372375
+      \endverb
+    \endentry
+    \entry{deligneRelevementsModulop2etDecomposition1987}{article}{}
+      \name{author}{2}{}{%
+        {{hash=876d32ddd7383ddfb7c5ca89662b261d}{%
+           family={Deligne},
+           familyi={D\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f560424c5d8b060f8a187618b42603ef}{%
+           family={Illusie},
+           familyi={I\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{c180194c75ff26cf880d9256625da2ab}
+      \strng{fullhash}{c180194c75ff26cf880d9256625da2ab}
+      \strng{bibnamehash}{c180194c75ff26cf880d9256625da2ab}
+      \strng{authorbibnamehash}{c180194c75ff26cf880d9256625da2ab}
+      \strng{authornamehash}{c180194c75ff26cf880d9256625da2ab}
+      \strng{authorfullhash}{c180194c75ff26cf880d9256625da2ab}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{1432-1297}
+      \field{issue}{2}
+      \field{month}{6}
+      \field{title}{Relèvements modulop2et décomposition du complexe de de Rham}
+      \field{volume}{89}
+      \field{year}{1987}
+      \field{dateera}{ce}
+      \field{pages}{247\bibrangedash 270}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1007/BF01389078
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF01389078
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF01389078
+      \endverb
+    \endentry
+    \entry{a.griffithsIntroductionAlgebraicCurves}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b1ee7454cc96df7b52971176aa513999}{%
+           family={A.\bibnamedelimi Griffiths},
+           familyi={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Phillip},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{b1ee7454cc96df7b52971176aa513999}
+      \strng{fullhash}{b1ee7454cc96df7b52971176aa513999}
+      \strng{bibnamehash}{b1ee7454cc96df7b52971176aa513999}
+      \strng{authorbibnamehash}{b1ee7454cc96df7b52971176aa513999}
+      \strng{authornamehash}{b1ee7454cc96df7b52971176aa513999}
+      \strng{authorfullhash}{b1ee7454cc96df7b52971176aa513999}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Mathematical Monographs}
+      \field{title}{Introduction to Algebraic Curves}
+      \field{volume}{78}
+    \endentry
+    \entry{NateDiffGeo}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{2}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Everything You Need To Know About Differential Geometry}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_differential_geometry.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_differential_geometry.pdf
+      \endverb
+    \endentry
+    \entry{NateComplexAnalysis}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{3}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Everything You Need To Know About Complex Analysis}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_complex_analysis.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_complex_analysis.pdf
+      \endverb
+    \endentry
+    \entry{hallGAGATheorems2022}{unpublished}{}
+      \name{author}{1}{}{%
+        {{hash=c4771b19b5b097ebd6e6b2a02474d6e7}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4771b19b5b097ebd6e6b2a02474d6e7}
+      \strng{fullhash}{c4771b19b5b097ebd6e6b2a02474d6e7}
+      \strng{bibnamehash}{c4771b19b5b097ebd6e6b2a02474d6e7}
+      \strng{authorbibnamehash}{c4771b19b5b097ebd6e6b2a02474d6e7}
+      \strng{authornamehash}{c4771b19b5b097ebd6e6b2a02474d6e7}
+      \strng{authorfullhash}{c4771b19b5b097ebd6e6b2a02474d6e7}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{17}
+      \field{month}{5}
+      \field{title}{GAGA theorems}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1804.01976
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1804.01976
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1804.01976
+      \endverb
+    \endentry
+    \entry{hartshorneAlgebraicGeometry2013}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ee65baaab88f9233fbad3d51c399ee25}{%
+           family={Hartshorne},
+           familyi={H\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{fullhash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{bibnamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authorbibnamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authornamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authorfullhash}{ee65baaab88f9233fbad3d51c399ee25}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic geometry}
+      \field{volume}{52}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://books.google.com/books?hl=en&lr=&id=7z4mBQAAQBAJ&oi=fnd&pg=PR13&dq=info:XErvue4ovgwJ:scholar.google.com&ots=OR51pvoipT&sig=NcjWQsiJwE9XL79fBWQTMMub5WM
+      \endverb
+      \verb{url}
+      \verb https://books.google.com/books?hl=en&lr=&id=7z4mBQAAQBAJ&oi=fnd&pg=PR13&dq=info:XErvue4ovgwJ:scholar.google.com&ots=OR51pvoipT&sig=NcjWQsiJwE9XL79fBWQTMMub5WM
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
