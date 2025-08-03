@@ -1,0 +1,840 @@
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
+
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{non-Hausdorfness}
+\author{Nathanael Chwojko-Srawley}
+\date{\today}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         packages                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{stackengine}
+\usepackage{colortbl}
+\usepackage{scalerel}
+\usepackage{amsmath, amssymb} % Used to write better mathematical expressions (ex. \mathbb{R})
+\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
+\usepackage{mathrsfs}
+\usepackage{bbm}                     % for mathbbm{1}
+\usepackage{euscript}
+\usepackage{commutative-diagrams}
+\usepackage[font=itshape]{quoting}
+\usepackage{mathtools}
+  \usepackage{enumitem}
+\usepackage{amsthm}           % Used to create theorem enviroments.
+\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{hhline}
+%\usepackage{luatexja}
+%\usepackage{fontspec}
+\usepackage{dsfont}
+\usepackage{wasysym}          % emoji's!
+\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
+%\usepackage{subcaption}      % More options with sub-captions.
+\usepackage{setspace}         % More flexibility on spacing in document.
+\usepackage{hyperref}         % let's me put hyperlinks
+%\usepackage{tikz}             % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+%\usepackage{quiver}           % for better commutative diagrams
+\usepackage{bookmark}         % creating heading shortcut bar on the left as in word
+\usepackage{longtable}        % create tables that extend past one page
+%\usepackage{siunitx}         % required for alignment
+%\usepackage{multirow}        % for multiple rows
+\usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
+%\usepackage{fancyvrb}        % Let's you write code (different style than listings).
+\usepackage[most]{tcolorbox} 	      % Makes nice boxes for thms, cor, prop, or anything else.
+%\usepackage{enumitem}        % More flexibility on enumeration (don't know much).
+\usepackage{xcolor}           % Colour text.
+\usepackage{wrapfig}          % To wrap text around figure
+\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
+\usepackage{thmtools}         % Customize theorem environment (in preamble).
+%\usepackage{marvosym}        % Provide ``basic'' symbols (hazard, religious, smiley face etc.)
+\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+%\usepackage[english]{babel}  % If I want to blindtext in english.
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8.5in}]{geometry}
+%\usepackage[symbol]{footmisc} % For daggers and asterisk for footnotes. 1: *, 2: dagger, etc.
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+%\usepackage{pst-plot}          %To make nice plots: https://tex.stackexchange.com/questions/47594/how-can-i-make-a-graph-of-a-function#47596
+% \usepackage[answerdelayed]{exercise}
+\usepackage{etoolbox}          % for Dynkin diagrams
+\usepackage{dynkin-diagrams}   % for Dynkin diagrams
+
+% ╔═════════════════════════════════════════════════════╗
+% ║           for figures via inkspace                  ║
+% ╚═════════════════════════════════════════════════════╝
+
+% to import figures via: https://github.com/gillescastel/inkscape-figures
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+
+% This command is the ONLY command imported via the packages snippet, think of it as a tiny package written out
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                 bibliography and citing                   ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\usepackage{csquotes}
+% \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\usepackage{biblatex}
+
+\addbibresource{bibliography.bib}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                    colours (colors)                       ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{reddish}{HTML}{A01A3A}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       book format                        ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\pagestyle{fancy}
+
+\setlength\headheight{20pt}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+\fancyfoot[R,RO]{\thepage}{}
+
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
+}
+
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+%have format the title command
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
+
+
+\setlength{\parindent}{0pt} % don't like indentation infront of paragraphs
+\setlength{\parskip}{1ex}   %so that there is still space between paragarphs
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       Shortcuts                          ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+%\ExerciseLevelInToc
+
+% I like original mathcal better, but need lowercase.
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+
+% mathbb
+\newcommand{\A}{{\mathbb{A}}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\F}{{\mathbb{F}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\V}{{\mathbb{V}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\BI}{{\mathbb{I}}}
+\renewcommand{\H}{{\mathbb{H}}}
+\renewcommand{\P}{{\mathbb{P}}}
+
+
+% mathcal
+% \newcommand{\co}{{\mathfrak{o}}} %mathcal{o} looks like wreath product, so I changed it to mathfrak
+\newcommand{\co}{{\mathpzc{o}}}
+\newcommand{\CA}{{\mathcal{A}}}
+\newcommand{\CB}{{\mathcal{B}}}
+\newcommand{\CC}{{\mathcal{C}}}
+\newcommand{\CD}{{\mathcal{D}}}
+\newcommand{\CF}{{\mathcal{F}}}
+\newcommand{\CG}{{\mathcal{G}}}
+\newcommand{\CH}{{\mathcal{H}}}
+\newcommand{\CI}{{\mathcal{I}}}
+\newcommand{\CK}{{\mathcal{K}}}
+\newcommand{\CL}{{\mathcal{L}}}
+\newcommand{\CM}{{\mathcal{M}}}
+\newcommand{\CN}{{\mathcal{N}}}
+\newcommand{\CO}{{\mathcal{O}}}
+\newcommand{\CQ}{{\mathcal{Q}}}
+\newcommand{\CR}{{\mathcal{R}}}
+\newcommand{\CS}{{\mathcal{S}}}
+\newcommand{\CT}{{\mathcal{T}}}
+\newcommand{\CV}{{\mathcal{V}}}
+\newcommand{\CZ}{{\mathcal{Z}}}
+% EXCPETION:
+\newcommand{\CP}{{\mathcal{P}}}
+% \newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\RP}{\mathbb{R}\mathrm{P}}
+
+
+%Euscript
+\newcommand{\EB}{\EuScript{B}}
+\newcommand{\EC}{{\EuScript{C}}}
+\newcommand{\EF}{{\EuScript{F}}}
+\newcommand{\EL}{{\EuScript{L}}}
+\newcommand{\EO}{{\EuScript{O}}}
+
+
+%mathfrak (lowercase)
+\newcommand{\fa}{{\mathfrak{a}}}
+\newcommand{\fb}{{\mathfrak{b}}}
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fd}{{\mathfrak{d}}}
+\newcommand{\fm}{{\mathfrak{m}}}
+\newcommand{\fn}{{\mathfrak{n}}}
+\newcommand{\fo}{{\mathfrak{o}}}
+\newcommand{\fp}{{\mathfrak{p}}}
+\newcommand{\fq}{{\mathfrak{q}}}
+
+
+%mathfrak (upper case)
+\newcommand{\FA}{{\mathfrak{A}}}
+\newcommand{\FB}{{\mathfrak{B}}}
+\newcommand{\FC}{{\mathfrak{C}}}
+\newcommand{\FD}{{\mathfrak{D}}}
+\newcommand{\FK}{{\mathfrak{K}}}
+\newcommand{\FM}{{\mathfrak{M}}}
+\newcommand{\FN}{{\mathfrak{N}}}
+\newcommand{\FO}{{\mathfrak{O}}}
+\newcommand{\FP}{{\mathfrak{P}}}
+
+
+%mathscr
+\newcommand{\ff}{{\mathscr{F}}}
+\newcommand{\SA}{\mathscr{A}}
+\newcommand{\SC}{\mathscr{C}}
+\newcommand{\SF}{\mathscr{F}}
+\newcommand{\SG}{\mathscr{G}}
+\newcommand{\SH}{\mathscr{H}}
+\newcommand{\SI}{\mathscr{I}}
+\newcommand{\SK}{\mathscr{K}}
+\newcommand{\SN}{\mathscr{N}}
+\newcommand{\SQ}{\mathscr{Q}}
+\newcommand{\SR}{\mathscr{R}}
+\newcommand{\SV}{\mathscr{V}}
+\newcommand{\SZ}{\mathscr{Z}}
+
+
+% operatorname -- 2 letters (lowercase and upper case)
+\newcommand{\ab}{{\operatorname{ab}}}
+\newcommand{\ad}{{\operatorname{ad}}}
+\newcommand{\ch}{{\operatorname{ch}}}
+\newcommand{\ev}{{\operatorname{ev}}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\im}{{\operatorname{im}}}
+\newcommand{\nm}{{\operatorname{Nm}}}
+\newcommand{\op}{{\operatorname{op}}}
+\newcommand{\rk}{{\operatorname{rk}}}
+\newcommand{\sh}{{\operatorname{sh}}}
+\newcommand{\tr}{{\operatorname{tr}}}
+
+\newcommand{\Ab}{{\operatorname{Ab}}}
+\newcommand{\Br}{{\operatorname{Br}}}
+\newcommand{\Ch}{{\operatorname{Ch}}}
+\newcommand{\Cl}{{\operatorname{Cl}}}
+\newcommand{\GL}{{\operatorname{GL}}}
+\newcommand{\Nm}{{\operatorname{Nm}}}
+\newcommand{\SL}{{\operatorname{SL}}}
+
+\renewcommand{\Re}{{\operatorname{Re}}}
+\renewcommand{\Im}{{\operatorname{Im}}}
+
+
+%categories
+\newcommand{\Grp}{{\textbf{Grp}}}
+\newcommand{\Fld}{{\textbf{Fld}}}
+\newcommand{\Sh}{{\textbf{Sh}}}
+\newcommand{\Set}{{\textbf{Set}}}
+\newcommand{\Mod}{{\textbf{Mod}}}
+\newcommand{\PSh}{{\textbf{PSh}}}
+\newcommand{\Sch}{{\textbf{Sch}}}
+\newcommand{\Top}{{\textbf{Top}}}
+\newcommand{\RgSp}{{\textbf{RgSp}}}
+\newcommand{\Ring}{{\textbf{Ring}}}
+
+
+%operatorname -- 3+ letters (lowercase and upper case)
+\newcommand{\rad}{{\operatorname{rad}}}
+\newcommand{\sep}{{\operatorname{sep}}}
+\newcommand{\res}{{\operatorname{res}}}
+\newcommand{\sgn}{{\operatorname{sgn}}}
+\newcommand{\pre}{{\operatorname{pre}}}
+\newcommand{\ord}{{\operatorname{ord}}}
+\newcommand{\vol}{{\operatorname{vol}}}
+\newcommand{\lcm}{{\operatorname{lcm}}}
+
+\newcommand{\conj}{{\operatorname{conj}}}
+\newcommand{\disc}{{\operatorname{disc}}}
+\newcommand{\stab}{{\operatorname{stab}}}
+\newcommand{\kdim}{{\operatorname{kdim}}}
+\newcommand{\diag}{{\operatorname{diag}}}
+
+\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\coker}{{\operatorname{coker}}}
+\newcommand{\codim}{{\operatorname{codim}}}
+
+\newcommand{\Ann}{{\operatorname{Ann}}}
+\newcommand{\Aut}{{\operatorname{Aut}}}
+\newcommand{\Der}{{\operatorname{Der}}}
+\newcommand{\Div}{{\operatorname{Div}}}
+\newcommand{\Emb}{{\operatorname{Emb}}}
+\newcommand{\End}{{\operatorname{End}}}
+\newcommand{\Ext}{{\operatorname{Ext}}}
+\newcommand{\Gal}{{\operatorname{Gal}}}
+\newcommand{\Hom}{{\operatorname{Hom}}}
+\newcommand{\Ind}{{\operatorname{Ind}}}
+\newcommand{\Inn}{{\operatorname{Inn}}}
+\newcommand{\Int}{{\operatorname{int}}}
+\newcommand{\Irr}{{\operatorname{Irr}}}
+\newcommand{\Jac}{{\operatorname{Jac}}}
+\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Nil}{{\operatorname{Nil}}}
+\newcommand{\Obj}{{\operatorname{Obj}}}
+\newcommand{\Out}{{\operatorname{Out}}}
+\newcommand{\Pic}{{\operatorname{Pic}\,}}
+\newcommand{\Rep}{{\operatorname{Rep}}}
+\newcommand{\Res}{{\operatorname{Res}}}
+\newcommand{\Spl}{{\operatorname{Spl}}}
+\newcommand{\Syl}{{\operatorname{Syl}}}
+\newcommand{\Sym}{{\operatorname{Sym}}}
+\newcommand{\Tor}{{\operatorname{Tor}}}
+
+\newcommand{\Char}{{\operatorname{char}}}
+\newcommand{\Frac}{{\operatorname{Frac}}}
+\newcommand{\Frob}{{\operatorname{Frob}}}
+\newcommand{\Proj}{{\operatorname{Proj}\,}}
+\newcommand{\RMod}{{}_R\operatorname{Mod}}
+\newcommand{\SExt}{{\mathcal{E}\emph{xt}}}
+\newcommand{\SHom}{{\emph{Hom}}}
+\newcommand{\Span}{{\operatorname{span}}}
+\newcommand{\Spec}{{\operatorname{Spec}\,}}
+\newcommand{\Supp}{{\operatorname{Supp}}}
+\newcommand{\Tens}[1]{#1\otimes --}
+\newcommand{\fHom}[1]{\operatorname{Hom}(#1, --)}
+
+\newcommand{\mSpec}{{\operatorname{mSpec}}}
+\newcommand{\cofHom}[1]{\operatorname{Hom}(--, #1)}
+
+
+% connectors
+% \renewcommand{\mid}{\big|}
+\newcommand{\sse}{\subseteq}
+\newcommand{\subg}{\leqslant}
+\newcommand{\supg}{\geqslant}
+\newcommand{\ssne}{\subsetneq}
+\newcommand{\isosubg}{\lesssim}
+\newcommand{\nsse}{\not\subseteq}
+\newcommand{\nsubg}{\trianglelefteq}
+\newcommand{\nsupg}{\trianglerighteq}
+\newcommand{\csubg}{\blacktriangleleft}
+\renewcommand{\mid}{\big|}
+
+
+% Arrows
+\newcommand{\rw}{\rightarrow}
+\newcommand{\Rw}{\Rightarrow}
+\newcommand{\lw}{\leftarrow}
+\newcommand{\Lw}{\Leftarrow}
+\newcommand{\lrw}{\leftrightarrow}
+\newcommand{\LRw}{\Leftrightarrow}
+\newcommand{\acton}{\curvearrowright}
+\newcommand{\actson}{\curvearrowright}
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+% arrows for commutative diagram: create four new angled double-struck arrows
+\newcommand\myrot[1]{\mathrel{\rotatebox[origin=c]{#1}{$\Rightarrow$}}}
+\newcommand\NEarrow{\myrot{45}}
+\newcommand\NWarrow{\myrot{135}}
+\newcommand\SWarrow{\myrot{-135}}
+\newcommand\SEarrow{\myrot{-45}}
+
+
+%shorthands
+\newcommand{\oln}[1]{{\overline{#1}}}
+\renewcommand{\bf}[1]{\textbf{#1}}
+\newcommand{\qn}{\quad\newline}
+
+
+% limits
+\newcommand{\Lim}{{\varprojlim}}
+\newcommand{\coLim}{{\varinjlim}}
+\newcommand{\Dlim}{\lim\limits_{\longrightarrow}}
+\newcommand{\coDlim}{\lim\limits_{\longleftarrow}}
+
+
+%for saturated ideals in the localization section (I don't like these, I think I'll delete)
+\newcommand{\LIm}{{}^e }
+\newcommand{\LPre}{{}^c }
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    Custom Commands                       ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% swap varphi and phi
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
+\newcommand{\placeholder}{\_\_\_\_\_}
+
+\newcommand{\set}[2]{\left\{#1 \ \middle|\ #2\right\}}
+
+%mod should not have the crazy amount of space to its right!
+\renewcommand{\mod}{\,\operatorname{mod}\,}
+
+% dcups
+\newcommand{\dcup}{\sqcup}
+\newcommand{\Dcup}{\coprod}
+% \newcommand{\Dcup}{\bigsqcup}
+
+\newcommand{\nbot}{\mathrel{\rlap{$\bot$}\mkern2mu/}}
+
+%a nice large circle
+\newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%somehow not a default command
+\def\rddots{\mathstrut^{.^{.^{.}}}}
+
+%% new delimiter
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                     environments                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+
+%remember the option: breakable
+
+% create tcolor boxes
+\newtcbtheorem[number within=section]{thm}{Theorem}%
+{
+colback=green!5,
+colframe=green!35!black,
+fonttitle=\bfseries,
+label type=theorem
+}{th}
+
+\newtcbtheorem[number within=section, use counter from=thm]{lem}{Lemma}%
+{
+colback=blue!5,
+colframe=black!35!black,
+fonttitle=\bfseries,
+label type=lemma
+}{lm}
+\newtcbtheorem[number within=section, use counter from=thm]{prop}{Proposition}%
+{
+colback=white!5,
+colframe=white!35!black,
+fonttitle=\bfseries,
+label type=proposition
+}{pr}
+\newtcbtheorem[number within=section, use counter from=thm]{cor}{Corollary}%
+{colback=blue!5,
+colframe=blue!35!black,
+fonttitle=\bfseries,
+label type=corollary
+}{co}
+\newtcbtheorem[number within=section, use counter from=thm]{axiom}{Axiom}%
+{colback=black!5,
+colframe=yellow!35!black,
+fonttitle=\bfseries,
+label type=axiom
+}{ax}
+\newtcbtheorem[number within=section, use counter from=thm]{defn}{Definition}%
+{colback=red!5,
+colframe=red!35!black,
+fonttitle=\bfseries,
+label type=definition
+}{df}
+
+
+% for <s-cr> to create \item[$\LRw$] instead of \item
+\newenvironment{equivEnumerate}
+ {\begin{enumerate}
+	}{
+\end{enumerate}}
+
+
+
+%Custom enviroments
+ \newenvironment{note}
+ {\begin{tcolorbox}[enhanced, sharp corners, colback=white , borderline={0.2pt}{0pt}{black}]
+   \begin{quote}\textbf{Note}:
+   }{
+   \end{quote}\end{tcolorbox}}
+
+ \newenvironment{intuition}
+ {\begin{quote}\textbf{Intuition}:
+   }{
+   \end{quote}}
+
+\newtcbtheorem[number within=section, use counter from=thm]{titledBox}{}{%
+  enhanced,
+  sharp corners,
+  colback=white,
+  colframe=black,
+  borderline={0.2pt}{0pt}{black},
+  left=2mm,
+  right=2mm,
+  top=2mm,
+  bottom=2mm,
+  title style={opacity=1},
+  attach title to upper,
+  before upper={\textbf{\tcbtitletext}\quad},
+  coltitle=black,
+  fonttitle=\bfseries,
+  separator sign={\quad}
+}{box}
+
+
+%better example and proof environments
+\def\exampletext{Example} % If English
+\colorlet{colexam}{red!55!black} % Global example color
+
+
+\newtcbtheorem[number within=section, use counter from=thm]{example}{Example}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+% Example Frame Start
+empty,% Empty previously set parameters
+title={\exampletext \thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
+% Attaching a box requires an overlay
+attach boxed title to top left,
+   % Ensures proper line breaking in longer titles
+   minipage boxed title,
+% (boxed title style requires an overlay)
+boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+coltitle=colexam,fonttitle=\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+   before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+% Handles box when it exists on one page only
+overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: first page
+overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: middle page
+overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: last page
+overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); }%
+}{ex}
+
+
+
+\def\prooftext{Proof} % If English
+\NewDocumentEnvironment{Proof}{ O{} }
+{
+    \colorlet{colexam}{black!55!black} % Global example color
+    \newtcolorbox[number within=section]{testproofbox}{%
+        empty,% Empty previously set parameters
+        title={\emph{\prooftext} \thetcbcounter: #1},
+        attach boxed title to top left,
+        minipage boxed title,
+        boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+        coltitle=colexam,
+        fonttitle=\bfseries,
+        before=\par\medskip\noindent,
+        parbox=false,
+        boxsep=0pt,
+        left=3mm,
+        right=0mm,
+        top=2pt,
+        breakable,
+        pad at break=0mm,
+        before upper=\csname @totalleftmargin\endcsname0pt,
+        % Removed height constraints
+        % Added flexible width
+        width=\dimexpr\textwidth-3mm\relax,
+        % Modified overlays
+        overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+    \begin{testproofbox}
+}
+{\end{testproofbox}\endlist}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    for Dynkin diagrams                   ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\def\row#1/#2!{#1_{\IfStrEq{#2}{}{n}{#2}} & \dynkin{#1}{#2}\\}
+\newcommand{\tble}[1]{
+   \renewcommand*\do[1]{\row##1!}
+   \[
+      \begin{array}{ll}\docsvlist{#1}\end{array}
+   \]
+}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         links                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\definecolor{LinkColour}{HTML}{A64A3B} % favourite
+% \definecolor{LinkColour}{HTML}{8C3D32} % 2nd place
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=magenta,
+  linkcolor=LinkColour,
+  urlcolor=blue,
+}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                          misc                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\stackMath %to be able to stack text in math mode
+\makeindex
+
+%import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.svg,
+
+\begin{document}
+\maketitle
+
+This is a quick blog to explain non-Hausdorff spaces to someone with no university-level math background. There will be some small simplifications for the sake of not overloading on technicalities, and these will be addressed in a separate "Technicalities" section.
+
+
+
+\section{What is a space?}
+
+The set of all numbers that are not complex is called the \emph{real number line} and is denoted \(\mathbb{R}\). It is often drawn as:
+\[
+\begin{tikzpicture}
+  \draw[thick] (-3,1) -- (3,1) node[left=7cm] {$\mathbb{R}$};
+  \foreach \x in {-3,-2,-1,0,1,2,3} {
+    \draw[thick] (\x,0.9) -- (\x,1.1);
+    \node[below] at (\x,0.8) {$\x$};
+  }
+  \node[left] at (-3,1) {$\cdots$};
+  \node[right] at (3,1) {$\cdots$};
+\end{tikzpicture}
+\]
+An element of \(\mathbb{R}\) is called a \emph{real number} (to distinguish it from a complex number). Let us choose any two real numbers, say \(3\) and \(4\). They are a distance of \(1\) apart. Any two distinct real numbers we choose, \(x\) and \(y\), have some distance between them, namely \(|x-y|\). If the distance between two real numbers is \(0\), then they must be the same number, since:
+\[
+  |x-y| = 0 \quad \implies \quad x = y
+\]
+But there are spaces in which you can have two points that have \emph{zero distance} between them and yet are \emph{distinct}! We shall construct exactly such a space. A mathematician named \emph{Felix Hausdorff} was one of the first to study such structures. In his honour, a space in which there can exist distinct points that have zero distance between them is called a \emph{non-Hausdorff space}, and a space is called \emph{Hausdorff} otherwise. For example, the real number line \(\mathbb{R}\) is Hausdorff.
+
+What is meant here by ``space''? Our first encounter with the notion of ``space'' is the world we live in: we consider the ``space'' of a room, or the routes of a hiking trail as the ``space'' on which we can walk. These two examples are very different from each other (in a room, we have three dimensions of movement, while on a trail we are usually limited to lines connecting to each other). Many more such examples come up in the sciences (for example, we might consider all possible outcomes of an experiment to be the ``total space'' of outcomes). This generality led mathematics to define the notion of a \emph{topology}, which is a vast generalization of the Cartesian plane. Going through the technicalities of defining a topology would distract from our specific goal of constructing a non-Hausdorff space, so we shall use this working definition:
+
+\begin{center}
+  \emph{A space is a set of points, where some points can be "glued" together into sets.}
+\end{center}
+
+This is very abstract, so let us immediately justify this with an example. First, what is a \emph{set}? A set is simply the way mathematicians group things. For example, here are two different sets, one containing the numbers \(1,2,3\) and the other the numbers \(3,4,5\):
+\[
+  \{1,2,3\} \qquad \text{and} \qquad \{3,4,5\}
+\]
+where we use curly braces \(\{, \}\) to enclose the elements. Sets can contain more than numbers; a set can contain all the words in the English dictionary:
+\[
+  S = \{\text{..., Hamiltonian, characteristic, hypothesis, ...}\}
+\]
+A set can also contain other sets (think of a warehouse that has boxes containing other boxes):
+\[
+  W = \{\{\text{Alice in Wonderland, Introduction to Analysis}\}, \{\text{spoon, fork, knife}\}\}
+\]
+In our definition of a space, the individual elements are the points, and the sets of points are what we consider to be \emph{glued together}.
+
+Let us demonstrate this with an example. The following set splits the integers into two groups: even and odd.
+\[
+  P = \{\{0,2,4,6,...\}, \{1,3,5,7,...\}\} = \{E, O\}
+\]
+where we have labeled the set of even numbers \(E\) and the set of odd numbers \(O\). Notice that \(P\) contains only two elements: the set \(E\) and the set \(O\). By grouping the numbers this way, we are declaring that all elements within \(E\) are equivalent, and all elements within \(O\) are equivalent. From the perspective of the space \(P\), all even numbers are the same, and all odd numbers are the same:
+\[
+  0 = 2 = 4 = \cdots \qquad \text{and} \qquad 1 = 3 = 5 = \cdots
+\]
+Here, the equality is an \emph{equality of parity}. To avoid confusion with the standard equals sign, we can create a new symbol \(\sim_P\) and write:
+\[
+  0 \sim_P 2 \sim_P 4 \sim_P \cdots \qquad \text{and} \qquad 1 \sim_P 3 \sim_P 5 \sim_P \cdots
+\]
+So, \(a \sim_P b\) if both \(a\) and \(b\) are even, or if both \(a\) and \(b\) are odd. Otherwise, we write \(a \not\sim_P b\). If we represent the numbers \(\{0,1,2,...\}\) as distinct points:
+\[
+\begin{tikzpicture}
+  \foreach \x in {0,1,2,3,4,5,6,7,8,9} {
+    \fill[black] (\x,0) circle (0.1);
+    \node[below] at (\x,-0.3) {\x};
+  }
+  \node[below] at (10,0) {$\cdots$};
+\end{tikzpicture}
+\]
+then the space \(P\) represents gluing them all into just two points:
+\[
+\begin{tikzpicture}
+    \fill[black] (0,0) circle (0.1);
+    \node[below] at (0,-0.3) {E};
+
+    \fill[black] (1.5,0) circle (0.1);
+    \node[below] at (1.5,-0.3) {O};
+\end{tikzpicture}
+\]
+Thinking of this process as gluing is how mathematicians construct many objects. To show this is not just a trick, let us create a triangle using this method. Say we have three straight line segments \(L_1, L_2, L_3\), each of length \(1\). Let us represent each as an interval:
+
+\begin{align*}
+  L_1 &= [0,1] = \{x\text{ in }\mathbb{R}\text{ such that }0\le x \le 1\}\\
+  L_2 &= [2,3] = \{x\text{ in }\mathbb{R}\text{ such that }2\le x \le 3\}\\
+  L_3 &= [4,5] = \{x\text{ in }\mathbb{R}\text{ such that }4\le x \le 5\}
+\end{align*}
+
+Visually, we have three separate lines:
+\[
+\begin{tikzpicture}
+  \draw[thick] (0,0) -- (1,0);
+  \draw[red, fill=red] (0,0) circle (0.1) node[below] {0};
+  \draw[red, fill=red] (1,0) circle (0.1) node[below] {1};
+
+  \draw[thick] (2,0) -- (3,0);
+  \draw[red, fill=red] (2,0) circle (0.1) node[below] {2};
+  \draw[red, fill=red] (3,0) circle (0.1) node[below] {3};
+
+  \draw[thick] (4,0) -- (5,0);
+  \draw[red, fill=red] (4,0) circle (0.1) node[below] {4};
+  \draw[red, fill=red] (5,0) circle (0.1) node[below] {5};
+\end{tikzpicture}
+\]
+Let us now glue these lines to form a triangle. We want to:
+\begin{enumerate}
+  \item glue point \(1\) in \(L_1\) to point \(2\) in \(L_2\)
+  \item glue point \(3\) in \(L_2\) to point \(4\) in \(L_3\)
+  \item glue point \(5\) in \(L_3\) to point \(0\) in \(L_1\)
+\end{enumerate}
+
+To do this, we can define our triangle space, \(T\), by taking the interior points of the lines along with sets representing the glued vertices. We use the \emph{union} symbol \(\cup\) to collect all the pieces.
+\[
+  T = (0,1) \cup (2,3) \cup (4,5) \cup \{\{1,2\}, \{3,4\}, \{5,0\}\}
+\]
+Let us break this down. Our space \(T\) contains all the individual points from the open intervals \((0,1)\), \((2,3)\), and \((4,5)\). These form the sides of the triangle. It also contains three special elements: the set \(\{1,2\}\), the set \(\{3,4\}\), and the set \(\{5,0\}\). These three sets are the vertices, representing the points where the endpoints of the lines have been glued together. Visualizing \(T\), we get:
+\[
+\begin{tikzpicture}
+  % Define the triangle vertices
+  \coordinate (A) at (0,0); \coordinate (B) at (4,0); \coordinate (C) at (2,3.5);
+  % Draw the triangle edges
+  \draw[thick] (A) -- node[midway, below] {(0,1)} (B);
+  \draw[thick] (B) -- node[midway, right] {(2,3)} (C);
+  \draw[thick] (C) -- node[midway, left] {(4,5)} (A);
+  % Draw the vertices
+  \draw[red, fill=red] (A) circle (0.1) node[below left] {\{5,0\}};
+  \draw[red, fill=red] (B) circle (0.1) node[below right] {\{1,2\}};
+  \draw[red, fill=red] (C) circle (0.1) node[above] {\{3,4\}};
+\end{tikzpicture}
+\]
+Giving us our Triangle!
+
+\subsection*{A Non-Hausdorff Space}
+
+With this, we can finally construct our non-Hausdorff space. The construction is in fact rather simple. Let \(L_1\) and \(L_2\) be two copies of the real number line:
+\[
+\begin{tikzpicture}
+  \draw[thick] (-3,1) -- (3,1) node[left=7cm] {$L_1$};
+  \foreach \x in {-3,-2,-1,0,1,2,3} { \draw[thick] (\x,0.9) -- (\x,1.1); \node[below] at (\x,0.8) {$\x$}; }
+  \node[left] at (-3,1) {$\cdots$}; \node[right] at (3,1) {$\cdots$};
+
+  \draw[thick] (-3,-1) -- (3,-1) node[left=7cm] {$L_2$};
+  \foreach \x in {-3,-2,-1,0,1,2,3} { \draw[thick] (\x,-1.1) -- (\x,-0.9); \node[below] at (\x,-1.2) {$\x$}; }
+  \node[left] at (-3,-1) {$\cdots$}; \node[right] at (3,-1) {$\cdots$};
+\end{tikzpicture}
+\]
+To not get confused, let us label all numbers \(x\) in \(L_1\) as \(x_1\) and all numbers \(x\) in \(L_2\) as \(x_2\). For example, \(3_1\) is in \(L_1\) and \(3_2\) is in \(L_2\). Let us now glue \emph{every} number \(x_1\) in \(L_1\) to the number \(x_2\) in \(L_2\) that has the same value, \emph{except} for \(0_1\) and \(0_2\). So we form our space \(N\) (for ``non-Hausdorff'') by taking all sets of the form:
+\[
+  \{x_1, x_2\}\text{ for every non-zero number } x,
+\]
+while keeping \(0_1\) and \(0_2\) as separate points. For any non-zero number, we have glued the two lines together:
+\[
+\begin{tikzpicture}
+\draw[thick] (0,0) -- (6,0); \draw[thick] (0,2) -- (6,2);
+\draw[{Stealth[length=3mm]}-{Stealth[length=3mm]}] (1,0) -- (1,2);
+\draw[{Stealth[length=3mm]}-{Stealth[length=3mm]}] (2,0) -- (2,2);
+\draw[{Stealth[length=3mm]}-{Stealth[length=3mm]}] (3,0) -- (3,2);
+\draw[{Stealth[length=3mm]}-{Stealth[length=3mm]}] (4,0) -- (4,2);
+\draw[{Stealth[length=3mm]}-{Stealth[length=3mm]}] (5,0) -- (5,2);
+\node at (3,1) {glue};
+\end{tikzpicture}
+\quad \text{becomes} \quad
+\begin{tikzpicture}
+\draw[thick] (-2,0) -- (4,0);
+\end{tikzpicture}
+\]
+Thus, we don't need to distinguish between the non-zero points in \(N\): we can just say \(3\) is in \(N\), as this is shorthand for the glued pair \(\{3_1, 3_2\}\). As we have not glued the points \(0_1\) and \(0_2\), they remain distinct points in \(N\).
+
+Now, we can finally ask:
+\begin{center}
+  \emph{What is the distance between \(0_1\) and \(0_2\)?}
+\end{center}
+
+We shall show they have \(0\) distance between them. Imagine trying to place a small "bubble" around just \(0_1\). Any bubble, no matter how small, must contain some non-zero points. For instance, it must contain a point like \(t_1\) for some tiny, non-zero number \(t\). But in our space \(N\), the point \(t_1\) is the \emph{exact same point} as \(t_2\). Since \(t_2\) is right next to \(0_2\), this means our bubble around \(0_1\) also contains points that are right next to \(0_2\). We cannot draw a bubble around \(0_1\) without also capturing \(0_2\). They are inseparable. Therefore, the distance between them is zero, even though they are distinct points.
+
+This space \(N\) is often visualized as:
+\[
+\begin{tikzpicture}
+    \draw[thick, {Stealth[length=3mm]}-] (-5,0) -- (-0.1,0);
+    \draw[thick, -{Stealth[length=3mm]}] (0.1,0) -- (5,0);
+    \draw[fill=black] (0,0.1) circle (0.05);
+    \draw[fill=black] (0,-0.1) circle (0.05);
+    \foreach \x in {-4,-3,-2,-1} \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+    \foreach \x in {1,2,3,4} \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+\end{tikzpicture}
+\]
+However, this is misleading, as it looks like there is a vertical gap between \(0_1\) and \(0_2\). In our space, there is no such gap. It is impossible to visualize this space perfectly, as we live in a Hausdorff world\footnote{At least on the macroscopic scale we live in.}. Nevertheless, this image can be used to ground the intuition that the two points at the origin exist "one atop another" in the same location.
+
+Though this might seem like an exercise in arm-chair mathematizing, these spaces do show up naturally in mathematics, especially within number theory and algebraic geometry. Unfortunately, to see why they show up \emph{naturally} takes a lot of build-up. But this is not too surprising, as it took thousands of years before such spaces were found, and only in the 1950s (very recent, in mathematical terms!) was it realised that they have immense practical properties.
+
+\section{Technicalities}
+
+Defining a space as "a set of numbers and sets of numbers" is too vague for formal work. It doesn't establish a notion of ``locality'' or "nearness", which is the key idea in topology. To fix this, one defines a topological space via a collection of "open sets", which must include the empty set and the entire space, and be closed under finite intersections and arbitrary unions. From there, one can add further constraints, such as being metrizable, to ensure distance is well-defined. All such details can be found in any introductory topology textbook~\cite{NateTop}.
+
+The Hausdorff condition is formally defined as:
+\begin{center}
+  \emph{Given two distinct points \(x,y\) in a topological space \(X\), there exist open sets \(U_x\) and \(U_y\) containing \(x\) and \(y\) respectively, such that \(U_x \cap U_y = \emptyset\).}
+\end{center}
+
+This shows that points can be \emph{separated} by open sets. The approach taken here with the idea of distance was to avoid introducing the more abstract notion of ``separation'' and stick to the intuitive notion of distance.
+
+The examples of glued sets are formally handled by \emph{equivalence relations}. Our space is then a set of \emph{equivalence classes}, which is called a \emph{quotient space}.
+
+
+\printbibliography
+
+\end{document}

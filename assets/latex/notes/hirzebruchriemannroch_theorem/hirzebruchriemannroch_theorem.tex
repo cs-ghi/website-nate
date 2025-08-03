@@ -234,9 +234,10 @@
 
 % operatorname -- 2 letters (lowercase and upper case)
 \newcommand{\ab}{{\operatorname{ab}}}
-\newcommand{\alg}{{\operatorname{\alg}}}
+\newcommand{\alg}{{\operatorname{alg}}}
 \newcommand{\ad}{{\operatorname{ad}}}
 \newcommand{\ch}{{\operatorname{ch}}}
+\newcommand{\td}{{\operatorname{td}}}
 \newcommand{\ev}{{\operatorname{ev}}}
 \newcommand{\id}{{\operatorname{id}}}
 \newcommand{\im}{{\operatorname{im}}}
@@ -629,12 +630,13 @@ paper so I will just drop the pretext of accessibility at that point}.
 A natural question to ask in complex and algebraic geometry is ``how many
 holomorphic/meromorphic/algebraic/analytic/etc functions are there on a (suitable) space $X$''. By letting
 $\CF(X)$ represent our choice of functions (the global sections of a [quasi-coherent] sheaf $\CF$), we shall
-denote this question a question about finding information about the $0$th sheaf cohomological group
+denote this question as finding information about the $0$th sheaf cohomological group
 \[
   H^0(X, \CF)
 \]
-which by~\cite{NateAlgGeo} is equal to $\CF(X)$. This group shall sometimes be trivial, and the reason
-for its trivialness can be described by higher order sheaf cohomology groups:
+which by~\cite{NateAlgGeo} is equal to $\CF(X)$. We denote $\CF(X)$ in terms of sheaf cohomology because this
+group shall sometimes be trivial, and the reason for its trivialness can be described by higher order sheaf
+cohomology groups:
 \[
   H^1(X, \CF), H^2(X, \CF), ...
 \]
@@ -660,7 +662,7 @@ where
 \[
   p_k(z) =  \frac{z}{a_k} + \frac{1}{2} \left( \frac{z}{a_k} \right)^2 + \cdots + \frac{1}{m_k} \left( \frac{z}{a_{m_k}} \right)^m
 \]
-is the correction factor and the $a_k$ are accumulation points; in particular there are analytic concerns.
+is the correction factor and the $a_k$ are roots that form a non-accumulating sequence; in particular there are analytic concerns.
 A meromorphic function $f$ on $\C$ can be determined by two entire function $f = g/h$ (again
 see~\cite[section~4.2]{NateComplexAnalysis}); this is possible as for poles of $f$ we can define a function $h$ with the
 appropriate roots and multiplicities. In other words, determining meromorphic functions becomes
@@ -678,7 +680,7 @@ meaning compact spaces are ``intrinsically'' algebraic. We shall prove some of t
 correspondence in \textcolor{red}{ref:HERE}.
 
 Let us try finding holomorphic/meromorphic functions on $X = \CP^1$ and see if they are
-determined by the points of $\CP^1$. Immediately, $\CP^1$ has only constant holomorphic functions by an easy
+determined by the points of $\CP^1$ just like in the case of $\C$. Immediately, $\CP^1$ has only constant holomorphic functions by an easy
 generalization of Liouville or the maximum modulus principle on manifolds. By the Residue Theorem, the sum of
 the number of roots and poles of a meromorphic function must be $0$.
 
@@ -687,13 +689,13 @@ Let us represent this formally. Let
   D = \sum_i n_ip_i \qquad p_i \in \CP^1
 \]
 be a finite formal sum; we may think of it as the free (abelian) group $F^{\Z}(\CP^1)$. Call $D$
-a \emph{divisor}, and let let $\Div(\CP^1)$
+a \emph{divisor}, and let $\Div(\CP^1)$
 represent this group. A divisor can be thought of as an object that remembers which roots/poles with which
 multiplicity we are interested in. Define:
 \[
-  \div(f) =  \sum_i \nu_{p_i}(f)p_i
+  \div(f) =  \sum_{p \in \CP^1} \nu_{p}(f)p
 \]
-where $\nu_{p_i}(f)$ is the order of the zero/pole, and is negative if it is a pole. This forms a subgroup of
+where $\nu_{p}(f)$ is the order of the zero/pole, and is negative if it is a pole. This forms a subgroup of
 $\Div(\CP^1)$; represent it as $\PDiv(\CP^1)$ (``P'' for principal), and elements of this subgroup are called
 \emph{principal divisors}. This subgroup represents the divisors that are \emph{representable} as a
 meromorphic function. Let us find which divisors can be represented. Let:
@@ -704,7 +706,7 @@ Notice that $\deg(-)$ is certainly a group homomorphism. By our earlier remark:
 \[
   \deg(\div(f)) = 0
 \]
-which is a restriction applied to any meromorphic function on $\CP^1$. It is easy to see that this restriciotn
+which is a restriction applied to any meromorphic function on $\CP^1$. It is easy to see that this restriction
 would work on any compact Riemann surface (see~\cite[chapter~6]{NateComplexAnalysis}). If $\deg(D) = 0$, by our earlier remark
 we have that there exists an $f$ such that $\div(f) = D$, showing this conditions characterizes meromorphic
 functions $f \in \CM(\CP^1)$ (but it shall not on other Riemann surfaces). Now, consider the \emph{(Weil) divisor class group}
@@ -723,23 +725,35 @@ shall have:
 \[
   \Cl(\CP^1) \cong H^1(\CP^1, \CO_{\CP^1}^*)
 \]
-the details of this isomorphism and why $\CO_{\CP^1}^*$ shall be given in \textcolor{red}{ref:HERE}.
-
-
+the details of this isomorphism and why $\CO_{\CP^1}^*$ shall be given in \textcolor{red}{ref:HERE}. The
+higher order sheaf cohomology groups shall be trivial as the dimension of $\CP^1$ is $1$ (over $\C$), and
+hence we'll have:
+\begin{align*}
+  H^0(\CP^1, \CO_{\CP^1}) &\cong \C\\
+  H^1(\CP^1, \CO_{\CP^1}^*) &\cong \Cl(\CP^1)\\
+  H^2(\CP^1, \CO{(\CP^1}) &\cong \{0\}\\
+  \vdots
+\end{align*}
 Translating the result for $(\C, \CM_\C)$, we see that:
 \[
   \Cl(\C) = \frac{\Div(\C)}{\PDiv(\C)} \cong 0
 \]
+which shall give us:
+\begin{align*}
+  H^0(\C, \CO_{\C}) &\cong \C[x]\\
+  H^1(\C, \CO_{\C}^*) &\cong \{0\}\\
+  H^2(\C, \CO{(\C}) &\cong \{0\}\\
+  \vdots
+\end{align*}
 as every divisor can be represented by a principal divisor. We can interpret this as there being no
-impediments to using local information to construct meromorphic functions, and we shall later also see that
-all cohomology groups shall be trivial. Notice that the ring $\C[x]$ is a UFD; this algebraic fact shall be
+impediments to using local information to construct meromorphic functions. Notice that the ring $\C[x]$ is a UFD; this algebraic fact shall be
 given geometric meaning in \textcolor{red}{ref:HERE}.
 
 Let us look at the next simplest nontrivial example. Let $X = \C/\Lambda$ where $\Lambda\sse \C$ is a lattice spanned by the
 $\R$-linearly independent elements $(1,\tau)$ and let $\CF = \CM_X$ (all rational functions on $X$); $X$ is
-called an \emph{elliptic curve}, and so we shall label it as $E$. As mentioned earlier, if $f \in \CM_E$,
+called an \emph{elliptic curve}, and so we shall label it as $E$. As $E$ is compact, if $f \in \CM_E$ then
 $\div(f) = 0$. However, if $\deg(D) = 0$, this does not imply there exists an $f \in \CM_E$ such that $\div(f)
-= D$. To see this, let analyze $\CM_E$ a little more closely. As $\C/\Lambda$ is the quotient by $\Lambda$,
+= D$. To see this, let's analyze $\CM_E$ a little more closely. As $\C/\Lambda$ is the quotient by $\Lambda$,
 any meromorphic function must respect the $\Lambda$ structure:
 \[
   f(z+n+m\tau) = f(z) \qquad \forall n+m\tau \in \Lambda
@@ -761,7 +775,7 @@ $\Lambda$, and so we see that if $D = \div(f)$:
 \[
   \sum_i n_ip_i \equiv 0 \mod \Lambda
 \]
-where here $\sum_i n_ip_i\notin F^\Z(E)$ but $\sum_i n_ip_i \in E$, namely we are trying $p_i$ as a complex
+where here $\sum_i n_ip_i\notin F^\Z(E)$ but $\sum_i n_ip_i \in E$, namely we are treating $p_i$ as a complex
 number multiplied by $n_i$ and summed. Certainly there is no such restriction on
 a general divisor $D \in \Div(E)$ of degree $0$. We thus have shown that there is a surjective map:
 \begin{equation}\label{eq:ellipticCrvIso}
@@ -777,7 +791,10 @@ often called the \emph{Jacobi-Abel} exact sequence as $\C/\Lambda$ is a Jacobian
 \[
   0 \to \Cl^0(E) \to \Cl(E) \xrightarrow{\deg} \Z \to 0
 \]
-that together fit into the commutative diagram:
+All together, we get a short exact sequence and a commutative diagram:
+\[
+  0 \to \PDiv(E) \to \Div^0(E) \to E \to 0
+\]
 \[
 \begin{tikzcd}
 0 \arrow[r] & \mathrm{Div}^0(E) \arrow[r, hook] \arrow[d, two heads, "\pi"] & \mathrm{Div}(E) \arrow[r, "\deg"] \arrow[d, two heads, "\pi"] & \mathbb{Z} \arrow[r] \arrow[d, equals] & 0 \\
@@ -785,25 +802,28 @@ that together fit into the commutative diagram:
 \end{tikzcd}
 \]
 Continuing on to other Riemann surfaces, we shall loose the isomorphism given in
-equation~(\ref{eq:ellipticCrvIso}) and is the beginning of the study of Jacobian
-varieties (see~\cite[section~6.4]{NateComplexAnalysis}), while going in
-higher dimensions is the beginning of the study of Weil and Cartier Divisors (see~\cite{NateAlgGeo}), and
-study how far away a space is from being constructed by ``principal'' objects. Overall, the question becomes
-less about finding which functions exist and more about some global properties of the space $X$.
+equation~(\ref{eq:ellipticCrvIso}) and is the beginning of the study of Jacobian varieties
+(see~\cite[section~6.4]{NateComplexAnalysis}). Going in higher dimensions is the beginning of the study
+of Weil and Cartier Divisors (see~\cite{NateAlgGeo}), and study how far away a space is from being constructed
+by ``principal'' (codimension 1) objects, namely the study of $H^1(X, \CO_X)$\footnote{Notice the object are
+codimension $1$, so the ``dual'' have dimension $1$}. Overall, we get some useful
+information about he obstruction to finding global sections, but not necessarily concrete ways of finding
+$H^0(X, \CO_X)$.
+
 
 To answer the Riemann Roch problem, a more granular approach to find which functions (of various kinds) exist
 on a space $X$ must be taken. As divisors keep track of root/pole information, they are a great tool in
 classifying functions that ``satisfy'' the properties of the divisor. To make this precise, define an order on
 divisors $\div(X)$ where (for now) $X$ is either a Riemann surface or a smooth projective curve. Define
-a partial order on $\Div(X)$ by saying $D_1
-\ge D_2$ if each coefficient of $D_2 - D_1$ is non-negative. Then we can consider:
+a partial order on $\Div(X)$ by saying $D_2
+\ge D_1$ if each coefficient of $D_2 - D_1$ is non-negative. Then we can consider:
 \[
   \CO_X(D)(X) = \set{f \in \CM_X(X)^*}{\div(f) + D \ge 0}
 \]
 In other words, if $D =\sum_i n_ip_i$, then $\CO_X(D)(X)$ is all meromorphic functions $f$ where it has a pole at $p_i$ of
 order at most $n_i$ if $n_i > 0$ and roots at $p_i$ of order at least $|n_j|$ if $n_j < 0$ (and $\CO_X(D)$ is
 a [coherent] sheaf). From this, we can
-reformulate the Riemann Roch problem to a question about $H^0(X, \CO_X(D))$. The famous Riemann-Roch theorem as
+ask the Riemann Roch problem for $H^0(X, \CO_X(D))$. The famous Riemann-Roch theorem as
 proven by Riemann and Roch (where Riemann proved the Riemann-inequality, and Roch provided the
 necessary work to make it an equality, see~\cite{a.griffithsIntroductionAlgebraicCurves}) is now known as
 \emph{Riemann Roch for curves} and is the equality:
@@ -814,7 +834,7 @@ where $g$ is the genus of the Riemann surface or smooth projective curve
 (see~\cite{hartshorneAlgebraicGeometry2013} or~\cite{NateAlgGeo} for defining the genus of a curve via scheme
 theory, or for a
 direct computational proof using normalization see~\cite{NateComplexAnalysis}). In the original phrasing of the Riemann Roch
-theorem, the group $H^1(X, \CO_X(D))$ is replaced with  $H^0(X, \CO(K_X-D))^*$ where $K_X$ is the canonical
+theorem, the group $H^1(X, \CO_X(D))$ is replaced with  $H^0(X, \CO(K_X-D))^\vee$ where $K_X$ is the canonical
 divisor of $X$; these groups are isomorphic by Serre Duality (see~\cite[section~6.3]{NateAlgGeo}). Then this
 space is identified with the space of meromorphic $1$-forms (either through some simple techniques from
 complex analysis, see Brill-Noether Reciprocity in either~\cite{a.griffithsIntroductionAlgebraicCurves}
@@ -822,11 +842,12 @@ or~\cite{NateComplexAnalysis}, or by combining of Poincar\'e duality with DeRham
 either~\cite{leeIntroductionRiemannianManifolds2018} or~\cite{NateDiffGeo}). Switching to the traditional
 notation $l(D) = \dim H^0(X, \CO_X(D))$ and $i(D) = \dim H^0(X, \CO_X(K_X-D))^*$ we get:
 \[
-  l(D) - l(K-D) = \deg(D) + 1-g
+  l(D) - l(K_X-D) = \deg(D) + 1-g \qquad \text{(equiv.)} \qquad l(D) - i(D) = \deg(D) + 1-g
 \]
-\textcolor{red}{idk if I will prove RR for curves or relegate it to a book}. As we phrased the Riemann-Roch
+This result is proven in~\cref{th:rrForRiemannSurfaceandLineBundles}. As we phrased the Riemann-Roch
 problem in the beginning, this formula would then be asking for the value of $l(D)$. There are cases where
-$l(K-D)$ disappears (for example if $D = 0$ or $D = K$), and there are many cases we can compute. It is simple
+$l(K-D)$ disappears (for example if $D = 0$ or $D = K$), and there are many cases we can compute it easily
+enough. It is simple
 to compute the right hand side but in general it is harder to computer the left hand side. Thus, this formula
 becomes a new constriction that helps us find $l(D)$. There are a set of theorems known as \emph{vanishing
 theorems} that specify under which conditions $l(K-D)$ (or more generally, higher cohomology groups) vanish
@@ -840,14 +861,23 @@ that:
 \[
   \chi(X, \CO_X(D)) = \deg(D) + 1-g
 \]
-Note that $H^i(X, \CO_X(D)) = 0$ for $i > 1$, \textcolor{red}{cite? Reference for later?} giving the equality.
+As $X$ is a curve $H^i(X, \CO_X(D)) = 0$ for $i > 1$, \textcolor{red}{cite? Reference for later?} giving the equality.
 The right hand side shall be drastically different, split into special invariants of vector bundles known as
 the Chern class and Todd class \textcolor{red}{mention the ``duality'' between them? see notes} . In fact, the
 Euler Characteristic shall also turn out to be an invariant on vector bundles, and hence the Riemann Roch
-theorem generalizes to a question about the existence of sections on vector bundles over a compact manifolds.
-We shall mention the generalization to smooth quasi-projective schemes over a field near the end, and also
-talk a bit about a recent paper (\cite{navarroRiemannRochFormulaProjective2017}) generalizing to finite
-dimensional Noetherian schemes.
+theorem generalizes to a question about the existence of sections on vector bundles over a compact manifolds,
+namely if $(X,\CF)$ is a compact manifold along with a vector bundle $\CF$, then we want to compute:
+\[
+  H^0(X, \CF)
+\]
+which leads to finding
+\[
+  \chi(X, \CF) = \int_X \ch(X)\td(X)
+\]
+This equation is precisely the result of the \emph{Hirzebruch-Riemann Roch Theorem}. We shall mention the
+generalization to smooth quasi-projective schemes over a field near the end, and also talk a bit about a
+recent paper (\cite{navarroRiemannRochFormulaProjective2017}) generalizing to finite dimensional Noetherian
+schemes.
 
 To motivate how vector bundles will enter the picture, it is worth-while seeing how $\CO_X(D)$ can be
 interpreted as a line bundle. To that end, recall that the projective curve $X = \P^1$ as defined in classical
@@ -882,7 +912,7 @@ gives:
 \]
 \end{center}
 where $x \mapsto 1/y$ and $1/x \mapsto y$, Then if $F([x':y']) \in
-\CO_{\P^1}(\P^1)$ is a global function, then $F([x:1]) \to f(x) \in \CO_X(U_0)$ and $F([1:y]) \to g(y) \in \CO_X(U_1)$
+\CO_{\P^1}(\P^1)$ is a global function where $x = x'/y'$ and $y  =y'/x'$ (when $y',x'\ne 0$ respectively), then $F([x:1]) \to f(x) \in \CO_X(U_0)$ and $F([1:y]) \to g(y) \in \CO_X(U_1)$
 are the restrictions of the function to $U_0$ and $U_1$ respectively, and by the above diagram it must be that
 these functions map to the same element in the restriction, namely:
 \[
@@ -904,15 +934,254 @@ Then we can in fact form linear homogeneous functions! For example consider
 \]
 Then $F$ maps to $f(x) = ax+b$ and $g(y) = a + by$. Then:
 \[
-  f(x) = x\left(a + b \frac{1}{x}\right) = ax+b = xg\left(\frac{1}{x}\right)
+  f(x)= ax+b = x\left(a + b \frac{1}{x}\right)  = xg\left(\frac{1}{x}\right)
 \]
 which works! More generally, if the condition $f(x) = x^ng(1/x)$ allows for degree $n$ homogeneous
-polynomials. Denote the degree $n$-homogeneous polynomials by $\CO_{\P^1}(n)(\P^1)$.
+polynomials, and the homogeneity can happen for any number of variables. Denote the degree $n$-homogeneous
+polynomials for $\P^k$ by $\CO_{\P^k}(n)(\P^k)$.
+
+Now, recall that a $n$-dimensional vector bundle $\pi: E \to X$ over a field $K$ can be defined by taking open
+sets $U_i \sse X$ such that $\pi^{-1}(U_i) \to U_i\times F$ and insuring that for any intersection $U_i\cap
+U_j$ we have a gluing map:
+\[
+  g_{ij}: \pi^{-1}(U_i\cap U_j) \to \GL_n(K)
+\]
+such that $g_{jk}g_{ij} = g_{ik}$ (the cocycle condition) which specifies the gluing condition. When limiting
+to line bundles, the gluing map becomes:
+\[
+  g_{ij}: \pi^{-1}(U_i\cap U_j) \to K^*
+\]
+Intuitively, this give a point-wise gluing conditions on the bundle: if $v \in U_i$ and $w \in U_j$ that are
+the same point in $U_i\cap U_j$, then:
+\[
+  v = A_{ij}w
+\]
+Moving onto the construction we have done earlier, as we are saying that $\CO_{\P^1}(n)$ ought to be
+considered as a line bundle, we see that we ought to consider:
+\[
+  g_{ij}: \CO_{\P^1}(U_i\cap U_j) \to \CO_{\P^1}^*(U_i\cap U_j) \cong k[x, 1/y]\setminus\{0\}
+\]
+where we take $\CO_{\P^1}^*(U_i\cap U_j)$ in place of $K^*$ as these are the ``units'' (i.e. isomorphisms) on
+this intersection. For example, given $f,g$ restrict to the same functions on the intersection, then we now
+``twist'' $g$ to be:
+
+\[
+  f(x) = x^ng(1/x) \qquad x^n \in \CO_{\P^1}^*(U_i\cap U_j)
+\]
+The word ``twist'' comes from both complex analysis where $z^n$ twists $\C$ onto itself around the
+branching point, and from algebraic geometry where the non-triviality of bundles can be interpreted by
+characteristic classes as some non-trivial twisting (we shall cover this intuition in
+\textcolor{red}{ref:HERE}). The details of this correspondence is given in~\cite[section~4.1]{NateAlgGeo}
+(especially how to transition from points of a bundle to section of a sheaf). Overall, we see that
+$\CO_{\P^1}(n)(\P^1)$ is the global sections of a line bundle; more generally $\CO_{\P^1}(n)$ remember all the
+sections over each open set $U$, as $\CO_{\P^1}(n)$ is a sheaf.
+
+With this intuition, we can see how to interpret $\CO_X(D)$ as a line bundle. Choosing an affine cover $U_i$
+for $X$, we can define:
+\[
+  D|_{U_i} = \sum_{p \in U_i} n_pp
+\]
+which is the representation of the divisor $D$ in $U_i$. Then for each affine $U_i$, choose $s_i \in \CM_X(U_i)$
+so that $\langle s_i \rangle_K = \CO_X(D)(U_i)$ is a generator as a $K$-algebra of the local sections and:
+\[
+  \div(s_i) = -D|_{U_i}
+\]
+So that $s_i$ has roots/poles of the appropriates order. Such a section exists, for $U_i \cong \A^1$ (as $X$
+is a curve) so $\CO_X(U_i) \cong k[x]$ and so by our earlier discussion we can certainly find an $s_i$ with
+exactly zeros and poles at $-D|_{U_i}$ and it is an exercise in ring-theory to show this is a generator (ex.
+think of choosing a uniformization parameter for a local ring).
+
+
+Let us label the collection of the meromorphic functions $\CO_X(D)(U_i)$. To find an $f \in \CO_X(D)(X)$ (i.e.
+a global section), we need to insure we can glue together nicely on intersection. Consider (nonempty)
+$U_i\cap U_j$ and take the generators $s_i \in \CO_X(D)(U_i)$ and $s_j \in \CO_X(D)(U_j)$. It is not hard to
+see that $s_i|_{U_i\cap U_j} =
+s_j|_{U_i\cap U_j}$. Then certainly on $U_i\cap U_j$:
+\[
+  \div(s_i) = \div(s_j) = -D|_{U_i\cap U_j}
+\]
+and so, as we are considering meromorphic functions, we can consider:
+\[
+  \div \left(\frac{s_j}{s_i}\right) = \div(s_j) - \div(s_i) = 0
+\]
+As $s_j/s_i$ has no zero's/pole on $U_i\cap U_j$, this means that it is holomorphic and nowhere vanishing on
+$U_i\cap U_j$. But then:
+\[
+  g_{ij} = \frac{s_j}{s_i} \in \CO_X^*(U_i\cap U_j)
+\]
+But then we have the desired transition functions! Thus, we may glue them to form all global sections
+$\CO_{X}(D)(X)$for every $D$, and then $\CO_X(D)$ is a line bundle. In most cases (and in most spaces that
+will be considered in this paper), every line bundle $\CL$ is induced by a divisor $D$; \cite[section~4.3]{NateAlgGeo}
+shows how there is a bijective correspondence between line bundles and (Weil/Cartier) divisors on the
+appropriate type of scheme.
+
+
+This also means that $\deg(D)$ should be interpreted as a property of a bundle. (\textcolor{red}{use this
+to build up to Chern classes}).
 
 
 
-\textcolor{red}{also mention how the weil/cartier divisor stuff earlier isomorphic to line bundles, hence that
-discussion really about properties of line bundles}.
+
+
+\begin{thm}{RR For Riemann Surface with Line Bundles}{rrForRiemannSurfacewithLineBundles}
+  Let $X$ be a compact Riemann surface and $\CL$ a complex analytic line bundle on $X$. Then
+  \begin{enumerate}
+    \item There exists a Cartier divisor $D$ such that $\CL\cong \CO_X(D)$ so that $\deg(\CL) := \deg(D)$
+    \item The Riemann-Roch equation holds:
+      \[
+        \dim_\C H^0(X, \CL) - \dim_\C H^0(X, \omega_X\otimes \CL^\vee) = \deg(\CL) + 1-g
+      \]
+      where (by~\textcolor{red}{ref:HERE}, or~\cite[section~5.3]{NateAlgGeo}) $g = \dim H^0(X, \omega_X)
+      = \dim H^1(X, \CO_X)$ is the genus of $X$.
+  \end{enumerate}
+\end{thm}
+
+\begin{Proof}
+  The first point is an application of much proved before: By \textcolor{red}{ref:HERE} $X$ is an algebraic
+  variety, in particular a curve, and by~\cite[section~6.1]{NateAlgGeo} there is an embedding $X
+  \hookrightarrow \P_\C^N$ for some $N$. Then by \textcolor{red}{ref:HERE} (GAGA, which I'll prove) we have
+  that $\CL$ is isomorphically pushed forward through these maps hand is an algebraic line bundle. As $X$ is
+  a variety, by~\cite[section~4.3]{NateAlgGeo} there exists a Cartier divisor $D$ such that $\CL = \CO_X(D)$.
+  Let us show $\deg(\CL) = \deg(D)$ is well-defined, i.e. independent of linear equivalence. Let $f \in
+  \CM(X)$. Then as shown in~\cite[section~6.3]{NateComplexAnalysis} there exists a branch covering $f: X \to
+  \P_\C^1$ where:
+  \[
+    \#(f^{-1}(0) = \#(f^{-1}(\infty)) = \text{deg. of map}
+  \]
+  Hence:
+  \[
+    \deg(f) \#(f^{-1}(0) - \#(f^{-1}(\infty)) = 0
+  \]
+  Thus, $D\sim E$ implies $\deg(D) = \deg(E)$, hence $\deg(\CL)$ is well-defined
+
+  For the 2nd point, if $D = 0$, then $\CO_X(0) = \CO_X$, and $H^0(X, \CO_X) = \C$ so $l(0) = 1$ and $i(0) =
+  g$ and
+  \[
+    l(0) - i(0) = 1-g = \deg(0) + 1-g
+  \]
+  by~\cite[section~6.3]{NateComplexAnalysis}, hence assume $D \ne 0$ (though the beginning of this discussion
+  doesn't need this assumption). First use Serre Duality to get:
+  \[
+    H^0(X, \omega_X\otimes \CL^\vee) \cong H^1(X, \CL)^\vee
+  \]
+  Reducing the right hand side to the Euler characteristic $\chi(X, \CO_X(D))$. To get the right hand side, we
+  take advantage of additivity of $\chi$. For any point $P \in X$, we get an exact sequence:
+  \[
+    0 \to \CO_X(-P) \to \CO_X \to \kappa_P \to 0
+  \]
+  when $\kappa_P$ is the skyscraper sheaf:
+  \[
+    (\kappa_P)_x = \begin{cases}
+      (0) & x \ne P\\
+      \C & x = P
+    \end{cases}
+  \]
+  Note that as this sheaf is flasque, $H^i$ disappears for $i > 0$ so $\chi(X, \kappa_P) = 1$.
+
+  \textcolor{red}{Go over $\chi(X, \kappa_D)$}
+
+  Tensoring with $\CO_X(D)$, and applying our theory from~\cite[section~4.3]{NateAlgGeo} we get:
+  \[
+    0 \to \CO_X(D-P) \to \CO_X(D) \to \kappa_P \otimes \CO_X(D) \to 0
+  \]
+  Thus, by additive of $\chi$:
+  \[
+    \chi(X, \CO_X(D) = \chi(X, \kappa_P\otimes \CO_X(D)) + \chi(X, \CO_X(D-P))
+  \]
+  Now, if $D > 0$, we can pick a point $P$ appearing in $D$. Then $\deg(D-P) = \deg(D)-1$. We can thus do
+  induction on $\deg(D)$.  If $\deg(D) = 0$, then $\CO_X(D)$ has holomorphic functions, which as $X$ is
+  compact is only constant functions, and by the Brill-Noether Reciprocity (\cite{NateComplexAnalysis}) we
+  have $i(D) = g$, giving the base case. Now suppose the result holds for $\deg(D) = n-1$ and consider
+  $\deg(D) = n$. Then $\deg(D-P) = n-1$ from which we get by the inductive hypothesis
+  \[
+    \deg(D-P)+1-g = \chi(X, \CO_X(D-P))
+  \]
+  \textcolor{red}{words here; I need $\chi$ to split with $D$ and $P$}
+  \[
+    \deg(D)+(-1+1)+1-g = \chi(X, \CO_X(D))
+  \]
+  giving the desired result.
+
+  For arbitrary $D$, we can split $D = D^+ - D^-$ where $D^+, D^- \ge 0$. Then we get a short exact sequence:
+  \[
+    0 \to \CO_X \to \CO_X(D^-) \to \kappa_{D^-} \to 0
+  \]
+  Then by additivity;
+  \[
+    \chi(X, \CO_X(D^-)) = \chi(X, \CO_X) +\chi(X, \kappa_{D^-}) = 1-g + \deg(D^-)
+  \]
+  Now, tensor with $\CO_X(D)$ to get the short exact sequence:
+  \[
+    0 \to \CO_X(D) \to \CO_X(D+D^-) \to \kappa_{D^-} \to 0
+  \]
+  where the last term is the same (as can be verified point-wise). Applying additivity of $\chi$ again we get:
+  \[
+    \chi(X, \CO_X(D+D^-)) = \chi(X, \CO_X(D)) + \chi(X, \kappa_{D^-}) = \chi(X, \CO_X(D)) + \deg(D^-)
+  \]
+  As $D + D^- = D^+$, re-arranging we get:
+  \[
+     \chi(X, \CO_X(D)) =  - \deg(D^-) + \chi(X, \CO_X(D^+))
+  \]
+  Applying our earlier result we get:
+  \[
+     \chi(X, \CO_X(D)) =  - \deg(D^-) + \deg(D^+) + 1-g  \deg(D) + 1-g
+  \]
+  as we sought to show.
+\end{Proof}
+
+As $\CL$ is a line bundle, we can take its value of the first Chern class $c_1(\CL) \in H^2(X; \Z)$. By
+letting $[X] \in H-2(X; \Z) \cong \Z$ be the fundamental class, then:
+\[
+  \deg(\CL) = c(\CL)[X] \in \Z
+\]
+Then~\cref{th:rrForRiemannSurfaceandLineBundles} becomes:
+\begin{align*}
+  \chi(X, \CL) &= c_1(\CL)[X] + 1-g\\
+               &= \left[c_1(\CL) + \frac{1}{2}(2-2g)\right][X]\\
+               &= \left[c_1(\CL) + \frac{1}{2}c_1(T_X^{1,0})\right][X]
+\end{align*}
+
+By Bass-Serre Cancellation (see~\cite[section~5.1]{NateKTheory}) or by some result from the theory of
+characteristic (see~\cite[section~3.2]{NateKTheory}), higher-dimensional vector bundles are trivial; in
+particular as $\dim_\C X = 1$, any vector bundle of dimension $n > 1$ will have ``trivial'' information
+cohomologically. Let us show this explicitly to further motivate HRR. We first require a special case of
+
+\textcolor{red}{This following theorem may also be in my char.class notes}
+
+\begin{thm}{Atiyah-Serre On Vector Bundles}{atiyah-serreOnVecBundles}
+  Let $X$ be either a compact complex manifold or an algebraic variety; in either case of dimension $d
+  =\dim_\C X$. Let $E$ be a rank $r> d$ vector bundle on $X$ that is smooth or algebraic whether $X$ is a
+  manifold of variety respectively \footnote{If algebraic, assume $\Gamma_\alg(X, \CO_X(E)) \to E_x$ is
+  surjective for all $x$;i.e. it is generated by its global sections}. Then there is a trivial bundle
+  $\BI^{r-d}$ of rank $r-d$  that fits into the short exact sequence:
+  \[
+    0 \to \BI^{r-d} \to E \to E'' \to 0
+  \]
+  and $\rk(E'') \le d$.
+\end{thm}
+
+\begin{Proof}
+  here
+\end{Proof}
+
+\textcolor{red}{This next result will definitely require some characteristic theory}.
+
+\begin{thm}{RR For Riemann Surface With Vector Bundles}{rrForRiemannSurfaceWithVecBundles}
+  Let $X$ be a compact Riemann surface and $E$ a complex vector bundle over $X$ of rank $r$. Then:
+  \[
+    \chi(X, E) = c_1(E) + r(1-g)
+  \]
+  whee $c_1(E)$ is the first Chern class of $E$.
+\end{thm}
+
+\begin{Proof}
+  here
+\end{Proof}
+
+
+
+
+
 
 % . Notice that they can be determined by taking some countable set of non-accumulating
 % of points of $\C$. For any proper simply connected open set $U \sse \C$ we have that it is
