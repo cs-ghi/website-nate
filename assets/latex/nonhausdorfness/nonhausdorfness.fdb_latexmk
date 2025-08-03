@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber nonhausdorfness"] 1754242390 "nonhausdorfness.bcf" "nonhausdorfness.bbl" "nonhausdorfness" 1754245017 0
+["biber nonhausdorfness"] 1754242390 "nonhausdorfness.bcf" "nonhausdorfness.bbl" "nonhausdorfness" 1754248933 0
   "./bibliography.bib" 1754242378 565 6edcdc6969e44dcb6b4270a4bdcc7adb ""
-  "nonhausdorfness.bcf" 1754245016 107857 eca303b36a7d568f3822bf710a27596e "pdflatex"
+  "nonhausdorfness.bcf" 1754248932 107857 eca303b36a7d568f3822bf710a27596e "pdflatex"
   (generated)
   "nonhausdorfness.bbl"
   "nonhausdorfness.blg"
   (rewritten before read)
-["makeindex nonhausdorfness.idx"] 1754231425 "nonhausdorfness.idx" "nonhausdorfness.ind" "nonhausdorfness" 1754245017 0
-  "nonhausdorfness.idx" 1754245015 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex nonhausdorfness.idx"] 1754231425 "nonhausdorfness.idx" "nonhausdorfness.ind" "nonhausdorfness" 1754248933 0
+  "nonhausdorfness.idx" 1754248932 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "nonhausdorfness.ilg"
   "nonhausdorfness.ind"
   (rewritten before read)
-["pdflatex"] 1754245013 "nonhausdorfness.tex" "nonhausdorfness.pdf" "nonhausdorfness" 1754245017 0
+["pdflatex"] 1754248929 "nonhausdorfness.tex" "nonhausdorfness.pdf" "nonhausdorfness" 1754248933 0
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -326,11 +326,11 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "bibliography.bib" 1754242378 565 6edcdc6969e44dcb6b4270a4bdcc7adb ""
-  "nonhausdorfness.aux" 1754245016 2023 944edcfad75ebef0b8bebda4ebf5a408 "pdflatex"
+  "nonhausdorfness.aux" 1754248932 2023 7c0196a7d05ba5e4dfb2c2e772796eed "pdflatex"
   "nonhausdorfness.bbl" 1754242393 3147 ad6957cdd2b31b223e45a9cb4d195911 "biber nonhausdorfness"
   "nonhausdorfness.ind" 1754231425 0 d41d8cd98f00b204e9800998ecf8427e "makeindex nonhausdorfness.idx"
-  "nonhausdorfness.run.xml" 1754245016 2384 e44e7ab64c899dae12c8498af5d5f471 "pdflatex"
-  "nonhausdorfness.tex" 1754245010 40786 d59294facb480f1f593bbcabd5155abe ""
+  "nonhausdorfness.run.xml" 1754248932 2384 e44e7ab64c899dae12c8498af5d5f471 "pdflatex"
+  "nonhausdorfness.tex" 1754248923 41009 1dae8f2a9e9a9cce4aafbc3fe2c432f7 ""
   (generated)
   "nonhausdorfness.aux"
   "nonhausdorfness.bcf"

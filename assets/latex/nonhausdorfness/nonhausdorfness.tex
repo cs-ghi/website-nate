@@ -763,7 +763,9 @@ straight lines $L_1, L_2, L_3$ each of length $1$. Let us represent each as inte
   L_3 &= [4,5] = \{x\text{ in }\R\text{ such that $4\le x \le 5$}\}
 \end{align*}
 
-Visually, we have:
+Notice that we are taking $x$ in the real numbers; for example in $L_1$ all numbers between $0$ and $1$
+(including $0$ and $1$) are in $L_1$ (ex. $0.5$ and  $\pi-3$ are in $L_1$). Visually, these three sets
+represent lines of length $1$:
 \[
 \begin{tikzpicture}
   % Define vertices as small red circles with labels
@@ -788,7 +790,7 @@ Let us now glue these lines to form a triangle, we want to:
 \begin{enumerate}
   \item glue $1$ in $L_1$ to $2$ in $L_2$
   \item glue $3$ in $L_2$ to $4$ in $L_3$
-  \item glue $5$ in $L_3$ to $0$ in $L_0$
+  \item glue $5$ in $L_3$ to $0$ in $L_1$
 \end{enumerate}
 
 To do this, we shall introduce a bit of notation. Let us separate the end-points of the lines so that we may
@@ -804,7 +806,7 @@ with the sets representing the vertices of a triangle. To do this, we take the
 \[
   A\cup B = \{\text{take all $a$ in $A$ and all $b$ in $B$}\}
 \]
-In other words, $A,B$ is a new set that containing all the elements of $A$ and $B$. Define our triangle to be:
+In other words, $A\cup B$ is a new set that containing all the elements of $A$ and $B$. Define our triangle to be:
 \[
   T =(0,1) \cup \{\{1,2\}\}\cup (2,3)\cup \{\{3,4\}\}\cup (4,5)\cup \{\{5,0\}\}
 \]
