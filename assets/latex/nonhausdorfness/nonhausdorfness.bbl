@@ -19,7 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{chwojko-srawleyPreliminaryChapter2023}{document}{}
+    \entry{NateTop}{book}{}
       \name{author}{1}{}{%
         {{hash=17e33e23808fa6250bed45d881448509}{%
            family={Chwojko-Srawley},
@@ -34,21 +34,21 @@
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Preliminary Chapter}
-      \field{year}{2023}
+      \field{edition}{1}
+      \field{title}{Everything You Need To Know About Topology}
+      \field{year}{2022}
       \verb{urlraw}
-      \verb /Users/nathanaelchwojko-srawkey/website-nate/nate-website/src/assets/latex/notes/preliminary_chapter
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_topology.pdf
       \endverb
       \verb{url}
-      \verb /Users/nathanaelchwojko-srawkey/website-nate/nate-website/src/assets/latex/notes/preliminary_chapter
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_topology.pdf
       \endverb
-      \warn{\item document entry 'chwojko-srawleyPreliminaryChapter2023' (bibliography.bib): Invalid format '2023-00-00 2023' of date field 'date' - ignoring}
     \endentry
-    \entry{NateTop}{book}{}
+    \entry{chwojkosrawleyPreliminaryChapter2023}{article}{}
       \name{author}{1}{}{%
         {{hash=17e33e23808fa6250bed45d881448509}{%
            family={Chwojko-Srawley},
@@ -67,14 +67,14 @@
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{Everything You Need To Know About Topology}
-      \field{year}{2022}
+      \field{title}{Preliminary Chapter}
+      \field{year}{2023}
+      \field{dateera}{ce}
       \verb{urlraw}
-      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_topology.pdf
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/preliminary_chapter.pdf
       \endverb
       \verb{url}
-      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_topology.pdf
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/preliminary_chapter.pdf
       \endverb
     \endentry
   \enddatalist

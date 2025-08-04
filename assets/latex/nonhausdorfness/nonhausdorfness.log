@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  3 AUG 2025 15:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  4 AUG 2025 12:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1359,70 +1359,65 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'nonhausdorfness.bbl' found.
- (./nonhausdorfness.bbl
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'chwojko-srawleyPreliminaryChapter2023':
-(biblatex)                - document entry 'chwojko-srawleyPreliminaryChapter2023' (bibliography.bib): Invalid format '2023-00-00 2023' of date field 'date' - ignoring.
-
-)
+ (./nonhausdorfness.bbl)
 Package biblatex Info: Reference section=0 on input line 634.
 Package biblatex Info: Reference segment=0 on input line 634.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 643.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 654.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 643.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 654.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 643.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 654.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 643.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 654.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 830.
+] [2] [3]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 883.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 830.
- [3] [4]
-
-Package biblatex Warning: No driver for 'document'.
-(biblatex)                Using fallback driver on input line 979.
-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 883.
+ [4] [5]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[5] (./nonhausdorfness.aux)
+
+Overfull \hbox (9.69566pt too wide) in paragraph at lines 1051--1051
+[]\OT1/cmr/m/n/10 (-20) Nathanael Chwojko-Srawley. \  Pre-lim-i-nary Chap-ter". In: (2023). \OT1/cmr/m/sc/10 (-20) url\OT1/cmr/m/n/10 (-20) : [][]$\OT1/cmtt/m/n/10 https : / / nathanaelsrawley .
+ []
+
+[6] (./nonhausdorfness.aux)
 Package logreq Info: Writing requests to 'nonhausdorfness.run.xml'.
 \openout1 = `nonhausdorfness.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46433 strings out of 476025
- 957121 string characters out of 5790017
- 1876388 words of memory out of 5000000
- 65915 multiletter control sequences out of 15000+600000
- 525807 words of font info for 132 fonts, out of 8000000 for 9000
+ 46459 strings out of 476025
+ 957349 string characters out of 5790017
+ 1874388 words of memory out of 5000000
+ 65917 multiletter control sequences out of 15000+600000
+ 526922 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,110p,1012b,1315s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on nonhausdorfness.pdf (5 pages, 178752 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on nonhausdorfness.pdf (6 pages, 195598 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 15 named destinations out of 1000 (max. 500000)
- 29365 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
+ 16 named destinations out of 1000 (max. 500000)
+ 31413 words of extra memory for PDF output out of 35830 (max. 10000000)
 

@@ -96,9 +96,9 @@
 % ╔═══════════════════════════════════════════════════════════╗
 % ║                 bibliography and citing                   ║
 % ╚═══════════════════════════════════════════════════════════╝
+% \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
 
 \usepackage{csquotes}
-% \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
 \usepackage{biblatex}
 
 \addbibresource{bibliography.bib}
@@ -634,9 +634,20 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 \begin{document}
 \maketitle
 
-This is a quick blog to explain and construct a non-Hausdorff spaces to someone with no university background.
+This is a short blog to explain and construct a non-Hausdorff spaces to someone with no university background
+in mathematics. As a one-sentence recap:
+\begin{center}
+  \emph{A non-Hausdorff space is a space where points can be infinitely close to each other without being the
+  same point}
+\end{center}
 There shall be some small apocrypha's for the sake of not overloading on technicalities, and these shall be
 sorted in an extra technicalities section.
+
+This is an object that is usually introduced in a class in topology and relies on a lot of little ideas. These
+ideas are presented here with as little build-up as possible, but as a consequence it is likely
+will have to spend some time digesting the concepts.
+
+
 
 \section{Build up}
 
@@ -663,8 +674,8 @@ number, since:
 \]
 But there are spaces in which you can have two points that have \emph{zero distance} between them and yet are
 \emph{distinct}! It was a mathematician named \emph{Hausdorff} that
-first stumbled upon such a weird space, and thus in his honour a space in which there can exist distinct
-points that have zero distance are called \emph{non-Hausdorff spaces} and a space is called \emph{Hausdorff}
+first stumbled upon such a weird space, and thus in his honour a space in which there can't exist distinct
+points that have zero distance are called \emph{Hausdorff spaces}, and the weird spaces are called \emph{non-Hausdorff}
 otherwise. For example the real numbers $\R$ is Hausdorff.
 
 \section{What is a Space?}
@@ -672,19 +683,45 @@ otherwise. For example the real numbers $\R$ is Hausdorff.
 What is meant here by ``space''? The first encounter we all have with the notion of ``space'' is within the
 world we live in: we consider the ``space'' of a room, or the routes of a hiking trail the ``space'' on which
 we can walk. These two examples of spaces are very different from each other (in a room, we have 3 directions,
-while for hiking trails we usually are limited to lines to follow), and there are many more such
-examples that come up in the sciences (for example, we consider all possible outputs of a experiment the
-``total space'' of outcomes). This generality of the notion of space has lead mathematics to define the notion
-of \emph{topology} which is a vast generalization of the Cartesian plane. Going through the technicalities of
-defining a topology would distract from the specific goal of constructing a non-Hausdorff space, so we shall
-define space as:
+while for hiking trails we usually are limited to lines to follow), and there are many more such examples that
+come up in the sciences (for example, we consider all possible outputs of a experiment the ``total space'' of
+outcomes). This generality of the notion of space has lead mathematics to define the notion of \emph{topology}
+which is a vast generalization of the Cartesian plane. Going through the technicalities of defining a topology
+would distract from the specific goal of constructing a non-Hausdorff space. In fact, going through the
+technicalities of defining spaces in higher than $1$ dimension would increase the technicalities, and we can
+construct a $1$-dimensional space that is not Hausdorff. Thus, for our purposes, we shall define a  space as:
 
 \begin{center}
-  \emph{A set containing numbers and sets of numbers}
+  \emph{A set containing numbers and possibly containing sets of numbers}
 \end{center}
-This is very abstract, so let us immediately justify this definition. Let us start by being precise what we
-mean by \emph{set}. A set is simply the way mathematicians group things, for example here are two different
-sets, one containing the numbers $1,2,3$ and the other the numbers $3,4,5$:
+This is very abstract, so let us immediately justify this definition. The simplest space is $\R$ which is just
+the set of all numbers and represents a line. We can take line segments from it to recover finite lines, for example:
+\[
+  [0,1] = \{\text{$x$ in $\R$ such that $0\le x \le 1$}\}
+\]
+which we can visualize as:
+\[
+\begin{tikzpicture}
+  \draw[thick] (0,0) -- (1,0);
+  \draw[black, fill=black] (0,0) circle (0.1) node[below] {0};
+  \draw[black, fill=black] (1,0) circle (0.1) node[below] {1};
+\end{tikzpicture}
+\]
+This is an infinite set as it contains all numbers between $0$ and $1$ (including $0$ and $1$). We can also
+take a finite subset, for example the definition of a $1$-dimensional space allows for subset of numbers of
+$\R$, for example $\{1,2,3\}$ is three numbers and can be represented as three points:
+\[
+\begin{tikzpicture}
+  \foreach \x in {1,2,3} {
+    \fill[black] (\x,0) circle (0.1);
+    \node[below] at (\x,-0.3) {\x};
+  }
+\end{tikzpicture}
+\]
+This covers the first case of the definition ``a set containing numbers''. Let us now justify the 2nd part of
+the definition: ``possibly containing sets of numbers''. To understand this better, let us start by being
+precise what we mean by \emph{set}. A general set is simply the way mathematicians group things, for example
+here are two different sets, one containing the numbers $1,2,3$ and the other the numbers $3,4,5$:
 \[
   \{1,2,3\} \qquad \text{and} \qquad \{3,4,5\}
 \]
@@ -697,13 +734,15 @@ A set can also contain other sets (think by analogy a warehouse that has boxes c
 \[
   W = \{\{\text{Alice in Wonderland, Introduction to Analysis}\}, \{\text{spoon, fork, knife}\}\}
 \]
-We can also have sets containing numbers and sets of numbers, for example:
+For our purposes, we have sets containing numbers and sets of numbers, for example:
 \[
   R = \{1,2,\{3,4\}\}
 \]
 This is exactly what we are calling a space. Next it must be justified why numbers and sets of numbers are
 being mixed. The idea is that the numbers should be considered as points, and the sets of numbers should be
 thought of as being points that are \emph{glued together}.
+
+\subsubsection*{Principle of Gluing}
 
 Let us demonstrate this with an example: the following set splits the even and the odd
 numbers into two sets:
@@ -728,7 +767,7 @@ Let us thus create a new symbol $\sim_P$ and write:
 \]
 So $a\ \sim_P\ b$ is both $a$ and $b$ are even, or both $a$ and $b$ are odd, and otherwise we write $a\
 \not\sim_P\ b$. We can go one step further and say that we ``glued'' these numbers together. If we represent
-the numbers $\{0,1,2,..\}$ as points we get:
+the natural numbers $\{0,1,2,..\}$ as points we get:
 \[
 \begin{tikzpicture}
   \foreach \x in {0,1,2,3,4,5,6,7,8,9} {
@@ -740,7 +779,7 @@ the numbers $\{0,1,2,..\}$ as points we get:
   \node[below] at (10,0) {$\cdots$};
 \end{tikzpicture}
 \]
-and the set $P$ can be represented as:
+Then the set $P$ that glued  the evens and odd can visually be represented as:
 \[
 \begin{tikzpicture}
     \fill[black] (0,0) circle (0.1);
@@ -751,7 +790,12 @@ and the set $P$ can be represented as:
 
 \end{tikzpicture}
 \]
-Then the set $P$ glued all the even points together and all the odd points together.
+Then the set $P$ glued all the even points together and all the odd points together, resulting in two points.
+In other words, we should treat $\{0,2,4,...\}$ and $\{1,3,5,...\}$ as single \emph{points}!
+
+\subsubsection*{Using gluing to form a triangle}
+
+
 
 Thinking of the above process as gluing is actually how mathematicians construct many objects. To show
 this is not just a trick, let us show how we can create a triangle using this method. Say we had three
@@ -788,21 +832,31 @@ represent lines of length $1$:
 \]
 Let us now glue these lines to form a triangle, we want to:
 \begin{enumerate}
-  \item glue $1$ in $L_1$ to $2$ in $L_2$
-  \item glue $3$ in $L_2$ to $4$ in $L_3$
-  \item glue $5$ in $L_3$ to $0$ in $L_1$
+  \item glue $1$ in $L_1$ to $2$ in $L_2$: this is represented by the set $\{1,2\}$ which is treated as a single
+    point
+  \item glue $3$ in $L_2$ to $4$ in $L_3$: this is represented by the set $\{3,4\}$ which is treated as a single
+    point
+  \item glue $5$ in $L_3$ to $0$ in $L_1$: this is represented by the set $\{5,0\}$ which is treated as a single
+    point
 \end{enumerate}
 
-To do this, we shall introduce a bit of notation. Let us separate the end-points of the lines so that we may
+The rest of the points of the lines $L_1, L_2, L_3$ will be left alone. Let us separate the end-points of the lines so that we may
 glue them. Let:
 \begin{align*}
-  (0,1) &= \{x\text{ in }\R\text{ such that $0< x < 1$}\}\\
-  (2,3) &= \{x\text{ in }\R\text{ such that $2< x < 3$}\}\\
-  (4,5) &= \{x\text{ in }\R\text{ such that $4< x < 5$}\}
+  E_1 =(0,1) &= \{x\text{ in }\R\text{ such that $0< x < 1$}\}\\
+  E_2 = (2,3) &= \{x\text{ in }\R\text{ such that $2< x < 3$}\}\\
+  E_3 = (4,5) &= \{x\text{ in }\R\text{ such that $4< x < 5$}\}
 \end{align*}
-Notice the strict inequalities now! We now want to combine the points representing the straight-edges of a triangle
-with the sets representing the vertices of a triangle. To do this, we take the
-\emph{union} of sets. The union of sets is represented by $\cup$ and is written as:
+Notice the strict inequalities now (i.e. $<$ instead of $\le$)! These points represent the edges of the
+triangle, To form our triangle $T$, we need to combine $E_1, E_2, E_3$ with the sets $\{1,2\}$, $\{3,4\}$ and
+$\{5,0\}$. We may just want to do:
+\[
+  T = \{E_1, E_2, E_3, \{1,2\}, \{3,4\}, \{5,0\}\}
+\]
+but $E_1, E_2, E_3$ are sets themselves, and hence $T$ contains $6$ elements representing $6$ points.
+We shall need to be a little more careful with how we
+form $T$. To do this, we take the \emph{union} of sets. The union of sets is represented by $\cup$ and is
+written as:
 \[
   A\cup B = \{\text{take all $a$ in $A$ and all $b$ in $B$}\}
 \]
@@ -812,8 +866,7 @@ In other words, $A\cup B$ is a new set that containing all the elements of $A$ a
 \]
 Let us break this down. $T$ contains each element inside $(0,1)$, $(2,3)$ and $(4,5)$. It then also contains
 each element inside the three sets $\{\{1,2\}\}$, $\{\{3,4\}\}$, $\{\{5,0\}\}$. Each of these sets contains
-only a single element: they contain $\{1,2\}$, $\{3,4\}$, $\{5,0\}$ respectively that represents gluing the
-vertices of these lines together. We can visualize $T$ as:
+only a single element: they contain $\{1,2\}$, $\{3,4\}$, $\{5,0\}$. These are the glued vertices. We can visualize $T$ as:
 \[
   \begin{tikzpicture}
   % Define the triangle vertices
@@ -836,7 +889,7 @@ Giving us our Triangle!
 
 \subsection*{Non-Hausdorff Space}
 
-With this, we can finally construct our non-Hausdorff space. The construction is in fact rather simple. Let
+With this, we can finally construct our non-Hausdorff space. Let
 $L_1$ and $L_2$ be two copies of the real number line:
 \[
 \begin{tikzpicture}
@@ -866,8 +919,8 @@ for $0_1$ and $0_2$. So take all sets of numbers:
 \[
   \{x_1, x_2\}\text{ (ex. $\{1_1,1_2\}, \{32_1, 32_2\}$, ...) but $0_1,0_2$ are not in a set}
 \]
-Taking the union of all these sets, we get a space $N$ ($N$ for ``non-Hausdorff''). Let us think about this set
-for a moment. for any non-zero number, we glued them together:
+Taking the union of all these sets, we get a space $N$ ($N$ suggestively for ``non-Hausdorff''). Let interpret
+$N$ as a space. For any non-zero number, we glued them together:
 \[
 \begin{tikzpicture}
 % Draw the horizontal lines
@@ -901,7 +954,7 @@ for a moment. for any non-zero number, we glued them together:
 \]
 Thus, we don't need to distinguish between the nonzero points in $N$: we can just say $3$ is in $N$ as we glued
 $\{3_1, 3_2\}$. To be precise, we can label the set $\{3_1, 3_2\}$ as $3$, and more generally if $x \ne 0$ we
-can say $x$ is in $N$ instead of $\{x_1, x_2\}$ is in $N$. As we have
+can say $x$ is in $N$ instead of saying $\{x_1, x_2\}$ is in $N$. As we have
 not glued the points $0_1$ and $0_2$, they remain distinct, so $0_1$ and $0_2$ are in $N$.
 
 Now, we can finally ask:
@@ -909,13 +962,22 @@ Now, we can finally ask:
   \emph{What is the distance between $0_1$ and $0_2$?}
 \end{center}
 
-We shall show they have $0$ distance between each other. Let' say that there \emph{was} some distance $d$
-between these points. Then we can find a nonzero number $t$ that is between $0_1$ and $0_2$ and distance $d/2$
-from either $0_1$ or $0_2$. But that is absurd; there is \emph{no} number between the zero's. Namely, the
-moment we try to move left from $0_1$ or $0_2$, we are encountering a negative number that is left from both
-numbers, and if we move right from $0_1$ or $0_2$, we are encountering a positive number that is right from
-both numbers, so there can't be a number between $0_1$ or $0_2$. But then they have no distance separating
-them!
+Let' say that there \emph{was} some nonzero distance $d$ between these points. Then we can find a nonzero
+number real number $t$ that is between $0_1$ and $0_2$ and distance $d/2$ from either $0_1$ or $0_2$:
+\[
+\begin{tikzpicture}
+\draw (0,0) -- (8,0);
+
+\draw (2,-0.1) -- (2,0.1) node[below=5pt] {$0_1$};
+\draw (4,-0.1) -- (4,0.1) node[below=5pt] {$t$};
+\draw (6,-0.1) -- (6,0.1) node[below=5pt] {$0_2$};
+\end{tikzpicture}
+\]
+But that is absurd; there is \emph{no} number between the zero's. Namely, the moment we try to move left from
+$0_1$ or $0_2$, we are encountering a negative number that is left from \emph{both} numbers, and if we move
+right from $0_1$ or $0_2$, we are encountering a positive number that is right from \emph{both} numbers, so
+there can't be a number between $0_1$ or $0_2$. This means the visual above is completely wrong; they have no
+distance separating them!
 
 The space $N$ is often attempted to be visualized as:
 \[
@@ -939,29 +1001,38 @@ The space $N$ is often attempted to be visualized as:
 However this is misleading, as it looks like there is a gap between $0_1$ and $0_2$, but there is not. It is
 impossible to visualize this space as we live in a Hausdorff world\footnote{At least on the macro scale we
 live in}. Nevertheless, this image can be used to ground the intuition that there is no gap between $0_1$ and
-$0_2$; two points in the middle can be thought of as as existing ``one atop of another'' in the same location.
+$0_2$; two points in the middle can be thought of as existing ``one atop of another'' in the same location.
+
+\subsubsection*{Any use?}
 
 Though this might seem like an exercise in arm-chair mathematising, these spaces do show up naturally in
-mathematics, especially within number theory and algebraic geometry. Unfortunately, to see why they show up
-\emph{naturally} takes a lot of build up, and presenting them without this build-up will look a lot like
-random ideas stuck together. But this is also not too surprising as it took thousands of years
-before  such spaces were found/invented, and then to realise that such spaces have immense practical properties in
-the 1950s (very recent mathematics!).
+mathematics, especially within number theory and algebraic geometry. It also turns out that there are geometric
+properties of the world that do not need to consider spaces that are Hausdorff, leading to some interesting
+intuition about the nature of the idea of what it means to be ``close''. Unfortunately, to see why they show up \emph{naturally}
+takes a lot of build up, and presenting them without this build-up will look a lot like random ideas stuck
+together. But this is also not too surprising as it took thousands of years before  such spaces were
+found/invented, and then to realise that such spaces have immense practical properties in the 1950s (very
+recent mathematics!).
 
 \section{Technicalities}
 
+This section is to address the ``white lies'' presented above and is for those with some more technical
+background.
+
 Defining a space as the set of numbers and subset of numbers is too vague; It doesn't define any notion of
 ``locality'' that is the key notion in topology, namely we have no notion of open or closed sets, and there
-are no restrictions on which sets can be part of a space (ex. we don't want the countable intersection of open sets
-in our collection) Even worse, as every tuple is technically a set, the definition of space presented above
-includes $\R^2, \R^3, ..., $ and in some model's of math can include any sets as all these space are
-ultimately sets of numbers, but it is ``evident'' that the definition is really only considering
-one-dimensional spaces. The first step to fixing this is by defining a topological space as a set of sets containing the empty
-set and itself, is closed under finite intersection, and arbitrary unions. We now have a notion of locality,
-and can start adding further constrictions such as being metrizable to actually have distance be well-defined.
-All such details can be found in~\cite{NateTop}.
+are no restrictions on which sets can be part of a space (ex. we don't want the countable intersection of open
+sets in our collection, and for the euclidean topology we certainly don't want non-measurable sets to be
+open). Even worse, as every tuple is technically a set, the definition of space presented above includes
+$\R^2, \R^3, ..., $ and in some model's of math can include any sets as all these space are ultimately sets of
+numbers, but it is ``evident'' that the definition is really only considering one-dimensional and
+$0$-dimensional spaces. The first step to fixing this is by defining a topological space as a set of sets
+containing the empty set and itself, is closed under finite intersection, and arbitrary unions. We now have a
+notion of locality, and can start adding further constrictions such as being metrizable to actually have
+distance be well-defined. In fact, a metric cannot be defined on a non-Hausdorff space, and so the use of
+``distance'' in the above is apocryphal. All details can be found in~\cite{NateTop}.
 
-The Hausdorff condition is formally defined as:
+To not rely on distance, the Hausdorff condition is formally defined as:
 \begin{center}
   \emph{Given two points $x,y \in X$ in a topological space $X$, there exists open sets $U_x$, $U_y$
   containing $x,y$ respectively such that $U_x\cap U_y = \emptyset$}
@@ -972,10 +1043,9 @@ introducing the more abstract notion of ``separation'' and stick to the intuitiv
 
 The examples of glued sets almost respect the rules of an equivalence relationship; we technically should
 separate each number into a singleton set so that our space is a set of equivalence classes. The details can
-be found in~\cite{chwojko-srawleyPreliminaryChapter2023}.
-
+be found in~\cite{chwojkosrawleyPreliminaryChapter2023}.
 
 % \newpage
-\printbibliography
 
+\printbibliography
 \end{document}

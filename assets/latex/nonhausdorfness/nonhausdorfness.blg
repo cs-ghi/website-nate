@@ -1,18 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
-[3] Config.pm:310> INFO - Logfile is 'nonhausdorfness.blg'
-[63] biber-darwin:340> INFO - === Sun Aug  3, 2025, 13:33:12
-[75] Biber.pm:419> INFO - Reading 'nonhausdorfness.bcf'
-[131] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
-[142] Biber.pm:4419> INFO - Processing section 0
-[151] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[152] bibtex.pm:1713> INFO - LaTeX decoding ...
-[155] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[190] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[190] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[190] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[190] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[197] bbl.pm:660> INFO - Writing 'nonhausdorfness.bbl' with encoding 'UTF-8'
-[198] bbl.pm:763> INFO - Output to nonhausdorfness.bbl
-[198] Biber.pm:131> WARN - document entry 'chwojko-srawleyPreliminaryChapter2023' (bibliography.bib): Invalid format '2023-00-00 2023' of date field 'date' - ignoring
-[198] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[198] Biber.pm:133> INFO - WARNINGS: 2
+[0] Config.pm:310> INFO - Logfile is 'nonhausdorfness.blg'
+[52] biber-darwin:340> INFO - === Mon Aug  4, 2025, 12:07:16
+[65] Biber.pm:419> INFO - Reading 'nonhausdorfness.bcf'
+[120] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
+[132] Biber.pm:4419> INFO - Processing section 0
+[140] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[141] bibtex.pm:1713> INFO - LaTeX decoding ...
+[143] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[173] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[173] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[173] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[173] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[178] bbl.pm:660> INFO - Writing 'nonhausdorfness.bbl' with encoding 'UTF-8'
+[179] bbl.pm:763> INFO - Output to nonhausdorfness.bbl
