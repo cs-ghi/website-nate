@@ -132,13 +132,13 @@
       \field{series}{Graduate Texts in Mathematics}
       \field{title}{Advanced Topics in the Arithmetic of Elliptic Curves}
       \field{year}{1994}
+      \field{dateera}{ce}
       \verb{urlraw}
       \verb http://link.springer.com/10.1007/978-1-4612-0851-8
       \endverb
       \verb{url}
       \verb http://link.springer.com/10.1007/978-1-4612-0851-8
       \endverb
-      \warn{\item book entry 'silvermanAdvancedTopicsArithmetic1994' (bibliography.bib): Invalid format '1994-00-00 1994' of date field 'date' - ignoring}
     \endentry
     \entry{a.griffithsIntroductionAlgebraicCurves}{book}{}
       \name{author}{1}{}{%

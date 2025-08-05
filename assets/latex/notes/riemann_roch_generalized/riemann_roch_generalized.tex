@@ -201,7 +201,7 @@
 \newcommand{\CV}{{\mathcal{V}}}
 \newcommand{\CZ}{{\mathcal{Z}}}
 % EXCPETION:
-% \newcommand{\CP}{{\mathcal{P}}}
+\newcommand{\CCP}{{\mathcal{P}}}
 \newcommand{\CP}{\mathbb{C}\mathrm{P}}
 \newcommand{\RP}{\mathbb{R}\mathrm{P}}
 
@@ -2955,7 +2955,7 @@ Then we just classified all $X$-torsors of $F$.
 topology where $\SF = \CO_X$ is alg functions and it is isomorphic; or holo functions over Zariski topology
 injects into over complex topology}.
 
-\section{Terms}
+\section{Terms for G-bundles}
 
 \begin{enumerate}
   \item Principal $G$-bundle generalization of $X\times G \to G$. Let $P \to X$ be a whose fibers $p^{-1}(x)$
@@ -2967,6 +2967,176 @@ injects into over complex topology}.
   \item Principal $G$-bundles also important for \v{C}heck cohomology, as it has the transition
     information.
 \end{enumerate}
+
+\section{Some Hodge Theory}
+
+
+Let $X$ be a complex analytic manifold of complex dimension $n$. As a real manifold ,it is a smooth manifold
+of dimension $2n$. Let $TX$ be the tangent bundle and $T_{X,x}$ the fiber at $x$, i.e. the $\C$-vector space
+of (complex) dimension $n$. Let $z_1, ..., z_n$ be complex local coordinates at $x \in X$ on $U$; these are
+associated to $2n$ real coordinates $x_1, y_1, ..., x_n, y_n$ where  $z_j = x_j + iy_j$.
+Given such $2n$ real coordinates, there is two natural coordinates that can be from them; $z_j$ and $\overline{z}_j$ via:
+\[
+  z_j = x_j + iy_j \qquad \overline{z}_j = x_j - iy_j
+\]
+and conversely using these we can form:
+\[
+  x_j = \frac{1}{2}(z_j + \overline{z}_j) \qquad y_j = \frac{1}{2i}(z_j - \overline{z}_j)
+\]
+If we treat $TX$ as an $\R$-vector space, we can complexity to naturally combine the $z_j$ and
+$\overline{z}_j$ coordinates. To see this, a $\C$-basis at $T_{X,x}$ is
+\[
+  \frac{\partial }{\partial z_1}, ..., \frac{\partial }{\partial z_n}
+\]
+And $\R$-basis at $T_{X,x}$ is
+\[
+  \frac{\partial }{\partial x_1}, \frac{\partial }{\partial y_1}, ..., \frac{\partial }{\partial x_n},
+  \frac{\partial }{\partial y_n}
+\]
+which is real $2n$-dimensional (and each pair $\partial/\partial x_j$, $\partial/\partial y_j$ satisfy the
+Cauchy-Riemann equation). We can create complex dimensional spaces by tensoring:
+\[
+  {T_{X,x}}_\C = T_{X,x}\otimes_\R \C
+\]
+Then ${T_{X,x}}_\C$ has a basis
+\[
+  \frac{\partial }{\partial z_j},\ \frac{\partial }{\partial \overline{z}_j} \qquad\qquad1 \le j \le n
+\]
+Then for any $f\in C^\infty(U)$:
+\[
+  \frac{\partial f}{\partial z_j} = \frac{\partial f}{\partial x_j} - i\frac{\partial f}{\partial y_j} \qquad
+  \text{and} \qquad\frac{\partial f}{\partial \overline{z}_j} = \frac{\partial f}{\partial x_j} + i\frac{\partial f}{\partial y_j}
+\]
+This is what is going on in coordinates, but we can also view the theory more abstractly. Let $(e_1, ..., e_n)$
+be a $\C$-basis for $V$. Then so is $(ie_1, ..., ie_n)$. We can have an $\R$-basis for $V$ via $(f_1, ...,
+f_n, g_1, ..., g_n)$ and write $e_j = f_j + ig_j$. Then the map $(e_1, ..., e_n) \mapsto (ie_1, ..., ie_n)$
+is represented in the $\R$-basis as :
+\[
+  \left((f_1, g_1), ..., (f_n, g_n)\right) \xrightarrow{J} \left((-g_1, f_1), ..., (-g_n, f_n)\right)
+\]
+We can view $J$ as an $\R$-endomorphism of $V$ with the property that $J^2 = -\id$. Does this in fact
+characterize complex multiplication? If we have an $\R$-space of dimension $2n$ and an $\R$-endomorphism $J$
+of $V$ such that $J^2 = -\id$, then we  can give $V$ a complex structure (i.e. a $\C$) action via:
+\[
+  (a+bi)\cdot v = av + bJ(v)
+\]
+For example, on $\R^2$, there is $J(a_1, a_2) = (-a_2, a_1)$ and $J(a_1, a_2) = (a_2, -a_1)$. It is an
+exercise in algebra to see that on a real $2n$-dimensional vector space $V$, the $\C$-vector space structures
+on $V$ corresponding bijective to the homogeneous to $\GL_{2n}(\R)/\GL_n(\C)$ via:
+\[
+  [A] \mapsto AJA^{-1}
+\]
+
+\index{Almost Complex Structure}
+\begin{defn}{Almost Complex Structure}{almostComplexStructure}
+  Let $X$ be a real smooth manifold. Then it has an \emph{almost complex structure} if they exists a bundle
+  morphism $J : TX \to TX$ such that $J^2 = -\id$
+\end{defn}
+
+\begin{prop}{Complex Analytic, then Almost Complex}{complexAnalyticthenAlmostComplex}
+  Let $(X, \CO_X)$ be a complex analytic manifold. Then it is almost complex
+\end{prop}
+
+\begin{Proof}
+  exercise (it is just pushing definitions around)
+\end{Proof}
+
+
+Now, consider a complex $n$-dimensional complex bundle $TX$; let $z_1, ..., z_n$ be its coordinate. Then as
+mentioned ealier, we can complexity to get a basis:
+\[
+  \frac{\partial }{\partial z_1}, ..., \frac{\partial }{\partial z_n}, \frac{\partial }{\partial
+  \overline{z}_1}, ..., \frac{\partial }{\partial \overline{z}_n}
+\]
+and so, in this basis, if we write $f=(w_1,\ldots,w_n)$, where $w_\alpha = u_\alpha + iv_\alpha$, we get
+
+\[
+J_\mathbb{R}(f) = \begin{pmatrix}
+  \left(\frac{\partial w_\alpha}{\partial z_j}\right) & \left(\frac{\partial w_\alpha}{\partial \overline{z}_j}\right)\\
+  \left(\frac{\partial \overline{w}_\alpha}{\partial z_j}\right) & \left(\frac{\partial
+  \overline{w}_\alpha}{\partial \overline{z}_j}\right)\\
+\end{pmatrix}
+\]
+And if $f$ is holomorphic:
+\[
+\frac{\partial w_\alpha}{\partial \bar{z}_j} = \frac{\partial \bar{w}_\alpha}{\partial z_j} = 0,
+\]
+giving:
+\[
+J_\mathbb{R}(f) = \left(\left(\frac{\partial w_\alpha}{\partial z_j}\right) \quad 0 \atop 0 \quad \left(\frac{\partial \bar{w}_\alpha}{\partial \bar{z}_j}\right)\right) = \left(A \quad 0 \atop 0 \quad \bar{A}\right).
+\]
+Now, write:
+\[
+J(f) = \left(\frac{\partial w_\alpha}{\partial z_j}\right)
+\]
+and call it the \textit{holomorphic Jacobian}. Then:
+
+\begin{enumerate}
+  \item  $J_\mathbb{R}(f) = \left(J(f) \quad 0 \atop 0 \quad \overline{J(f)}\right)$, so, $\mathbb{R}$-rank $J_\mathbb{R}(f) = 2\mathbb{C}$-rank $J(f)$.
+
+  \item  We have $\det(J_\mathbb{R}(f)) = |\det(J(f))|^2 \geq 0$, and det$(J_\mathbb{R}(f)) > 0$ if $f$ is a holomorphic isomorphism (in this case, $m=n$ the common dimension of $X,Y$).
+\end{enumerate}
+
+Then we see holomorphic maps preserve the orientation of a complex manifold and each complex manifold posses
+an orientation.
+
+\textcolor{red}{There is a lot more about Hodge stuff, but I don't feel like this is super helpful right now}
+
+\section{L-Genus and Todd Genus}
+
+
+Let $B$ be a commutative ring, and $Z, \alpha_1, ..., \alpha_n$ be some independent intermediates (label the
+collection of alpha's $\alpha$), all of
+degree $1$. Let $\sigma_j$ be symmetric functions in $\alpha$. Let
+\[
+  q_j = \sigma_j(\alpha)
+\]
+Define the ring $\CB = B[[Z; \alpha_1, \alpha_2, ..., \alpha_n]]$. Take the ring $\CCP = B[[Z; q_1, ...,
+q_n]]$. Then $\CCP$ contains units called \emph{one-units} that is:
+\[
+  1 = \sum_{j\ge 1} b_j^J \qquad b \in B
+\]
+If $Q(z)$ is a one-unit, then
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \printindex
