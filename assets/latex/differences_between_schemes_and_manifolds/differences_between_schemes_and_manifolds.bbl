@@ -74,8 +74,36 @@
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algebraic_topology.pdf
       \endverb
     \endentry
+    \entry{NateComplexAnalysis}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{3}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Everything You Need To Know About Complex Analysis}
+      \field{year}{NA}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_complex_analysis.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_complex_analysis.pdf
+      \endverb
+    \endentry
   \enddatalist
-  \missing{NateComplex}
 \endrefsection
 \endinput
 
