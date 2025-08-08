@@ -17,7 +17,7 @@
     \vspace{1em}
 }
 
-\title{Comparing schemes and Manifolds}
+\title{Comparing Schemes and Manifolds}
 \author{Nathanael Chwojko-Srawley}
 \date{\today}
 
@@ -637,62 +637,64 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 This is just a quick extract from~\cite{NateAlgGeo} that I wanted to post that compares schemes and smooth
 manifolds. It is not comprehensive, it is just the first things that came to mind. For a full discussion, see the cited notes.
 \begin{enumerate}
-	\item The scheme given by $V(x)\cup V(yz) \sse \A_k^3$ has two irreducible components of different
-		dimensions. A manifold (differential
-		and even topological) will always be of a single dimension.
+  \item The scheme given by $V(x)\cup V(yz) \sse \A_k^3$ has two irreducible components of different
+    dimensions. A [connected] manifold (differential and even topological) will always be of a single dimension.
 	\item A manifold cannot self-intersect\footnote{Naturally, a submersion of a manifold may have
 			intersections, however (naturally) the immersion is not a manifold}, while schemes (even affine
 			schemes, even varieties) can: consider $V(y^2-x^3-x^2) \sse \A_k^2$.
 	\item The patches of manifold are very regular, being diffeomorphic to $\R^n$, however patches of a scheme
 		may be ``pathological'', for example if the ring is not Noetherian then there may be uncountably many
-		connected components. Some of the conditions and properties we shall introduce later will add some
-		regularity to the components.
+		connected components. Schemes are often over a certain other ring (and sometimes over schemes) that give
+    some regularity; in a geometric setting they are often over fields to parallels varieties.
 	\item In Manifold Theory, the notion of irreducible component is trivial as only points are irreducible. From an
 		analytic perspective, this can be thought of as the lack of separability of points by functions for
-		schemes; part of this
-		consequence is the existence of ``large'' points for schemes
-	\item If a scheme $X$ is irreducible, all its open sets are dense. Many of the schemes we shall work with
-		will be the union of irreducible subschemes, where for each irreducible subscheme all affine open subsets are dense
-		in the irreducible subscheme; having dense open subsets is far from being the case for most manifolds.
-	\item More generally, the behaviour of schemes matches more closely with the behaviour of complex geometry
-		(we shall draw such analogies often, for example \emph{Hartog's Extension Lemma}
-		(\cite[chapter~8]{NateComplexAnalysis}) shall have parallels with normal schemes, the existence of certain
-		holomorphic/meromorphic functions shall tie into divisor theory, compact complex Riemann surfaces
-		shall correspond to projective curves, and so forth).
+    schemes; part of this consequence is the existence of ``large'' points for schemes.
+
+	\item If a scheme $X$ is irreducible, all its open sets are dense. Many schemes
+		will be the union of irreducible subschemes where, in each irreducible subscheme, all affine open subsets
+    are dense; having only dense open subsets is far from being the case for most manifolds.
+
+  \item More generally, the behaviour of schemes matches more closely with the behaviour of complex geometry
+    (for example \emph{Hartog's Extension Lemma} (\cite[chapter~8]{NateComplexAnalysis}) shall have parallels
+    with normal schemes, the existence of certain holomorphic/meromorphic functions shall tie into divisor
+    theory and Riemann-Roch, compact complex Riemann surfaces shall correspond to projective curves, and so forth).
+
 	\item Schemes will be able to have ``double points'', recall the line with two origin is a popular counter
 		for a manifold as it is not Hausdorff at the origin.
-	\item A scheme remembers multiplicity. For example, we can define a lot of functions on a single point,
-		however scheme functions (i.e. regular functions) can hold multiplicity information (ex. $\Spec
-		k[x]/(x)^2$). A smooth manifold $(M, \CA)$ with maximal atlas does not hold this information.
-	\item There can be multiple structure sheaves on the same set defining different schemes (think of the
-		different fields that can form the sheaf over a singleton). Manifolds of dimension $\le 3$ have unique
-		differential structures up to diffeomorphism.
+
+  \item A scheme remembers multiplicity (ex. $\Spec k[x]/(x)^2$). A smooth manifold $(M, \CA)$ with maximal
+    atlas does not hold this information. \item There can be multiple structure sheaves on the same set
+    defining different schemes (think of the different fields that can form the sheaf over a singleton).
+    Manifolds of dimension $\le 3$ have unique differential structures up to diffeomorphism.
 
 	\item Though there wasn't an atlas defined for schemes (as the notion of maximal atlas is not as
 		relevant), schemes can be
 		constructed via gluing just like an atlas on a manifold.
-	\item the natural additional structure on a smooth manifold is a \emph{tangent bundle} with transition
-		mappings of the form $D(\textbf{y}\circ\textbf{x}^{-1})$, namely they are not just smooth transitions
-		between open sets and fibers, but need to respect a $\GL_n(\R)$-action given by the derivation $D$.
-		There is an equivalent \emph{tangent sheaf} for schemes, but more care must be done as schemes are not ``locally linear''
-		everywhere in the way that smooth manifolds must be. Much of the intuition of Poincar\'e's duality
-		(see~\cite[section~4.3]{NateAlgTop}) will influence the generalization.
+
+  \item the natural additional structure on a smooth manifold is a \emph{tangent bundle} with transition
+    mappings of the form $D(\textbf{y}\circ\textbf{x}^{-1})$, namely they are not just smooth transitions
+    between open sets and fibers, but need to respect a $\GL_n(\R)$-action given by the derivation $D$. There
+    is an equivalent \emph{tangent sheaf} for schemes, but more care must be done as schemes are not ``locally
+    linear'' everywhere in the way that smooth manifolds must be. Much of the intuition of Poincar\'e's
+    duality (see~\cite[section~4.3]{NateAlgTop}) will influence the generalization.
+
 	\item Scheme functions are more ``rigid''; while on a manifold we may have partitions of unity due to the
-		flexibility of euclidean topology, no exact equivalent can be defined for schemes.  This rigidity
+		flexibility of euclidean topology, no exact equivalent can be defined for schemes. This rigidity
     will also add structure and make it easier to defined some concepts (ex. closed subschemes shall be a
     rather ``natural'' concept as compared to the work that goes into ensuring closed submanifolds are locally
     isomorphic to $\R^k$).
 
-		As smooth functions on each $U \sse M$ from a sheaf, sheaves that admit a ``partition of unity'' will be called
-		\emph{fine sheaves}. A weaker notion of \emph{soft sheaf} will be the closest equivalent to having the partition of unity
-		property.
+    As smooth functions on each $U \sse M$ from a sheaf, sheaves that admit a ``partition of unity'' will be
+    called \emph{fine sheaves}. A weaker notion of \emph{soft sheaf} will be the closest equivalent to having
+    the partition of unity property.
 
 
 	\item Schemes unify ``arithmetic'' and ``geometry'' in a way manifold theory is poorly equipped for. As an
-		example, there is no equivalent of $\Spec \Z$, $\Spec \CO_K$ or $\Spec \Z[t]$ where $\CO_K$ is a ring
-		of integers for smooth manifolds. In this way, scheme theory also allows for a new type of object that
-		is not tractable in differential geometry.
-  \item very often in practice (especially in the setting of $k$-schemes and study curves, surfaces, moduli
+    example, there is no equivalent of $\Spec \Z$, $\Spec \Z[t]$, or $\Spec \CO_K$ (where $\CO_K$ is a ring
+    of integers) for smooth manifolds. In this way, scheme theory also allows for a new domain of study that
+		is intractable in differential geometry.
+
+  \item Very often in practice (especially in the setting of $k$-schemes and study curves, surfaces, moduli
     spaces, etc.) we work with integral separated schemes that most of the time are proper, and we have many
     methods to ``normalize'' singularities (ex. Intersections, cusps, etc) to make these scheme
     regular\footnote{Though as we'll see, there is no universal way of doing this with the exception of some

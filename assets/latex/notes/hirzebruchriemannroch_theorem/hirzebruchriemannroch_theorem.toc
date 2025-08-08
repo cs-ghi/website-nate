@@ -1,4 +1,5 @@
-\contentsline {section}{\numberline {0.1}Proving stuff}{10}{section.0.1}%
-\contentsline {section}{\numberline {0.2}GAGA results}{10}{section.0.2}%
+\contentsline {section}{\numberline {0.1}A bit of Hodge Theory}{10}{section.0.1}%
+\contentsline {section}{\numberline {0.2}GAGA results}{11}{section.0.2}%
 \contentsline {section}{\numberline {0.3}Characteristic Classes}{11}{section.0.3}%
 \contentsline {section}{\numberline {0.4}Hirzebruch-Riemann-Roch}{11}{section.0.4}%
+\contentsline {section}{\numberline {0.5}Multiplicative sequecnes}{16}{section.0.5}%

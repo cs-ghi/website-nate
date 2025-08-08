@@ -1041,6 +1041,8 @@ here
 
 \section{Hirzebruch-Riemann-Roch}\label{sec:HRR}
 
+(This may not be important for us; it will give the fact that $\dim_\C H^i = 0$ for certain $i$.)
+
 $X$ is admissible if:
 \begin{enumerate}
   \item $X$ is $\sigma$-compact (locally compact and a countable union of compacts)
@@ -1309,7 +1311,59 @@ Using this, we can prove the following ``simple'' generalization:
 We shall show that:
   \[
     \chi(X, \CO_X(E)) = c_1(E) + \frac{\rk(E)}{2}c_1(T_X^{1,0})
+\]
+
+\section{Multiplicative sequecnes}
+
+As we saw with Chern and Pontryagin classes, their product translates to a cup product. This gives a natural
+algebraic relation that we know codify for future reference.
+Let $B$ be a commutative ring, and define:
+\[
+  \CB = B[z, p_1, p_2, ...]
+\]
+Define a grading given by the following:
+\begin{center}
+  $p_{j_1}p_{j_2}\cdots p_{j_r}$ has weight $j_1 + j_2 + \cdots + j_r$
+\end{center}
+Then let $\CB_k$ be the weight $k$-groups; note $\CB_0 = B$ and $\CB_r\CB_s = \CB_{r+s}$. Let $\pi(k)$ be all
+partitions of $k$. Then $\CB_k$ is a $B$-module of rank $\pi(k)$.
+
+\index{Multiplicative Sequence}
+\begin{defn}{Multiplicative Sequence}{multiplicativeSequence}
+  Let $\{K_j\}$ be a sequence of polynomials in indeterminates $p_i$ where $K_0 = 1$ and $K_j \in \CB_j$. Then
+  the sequence $\{K_j\}$ is called a \emph{multiplicative sequence} if whenver a power series is the product
+  of two power series:
+  \[
+    1 + p_1z + p_2z^2  +\cdots = (1 + p_1'z + p_2'z^2  +\cdots)(1 + p_1''z + p_2''z^2  +\cdots)
   \]
+  with indeterminates $z, p_i', p_i''$, then we get the identify:
+  \[
+    \sum_{j=0}^\infty K_j(p_1, p_2, ... p_j)z^j = \left(\sum_{i=1}^\infty K_i(p_1', p_2', ...
+    p_i')z^i\right)\left(\sum_{j=1}^\infty K_j(p_1'', p_2'', ... p_i'')z^j\right)
+  \]
+  that is:
+  \[
+    K \left(\sum_{i=0}^\infty q_iz^i\right) = \sum_{i=0}^\infty K_i(q_1, ..., q_i)z^i
+  \]
+  where $q_i \in \CB$ of weight $i$. In other words a sequence $\{K_j\}$ is called multiplicative if it induces an endomorphism on
+  \[
+    B[p_1, p_2, ...]\left[[z]\right]
+  \]
+\end{defn}
+
+Given a multiplicative sequence $\{K_j\}$, we associate to it its \emph{characteristic power series} as the
+image of $K(1+z)$:
+\[
+  K(1+z) = \sum_j^\infty K_j(1, 0, ..., 0)z^j = \sum_j^\infty b_jz^j
+\]
+
+Recall we can define Chern roots. Hence we will be considering:
+\[
+  1 + p_1z + \cdots + p_nz^n = \prod_i^n \left(1 + \beta_iz\right)
+\]
+where $\beta_i$ is a symmetric polynomial in the $p_i$'s. By some elementary ring theory and theory of
+symmetric functions, we can interpret $\CB$ as the ring of all symmetric functions in $\beta_1, ..., \beta_n$.
+
 
 
 
