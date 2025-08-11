@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  7 AUG 2025 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  8 AUG 2025 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1503,14 +1503,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}
 <to be read again> 
                    \relax 
 l.1332 ...cative Sequence}{multiplicativeSequence}
-                                                   [16] [17] [18
-
-]
-Overfull \hbox (30.4596pt too wide) in paragraph at lines 1383--1383
+                                                   [16]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1370 ...orresp1-unitPowerSeriesand$m$-sequences}
+                                                   [17]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1459 ...f $m$-sequence}{computationofM-sequence}
+                                                   [18] [19] [20]
+Overfull \hbox (30.4596pt too wide) in paragraph at lines 1560--1560
 \OT1/cmtt/m/n/10 info : XErvue4ovgwJ : scholar . google . com & ots = OR51pvoipT & sig = NcjWQsiJwE9XL79fBWQTMMub5WM$[][]\OT1/cmr/m/n/10 . 
  []
 
-[19] (./hirzebruchriemannroch_theorem.aux)
+[21
+
+] [22] (./hirzebruchriemannroch_theorem.aux)
 Package rerunfilecheck Info: File `hirzebruchriemannroch_theorem.out' has not changed.
 (rerunfilecheck)             Checksum: 42255B8657C1D953695D72EC2100D753;756.
 Package logreq Info: Writing requests to 'hirzebruchriemannroch_theorem.run.xml'.
@@ -1518,10 +1528,10 @@ Package logreq Info: Writing requests to 'hirzebruchriemannroch_theorem.run.xml'
 
  ) 
 Here is how much of TeX's memory you used:
- 56099 strings out of 476025
- 1295496 string characters out of 5790017
- 2202321 words of memory out of 5000000
- 75566 multiletter control sequences out of 15000+600000
+ 56123 strings out of 476025
+ 1296191 string characters out of 5790017
+ 2202765 words of memory out of 5000000
+ 75585 multiletter control sequences out of 15000+600000
  525644 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,15n,110p,746b,1761s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1539,10 +1549,10 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfo
 nts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on hirzebruchriemannroch_theorem.pdf (19 pages, 393626 bytes).
+Output written on hirzebruchriemannroch_theorem.pdf (22 pages, 415531 bytes).
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 290 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
+ 412 PDF objects out of 1000 (max. 8388607)
+ 306 compressed objects within 4 object streams
+ 57 named destinations out of 1000 (max. 500000)
  197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -181,6 +181,8 @@
 % mathcal
 % \newcommand{\co}{{\mathfrak{o}}} %mathcal{o} looks like wreath product, so I changed it to mathfrak
 \newcommand{\co}{{\mathpzc{o}}}
+\newcommand{\cp}{{\mathpzc{p}}}
+\newcommand{\cc}{{\mathpzc{c}}}
 \newcommand{\CA}{{\mathcal{A}}}
 \newcommand{\CB}{{\mathcal{B}}}
 \newcommand{\CC}{{\mathcal{C}}}
@@ -259,6 +261,7 @@
 \newcommand{\ad}{{\operatorname{ad}}}
 \newcommand{\an}{{\operatorname{an}}}
 \newcommand{\ch}{{\operatorname{ch}}}
+\newcommand{\td}{{\operatorname{td}}}
 \newcommand{\ev}{{\operatorname{ev}}}
 \newcommand{\id}{{\operatorname{id}}}
 \newcommand{\im}{{\operatorname{im}}}
@@ -995,6 +998,11 @@ Next, we cover the genus formula.
     g = \frac{(d-1)(d-2)}{2} - \delta
   \]
 \end{thm}
+The term ``arithmetic'' is because it relies on the arithmetic information. There is also the \emph{geometic
+genus formula} which relies on the dimension of (co)homology groups.
+
+
+
 
 \begin{Proof}
   \cite[p.95]{a.griffithsIntroductionAlgebraicCurves}.
@@ -3063,7 +3071,10 @@ And if $f$ is holomorphic:
 \]
 giving:
 \[
-J_\mathbb{R}(f) = \left(\left(\frac{\partial w_\alpha}{\partial z_j}\right) \quad 0 \atop 0 \quad \left(\frac{\partial \bar{w}_\alpha}{\partial \bar{z}_j}\right)\right) = \left(A \quad 0 \atop 0 \quad \bar{A}\right).
+  J_\mathbb{R}(f) = \begin{pmatrix}\left(\frac{\partial w_\alpha}{\partial z_j}\right) & 0 \\
+    0 &\left(\frac{\partial \bar{w}_\alpha}{\partial \bar{z}_j}\right)\end{pmatrix} =
+    \begin{pmatrix}A &  0 \\
+    0 & \bar{A}\end{pmatrix}.
 \]
 Now, write:
 \[
@@ -3072,7 +3083,8 @@ J(f) = \left(\frac{\partial w_\alpha}{\partial z_j}\right)
 and call it the \textit{holomorphic Jacobian}. Then:
 
 \begin{enumerate}
-  \item  $J_\mathbb{R}(f) = \left(J(f) \quad 0 \atop 0 \quad \overline{J(f)}\right)$, so, $\mathbb{R}$-rank $J_\mathbb{R}(f) = 2\mathbb{C}$-rank $J(f)$.
+  \item  $J_\mathbb{R}(f) = \begin{pmatrix}J(f) & 0 \\
+    0 & \overline{J(f)}\end{pmatrix}$, so, $\mathbb{R}$-rank $J_\mathbb{R}(f) = 2\mathbb{C}$-rank $J(f)$.
 
   \item  We have $\det(J_\mathbb{R}(f)) = |\det(J(f))|^2 \geq 0$, and det$(J_\mathbb{R}(f)) > 0$ if $f$ is a holomorphic isomorphism (in this case, $m=n$ the common dimension of $X,Y$).
 \end{enumerate}
@@ -3098,48 +3110,757 @@ q_n]]$. Then $\CCP$ contains units called \emph{one-units} that is:
 \]
 If $Q(z)$ is a one-unit, then
 
+\subsection{Todd Class Fixes Commutative Diagram}
+
+The diagram:
+\[
+\begin{tikzcd}
+H^*(X;\Q) \arrow[r, "f_*"]             & H^*(X;\Q)              \\
+K(X) \arrow[r, "f_*"] \arrow[u, "\ch"] & K(Y) \arrow[u, "\ch"']
+\end{tikzcd}
+\]
+Is not commutative, but the diagram:
+\[
+\begin{tikzcd}
+H^*(X;\Q) \arrow[r, "f_*"]                   & H^*(X;\Q)                    \\
+K(X) \arrow[r, "f_*"] \arrow[u, "\td(X)\ch"] & K(Y) \arrow[u, "\td(X)\ch"']
+\end{tikzcd}
+\]
+So the Chern character is in some way an insufficient tool to naturally represent homological information of
+vector bundles, but ``fixing'' it by the Todd class is.
+
+\subsection{Multiplicative sequences}
+
+As we saw with Chern and Pontryagin classes, their product translates to a cup product. This gives a natural
+algebraic relation that we know codify for future reference.
+Let $B$ be a commutative ring, and define:
+\[
+  \CB = B[z, p_1, p_2, ...]
+\]
+Define a grading given by the following:
+\begin{center}
+  $p_{j_1}p_{j_2}\cdots p_{j_r}$ has weight $j_1 + j_2 + \cdots + j_r$
+\end{center}
+Then let $\CB_k$ be the weight $k$-groups; note $\CB_0 = B$ and $\CB_r\CB_s = \CB_{r+s}$. Let $\pi(k)$ be all
+partitions of $k$. Then $\CB_k$ is a $B$-module of rank $\pi(k)$.
+
+\index{Multiplicative Sequence}
+\begin{defn}{Multiplicative Sequence}{multiplicativeSequence}
+  Let $\{K_j\}$ be a sequence of polynomials in indeterminates $p_i$ where $K_0 = 1$ and $K_j \in \CB_j$. Then
+  the sequence $\{K_j\}$ is called a \emph{multiplicative sequence} if whenver a power series is the product
+  of two power series:
+  \[
+    1 + p_1z + p_2z^2  +\cdots = (1 + p_1'z + p_2'z^2  +\cdots)(1 + p_1''z + p_2''z^2  +\cdots)
+  \]
+  with indeterminates $z, p_i', p_i''$, then we get the identify:
+  \[
+    \sum_{j=0}^\infty K_j(p_1, p_2, ... p_j)z^j = \left(\sum_{i=1}^\infty K_i(p_1', p_2', ...
+    p_i')z^i\right)\left(\sum_{j=1}^\infty K_j(p_1'', p_2'', ... p_i'')z^j\right)
+  \]
+  that is:
+  \[
+    K \left(\sum_{i=0}^\infty q_iz^i\right) = \sum_{i=0}^\infty K_i(q_1, ..., q_i)z^i
+  \]
+  where $q_i \in \CB$ of weight $i$. In other words a sequence $\{K_j\}$ is called multiplicative if it induces an endomorphism on
+  \[
+    B[p_1, p_2, ...]\left[[z]\right]
+  \]
+\end{defn}
+
+Given a multiplicative sequence $\{K_j\}$, we associate to it its \emph{characteristic power series} as the
+image of $K(1+z)$:
+\[
+  K(1+z) = \sum_j^\infty K_j(1, 0, ..., 0)z^j = \sum_j^\infty b_jz^j
+\]
+
+Recall we can define Chern roots. Hence we will be considering:
+\[
+  1 + p_1z + \cdots + p_nz^n = \prod_i^n \left(1 + \beta_iz\right)
+\]
+where $\beta_i$ is a symmetric polynomial in the $p_i$'s. By some elementary ring theory and theory of
+symmetric functions, we can interpret $\CB$ as the ring of all symmetric functions in $\beta_1, ..., \beta_n$.
+
+
+We can characterize $m$-sequences via $1$-unit power series:
+
+\begin{prop}{Correspondence 1-unit Power Series and $m$-sequences}{corresp1-unitPowerSeriesand$m$-sequences}
+  There is a bijective correspondence between $m$-sequecnes and formal power series with constant term $1$.
+\end{prop}
+
+\begin{Proof}
+    First, let's show any $m$-sequence $\{K_j\}$ is completely determined by its characteristic power series
+    \[
+      Q(z) = K(1+z)
+    \]
+   \begin{proof}
+    By decomposing:
+
+  \[
+    1 + p_1z + \cdots + p_nz^n = \prod_i^n \left(1 + \beta_iz\right)
+  \]
+  We get:
+  \[
+  \sum_{j=0}^m K_j(p_1,\ldots,p_j) z^j + \sum_{j=m+1}^{\infty} K_j(p_1,\ldots,p_m,0,\ldots,0) z^j = \prod_{i=1}^m Q(\beta_i z). \quad (6_m)
+  \]
+  Therefore any polynomial $K_j$ with $j \leq m$ is determined as a symmetric polynomial in the $\beta_i$ and
+  hence as a polynomial in the $p_i$. This holds for arbitrary $m$, completing the proof.
+  \end{proof}
+
+  Next, let
+    \[
+      Q(z) = 1 + \sum_{i=1}^\infty b_iz^i \qquad b_i \in B
+    \]
+    be a formal power series. Then there is an associated $m$-sequence $\{K_j\}$ where $K(1+z) = Q(z)$.
+  \begin{proof}
+    Consider the usual decomposition:
+    \[
+      1 + p_1z + \cdots + p_nz^n = \prod_i^n \left(1 + \beta_iz\right)
+    \]
+    and consider the product $\prod_{i=1}^m Q(\beta_i z)$ where $\beta_i$ are symmetric functions. Then the
+    coefficients $z^j$ are homogeneous of weight $j$. Thus, it is in $K_j^{(m)}(p_1,\ldots,p_j)$ . It follows that $K_j^{(m)}$
+    does not depend on $m$ for $m \geq j$.
+
+    Now, define $K_j = K_j^{(m)}$ for $m \geq j$. I claim $\{K_j\}$ is
+    the required $m$-sequence. Indeed, the earlier proof the
+    multiplicative property is true if the indeterminates $p_i'$, $p_i''$ are replaced by 0
+    for large values of $i$, and so $\{K_j\}$ is an $m$-sequence. Finally applying $m = 1$ in equation:
+    \[
+    \sum_{j=0}^m K_j(p_1,\ldots,p_j) z^j + \sum_{j=m+1}^{\infty} K_j(p_1,\ldots,p_m,0,\ldots,0) z^j = \prod_{i=1}^m Q(\beta_i z). \quad (6_m)
+    \]
+    shows that $K(1 + z) = Q(z)$, completing the proof.
+  \end{proof}
+
+  Combining these, we get the correspondence
+\end{Proof}
+
+The simplest example would be $\{p_j\}$ which has the characteristic series $1+z$. The notation $p_i$ is due
+to the connection to Pontryagin classes. We shall be working with Chern classes so the following will be
+a useful substitution. Let $c_0 = p_0 = 1$, $z = x^2$, and $\gamma_i$ be such that $\beta_i = \gamma_i^2$.
+then:
+\[
+  \sum_{i=1}^\infty p_i(-z)^i  \left(\sum_{j=0}^\infty c_j(-x)^j\right)\left(\sum_{i=0}^\infty c_ix^i\right)
+\]
+
+Naturally, if $\{K_j(p_1, ..., p_j)\}$ is an $m$-sequence with $Q(z)$ as the characteristic power series, then
+let $\{\widetilde{K}_j(c_1, ... c_j)\}$ be an $m$-sequence where $\widetilde{Q}(x) = Q(x^2)$. Then:
+\begin{gather*}
+  K_j(p_1, ..., p_j) = \widetilde{K}_{2j}(c_1, ..., c_{2j})\\
+                     \text{and}\\
+  0 = \widetilde{K}_{2j+1}(c_1, ...., c_{2j+1})
+\end{gather*}
+
+Thus, the $m$-sequence in $c_i$ with the characteristic power series $1+x^2$ is given by
+\[
+  1, 0, p_1, 0, p_2, ...
+\]
+From this relations, we get:
+\begin{align*}
+  p_1 = -2c_2 + c_1^2 \\
+  p_2 &= 2c_4 - 2c_3c_1 + c_2^2\\
+  p_3 &= -2c_6 + 2c+5c+1 = 2c_4c_2 + c_3^2, ...
+\end{align*}
+Let's now find a way to calculate the explicit calculation of the polynomials of $m$-sequences. Given $Q(z)
+= 1+\sum_{i=1}^\infty b_iz^i$, consider the factorization:
+\[
+  1 + b_1z + b_2z^2  +\cdots + b_mz^m = (1 + \beta_1'z)\cdots (1+\beta_m'z)
+\]
+Then define the sum:
+\[
+  \sum \left(\beta_1'\right)^{j_1}\left(\beta_2'\right)^{j_2}\left(\beta_r'\right)^{j_r} \qquad \text{where}
+  \qquad j_1 \ge j_2 \ge \cdots \ge j_r \ge 1,\ \sum_{s=1}^r j_s = k \le m
+\]
+which denotes the symmetric function in the $\beta_i'$ which is the sum of all pairwise distinct monomials
+obtained by permuting $(\beta_1', ..., \beta_m')$ to the monomial
+$\left(\beta_1'\right)^{j_1}\left(\beta_2'\right)^{j_2}\left(\beta_r'\right)^{j_r}$. The number of monomial in
+the sum is $m!/h$, $h$ being the number of permutations living the aforementioned monomial fixed. Now:
+
+\begin{lem}{Computation of $m$-sequence}{computationofM-sequence}
+  Let $\{K_j(p_1. ..., p_j)\}$ be the $m$-sequence corresponding to $Q(z) = 1 + \sum_{i=1}^\infty b_iz^i$.
+  Then the coefficient of $p_{j_1}p_{j_2}\cdots p_{j_r}$ of $K_s$ where $j_1 \ge j_2 \ge \cdots \ge j_r \ge 1$
+  and $\sum_{s=1}^r j_s = k$ is equal to:
+  \[
+    \sum (j_1, j_2, ...., j_r)
+  \]
+\end{lem}
+
+\begin{Proof}
+  it is computations that will be omitted.
+\end{Proof}
+
+We shall want to define the $m$-sequence associated to Pontryagin classes associated to $\CP^n$ seen as the
+classifying space for $n$-dimensional complex vector bundles. Recall that $\chi(\CP^1\oplus \CP^2)
+= \chi(\CP^1)\chi(\CP^1)$. And that $\chi(\CP^n) = 1$. We shall want to capture these properties using the
+Pontryagin class. Define:
+\[
+  Q(z) = \frac{\sqrt{z}}{\tanh{\sqrt{z}}} = 1 + \sum_{k=1}^\infty (-1)^{k-1} \frac{2^{2k}}{(2k)!}B_kz^k
+\]
+where the $B_k$ are the Bernoulli numbers. Note that in this case $B= \Q$. Furthermore, we shall have $B_k
+> 0$ skip the values of $1/2$. Thus we get:
+\[
+  B_1 = \frac{1}{6},\ B_2 = \frac{1}{30},\ B_3 = \frac{1}{42},\ B-4 = \frac{1}{30},\ B_5 = \frac{5}{66},\ B_6
+  = \frac{691}{2730},\ B_7 = \frac{7}{6},\ B_8 = \frac{3617}{510},...
+\]
+We sahll denote the $m$-sequence of $Q(z)$ as $\{L_j(p_1, ...., p_j)\}$. Computing we get:
+\begin{align*}
+ L_1 &= \frac{1}{3}p_1\\
+ L_2 &= \frac{1}{5\cdot 7}(7p_2 - p_1^2)\\
+ L_3 &= \frac{1}{3^3\cdot 5 \cdot 7}(62p_3 - 13p_2p_1 + 2p_1^3)\\
+     &\vdots
+\end{align*}
+
+We will want the following normalization: $L_k(p_1 ...., p_k) = 1$. To that end, if we let $p_i
+= \binom{2k+1}{i}$, then we get:
+\[
+  1 + p_1z + p_2z^2  +\cdots + p_kz^k = \left(1+z\right)^{2k+1} \mod z^k+1
+\]
+From this we get:
+
+\begin{prop}{Coefficient of L-genus Power Series}{coefficientofL-genusPowerSeries}
+  Let $Q(z) = \frac{\sqrt{z}}{\tanh{\sqrt{z}}}$. Then for every $k$, the coefficient $J_k$ of $z^k$ in
+    $(Q(z))^{2k+1}$ is equal to $1$, and $Q(z)$ is the \emph{only} power series with rational coefficient
+    with this property.
+\end{prop}
+
+\begin{Proof}
+  Apply Cauchy's integral formula and compute (see~\cite[p.12]{hirzebruchTopologicalMethodsAlgebraic1995} to
+  see the exact computations)
+\end{Proof}
+
+The above is useful for Pontryagin classes. We also requires the equivalent for Chern classes. Let:
+\[
+  Q(x) = \frac{x}{1-e^{-x}} = 1 + \frac{1}{2}x + \sum_{k=1}^\infty (-1)^{k-1} \frac{B_k}{(2k)!}x^{2k}
+\]
+Then we get polynomials $T_k$ called \emph{Todd polynomials}. For future reference, we have the identity:
+\[
+  \frac{x}{1-\exp(-x)} = \exp \left(\frac{1}{2}x\right) \frac{\frac{1}{2}x}{\sinh \frac{1}{2}x}
+\]
+By using the translation from Pontryagin to Chern class lemma, we get:
+\[
+  T+k(c_1, ..., c_k) = \sum_{\substack{r,s\\r+2s=k}} \frac{1}{2^{4s}r!} \left(\frac{1}{2}c_1\right)^r A_s(p_1, ..., p_s)
+\]
+We can compute the first few values:
+\begin{align*}
+  T_1 &= \frac{1}{2}c_1\\
+  T_2 &= \frac{1}{12} (c_2 + c_1^2)\\
+  T_3 &= \frac{1}{24} c_2c_1\\
+  T_4 &= \frac{1}{720} (-c_4 + c_3c_1 + 3c_2^2 + 4c_2c_1^2 - c_1^4)\\
+  T_5 &= \frac{1}{1440} \left(-c_4c_1 + c_3c_1^2  +3c_2^2c_1 - c_2c_1^3\right) \\
+      &\vdots
+\end{align*}
+
+Again, by substituting $c_i = \binom{n+i}{i}$ defined by:
+\[
+  1 + c_1x + \cdots + c_nx^n = (1+x)^{n+1} \mod x^{n+1}
+\]
+gives
+\[
+  T_n(c_1, ..., c_n) = 1
+\]
+Just like before, $Q(x)$ is the only power sires with rational coefficients with the property that
+$Q(x))^{k+1} = 1$ (see~\cite[p.14]{hirzebruchTopologicalMethodsAlgebraic1995}, or just repeat the above
+results with the appropriate modifications).
+
+
+We shall need a special case. Let $B = \Q[y]$. Then consider the $m$-sequence $T_j(y; c_1, ..., c_j)$ with
+characteristic power series:
+\[
+  Q(y; x) = \frac{x(y+1)}{1-e^{-x(y+1)}} -yx = \frac{x(y+1)}{e^{x(y+1)}-1}+x
+\]
+
+
+\begin{lem}{}{lemHere}
+  For every $n$ the coefficient of $x^n$ in $(Q(y;x))^{n+1}$ is equal to $\sum_{i=0}^n(-1)^iy^i$, and $Q(y,x)$
+is the only power series with coefficients in $\mathbb{Q}[y]$ which has this property.
+\end{lem}
+
+
+\begin{Proof}
+  Take substitution
+\[
+    c_i = \binom{n+1}{i}
+\]
+then:
+\[
+    T_n(y; c_1,\ldots,c_n) = 1-y+y^2-\cdots+(-1)^ny^n.
+\]
+Then as $Q(\frac{1}{y};yx) = Q(y;-x)$:
+\[
+    y^n T_n(\frac{1}{y};c_1,\ldots,c_n) = (-1)^n T_n(y;c_1,\ldots,c_n)
+\]
+as we sought to show
+\end{Proof}
+
+
+The polynomial $T_n(y;c_1,\ldots,c_n)$ can be written in a unique way in the form
+\[
+    T_n(y;c_1,\ldots,c_n) = \sum_{p=0}^n T_n^p(c_1,\ldots,c_n)y^p.
+\]
+
+The polynomials $T_n^p(c_1,\ldots,c_n)$ satisfy
+\[
+    T_n^p(c_1,\ldots,c_n) = (-1)^n T_n^{n-p}(c_1,\ldots,c_n)
+\]
+
+\textcolor{red}{more on p.15}
+
+\subsection{Todd Genus}\label{sec:toddGenus}
+
+Let $X$ be a complex smooth manifold, and $\xi$ a continuous $q$-vector bundle on $X$. Let $c_i \in H^{2i}(X, \Z)$
+be its Chern classes. Then the \emph{total Todd class} of $\xi$ is :
+\[
+  \td(\xi) = \sum_{j=1}^\infty T_j(c_1, ..., c_j)
+\]
+where $\{T_j(c_1, ..., c_j)\}$ is given by the characteristic series:
+\[
+  Q(x) = \frac{x}{1-e^{-x}} = 1 = \frac{1}{2}x + \sum_{j=1}^\infty (-1)^{j-1} \frac{B_j}{(2j)!}x^{2j}
+\]
+where $B_j$ is the Bernoulli numbers. To write down the $m$-sequence, recall that the $m$-sequence of the
+characteristic power series $Q(z) = \frac{2\sqrt{z}}{\sinh(2\sqrt{z}}$ is has as the first few terms:
+\[
+  A_1 = \frac{-2}{3},\ A_2 = \frac{2}{45} (-4p_2 + 7p_1^2)\ A_3 = \frac{-4}{3^2\cdot 5\cdot 7} \left(16p_3
+  - 44p_2p_1 + 31 p_1^3\right)
+\]
+Then note that :
+\[
+  \frac{x}{1-e^{-x}} = \exp \left(\frac{1}{2}x\right) \frac{\frac{1}{2}x}{\sinh \frac{1}{2}x}
+\]
+Then:
+\[
+  T_j(c_1, ..., c_j) = \sum \frac{1}{2^{4s}r!} \left(\frac{1}{2}c_1\right)^r A_s(p_1, ..., p_j)
+\]
+where $r+2s =j$ and $p_i$ are the Pontryagin classes. Recall this gives us:
+\begin{align*}
+  T_1(c_1) &= \frac{1}{2}c_1\\
+  T_2(c_1, c_2) &= \frac{1}{12} (c_2 + c_1^2)\\
+  T_3(c_1, c_2, c_3) &= \frac{1}{24} c_2c_1\\
+  T_4(c_1, c_2, c_3, c_4) &= \frac{1}{720} (-c_4 + c_3c_1 + 3c_2^2 + 4c_2c_1^2 - c_1^4)\\
+  T_5(c_1, c_2, c_3, c_4, c_5) &= \frac{1}{1440} \left(-c_4c_1 + c_3c_1^2  +3c_2^2c_1 - c_2c_1^3\right) \\
+      &\vdots
+\end{align*}
+
+Then by our earlier work:
+\[
+  \td(\xi\oplus \xi') = \td(\xi)\td(\xi')
+\]
+If $q= 1$ and $c_1(\xi) = d \in H^2(X, \Z)$, then:
+\[
+  \td(\xi) = \frac{d}{1-e^{-d}}
+\]
+For future reference, we shall require the following factorization Given the factorization:
+\[
+  \sum_{j=0}^q c_jx^j = \prod_{i=1}^q (1 + \gamma_ix)
+\]
+Then we get:
+\[
+  \td(\xi) = \prod_{i=1}^q \frac{\gamma_i}{1-e^{-\gamma_i}}
+\]
+Similarly, we can define the \emph{total Chern Character} (not class):
+\[
+  \chi(\xi) = \sum_{i=1}^q e^{\gamma_i}
+\]
+Then we get:
+\begin{align*}
+ \ch(\xi\oplus \xi') = \ch(\xi) + \ch(\xi')\\
+ \ch(\xi\otimes \xi') = \ch(\xi)\ch(\xi')
+\end{align*}
+
+If $q = 1$ and $c_1(\xi) = d \in H^2(X, \Z)$, then we get $\ch(\xi) = e^d$. In general, $\chi(\xi)
+= q + \sum_{k=1}^\infty \ch_k(\xi)$ where
+\[
+  \chi_k(\xi) = \frac{s_k}{k!} H^{2k}(x, \Z) \otimes \Q \qquad s_k = \sum_{i=1}^q \gamma_i^k
+\]
+\begin{thm}{Relating Todd Class and Chern Character}{relatingToddClassandChernCharacter}
+  Let $\xi$ be a continuous $\GL_q(\C)$-bundle over $X$. Then:
+  \[
+    \sum_{r=0}^q (-1)^r \ch \left(\bigwedge^r\xi^*\right) = (\td(\xi))^{-1}c_q(\xi)
+  \]
+\end{thm}
+
+\begin{Proof}
+  Proof: If $\sum_{j=0}^q c_j(\xi) x^j = \prod_{i=1}^q (1 + \gamma_i x)$ by the properties of Chern classes
+  (\textcolor{red}{though, I did not actually prove this result in my vect. bundle notes. thm 4.4.3 in
+  Hirzebruch, p.64})
+\[
+    \text{ch}\bigwedge^r \xi^* = \sum e^{-(\gamma_{i_1} + \cdots + \gamma_{i_r})}
+\]
+where the sum is over all combinations $i_1, \ldots, i_r$ with $1 \leq i_1 < \cdots < i_r \leq q$. Therefore
+\[
+    \sum_{r=0}^q (-1)^r \text{ch}\bigwedge^r \xi^* = \prod_{i=1}^q (1-e^{-\gamma_i}) = (\gamma_1 \cdots \gamma_q) \prod_{i=1}^q \frac{1-e^{-\gamma_i}}{\gamma_i} = (\text{td}(\xi))^{-1} c_q(\xi).
+\]
+\end{Proof}
+
+Now, recall that if we are talking about the Chern class of a complex manifold $M$, we are talking about the
+Chern class of its tangent bundle, and the $K$-genus is defined for such structures. Let
+\[
+   Q(x) = \frac{x}{1-e^{-x}} \qquad \text{and} \qquad  Q(y;x) = \frac{x(y+1)}{1-e^{-x(y+1)}} -xy
+\]
+Then:
+\index{Todd Genus}
+\begin{defn}{Todd Genus}{toddGenus}
+  Let $M_n$ be an $n$-dimensional almost complex manifold. The \emph{Todd genus} (or \emph{T-genus}) is the number:
+  \[
+    T_n(M_n) = T_n(c_1, ..., c_n)[M_n]
+  \]
+\end{defn}
+
+As usual, the $[M_n]$ represents the tangent bundle of $M_n$. The reader can verify that the direct product of
+manifolds $X\times Y$ is multiplicative on the Todd class. This means that if
+\[
+  0 \to \xi' \to \xi \to \xi'' \to 0
+\]
+Then:
+\[
+  (1 + c_1't + \cdots + c_{q'}'t^{q'})(1 + c_1''t + \cdots + c_{q''}''t^{q''}) =  1 + c_1t + \cdots + c_{q}t^{q}
+\]
+and so:
+\[
+  \td(\xi')(t)\cdot \td(\xi'')(t)  =\td(\xi)(t)
+\]
+In many ways, the Todd class is ``dual'' to the
+Chern class. For example (\cite[p.93]{hirzebruchTopologicalMethodsAlgebraic1995}):
+\[
+  T_{-1}(M)n) = \sum_{p=0}^n (-1)^p T^p(M_n) = c_n[M_n]
+\]
+and:
+\[
+  T_{1}(M)n) = \sum_{p=0}^n  T^p(M_n) = \tau(M_n)
+\]
+where $\tau$ is the index of $M_n$. More generally:
+
+
+\begin{prop}{Properties of Todd Genus}{propofToddGenus}
+  Let $B$ be a commutative ring where $Q \sse B$. Then
+  \begin{enumerate}
+  \item $\sum_{l=0}^n T_n^{(l)}(c_1,\ldots,c_n) = c_n$, for all $n$.
+
+  \item $T_n^{(0)}(c_1,\ldots,c_n) = \text{td}(c_1,\ldots,c_n) (= T_n(c_1,\ldots,c_n))$.
+
+  \item
+  \[
+      \sum_{l=0}^n T_n^{(l)}(c_1,\ldots,c_n) = \begin{cases}
+          0 & \text{if }n\text{ is odd} \\
+          L_{\frac{n}{2}}(p_1,\ldots,p_{\frac{n}{2}}) & \text{if }n\text{ is even.}
+      \end{cases}
+  \]
+  \end{enumerate}
+
+  The \textit{total Todd class} of a vector bundle, $\xi$, is
+
+\[
+    \text{td}(\xi)(t) = \sum_{j=0}^{\infty} \text{td}_j(c_1,\ldots,c_j)t^j = 1 + \frac{1}{2}c_1(\xi) + \frac{1}{12}(c_1^2(\xi) + c_2(\xi))t^2 + \frac{1}{24}(c_1(\xi)c_2(\xi))t^3 + \cdots
+\]
+
+\end{prop}
+
+\begin{Proof}
+  exercise
+\end{Proof}
+
+Now, the Chern character is a bit different. If :
+\[
+  0 \to \xi'' \to \xi \to \xi' \to 0
+\]
+then:
+\[
+  \ch(\xi)(t) = \ch(\xi')(t) + \ch(\xi'')(t)
+\]
+And similarly
+Here's the LaTeX code for the equation:
+\[
+    \operatorname{ch}(\xi \otimes \eta)(t) = \sum_{i,j} e^{(\gamma_j+\delta_j)t} = \sum_{i,j} e^{\gamma_j t}e^{\delta_j t} = \left(\sum_i e^{\gamma_j t}\right)\left(\sum_j e^{\gamma_j t}\right) = \operatorname{ch}(\xi)(t)\operatorname{ch}(\eta)(t).
+\]
+Hence, it defines a ring homomorphism $K(X) \to H^*(X, \Q)$.
+
+\index{T-characteristic}
+\begin{defn}{T-characteristic}{t-characteristic}
+  Let $X$ be an admissible complex manifold, $\xi$ a $U(q)$-vector bundle. Then
+  \[
+    T(X, \xi)(t) = \chi(\xi)(t)\td(\xi)(t)
+  \]
+  Is called the \emph{T-characteristic} of $\xi$ over $X$
+  (see~\cite[p.226]{gallierComplexAlgebraicGeometry2011}).
+\end{defn}
+The T-characteristic satisfies the duality:
+\[
+  (-1)^n T_n^{(l)}(c_1, ..., c_n) T_n^{(n-l)}(c_1, ..., c_n)
+\]
 
 
 
+\subsection{Pontryagin and Chern Numbers}\label{sec:pontryaginNum}
+
+Let $V^n$ be an oriented compact differentiable manifold where $n$ is the dimension. As $V$ is compact and
+orientable, it is a cycle, and by cohomology theory $V^n$ is generated by one element. The value of the
+$n$-dimensional cohomology class $x$ on the fundamental cycle $V^n$ is denoted $x[V^n]$.  if the coefficeints
+of the cohomology group are in $A$, then:
+\[
+  x \in H^n(V^n, A) \qquad x[V^n] \in A
+\]
+
+We can extend this by tensoring by a group $B$ so that :
+\[
+  x[V^n] \in A\otimes B \qquad x \in H^n(V^n, A)\otimes B
+\]
+For our purposes, let $n = 4k$ and let $p_i \in H^{4i}(V^{4k}, \Z)$ be the Pontryagin classes of $V^{4k}$
+(i.e. of its tangent bundle). We
+get a natural grading by the indices $i$ so that given $k = j_1 + j_2 + \cdots + j_r$ we get the product
+$p_{j_1}\cdots p_{j_r}$ and an integer (as $A = \Z)$:
+\[
+  p_{j_1}\cdots p_{j_r}[V^{4k}]
+\]
+Let $\pi(k)$ be the number of distinct partitions of $k$.
+
+\index{Pontryagin Numbers}\index{Chern Numbers}
+\begin{defn}{Pontryagin Numbers and Chern Number}{pontryaginNumbers}
+  The \emph{Pontryagin numbers} are the $\pi(k)$ numbers :
+  \[
+    p_{j_1}\cdots p_{j_r}[V^{4k}]
+  \]
+  where $n = 4k$. If $n$ is not divisible by $4$, then the Pontryagin number is $0$.
+
+  \qn
+  Similarly the \emph{Chern numbers} of a complex manifold $M$ (with an almost complex structure so that we
+  are given a particular orientation) are all:
+  \[
+    c_{j_1}\cdots c_{j_r}[V^{2k}]
+  \]
+  where $n = j_1 + j_2 + \cdots + j_r$ and the $j_i$ run through all partitions.
+\end{defn}
+
+By some characteristic class theory, if $M_n$ is an oriented almost complex manifold, $c_n[M_n] = \chi(M_n,
+TM_n)$. We shall focus on Pontryagin numbers as we shall need them to prove an important result in cohomology,
+and return to Chern numbers once we cover the Todd genus in section~\ref{sec:toddGenus}.
+
+We can define an equivalence relation where two manifolds $M\sim_\cp N$ if they have the same dimension and
+are the same Pontryagin number. Note that if the dimension is not divisible by $4$, all manifolds are in the
+same equivalence relation given by $\sim_\cp$ as they are all $0$.
+
+Now let $M,N$ be smooth $n =4k$ dimensional manifolds. Then by classical differential geometry we have
+$T(M\times N) = \pi_M^*(TM)\times \pi_N^*(TM)$ (consider for now the real tangent bundle, so it is
+a $\GL_n(R)$-bundle). Then considering the Pontryagin classes of $M,N$ and $M\times N$, by the properties of
+characteristic classes we get:
+\[
+  1 + p_1'' + p_2'' + \cdots = (1 + p_1 + p_2 + \cdots)(1 + p_1' + p_2' + \cdots)
+\]
+Or, as a generating function:
+\[
+  \sum_{k=0}^\infty p_k'' z^k = \sum_{i=0}^\infty f^*(p_i) z^i \sum_{j=0}^\infty g^*(p_j') z^j \mod \text{torsion}.
+\]
+In terms of the fundamental class:
+\[
+  (f^*(x)g^*(y))[M\times N] = x[M]\cdot y[N] \qquad \forall x \in H^n(M,\Z)\otimes B,\ y \in H^m(N,\Z)\otimes B
+\]
+This last property is simply the properties of $m$-sequences:
+
+\begin{lem}{Pontryagin Character and M-sequence}{pontryaginCharacterandM-sequence}
+  HERE
+\end{lem}
+
+\begin{Proof}
+
+\end{Proof}
+
+\index{K-Pontryagin genus}\index{K-Chern genus}\index{K-genus}
+\begin{defn}{K-genus}{k-genus}
+  Let $V^n$ be an oriented $n$-dimensional manifolds and $\{K_j(p_1, ..., p_j)\}$ be an $m$-sequence where
+  $K(V^{4k}) = K_k[V^{4k}]$ and $0$ otherwise. Then:
+  \[
+    \begin{cases}
+      0 & \dim_\R X \not\equiv 0 \mod 4\\
+      K_n(p_1, ..., p_n)[X] & \dim_\R X = 4n
+    \end{cases}
+  \]
+  is called the \emph{K-genus} of $V^{n}$.
+
+  \qn
+  If we are working with Chern classes, then we would have $n=2k$.
+\end{defn}
+
+By what we've discussed earlier, the $K$-genus is multiplicative.
+
+\begin{example}{K-genus}{k-genus}
+  look at~\cite[p.77]{hirzebruchTopologicalMethodsAlgebraic1995}.
+  \begin{enumerate}
+    \item L-genus defined earlier
+    \item $A$-genus
+  \end{enumerate}
+\end{example}
+
+\section{Some Cobordism}\label{sec:cobordism}
+
+Pontryagin classes will be important characterizing cobordism, and we shall need a bit of cobordism in the
+proof of HRR. What we shall show that that cobordant manifolds are characterized by their Pontryagin class. We
+start by creating the algebraic structure that are naturally induced by Pontryagin classes and then quote the
+result by Thom that shows it is isomorphic to the cobordant ring.
+
+\index{Algebraic Cobordism Ring}
+\begin{defn}{Algebraic Cobordism Ring}{algCobordismRing}
+  Let $V^n, W^n$ be two oriented manifolds of the same dimension. Let $-V^n$ represent the reverse orientation.
+It is easy to see that:
+\[
+  K(V^n\dcup W^n) = K(V^n) + K(W^n) \qquad K(-V^n) = -K(V^n)
+\]
+Thus, $K(-)$ is compatible with the equivalence relation $\sim_\cp$ and creates an additive group
+$\widetilde{\Omega}^n$. Note that $\widetilde{\Omega}^n = 0$ if $4\nmid n$. Let $\widetilde{\Omega}
+\bigoplus_n \widetilde{\Omega}^n$ so that by the above equations we have the natural grading:
+\[
+  \widetilde{\Omega}^n \widetilde{\Omega}^m \sse \widetilde{\Omega}^{nm}
+\]
+And so $\widetilde{\Omega}$ is a commutative graded (torsion-free) ring.
+\end{defn}
+
+The ring was called ``algebraic'' as it was defined using the algebraic properties of Pontryagin classes, we
+shall soon define the ``geometric'' cobordant ring that is the equivalence classes of cobordant manifolds and
+show they are isomorphic. For now, let us characterize the algebraic structure of the algebraic cobordism
+ring: the goal is to show that
+\[
+  \widetilde{\Omega}\otimes \Q \cong \Q[x_1, x_2, ...]
+\]
+To that end, we must find which elements of $\widetilde{\Omega}$ can represent each $x_i$. There is no natural
+choice, hence we define ``candidate sequences'' of elements given by manifolds $V^4, V^8, V^{12}, ...$ that
+can be chosen to form this basis. We shall show these can be given by complex projective spaces of even
+dimension. Let us start by recalling that the Pontryagin class of $V^{4k}$ can be written in indeterminate $z$
+and decomposed into:
+\[
+  1 + p_1z + \cdots + p_kz^k = \prod_{i=1}^k (1 + \beta_iz)
+\]
+Define:
+\[
+  s(V^k) = (\beta_1^k + \cdots + \beta_k^k)[V^{4k}]
+\]
+By some symmetry function theory, we can think of this as needing the appropriate homogeneity and dimension
+properties We shall define a \emph{basis sequence} a sequence where:
+\[
+  s(V^{4k}) \ne 0
+\]
+
+\begin{thm}{Basis Sequence Correspondence}{basisSequenceCorresp}
+  Let $\{V^{4k}\}$ be a basis sequence and $B$ a [commutative] ring containing $\Q$. Then the set of sequences
+  $\{a_k\}_k$ where $a_k \in B$ are in bijective correspondence to the set of $m$-sequences $\{K_j(p_1, ...,
+  p_j)\}$ with coefficients in $B$ where $K(V^{4k}) = a_k$.
+\end{thm}
+
+\begin{Proof}
+  \cite[p.79]{hirzebruchTopologicalMethodsAlgebraic1995} (but it is simple)
+\end{Proof}
+
+\begin{thm}{Complex Projective Forms Basis Sequence}{complexProjFormsBasisSequence}
+  Let $\CP^{2k}$ be the $2k$-dimensional complex projective space. Then they form a basis sequence where
+  \[
+    s(\CP^{2k+1}) = 2k+1
+  \]
+\end{thm}
+
+\begin{Proof}
+  ibid; simple proof.
+\end{Proof}
+
+Let us now consider $\widetilde{\Omega}\otimes \Q$, so now $[V^{4k}]$ can be written as $\frac{a}{b}[V^{4k}]$.
+Certainly the Pontryagin number, $K$-genus, and $s(V^{4k})$ are all still well-defined (where the $K$-genus is
+well-defined as we required $B$ to contain $\Q$). Now, the Pontryagin number of an element of
+$\widetilde{\Omega}\otimes \Q$ can be a non-integer. This new ring can still be represented using a basis
+sequence:
+
+\begin{thm}{Basis Sequence With Rational Numbers Correspondence}{basisSequenceWithRationalNumbersCorresp}
+  Let $\{V^{4k}\}$ be a basis sequence of oriented manifolds, and let $(j) = (j_1, ...., j_r)$ be a partition
+  of $k$. Let $V_{(j)} = V^{4j_1}\times \cdots \times V^{4j_r}$. Then every $\alpha \in
+  \widetilde{\Omega}\otimes \Q$ can be uniquely represented by the sum:
+  \[
+    \alpha = \sum_{(j) \in \pi(j)} r_{(j)}[V_{(j)}] \qquad r_{(j)} \in \Q
+  \]
+  where the sum goes over all partitions of $k$. Furthermore, given a system $\{a_{(j)}\}$ of rational
+  numbers, there exists an element $\alpha \in \widetilde{\Omega}\otimes \Q$ where
+  \[
+    p_{(j)}[\alpha] = \alpha_{(j)}
+  \]
+\end{thm}
+
+\begin{Proof}
+  \cite[p.80]{hirzebruchTopologicalMethodsAlgebraic1995} (This is some linear algebra (recall the proof in comm. alg. using the Vandermonde Determinant)
+\end{Proof}
 
 
+\begin{thm}{Isomorphism of Algebraic Cobordism Ring}{isoofAlgebraicCobordismRing}
+  \[
+    \widetilde{\Omega}\otimes \Q \cong \Q[x_1, x_2, ....]
+  \]
+\end{thm}
+
+\begin{Proof}
+  Let $\{V^{4k}\}$ be an arbitrary sequence of oriented manifolds. What's left to show is that:
+  \begin{enumerate}
+    \item given $\alpha = \sum_{(j)} r_{(j)}[V_{(j)}]$ then $s(\alpha) = r_ks[V^{4k}]$
+    \item If for all $k$, every element of $\alpha \in \widetilde{\Omega}^{4k} \otimes \Q$ can be represented
+      as a sum $\alpha = \sum_{(j)}[V_{(j)}]$, then $\{V^{4k}\}$ is a basis sequence
+  \end{enumerate}
+  \cite[p.80]{hirzebruchTopologicalMethodsAlgebraic1995}
+\end{Proof}
+
+There is a natural question of smallest integers can represent a system of Pontryagin numbers and it invovles
+the $\mu$ that I skipped.
+
+Lastly, the $K$-genus can be characterized as being any homomorphism from the algebraic cobordism ring to
+$\Q$:
+
+\begin{thm}{Characterizing Rational Homomorphisms}{characterizingRationalHomo}
+ highlight link @markup.link.label texRefArg Let $\phi: \widetilde{\Omega}\otimes \Q \to \Q$ be a homomorphism. Then there exists a $K$ such that
+  $\phi(-) = K(-)$.
+\end{thm}
+
+\begin{Proof}
+  easy on p.81
+\end{Proof}
+
+\index{Geometric Cobordism Ring}
+\begin{defn}{Geometric Cobordism Ring}{geometricCobordismRing}
+  Two oriented smooth $n$-dimensional manifolds $M^n, N^n$ are \emph{cobordant} if there exist a manifold $C$ such that
+  \[
+    \partial C \cong (M^n \dcup  -N^n)
+  \]
+  where $-N^n$ is the reverse orientation; if such a $C$ exists it defines an equivalence relation $M\sim_\cc
+  N$ which respects disjoint union, reverse orientation, and direct product; $\dcup, -, \times$. Then
+  $\Omega^n$ is the collection of such equivalence classes and:
+  \[
+    \Omega = \bigoplus_n \Omega^n
+  \]
+  is the \emph{geometric cobordism ring}.
+\end{defn}
+
+Certainly this ring is graded, and it is \emph{anti-commutative}, namely:
+\[
+  \alpha\cdot \beta = (-1)\beta\cdot\alpha \qquad \alpha \in \Omega^n,\ \beta \in \Omega^m
+\]
+
+\textcolor{red}{He now goes onto to prove the isomorphism between this ring and the algebraic one, skipping
+for now.}
+
+An important theorem:
+
+\begin{thm}{Hirzebruch Signature Theorem}{hirzebruchSignatureThm}
+  Let $M$ be a real differentiable oriented manifold, and let $I(M)$ be its index. Then:
+  \begin{enumerate}
+    \item if $\dim_\R M\not\equiv 0\mod 4$, $I(M) = 0$
+    \item if $\dim_\R M\equiv 0\mod 4$, then:
+      \[
+        I(M) = L_k(p_1, ...., p_k)[M]
+      \]
+  \end{enumerate}
+\end{thm}
+
+\begin{Proof}
+  \cite[p.231]{gallierComplexAlgebraicGeometry2011}.
+\end{Proof}
+
+\subsection{Index and Virtual index}
+
+\cite[p.84-90]{hirzebruchTopologicalMethodsAlgebraic1995}
+
+\section{RR for algebraic manifolds (i.e. projective verities)}\label{sec:RRforProjVar}
+
+here
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\printindex
 \newpage
+\printindex
 \printbibliography
 \end{document}

@@ -866,14 +866,17 @@ that:
 \]
 As $X$ is a curve $H^i(X, \CO_X(D)) = 0$ for $i > 1$, \textcolor{red}{cite? Reference for later?} giving the equality.
 The right hand side shall be drastically different, split into special invariants of vector bundles known as
-the Chern class and Todd class \textcolor{red}{mention the ``duality'' between them? see notes} . In fact, the
-Euler Characteristic shall also turn out to be an invariant on vector bundles, and hence the Riemann Roch
+the Chern class and Todd class where the Chern class can be thought of as capturing some ``algebraic'' or
+``local'' information (this will generalize the $\deg(D)$) while the todd class shall capture the
+``geometric'' or ``global'' information (this will generalize the $1+g$). In fact, the
+Euler Characteristic can easily be generalized to be an invariant on vector bundles by using sheaf cohomology
+instead of singular cohomology, and hence the Riemann Roch
 theorem generalizes to a question about the existence of sections on vector bundles over a compact manifolds,
 namely if $(X,\CF)$ is a compact manifold along with a vector bundle $\CF$, then we want to compute:
 \[
   H^0(X, \CF)
 \]
-which leads to finding
+The result of this will be:
 \[
   \chi(X, \CF) = \int_X \ch(X)\td(X)
 \]
@@ -881,6 +884,8 @@ This equation is precisely the result of the \emph{Hirzebruch-Riemann Roch Theor
 generalization to smooth quasi-projective schemes over a field near the end, and also talk a bit about a
 recent paper (\cite{navarroRiemannRochFormulaProjective2017}) generalizing to finite dimensional Noetherian
 schemes.
+
+\subsection*{How do Vector Bundles enter the Picture}
 
 To motivate how vector bundles will enter the picture, it is worth-while seeing how $\CO_X(D)$ can be
 interpreted as a line bundle. To that end, recall that the projective curve $X = \P^1$ as defined in classical
@@ -1019,7 +1024,9 @@ shows how there is a bijective correspondence between line bundles and (Weil/Car
 appropriate type of scheme.
 
 
-This also means that $\deg(D)$ should be interpreted as a property of a bundle. (\textcolor{red}{use this
+\subsection*{Motivating Chern and Todd class}
+
+By the above discussion, $\deg(D)$ should be interpreted as a property of a bundle. (\textcolor{red}{use this
 to build up to Chern classes}).
 
 
@@ -1313,7 +1320,7 @@ We shall show that:
     \chi(X, \CO_X(E)) = c_1(E) + \frac{\rk(E)}{2}c_1(T_X^{1,0})
 \]
 
-\section{Multiplicative sequecnes}
+\section{Multiplicative sequences}
 
 As we saw with Chern and Pontryagin classes, their product translates to a cup product. This gives a natural
 algebraic relation that we know codify for future reference.
@@ -1365,8 +1372,185 @@ where $\beta_i$ is a symmetric polynomial in the $p_i$'s. By some elementary rin
 symmetric functions, we can interpret $\CB$ as the ring of all symmetric functions in $\beta_1, ..., \beta_n$.
 
 
+We can characterize $m$-sequences via $1$-unit power series:
+
+\begin{prop}{Correspondence 1-unit Power Series and $m$-sequences}{corresp1-unitPowerSeriesand$m$-sequences}
+  There is a bijective correspondence between $m$-sequecnes and formal power series with constant term $1$.
+\end{prop}
+
+\begin{Proof}
+    First, let's show any $m$-sequence $\{K_j\}$ is completely determined by its characteristic power series
+    \[
+      Q(z) = K(1+z)
+    \]
+   \begin{proof}
+    By decomposing:
+
+  \[
+    1 + p_1z + \cdots + p_nz^n = \prod_i^n \left(1 + \beta_iz\right)
+  \]
+  We get:
+  \[
+  \sum_{j=0}^m K_j(p_1,\ldots,p_j) z^j + \sum_{j=m+1}^{\infty} K_j(p_1,\ldots,p_m,0,\ldots,0) z^j = \prod_{i=1}^m Q(\beta_i z). \quad (6_m)
+  \]
+  Therefore any polynomial $K_j$ with $j \leq m$ is determined as a symmetric polynomial in the $\beta_i$ and
+  hence as a polynomial in the $p_i$. This holds for arbitrary $m$, completing the proof.
+  \end{proof}
+
+  Next, let
+    \[
+      Q(z) = 1 + \sum_{i=1}^\infty b_iz^i \qquad b_i \in B
+    \]
+    be a formal power series. Then there is an associated $m$-sequence $\{K_j\}$ where $K(1+z) = Q(z)$.
+  \begin{proof}
+    Consider the usual decomposition:
+    \[
+      1 + p_1z + \cdots + p_nz^n = \prod_i^n \left(1 + \beta_iz\right)
+    \]
+    and consider the product $\prod_{i=1}^m Q(\beta_i z)$ where $\beta_i$ are symmetric functions. Then the
+    coefficients $z^j$ are homogeneous of weight $j$. Thus, it is in $K_j^{(m)}(p_1,\ldots,p_j)$ . It follows that $K_j^{(m)}$
+    does not depend on $m$ for $m \geq j$.
+
+    Now, define $K_j = K_j^{(m)}$ for $m \geq j$. I claim $\{K_j\}$ is
+    the required $m$-sequence. Indeed, the earlier proof the
+    multiplicative property is true if the indeterminates $p_i'$, $p_i''$ are replaced by 0
+    for large values of $i$, and so $\{K_j\}$ is an $m$-sequence. Finally applying $m = 1$ in equation:
+    \[
+    \sum_{j=0}^m K_j(p_1,\ldots,p_j) z^j + \sum_{j=m+1}^{\infty} K_j(p_1,\ldots,p_m,0,\ldots,0) z^j = \prod_{i=1}^m Q(\beta_i z). \quad (6_m)
+    \]
+    shows that $K(1 + z) = Q(z)$, completing the proof.
+  \end{proof}
+
+  Combining these, we get the correspondence
+\end{Proof}
+
+The simplest example would be $\{p_j\}$ which has the characteristic series $1+z$. The notation $p_i$ is due
+to the connection to Pontryagin classes. We shall be working with Chern classes so the following will be
+a useful substitution. Let $c_0 = p_0 = 1$, $z = x^2$, and $\gamma_i$ be such that $\beta_i = \gamma_i^2$.
+then:
+\[
+  \sum_{i=1}^\infty p_i(-z)^i  \left(\sum_{j=0}^\infty c_j(-x)^j\right)\left(\sum_{i=0}^\infty c_ix^i\right)
+\]
+
+Naturally, if $\{K_j(p_1, ..., p_j)\}$ is an $m$-sequence with $Q(z)$ as the characteristic power series, then
+let $\{\widetilde{K}_j(c_1, ... c_j)\}$ be an $m$-sequence where $\widetilde{Q}(x) = Q(x^2)$. Then:
+\begin{align*}
+  K_j(p_1, ..., p_j) &= \widetilde{K}_{2j}(c_1, ..., 2j)\\
+                     &\text{and}
+  0 &= \widetilde{K}_{2j+1}(c_1, ...., c_{2j+1})
+\end{align*}
+
+Thus, the $m$-sequence in $c_i$ with the characteristic power series $1+x^2$ is given by
+\[
+  1, 0, p_1, 0, p_2, ...
+\]
+From this relations, we get:
+\[
+  p_1 = -2c_2 + c_1^2 ,\ p_2 = 2c_4 - 2c_3c_1 + c_2^2,\ p_3 = -2c_6 + 2c+5c+1 = 2c_4c_2 + c_3^2, ...
+\]
+Let's now find a way to calculate the explicit calculation of the polynomials of $m$-sequences. Given $Q(z)
+= 1+\sum_{i=1}^\infty b_iz^i$, consider the factorization:
+\[
+  1 + b_1z + b_2z^2  +\cdots + b_mz^m = (1 + \beta_1'z)\cdots (1+\beta_m'z)
+\]
+Then define the sum:
+\[
+  \sum \left(\beta_1'\right)^{j_1}\left(\beta_2'\right)^{j_2}\left(\beta_r'\right)^{j_r} \qquad \text{where}
+  \qquad j_1 \ge j_2 \ge \cdots \ge j_r \ge 1,\ \sum_{s=1}^r j_s = k \le m
+\]
+which denotes the symmetric function in the $\beta_i'$ which is the sum of all pairwise distinct monomials
+obtained by permuting $(\beta_1', ..., \beta_m')$ to the monomial
+$\left(\beta_1'\right)^{j_1}\left(\beta_2'\right)^{j_2}\left(\beta_r'\right)^{j_r}$. The number of monomial in
+the sum is $m!/h$, $h$ being the number of permutations living the aforementioned monomial fixed. Now:
+
+\begin{lem}{Computation of $m$-sequence}{computationofM-sequence}
+  Let $\{K_j(p_1. ..., p_j)\}$ be the $m$-sequence corresponding to $Q(z) = 1 + \sum_{i=1}^\infty b_iz^i$.
+  Then the coefficient of $p_{j_1}p_{j_2}\cdots p_{j_r}$ of $K_s$ where $j_1 \ge j_2 \ge \cdots \ge j_r \ge 1$
+  and $\sum_{s=1}^r j_s = k$ is equal to:
+  \[
+    \sum (j_1, j_2, ...., j_r)
+  \]
+\end{lem}
+
+\begin{Proof}
+  it is computations that will be omitted.
+\end{Proof}
+
+We shall want to define the $m$-sequence associated to Pontryagin classes associated to $\CP^n$ seen as the
+classifying space for $n$-dimensional complex vector bundles. Recall that $\chi(\CP^1\oplus \CP^2)
+= \chi(\CP^1)\chi(\CP^1)$. And that $\chi(\CP^n) = 1$. We shall want to capture these properties using the
+Pontryagin class. Define:
+\[
+  Q(z) = \frac{\sqrt{z}}{\tanh{\sqrt{z}}} = 1 + \sum_{k=1}^\infty (-1)^{k-1} \frac{2^{2k}}{(2k)!}B_kz^k
+\]
+where the $B_k$ are the Bernoulli numbers. Note that in this case $B= \Q$. Furthermore, we shall have $B_k
+> 0$ skip the values of $1/2$. Thus we get:
+\[
+  B_1 = \frac{1}{6},\ B_2 = \frac{1}{30},\ B_3 = \frac{1}{42},\ B-4 = \frac{1}{30},\ B_5 = \frac{5}{66},\ B_6
+  = \frac{691}{2730},\ B_7 = \frac{7}{6},\ B_8 = \frac{3617}{510},...
+\]
+We sahll denote the $m$-sequence of $Q(z)$ as $\{L_j(p_1, ...., p_j)\}$. Computing we get:
+\begin{align*}
+ L_1 &= \frac{1}{3}p_1\\
+ L_2 &= \frac{1}{5\cdot 7}(7p_2 - p_1^2)\\
+ L_3 &= \frac{1}{3^3\cdot 5 \cdot 7}(62p_3 - 13p_2p_1 + 2p_1^3)\\
+     &\vdots
+\end{align*}
+
+We will want the following normalization: $L_k(p_1 ...., p_k) = 1$. To that end, if we let $p_i
+= \binom{2k+1}{i}$, then we get:
+\[
+  1 + p_1z + p_2z^2  +\cdots + p_kz^k = \left(1+z\right)^{2k+1} \mod z^k+1
+\]
+From this we get:
+
+\begin{prop}{Coefficient of L-genus Power Series}{coefficientofL-genusPowerSeries}
+  Let $Q(z) = \frac{\sqrt{z}}{\tanh{\sqrt{z}}}$. Then for every $k$, the coefficient $J_k$ of $z^k$ in
+    $(Q(z))^{2k+1}$ is equal to $1$, and $Q(z)$ is the \emph{only} power series with rational coefficient
+    with this property.
+\end{prop}
+
+\begin{Proof}
+  Apply Cauchy's integral formula and compute (see~\cite[p.12]{hirzebruchTopologicalMethodsAlgebraic1995} to
+  see the exact computations)
+\end{Proof}
+
+The above is useful for Pontryagin classes. We also requires the equivalent for Chern classes. Let:
+\[
+  Q(x) = \frac{x}{1-e^{-x}} = 1 + \frac{1}{2}x + \sum_{k=1}^\infty (-1)^{k-1} \frac{B_k}{(2k)!}x^{2k}
+\]
+Then we get polynomials $T_k$ called \emph{Todd polynomials}. For future reference, we have the identity:
+\[
+  \frac{x}{1-\exp(-x)} = \exp \left(\frac{1}{2}x\right) \frac{\frac{1}{2}x}{\sinh \frac{1}{2}x}
+\]
+By using the translation from Pontryagin to Chern class lemma, we get:
+\[
+  T+k(c_1, ..., c_k) = \sum_{\substack{r,s\\r+2s=k}} \frac{1}{2^{4s}r!} \left(\frac{1}{2}c_1\right)^r A_s(p_1, ..., p_s)
+\]
+We can compute the first few values:
+\begin{align*}
+  T_1 &= \frac{1}{2}c_1\\
+  T_2 &= \frac{1}{12} (c_2 + c_1^2)\\
+  T_3 &= \frac{1}{24} c_2c_1\\
+  T_4 &= \frac{1}{720} (-c_4 + c_3c_1 + 3c_2^2 + 4c_2c_1^2 - c-1^4)\\
+  T_5 &= \frac{1}{1440} \left(-c_4c_1 + c_3c_1^2  +3c_2^2c_1 - c_2c_1^3\right) \\
+      &\vdots
+\end{align*}
+
+Again, by substituting $c_i = \binom{n+i}{i}$ defined by:
+\[
+  1 + c_1x + \cdots + c_nx^n = (1+x)^{n+1} \mod x^{n+1}
+\]
+gives
+\[
+  T_n(c_1, ..., c_n) = 1
+\]
+Just like before, $Q(x)$ is the only power sires with rational coefficients with the property that
+$Q(x))^{k+1} = 1$ (see~\cite[p.14]{hirzebruchTopologicalMethodsAlgebraic1995}, or just repeat the above
+results with the appropriate modifications).
 
 
+\textcolor{red}{on p.15, he goes over $T^P$, which idk if I need so skipping for now.}
 
 
 

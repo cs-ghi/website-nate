@@ -2393,6 +2393,8 @@
     <bcf:citekey order="30" intorder="1">NateKTheory</bcf:citekey>
     <bcf:citekey order="31" intorder="1">NateKTheory</bcf:citekey>
     <bcf:citekey order="32" intorder="1">NateAlgGeo</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

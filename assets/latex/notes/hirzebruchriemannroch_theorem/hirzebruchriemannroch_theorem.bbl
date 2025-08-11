@@ -146,6 +146,38 @@
       \verb http://link.springer.com/10.1007/978-3-319-91755-9
       \endverb
     \endentry
+    \entry{hirzebruchTopologicalMethodsAlgebraic1995}{book}{}
+      \name{author}{1}{}{%
+        {{hash=56712abe839de5971ea62127a156c577}{%
+           family={Hirzebruch},
+           familyi={H\bibinitperiod},
+           given={Friedrich},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{56712abe839de5971ea62127a156c577}
+      \strng{fullhash}{56712abe839de5971ea62127a156c577}
+      \strng{bibnamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authorbibnamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authornamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authorfullhash}{56712abe839de5971ea62127a156c577}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Topological Methods in Algebraic Geometry}
+      \field{year}{1995}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
+      \endverb
+      \verb{url}
+      \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
+      \endverb
+    \endentry
     \entry{chowCompactComplexAnalytic1949}{article}{}
       \name{author}{1}{}{%
         {{hash=f0d315c134b5efcf58bed4a890812564}{%

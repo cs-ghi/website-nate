@@ -1,20 +1,23 @@
 # Fdb version 4
-["biber riemann_roch_generalized"] 1754341516 "riemann_roch_generalized.bcf" "riemann_roch_generalized.bbl" "riemann_roch_generalized" 1754344109 0
-  "./bibliography.bib" 1754341515 2537 568368b3184aa31c18cf3c9866c60fed ""
-  "riemann_roch_generalized.bcf" 1754344108 109543 b627d6e03744f11b81c5379496ac5c10 "pdflatex"
+["biber riemann_roch_generalized"] 1754861540 "riemann_roch_generalized.bcf" "riemann_roch_generalized.bbl" "riemann_roch_generalized" 1754862525 0
+  "./bibliography.bib" 1754861054 4594 6f5af2dff7a82d2e5ccec2b040896b6f ""
+  "riemann_roch_generalized.bcf" 1754862525 110501 a61c7584c6f3e0416e26d8de85d14c84 "pdflatex"
   (generated)
   "riemann_roch_generalized.bbl"
   "riemann_roch_generalized.blg"
   (rewritten before read)
-["makeindex riemann_roch_generalized.idx"] 1754342316 "riemann_roch_generalized.idx" "riemann_roch_generalized.ind" "riemann_roch_generalized" 1754344109 0
-  "riemann_roch_generalized.idx" 1754344108 761 37c85cad5e174f44f74585cc9eb4a27c "pdflatex"
+["makeindex riemann_roch_generalized.idx"] 1754862518 "riemann_roch_generalized.idx" "riemann_roch_generalized.ind" "riemann_roch_generalized" 1754862525 0
+  "riemann_roch_generalized.idx" 1754862525 1208 4344ea6e2fb28ccfbcd20ad3fca9a0ff "pdflatex"
   (generated)
   "riemann_roch_generalized.ilg"
   "riemann_roch_generalized.ind"
   (rewritten before read)
-["pdflatex"] 1754344102 "riemann_roch_generalized.tex" "riemann_roch_generalized.pdf" "riemann_roch_generalized" 1754344109 0
+["pdflatex"] 1754862518 "riemann_roch_generalized.tex" "riemann_roch_generalized.pdf" "riemann_roch_generalized" 1754862525 0
+  "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm" 1136768653 2160 cd316d9c599fb08dc58cdb63ea33eeb9 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm" 1136768653 3520 74c182562270529cb43f51d7c7d9f1d9 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -78,6 +81,8 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb" 1229303445 16077 4737ac34f0fb5608550f3780a0202c22 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb" 1579560704 33599 0bed01d43ee0675cf5ec1221acad6641 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb" 1136849748 49289 ed75f97b75be34140e9d251dd8e641af ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf" 1136768653 1388 3c026b7a62a5a1c3233a32dad0d5c28e ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -379,13 +384,13 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "images/Normalization_by_Griffiths.png" 1752462228 903134 578cca1d3a4480546964e7258879aef9 ""
-  "riemann_roch_generalized.aux" 1754344108 17185 df453c230a8ee6b65b3bf01b50647f56 "pdflatex"
-  "riemann_roch_generalized.bbl" 1754341519 7566 233904ab2504eaa5640d93f9c5d40643 "biber riemann_roch_generalized"
-  "riemann_roch_generalized.ind" 1754342316 891 0b821a2f1f94cc76e7fb5735da652e5e "makeindex riemann_roch_generalized.idx"
-  "riemann_roch_generalized.out" 1754344108 3563 3ecef12047999cb1787e71068b2a7f35 "pdflatex"
-  "riemann_roch_generalized.run.xml" 1754344108 2447 07e46df45c35788b089225eceb31c580 "pdflatex"
-  "riemann_roch_generalized.tex" 1754344102 121427 370c9be3579cc9078ffe226a6b3cfa86 ""
-  "riemann_roch_generalized.toc" 1754344108 1798 bf1ff4764db74be30c92ddd792c8e644 "pdflatex"
+  "riemann_roch_generalized.aux" 1754862525 23805 f35b72634f6a8b3e59180d105735f8f7 "pdflatex"
+  "riemann_roch_generalized.bbl" 1754861542 9976 6cfd78d0f64a9efcbec6965054622f3e "biber riemann_roch_generalized"
+  "riemann_roch_generalized.ind" 1754862518 1372 d25b1f396c86f99cd9a4c650e0b40491 "makeindex riemann_roch_generalized.idx"
+  "riemann_roch_generalized.out" 1754862525 4948 fdb0aceba83858dc5d8dcd2f9aec851c "pdflatex"
+  "riemann_roch_generalized.run.xml" 1754862525 2447 07e46df45c35788b089225eceb31c580 "pdflatex"
+  "riemann_roch_generalized.tex" 1754862504 150913 b88595a32c9fd5115aac146c647003d9 ""
+  "riemann_roch_generalized.toc" 1754862525 2441 26fa92a6839ad21cc40891f554c50df5 "pdflatex"
   (generated)
   "riemann_roch_generalized.aux"
   "riemann_roch_generalized.bcf"
