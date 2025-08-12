@@ -18,11 +18,11 @@
 \contentsline {section}{\numberline {6}Generalized Riemann Roch: Vector Bundles}{43}{section.6}%
 \contentsline {section}{\numberline {7}Terms for G-bundles}{46}{section.7}%
 \contentsline {section}{\numberline {8}Some Hodge Theory}{46}{section.8}%
-\contentsline {section}{\numberline {9}L-Genus and Todd Genus}{48}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Todd Class Fixes Commutative Diagram}{48}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Multiplicative sequences}{49}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Todd Genus}{54}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Pontryagin and Chern Numbers}{58}{subsection.9.4}%
-\contentsline {section}{\numberline {10}Some Cobordism}{59}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Index and Virtual index}{63}{subsection.10.1}%
-\contentsline {section}{\numberline {11}RR for algebraic manifolds (i.e. projective verities)}{63}{section.11}%
+\contentsline {section}{\numberline {9}L-Genus and Todd Genus}{50}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Todd Class Fixes Commutative Diagram}{50}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Multiplicative sequences}{51}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Todd Genus}{56}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Pontryagin and Chern Numbers}{60}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Some Cobordism}{61}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Index and Virtual index}{65}{subsection.10.1}%
+\contentsline {section}{\numberline {11}RR for algebraic manifolds (i.e. projective verities)}{65}{section.11}%
