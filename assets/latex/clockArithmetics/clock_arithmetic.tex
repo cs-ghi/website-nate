@@ -702,12 +702,12 @@ Define the equivalence relation $\sim_n$ on $\Z$ given by:
 \[
   a\sim_n b \qquad \text{if and only if} \qquad n\mid a-b
 \]
-The collection of equivalence classes will be denoted $\Z_n$ (or if the reader is studying ring theory,
-$\Z/n\Z$\footnote{This is because $\Z/n\Z$ is the ring $\Z$ modulo the ideal $n\Z$;
-see~\cite[chapter~9]{NateAlgebra} for more details}). For example, if $n = 12$, then the equivalence classes
-are:
+The collection of equivalence classes will be denoted $\Z_n$ (or if the reader is studying algebra, $\Z/n\Z$
+is the more natural and common notation\footnote{This is because $\Z/n\Z$ is the ring $\Z$ modulo the ideal $n\Z$,
+while $\Z_n$ usually denotes the localization-at-$n$ integers; see~\cite[chapter~9,
+chapter~20.3]{NateAlgebra} for more details}). For example, if $n = 12$, then the equivalence classes are:
 \[
-  \{[0],\ [1],\ [2],\ [3],\ [4],\ [5],\ [6],\ [7],\ [8],\ [9],\ [10],\ [11]\} = \Z_n
+  \{[0],\ [1],\ [2],\ [3],\ [4],\ [5],\ [6],\ [7],\ [8],\ [9],\ [10],\ [11]\} = \Z_{12}
 \]
 If two integers $a,b$ are equivalent modulo $n$, then $[a] = [b]$. Another very common notation is:
 \[
@@ -718,6 +718,9 @@ n$, and similarly if $a\cdot b = c$, then $a\cdot b \equiv c \mod n$. Thus, thes
 preserve the arithmetic properties of $\Z$; such an equivalence relation is called a \emph{congruence
 relation}. If the reader has seen the axioms of a field, then if $n=p$ is prime, $\Z_p$ satisfies the axioms
 of a field; otherwise there is always two numbers $[a],[b] \in \Z/n\Z$ such that $[a]\cdot[b] = [ab] = [0]$.
+% If the reader is studying group theory, then the natural way (and in fact standard way) of defining $\Z_n$ is
+% by taking the natural projection map $\pi: \Z \to \Z_{12}$ given by $\pi(a) = [a]$ and induce the group
+% structure on $\Z_{12}$
 
 
 

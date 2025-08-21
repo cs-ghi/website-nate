@@ -84,6 +84,37 @@
       \verb http://arxiv.org/abs/1705.10769
       \endverb
     \endentry
+    \entry{chanCorresondenceHilbertPolynomial2004}{preprint}{}
+      \name{author}{1}{}{%
+        {{hash=9a3413ce747c1d16ae1d43adbf66161a}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={C.-Y.\bibnamedelimi Jean},
+           giveni={C\bibinithyphendelim Y\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a3413ce747c1d16ae1d43adbf66161a}
+      \strng{fullhash}{9a3413ce747c1d16ae1d43adbf66161a}
+      \strng{bibnamehash}{9a3413ce747c1d16ae1d43adbf66161a}
+      \strng{authorbibnamehash}{9a3413ce747c1d16ae1d43adbf66161a}
+      \strng{authornamehash}{9a3413ce747c1d16ae1d43adbf66161a}
+      \strng{authorfullhash}{9a3413ce747c1d16ae1d43adbf66161a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Corresondence between Hilbert Polynomial and Chern Polynomials over Projective Spaces}
+      \field{year}{2004}
+      \verb{doi}
+      \verb 10.48550/arXiv.math/0406588
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/math/0406588
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/math/0406588
+      \endverb
+      \warn{\item preprint entry 'chanCorresondenceHilbertPolynomial2004' (bibliography.bib): Invalid format '2004-06-28 2004-06-28' of date field 'date' - ignoring}
+    \endentry
     \entry{NateKTheory}{book}{}
       \name{author}{1}{}{%
         {{hash=17e33e23808fa6250bed45d881448509}{%
@@ -110,6 +141,66 @@
       \endverb
       \verb{url}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_K-Theory.pdf
+      \endverb
+    \endentry
+    \entry{NateAlgTop}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{3}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Everything You Need To Know About Algebraic Topology}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algebraic_topology.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algebraic_topology.pdf
+      \endverb
+    \endentry
+    \entry{hirzebruchTopologicalMethodsAlgebraic1995}{book}{}
+      \name{author}{1}{}{%
+        {{hash=56712abe839de5971ea62127a156c577}{%
+           family={Hirzebruch},
+           familyi={H\bibinitperiod},
+           given={Friedrich},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{56712abe839de5971ea62127a156c577}
+      \strng{fullhash}{56712abe839de5971ea62127a156c577}
+      \strng{bibnamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authorbibnamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authornamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authorfullhash}{56712abe839de5971ea62127a156c577}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Topological Methods in Algebraic Geometry}
+      \field{year}{1995}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
+      \endverb
+      \verb{url}
+      \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
       \endverb
     \endentry
     \entry{leeIntroductionRiemannianManifolds2018}{book}{}
@@ -146,37 +237,64 @@
       \verb http://link.springer.com/10.1007/978-3-319-91755-9
       \endverb
     \endentry
-    \entry{hirzebruchTopologicalMethodsAlgebraic1995}{book}{}
+    \entry{fultonIntersectionTheory1984}{book}{}
       \name{author}{1}{}{%
-        {{hash=56712abe839de5971ea62127a156c577}{%
-           family={Hirzebruch},
-           familyi={H\bibinitperiod},
-           given={Friedrich},
-           giveni={F\bibinitperiod}}}%
+        {{hash=205bfcbd8ec5b58401ee1d5cbd94a5de}{%
+           family={Fulton},
+           familyi={F\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
       }
       \list{publisher}{1}{%
-        {Springer}%
+        {Springer-Verlag}%
       }
-      \strng{namehash}{56712abe839de5971ea62127a156c577}
-      \strng{fullhash}{56712abe839de5971ea62127a156c577}
-      \strng{bibnamehash}{56712abe839de5971ea62127a156c577}
-      \strng{authorbibnamehash}{56712abe839de5971ea62127a156c577}
-      \strng{authornamehash}{56712abe839de5971ea62127a156c577}
-      \strng{authorfullhash}{56712abe839de5971ea62127a156c577}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \strng{namehash}{205bfcbd8ec5b58401ee1d5cbd94a5de}
+      \strng{fullhash}{205bfcbd8ec5b58401ee1d5cbd94a5de}
+      \strng{bibnamehash}{205bfcbd8ec5b58401ee1d5cbd94a5de}
+      \strng{authorbibnamehash}{205bfcbd8ec5b58401ee1d5cbd94a5de}
+      \strng{authornamehash}{205bfcbd8ec5b58401ee1d5cbd94a5de}
+      \strng{authorfullhash}{205bfcbd8ec5b58401ee1d5cbd94a5de}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{title}{Topological Methods in Algebraic Geometry}
-      \field{year}{1995}
+      \field{isbn}{978-0-387-12176-5}
+      \field{title}{Intersection Theory}
+      \field{year}{1984}
       \field{dateera}{ce}
-      \verb{urlraw}
-      \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
-      \endverb
-      \verb{url}
-      \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
-      \endverb
+    \endentry
+    \entry{gallierComplexAlgebraicGeometry2011}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4cf59b50463b475dc0aac665915d2ac1}{%
+           family={Gallier},
+           familyi={G\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0566424ec48b1de4e22c36decce2f4b4}{%
+           family={Shatz},
+           familyi={S\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{fullhash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{bibnamehash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{authorbibnamehash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{authornamehash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{authorfullhash}{180697101a4f8670ddf20e9b4c177f5a}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{25}
+      \field{month}{2}
+      \field{title}{Complex Algebraic Geometry}
+      \field{volume}{1}
+      \field{year}{2011}
+      \field{dateera}{ce}
     \endentry
     \entry{chowCompactComplexAnalytic1949}{article}{}
       \name{author}{1}{}{%
@@ -282,6 +400,34 @@
       \field{title}{Introduction to Algebraic Curves}
       \field{volume}{78}
     \endentry
+    \entry{NateAlgebra}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{4}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Everything You Need To Know About Undergraduate Algebra}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algebra.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algebra.pdf
+      \endverb
+    \endentry
     \entry{NateDiffGeo}{book}{}
       \name{author}{1}{}{%
         {{hash=17e33e23808fa6250bed45d881448509}{%
@@ -296,7 +442,7 @@
       \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
-      \field{extraname}{3}
+      \field{extraname}{5}
       \field{sortinit}{X}
       \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
       \field{labelnamesource}{author}
@@ -308,6 +454,35 @@
       \endverb
       \verb{url}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_differential_geometry.pdf
+      \endverb
+    \endentry
+    \entry{hatcherVectorBundlesKTheory2017}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={Allen},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2.0}
+      \field{title}{Vector Bundles \& K-Theory Book}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://pi.math.cornell.edu/~hatcher/VBKT/VBpage.html
+      \endverb
+      \verb{url}
+      \verb https://pi.math.cornell.edu/~hatcher/VBKT/VBpage.html
       \endverb
     \endentry
     \entry{NateComplexAnalysis}{book}{}
@@ -324,7 +499,7 @@
       \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
-      \field{extraname}{4}
+      \field{extraname}{6}
       \field{sortinit}{X}
       \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
       \field{labelnamesource}{author}

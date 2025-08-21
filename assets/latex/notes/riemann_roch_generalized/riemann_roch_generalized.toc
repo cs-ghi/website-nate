@@ -1,28 +1,22 @@
-\contentsline {section}{\numberline {1}Poincar\'e-Hopf Formula}{4}{section.1}%
-\contentsline {section}{\numberline {2}About Normalization}{5}{section.2}%
-\contentsline {section}{\numberline {3}The Riemann-Roch Theorem}{9}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Dimension of $\Omega ^1(C)$}{12}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Two Important Theorems}{18}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Riemann Inequality}{20}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Application of Riemann-Roch Theorem}{24}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Genus 0}{25}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Genus 1}{25}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Genus $\ge 2$: Canonical Map}{30}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Hyperelliptic Compact Riemann Surfaces}{32}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Genus 2 always hyperelliptic}{36}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Genus 3}{36}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Genus 4}{38}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Abel's Theorem and its Applications}{39}{subsection.4.8}%
-\contentsline {subsection}{\numberline {4.9}Applications of Abel's Theorem}{41}{subsection.4.9}%
-\contentsline {section}{\numberline {5}Riemann Roch in Modern Language}{43}{section.5}%
-\contentsline {section}{\numberline {6}Generalized Riemann Roch: Vector Bundles}{43}{section.6}%
-\contentsline {section}{\numberline {7}Terms for G-bundles}{46}{section.7}%
-\contentsline {section}{\numberline {8}Some Hodge Theory}{46}{section.8}%
-\contentsline {section}{\numberline {9}L-Genus and Todd Genus}{50}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Todd Class Fixes Commutative Diagram}{50}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Multiplicative sequences}{51}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Todd Genus}{56}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Pontryagin and Chern Numbers}{60}{subsection.9.4}%
-\contentsline {section}{\numberline {10}Some Cobordism}{61}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Index and Virtual index}{65}{subsection.10.1}%
-\contentsline {section}{\numberline {11}RR for algebraic manifolds (i.e. projective verities)}{65}{section.11}%
+\contentsline {chapter}{\numberline {1}Gallier Complex Analysis}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Riemann Roch in Modern Language}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Generalized Riemann Roch: Vector Bundles}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Terms for G-bundles}{10}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Hodge stuff}{10}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Key Results from Topological Methods from Algebraic Geometry}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Some Hodge Theory}{13}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Defining K\"ahler manifold}{19}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Euler Characteristic and Generalization}{20}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Properties of $\chi _y$-characteristic}{22}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Virtual $\chi _y$-characteristic}{25}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Fundamental Kodaira Results}{25}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}virtual $\chi _y$-characteristic for algebraic manifolds}{28}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}L-Genus and Todd Genus}{28}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Todd Class Fixes Commutative Diagram}{28}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Multiplicative sequences}{28}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Todd Genus}{34}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Pontryagin and Chern Numbers}{38}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Some Cobordism}{39}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Index and Virtual index}{43}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}RR for algebraic manifolds (i.e. projective verities)}{43}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Organization Ideas}{47}{chapter.3}%

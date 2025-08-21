@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber clock_arithmetic"] 1751212785 "clock_arithmetic.bcf" "clock_arithmetic.bbl" "clock_arithmetic" 1751213407 0
-  "./bibliography.bib" 1750965615 1695 7553fb27899ab35af537a49f4b37dfb4 ""
-  "clock_arithmetic.bcf" 1751213406 108118 f3ba44c178e2212d68122514df310105 "pdflatex"
+["biber clock_arithmetic"] 1755011526 "clock_arithmetic.bcf" "clock_arithmetic.bbl" "clock_arithmetic" 1755012081 0
+  "./bibliography.bib" 1752005598 1695 e791ccf57c81dc22435e97ed36fd86c1 ""
+  "clock_arithmetic.bcf" 1755012081 108118 f3ba44c178e2212d68122514df310105 "pdflatex"
   (generated)
   "clock_arithmetic.bbl"
   "clock_arithmetic.blg"
   (rewritten before read)
-["pdflatex"] 1751213402 "clock_arithmetic.tex" "clock_arithmetic.pdf" "clock_arithmetic" 1751213407 0
+["pdflatex"] 1755012078 "clock_arithmetic.tex" "clock_arithmetic.pdf" "clock_arithmetic" 1755012081 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1136768653 1536 c09172c8f235393e6235bb4758357c41 ""
@@ -49,6 +49,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1248133631 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
@@ -307,10 +308,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684428852 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "clock_arithmetic.aux" 1751213406 5552 1c44a55dc1f06b63a7859c0eae311120 "pdflatex"
-  "clock_arithmetic.bbl" 1751212788 5402 e779eded59314139de04af230088d25c "biber clock_arithmetic"
-  "clock_arithmetic.run.xml" 1751213406 2391 7ee436163d4b5b2af5cb515b26c80607 "pdflatex"
-  "clock_arithmetic.tex" 1751213401 44033 752ca791b7e7e6d5717e6bda5dc54f17 ""
+  "clock_arithmetic.aux" 1755012081 5552 735073b58626915d6592267c0987e958 "pdflatex"
+  "clock_arithmetic.bbl" 1755011529 5402 af0578275f8e6e3037dc2a9b459199a0 "biber clock_arithmetic"
+  "clock_arithmetic.run.xml" 1755012081 2391 7ee436163d4b5b2af5cb515b26c80607 "pdflatex"
+  "clock_arithmetic.tex" 1755012074 44389 e6e0044ea7ab8dff1a75b04dedd19a1e ""
   (generated)
   "clock_arithmetic.aux"
   "clock_arithmetic.bcf"

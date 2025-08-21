@@ -41,10 +41,10 @@
       \field{title}{Everything You Need To Know About Elliptic Curves}
       \field{year}{NA}
       \verb{urlraw}
-      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_elliptic_curves.pdf
+      \verb https://nathanaelsrawley.com/assets/pdfs/books/EYNTKA_elliptic_curves.pdf
       \endverb
       \verb{url}
-      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_elliptic_curves.pdf
+      \verb https://nathanaelsrawley.com/assets/pdfs/books/EYNTKA_elliptic_curves.pdf
       \endverb
     \endentry
     \entry{NateCFT}{book}{}
@@ -68,10 +68,10 @@
       \field{labeltitlesource}{title}
       \field{title}{Everything You Need To Know About Class Field Theory}
       \verb{urlraw}
-      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_class_field_theory.pdf
+      \verb https://nathanaelsrawley.com/assets/pdfs/books/EYNTKA_class_field_theory.pdf
       \endverb
       \verb{url}
-      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_class_field_theory.pdf
+      \verb https://nathanaelsrawley.com/assets/pdfs/books/EYNTKA_class_field_theory.pdf
       \endverb
     \endentry
     \entry{fuchsIntroductionProofsProof}{book}{}
@@ -125,10 +125,10 @@
       \field{edition}{1}
       \field{title}{Everything You Need To Know About Undergraduate Algebra}
       \verb{urlraw}
-      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algebra.pdf
+      \verb https://nathanaelsrawley.com/assets/pdfs/books/EYNTKA_algebra.pdf
       \endverb
       \verb{url}
-      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algebra.pdf
+      \verb https://nathanaelsrawley.com/assets/pdfs/books/EYNTKA_algebra.pdf
       \endverb
     \endentry
   \enddatalist

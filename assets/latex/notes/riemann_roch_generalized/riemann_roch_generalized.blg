@@ -1,19 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'riemann_roch_generalized.blg'
-[50] biber-darwin:340> INFO - === Sun Aug 10, 2025, 17:32:22
-[63] Biber.pm:419> INFO - Reading 'riemann_roch_generalized.bcf'
-[119] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
-[132] Biber.pm:4419> INFO - Processing section 0
-[139] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[141] bibtex.pm:1713> INFO - LaTeX decoding ...
-[147] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[208] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[209] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[209] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[209] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[217] bbl.pm:660> INFO - Writing 'riemann_roch_generalized.bbl' with encoding 'UTF-8'
-[219] bbl.pm:763> INFO - Output to riemann_roch_generalized.bbl
-[219] Biber.pm:131> WARN - ISBN '978-0-387-94328-2 978-1-4612-0851-8' in entry 'silvermanAdvancedTopicsArithmetic1994' is invalid - run biber with '--validate_datamodel' for details.
-[220] Biber.pm:131> WARN - legacy year field 'NA' in entry 'NateEllipticCurve' is not an integer - this will probably not sort properly.
-[220] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[220] Biber.pm:133> INFO - WARNINGS: 3
+[57] biber-darwin:340> INFO - === Thu Aug 14, 2025, 08:56:07
+[69] Biber.pm:419> INFO - Reading 'riemann_roch_generalized.bcf'
+[125] Biber.pm:979> INFO - Found 5 citekeys in bib section 0
+[135] Biber.pm:4419> INFO - Processing section 0
+[144] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[145] bibtex.pm:1713> INFO - LaTeX decoding ...
+[152] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[192] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[192] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[192] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[192] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[199] bbl.pm:660> INFO - Writing 'riemann_roch_generalized.bbl' with encoding 'UTF-8'
+[201] bbl.pm:763> INFO - Output to riemann_roch_generalized.bbl
