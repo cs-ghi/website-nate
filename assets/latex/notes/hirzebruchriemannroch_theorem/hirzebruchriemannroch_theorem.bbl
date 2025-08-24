@@ -84,7 +84,7 @@
       \verb http://arxiv.org/abs/1705.10769
       \endverb
     \endentry
-    \entry{chanCorresondenceHilbertPolynomial2004}{preprint}{}
+    \entry{chanCorresondenceHilbertPolynomial2004}{unpublished}{}
       \name{author}{1}{}{%
         {{hash=9a3413ce747c1d16ae1d43adbf66161a}{%
            family={Chan},
@@ -112,6 +112,33 @@
       \endverb
       \verb{url}
       \verb http://arxiv.org/abs/math/0406588
+      \endverb
+    \endentry
+    \entry{hatcherAlgebraicTopology}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0a94eadf86d8b878d4c37bc5640e53e3}{%
+           family={Hatcher},
+           familyi={H\bibinitperiod},
+           given={Allen},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{fullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{bibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic Topology}
+      \verb{urlraw}
+      \verb https://pi.math.cornell.edu/~hatcher/AT/AT.pdf
+      \endverb
+      \verb{url}
+      \verb https://pi.math.cornell.edu/~hatcher/AT/AT.pdf
       \endverb
     \endentry
     \entry{NateKTheory}{book}{}
@@ -469,6 +496,7 @@
       \strng{authorbibnamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
       \strng{authornamehash}{0a94eadf86d8b878d4c37bc5640e53e3}
       \strng{authorfullhash}{0a94eadf86d8b878d4c37bc5640e53e3}
+      \field{extraname}{2}
       \field{sortinit}{X}
       \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
       \field{labelnamesource}{author}

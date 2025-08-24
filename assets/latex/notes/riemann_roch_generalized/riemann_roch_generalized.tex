@@ -2137,7 +2137,11 @@ where $r+2s =j$ and $p_i$ are the Pontryagin classes. Recall this gives us:
       &\vdots
 \end{align*}
 
-Then by our earlier work:
+The \textit{total Todd class} of a vector bundle, $\xi$, is
+\[
+  \text{td}(\xi)(t) = \sum_{j=0}^{\infty} \text{td}_j(c_1,\ldots,c_j)t^j = 1 + \frac{1}{2}c_1(\xi) + \frac{1}{12}(c_1^2(\xi) + c_2(\xi))t^2 + \frac{1}{24}(c_1(\xi)c_2(\xi))t^3 + \cdots
+\]
+By our earlier work:
 \[
   \td(\xi\oplus \xi') = \td(\xi)\td(\xi')
 \]
@@ -2243,11 +2247,6 @@ where $\tau$ is the index of $M_n$. More generally:
   \]
   \end{enumerate}
 
-  The \textit{total Todd class} of a vector bundle, $\xi$, is
-
-\[
-    \text{td}(\xi)(t) = \sum_{j=0}^{\infty} \text{td}_j(c_1,\ldots,c_j)t^j = 1 + \frac{1}{2}c_1(\xi) + \frac{1}{12}(c_1^2(\xi) + c_2(\xi))t^2 + \frac{1}{24}(c_1(\xi)c_2(\xi))t^3 + \cdots
-\]
 
 \end{prop}
 
@@ -2662,13 +2661,264 @@ How did this come to be :
 
 here
 
+Very important theorem!
+
+\begin{thm}{1st Chern Class of Codimension 1 Complex Manifold}{1stChernClassofCodimension1ComplexManifold}
+Let $j: X \to Y$ be the embedding of an oriented compact rael $(m-2)$-dimensional differentiable manifold $X$ in an
+oriented compact $m$-dimensional differentiable manifold $Y$. Let $h_X \in H^2(Y,\mathbb{Z})$ be the cohomology
+class defined, with respect to the given orientations, by the $(m-2)$-dimensional homology class represented
+by $X$. Let $N_{X/Y}$ be the normal bundle of $X$ in $Y$. Then
+\[
+  c_1(N_{X/Y}) = j^*(h_X)
+\]
+\end{thm}
+
+\begin{Proof}
+  \cite[theorem 4.8.1]{hirzebruchTopologicalMethodsAlgebraic1995}
+\end{Proof}
+
+\begin{thm}{Relating Chern and Pontryagin Classes}{relatingChernandPontryaginClasses}
+Let $\xi$ be a $\mathbf{U}(q)$-bundle over $X$. Then
+\[
+    \tilde{p}(\varrho(\xi)) = 1 - p_1(\varrho(\xi)) + p_2(\varrho(\xi)) - p_3(\varrho(\xi)) + \cdots
+\]
+\[
+    = (1 + c_1(\xi) + c_2(\xi) + \cdots)(1 - c_1(\xi) + c_2(\xi) - \cdots).
+\]
+\end{thm}
+
+\begin{Proof}
+  \cite[theorem~4.5.1]{hirzebruchTopologicalMethodsAlgebraic1995}
+\end{Proof}
+
+\begin{thm}{Relation For Almost Complex Manifolds}{relationForAlmostComplexManifolds}
+  The Chern classes $c_i$ of the almost complex manifold $X$ are related to the Pontryagin classes $p_i$ of $X$ (regarded as a differentiable manifold) by the equation
+
+  \[
+      \tilde{p} = \sum_{i=0}^{\infty} (-1)^i p_i = \sum_{i=0}^{\infty} c_i \sum_{j=0}^{\infty} (-1)^j c_j.
+  \]
+
+\end{thm}
+
+\begin{Proof}
+  \cite[theorem~4.6.1]{hirzebruchTopologicalMethodsAlgebraic1995}
+\end{Proof}
+
+\section{Virtual index To Intersection Theory Objects}
+
+Let $M^n$ be a compact oriented smooth manifold, $j: V^{n-k} \to M^n$  an embedding of the oriented
+submanifold $V^{n-k}$. Let $N_{M/V}$ be the normal bundle of $V$ with respect to $M$. if $j^*$ is the
+cohomology pullback
+
+Then by some basic Riemannian geometry we have that we can embed $TV$ into $TM$ and we have:
+\[
+  TM = TV \oplus NV
+\]
+where $NV := N_{M/V}$ is the normal bundle. Thus, of $\cp$ is the total Pontryagin class:
+\[
+  j^*\cp(TM) = \cp(TV)\cdot \cp(NV) \mod\text{torsion}
+\]
+By~\cref{th:relationForAlmostComplexManifolds}:
+\[
+  \cp(NV) = j^*(1+v^2)
+\]
+Thus:
+\[
+  \cp(V) = j^*\left((1+v^2)^{-1} \cp(M)\right)
+\]
+Now, taking the $L$-genus and taking advantage of the multiplicative and naturality property we get:
+\[
+ L(j^*(TM) = j^*(L(TM)) = L(TV\oplus NV) = L(TV)\cdot T(NV)
+\]
+Thus we get:
+\[
+  j^*(L(TM)) = L(TV)) \cdot L(NV)
+\]
+Moving things around:
+\[
+  L(TV) = j^*(L(TM))\cdot L(NV)^*
+\]
+Since we know the normal bundle has a single Pontryagin root $\gamma = v^2$, we get:
+\[
+  L(NV) = \frac{v}{\tanh(v)}
+\]
+Finally, as $L(TM) = \sum_i^\infty L_i(TM) = \sum_i^\infty L_i(\cp_1(TM), ..., \cp_i(TM))$, we get:
+\[
+  L(TV) = \sum_{i=0}^\infty L_i(\cp_1(V), ..., \cp_i(V)) = j^* \left[ \frac{\tanh(v)}{v} \sum_{i=0}^\infty
+  L_i(\cp_1(M), ... \cp_i(M)\right]
+\]
+Using this, we take advantage of Hirzebruch's Signature Theorem to get $\tau(V)$. First, by Poincar\'e
+duality, if $x \in H^{n-2}(M, \Z)\otimes \Q$, then:
+\[
+  j^*(x)[V] = vx[M]
+\]
+Now, by Hirzebruch's signature theorem:
+\[
+  \tau(V) = \int_M \tanh \sum_{i=0}^\infty L_i(\cp_1(M), ..., \cp_i(M)
+\]
+Using the computational methods available to us we get:
+\begin{align*}
+  n = 2 \qquad& \tau(V^0) = \int_{M^2} v\\
+  n = 6 \qquad& \tau(V^4) \int_{M^6} \frac{1}{3}(-v^3 + \cp_1v)\\
+  n = 10 \qquad& \tau(V^8) = \int_{M^{10}} \frac{1}{45} (6v^5 - 5\cp_1 v^3 + (7p_2 - \cp_1^2)v)\\
+\end{align*}
+
+Now here is where interpreting Chern classes naturally in intersection theorem comes in. Say we have
+a collection $v_1, ..., v_r \in H^2(M, \Z)$. $v_1$ is associated to $V^2$. Now say $v_2$ is restricted to $V^{n-2}$ and
+is associated to $V^{n-4} \sse V^{n-2}$. Finally, $v_r$ is restricted to $V^{n-2(r-1)}$ and is associated to
+$V^{n-2r}$. Then if $j: V^{n-2r} \to M^n$, then:
+\[
+  j^*(x)[V^{n-2r}] = v_1v_2\cdots v_rx[M^n]
+\]
+Then applying the $L$-power series successfully, we get the index formula:
+\[
+  \tau(V^{n_2r}) = \int_{M^n} \tanh v_1\tanh v_2 \cdots \tanh v_r \sum_{i=0}^\infty L_i(\cp_1(M^n), ...,
+  \cp_i(M^n)
+\]
+Then for sure by~\cite{NateKTheory}, it was proven that every $2$-dimensional integral cohomology clsas of
+a compact oriented differentiable manifold $M^n$ can be represented by a submanifold $V^{n-2} \sse M^n$. By
+applying this result iteratively, we can justify the above equation. Thus, $\tau(V^{n-2r})$ depends only on
+the (unordered) choice of cohomology classes $v_1,v_2, ..., v_r$. Thus, we can write:
+\index{Virtual Index}
+\begin{defn}{Virtual Index}{virtualIndex}
+\[
+  \tau(v_1, ..., v_r) = \int_{M^n} \tanh v_1\tanh v_2 \cdots \tanh v_r \sum_{i=0}^\infty L_i(\cp_1(M^n), ...,
+  \cp_i(M^n)
+\]
+\end{defn}
+
+Every virtual index occurs as the index of a submanifold of $M^n$ and is thus an integer.
+
+Recall $\tanh$ satisfies:
+\[
+  \tanh(u+v) = \frac{\tanh(u) + \tanh(v)}{1  +\tanh(u)\tanh(v)}
+\]
+or as Hirzebruch writes it:
+\[
+  \tanh(u+v) = \tanh(u) + \tanh(v) - \tanh(u)\tanh(v)\tanh(u+v)
+\]
+This immediately gives:
+Here's the LaTeX code for the theorem:
+
+\begin{thm}{Functional Equation of Virtual Index}{funcEqOfVirtIndex}
+The virtual index is a function which associates an integer $\tau(v_1, v_2, \ldots, v_r)$ to each (unordered)
+$r$-ple $(v_1, v_2, \ldots, v_r)$ of 2-dimensional integral cohomology classes of a compact oriented
+differentiable manifold $M^n$. The function $\tau$ is zero if $n-2r \not\equiv 0$ modulo 4, if $2r > n$, or if
+one of the classes $v_i$ is zero. It satisfies the functional equation
+\[
+    \tau(v_1,\ldots,v_r,u+v) = \tau(v_1,\ldots,v_r,u) + \tau(v_1,\ldots,v_r,v) - \tau(v_1,\ldots,v_r,u,v,u+v)
+\]
+If $n = 4k+2$:
+\[
+  \tau(u+v) = \tau(u) + \tau(v) - \tau(u,v,u+v)
+\]
+\end{thm}
+
+(section 9.4 seems not important)
+
+
+\subsection{Virtual index into Intersection Theory}
+First, to define Pontryagin classes:
+\[
+  p_i(TX) = (-1)^i c_{2i}(TX \otimes \C)
+\]
+Instead of working with Pullback $j^*: H^*(X) \to H^*(V)$, we work with the Gysin map
+\[
+  j_*: A_k(X) \to A_{k-d}(X)
+\]
+where I replaced $V$ with $X$ in the codomain. Instead of working with cohomology classes, we can work with
+algebraic cycles in $A_*(X)$
+
+With this, the L-genus is still well-defined. For the L-genus, we just need to evaluate immediately.
+
+Everything goes through with the results by Hirzebruch since we're working with smooth quasi-proactive
+variate so that the cycle map is an isomorphism from a chow ring to a cohomology ring.
+
+\section{Virtual Genus to Intersection Theory Objects}
+
+Let:
+\[
+  c(M_n) = \sum_{i=0}^n c_i \qquad c(\xi) = \sum-{i=0}^q d_i
+\]
+where $\xi$ is a $\GL_q(\C)$-bundle, $c_i, d_i \in h^{2i}(M_n, \Z)$, $c_0 = d_0 = 1$. T-charactersitic defined
+as:
+\[
+  T(M_n, \xi) = \varkappa_n [\ch(\xi) \td(TM)] = \int_X \ch(\xi)\td(T_M)
+\]
+In the (important) spacial case whre $\xi$ is a line bundle, i.e. a $\C^*$-bundle, then its total Chern class is
+$1+d$ for $d \in H^2(M_n, \Z)$ and:
+\[
+  T(M_n, \xi) = \int_M e^d\td(T_X)
+\]
+
+Note the $T$-charactersitic can be given purley in terms of Todd genus:
+\[
+  T(M_n, d) = T(M_n) - T(-d)_M
+\]
+
+\begin{Proof}
+   Step 1: Define the Left-Hand Side (LHS)
+
+The left side of the equation, \(T(M_n, d)\), is the T-characteristic of a C\*-bundle (a line bundle) with first Chern class `d`.
+
+*   **From Equation (3) in §12.1:** This is explicitly defined as:
+    \[ T(M_n, d) = \varkappa_n [e^d \cdot \text{td}(\theta(M_n))] \]
+
+---
+
+ Step 2: Define the Right-Hand Side (RHS)
+
+The right side of the equation has two terms: \(T(M_n)\) and \(T(-d)_M\).
+
+*   **First Term, \(T(M_n)\):** This is the standard **Todd Genus** of the manifold $M_n$.
+    *   **From §10.2 (page 93):** The Todd genus is defined as the evaluation of the Todd class of the tangent bundle:
+    \[
+      T(M_n) = \varkappa_n [\text{td}(\theta(M_n))]
+    \]
+
+*   **Second Term, \(T(-d)_M\):** This is the **virtual Todd genus** of the virtual submanifold represented by the cohomology class `-d`.
+    *   **From §11.2 (page 95):** The virtual Todd genus $T(v_1, ..., v_r)_M$ is defined by setting `y=0` in the virtual $T_y$-genus.
+    *   The virtual $T_y$-genus is defined in equation (7) of §11.2 using the characteristic power series `R(y; x)`.
+    *   **From §11.1 (page 94):** The series for $y=0$ is $R(0; x) = 1 - e^{-x}$.
+    *   Therefore, the virtual Todd genus for a single class `v` is:
+    \[
+      T(v)_M = \varkappa_n [R(0; v) \cdot \text{td}(\theta(M_n))] = \varkappa_n [(1 - e^{-v}) \cdot \text{td}(\theta(M_n))]
+    \]
+    *   Substituting $v = -d$, we get:
+    \[
+      T(-d)_M = \varkappa_n [(1 - e^{-(-d)}) \cdot \text{td}(\theta(M_n))] = \varkappa_n [(1 - e^d) \cdot \text{td}(\theta(M_n))]
+    \]
+ Step 3: Combine and Simplify
+
+Now, we substitute these definitions back into the right-hand side of equation (4) and use the linearity of the \(\varkappa_n\) operator (which is essentially integration over the fundamental cycle).
+
+\begin{align*} T(M_n, d) &= T(M_n) - T(-d)_M \\ &= \varkappa_n[\text{td}(\theta(M_n))] - \varkappa_n[(1 - e^d) \cdot \text{td}(\theta(M_n))] \\ &= \varkappa_n[\text{td}(\theta(M_n)) - (1 - e^d) \cdot \text{td}(\theta(M_n))] \\ &= \varkappa_n[\left(1 - (1 - e^d)\right) \cdot \text{td}(\theta(M_n))] \\ &= \varkappa_n[\left(1 - 1 + e^d\right) \cdot \text{td}(\theta(M_n))] \\ &= \varkappa_n[e^d \cdot \text{td}(\theta(M_n))]
+\end{align*}
+
+This final expression is precisely the definition of the left-hand side, $T(M_n, d)$.
+
+Therefore, the identity **\(T(M_n, d) = T(M_n) - T(-d)_M\) is proven.**
+\end{Proof}
+
+\begin{prop}{Properties of T-characteristic}{propofT-characteristic}
+  \begin{enumerate}
+    \item $T(M_n, \xi\oplus \xi') = T(M_n, \xi) + T(M_n, \xi')$
+    \item $T(M\times N, \pi_M^*(\xi)\otimes \pi_N^*(\xi') = T(M, \xi)\cdot T(N, \xi')$
+  \end{enumerate}
+\end{prop}
+
+\begin{Proof}
+  immediate
+\end{Proof}
+
+Next, the important function to define is the generating function.
+
+
+\textcolor{red}{Okay I basically get it and see what I have to do to fix this so I will leave this be for now}
 
 
 
-
-
-
-
+\section{Virtual Characteristic to Intersection Theory Objects}
 
 
 

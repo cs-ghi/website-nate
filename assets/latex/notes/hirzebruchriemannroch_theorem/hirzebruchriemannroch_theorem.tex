@@ -641,6 +641,20 @@ instead of the ``intersection theory'' interpretation (for ex. given by~\cite{fu
 however I will point out some interesting ways in which the two are linked (ex. a quick connection to Serge
 classes).
 
+I also do a fundamentally different thing from Hirzebruch: besides being the literal opposite of
+``Bourbaki-dry'' I also change the order to present the geometric material and $\chi_y$-characteristic
+\emph{first} as it totally motivates why the Todd class is defined in this context. Hirzebruch does the
+opposite because he has been infected with the Bourbaki-dryness that I want to avoid.
+
+This paper will try to contain as many proofs as possible, but it is best considered as a foray of the path
+that build up to Hirzebruch Riemann Roch.
+
+Ultimate Hirzebruch goal:
+\[
+  T_1 = \chi_1 = \tau
+\]
+which is enough for them to agree.
+
 Notation:
 \begin{enumerate}
   \item I would like that $K$ or $k$ represent a field, but $K$ is already being used for $K(-)$ or the
@@ -653,7 +667,19 @@ Notation:
     \]
     for the pairing of the cohomology class $c$ with $Y$. If we want to make it more explicit, we shall write
     $\kappa_n[-]$ notation.
-   \item more here?
+   \item $A\dcup B$ represents disjoint union
+   \item $TM$ and $T_M$ represent tangent bundles. $N_{M/N}$ represent the normal bundle of $N$ with respect
+     to $M$.
+\end{enumerate}
+
+background:
+\begin{enumerate}
+  \item Riemann geometry: Riemann metric, Levi-Civita connection, Gauss-Bonnet, signature, orientation.
+    See~\cite{NateDiffGeo}
+  \item cohomology theory: Hatcher level of knowledge (\cite{hatcherAlgebraicTopology}), or
+    see~\cite{NateAlgTop}.
+   \item Theory of symmetric function (the basis that can be found in many group theory/field theory textbooks):
+     see~\cite{NateAlgebra}.
 \end{enumerate}
 
 \chapter{Motivation: Riemann Roch Problem}
@@ -1216,21 +1242,25 @@ Define $Z$-topology and $\C$-topology on a variety/closed manifold $X$.
 correspondence between some cohomology groups, but partitions of unity do not exist on $Z$-topology, so we
 ``fix this'' by the GAGA result)
 
-\chapter{Reviewing Characteristic Classes}\label{cha:characteristicClass}
+\chapter{Necessary Vector Bundle Theory}\label{cha:characteristicClass}
 
 \textcolor{red}{I think I need a word here on how to also translate all of this to sheaves!!}
+
 
 Let $E \to X$ be vector bundle, where $X$ is paracompact and finite dimensional (either as a manifold or
 topologically)\footnote{these conditions insure we get bijective maps between the cohomological spaces of
 sheaves and the underlying space}. A natural set of questions to ask is what are the possible (global)
-sections on $E$ with respect to $X$. A classical example of such this question is to ask if there are any
-non-vanishing global sections on $TS^2$ with respect to $S^2$ which the \emph{Hedgehog Theorem} asserts that
+sections on $E$ with respect to $X$. A classical example of this question is to ask if there are any
+non-vanishing global sections on $TS^2$ with respect to $S^2$; \emph{Hedgehog Theorem} (or infamously, the
+\emph{Hairy Ball Theorem}) asserts that
 no such global section can exist~\cite{NateAlgTop}. As local sections are easy to produce by taking advantage
 of local trivialization, the question is what type of \emph{obstructions} are there in producing a global
-sections. This is a natural \emph{cohomological} problem leading to the development of characteristic theory.
+sections. This is thus a cohomological problem.
+% and characteristic theory shows that there is a natural
+% functor from vector bundles to the cohomology ring of the base space that quantifies this information.
 
 By the work of mathematicians such as Chern, Thom, Whitney, and many others, there are natural transformations
-from the Vector-bundle functor to the cohomology functor:
+from the Vector-bundle functor to the cohomology functor of the underlying space:
 \[
   c: K_k(-) \Rw H^*
 \]
@@ -1244,29 +1274,28 @@ computational results. In this case, a \emph{characteristic class} would be a na
 where $b_G(-)$ is the functor taking $X$ to the isomorphism of principal $G$-bundles over $X$. Note that there
 can be more than one characteristic class. Uncurling the categorical language, these natural
 transformations associate to each principal $G$ bundle $P \to X\in b_G(X)$ an element $c(P) \in H^*$ such
-that $c(f^*(P)) = f^*(c(P))$, that is the pullback of the vector bundle commutes with the pullback of
-cohomology classes. The characteristic classes will be the ``right'' notion to capture the cohomological
+that $c(f^*(P)) = f^*(c(P))$ (i.e. the pullback of the vector bundle commutes with the pullback of
+cohomology classes) that is true up to isomorphism (and even homotopy). The characteristic classes will be the ``right'' notion to capture the cohomological
 information, in particular when working over real and complex vector bundles, the cohomology
-of the classifying space is given by the \emph{Stiefel-Whitney} and \emph{Chern} classes
+of the classifying space ($MO$ for real, $MU$ for complex) is given by the \emph{Stiefel-Whitney} and \emph{Chern} classes
 (see~\cite{NateKTheory}):
 \begin{equation}\label{eq:naturalCharClas}
-  H^*(\Grass_{\R, n}; \Z/2\Z) \cong \Z_2[w_1, ..., w_n] \qquad \text{and} \qquad  H^*(\Grass_{\C, n}; \Z)
+  H^*(MO; \Z/2\Z) \cong \Z_2[w_1, ..., w_n] \qquad \text{and} \qquad  H^*(MU; \Z)
   \cong \Z[c_1, ..., c_n]
 \end{equation}
-As our base spaces are (complete) varieties, we shall mainly focus on complex vector bundles and principal $\GL_n(\C)$-bundles.
-\textcolor{red}{look at commented, is it useful}
-% In these cases, the natural transformation is invariant under homotopy of the base space, and hence without
-% much trouble the structure group (or gluing group) of these vector bundles can be replaced by $U(n)$.
-We shall define the \emph{Chern class} and the \emph{Pontryagin class}: the Chern class is the natural
-characteristic class of complex vector bundles (as seen in equation~(\ref{eq:naturalCharClas})), while the
-Pontryagin class can be thought of as the characteristic classes of the complexification of a real vector
-bundle.
+As our base spaces are (complete) varieties, we shall mainly focus on complex vector bundles and principal
+$\GL_n(\C)$-bundles. The complex case works with \emph{Chern class} and the \emph{Pontryagin class}: the Chern class
+is the natural characteristic class of complex vector bundles (as seen in
+equation~(\ref{eq:naturalCharClas})), while the Pontryagin class can be thought of as the characteristic
+classes of the complexification of a real vector bundle.
 
 The Chern class is central to the Hirzebruch Riemann Roch as they are directly used in defining the Chern
 character and the Todd character. On the other hand, the Pontryagin classes shall be useful in that they will
-allow us to fully classify all cobordant rings, a result that will be necessary for \textcolor{red}{ref:HERE}.
+allow us to fully classify all cobordant rings, a result that will be necessary for only requiring checking
+$\chi$ agree s with $\int_X \ch(E)\td(T_X)$ on complex projective space.
 
-Another characteristic class that shall not cover be covered but is important to know is the \emph{Euler class}. As
+Another characteristic class that shall not cover be covered but is important to know as it is one of the
+generalizations of the Euler characteristic is the \emph{Euler class}. As
 the name suggests, the Euler class is linked to the Euler characteristic, in particular if $M$ is an oriented
 closed $n$-manifold, $TM$ the tangent bundle, $e(TM) \in H^n(M; \Z)$, and $[M] \in H_n(M; \Z)$ the fundamental class of $M$, then:
 \[
@@ -1276,15 +1305,16 @@ or, given the DeRham isomorphism, re-labeling the notation $e(TM)$ to the corres
 \[
   \int_M e(TM) = \chi(M)
 \]
-If $M$ where furthermore a Riemann manifold and $\Omega$ is the curvature form, then:
+If $M$ where furthermore a Riemann manifold, then the classical generalization of the Gauss-Bonnet theorem for
+manifolds without boundary (the \emph{Chern Theorem}) let's us replace $e$ with $\Omega$, the curvature form,
+giving:
 \[
   \int_M e(\Omega) = \chi(M)
 \]
-which the reader may recognize \emph{Chern's Theorem} (cite:HERE) (the generalization of the Gauss-Bonnet
-Theorem for Riemann surfaces without boundary). In other words, the Chern Theorem finds an alternative way of
-evaluating the Euler class at the fundamental class that relies on the curvature form $\Omega$ when it exists. The
-Hirzebruch Riemann Roch can seen as finding an alternative evaluation at the Euler class
-when the underlying space $M$ has enough structure for its characterization to be done via the Chern classes.
+In other words, the Chern Theorem finds an alternative way of evaluating the Euler class at the fundamental
+class that relies on the curvature form $\Omega$ when it exists. The Hirzebruch Riemann Roch can be seen as
+finding an alternative evaluation at the Euler class when the underlying space $M$ has enough structure for
+its characterization to be done via the Chern classes.
 
 Finally, the definition of Chern class and Pontryagin class taken here can be thought of as the ``classical''
 definition. In algebraic geometry, there is natural ``intersection theory'' perspective of of the Chern class
@@ -1541,7 +1571,7 @@ To characterize Pontryagin classes, we state the following:
 \end{Proof}
 
 What shall be important to use is the use of Pontryagin classes in the theory of cobordism in
-section~\ref{cah:cobordism}.
+section~\ref{cha:cobordism}.
 
 \textcolor{red}{Should put here the theorem linking Pontryagin and Chern class, ex. Theorem 4.6.1 in
 Hirzebruch or an equivalent from Hatcher.}
@@ -1685,285 +1715,35 @@ H^*(X; \Q) \arrow[r, "f_*"]             & H^*(Y; \Q)
 \end{tikzcd}
 \]
 
-\chapter{Reduction via Cobordism}\label{cha:cobordism}
-
-\textcolor{red}{I think I will need this here because this seems like a key reduction to the proof}
-
-\textcolor{red}{I don't want to define the $K$-genus just yet, even though I see that it is being used, but it
-is not being used in a central way. But I do need to understand how cobordism comes into the final result to
-understand how to better integrate this section. }
-
-Pontryagin classes will be important characterizing cobordism, and we shall need a bit of cobordism in the
-proof of HRR. What we shall show that that cobordant manifolds are characterized by their Pontryagin class. We
-start by creating the algebraic structure that are naturally induced by Pontryagin classes and then quote the
-result by Thom that shows it is isomorphic to the cobordant ring.
-
-\section{Characteristic Numbers}\label{sec:pontryaginNum}
-
-\textcolor{red}{include here a proof of theorem 4.10.1?? It shows $c_n(V)$ for $V$ n-dim almost complex man
-equal to Euler Char}
-
-Let $V^n$ be an oriented compact differentiable manifold where $n$ is the dimension. As $V$ is compact and
-orientable, it is a cycle, and by cohomology theory $V^n$ is generated by one element. The value of the
-$n$-dimensional cohomology class $x$ on the fundamental cycle $V^n$ is denoted $x[V^n]$.  if the coefficeints
-of the cohomology group are in $A$, then:
-\[
-  x \in H^n(V^n, A) \qquad x[V^n] \in A
-\]
-
-We can extend this by tensoring by a group $B$ so that :
-\[
-  x[V^n] \in A\otimes B \qquad x \in H^n(V^n, A)\otimes B
-\]
-For our purposes, let $n = 4k$ and let $p_i \in H^{4i}(V^{4k}, \Z)$ be the Pontryagin classes of $V^{4k}$
-(i.e. of its tangent bundle). We
-get a natural grading by the indices $i$ so that given $k = j_1 + j_2 + \cdots + j_r$ we get the product
-$p_{j_1}\cdots p_{j_r}$ and an integer (as $A = \Z)$:
-\[
-  p_{j_1}\cdots p_{j_r}[V^{4k}]
-\]
-Let $\pi(k)$ be the number of distinct partitions of $k$.
-
-\index{Pontryagin Numbers}\index{Chern Numbers}
-\begin{defn}{Pontryagin Numbers and Chern Number}{pontryaginNumbers}
-  The \emph{Pontryagin numbers} are the $\pi(k)$ numbers :
-  \[
-    p_{j_1}\cdots p_{j_r}[V^{4k}]
-  \]
-  where $n = 4k$. If $n$ is not divisible by $4$, then the Pontryagin number is $0$.
-
-  \qn
-  Similarly the \emph{Chern numbers} of a complex manifold $M$ (with an almost complex structure so that we
-  are given a particular orientation) are all:
-  \[
-    c_{j_1}\cdots c_{j_r}[V^{2k}]
-  \]
-  where $n = j_1 + j_2 + \cdots + j_r$ and the $j_i$ run through all partitions.
-\end{defn}
-
-By definition of the Euler class, if $M_n$ is an oriented almost complex manifold, $c_n[M_n] = \chi(M_n,
-TM_n)$. We shall focus on Pontryagin numbers as we shall need them to prove an important result in cohomology,
-and return to Chern numbers once we cover the Todd genus in chapter~\ref{cha:toddGenus}.
-
-We can define an equivalence relation where two manifolds $M\sim_\cp N$ if they have the same dimension and
-are the same Pontryagin number. Note that if the dimension is not divisible by $4$, all manifolds are in the
-same equivalence relation given by $\sim_\cp$ as they are all $0$.
-
-Now let $M,N$ be smooth $n =4k$ dimensional manifolds. Then by classical differential geometry we have
-$T(M\times N) = \pi_M^*(TM)\times \pi_N^*(TM)$ (consider for now the real tangent bundle, so it is
-a $\GL_n(R)$-bundle). Then considering the Pontryagin classes of $M,N$ and $M\times N$, by the properties of
-characteristic classes we get:
-\[
-  1 + p_1'' + p_2'' + \cdots = (1 + p_1 + p_2 + \cdots)(1 + p_1' + p_2' + \cdots)
-\]
-Or, as a generating function:
-\[
-  \sum_{k=0}^\infty p_k'' z^k = \sum_{i=0}^\infty f^*(p_i) z^i \sum_{j=0}^\infty g^*(p_j') z^j \mod \text{torsion}.
-\]
-In terms of the fundamental class:
-\[
-  (f^*(x)g^*(y))[M\times N] = x[M]\cdot y[N] \qquad \forall x \in H^n(M,\Z)\otimes B,\ y \in H^m(N,\Z)\otimes B
-\]
-This last property is simply the properties of $m$-sequences:
-
-\begin{lem}{Pontryagin Character and M-sequence}{pontryaginCharacterandM-sequence}
-  HERE
-\end{lem}
-
-\begin{Proof}
-
-\end{Proof}
-
-\section{Cobordism Ring}
-
-\index{Algebraic Cobordism Ring}
-\begin{defn}{Algebraic Cobordism Ring}{algCobordismRing}
-  Let $V^n, W^n$ be two oriented manifolds of the same dimension. Let $-V^n$ represent the reverse orientation.
-It is easy to see that:
-\[
-  K(V^n\dcup W^n) = K(V^n) + K(W^n) \qquad K(-V^n) = -K(V^n)
-\]
-Thus, $K(-)$ is compatible with the equivalence relation $\sim_\cp$ and creates an additive group
-$\widetilde{\Omega}^n$. Note that $\widetilde{\Omega}^n = 0$ if $4\nmid n$. Let $\widetilde{\Omega}
-\bigoplus_n \widetilde{\Omega}^n$ so that by the above equations we have the natural grading:
-\[
-  \widetilde{\Omega}^n \widetilde{\Omega}^m \sse \widetilde{\Omega}^{nm}
-\]
-And so $\widetilde{\Omega}$ is a commutative graded (torsion-free) ring.
-\end{defn}
-
-The ring was called ``algebraic'' as it was defined using the algebraic properties of Pontryagin classes, we
-shall soon define the ``geometric'' cobordant ring that is the equivalence classes of cobordant manifolds and
-show they are isomorphic. For now, let us characterize the algebraic structure of the algebraic cobordism
-ring: the goal is to show that
-\[
-  \widetilde{\Omega}\otimes \Q \cong \Q[x_1, x_2, ...]
-\]
-To that end, we must find which elements of $\widetilde{\Omega}$ can represent each $x_i$. There is no natural
-choice, hence we define ``candidate sequences'' of elements given by manifolds $V^4, V^8, V^{12}, ...$ that
-can be chosen to form this basis. We shall show these can be given by complex projective spaces of even
-dimension. Let us start by recalling that the Pontryagin class of $V^{4k}$ can be written in indeterminate $z$
-and decomposed into:
-\[
-  1 + p_1z + \cdots + p_kz^k = \prod_{i=1}^k (1 + \beta_iz)
-\]
-Define:
-\[
-  s(V^k) = (\beta_1^k + \cdots + \beta_k^k)[V^{4k}]
-\]
-By some symmetry function theory, we can think of this as needing the appropriate homogeneity and dimension
-properties We shall define a \emph{basis sequence} a sequence where:
-\[
-  s(V^{4k}) \ne 0
-\]
-
-\begin{thm}{Basis Sequence Correspondence}{basisSequenceCorresp}
-  Let $\{V^{4k}\}$ be a basis sequence and $B$ a [commutative] ring containing $\Q$. Then the set of sequences
-  $\{a_k\}_k$ where $a_k \in B$ are in bijective correspondence to the set of $m$-sequences $\{K_j(p_1, ...,
-  p_j)\}$ with coefficients in $B$ where $K(V^{4k}) = a_k$.
-\end{thm}
-
-\begin{Proof}
-  \cite[p.79]{hirzebruchTopologicalMethodsAlgebraic1995} (but it is simple)
-\end{Proof}
-
-\begin{thm}{Complex Projective Forms Basis Sequence}{complexProjFormsBasisSequence}
-  Let $\CP^{2k}$ be the $2k$-dimensional complex projective space. Then they form a basis sequence where
-  \[
-    s(\CP^{2k+1}) = 2k+1
-  \]
-\end{thm}
-
-\begin{Proof}
-  ibid; simple proof.
-\end{Proof}
-
-Let us now consider $\widetilde{\Omega}\otimes \Q$, so now $[V^{4k}]$ can be written as $\frac{a}{b}[V^{4k}]$.
-Certainly the Pontryagin number, $K$-genus, and $s(V^{4k})$ are all still well-defined (where the $K$-genus is
-well-defined as we required $B$ to contain $\Q$). Now, the Pontryagin number of an element of
-$\widetilde{\Omega}\otimes \Q$ can be a non-integer. This new ring can still be represented using a basis
-sequence:
-
-\begin{thm}{Basis Sequence With Rational Numbers Correspondence}{basisSequenceWithRationalNumbersCorresp}
-  Let $\{V^{4k}\}$ be a basis sequence of oriented manifolds, and let $(j) = (j_1, ...., j_r)$ be a partition
-  of $k$. Let $V_{(j)} = V^{4j_1}\times \cdots \times V^{4j_r}$. Then every $\alpha \in
-  \widetilde{\Omega}\otimes \Q$ can be uniquely represented by the sum:
-  \[
-    \alpha = \sum_{(j) \in \pi(j)} r_{(j)}[V_{(j)}] \qquad r_{(j)} \in \Q
-  \]
-  where the sum goes over all partitions of $k$. Furthermore, given a system $\{a_{(j)}\}$ of rational
-  numbers, there exists an element $\alpha \in \widetilde{\Omega}\otimes \Q$ where
-  \[
-    p_{(j)}[\alpha] = \alpha_{(j)}
-  \]
-\end{thm}
-
-\begin{Proof}
-  \cite[p.80]{hirzebruchTopologicalMethodsAlgebraic1995} (This is some linear algebra (recall the proof in comm. alg. using the Vandermonde Determinant)
-\end{Proof}
-
-
-\begin{thm}{Isomorphism of Algebraic Cobordism Ring}{isoofAlgebraicCobordismRing}
-  \[
-    \widetilde{\Omega}\otimes \Q \cong \Q[x_1, x_2, ....]
-  \]
-\end{thm}
-
-\begin{Proof}
-  Let $\{V^{4k}\}$ be an arbitrary sequence of oriented manifolds. What's left to show is that:
-  \begin{enumerate}
-    \item given $\alpha = \sum_{(j)} r_{(j)}[V_{(j)}]$ then $s(\alpha) = r_ks[V^{4k}]$
-    \item If for all $k$, every element of $\alpha \in \widetilde{\Omega}^{4k} \otimes \Q$ can be represented
-      as a sum $\alpha = \sum_{(j)}[V_{(j)}]$, then $\{V^{4k}\}$ is a basis sequence
-  \end{enumerate}
-  \cite[p.80]{hirzebruchTopologicalMethodsAlgebraic1995}
-\end{Proof}
-
-There is a natural question of smallest integers can represent a system of Pontryagin numbers and it invovles
-the $\mu$ that I skipped.
-
-Lastly, the $K$-genus can be characterized as being any homomorphism from the algebraic cobordism ring to
-$\Q$:
-
-\begin{thm}{Characterizing Rational Homomorphisms}{characterizingRationalHomo}
-  Let $\phi: \widetilde{\Omega}\otimes \Q \to \Q$ be a homomorphism. Then there exists a $K$ such that
-  $\phi(-) = K(-)$.
-\end{thm}
-
-\begin{Proof}
-  easy on p.81
-\end{Proof}
-
-\index{Geometric Cobordism Ring}
-\begin{defn}{Geometric Cobordism Ring}{geometricCobordismRing}
-  Two oriented smooth $n$-dimensional manifolds $M^n, N^n$ are \emph{cobordant} if there exist a manifold $C$ such that
-  \[
-    \partial C \cong (M^n \dcup  -N^n)
-  \]
-  where $-N^n$ is the reverse orientation; if such a $C$ exists it defines an equivalence relation $M\sim_\cc
-  N$ which respects disjoint union, reverse orientation, and direct product; $\dcup, -, \times$. Then
-  $\Omega^n$ is the collection of such equivalence classes and:
-  \[
-    \Omega = \bigoplus_n \Omega^n
-  \]
-  is the \emph{geometric cobordism ring}.
-\end{defn}
-
-Certainly this ring is graded, and it is \emph{anti-commutative}, namely:
-\[
-  \alpha\cdot \beta = (-1)\beta\cdot\alpha \qquad \alpha \in \Omega^n,\ \beta \in \Omega^m
-\]
-
-\textcolor{red}{He now goes onto to prove the isomorphism between this ring and the algebraic one, skipping
-for now.}
-
-An important theorem:
-
-\begin{thm}{Hirzebruch Signature Theorem}{hirzebruchSignatureThm}
-  Let $M$ be a real differentiable oriented manifold, and let $I(M)$ be its index. Then:
-  \begin{enumerate}
-    \item if $\dim_\R M\not\equiv 0\mod 4$, then
-      \[
-        I(M) = 0
-      \]
-    \item if $\dim_\R M\equiv 0\mod 4$, then:
-      \[
-        I(M) = L_k(p_1, ...., p_k)[M]
-      \]
-  \end{enumerate}
-\end{thm}
-
-\begin{Proof}
-  \cite[p.231]{gallierComplexAlgebraicGeometry2011}.
-\end{Proof}
-
-\section{Index and Virtual index}
-
-\cite[p.84-90]{hirzebruchTopologicalMethodsAlgebraic1995}
-
-\textcolor{red}{NOTE: in modern language, this step can be proven using the Atiyah-Singer theorem, but we will
-not rely on such heavy machinery, and also if we are not careful we can be circular as Hirzebruch Riemann Roch
-is consider to be generalized to Atiyah-Singer}
-
 \chapter{Cohomology of Varieties -- new Euler Characteristics}
 
 
 The Euler characteristic is in a sense ``too rough'' of an invariant for varieties. We require to capture some
 of the complex structure to find the right invariants. In particular, we shall refine the usual
 De-Rham/singular cohomology into \emph{Dolbeault} cohomology which shall capture the obstruction to
-a function/local section being holomorphic. This shall form a new collection cohomology groups (depending on
-the ``degree'') that will allow us to define new Euler-characteristics
+a function/local section being \emph{holomorphic}. This shall form a new collection cohomology groups (depending on
+the ``degree'') that will allow us to define new Euler-characteristics that generalize the topological Euler
+Characteristic.
 
-We shall start by defining the cohomology on complex manifolds allowing for the detection for the obstruction
-of a function from being holomorphic. Then, As all smooth projective manifold can be embedded into $\CP^n$
-have an algebraic equation by Chow's theorem (\textcolor{red}{ref:HERE}), there is a natural compatibility between
-the Riemann metric, simple tic form, and complex structure. This shall define K\"ahler manifolds, which are
-``almost'' a variety; after defining what it means to be positive we shall show that all positive K\"ahler
-manifolds are a (quasi projectile) smooth variety. We then show how many interesting new Euler-characteristics
-can be defined. We shall then end off by mentioning some important Vanishing theorems that would allow us to
-compute $H^0(X, \CF)$.
+We start by developing some basic Hodge theory. The key point is to show that the Dolbeault cohomology groups
+are finite dimensional, which is achieved by using the fact that elliptic operators have finite-dimensional
+kernels (see \textcolor{red}{ref:HERE}). Note that in the proof of Grothendieck Riemann Roch, this is replaced
+with the fact that $H^i(X, \SF)$ is finite-dimensional for $X$ projective and $F$ coherent
+(see~\cite{NateAlgGeo}, or~\cite{hartshorneAlgebraicGeometry2013}).
 
-From this, we shall be able to define properties of the Euler characteristic.
+Then, as all smooth projective manifold can be embedded into $\CP^n$ have an algebraic equation by Chow's
+theorem (\textcolor{red}{ref:HERE}), there is a natural compatibility between the Riemann metric, symplectic
+form, and complex structure. This shall define K\"ahler manifolds, which are ``almost'' a variety; after
+defining what it means to be positive (essentially, insuring the tangent bundle is ``very ample'') we shall
+show that all positive K\"ahler manifolds are a (quasi-projective) smooth variety. This will let us translate
+the results over to algebraic geometry.
+
+We then show how many interesting new Euler-characteristics can be
+defined. We shall then end off by mentioning some important Vanishing theorems that would allow us to compute
+$H^0(X, \CF)$.
+
+Finally, we define the derived Euler-characteristic which shall keep track of important intersection
+information that will be important in the proof of Hirzebruch Riemann Roch.
 
 % Let $X$ be a smooth complex projective manifold so that $X$ is a submanifold of $\CP^n$ and by Chow's
 % theorem algebraic. The Riemann metric on $\CP^n$ induces a metric on $X$. This metric is ``strongly
@@ -1971,22 +1751,27 @@ From this, we shall be able to define properties of the Euler characteristic.
 
 \section{Dolbeault Cohomology}
 
+Let $X$ be a complex manifold. For now, let it be one-dimensional. As holomorphic mappings respects complex and anti-complex structure, any 1-form
+with complex coefficients can be uniquely with respect written as a sum:
+\[
+   fdz + gd\overline{z}
+\]
+let $\Omega^{1,0}$ represent holomorphic $1$-forms, and $\Omega^{0,1}$ represent anti-holomorphic
+$1$-forms.The spaces $\Omega^{1,0}$ and $\Omega^{0,1}$ are both stable under holomorphic coordinate
+changes (use Cauchy-Riemann).
 
-Let $X$ be a complex manifold. Any 1-form with complex coefficients can be uniquely with respect written as a
-sum:
+A similar pattern takes shape in higher dimensions: let $X$ be $n$-dimensional. Like before, any $1$ form with
+complex coefficients can be written as:
 \[
   \sum_{j=1}^n (f_jdz^{j} + g_jd\overline{z}^j)
 \]
-
-Then we know that for every $r \in \N$, every smooth $r$-form on $X$ (with $\C$-coefficients) can be written
-as the sum of $(p,q)$-forms where $p+q = r$.
-In particular, let:
+Define:
 \[
   \Omega^{p,q} = \underbrace{\Omega^{1,0} \wedge \cdots \wedge \Omega^{1,0}}_{\text{$p$ times}}\wedge \underbrace{\Omega^{0,1} \wedge \cdots \wedge \Omega^{0,1}}_{\text{$q$ times}}
 \]
-where $\Omega^{1,0}$ is the $\C$-space generated locally by $dz$ and $\Omega^{0,1}$ generated locally by
-$d\overline{z}$. The spaces $\Omega^{1,0}$ and $\Omega^{0,1}$ are bot stable under holomorphic coordinate
-changes (use Cauchy-Riemann).
+Then we know that for every $r \in \N$, every smooth $r$-form on $X$ (with $\C$-coefficients) can be written
+as the sum of $(p,q)$-forms where $p+q = r$ (as the basis of these forms are wedge product of the lower
+dimensions, see~\cite{NateDiffGeo}, \cite{NateAlgTop}).
 
 Now, let $E^k$ be the space of all complex differential forms of total degree $k$. Then
 \[
@@ -2034,16 +1819,21 @@ Let us define the Dolbeault cohomology. Notice that $\overline{\partial}f = 0$ i
 therefore it is in some sense the ``natural'' choice; the other choice keeping track of the
 ``anti-holomorphic'' information. Thus, define:
 
-\[
-H^{p,q}(M) = \frac{\ker(\overline{\partial}: \Omega^{p,q} \to \Omega^{p,q+1})}{\text{im}(\overline{\partial}: \Omega^{p,q-1} \to \Omega^{p,q})}
+\index{Dolbeault Cohomology}
+\begin{defn}{Dolbeault Cohomology}{dolbeaultCohom}
+  \[
+H_{\overline{\partial}}^{p,q}(M) = \frac{\ker(\overline{\partial}: \Omega^{p,q} \to \Omega^{p,q+1})}{\text{im}(\overline{\partial}: \Omega^{p,q-1} \to \Omega^{p,q})}
 \]
-If we wanted to be precise, we could say $H_{\overline{\partial}}^{p,q}(M)$. As
+Were the $\overline{\partial}$ is dropped if it clear from context: $H^{p,q}(M)$.
+\end{defn}
+
+As
 \[
   H_{\overline{\partial}}^{p,q}(M) = \overline{H_{\partial}^{p,q}(M)}
 \]
 
 We see that the difference of choice is a difference in conjugation, and hence we stick to
-$\overline{\partial}$ for the reasons mentioned before.
+$\overline{\partial}$ for the holomorphic relation.
 
 For our purposes, we will naturally want to generalize this to the Dolbeault cohomology of vector bundles. let
 $E$ be a holomorphic vector bundle on a complex manifold $X$. Then take the map:
@@ -2062,15 +1852,22 @@ which acts on on a section $\alpha \otimes s \in \Omega^{p,q}(E)$ by:
   \overline{\partial}_E s
 \]
 This naturally extends linearly to any section of $\Omega^{p,q}(E)$ and $\overline{\partial}_E^2 = 0$. Thus,
-the Dolbeault cohomology with coefficient in $E$ is:
-\[
+the Dolbeault cohomology with coefficient in $E$.
+It is standard to check that the Dolbeault cohomology groups do not depend on the choice of Dolbeault operator
+$\overline{\partial}_E$ compatible with the holomorphic structure of $E$
+\cite{gallierComplexAlgebraicGeometry2011}, and so:
+\index{Dolbeault Cohomology For Vector Bundles}
+\begin{defn}{Dolbeault Cohomology For Vector Bundles}{dolbeaultCohomForVecBundles}
+  \[
 H^{p,q}(X,(E,\bar{\partial}_E)) = \frac{\ker(\bar{\partial}_E : \Omega^{p,q}(E) \to \Omega^{p,q+1}(E))}{\im(\bar{\partial}_E : \Omega^{p,q-1}(E) \to \Omega^{p,q}(E))}
 \]
-It is standard to check that the Dolbeault cohomology groups do not depend on the choice of Dolbeault operator
-$\overline{\partial}_E$ compatible with the holomorphic structure of $E$, and so it is simply denoted by:
+which is unambiguously denoted as:
 \[
   H^{p,q}(X,E)
 \]
+\end{defn}
+if $\mathbbm{1}$ is the trivial bundle, then we get back the usual Dolbeault cohomology.
+
 
 \textcolor{red}{phrase this in a better way for masters thesis}
 There is a ton of fascinating theory here which I will leave for when I explore hodge theory. Let $\Omega^p$
@@ -2276,7 +2073,7 @@ All of this is summarized in the following two theorems:
 Note that in general $h^{p,q}(M) \ne h^{q,p}(M)$; if $M$ is a K\"ahler manifold this will be the case.
 
 
-\section{Defining K\"ahler manifold}
+\section{Geometric-Algebraic Bridge: K\"ahler manifold}
 
 Let $M_n$ be a compact complex Riemann manifold. A hermitian metric on $M$ is defined as:
 \[
@@ -2326,11 +2123,133 @@ $B^{q,p}$ and $B^{p,q}$ which induces an isomorphism between these groups, and s
 Note that these numbers do not depend on the choice of K\"ahler metric ($d\alpha = 0$ for a harmonic
 $(p,q)$-form regardless of metric) and hence it is enough for a K\"ahler metric to exist.
 
+\section*{*Fundamental Kodaira Results}\label{sec:Kodaira}
+
+\textcolor{red}{INTEGRATE THIS}
+\cite[p.138]{hirzebruchTopologicalMethodsAlgebraic1995}
+
+He now goes define a \emph{Hodge Manifold} which is a K\"ahler manifolds whose fundamental class is in the
+image of the natural homomorphism $H^2(M, \Z) \to H^2(M, \R)$. \textcolor{red}{redundatnly, it was mentioned
+here that there are compact complex manifolds that are not K\"ahler}. There are K\"ahler manifolds that are not
+Hodge, and but all algebraic manifold are Hodge. Note this definition is done by defining a certain order which
+I omitted.
+
+\begin{thm}{Bertini Theorem}{bertiniThm}
+  Let $F$ be a projectively induced line bundle over the algebraic manifold $M$. Then a non-singular divisor
+  $D$ induces $F$, namely $F = \CL(D)$.
+\end{thm}
+
+This is actually a special case of the general Bertini theorem that you find when googling ``Bertini
+Theorem''.
+
+\begin{Proof}
+  will not prove
+\end{Proof}
+
+\begin{thm}{Characterizing Varieties Geoemtrically}{characterizingVarietiesGeoemtrically}
+  A compact complex manifold is a smooth complete variety (Hirzebruch: algebraic manifold) if and only if it is a Hodge Manifold.
+\end{thm}
+
+\begin{Proof}
+  not proven. It is a GAGA like result that is interesting.
+\end{Proof}
+
+Hirzebruch now states that we know that for two choices of complex vector bundles $E, E'$ over an algebraic
+manifold $M$, it can be that $\dim H^0(M, E) \ne H^0(M, E)$. But $\chi(M, E)$ does not depend on the
+continuous vector bundle $W$ and depends only on the Chern classes of $E$. He now introducing some vanishing
+theorems:
+
+\begin{thm}{Kodaira Vanishing Theorem}{kodariaVanishingThm}
+  Let $F$ be a complex line bundle over a compact complex manifold $M$. If $F^{-1}$ is positive, then the
+  cohomology group $H^i(M, F)$ vanish for all $i \ne n$.
+\end{thm}
+
+\textcolor{red}{I did not define positivity of a bundle, he did it at the beginning of this section}
+
+\begin{Proof}
+  proved by Kodaira
+\end{Proof}
+
+\textcolor{red}{INTEGRATE THIS:SOME STUFF HERE NEEDS CHAR STUFF}
+
+Using Serre duality, we get
+
+\begin{thm}{Kodaira Vanishing Theorem - Euler Characteristic}{kodairaVanishingThm-EulerChar}
+  let $F,M$ be as before and take $F\otimes K^{-1}$ for the canonical class $K$. If it is positive, then the
+  groups $H^i(M, F)$ vanish for all $i > 0$, so that:
+  \[
+    \dim h^0(M, F) = \chi(M, F)
+  \]
+\end{thm}
+
+\begin{Proof}
+  again Kodaira
+\end{Proof}
+
+\begin{thm}{Kodaira Vanishing Theorem II}{kodairaVanishingThmII}
+  Let $F$ be a complex line bundle over a hole manifold $M$, and let $F'$ be a positive line bundle over $M$.
+  Then
+  \[
+    H^i(M, F\otimes (F')^k)
+  \]
+  vanishg for all $i > 0$ and $k$ sufficiently large.
+\end{thm}
+
+\begin{Proof}
+  Kodaira.
+\end{Proof}
+
+From it we get:
+
+\begin{thm}{Characterizing Line Bundles On Algebraic Manifold}{characterizingLineBundlesOnAlgebraicManifold}
+  Let $M$ be an algebraic manifold, $F$ an analytic line bundle over $M$. Then there are projectively induced
+  line bundles $A,B$ where $F = A\otimes B^{-1}$. Thus, we have:
+  \[
+    F = \CL(A)\otimes \CL(B)^{-1}
+  \]
+\end{thm}
+
+\begin{Proof}
+  Hirzbruch actually proves this, see~\cite[p.141, thm~18.2.5]{hirzebruchTopologicalMethodsAlgebraic1995}.
+\end{Proof}
+
+Hirzebruch now states that he will make no distinction between a Hodge manifold and an algebraic manifold. In
+particular, if a compact complex manifold $M$ admits a Hodge metric, then $M$ is algebraic.
+
+\begin{thm}{Line Bundles Are Algebraic Over Projective Space}{lineBundlesAreAlgebraicOverProjSp}
+  let $L$ be a $\C$-fiber bundle over $M$ with $\CP^r$ as fibers and $\PGL_{r+1}(\C)$ as the structure group.
+  Then it is an algebraic manifold.
+\end{thm}
+
+\begin{Proof}
+  proved by Kodaira
+\end{Proof}
+
+
+We shall need a generization of the above for because we'll need the case where $F$ is the flag manifold $F(q)
+= \GL_q(\C)/\Delta(q,\C)$ and $L$ is the associated $\GL_q(\C)$-bundle $\xi$ over $M$.
+
+
+\begin{thm}{Borel Vanishing Theorem}{borelVanishingThm}
+  Let $L$ be a complex fibre bundle over the algebraic manifold $M$ with an algebraic manifold as fibre
+  and a connected structure group. Assume that the first Betti number of $F$ is zero. Then $L$ is itself
+  algebraic.
+\end{thm}
+
+\begin{Proof}
+  Borel, Hirzebruch gives a reference in~\cite[141]{hirzebruchTopologicalMethodsAlgebraic1995}
+\end{Proof}
+
+
+
+
+
 \section{Euler Characteristic and Generalization}\label{sec:eulerCharAndGeneralization}
 
-Let $M$ be a smooth compact manifold, $E$ a complex vector bundle (we shall introduce the K\"ahler assumption
-later). Now, as we have a double complex, we can
-define more than one Euler characteristic. First, recall there is the natural:
+In the final proof, we shall work with smooth projective varieties and locally free coherent sheaves, but it
+will do not harm in this section to let $M$ be a smooth compact manifold, $E$ a complex vector bundle. Now, as
+we have a double complex, we can define more than one Euler characteristic. First, recall there is the
+natural:
 \[
   \chi(M,E) = \sum_{i=0}^\infty \dim H^i(M,E) = \sum_{i=0}^n \dim H^i(M,E)
 \]
@@ -2470,7 +2389,6 @@ that each $\gamma_i$ is of type $(1,1)$, and therefore the cohomology classes of
 For future reference, notice that $\chi_y$ and $T_y$ (\cite[14.4]{hirzebruchTopologicalMethodsAlgebraic1995})
 agree, as they are both essentially equal to the Poincar\'e polynomial.
 
-
 \subsection{Properties of $\chi_y$-characteristic}\label{sec:propGenerlizedEulerChar}
 
 Part of the proof will requires some splitting properties that we can induct on. To that end, we shall develop
@@ -2481,7 +2399,7 @@ some more properties of $\chi_y$. Let
 \]
 be a short exact sequence of complex vector bundles. This naturally induces a short exact sequence of sheaves:
 \[
-  0 \to \CH(E') \to \CH(E) \to \CH(E'') \to 0
+  0 \to \CO_{E'} \to \CO_E \to \CO_{E''} \to 0
 \]
 which is left as an exercise in sheaf theory. What is important is that we get that we get that each new
 Euler-characteristic is additive on exact sequences:
@@ -2613,125 +2531,6 @@ Combining these together in a generating function, we get:
   \CL(D)^{-(i+1)}]
 \]
 
-
-
-\section{*Fundamental Kodaira Results}\label{sec:Kodaira}
-
-\cite[p.138]{hirzebruchTopologicalMethodsAlgebraic1995}
-
-He now goes define a \emph{Hodge Manifold} which is a K\"ahler manifolds whose fundamental class is in the
-image of the natural homomorphism $H^2(M, \Z) \to H^2(M, \R)$. \textcolor{red}{redundatnly, it was mentioned
-here that there are compact complex manifolds that are not K\"ahler}. There are K\"ahler manifolds that are not
-Hodge, and but all algebraic manifold are Hodge. Note this definition is done by defining a certain order which
-I omitted.
-
-\begin{thm}{Bertini Theorem}{bertiniThm}
-  Let $F$ be a projectively induced line bundle over the algebraic manifold $M$. Then a non-singular divisor
-  $D$ induces $F$, namely $F = \CL(D)$.
-\end{thm}
-
-This is actually a special case of the general Bertini theorem that you find when googling ``Bertini
-Theorem''.
-
-\begin{Proof}
-  will not prove
-\end{Proof}
-
-\begin{thm}{Characterizing Varieties Geoemtrically}{characterizingVarietiesGeoemtrically}
-  A compact complex manifold is a smooth complete variety (Hirzebruch: algebraic manifold) if and only if it is a Hodge Manifold.
-\end{thm}
-
-\begin{Proof}
-  not proven. It is a GAGA like result that is interesting.
-\end{Proof}
-
-Hirzebruch now states that we know that for two choices of complex vector bundles $E, E'$ over an algebraic
-manifold $M$, it can be that $\dim H^0(M, E) \ne H^0(M, E)$. But $\chi(M, E)$ does not depend on the
-continuous vector bundle $W$ and depends only on the Chern classes of $E$. He now introducing some vanishing
-theorems:
-
-\begin{thm}{Kodaira Vanishing Theorem}{kodariaVanishingThm}
-  Let $F$ be a complex line bundle over a compact complex manifold $M$. If $F^{-1}$ is positive, then the
-  cohomology group $H^i(M, F)$ vanish for all $i \ne n$.
-\end{thm}
-
-\textcolor{red}{I did not define positivity of a bundle, he did it at the beginning of this section}
-
-\begin{Proof}
-  proved by Kodaira
-\end{Proof}
-
-Using Serre duality, we get
-
-\begin{thm}{Kodaira Vanishing Theorem - Euler Characteristic}{kodairaVanishingThm-EulerChar}
-  let $F,M$ be as before and take $F\otimes K^{-1}$ for the canonical class $K$. If it is positive, then the
-  groups $H^i(M, F)$ vanish for all $i > 0$, so that:
-  \[
-    \dim h^0(M, F) = \chi(M, F)
-  \]
-\end{thm}
-
-\begin{Proof}
-  again Kodaira
-\end{Proof}
-
-\begin{thm}{Kodaira Vanishing Theorem II}{kodairaVanishingThmII}
-  Let $F$ be a complex line bundle over a hole manifold $M$, and let $F'$ be a positive line bundle over $M$.
-  Then
-  \[
-    H^i(M, F\otimes (F')^k)
-  \]
-  vanishg for all $i > 0$ and $k$ sufficiently large.
-\end{thm}
-
-\begin{Proof}
-  Kodaira.
-\end{Proof}
-
-From it we get:
-
-\begin{thm}{Characterizing Line Bundles On Algebraic Manifold}{characterizingLineBundlesOnAlgebraicManifold}
-  Let $M$ be an algebraic manifold, $F$ an analytic line bundle over $M$. Then there are projectively induced
-  line bundles $A,B$ where $F = A\otimes B^{-1}$. Thus, we have:
-  \[
-    F = \CL(A)\otimes \CL(B)^{-1}
-  \]
-\end{thm}
-
-\begin{Proof}
-  Hirzbruch actually proves this, see~\cite[p.141, thm~18.2.5]{hirzebruchTopologicalMethodsAlgebraic1995}.
-\end{Proof}
-
-Hirzebruch now states that he will make no distinction between a Hodge manifold and an algebraic manifold. In
-particular, if a compact complex manifold $M$ admits a Hodge metric, then $M$ is algebraic.
-
-\begin{thm}{Line Bundles Are Algebraic Over Projective Space}{lineBundlesAreAlgebraicOverProjSp}
-  let $L$ be a $\C$-fiber bundle over $M$ with $\CP^r$ as fibers and $\PGL_{r+1}(\C)$ as the structure group.
-  Then it is an algebraic manifold.
-\end{thm}
-
-\begin{Proof}
-  proved by Kodaira
-\end{Proof}
-
-
-We shall need a generization of the above for because we'll need the case where $F$ is the flag manifold $F(q)
-= \GL_q(\C)/\Delta(q,\C)$ and $L$ is the associated $\GL_q(\C)$-bundle $\xi$ over $M$.
-
-
-\begin{thm}{Borel Vanishing Theorem}{borelVanishingThm}
-  Let $L$ be a complex fibre bundle over the algebraic manifold $M$ with an algebraic manifold as fibre
-  and a connected structure group. Assume that the first Betti number of $F$ is zero. Then $L$ is itself
-  algebraic.
-\end{thm}
-
-\begin{Proof}
-  Borel, Hirzebruch gives a reference in~\cite[141]{hirzebruchTopologicalMethodsAlgebraic1995}
-\end{Proof}
-
-
-
-
 \section{$\chi_y$-characteristic and Splitting Principle}\label{sec:virtualEulerChar}
 
 skipping for now
@@ -2740,6 +2539,610 @@ skipping for now
 \subsection{special case: varieties}\label{sec:virtualEulerCharOnProjVar}
 
 here
+
+\chapter{Reduction via Cobordism}\label{cha:cobordism}
+
+\textcolor{red}{Note that if we took the GRR route, we can circumnavigate all of this with intersection
+theory, but it is cool for its conenction to ASIT}
+
+
+By Stoke's Theorem, if $\omega$ is a form on a manifold $M$ with boundary $\partial M$, then:
+\[
+  \int_{\partial M} \omega = \int_M d\omega
+\]
+Thus, figuring out the possible manifolds $N$ such that $N = \partial M$ is a worth-while endeavor. With a bit
+of elementary effort, it can be shown that $N = \RP^2$ is not the boundary of any $3$-manifold $M$, and so
+the answer is false in general, but this also spurs the question of trying to classify manifolds ``up to
+boundary''. This leads to the following notion:
+
+\index{Cobordant}
+\begin{defn}{Cobordant}{cobordant}
+  let $M,N$ be two topological $n$ manifolds. Then $M,N$ are \emph{cobordant} if there exists a manifold $C$
+  such that
+  \[
+    \partial C = M \dcup N
+  \]
+  If $M = \partial C$, then $M$ is said to be null-cobordant (cobordant to the empty set).
+\end{defn}
+
+The cobordism operation defines a natural ring structure (addition by cobordism, multiplication under direct
+product), prompting find which ring it is isomorphic to as
+well as find generators of the ring. This culminates in two important results:
+\begin{enumerate}
+  \item The cobordism ring $\Omega$ is isomorphic to $\Q[x_1, x_2, ..., x_n, ...]$ where $[\CP^i] \mapsto x_i$
+  \item The \emph{signature} of Riemann manifold (see~\cite{NateDiffGeo}) is a homomorphism from the cobordism
+    ring to $\Q$
+\end{enumerate}
+
+
+The key result this gives us is that it represents all cobordism equivalence classes using Pontryagin classes,
+and will be shown to reduce showing our desire result only on complex projective space.
+
+In this section, the manifolds shall be real manifolds.
+
+% will be important characterizing cobordism. What we shall show that that cobordant manifolds are characterized by their Pontryagin class. We
+% start by creating the algebraic structure that are naturally induced by Pontryagin classes and then quote the
+% result by Thom that shows it is isomorphic to the cobordant ring.
+
+% \textcolor{red}{I don't want to define the $K$-genus just yet, even though I see that it is being used, but it
+% is not being used in a central way. But I do need to understand how cobordism comes into the final result to
+% understand how to better integrate this section. }
+
+% \textcolor{red}{I was COMPLETELY WRONG in my above comment. A genus is a homomorphism from the cobordism ring
+%   to some ring R, so in fact this is EXACTLY where it should be defined:
+%   \url{https://ncatlab.org/nlab/show/genus}. And cobordism via the index is THE invariant connecting the Todd
+% class and Euler invariant}
+%
+% \textcolor{red}{include here a proof of theorem 4.10.1?? It shows $c_n(V)$ for $V$ n-dim almost complex man
+% equal to Euler Char}
+
+\section{(Oriented) Cobordism Ring}\label{sec:pontryaginNum}
+
+
+
+Let $V^n$ be an oriented compact differentiable manifold where $n$ is the dimension. As $V$ is compact and
+orientable, it is a cycle, and by cohomology theory $H^n(V^n, \Z)$ is generated by one element. The value of the
+$n$-dimensional cohomology class $x$ on the fundamental cycle $V^n$ is denoted $x[V^n]$.  If the coefficients
+of the cohomology group are in $A$, then:
+\[
+  x \in H^n(V^n, A) \qquad x[V^n] \in A
+\]
+
+We can extend this by tensoring by a group $B$ so that :
+\[
+  x[V^n] \in A\otimes B \qquad x \in H^n(V^n, A)\otimes B \cong H^n(V^n, B)
+\]
+For our purposes, let $n = 4k$ and let $p_i \in H^{4i}(V^{4k}, \Z)$ be the Pontryagin classes of $V^{4k}$
+(i.e. of its tangent bundle). We
+get a natural grading by the indices $i$ so that given $k = j_1 + j_2 + \cdots + j_r$ we get the product
+$p_{j_1}\cdots p_{j_r}$ and an integer (as $A = \Z)$:
+\[
+  p_{j_1}\cdots p_{j_r}[V^{4k}]
+\]
+Let $\pi(k)$ be the number of distinct partitions of $k$.
+
+\index{Pontryagin Numbers}\index{Chern Numbers}
+\begin{defn}{Pontryagin Numbers and Chern Number}{pontryaginNumbers}
+  The \emph{Pontryagin numbers} are the $\pi(k)$ numbers :
+  \[
+    p_{j_1}\cdots p_{j_r}[V^{4k}]
+  \]
+  where $n = 4k$. If $n$ is not divisible by $4$, then the Pontryagin number is $0$.
+
+  \qn
+  Similarly the \emph{Chern numbers} of a complex manifold $M$ (with an almost complex structure so that we
+  are given a particular orientation) are all:
+  \[
+    c_{j_1}\cdots c_{j_r}[V^{2k}]
+  \]
+  where $n = j_1 + j_2 + \cdots + j_r$ and the $j_i$ run through all partitions.
+\end{defn}
+
+By definition of the Euler class, if $M_n$ is an oriented almost complex manifold, $c_n[M_n] = \chi(M_n,
+TM_n)$, showing that the Pontryagin/Chern numbers are ``generalizations'' of the Euler characteristic. We
+shall focus on Pontryagin numbers as we shall need them for the classification result, and return to Chern
+numbers once we cover the Todd genus in chapter~\ref{cha:toddGenus}.
+
+We can define an equivalence relation where two manifolds $M\sim_\cp N$ if they have the same dimension and
+are the same Pontryagin number. Note that if the dimension is not divisible by $4$, all manifolds are in the
+same equivalence relation given by $\sim_\cp$ as they are all $0$.
+
+If $M, N$ are disjoint, the Pontryagin numbers of $M\dcup N$ is the sum of the Pontryagin numbers of $M,N$;
+this comes straight from the properties of characteristic classes. Let us show the same works for the product
+of manifolds. Now let $M,N$ be smooth $n =4k$ dimensional manifolds. Then by classical differential geometry we have
+$T(M\times N) = \pi_M^*(TM)\times \pi_N^*(TM)$. Then:
+\[
+  (\pi_M^*(x)\pi_N^*(y))[M\times N] = x[M]\cdot y[N] \qquad \forall x \in H^n(M,\Z)\otimes B,\ y \in H^m(N,\Z)\otimes B
+\]
+Thus, we can extend this results to characteristic sequences of Pontryagin classes.
+Considering the Pontryagin classes of $M,N$ and $M\times N$:
+\begin{align*}
+  &1, \cp_1, \cp_2, ...\\
+  &1, \cp_1', \cp_2', ...\\
+  &1, \cp_1'', \cp_2'', ...\\
+\end{align*}
+By the properties of characteristic classes we get:
+\[
+  1 + p_1'' + p_2'' + \cdots = (1 + p_1 + p_2 + \cdots)(1 + p_1' + p_2' + \cdots)
+\]
+Or, as a generating function:
+\[
+  \sum_{k=0}^\infty p_k'' z^k = \sum_{i=0}^\infty \pi_M^*(p_i) z^i \sum_{j=0}^\infty \pi_N^*(p_j') z^j \mod \text{torsion}.
+\]
+Thus, define the following:
+\index{Algebraic K-genus}
+\begin{defn}{Algebraic K-genus}{algebraicK-genus}
+  Let $\{K_j\}$ be an $m$-sequence and let $M$ be a $4\ell$-manifold. Then the \emph{algebraic K-genus} of
+  $M$ is evaluated is:
+  \[
+    K(M) = K_\ell(\cp_1, ..., \cp_\ell)[M] = \int_M K_\ell(\cp_1, ..., \cp_\ell)
+  \]
+  where $\cp_1, ..., \cp_\ell$ are the Pontryagin classes of $TM$.
+\end{defn}
+
+\begin{prop}{Properties of Algebraic Genus}{propofAlgebraicGenus}
+  Let $\{K_\ell\}$ be an $m$-sequence, $M,N$ be oriented $4\ell$-manifolds. Then:
+  \begin{enumerate}
+    \item $K(M\dcup N) = K(M)+K(N)$
+    \item $K(M\times N) = K(M)\cdot K(N)$
+    \item $K(-M) = -K(M)$ where $-M$ is the reverse orientation put on $M$.
+  \end{enumerate}
+  Thus, $K(-)$ respects the equivalence relation $\sim_\cp$.
+\end{prop}
+
+\begin{Proof}
+  (1) and (2) follow from the above discussion, (3) follows elementary cohomology.
+\end{Proof}
+
+
+\index{Algebraic Cobordism Ring}
+\begin{defn}{Algebraic Oriented Cobordism Ring}{algCobordismRing}
+  Let:
+  \[
+    \widetilde{\Omega}^n = \set{[M]_\cp}{\text{$M$ an oriented $n$-manifold}}
+  \]
+  where the subscript $\cp$ is dropped when it is clear. This ring is called the \emph{algebraic cobordism
+  ring}. By~\cref{pr:propofAlgebraicGenus}, we can define the
+  grade ring:
+  \[
+    \widetilde{\Omega}^* = \bigoplus_{n=0}^\infty \widetilde{\Omega}^n
+  \]
+  where:
+  \[
+    \widetilde{\Omega}^n \widetilde{\Omega}^m \sse \widetilde{\Omega}^{nm}
+  \]
+\end{defn}
+
+Note that $\widetilde{\Omega}^n = 0$ if $4\nmid n$ and $\widetilde{\Omega}^*$ is a commutative graded (torsion-free)
+ring.
+
+The ring is called ``algebraic'' as it was defined using the algebraic properties of Pontryagin classes, we
+shall soon define the ``geometric'' cobordant ring that is the equivalence classes of cobordant manifolds and
+show they are isomorphic. For now, let us characterize the algebraic structure of the algebraic cobordism
+ring: the goal is to show that
+\[
+  \widetilde{\Omega}\otimes \Q \cong \Q[x_1, x_2, ...]
+\]
+To that end, we must find which elements of $\widetilde{\Omega}$ can represent each $x_i$. There is no natural
+choice, hence we define ``candidate sequences'' of elements given by manifolds $V^4, V^8, V^{12}, ...$ that
+can be chosen to form this basis. We shall that the complex projective spaces of even
+dimension shall satisfy these required conditions. Let us start by recalling that the Pontryagin class of $V^{4k}$ can be written in indeterminate $z$
+and decomposed into:
+\[
+  1 + p_1z + \cdots + p_kz^k = \prod_{i=1}^k (1 + \beta_iz)
+\]
+Define:
+\[
+  s(V^k) = (\beta_1^k + \cdots + \beta_k^k)[V^{4k}]
+\]
+By some symmetry function theory, we can think of this as needing the appropriate homogeneity and dimension
+properties, and hence if they are nonzero for each $V^{4k}$ they are a desired list of representatives:
+\index{Basis Sequence}
+\begin{defn}{Basis Sequence}{basisSequence}
+  A sequence of manifold $V^4, V^8, V^{12}, ...$ is called a \emph{basis sequence} if:
+  \[
+    s(V^{4k}) \ne 0
+  \]
+\end{defn}
+
+
+\begin{thm}{Basis Sequence Correspondence}{basisSequenceCorresp}
+  Let $\{V^{4k}\}$ be a basis sequence and $B$ a [commutative] ring containing $\Q$. Then the set of sequences
+  $\{a_k\}_k$ where $a_k \in B$ are in bijective correspondence to the set of $m$-sequences $\{K_j(p_1, ...,
+  p_j)\}$ with coefficients in $B$ where $K(V^{4k}) = a_k$.
+\end{thm}
+
+\begin{Proof}
+  The $m$-sequences are in one-one correspondence (see \textcolor{red}{1.2}) with power series $Q(z) = 1 + b_1 z + b_2 z^2 + \cdots$ with coefficients in $B$. Therefore it is sufficient to show that there is exactly one power series $Q(z)$ such that, for each $V^{4k}$ in the sequence with PONTRJAGIN classes written in the form (5),
+
+\[
+a_k = K_k[V^{4k}], \text{ where } K_k = \text{coefficient of } z^k \text{ in } \prod_{i=1}^k Q(\beta_i z)
+\]
+
+This equation can be written
+
+\[
+a_k = s(V^{4k})b_k + \text{polynomial in } b_1, b_2, \ldots, b_{k-1} \text{ of weight } k. \quad (6_k)
+\]
+
+The polynomial in $(6_k)$ depends only on $V^{4k}$ and has integer coefficients. The coefficients $b_k$ can now be determined uniquely by induction.
+\end{Proof}
+
+
+\begin{thm}{Complex Projective Forms Basis Sequence}{complexProjFormsBasisSequence}
+  Let $\CP^{2k}$ be the $2k$-dimensional complex projective space. Then they form a basis sequence where
+  \[
+    s(\CP^{2k+1}) = 2k+1
+  \]
+\end{thm}
+
+\begin{Proof}
+  Proof: Let $h \in H^2(\mathbb{P}{2k}(\mathbb{C}), \mathbb{Z})$ be a generator. By {\color{red} 4.10.2} the \textsc{Pontrjagin} class of $\mathbb{P}{2k}(\mathbb{C})$ is $(1 + h^2)^{2k+1}$. The $m$-sequence of the power series $1 + z^k$ defines a ``genus'' ({\color{red} 5.2}) which for $V^{4k}$ has the value $s(V^{4k})$ and which clearly takes the value $2k + 1$ on $\mathbb{P}_{2k}(\mathbb{C})$.
+\end{Proof}
+
+Let us now consider $\widetilde{\Omega}\otimes \Q$, so now $[V^{4k}]$ can be written as $\frac{a}{b}[V^{4k}]$.
+Certainly the Pontryagin number, $K$-genus, and $s(V^{4k})$ are all still well-defined (where the $K$-genus is
+well-defined as we required $B$ to contain $\Q$). Now, the Pontryagin number of an element of
+$\widetilde{\Omega}\otimes \Q$ can be a non-integer. This new ring can still be represented using a basis
+sequence:
+
+\begin{thm}{Basis Sequence With Rational Numbers Correspondence}{basisSequenceWithRationalNumbersCorresp}
+  Let $\{V^{4k}\}$ be a basis sequence of oriented manifolds, and let $(j) = (j_1, ...., j_r)$ be a partition
+  of $k$. Let $V_{(j)} = V^{4j_1}\times \cdots \times V^{4j_r}$. Then every $\alpha \in
+  \widetilde{\Omega}\otimes \Q$ can be uniquely represented by the sum:
+  \[
+    \alpha = \sum_{(j) \in \pi(j)} r_{(j)}[V_{(j)}] \qquad r_{(j)} \in \Q
+  \]
+  where the sum goes over all partitions of $k$. Furthermore, given a system $\{a_{(j)}\}$ of rational
+  numbers, there exists an element $\alpha \in \widetilde{\Omega}\otimes \Q$ where
+  \[
+    p_{(j)}[\alpha] = \alpha_{(j)}
+  \]
+\end{thm}
+\begin{Proof}
+  Proof: By elementary facts on linear simultaneous equations it is sufficient to prove that a sum $\sum r_{(j)}(V_{(j)})$ over all partitions $(j)$ of $k$ is zero if and only if $r_{(j)} = 0$ for each $(j)$. Suppose that $\sum r_{(j)}(V_{(j)}) = 0$. Let $q_1, q_2, q_3, \ldots$ be a sequence of indeterminates. By {\color{red} 6.3.1} we can find for each integer $t \geq 0$ an $m$-sequence which takes the value $q_k^t$ on $V^{4k}$. This implies that
+
+\[
+    \sum_{(j)} r_{(j)} q_{(j)} = 0,
+\]
+
+where $q_{(j)}$ denotes the product $q_{j_1} q_{j_2} \ldots q_{j_r}$ for $(j) = (j_1, j_2, \ldots, j_r)$. Since the $q_{(j)}$ are pairwise distinct, (8) implies that each $r_{(j)}$ vanishes ({\color{red} VANDERMONDE} determinant).
+\end{Proof}
+
+
+% \begin{Proof}
+%   \cite[p.80]{hirzebruchTopologicalMethodsAlgebraic1995} (This is some linear algebra (recall the proof in comm. alg. using the Vandermonde Determinant)
+% \end{Proof}
+
+
+\begin{thm}{Isomorphism of Algebraic Cobordism Ring}{isoofAlgebraicCobordismRing}
+  \[
+    \widetilde{\Omega}\otimes \Q \cong \Q[x_1, x_2, ....]
+  \]
+\end{thm}
+
+\begin{Proof}
+  Let $\{V^{4k}\}$ be an arbitrary sequence of oriented manifolds. What's left to show is that:
+  \begin{enumerate}
+    \item given $\alpha = \sum_{(j)} r_{(j)}[V_{(j)}]$ then $s(\alpha) = r_ks[V^{4k}]$
+    \item If for all $k$, every element of $\alpha \in \widetilde{\Omega}^{4k} \otimes \Q$ can be represented
+      as a sum $\alpha = \sum_{(j)}[V_{(j)}]$, then $\{V^{4k}\}$ is a basis sequence
+  \end{enumerate}
+
+Proof of I): Let $\{K_j\}$ be the $m$-sequence of the power series $1 + z^k$. This $m$-sequence takes the value $s(\alpha)$ on elements $\alpha \in \Omega^{4k} \otimes Q$ and the value $0$ on elements of $\Omega^{4j} \otimes Q$ with $1 \leq j < k$. This implies (7*).
+
+Proof of II): Suppose that, for some $k$, $s(V^{4k}) = 0$. Then, by I), $s(\alpha) = 0$ for all $\alpha \in \Omega^{4k} \otimes Q$. But $s(\mathbf{P}_{2k}(\mathbf{C})) = 2k + 1$ by {\color{red} 6.3.2}. Contradiction.
+
+  % \cite[p.80]{hirzebruchTopologicalMethodsAlgebraic1995}
+\end{Proof}
+
+There is a natural question of smallest integers can represent a system of Pontryagin numbers and it invovles
+the $\mu$ that I skipped, but it is not important for our purposes
+(see~\cite[section~6.4]{hirzebruchTopologicalMethodsAlgebraic1995} for details).
+
+Lastly, the $K$-genus can be characterized as as representing homomorphism from the algebraic cobordism ring to
+$\Q$:
+
+\begin{thm}{Characterizing Rational Homomorphisms}{characterizingRationalHomo}
+  Let $\phi: \widetilde{\Omega}\otimes \Q \to \Q$ be a homomorphism. Then there exists a $K$ such that
+  $\phi(-) = K(-)$.
+\end{thm}
+
+We shall use this property to define the geometric $K$-genus.
+
+\begin{Proof}
+  easy on p.81
+\end{Proof}
+
+This fully encodes the algebraic information. Let us now define the geometric counter-part
+
+\index{Geometric Oriented Cobordism Ring}
+\begin{defn}{Geometric Oriented Cobordism Ring}{geometricCobordismRing}
+  Two oriented smooth $n$-dimensional manifolds $M^n, N^n$ are \emph{cobordant} if there exist a manifold $C$ such that
+  \[
+    \partial C \cong (M^n \dcup  -N^n)
+  \]
+  where $-N^n$ is the reverse orientation; if such a $C$ exists it defines an equivalence relation $M\sim_\cc
+  N$ which respects disjoint union, reverse orientation, and direct product; $\dcup, -, \times$. Then
+  $\Omega^n$ is the collection of such equivalence classes and:
+  \[
+    \Omega = \bigoplus_n \Omega^n
+  \]
+  is the \emph{geometric cobordism ring}.
+\end{defn}
+
+\index{Geometric Genus}
+\begin{defn}{Geometric Genus}{geometricGenus}
+  Let $\Omega^*$ be the oriented geometric cobordism ring. Then a \emph{Geometric genus} (with respect to $B$)
+  is a $B$-homomorphism:
+  \[
+    \phi: \Omega^* \to B
+  \]
+\end{defn}
+
+After showing $\Omega^*$ and $\widetilde{\Omega}^*$ are isomorphic, we shall see that all geometric genii are
+representable by an $m$-sequence .
+
+
+Certainly this ring is graded, and it is \emph{anti-commutative}, namely:
+\[
+  \alpha\cdot \beta = (-1)\beta\cdot\alpha \qquad \alpha \in \Omega^n,\ \beta \in \Omega^m
+\]
+
+\textcolor{red}{He now goes onto to prove the isomorphism between this ring and the algebraic one, skipping
+for now.}
+
+
+\section{Intersection Form: Index and Hirzebruch Signature Theorem}
+
+On any $4k$-dimensional manifold, there is a natural generalization of the symplectic form known as the
+\emph{intersection form}: given a choice of $x,y \in H^{2k}(M, \R)$, Define:
+\[
+  Q(x,y) = x\smile y[M^n]
+\]
+As $x\smile y \in H^4k$:
+\[
+  (x\smile y) = (-1)^{k^2}(y\smile x) = (y\smile x)
+\]
+show that the form is \emph{symmetric} (rather than anti-symmetric), which is why we are working with
+$4$-dimensional manifolds. Thus, the eigenvalues of the corresponding matrix representations are always
+\emph{real} and there always exists an orthogonal basis. If $e_p$ and $e_n$ represents the number of positive
+and negative eigenvalues, then:
+\index{Index}
+\begin{defn}{Index}{index}
+  \[
+  \tau(Q) = e_p - e_n
+\]
+\end{defn}
+
+The most important result about the index is that it is a \emph{genus}:
+
+\begin{thm}{Index is Genus}{indexisGenus}
+  Let $\tau$ be the index function. Then:
+  \begin{enumerate}
+    \item $\tau(M\dcup N) = \tau(M) + \tau(N)$
+    \item $\tau(M)\times N) =\tau(M)\cdot \tau(N)$
+    \item $\tau(-M) = -\tau(M)$
+    \item If $M$ is nullcobordant, $\tau(M) = 0$
+  \end{enumerate}
+\end{thm}
+
+\begin{Proof}
+Proof. I) follows immediately from the definitions of $V^n + W^n$ and $-V^n$.
+
+II) is known ({\color{red} THOM [2]}) but is given there without proof. We therefore prove II) in full. Let $M^{4k} = V^n \times W^m$. Then
+\[
+    H^{2k}(M^{4k}, \mathbf{R}) \cong \sum_{s=0}^{2k} H^s(V^n, \mathbf{R}) \otimes H^{2k-s}(W^m, \mathbf{R}).
+\]
+
+Elements $x, y \in H^{2k}(M^{4k}, \mathbf{R})$ are said to be orthogonal if $x y[M^{4k}] = 0$. Introduce bases $\{v_i\}$ for $H^s(V^n, \mathbf{R})$ and $\{w_j\}$ for $H^t(W^m, \mathbf{R})$ such that $v_i^s v_j^{n-s}[V^n] = \delta_{ij}$ for $s \neq \frac{n}{2}$ and $w_i^t w_j^{m-t}[W^m] = \delta_{ij}$ for $t \neq \frac{m}{2}$.
+
+Now consider the group $A = H^{\frac{n}{2}}(V^n, \mathbf{R}) \otimes H^{\frac{m}{2}}(W^m, \mathbf{R})$, taking $A = 0$ if $n$ and $m$ are odd. Then $A$ is orthogonal to the subgroup $B$ of $H^{2k}(M^{4k}, \mathbf{R})$, which consists of all elements of the summation (1) in which no elements of $A$ occur. As a basis for the group $B$ we can take $\{v_i^s \otimes w_j^{2k-s}\}, (0 \leq s \leq n, s \neq \frac{n}{2})$. Now
+\begin{align*}
+(v_i^s \otimes w_j^{2k-s})(v_{i'}^{s'} \otimes w_{j'}^{2k-s'})[M^{4k}] &= \pm 1 \text{ if } s + s' = n, i = i', j = j' \\
+&= 0 \text{ otherwise.}
+\end{align*}
+
+It follows that, with respect to this basis, the restriction of the bilinear form $x y[M^{4k}]$ to $B$ is represented by a matrix with blocks $\pm \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ down the diagonal and zero elsewhere. Therefore the index of the restriction of $x y[M^{4k}]$ to $B$ is 0. Since $A$ and $B$ are orthogonal, $\tau(M^{4k})$ is equal to the index $\tau(A)$ of the restriction of the bilinear form $x y[M^{4k}]$ to $A$. There are now two cases to consider. If $n$ and $m$ are not divisible by 4 then $\tau(A) = 0$. If $n$ and $m$ are divisible by 4 then $\tau(A) = \tau(V^n) \cdot \tau(W^m)$. This completes the proof of II). A more detailed proof can be found in {\color{red} CHERN-HIRZEBRUCH-SERRE [1]}.
+
+III) is proved by {\color{red} THOM [1]}. The proof can be summarised briefly as follows. Suppose that $V^{4k}$ is the oriented boundary of $X^{4k+1}$, and that $j: V^{4k} \to X^{4k+1}$ is the embedding. THOM considers the diagram of homomorphisms
+\[
+\begin{tikzcd}
+H^{2k}(X^{4k+1}, \mathbf{R}) \arrow[r, "j^*"] \arrow[d] & H^{2k}(V^{4k}, \mathbf{R}) \arrow[r] \arrow[d, "i"] & H^{2k+1}(X^{4k+1} \text{ mod } V^{4k}, \mathbf{R}) \arrow[d] \\
+H_{2k+1}(X^{4k+1} \text{ mod } V^{4k}, \mathbf{R}) \arrow[r] & H_{2k}(V^{4k}, \mathbf{R}) \arrow[r, "j_*"] & H_{2k}(X^{4k+1}, \mathbf{R})
+\end{tikzcd}
+\]
+
+Here the rows are part of exact homology and cohomology sequences, and the vertical arrows are isomorphisms, defined by {\color{red} Poincaré} duality for $V^{4k}$ and $X^{4k+1}$, which make the squares commutative.
+
+Let $A^{2k}$ be the image of $j^*$ in $H^{2k}(V^{4k}, \mathbb{R})$ and let $K_{2k}$ be the kernel of $j_*$ in $H_{2k}(V^{4k}, \mathbb{R})$. Then $A^{2k}$ is dual to $H_{2k}(V^{4k}, \mathbb{R})/K_{2k}$ under the duality between $H^{2k}(V^{4k}, \mathbb{R})$ and $H_{2k}(V^{4k}, \mathbb{R})$. On the other hand, the diagram implies that, for $x \in H^{2k}(V^{4k}, \mathbb{R})$,
+
+\[
+    x \in A^{2k} \Leftrightarrow i(x) \in K_{2k}.
+\]
+
+Therefore, if $b_{2k} = \dim H_{2k}(V^{4k}, \mathbb{R})$ is the $2k$-th {\color{red} Betti} number of $V$,
+
+\[
+    \dim A^{2k} = \dim K_{2k} = b_{2k} - \dim K_{2k}
+\]
+and
+\[
+    \dim A^{2k} = \frac{1}{2}b_{2k}.
+\]
+
+If $x = j^* y \in A^{2k}$, and $v$ is the fundamental cycle of $V^{4k}$ then $x^2[V^{4k}] = (j^* y^2)[v] = (y^2)[j_* v] = 0$. Therefore the cone $\{x \in H^{2k}(V^{4k}, \mathbb{R}); x^2[V^{4k}] = 0\}$ contains the linear subspace $A^{2k}$ of dimension $\frac{1}{2}b_{2k}$. It follows that the bilinear form $x y[V^{4k}]$ has $p^+ = p^-$ (8.1) and hence that $\tau(V^{4k}) = 0$. This proves III) and completes the proof of Theorem 8.2.1.
+
+
+\end{Proof}
+
+% \cite[p.84-90]{hirzebruchTopologicalMethodsAlgebraic1995}
+
+% \textcolor{red}{NOTE: in modern language, this step can be proven using the Atiyah-Singer theorem, but we will
+% not rely on such heavy machinery, and also if we are not careful we can be circular as Hirzebruch Riemann Roch
+% is consider to be generalized to Atiyah-Singer}
+%
+% An important theorem:
+
+Thus, by~\cref{th:characterizingRationalHomo}, there is an $m$-sequence that represents this map, immediately
+giving:
+
+\begin{thm}{Hirzebruch Signature Theorem}{hirzebruchSignatureThm}
+  Let $M$ be a real differentiable oriented manifold, and let $I(M)$ be its index. Then:
+  \begin{enumerate}
+    \item if $\dim_\R M\not\equiv 0\mod 4$, then
+      \[
+        I(M) = 0
+      \]
+    \item if $\dim_\R M\equiv 0\mod 4$, then:
+      \[
+        I(M) = L_k(p_1, ...., p_k)[M]
+      \]
+  \end{enumerate}
+\end{thm}
+
+\begin{Proof}
+  We must show they match on the generators $\CP^n$. To compute the index on $\CP^n$.
+  \cite[p.231]{gallierComplexAlgebraicGeometry2011}.
+  Proof. Recall, $I$ is a function from manifolds to $\mathbb{Z}$ and clearly satisfies (1). By {\color{red}Thom's second Theorem (Theorem 3.52)}, $I$ satisfies (2). Take as basis sequence: $M_{4k}=\mathbb{P}_\mathbb{C}^{2k}$. We have
+
+\[
+    I(M_{4k})=\sum_{p=0}^{2k}(-1)^ph^{p,q}(M_{4k}),
+\]
+
+by the {\color{red}Hodge Index Theorem (Theorem 2.77)}. As $h^{p,p}=1$ and $h^{p,q}=0$ if $p\neq q$, we get
+
+\[
+    I(M_{4k})=1.
+\]
+
+Now we further know the Künneth formula for the $h^{p,q}$ of a product (of two, hence any finite number of complex manifolds). Apply this and get (DX)
+
+\[
+    I(\mathbb{P}_\mathbb{C}^{j_1}\prod\cdots\prod\mathbb{P}_\mathbb{C}^{j_r})=1.
+\]
+
+Therefore, (3) holds. Then, our previous theorem implies $I(M)=K(M)$ for some $K$, a multiplicative sequence. But, $K(\mathbb{P}_\mathbb{C}^{2k})=1$, there and we know there is one and only one multiplicative sequence $\equiv1$ on all $\mathbb{P}_\mathbb{C}^{2k}$, it is $L$. Therefore, $I(M)=L$, as claimed.
+\end{Proof}
+
+\section{Derived Index}
+
+This is about the index of the intersection of manifolds that remember the manifolds that where intersected.
+This can be done within the modern language of \emph{derived algebraic geometry} by taking $M\otimes^{\bf{L}}
+N$, but there is no point in building up an entire framework and never use its results, just state the results
+within its language. Instead, we shall
+
+% \section{Virtual index To Intersection Theory Objects}
+
+Let $M^n$ be a compact oriented smooth manifold, $j: V^{n-k} \to M^n$  an embedding of the oriented
+submanifold $V^{n-k}$. Let $N_{M/V}$ be the normal bundle of $V$ with respect to $M$. if $j^*$ is the
+cohomology pullback
+
+Then by some basic Riemannian geometry we have that we can embed $TV$ into $TM$ and we have:
+\[
+  TM = TV \oplus NV
+\]
+where $NV := N_{M/V}$ is the normal bundle. Thus, of $\cp$ is the total Pontryagin class:
+\[
+  j^*\cp(TM) = \cp(TV)\cdot \cp(NV) \mod\text{torsion}
+\]
+By~\cref{th:relationForAlmostComplexManifolds}:
+\[
+  \cp(NV) = j^*(1+v^2)
+\]
+Thus:
+\[
+  \cp(V) = j^*\left((1+v^2)^{-1} \cp(M)\right)
+\]
+Now, taking the $L$-genus and taking advantage of the multiplicative and naturality property we get:
+\[
+ L(j^*(TM) = j^*(L(TM)) = L(TV\oplus NV) = L(TV)\cdot T(NV)
+\]
+Thus we get:
+\[
+  j^*(L(TM)) = L(TV)) \cdot L(NV)
+\]
+Moving things around:
+\[
+  L(TV) = j^*(L(TM))\cdot L(NV)^*
+\]
+Since we know the normal bundle has a single Pontryagin root $\gamma = v^2$, we get:
+\[
+  L(NV) = \frac{v}{\tanh(v)}
+\]
+Finally, as $L(TM) = \sum_i^\infty L_i(TM) = \sum_i^\infty L_i(\cp_1(TM), ..., \cp_i(TM))$, we get:
+\[
+  L(TV) = \sum_{i=0}^\infty L_i(\cp_1(V), ..., \cp_i(V)) = j^* \left[ \frac{\tanh(v)}{v} \sum_{i=0}^\infty
+  L_i(\cp_1(M), ... \cp_i(M)\right]
+\]
+Using this, we take advantage of Hirzebruch's Signature Theorem to get $\tau(V)$. First, by Poincar\'e
+duality, if $x \in H^{n-2}(M, \Z)\otimes \Q$, then:
+\[
+  j^*(x)[V] = vx[M]
+\]
+Now, by Hirzebruch's signature theorem:
+\[
+  \tau(V) = \int_M \tanh \sum_{i=0}^\infty L_i(\cp_1(M), ..., \cp_i(M)
+\]
+Using the computational methods available to us we get:
+\begin{align*}
+  n = 2 \qquad& \tau(V^0) = \int_{M^2} v\\
+  n = 6 \qquad& \tau(V^4) \int_{M^6} \frac{1}{3}(-v^3 + \cp_1v)\\
+  n = 10 \qquad& \tau(V^8) = \int_{M^{10}} \frac{1}{45} (6v^5 - 5\cp_1 v^3 + (7p_2 - \cp_1^2)v)\\
+\end{align*}
+
+Now here is where interpreting Chern classes naturally in intersection theorem comes in. Say we have
+a collection $v_1, ..., v_r \in H^2(M, \Z)$. $v_1$ is associated to $V^2$. Now say $v_2$ is restricted to $V^{n-2}$ and
+is associated to $V^{n-4} \sse V^{n-2}$. Finally, $v_r$ is restricted to $V^{n-2(r-1)}$ and is associated to
+$V^{n-2r}$. Then if $j: V^{n-2r} \to M^n$, then:
+\[
+  j^*(x)[V^{n-2r}] = v_1v_2\cdots v_rx[M^n]
+\]
+Then applying the $L$-power series successfully, we get the index formula:
+\[
+  \tau(V^{n_2r}) = \int_{M^n} \tanh v_1\tanh v_2 \cdots \tanh v_r \sum_{i=0}^\infty L_i(\cp_1(M^n), ...,
+  \cp_i(M^n)
+\]
+Then for sure by~\cite{NateKTheory}, it was proven that every $2$-dimensional integral cohomology clsas of
+a compact oriented differentiable manifold $M^n$ can be represented by a submanifold $V^{n-2} \sse M^n$. By
+applying this result iteratively, we can justify the above equation. Thus, $\tau(V^{n-2r})$ depends only on
+the (unordered) choice of cohomology classes $v_1,v_2, ..., v_r$. Thus, we can write:
+\index{Virtual Index}
+\begin{defn}{Virtual Index}{virtualIndex}
+\[
+  \tau(v_1, ..., v_r) = \int_{M^n} \tanh v_1\tanh v_2 \cdots \tanh v_r \sum_{i=0}^\infty L_i(\cp_1(M^n), ...,
+  \cp_i(M^n)
+\]
+\end{defn}
+
+Every virtual index occurs as the index of a submanifold of $M^n$ and is thus an integer.
+
+Recall $\tanh$ satisfies:
+\[
+  \tanh(u+v) = \frac{\tanh(u) + \tanh(v)}{1  +\tanh(u)\tanh(v)}
+\]
+or as Hirzebruch writes it:
+\[
+  \tanh(u+v) = \tanh(u) + \tanh(v) - \tanh(u)\tanh(v)\tanh(u+v)
+\]
+This immediately gives:
+Here's the LaTeX code for the theorem:
+
+\begin{thm}{Functional Equation of Virtual Index}{funcEqOfVirtIndex}
+The virtual index is a function which associates an integer $\tau(v_1, v_2, \ldots, v_r)$ to each (unordered)
+$r$-ple $(v_1, v_2, \ldots, v_r)$ of 2-dimensional integral cohomology classes of a compact oriented
+differentiable manifold $M^n$. The function $\tau$ is zero if $n-2r \not\equiv 0$ modulo 4, if $2r > n$, or if
+one of the classes $v_i$ is zero. It satisfies the functional equation
+\[
+    \tau(v_1,\ldots,v_r,u+v) = \tau(v_1,\ldots,v_r,u) + \tau(v_1,\ldots,v_r,v) - \tau(v_1,\ldots,v_r,u,v,u+v)
+\]
+If $n = 4k+2$:
+\[
+  \tau(u+v) = \tau(u) + \tau(v) - \tau(u,v,u+v)
+\]
+\end{thm}
+
+(section 9.4 seems not important)
 
 \chapter{Todd Class}\label{cha:toddGenus}
 
@@ -3006,16 +3409,18 @@ the sum is $m!/h$, $h$ being the number of permutations living the aforementione
   it is computations that will be omitted.
 \end{Proof}
 
-\subsection*{L-genus and T-genus}
+% \subsection{Genus}
 
-Recall that the universal bundle $MU$ are infinite Grassmannians, that the total Chern class normalizes to $1$
-on, the special case becomes that the Chern class of the tangent bundle of $\CP^n$ should normalize to $1$
-of $1$. We shall want the chosen $m$-sequence to have this property.
-In particular, we shall want to define the $m$-sequence associated to Pontryagin/Chern classes associated to
-$\CP^n$ seen as the classifying space for $n$-dimensional complex vector bundles. These properties are
-necessary for the eventual connecting to the arithmetic genus, namely recall that $\chi(\CP^1\oplus \CP^2) =
-\chi(\CP^1)\chi(\CP^1)$. And that $\chi(\CP^n) = 1$. We shall want to capture these properties using the
-Pontryagin class. Define:
+
+% Recall that the universal bundle $MU$ are infinite Grassmannians, that the total Chern class normalizes to $1$
+% on, the special case becomes that the Chern class of the tangent bundle of $\CP^n$ should normalize to $1$
+% of $1$. We shall want the chosen $m$-sequence to have this property.
+% In particular, we shall want to define the $m$-sequence associated to Pontryagin/Chern classes associated to
+% $\CP^n$ seen as the classifying space for $n$-dimensional complex vector bundles. These properties are
+% necessary for the eventual connecting to the arithmetic genus, namely recall that $\chi(\CP^1\oplus \CP^2) =
+% \chi(\CP^1)\chi(\CP^1)$. And that $\chi(\CP^n) = 1$. We shall want to capture these properties using the
+% Pontryagin class.
+Define:
 \[
   Q(z) = \frac{\sqrt{z}}{\tanh{\sqrt{z}}} = 1 + \sum_{k=1}^\infty (-1)^{k-1} \frac{2^{2k}}{(2k)!}B_kz^k
 \]
@@ -3025,7 +3430,7 @@ where the $B_k$ are the Bernoulli numbers. Note that in this case the coefficien
   B_1 = \frac{1}{6},\ B_2 = \frac{1}{30},\ B_3 = \frac{1}{42},\ B-4 = \frac{1}{30},\ B_5 = \frac{5}{66},\ B_6
   = \frac{691}{2730},\ B_7 = \frac{7}{6},\ B_8 = \frac{3617}{510},...
 \]
-We sahll denote the $m$-sequence of $Q(z)$ as $\{L_j(p_1, ...., p_j)\}$. Computing we get:
+We shall denote the $m$-sequence of $Q(z)$ as $\{L_j(p_1, ...., p_j)\}$. Computing we get:
 \begin{align*}
  L_1 &= \frac{1}{3}p_1\\
  L_2 &= \frac{1}{5\cdot 7}(7p_2 - p_1^2)\\
@@ -3040,7 +3445,7 @@ We will want the following normalization: $L_k(p_1 ...., p_k) = 1$. To that end,
 \]
 From this we get:
 
-\begin{prop}{Coefficient of L-genus Power Series}{coefficientofL-genusPowerSeries}
+\begin{prop}{Coefficient of L-characteristic Series}{coefficientofL-genusPowerSeries}
   Let $Q(z) = \frac{\sqrt{z}}{\tanh{\sqrt{z}}}$. Then for every $k$, the coefficient $J_k$ of $z^k$ in
     $(Q(z))^{2k+1}$ is equal to $1$, and $Q(z)$ is the \emph{only} power series with rational coefficient
     with this property.
@@ -3094,6 +3499,141 @@ Just like before, $Q(x)$ is the only power series with rational coefficients wit
 $Q(x))^{k+1} = 1$ (see~\cite[p.14]{hirzebruchTopologicalMethodsAlgebraic1995}, or just repeat the above
 results with the appropriate modifications).
 
+Recall the Euler characteristic is called the \emph{arithmetic genus} (following Hartshorne's vocabulary).
+This will motivate how evaluating characteristic series tangent bundles by selecting their Pontryagin/Chern
+classes shall be called the \emph{genus} with respect to the characteristic series. Depending on the
+characteristic series, we shall give a name to the genus.
+
+\index{K-Pontryagin genus}\index{K-genus}
+\begin{defn}{K-genus}{k-genus}
+  Let $V^n$ be an oriented $n$-dimensional manifolds and $\{K_j(p_1, ..., p_j)\}$ be an $m$-sequence. Then:
+  \[
+    \begin{cases}
+      0 & \dim_\R X \not\equiv 0 \mod 4\\
+      K_n(p_1, ..., p_n)[X] & \dim_\R X = 4n
+    \end{cases}
+  \]
+  is called the \emph{K-genus} of $V^{n}$, where $K_n(p_1, ..., p_n)[X]$ represents taking the tangent bundle
+  $TM$, finding the Pontryagin classes, and evaluating at the fundamental class $X$.
+
+  \qn
+  If we are working with Chern classes, then we would have $n=2k$.
+\end{defn}
+
+By what we've discussed earlier, the $K$-genus is multiplicative.
+\begin{prop}{K-genus is Multiplicative}{kGenusMult}
+  \[
+    K(M\times N) = K(M)K(N)
+  \]
+\end{prop}
+
+\begin{Proof}
+  immediate form properties of characteristic series.
+\end{Proof}
+
+% \begin{example}{K-genus}{k-genus}
+%   look at~\cite[p.77]{hirzebruchTopologicalMethodsAlgebraic1995}.
+%   \begin{enumerate}
+%     \item L-genus defined earlier
+%     \item $A$-genus
+%   \end{enumerate}
+% \end{example}
+
+\subsection{Generating Function}
+
+One of the key ideas is to not directly work with the Euler characteristic or Todd class, but a generating
+function that combines the values. The idea is that we can figure out the coefficients of this generating
+function when plugin in different values of the dummy variable. To be precise, we shall have the generating
+function for the Todd class and Euler characteristic, they shall be equal when the dummy variable $y = 1$ as
+they will both be equal to the index, and when $y =-1$ we shall have that they are equal to their ``usual''
+values, namely the arithmetic and Todd genus.
+
+Let $B = \Q[y]$. Then consider the $m$-sequence $T_j(y; c_1, ..., c_j)$ with characteristic power series:
+\[
+  Q(y; x) = \frac{x(y+1)}{1-e^{-x(y+1)}} -yx = \frac{x(y+1)}{e^{x(y+1)}-1}+x
+\]
+\begin{lem}{}{geoCharofToddGenus}
+  For every $n$ the coefficient of $x^n$ in $(Q(y;x))^{n+1}$ is equal to $\sum_{i=0}^n(-1)^iy^i$, and $Q(y,x)$
+is the only power series with coefficients in $\mathbb{Q}[y]$ which has this property.
+\end{lem}
+
+
+\begin{Proof}
+  Take substitution
+\[
+    c_i = \binom{n+1}{i}
+  \]
+  then:
+  \[
+      T_n(y; c_1,\ldots,c_n) = 1-y+y^2-\cdots+(-1)^ny^n.
+  \]
+  Then as $Q(\frac{1}{y};yx) = Q(y;-x)$:
+  \[
+      y^n T_n(\frac{1}{y};c_1,\ldots,c_n) = (-1)^n T_n(y;c_1,\ldots,c_n)
+  \]
+  as we sought to show
+\end{Proof}
+
+
+The polynomial $T_n(y;c_1,\ldots,c_n)$ can be written in a unique way in the form
+\[
+    T_n(y;c_1,\ldots,c_n) = \sum_{p=0}^n T_n^p(c_1,\ldots,c_n)y^p.
+\]
+
+The polynomials $T_n^p(c_1,\ldots,c_n)$ satisfy
+\[
+    T_n^p(c_1,\ldots,c_n) = (-1)^n T_n^{n-p}(c_1,\ldots,c_n)
+\]
+Now, consider the factorization:
+\[
+  1 + c_1x + \cdots + c_nx^n = \prod_{i=1}^n (1 + \gamma_i x)
+\]
+Then we have:
+\begin{prop}{Computing $T_y$-Polynomial}{computingToddPoly}
+  \[
+  T_n^p(c_1, ..., c_n) = \kappa_n \left[ \sum \exp(-\gamma_{j_1} - \cdots - \gamma_{j_r}) \prod_{i=1}^n
+  \frac{\gamma_i}{1- \exp(-\gamma_i)}\right]
+\]
+where the sum is over the $\binom{n}{p}$ pairwise combinations of distinct $\gamma_i$, and $\kappa_n[-]$ denotes the sum of all homogeneous polynomials of degree $n$ (mirroring evaluating at the
+fundamental class in section \textcolor{red}{ref:HERE}).
+\end{prop}
+
+\begin{Proof}
+  Indeed;
+ \begin{align*}
+	\sum_{p=0}^n T_n^p y^p &= \kappa_n \left[\prod_{i=1}^n \left(1
+	+ y\exp(-\gamma_i)\right)\frac{\gamma_i}{1-\exp(-\gamma_i)}\right]\\
+						   &= \kappa_n \left[\prod_{i=1}^n \frac{(1 + y\exp(-(1+y)\gamma_i))}{1+y}
+						   \cdot \frac{(1+y)\gamma_i}{1-\exp(-(1+y)\gamma_i)}\right]\\
+						   &= \kappa_n \left[\prod_{i=1}^n Q(y;\gamma_i)\right] = \sum_{p=0}^n T_n^p(c_1,\ldots,c_n)y^p
+  \end{align*}
+  as we sought to show
+\end{Proof}
+
+Finally note that $Q(0;x)=\frac{x}{1-e^{-x}}$, $Q(-1;x)=1+x$ and $Q(1;x)=\frac{x}{\tanh x}$. Therefore (see {\color{red} 1.5 and Lemma 1.3.1})
+
+\[
+T_n^0(c_1,\ldots,c_n) = T_n(c_1,\ldots,c_n) \text{ (Todd polynomial)},
+\]
+
+\begin{gather*}
+\sum_{p=0}^n (-1)^p T_n^p(c_1,\ldots,c_n) = c_n,\\
+\sum_{p=0}^n T_n^p(c_1,\ldots,c_n) = \tilde{L}_n(c_1,\ldots,c_n), \text{ i.e.}\\
+\sum_{p=0}^n T_n^p(c_1,\ldots,c_n) \begin{cases}
+ 0 \text{ if } n \text{ is odd}\\
+ L_k(p_1,\ldots,p_k) \text{ if } n=2k.
+\end{cases}
+\end{gather*}
+
+1.9. The Todd polynomials are essentially the Bernoulli polynomials of higher order defined by {\color{red} Nörlund} (see {\color{red} N. E. Nörlund, Differenzenrechnung, Berlin, Springer-Verlag, 1924, especially p. 143}). The Bernoulli polynomial $B_j^{(n)}(\gamma_1,\ldots,\gamma_n)$ is defined by
+
+\[
+\prod_{i=1}^n \frac{\gamma_i x}{\exp(\gamma_i x)-1} = \sum_{j=0}^{\infty} \frac{x^j}{j!}B_j^{(n)}(\gamma_1,\ldots,\gamma_n).
+\]
+
+If the $c_i$ are regarded as the elementary symmetric functions in $\gamma_1,\ldots,\gamma_n$ [see {\color{red} 1.8 (14)}] then
+
+
 \section{Todd Class}
 
 With the algebraic established, we can formally define the Todd class:
@@ -3101,17 +3641,31 @@ With the algebraic established, we can formally define the Todd class:
 \index{Todd Class}
 \begin{defn}{Todd Class}{toddClass}
   Let $X$ be a complex smooth manifold, and $\xi$ a continuous $q$-vector bundle on $X$. Let $c_i \in H^{2i}(X, \Z)$
-be its Chern classes. Then we can define the \emph{total Todd class} of $\xi$ by taking the Todd polynomials
-and taking:
-\[
-  \td(\xi) = \sum_{j=1}^\infty T_j(c_1, ..., c_j)
-\]
-where $\{T_j(c_1, ..., c_j)\}$ is given by the characteristic series:
-\[
-  Q(x) = \frac{x}{1-e^{-x}} = 1 = \frac{1}{2}x + \sum_{j=1}^\infty (-1)^{j-1} \frac{B_j}{(2j)!}x^{2j}
-\]
-where $B_j$ is the Bernoulli numbers.
+  be its Chern classes. Then we can define the \emph{total Todd class} of $\xi$ by taking the Todd polynomials
+  and taking:
+  \[
+    \td(\xi) = \sum_{j=1}^\infty T_j(c_1, ..., c_j)
+  \]
+  where $\{T_j(c_1, ..., c_j)\}$ is given by the characteristic series:
+  \[
+    Q(x) = \frac{x}{1-e^{-x}} = 1 = \frac{1}{2}x + \sum_{j=1}^\infty (-1)^{j-1} \frac{B_j}{(2j)!}x^{2j}
+  \]
+  where $B_j$ is the Bernoulli numbers.
 \end{defn}
+The reader can verify that the direct product of manifolds $X\times Y$ is multiplicative on the Todd class.
+This means that if
+\[
+  0 \to \xi' \to \xi \to \xi'' \to 0
+\]
+Then:
+\[
+  (1 + c_1't + \cdots + c_{q'}'t^{q'})(1 + c_1''t + \cdots + c_{q''}''t^{q''}) =  1 + c_1t + \cdots + c_{q}t^{q}
+\]
+and so:
+\[
+  \td(\xi)(t) = \td(\xi')(t)\cdot \td(\xi'')(t)
+\]
+Mirroring the property of the Euler Characteristic.
 
 To write down the $m$-sequence, recall that the $m$-sequence of the
 characteristic power series $Q(z) = \frac{2\sqrt{z}}{\sinh(2\sqrt{z}}$ is has as the first few terms:
@@ -3136,7 +3690,7 @@ define:
 \[
   \sum_{j=0}^q c_jx^j = \prod_{i=1}^q (1 + \gamma_ix)
 \]
-Then we get:
+Thus, when dealing with a general complex vector bundle $\xi$ and take its Chern roots $\gamma_i$:
 \[
   \td(\xi) = \prod_{i=1}^q \frac{\gamma_i}{1-e^{-\gamma_i}}
 \]
@@ -3167,59 +3721,8 @@ where the sum is over all combinations $i_1, \ldots, i_r$ with $1 \leq i_1 < \cd
 \end{titledBox}
 
 
-The reader can verify that the direct product of manifolds $X\times Y$ is multiplicative on the Todd class.
-This means that if
-\[
-  0 \to \xi' \to \xi \to \xi'' \to 0
-\]
-Then:
-\[
-  (1 + c_1't + \cdots + c_{q'}'t^{q'})(1 + c_1''t + \cdots + c_{q''}''t^{q''}) =  1 + c_1t + \cdots + c_{q}t^{q}
-\]
-and so:
-\[
-  \td(\xi)(t) = \td(\xi')(t)\cdot \td(\xi'')(t)
-\]
-Mirroring the property of the Euler Characteristic.
-
-\section{K-genus}\label{sec:K-genus}
-
-Let us not generalize the Pontryagin and Chern number:
-
-
-\index{K-Pontryagin genus}\index{K-Chern genus}\index{K-genus}
-\begin{defn}{K-genus}{k-genus}
-  Let $V^n$ be an oriented $n$-dimensional manifolds and $\{K_j(p_1, ..., p_j)\}$ be an $m$-sequence where
-  $K(V^{4k}) = K_k[V^{4k}]$ and $0$ otherwise. Then:
-  \[
-    \begin{cases}
-      0 & \dim_\R X \not\equiv 0 \mod 4\\
-      K_n(p_1, ..., p_n)[X] & \dim_\R X = 4n
-    \end{cases}
-  \]
-  is called the \emph{K-genus} of $V^{n}$.
-
-  \qn
-  If we are working with Chern classes, then we would have $n=2k$.
-\end{defn}
-
-By what we've discussed earlier, the $K$-genus is multiplicative.
-
-\begin{example}{K-genus}{k-genus}
-  look at~\cite[p.77]{hirzebruchTopologicalMethodsAlgebraic1995}.
-  \begin{enumerate}
-    \item L-genus defined earlier
-    \item $A$-genus
-  \end{enumerate}
-\end{example}
-
-The important $K$-genus here is the ones that come from the Todd polynomial
 Recall that if we are talking about the Chern class of a complex manifold $M$, we are talking about the
-Chern class of its tangent bundle, and the $K$-genus is defined for such structures. Let
-\[
-   Q(x) = \frac{x}{1-e^{-x}} \qquad \text{and} \qquad  Q(y;x) = \frac{x(y+1)}{1-e^{-x(y+1)}} -xy
-\]
-Then:
+Chern class of its tangent bundle, and the $K$-genus is defined for such structures:
 \index{Todd Genus}
 \begin{defn}{Todd Genus}{toddGenus}
   Let $M$ be an $n$-dimensional almost complex manifold. The \emph{Todd genus} (or \emph{T-genus}) is the number:
@@ -3235,27 +3738,34 @@ Then:
   \]
   is the \emph{generalized Todd Genus}.
 \end{defn}
-
 The generalized Todd genus is a natural generaliztion of the todd genus as:
 \[
   T_0(M_n) = T^0(M_n) = T(M_n)
 \]
-In many ways, the Todd genus is ``dual'' to the Chern class. For example
-(\cite[p.93]{hirzebruchTopologicalMethodsAlgebraic1995}):
-\[
-  T_{-1}(M_n) = \sum_{p=0}^n (-1)^p T^p(M_n) = c_n[M_n] = \chi(M_n)
-\]
-\begin{center}
-  and
-\end{center}
+To important terms that we must evaluate is at the $y = -1$ and $y=1$. For $y = -1$:
+% (\cite[p.93]{hirzebruchTopologicalMethodsAlgebraic1995}):
+\begin{align*}
+  T_{-1}(M_n) &= \sum_{p=0}^n (-1)^p T^p(M_n)\\
+              &= \prod_i Q(-1; \gamma_i)[M_n]\\
+              &= \prod_i Q(1 + \gamma_i x)[M_n]\\
+              &= c[M_n] \\
+              &\overset{!}{=} c_n[M_n] &\text{}\\
+              &= \chi(M_n)
+\end{align*}
+where $\overset{!}{=}$ comes from ignoring the lower order terms because perfect pairing. Evaluating at $1$ we
+get:
 \[
   T_{1}(M_n) = \sum_{p=0}^n  T^p(M_n) = \tau(M_n)
 \]
-where $\tau$ is the index of $M_n$ (see \textcolor{red}{in the cobordism, section 8}).
+where $\tau$ is the index of $M_n$, with the equality holding since
+\[
+    Q(1;x) = \frac{x(2e^{2x} - (e^{2x} - 1))}{e^{2x} - 1} = \frac{x(e^{2x} + 1)}{e^{2x} - 1} = x\coth(x) = \frac{x}{\tanh(x)}
+\]
+This shall be important for the eventual comparison of with the Euler characteristic.
 By~\cref{lm:geoCharofToddGenus}, the $T$-genus is the only genus associated to an $m$-sequence with rational
-coefficients which takes the value $1$ on every complex projective space $\CP^n$, and the
-$T_y$-genus is the only genus associated to an $m$-sequence with coefficients in $\mathbb{Q}[y]$ which takes the
-value $1-y+y^2-\cdots+(-1)^n y^n$ on $\CP^n$.
+coefficients which takes the value $1$ on every complex projective space $\CP^n$, and the $T_y$-genus is the
+only genus associated to an $m$-sequence with coefficients in $\mathbb{Q}[y]$ which takes the value
+$1-y+y^2-\cdots+(-1)^n y^n$ on $\CP^n$.
 
 \begin{prop}{Properties of Todd Genus}{propofToddGenus}
   Let $B$ be a commutative ring where $Q \sse B$. Then
@@ -3375,96 +3885,6 @@ over this because I already do in~\cite{NateKTheory}}
 
 \textcolor{red}{Move 12.3 here more virtual results}
 
-
-\subsection{Algebraic Build-up}
-
-Let $B = \Q[y]$.
-Then consider the $m$-sequence $T_j(y; c_1, ..., c_j)$ with characteristic power series:
-\[
-  Q(y; x) = \frac{x(y+1)}{1-e^{-x(y+1)}} -yx = \frac{x(y+1)}{e^{x(y+1)}-1}+x
-\]
-\begin{lem}{}{geoCharofToddGenus}
-  For every $n$ the coefficient of $x^n$ in $(Q(y;x))^{n+1}$ is equal to $\sum_{i=0}^n(-1)^iy^i$, and $Q(y,x)$
-is the only power series with coefficients in $\mathbb{Q}[y]$ which has this property.
-\end{lem}
-
-
-\begin{Proof}
-  Take substitution
-\[
-    c_i = \binom{n+1}{i}
-  \]
-  then:
-  \[
-      T_n(y; c_1,\ldots,c_n) = 1-y+y^2-\cdots+(-1)^ny^n.
-  \]
-  Then as $Q(\frac{1}{y};yx) = Q(y;-x)$:
-  \[
-      y^n T_n(\frac{1}{y};c_1,\ldots,c_n) = (-1)^n T_n(y;c_1,\ldots,c_n)
-  \]
-  as we sought to show
-\end{Proof}
-
-
-The polynomial $T_n(y;c_1,\ldots,c_n)$ can be written in a unique way in the form
-\[
-    T_n(y;c_1,\ldots,c_n) = \sum_{p=0}^n T_n^p(c_1,\ldots,c_n)y^p.
-\]
-
-The polynomials $T_n^p(c_1,\ldots,c_n)$ satisfy
-\[
-    T_n^p(c_1,\ldots,c_n) = (-1)^n T_n^{n-p}(c_1,\ldots,c_n)
-\]
-Now, consider the factorization:
-\[
-  1 + c_1x + \cdots + c_nx^n = \prod_{i=1}^n (1 + \gamma_i x)
-\]
-Then we have:
-\begin{prop}{Computing $T_y$-Polynomial}{computingToddPoly}
-  \[
-  T_n^p(c_1, ..., c_n) = \kappa_n \left[ \sum \exp(-\gamma_{j_1} - \cdots - \gamma_{j_r}) \prod_{i=1}^n
-  \frac{\gamma_i}{1- \exp(-\gamma_i)}\right]
-\]
-where the sum is over the $\binom{n}{p}$ pairwise combinations of distinct $\gamma_i$, and $\kappa_n[-]$ denotes the sum of all homogeneous polynomials of degree $n$ (mirroring evaluating at the
-fundamental class in section \textcolor{red}{ref:HERE}).
-\end{prop}
-
-\begin{Proof}
-  Indeed;
- \begin{align*}
-	\sum_{p=0}^n T_n^p y^p &= \kappa_n \left[\prod_{i=1}^n \left(1
-	+ y\exp(-\gamma_i)\right)\frac{\gamma_i}{1-\exp(-\gamma_i)}\right]\\
-						   &= \kappa_n \left[\prod_{i=1}^n \frac{(1 + y\exp(-(1+y)\gamma_i))}{1+y}
-						   \cdot \frac{(1+y)\gamma_i}{1-\exp(-(1+y)\gamma_i)}\right]\\
-						   &= \kappa_n \left[\prod_{i=1}^n Q(y;\gamma_i)\right] = \sum_{p=0}^n T_n^p(c_1,\ldots,c_n)y^p
-  \end{align*}
-  as we sought to show
-\end{Proof}
-
-
-
-Finally note that $Q(0;x)=\frac{x}{1-e^{-x}}$, $Q(-1;x)=1+x$ and $Q(1;x)=\frac{x}{\tanh x}$. Therefore (see {\color{red} 1.5 and Lemma 1.3.1})
-
-\[
-T_n^0(c_1,\ldots,c_n) = T_n(c_1,\ldots,c_n) \text{ (Todd polynomial)},
-\]
-
-\begin{gather*}
-\sum_{p=0}^n (-1)^p T_n^p(c_1,\ldots,c_n) = c_n,\\
-\sum_{p=0}^n T_n^p(c_1,\ldots,c_n) = \tilde{L}_n(c_1,\ldots,c_n), \text{ i.e.}\\
-\sum_{p=0}^n T_n^p(c_1,\ldots,c_n) \begin{cases}
- 0 \text{ if } n \text{ is odd}\\
- L_k(p_1,\ldots,p_k) \text{ if } n=2k.
-\end{cases}
-\end{gather*}
-
-1.9. The Todd polynomials are essentially the Bernoulli polynomials of higher order defined by {\color{red} Nörlund} (see {\color{red} N. E. Nörlund, Differenzenrechnung, Berlin, Springer-Verlag, 1924, especially p. 143}). The Bernoulli polynomial $B_j^{(n)}(\gamma_1,\ldots,\gamma_n)$ is defined by
-
-\[
-\prod_{i=1}^n \frac{\gamma_i x}{\exp(\gamma_i x)-1} = \sum_{j=0}^{\infty} \frac{x^j}{j!}B_j^{(n)}(\gamma_1,\ldots,\gamma_n).
-\]
-
-If the $c_i$ are regarded as the elementary symmetric functions in $\gamma_1,\ldots,\gamma_n$ [see {\color{red} 1.8 (14)}] then
 
 
 \subsection{Virtual Todd Genus}
@@ -3588,21 +4008,6 @@ integer.
 
 Let us now show that $T(X) = T(X_\Delta)$, that is the Todd genus is invariant under splitting. Essentially,
 $T(F(n)) = 1$ and $T(X_\Delta) = T(X)T(F(n)) = T(X)$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \chapter{Hirzebruch Riemann Roch}
 

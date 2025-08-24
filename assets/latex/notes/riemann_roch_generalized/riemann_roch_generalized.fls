@@ -1921,6 +1921,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
 INPUT ./riemann_roch_generalized.ind
 INPUT riemann_roch_generalized.ind
 INPUT ./riemann_roch_generalized.ind

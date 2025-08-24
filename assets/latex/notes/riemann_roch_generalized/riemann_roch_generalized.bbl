@@ -19,6 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{NateKTheory}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Everything You Need to know about K-theory}
+      \field{volume}{1}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_K-Theory.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_K-Theory.pdf
+      \endverb
+    \endentry
     \entry{NateAlgGeo}{book}{}
       \name{author}{1}{}{%
         {{hash=17e33e23808fa6250bed45d881448509}{%
@@ -33,6 +61,7 @@
       \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{2}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}

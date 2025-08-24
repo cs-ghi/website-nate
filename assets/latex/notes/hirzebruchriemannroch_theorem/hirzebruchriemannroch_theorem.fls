@@ -1898,12 +1898,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
@@ -1914,9 +1908,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm5.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
@@ -1926,10 +1917,17 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/wasy/wasy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT hirzebruchriemannroch_theorem.aux
 INPUT ./hirzebruchriemannroch_theorem.out
@@ -1939,6 +1937,7 @@ OUTPUT hirzebruchriemannroch_theorem.run.xml
 INPUT /Users/nathanaelchwojko-srawkey/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
@@ -1965,4 +1964,5 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb

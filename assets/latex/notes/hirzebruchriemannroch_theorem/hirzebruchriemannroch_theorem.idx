@@ -1,28 +1,35 @@
-\indexentry{Fiber Bundle|hyperpage}{20}
-\indexentry{Bundle!Fiber|hyperpage}{20}
-\indexentry{Structure Group|hyperpage}{21}
-\indexentry{G-bundle|hyperpage}{21}
-\indexentry{Principal Bundle|hyperpage}{21}
-\indexentry{Bundle!Principal|hyperpage}{21}
-\indexentry{Vector Bundle|hyperpage}{22}
-\indexentry{Bundle!Vector|hyperpage}{22}
-\indexentry{Classifying Vector Bundles|hyperpage}{22}
-\indexentry{Universal Bundle|hyperpage}{22}
-\indexentry{Bundle!Universal|hyperpage}{22}
-\indexentry{Pontryagin Class|hyperpage}{25}
-\indexentry{Pontryagin Numbers|hyperpage}{30}
-\indexentry{Chern Numbers|hyperpage}{30}
-\indexentry{Algebraic Cobordism Ring|hyperpage}{31}
-\indexentry{Geometric Cobordism Ring|hyperpage}{33}
-\indexentry{Hodge Number|hyperpage}{41}
-\indexentry{K\"ahler Metric|hyperpage}{41}
-\indexentry{K\"ahler Manifold|hyperpage}{41}
-\indexentry{Euler-Hodge Characteristic|hyperpage}{42}
-\indexentry{Multiplicative Sequence|hyperpage}{53}
-\indexentry{Todd Class|hyperpage}{58}
-\indexentry{K-Pontryagin genus|hyperpage}{60}
-\indexentry{K-Chern genus|hyperpage}{60}
-\indexentry{K-genus|hyperpage}{60}
-\indexentry{Todd Genus|hyperpage}{61}
-\indexentry{T-characteristic|hyperpage}{62}
-\indexentry{Virtual Todd Genus|hyperpage}{67}
+\indexentry{Fiber Bundle|hyperpage}{22}
+\indexentry{Bundle!Fiber|hyperpage}{22}
+\indexentry{Structure Group|hyperpage}{23}
+\indexentry{G-bundle|hyperpage}{23}
+\indexentry{Principal Bundle|hyperpage}{23}
+\indexentry{Bundle!Principal|hyperpage}{23}
+\indexentry{Vector Bundle|hyperpage}{24}
+\indexentry{Bundle!Vector|hyperpage}{24}
+\indexentry{Classifying Vector Bundles|hyperpage}{24}
+\indexentry{Universal Bundle|hyperpage}{24}
+\indexentry{Bundle!Universal|hyperpage}{24}
+\indexentry{Pontryagin Class|hyperpage}{27}
+\indexentry{Dolbeault Cohomology|hyperpage}{33}
+\indexentry{Dolbeault Cohomology For Vector Bundles|hyperpage}{33}
+\indexentry{Hodge Number|hyperpage}{37}
+\indexentry{K\"ahler Metric|hyperpage}{38}
+\indexentry{K\"ahler Manifold|hyperpage}{38}
+\indexentry{Euler-Hodge Characteristic|hyperpage}{41}
+\indexentry{Cobordant|hyperpage}{47}
+\indexentry{Pontryagin Numbers|hyperpage}{48}
+\indexentry{Chern Numbers|hyperpage}{48}
+\indexentry{Algebraic K-genus|hyperpage}{49}
+\indexentry{Algebraic Cobordism Ring|hyperpage}{50}
+\indexentry{Basis Sequence|hyperpage}{50}
+\indexentry{Geometric Oriented Cobordism Ring|hyperpage}{53}
+\indexentry{Geometric Genus|hyperpage}{53}
+\indexentry{Index|hyperpage}{53}
+\indexentry{Virtual Index|hyperpage}{57}
+\indexentry{Multiplicative Sequence|hyperpage}{61}
+\indexentry{K-Pontryagin genus|hyperpage}{66}
+\indexentry{K-genus|hyperpage}{66}
+\indexentry{Todd Class|hyperpage}{69}
+\indexentry{Todd Genus|hyperpage}{70}
+\indexentry{T-characteristic|hyperpage}{72}
+\indexentry{Virtual Todd Genus|hyperpage}{75}

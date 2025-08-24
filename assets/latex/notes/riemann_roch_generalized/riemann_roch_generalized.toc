@@ -19,4 +19,9 @@
 \contentsline {section}{\numberline {2.4}Some Cobordism}{39}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Index and Virtual index}{43}{subsection.2.4.1}%
 \contentsline {section}{\numberline {2.5}RR for algebraic manifolds (i.e. projective verities)}{43}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Organization Ideas}{47}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Organization Ideas}{45}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Converting "Virtual" to Intersection Theory}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Virtual index To Intersection Theory Objects}{48}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Virtual index into Intersection Theory}{50}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Virtual Genus to Intersection Theory Objects}{50}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Virtual Characteristic to Intersection Theory Objects}{52}{section.4.3}%

@@ -2385,6 +2385,10 @@
     <bcf:citekey order="22" intorder="1">gallierComplexAlgebraicGeometry2011</bcf:citekey>
     <bcf:citekey order="23" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
     <bcf:citekey order="24" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">NateKTheory</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
