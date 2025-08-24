@@ -1,22 +1,22 @@
 \begin{theindex}
 
-  \item Algebraic Cobordism Ring, \hyperpage{50}
-  \item Algebraic K-genus, \hyperpage{49}
+  \item Algebraic Cobordism Ring, \hyperpage{70}
+  \item Algebraic K-genus, \hyperpage{69}
 
   \indexspace
 
-  \item Basis Sequence, \hyperpage{50}
+  \item Basis Sequence, \hyperpage{70}
   \item Bundle
-    \subitem Fiber, \hyperpage{22}
+    \subitem Fiber, \hyperpage{23}
     \subitem Principal, \hyperpage{23}
     \subitem Universal, \hyperpage{24}
     \subitem Vector, \hyperpage{24}
 
   \indexspace
 
-  \item Chern Numbers, \hyperpage{48}
+  \item Chern Numbers, \hyperpage{68}
   \item Classifying Vector Bundles, \hyperpage{24}
-  \item Cobordant, \hyperpage{47}
+  \item Cobordant, \hyperpage{67}
 
   \indexspace
 
@@ -29,13 +29,13 @@
 
   \indexspace
 
-  \item Fiber Bundle, \hyperpage{22}
+  \item Fiber Bundle, \hyperpage{23}
 
   \indexspace
 
   \item G-bundle, \hyperpage{23}
-  \item Geometric Genus, \hyperpage{53}
-  \item Geometric Oriented Cobordism Ring, \hyperpage{53}
+  \item Geometric Genus, \hyperpage{73}
+  \item Geometric Oriented Cobordism Ring, \hyperpage{73}
 
   \indexspace
 
@@ -43,23 +43,23 @@
 
   \indexspace
 
-  \item Index, \hyperpage{53}
+  \item Index, \hyperpage{73}
 
   \indexspace
 
-  \item K-genus, \hyperpage{66}
-  \item K-Pontryagin genus, \hyperpage{66}
+  \item K-genus, \hyperpage{56}
+  \item K-Pontryagin genus, \hyperpage{56}
   \item K\"ahler Manifold, \hyperpage{38}
   \item K\"ahler Metric, \hyperpage{38}
 
   \indexspace
 
-  \item Multiplicative Sequence, \hyperpage{61}
+  \item Multiplicative Sequence, \hyperpage{51}
 
   \indexspace
 
   \item Pontryagin Class, \hyperpage{27}
-  \item Pontryagin Numbers, \hyperpage{48}
+  \item Pontryagin Numbers, \hyperpage{68}
   \item Principal Bundle, \hyperpage{23}
 
   \indexspace
@@ -68,9 +68,9 @@
 
   \indexspace
 
-  \item T-characteristic, \hyperpage{72}
-  \item Todd Class, \hyperpage{69}
-  \item Todd Genus, \hyperpage{70}
+  \item T-characteristic, \hyperpage{62}
+  \item Todd Class, \hyperpage{59}
+  \item Todd Genus, \hyperpage{60}
 
   \indexspace
 
@@ -79,7 +79,7 @@
   \indexspace
 
   \item Vector Bundle, \hyperpage{24}
-  \item Virtual Index, \hyperpage{57}
-  \item Virtual Todd Genus, \hyperpage{75}
+  \item Virtual Index, \hyperpage{78}
+  \item Virtual Todd Genus, \hyperpage{65}
 
 \end{theindex}

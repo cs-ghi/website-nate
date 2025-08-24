@@ -1905,9 +1905,11 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm5.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
@@ -1922,13 +1924,11 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/zapfchan/pzcmi7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT hirzebruchriemannroch_theorem.aux
 INPUT ./hirzebruchriemannroch_theorem.out
 INPUT ./hirzebruchriemannroch_theorem.out
@@ -1960,6 +1960,7 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

@@ -2408,37 +2408,46 @@
     <bcf:citekey order="45" intorder="1">NateDiffGeo</bcf:citekey>
     <bcf:citekey order="46" intorder="1">NateAlgTop</bcf:citekey>
     <bcf:citekey order="47" intorder="1">gallierComplexAlgebraicGeometry2011</bcf:citekey>
-    <bcf:citekey order="48" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">gallierComplexAlgebraicGeometry2011</bcf:citekey>
     <bcf:citekey order="49" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
     <bcf:citekey order="50" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
     <bcf:citekey order="51" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
     <bcf:citekey order="52" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">hartshorneAlgebraicGeometry2013</bcf:citekey>
     <bcf:citekey order="54" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
     <bcf:citekey order="55" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">hartshorneAlgebraicGeometry2013</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">NateAlgGeo</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">NateAlgGeo</bcf:citekey>
-    <bcf:citekey order="59" intorder="1">NateDiffGeo</bcf:citekey>
-    <bcf:citekey order="60" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
-    <bcf:citekey order="61" intorder="1">gallierComplexAlgebraicGeometry2011</bcf:citekey>
-    <bcf:citekey order="62" intorder="1">NateKTheory</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">hartshorneAlgebraicGeometry2013</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">NateAlgGeo</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">NateAlgGeo</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
     <bcf:citekey order="63" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
-    <bcf:citekey order="64" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
-    <bcf:citekey order="65" intorder="1">NateKTheory</bcf:citekey>
-    <bcf:citekey order="66" intorder="1">fultonIntersectionTheory1984</bcf:citekey>
-    <bcf:citekey order="67" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
-    <bcf:citekey order="68" intorder="1">NateAlgGeo</bcf:citekey>
-    <bcf:citekey order="69" intorder="1">NateAlgGeo</bcf:citekey>
-    <bcf:citekey order="70" intorder="1">NateAlgGeo</bcf:citekey>
-    <bcf:citekey order="71" intorder="1">NateComplexAnalysis</bcf:citekey>
-    <bcf:citekey order="72" intorder="1">NateComplexAnalysis</bcf:citekey>
-    <bcf:citekey order="73" intorder="1">NateAlgGeo</bcf:citekey>
-    <bcf:citekey order="74" intorder="1">NateComplexAnalysis</bcf:citekey>
-    <bcf:citekey order="75" intorder="1">NateKTheory</bcf:citekey>
-    <bcf:citekey order="76" intorder="1">NateKTheory</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">NateKTheory</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">fultonIntersectionTheory1984</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">NateDiffGeo</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">gallierComplexAlgebraicGeometry2011</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">NateKTheory</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">NateKTheory</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">NateAlgGeo</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">hatcherVectorBundlesKTheory2017</bcf:citekey>
     <bcf:citekey order="77" intorder="1">NateAlgGeo</bcf:citekey>
-    <bcf:citekey order="78" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">NateAlgGeo</bcf:citekey>
+    <bcf:citekey order="79" intorder="1">NateAlgGeo</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">NateComplexAnalysis</bcf:citekey>
+    <bcf:citekey order="81" intorder="1">NateComplexAnalysis</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">NateAlgGeo</bcf:citekey>
+    <bcf:citekey order="83" intorder="1">NateComplexAnalysis</bcf:citekey>
+    <bcf:citekey order="84" intorder="1">NateKTheory</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">NateKTheory</bcf:citekey>
+    <bcf:citekey order="86" intorder="1">NateAlgGeo</bcf:citekey>
+    <bcf:citekey order="87" intorder="1">hirzebruchTopologicalMethodsAlgebraic1995</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

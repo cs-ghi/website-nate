@@ -1,21 +1,21 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'hirzebruchriemannroch_theorem.blg'
-[52] biber-darwin:340> INFO - === Sat Aug 23, 2025, 17:47:31
-[65] Biber.pm:419> INFO - Reading 'hirzebruchriemannroch_theorem.bcf'
-[123] Biber.pm:979> INFO - Found 19 citekeys in bib section 0
-[136] Biber.pm:4419> INFO - Processing section 0
-[144] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[146] bibtex.pm:1713> INFO - LaTeX decoding ...
-[163] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[261] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[261] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[261] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[261] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[282] bbl.pm:660> INFO - Writing 'hirzebruchriemannroch_theorem.bbl' with encoding 'UTF-8'
-[288] bbl.pm:763> INFO - Output to hirzebruchriemannroch_theorem.bbl
-[288] Biber.pm:131> WARN - ISBN '978-3-319-91754-2 978-3-319-91755-9' in entry 'leeIntroductionRiemannianManifolds2018' is invalid - run biber with '--validate_datamodel' for details.
-[288] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[288] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[288] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[288] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[288] Biber.pm:133> INFO - WARNINGS: 5
+[54] biber-darwin:340> INFO - === Sat Aug 23, 2025, 22:53:25
+[67] Biber.pm:419> INFO - Reading 'hirzebruchriemannroch_theorem.bcf'
+[128] Biber.pm:979> INFO - Found 19 citekeys in bib section 0
+[140] Biber.pm:4419> INFO - Processing section 0
+[149] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[152] bibtex.pm:1713> INFO - LaTeX decoding ...
+[171] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[278] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[278] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[279] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[279] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[299] bbl.pm:660> INFO - Writing 'hirzebruchriemannroch_theorem.bbl' with encoding 'UTF-8'
+[305] bbl.pm:763> INFO - Output to hirzebruchriemannroch_theorem.bbl
+[306] Biber.pm:131> WARN - ISBN '978-3-319-91754-2 978-3-319-91755-9' in entry 'leeIntroductionRiemannianManifolds2018' is invalid - run biber with '--validate_datamodel' for details.
+[306] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[306] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[306] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[306] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[306] Biber.pm:133> INFO - WARNINGS: 5
