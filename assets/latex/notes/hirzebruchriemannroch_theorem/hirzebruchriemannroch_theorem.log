@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  23 AUG 2025 23:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  27 AUG 2025 18:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1495,186 +1495,409 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 \tf@toc=\write8
 \openout8 = `hirzebruchriemannroch_theorem.toc'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4] [5] [6
-
-]
+ [4] [5] [6]
 Chapter 1.
-[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18
+[7
 
 ]
+
+LaTeX Warning: Reference `sec:gaga' on page 8 undefined on input line 763.
+
+[8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 1283.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+) [18] [19] [20]
 Chapter 2.
-[19] [20
+[21
 
-]
-Chapter 3.
-[21] [22]
+] [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23]
-Underfull \vbox (badness 1642) has occurred while \output is active []
-
- [24]
+ [23] [24]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1446 ...}{Leray-Hirsch Theorem}{leray-HirschThm}
+l.1638 ...}{Leray-Hirsch Theorem}{leray-HirschThm}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1467 ...Splitting Principle}{splittingPrinciple}
+l.1659 ...Splitting Principle}{splittingPrinciple}
                                                    [25]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1496 ... Chern Classes}{existenceofChernClasses}
+l.1688 ... Chern Classes}{existenceofChernClasses}
                                                    [26]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1554 ...defn}{Pontryagin Class}{pontryaginClass}
+l.1741 ...defn}{Pontryagin Class}{pontryaginClass}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1567 ...mology}{characterizingGrassmannianCohom}
-                                                   [27] [28]
+l.1754 ...mology}{characterizingGrassmannianCohom}
+                                                   [27]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1770 ...yagin Relation}{chernPontryaginRelation}
+                                                  
+LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
+(Font)              scaled to size 11.00006pt on input line 1772.
+LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
+(Font)              scaled to size 7.70004pt on input line 1772.
+LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
+(Font)              scaled to size 5.50003pt on input line 1772.
+LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
+(Font)              scaled to size 8.80005pt on input line 1806.
+LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
+(Font)              scaled to size 6.60004pt on input line 1806.
+ [28{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1673 ...racter}{extandTensorsWithChernCharacter}
-                                                   [29] [30]
-Chapter 4.
+l.1875 ...racter}{extandTensorsWithChernCharacter}
+                                                  
+Overfull \hbox (0.67029pt too wide) detected at line 1888
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 
+ \OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = [] \OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 e[]e[] \OT1/cmr/m/n/10 = [] [] = [](\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^Q\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
+ []
+
+[29] [30] [31] [32
+
+]
+Chapter 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31
-
-] [32]
+ [33]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1828 ...n}{Dolbeault Cohomology}{dolbeaultCohom}
-                                                  
+l.2024 ...Dolbeault Operators}{dolbeaultOperators}
+                                                   [34]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1865 ...or Bundles}{dolbeaultCohomForVecBundles}
-                                                   [33]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 1874.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
+l.2058 ...n}{Dolbeault Cohomology}{dolbeaultCohom}
+                                                   [35]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1879 ...{thm}{Dolbeault's Theorem}{dolbeaultThm}
-                                                   [34] [35] [36]
+l.2095 ...or Bundles}{dolbeaultCohomForVecBundles}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2052 ...ite Dimension Theorem}{kodariaFinDimThm}
-                                                  
+l.2108 ...{thm}{Dolbeault's Theorem}{dolbeaultThm}
+                                                   [36] [37] [38]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2066 ...odge Duality Theorem}{serreHodgeDuality}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2077 \begin{defn}{Hodge Number}{hodgeNumber}
-                                               [37]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2107 \begin{defn}{K\"ahler Metric}{kahlerMetric}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2119 ...defn}{K\"ahler Manifold}{kahlerManifold}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2126 ...}{symmetryofHodgeNumberOnKahlerManifold}
-                                                   [38]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2151 \begin{thm}{Bertini Theorem}{bertiniThm}
-                                               
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2163 ...y}{characterizingVarietiesGeoemtrically}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.2176 ... Vanishing Theorem}{kodariaVanishingThm}
+l.2282 ...ite Dimension Theorem}{kodariaFinDimThm}
                                                    [39]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2296 ...odge Duality Theorem}{serreHodgeDuality}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2191 ...teristic}{kodairaVanishingThm-EulerChar}
-                                                   [40]
+l.2307 \begin{defn}{Hodge Number}{hodgeNumber}
+                                              
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2286 ...haracteristic}{totalEulerCharacteristic}
-                                                   [41]
+l.2337 \begin{defn}{K\"ahler Metric}{kahlerMetric}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2339 ...acteristic and Index}{eulerCharandIndex}
-                                                   [42]
+l.2349 ...defn}{K\"ahler Manifold}{kahlerManifold}
+                                                   [40]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2374 ..."ahler Manifolds}{charLineBundleKahlMan}
-                                                   [43]
+l.2356 ...}{symmetryofHodgeNumberOnKahlerManifold}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2422 ... Additive}{generalizedEulerCharAdditive}
+l.2378 ...n{defn}{Real Positivity}{realpositivity}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2439 ...eristic}{splittingPrincipleandEulerChar}
-                                                   [44]
+l.2383 ...f Real Positivity}{propofRealPositivity}
+                                                   [41]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2459 ...{Extending via Divisors}{extViaDivisors}
+l.2400 ...efn}{Integral Positivity}{intPositivity}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2477 ...g Divisor}{splitPrinEulerCharAndDivisor}
-                                                   [45] [46]
+l.2406 \begin{defn}{Hodge Manifold}{hodgeManifold}
+                                                   [42] [43]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2506 ...haracteristic}{totalEulerCharacteristic}
+                                                   [44]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2608 ..."ahler Manifolds}{charLineBundleKahlMan}
+                                                   [45]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2637 ... Additive}{generalizedEulerCharAdditive}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2654 ...eristic}{splittingPrincipleandEulerChar}
+                                                  
+Underfull \vbox (badness 1067) has occurred while \output is active []
+
+ [46]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2679 ...{Extending via Divisors}{extViaDivisors}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2699 ...g Divisor}{splitPrinEulerCharAndDivisor}
+                                                  
+Underfull \vbox (badness 5637) has occurred while \output is active []
+
+ [47]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2738 ...fn}{Four-term Formula}{four-termFormula}
+                                                   [48]
+LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
+(Font)              scaled to size 15.84007pt on input line 2779.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2550.
+(hyperref)                removing `math shift' on input line 2779.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\chi' on input line 2550.
+(hyperref)                removing `\chi' on input line 2779.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2550.
+(hyperref)                removing `subscript' on input line 2779.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2550.
+(hyperref)                removing `math shift' on input line 2779.
 
-[47] [48
+[49]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2860 ...fn}{Virtual Characteristic}{virtualChar}
+                                                   [50]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2890 ...ic Divisor Restriction}{virtCharDivRest}
+                                                   [51]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2918 ...ial Bundle}{virtualCharandTrivialBundle}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2929 ...ine Bundles}{algebraofProdofLineBundles}
+                                                  
+Overfull \hbox (2.93518pt too wide) detected at line 2948
+[]
+ []
+
+[52] [53]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3025 ...r Decomposition}{virtualCharacterDecomp}
+                                                   [55]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3068 ...}{0-dimensional Case}{0-dimensionalCase}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3095 \begin{thm}{Induction Case}{inductionCase}
+                                                 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56] [57]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3190 ...hm}{Uniqueness Result}{uniquenessResult}
+                                                  
+Underfull \vbox (badness 7631) has occurred while \output is active []
+
+ [58] [59]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3247 ... Vanishing Theorem}{kodariaVanishingThm}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3259 ...teristic}{kodairaVanishingThm-EulerChar}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3275 ...pace}{lineBundlesAreAlgebraicOverProjSp}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3289 ...el Vanishing Theorem}{borelVanishingThm}
+                                                   [60] [61] [62
+
+]
+Chapter 4.
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3333 ...Generalization}{incorrectGeneralization}
+                                                   [63]
+Underfull \vbox (badness 1365) has occurred while \output is active []
+
+ [64]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3436 ...cative Sequence}{multiplicativeSequence}
+                                                  
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [65]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3475 ...orresp1-unitPowerSeriesand$m$-sequences}
+                                                   [66] [67]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3567 ...f $m$-sequence}{computationofM-sequence}
+                                                   [68]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3616 ...Series}{coefficientofL-genusPowerSeries}
+                                                   [69]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3676 \begin{defn}{K-genus}{k-genus}
+                                     
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3692 ...}{K-genus is Multiplicative}{kGenusMult}
+                                                   [70]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3720 \begin{lem}{}{geoCharofToddGenus}
+                                        
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3757 ...ing $T_y$-Polynomial}{computingToddPoly}
+                                                   [71]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.9}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3783 ...y=1$ Values}{valueofCertainpthToddPolys}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3816 \begin{defn}{Todd Class}{toddClass}
+                                          
+Underfull \vbox (badness 1609) has occurred while \output is active []
+
+ [72] [73]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3873 ...ity}{relatingToddClassandChernCharacter}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3892 ...ox}{Relation to Serge Class}{sergeClass}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3900 \begin{defn}{Todd Genus}{toddGenus}
+                                          
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74]
+Overfull \hbox (2.79747pt too wide) in paragraph at lines 3931--3937
+\OT1/cmr/m/n/10 where $\OML/cmm/m/it/10 ^^\$ \OT1/cmr/m/n/10 is short-hand for the Pon-trya-gin num-ber as it will be equal to the in-dex of $\OML/cmm/m/it/10 M[]$\OT1/cmr/m/n/10 . By lemma [][]4.1.7[][],
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3938 ...operties of Todd Genus}{propofToddGenus}
+                                                  
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [75] [76]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4020 ...n}{Virtual Todd Genus}{virtualToddGenus}
+                                                   [77]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4061 ...l Equation of $T_y$}{funcalEquationofTy}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4096 ...efn}{T-characteristic}{t-characteristic}
+                                                   [78] [79] [80]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4217 ...l Todd Genus}{splittingAndVirtToddGenus}
+                                                   [81] [82
 
 ]
 Chapter 5.
@@ -1682,284 +1905,246 @@ Chapter 5.
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2577 ...Generalization}{incorrectGeneralization}
-                                                   [49]
-Underfull \vbox (badness 1112) has occurred while \output is active []
-
- [50]
+l.4265 \begin{defn}{Cobordant}{cobordant}
+                                          [83]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2681 ...cative Sequence}{multiplicativeSequence}
+l.4331 ...ers and Chern Number}{pontryaginNumbers}
                                                   
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (1.49767pt too wide) in paragraph at lines 4347--4351
+[]\OT1/cmr/m/n/10 By def-i-ni-tion of the Eu-ler class, if $\OML/cmm/m/it/10 M[]$ \OT1/cmr/m/n/10 is an ori-ented al-most com-plex man-i-fold, $\OML/cmm/m/it/10 c[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 ] = \OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M[]; TM[]\OT1/cmr/m/n/10 )$,
+ []
 
- [51]
+[84]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2720 ...orresp1-unitPowerSeriesand$m$-sequences}
-                                                   [52] [53]
+l.4380 ...fn}{Algebraic K-genus}{algebraicK-genus}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2812 ...f $m$-sequence}{computationofM-sequence}
-                                                   [54]
+l.4389 ...f Algebraic Genus}{propofAlgebraicGenus}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2861 ...Series}{coefficientofL-genusPowerSeries}
-                                                  
-LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
-(Font)              scaled to size 11.00006pt on input line 2883.
-LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
-(Font)              scaled to size 7.70004pt on input line 2883.
-LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
-(Font)              scaled to size 5.50003pt on input line 2883.
- [55{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+l.4405 ...iented Cobordism Ring}{algCobordismRing}
+                                                   [85]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2921 \begin{defn}{K-genus}{k-genus}
-                                     
+l.4447 \begin{defn}{Basis Sequence}{basisSequence}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2937 ...}{K-genus is Multiplicative}{kGenusMult}
-                                                   [56]
+l.4455 ...ce Correspondence}{basisSequenceCorresp}
+                                                   [86]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2968 \begin{lem}{}{geoCharofToddGenus}
-                                        
+l.4478 ...Sequence}{complexProjFormsBasisSequence}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3005 ...ing $T_y$-Polynomial}{computingToddPoly}
-                                                   [57] [58]
+l.4495 ...basisSequenceWithRationalNumbersCorresp}
+                                                   [87]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.9}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4524 ...rdism Ring}{isoofAlgebraicCobordismRing}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4552 ...momorphisms}{characterizingRationalHomo}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.11}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4566 ... Cobordism Ring}{geometricCobordismRing}
+                                                   [88]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.12}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4581 ...n{defn}{Geometric Genus}{geometricGenus}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3055 \begin{defn}{Todd Class}{toddClass}
-                                           [59]
+l.4618 \begin{defn}{Index}{index}
+                                  [89]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3112 ...ter}{relatingToddClassandChernCharacter}
-                                                  
+l.4626 \begin{thm}{Index is Genus}{indexisGenus}
+                                                 [90]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3132 ...ox}{Relation to Serge Class}{sergeClass}
+l.4696 ...gnature Theorem}{hirzebruchSignatureThm}
                                                   
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3140 \begin{defn}{Todd Genus}{toddGenus}
-                                          
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1194) has occurred while \output is active []
 
- [60]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3183 ...operties of Todd Genus}{propofToddGenus}
-                                                   [61]
+ [91]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3224 ...efn}{T-characteristic}{t-characteristic}
-                                                   [62] [63]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3352 ...n}{Virtual Todd Genus}{virtualToddGenus}
-                                                   [64] [65]
+l.4743 ...ChernClassofCodimension1ComplexManifold}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3413 ...l Todd Genus}{splittingAndVirtToddGenus}
-                                                   [66]
+l.4757 ...sses}{relatingChernandPontryaginClasses}
+                                                  
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [92]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4771 ...olds}{relationForAlmostComplexManifolds}
+                                                   [93]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4860 \begin{defn}{Virtual Index}{virtualIndex}
+                                                 [94]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4879 ...ion of Virtual Index}{funcEqOfVirtIndex}
+                                                   [95] [96
+
+]
 Chapter 6.
 
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3441 \begin{defn}{Cobordant}{cobordant}
-                                          [67
-
-]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3507 ...ers and Chern Number}{pontryaginNumbers}
-                                                  
-Overfull \hbox (1.49767pt too wide) in paragraph at lines 3523--3527
-[]\OT1/cmr/m/n/10 By def-i-ni-tion of the Eu-ler class, if $\OML/cmm/m/it/10 M[]$ \OT1/cmr/m/n/10 is an ori-ented al-most com-plex man-i-fold, $\OML/cmm/m/it/10 c[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 ] = \OML/cmm/m/it/10 ^^_\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 M[]; TM[]\OT1/cmr/m/n/10 )$,
- []
-
-[68]
+l.4926 ...les}{rrForRiemannSurfacewithLineBundles}
+                                                   [97] [98]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3556 ...fn}{Algebraic K-genus}{algebraicK-genus}
+l.5053 ...ector Bundles}{atiyah-serreOnVecBundles}
+                                                   [99] [100]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5127 ...dles}{rrForRiemannSurfaceWithVecBundles}
+                                                   [101]
+LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
+(Font)              scaled to size 13.20007pt on input line 5188.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5188.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 5188.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5188.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5188.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\chi' on input line 5188.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 5188.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5188.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5191 ...acteristic and Index}{eulerCharandIndex}
+                                                   [102]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5223 ... Manifold}{splittingofAlgebraicManifold}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3565 ...f Algebraic Genus}{propofAlgebraicGenus}
-                                                  
+l.5251 ...r-characteristicInvariantUnderSplitting}
+                                                   [103]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3581 ...iented Cobordism Ring}{algCobordismRing}
-                                                   [69]
+l.5269 ...quivalence}{toddandArithmeticGenusEquiv}
+                                                  
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3623 \begin{defn}{Basis Sequence}{basisSequence}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3631 ...ce Correspondence}{basisSequenceCorresp}
-                                                   [70]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3654 ...Sequence}{complexProjFormsBasisSequence}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.8}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3671 ...basisSequenceWithRationalNumbersCorresp}
-                                                   [71]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.9}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3700 ...rdism Ring}{isoofAlgebraicCobordismRing}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.10}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3728 ...momorphisms}{characterizingRationalHomo}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.11}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3742 ... Cobordism Ring}{geometricCobordismRing}
-                                                   [72]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3794 \begin{defn}{Index}{index}
-                                  [73]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3802 \begin{thm}{Index is Genus}{indexisGenus}
-                                                 [74]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3872 ...gnature Theorem}{hirzebruchSignatureThm}
-                                                  
-Underfull \vbox (badness 1194) has occurred while \output is active []
+l.5282 ...n To Line Splitting}{extToLineSplitting}
+                                                   [104] [105] (./hirzebruchriemannroch_theorem.ind [106
 
- [75]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3919 ...ChernClassofCodimension1ComplexManifold}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3933 ...sses}{relatingChernandPontryaginClasses}
-                                                  
-Underfull \vbox (badness 10000) has occurred while \output is active []
+]) [107
 
- [76]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.3947 ...olds}{relationForAlmostComplexManifolds}
-                                                   [77]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4036 \begin{defn}{Virtual Index}{virtualIndex}
-                                                 [78]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4056 ...ion of Virtual Index}{funcEqOfVirtIndex}
-                                                   [79] [80
 
 ]
-Chapter 7.
-
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4102 ...les}{rrForRiemannSurfacewithLineBundles}
-                                                   [81] [82]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4230 ...ector Bundles}{atiyah-serreOnVecBundles}
-                                                  
-LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
-(Font)              scaled to size 8.80005pt on input line 4234.
-LaTeX Font Info:    Font shape `OT1/pzc/m/it' will be
-(Font)              scaled to size 6.60004pt on input line 4234.
- [83] [84]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4304 ...dles}{rrForRiemannSurfaceWithVecBundles}
-                                                   [85]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4371 ... Manifold}{splittingofAlgebraicManifold}
-                                                   [86]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4399 ...r-characteristicInvariantUnderSplitting}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4417 ...quivalence}{toddandArithmeticGenusEquiv}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4430 ...n To Line Splitting}{extToLineSplitting}
-                                                   [87] [88] [89
-
-]
-Overfull \hbox (30.4596pt too wide) in paragraph at lines 4508--4508
+Overfull \hbox (30.4596pt too wide) in paragraph at lines 5361--5361
 \OT1/cmtt/m/n/10 info : XErvue4ovgwJ : scholar . google . com & ots = OR51pvoipT & sig = NcjWQsiJwE9XL79fBWQTMMub5WM$[][]\OT1/cmr/m/n/10 . 
  []
 
-[90] (./hirzebruchriemannroch_theorem.aux)
+[108] (./hirzebruchriemannroch_theorem.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `hirzebruchriemannroch_theorem.out' has not changed.
-(rerunfilecheck)             Checksum: 50AAA7F4AF4EFB4EA3BEFF11817AE104;8387.
+(rerunfilecheck)             Checksum: C38E00CF64867A143FE7EBF3DBD831CD;9386.
 Package logreq Info: Writing requests to 'hirzebruchriemannroch_theorem.run.xml'.
 \openout1 = `hirzebruchriemannroch_theorem.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56959 strings out of 476025
- 1313066 string characters out of 5790017
- 2214253 words of memory out of 5000000
- 76238 multiletter control sequences out of 15000+600000
- 534256 words of font info for 111 fonts, out of 8000000 for 9000
+ 57246 strings out of 476025
+ 1318953 string characters out of 5790017
+ 2222869 words of memory out of 5000000
+ 76447 multiletter control sequences out of 15000+600000
+ 537348 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,17n,110p,798b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist, replaced by a fixed one
 
@@ -1981,12 +2166,12 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
- </Users/nathanaelchwojko-srawkey/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on hirzebruchriemannroch_theorem.pdf (90 pages, 718478 bytes).
+ </Users/nathanaelchwojko-srawkey/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on hirzebruchriemannroch_theorem.pdf (108 pages, 822079 bytes).
 PDF statistics:
- 1105 PDF objects out of 1200 (max. 8388607)
- 914 compressed objects within 10 object streams
- 222 named destinations out of 1000 (max. 500000)
- 477 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1405 PDF objects out of 1440 (max. 8388607)
+ 1188 compressed objects within 12 object streams
+ 292 named destinations out of 1000 (max. 500000)
+ 509 words of extra memory for PDF output out of 10000 (max. 10000000)
 

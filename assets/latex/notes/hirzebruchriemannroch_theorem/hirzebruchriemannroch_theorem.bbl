@@ -46,6 +46,22 @@
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
       \endverb
     \endentry
+    \entry{HodgeTheory2014}{book}{}
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{publisher}{1}{%
+        {Princeton university press}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-691-16134-1}
+      \field{series}{Mathematical notes}
+      \field{title}{Hodge theory}
+      \field{year}{2014}
+      \field{dateera}{ce}
+    \endentry
     \entry{navarroRiemannRochFormulaProjective2017}{unpublished}{}
       \name{author}{2}{}{%
         {{hash=838c7dfb450390cb9973591a3494d1c4}{%
@@ -112,6 +128,41 @@
       \endverb
       \verb{url}
       \verb http://arxiv.org/abs/math/0406588
+      \endverb
+    \endentry
+    \entry{leeIntroductionSmoothManifolds2003}{book}{}
+      \name{author}{1}{}{%
+        {{hash=36896354ee3aedc1a13d683ea773634e}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={John\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{fullhash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{bibnamehash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{authorbibnamehash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{authornamehash}{36896354ee3aedc1a13d683ea773634e}
+      \strng{authorfullhash}{36896354ee3aedc1a13d683ea773634e}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-95448-6 978-0-387-21752-9}
+      \field{series}{Graduate Texts in Mathematics}
+      \field{title}{Introduction to Smooth Manifolds}
+      \field{volume}{218}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/978-0-387-21752-9
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/978-0-387-21752-9
       \endverb
     \endentry
     \entry{hatcherAlgebraicTopology}{book}{}
@@ -246,6 +297,7 @@
       \strng{authorbibnamehash}{36896354ee3aedc1a13d683ea773634e}
       \strng{authornamehash}{36896354ee3aedc1a13d683ea773634e}
       \strng{authorfullhash}{36896354ee3aedc1a13d683ea773634e}
+      \field{extraname}{2}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
@@ -357,6 +409,73 @@
       \verb{url}
       \verb https://www.jstor.org/stable/2372375
       \endverb
+    \endentry
+    \entry{ahlforsComplexAnalysisIntroduction2007}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9049d9d368e0dd99340707dd04a09211}{%
+           family={Ahlfors},
+           familyi={A\bibinitperiod},
+           given={Lars\bibnamedelima Valerian},
+           giveni={L\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill}%
+      }
+      \strng{namehash}{9049d9d368e0dd99340707dd04a09211}
+      \strng{fullhash}{9049d9d368e0dd99340707dd04a09211}
+      \strng{bibnamehash}{9049d9d368e0dd99340707dd04a09211}
+      \strng{authorbibnamehash}{9049d9d368e0dd99340707dd04a09211}
+      \strng{authornamehash}{9049d9d368e0dd99340707dd04a09211}
+      \strng{authorfullhash}{9049d9d368e0dd99340707dd04a09211}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{edition}{3. ed}
+      \field{isbn}{978-0-07-000657-7}
+      \field{series}{International series in pure and applied mathematics}
+      \field{shorttitle}{Complex analysis}
+      \field{title}{Complex analysis: an introduction to the theory on analytic functions of one complex variable}
+      \field{year}{2007}
+      \field{dateera}{ce}
+    \endentry
+    \entry{voisinHodgeTheoryComplex2002}{book}{}
+      \name{author}{2}{}{%
+        {{hash=625f65d83634031135aec419045f16ea}{%
+           family={Voisin},
+           familyi={V\bibinitperiod},
+           given={Claire},
+           giveni={C\bibinitperiod}}}%
+        {{hash=12d98ed25ff1c2a607ec2671cc594d29}{%
+           family={Schneps},
+           familyi={S\bibinitperiod},
+           given={Leila},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{fd1f20d5865fa372a8f912761d99265c}
+      \strng{fullhash}{fd1f20d5865fa372a8f912761d99265c}
+      \strng{bibnamehash}{fd1f20d5865fa372a8f912761d99265c}
+      \strng{authorbibnamehash}{fd1f20d5865fa372a8f912761d99265c}
+      \strng{authornamehash}{fd1f20d5865fa372a8f912761d99265c}
+      \strng{authorfullhash}{fd1f20d5865fa372a8f912761d99265c}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-511-61534-4}
+      \field{series}{Cambridge studies in advanced mathematics}
+      \field{title}{Hodge theory and complex algebraic geometry I}
+      \field{year}{2002}
+      \field{dateera}{ce}
     \endentry
     \entry{deligneRelevementsModulop2etDecomposition1987}{article}{}
       \name{author}{2}{}{%

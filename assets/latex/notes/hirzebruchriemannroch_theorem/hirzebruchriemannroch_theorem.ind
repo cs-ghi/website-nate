@@ -1,66 +1,74 @@
 \begin{theindex}
 
-  \item Algebraic Cobordism Ring, \hyperpage{70}
-  \item Algebraic K-genus, \hyperpage{69}
+  \item Algebraic Cobordism Ring, \hyperpage{86}
+  \item Algebraic K-genus, \hyperpage{85}
 
   \indexspace
 
-  \item Basis Sequence, \hyperpage{70}
+  \item Basis Sequence, \hyperpage{86}
   \item Bundle
     \subitem Fiber, \hyperpage{23}
-    \subitem Principal, \hyperpage{23}
-    \subitem Universal, \hyperpage{24}
+    \subitem Principal, \hyperpage{24}
+    \subitem Universal, \hyperpage{25}
     \subitem Vector, \hyperpage{24}
 
   \indexspace
 
-  \item Chern Numbers, \hyperpage{68}
+  \item Chern Numbers, \hyperpage{84}
   \item Classifying Vector Bundles, \hyperpage{24}
-  \item Cobordant, \hyperpage{67}
+  \item Cobordant, \hyperpage{83}
 
   \indexspace
 
-  \item Dolbeault Cohomology, \hyperpage{33}
-  \item Dolbeault Cohomology For Vector Bundles, \hyperpage{33}
+  \item Dolbeault Cohomology, \hyperpage{35}
+  \item Dolbeault Cohomology For Vector Bundles, \hyperpage{36}
+  \item Dolbeault Operators, \hyperpage{35}
 
   \indexspace
 
-  \item Euler-Hodge Characteristic, \hyperpage{41}
+  \item Euler Characteristic
+    \subitem Euler-Hodge, \hyperpage{44}
+    \subitem Virtual, \hyperpage{50}
 
   \indexspace
 
   \item Fiber Bundle, \hyperpage{23}
+  \item Four-term Formula, \hyperpage{48}
 
   \indexspace
 
   \item G-bundle, \hyperpage{23}
-  \item Geometric Genus, \hyperpage{73}
-  \item Geometric Oriented Cobordism Ring, \hyperpage{73}
+  \item Geometric Genus, \hyperpage{89}
+  \item Geometric Oriented Cobordism Ring, \hyperpage{89}
 
   \indexspace
 
-  \item Hodge Number, \hyperpage{37}
+  \item Hodge Manifold, \hyperpage{42}
+  \item Hodge Number, \hyperpage{40}
 
   \indexspace
 
-  \item Index, \hyperpage{73}
+  \item Index, \hyperpage{89}
 
   \indexspace
 
-  \item K-genus, \hyperpage{56}
-  \item K-Pontryagin genus, \hyperpage{56}
-  \item K\"ahler Manifold, \hyperpage{38}
-  \item K\"ahler Metric, \hyperpage{38}
+  \item K-genus, \hyperpage{70}
+  \item K-Pontryagin genus, \hyperpage{70}
+  \item K\"ahler Manifold, \hyperpage{41}
+  \item K\"ahler Metric, \hyperpage{40}
 
   \indexspace
 
-  \item Multiplicative Sequence, \hyperpage{51}
+  \item Multiplicative Sequence, \hyperpage{65}
 
   \indexspace
 
   \item Pontryagin Class, \hyperpage{27}
-  \item Pontryagin Numbers, \hyperpage{68}
-  \item Principal Bundle, \hyperpage{23}
+  \item Pontryagin Numbers, \hyperpage{84}
+  \item Positivity
+    \subitem Integral, \hyperpage{42}
+    \subitem Real, \hyperpage{41}
+  \item Principal Bundle, \hyperpage{24}
 
   \indexspace
 
@@ -68,18 +76,19 @@
 
   \indexspace
 
-  \item T-characteristic, \hyperpage{62}
-  \item Todd Class, \hyperpage{59}
-  \item Todd Genus, \hyperpage{60}
+  \item T-characteristic, \hyperpage{78}
+  \item Todd Class, \hyperpage{73}
+  \item Todd Genus, \hyperpage{74}
 
   \indexspace
 
-  \item Universal Bundle, \hyperpage{24}
+  \item Universal Bundle, \hyperpage{25}
 
   \indexspace
 
   \item Vector Bundle, \hyperpage{24}
-  \item Virtual Index, \hyperpage{78}
-  \item Virtual Todd Genus, \hyperpage{65}
+  \item Virtual Characteristic, \hyperpage{50}
+  \item Virtual Index, \hyperpage{94}
+  \item Virtual Todd Genus, \hyperpage{77}
 
 \end{theindex}

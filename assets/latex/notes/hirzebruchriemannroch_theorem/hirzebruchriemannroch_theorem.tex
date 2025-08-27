@@ -628,6 +628,9 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 \maketitle
 \tableofcontents
 
+
+\textcolor{red}{don't forget to get rid of all the "We"s}
+
 In a sense, the introduction will pretend to be accessible, but we shall inevitably have to
 assume some background in a little bit of everything in geometry and algebra: Riemann geometry, complex and
 algebraic geometry, Basic K-theory and the theory of characteristic classes, and Elementary Hodge theory.
@@ -638,7 +641,7 @@ will be hundreds of pages of background material.
 Also, I chose to define the Chern character in a ``classical'' way as given by
 Hatcher~\cite{hatcherVectorBundlesKTheory2017} or Hirzebruch~\cite{hirzebruchTopologicalMethodsAlgebraic1995}
 instead of the ``intersection theory'' interpretation (for ex. given by~\cite{fultonIntersectionTheory1984}),
-however I will point out some interesting ways in which the two are linked (ex. a quick connection to Serge
+however I will point out some interesting ways in which the two are linked (ex. A quick connection to Serge
 classes).
 
 I also do a fundamentally different thing from Hirzebruch: besides being the literal opposite of
@@ -672,7 +675,19 @@ Notation:
      to $M$.
 \end{enumerate}
 
-background:
+Background: the minimum is (where any author can be replaced with an equivalent):
+\begin{enumerate}
+  \item algebra up to D\&F
+  \item Hartshorne
+  \item complex analysis up to Alford
+  \item differential geometry up to John M. Lee
+  \item algebraic topology up to Hatcher
+\end{enumerate}
+
+I will introduce the necessary Hodge Theory and cobordism theory, and only the characteristic theory that is
+necessary.
+
+Particularities:
 \begin{enumerate}
   \item Riemann geometry: Riemann metric, Levi-Civita connection, Gauss-Bonnet, signature, orientation.
     See~\cite{NateDiffGeo}
@@ -680,12 +695,15 @@ background:
     see~\cite{NateAlgTop}.
    \item Theory of symmetric function (the basis that can be found in many group theory/field theory textbooks):
      see~\cite{NateAlgebra}.
+    \item Hartshorne level of algebraic geometry
+    \item Alford level of complex analysis.
 \end{enumerate}
 
 Bonus section in chapter~\ref{cha:RR} about Grothendeick Riemann Roch which will be self-contained and will be
 to show what is different in the generalization and the key steps for the generalization.
 
 \chapter{Motivation: Riemann Roch Problem}
+
 
 A natural question to ask in complex and algebraic geometry is ``how many
 holomorphic/meromorphic/algebraic/analytic/etc functions are there on a (suitable) space $X$''. By letting
@@ -702,7 +720,7 @@ cohomology groups:
 \]
 exactly how to extract this information is known as the \emph{Riemann Roch Problem}. To motivate the direction
 the problem took, let us answer this question in some simple cases, build up to how the Riemann Roch question
-is answer for algebraic curves and surfaces, and then motivate how the (classical) Riemann Roch
+is answer for algebraic curves, and then motivate how the (classical) Riemann Roch
 Theorem would be generalized to a result about sections on vector bundles
 
 \section{Riemann Roch Problem}
@@ -712,12 +730,14 @@ set of roots (counting multiplicity) and a constant:
 \[
   p(z) = c(z-a_1)\cdots (z-a_n)
 \]
-and similarly for rational functions. For future connection to sheaves let $\CO_X(X)$ represent all algebraic functions on $X$
-and $\CM_X(X)$ represent all rational functions on $X$; other common notation is $\C[X] = \CO_X(X)$ and $\C(X)
-= \CM_X(X)$ where $\C$ is often replaced with some other field $K$ or ring $R$. If we ask for holomorphic
-functions so that $(X,\CF) = (\C, \CH(\C))$, then, then the Weierstrass Factorization Theorem
-(see~\cite[section~4.2]{NateComplexAnalysis}) tells us that $f \in \CH(\C)$ factors as an infinite polynomial along with
-some correction factors
+and similarly for rational functions.
+% For future connection to sheaves let $\CO_X(X)$ represent all algebraic functions on $X$
+% and $\CM_X(X)$ represent all rational functions on $X$; other common notation is $\C[X] = \CO_X(X)$ and $\C(X)
+% = \CM_X(X)$ where $\C$ is often replaced with some other field $K$ or ring $R$.
+If we ask for holomorphic
+functions over $\C$, $(X,\CF) = (\C, \CH(\C))$, then the Weierstrass Factorization Theorem
+(see~\cite[section~4.2]{NateComplexAnalysis}) tells us that $f \in \CH(\C)$ factors as an infinite polynomial
+times a unit $e^{g(x}$ along with correction factors for the linear terms:
 \[
   z^m e^{g(z)}\prod_k^\infty \left[ \left( 1- \frac{z}{a_k} \right)e^{p_k(z)} \right]
 \]
@@ -732,7 +752,7 @@ appropriate roots and multiplicities. In other words, determining meromorphic fu
 a classification of non-accumulating sequences in $\C$. The situation requires even more analytic information in hyperbolic
 space $D^2$ (think of the existence of $\sum_n z^{n!}$ and $1/(1-z)$). To understand the algebraic behaviour, limiting the scope to
 \emph{compact spaces} such as Riemann surfaces or projective varieties gets much better as any holomorphic/meromorphic
-functions must have finitely many roots/poles by the Identity theorem (that if two functions agree on a set
+functions must have finitely many roots/poles by the Identity Theorem (that if two functions agree on a set
 of accumulation points, they are equal), and so we can focus our efforts within the algebraic setting. This
 setting is plenty rich enough for study and often offers a good starting point to generalize to the
 non-compact case\footnote{Though these cases are still very much being studied, see
@@ -740,7 +760,7 @@ non-compact case\footnote{Though these cases are still very much being studied, 
 functions on (suitable) compact spaces is equivalent to the category of algebraic functions on these spaces
 (\cite{hallGAGATheorems2022}, \cite{chowCompactComplexAnalytic1949}),
 meaning compact spaces are ``intrinsically'' algebraic. We shall prove some of the pertinent parts of this
-correspondence in \textcolor{red}{ref:HERE}.
+correspondence in~\ref{sec:gaga}.
 
 Let us try finding holomorphic/meromorphic functions on $X = \CP^1$ and see if they are
 determined by the points of $\CP^1$ just like in the case of $\C$. Immediately, $\CP^1$ has only constant holomorphic functions by an easy
@@ -749,7 +769,7 @@ the number of roots and poles of a meromorphic function must be $0$.
 
 Let us represent this formally. Let
 \[
-  D = \sum_i n_ip_i \qquad p_i \in \CP^1
+  D = \sum_i n_ip_i \qquad n_i\in \Z,\ p_i \in \CP^1
 \]
 be a finite formal sum; we may think of it as the free (abelian) group $F^{\Z}(\CP^1)$. Call $D$
 a \emph{divisor}, and let $\Div(\CP^1)$
@@ -770,9 +790,13 @@ Notice that $\deg(-)$ is certainly a group homomorphism. By our earlier remark:
   \deg(\div(f)) = 0
 \]
 which is a restriction applied to any meromorphic function on $\CP^1$. It is easy to see that this restriction
-would work on any compact Riemann surface (see~\cite[chapter~6]{NateComplexAnalysis}). If $\deg(D) = 0$, by our earlier remark
-we have that there exists an $f$ such that $\div(f) = D$, showing this conditions characterizes meromorphic
-functions $f \in \CM(\CP^1)$ (but it shall not on other Riemann surfaces). Now, consider the \emph{(Weil) divisor class group}
+would work on any compact Riemann surface (see~\cite[chapter~6]{NateComplexAnalysis}). If $\deg(D) = 0$, by
+our earlier remark on the use of the Residue Theorem, we have that there exists an $f$ such that $\div(f) = D$,
+showing this conditions characterizes meromorphic functions $f \in \CM(\CP^1)$ (but it shall not on other
+Riemann surfaces, as demonstrated bellow).
+
+Let us see to what extend the set of all divisors fail to represent a meromorphic function. Consider the
+\emph{(Weil) divisor class group}:
 \[
   \Cl(\CP^1) = \frac{\Div(\CP^1)}{\PDiv(\CP^1)}
 \]
@@ -783,21 +807,33 @@ for any $[D] \in \Cl(\CP^1)$,  $\deg([D])$ is well-defined as $\deg(D) = \deg(D 
   \Cl(\CP^1) \cong \Z
 \]
 which can be thought of as measuring the obstruction in a meromorphic function being defined by its
-points/roots. As sheaf cohomology measures obstruction of local information having global information, we
-shall have:
+points/roots.
+
+Let us translate this intuition into sheaf cohomology, that is let us translate this into a  measures of
+obstruction of local information having global information. The natural result we may want to think is that:
+\[
+  \Cl(\CP^1) \cong H^1(\CP^1, \CO_{\CP^1})
+\]
+However, $H^1(\CP^1, \CO_{\CP^1})$ is trivial. This because there is no obstruction to extending a function
+\emph{additivity}, in particular if $\CP^1 = U_0 \cup U_1$ is the usual covering and if $f_{01} \in
+\Gamma(U_0\cap U_1)$ then $f_{01} = g_0 - (-g_1)$ (decompose $f_{01}$ into a Laurent series, split the Laurent
+series into the principal and non-principal part, change coordinates in the principal part so that it becomes
+holomorphic and $U_1$). Instead, the obstruction is captured in the multiplicative structure\footnote{These
+two are linked via a naturally exponential sequence $0 \to \Z \to \CO_X \to \CO_X^* \to 0$, the detail are
+left for~\cite{NateAlgGeo}}:
 \[
   \Cl(\CP^1) \cong H^1(\CP^1, \CO_{\CP^1}^*)
 \]
-the details of this isomorphism and why $\CO_{\CP^1}^*$ shall be given in \textcolor{red}{ref:HERE}. The
+The
 higher order sheaf cohomology groups shall be trivial as the dimension of $\CP^1$ is $1$ (over $\C$), and
 hence we'll have:
 \begin{align*}
   H^0(\CP^1, \CO_{\CP^1}) &\cong \C\\
   H^1(\CP^1, \CO_{\CP^1}^*) &\cong \Cl(\CP^1)\\
-  H^2(\CP^1, \CO{(\CP^1}) &\cong \{0\}\\
+  H^2(\CP^1, \CO_{\CP^1}) = H^2(\CP^1, \CO_{\CP^1}^*)&\cong \{0\}\\
   \vdots
 \end{align*}
-Translating the result for $(\C, \CM_\C)$, we see that:
+Doing the same when the result for $(X, \CF) = (\C, \CM_\C)$, it is not hard to see that:
 \[
   \Cl(\C) = \frac{\Div(\C)}{\PDiv(\C)} \cong 0
 \]
@@ -809,12 +845,15 @@ which shall give us:
   \vdots
 \end{align*}
 as every divisor can be represented by a principal divisor. We can interpret this as there being no
-impediments to using local information to construct meromorphic functions. Notice that the ring $\C[x]$ is a UFD; this algebraic fact shall be
-given geometric meaning in \textcolor{red}{ref:HERE}.
+impediments to using local information to construct meromorphic functions. Notice that the ring $\C[x]$ is
+a UFD; this is the algebraic characterization of a trivial class group (details in~\cite{NateAlgGeo}), which
+intuitively can be thought of as their being a ``unique'' way of constructing a function from local
+information.
 
-Let us look at the next simplest nontrivial example. Let $X = \C/\Lambda$ where $\Lambda\sse \C$ is a lattice spanned by the
-$\R$-linearly independent elements $(1,\tau)$ and let $\CF = \CM_X$ (all rational functions on $X$); $X$ is
-called an \emph{elliptic curve}, and so we shall label it as $E$. As $E$ is compact, if $f \in \CM_E$ then
+This answers the Riemann Roch problem for holomorphic/meromorphic functions for $\C$ and $\CP^1$. Let us look
+at the next simplest nontrivial example. Let $X = \C/\Lambda$ where $\Lambda\sse \C$ is a lattice spanned by
+the $\R$-linearly independent elements $(1,\tau)$ and let $\CF = \CM_X$ (all rational functions on $X$); $X$
+is called an \emph{elliptic curve}, and so we shall label it as $E$. As $E$ is compact, if $f \in \CM_E$ then
 $\div(f) = 0$. However, if $\deg(D) = 0$, this does not imply there exists an $f \in \CM_E$ such that $\div(f)
 = D$. To see this, let's analyze $\CM_E$ a little more closely. As $\C/\Lambda$ is the quotient by $\Lambda$,
 any meromorphic function must respect the $\Lambda$ structure:
@@ -864,32 +903,44 @@ All together, we get a short exact sequence and a commutative diagram:
 0 \arrow[r] & \Cl^0(E) \arrow[r, hook] & \Cl(E) \arrow[r, "\deg"] & \mathbb{Z} \arrow[r] & 0
 \end{tikzcd}
 \]
+Cohomology, as the surjective map in equation~(\ref{eq:ellipticCrvIso}) is an isomorphism:
+
+\begin{align*}
+  H^0(E, \CO_{E}) &\cong \C\\
+  H^1(E, \CO_{E}^*) &\cong E\times \Z\\
+  H^2(E, \CO_{E}) = H^2(E, \CO_{E}^*)&\cong \{0\}\\
+  \vdots
+\end{align*}
+
 Continuing on to other Riemann surfaces, we shall loose the isomorphism given in
-equation~(\ref{eq:ellipticCrvIso}) and is the beginning of the study of Jacobian varieties
-(see~\cite[section~6.4]{NateComplexAnalysis}). Going in higher dimensions is the beginning of the study of
-Weil and Cartier Divisors and more generally Chow Groups (see~\cite{NateAlgGeo}), and study how far away a
-space is from being constructed by ``principal'' (codimension 1) objects, namely the study of $H^1(X,
-\CO_X)$\footnote{Notice the object are codimension $1$, so the ``dual'' have dimension $1$}. Overall, we get
-some useful information about he obstruction to finding global sections, but not necessarily concrete ways of
-finding $H^0(X, \CO_X)$.
+equation~(\ref{eq:ellipticCrvIso}), the obstruction to the map being an isomorphism is the beginning of the
+study of Jacobian varieties (see~\cite[section~6.4]{NateComplexAnalysis}). The situation becomes even more
+complicated going to higher dimensions. The above strategy using divisors to find cohomology information
+becomes the beginning of the study of Weil and Cartier Divisors\footnote{and more generally chow rings
+  (see~\cite{NateAlgGeo} and section~\ref{sec:GRR} on how this even characterizes rational cohomology under
+suitable algebraic assumptions}; the study of Cartier/Weil divisors can be thought of as the study of the
+obstruction of an object from being constructed from codimension $1$ objects, namely the study of $H^1(X,
+\CO_X)$. This however does not help us in finding interesting holomorphic/meromorphic functions on $X$. Notice
+further that this strategy only works on the simplest sheaves $\CO_X$, namely the structure sheaf and the
+associated multiplicative sheaf $\CO_X^*$. Overall, we get some useful information about the obstruction to
+finding global sections, but not necessarily concrete ways of finding $H^0(X, \CO_X)$.
+
 
 
 To answer the Riemann Roch problem, a more granular approach to find which functions (of various kinds) exist
 on a space $X$ must be taken. As divisors keep track of root/pole information, they are a great tool in
-classifying functions that ``satisfy'' the properties of the divisor. To make this precise, define an order on
-divisors $\div(X)$ where (for now) $X$ is either a Riemann surface or a smooth projective curve. Define
-a partial order on $\Div(X)$ by saying $D_2
+classifying functions that ``satisfy'' the properties of the divisor. To make this precise, define a patial ordering on
+divisors $\div(X)$ where (for now) $X$ is either a Riemann surface or a smooth projective curve: let $D_2
 \ge D_1$ if each coefficient of $D_2 - D_1$ is non-negative. Then we can consider:
 \[
   \CO_X(D)(X) = \set{f \in \CM_X(X)^*}{\div(f) + D \ge 0}
 \]
-In other words, if $D =\sum_i n_ip_i$, then $\CO_X(D)(X)$ is all meromorphic functions $f$ where it has a pole at $p_i$ of
-order at most $n_i$ if $n_i > 0$ and roots at $p_i$ of order at least $|n_j|$ if $n_j < 0$ (and $\CO_X(D)$ is
-a [coherent] sheaf). From this, we can
-ask the Riemann Roch problem for $H^0(X, \CO_X(D))$. The famous Riemann-Roch theorem as
-proven by Riemann and Roch (where Riemann proved the Riemann-inequality, and Roch provided the
-necessary work to make it an equality, see~\cite{a.griffithsIntroductionAlgebraicCurves}) is now known as
-\emph{Riemann Roch for curves} and is the equality:
+In other words, if $D =\sum_i n_ip_i$, then $\CO_X(D)(X)$ is all meromorphic functions $f$ where it has a pole
+at $p_i$ of order at most $n_i$ if $n_i > 0$ and roots at $p_i$ of order at least $|n_j|$ if $n_j < 0$ (and
+$\CO_X(D)$ is a [coherent] sheaf). From this, we can ask the Riemann Roch problem for $(X, \CO_X(D))$. This is
+answered by the famous \emph{Riemann-Roch Theorem} where Riemann proved the Riemann-inequality, and Roch
+provided the necessary work to make it an equality, see~\cite{a.griffithsIntroductionAlgebraicCurves}. Due to
+its generalizations, it is now known as \emph{Riemann-Roch for curves} and is the equality:
 \begin{equation}\label{eq:riemannRoch1dIntro}
   \dim H^0(X, \CO_X(D)) - \dim H^1(X, \CO_X(D)) = \deg(D)+1-g
 \end{equation}
@@ -907,36 +958,43 @@ notation $l(D) = \dim H^0(X, \CO_X(D))$ and $i(D) = \dim H^0(X, \CO_X(K_X-D))^*$
 \[
   l(D) - l(K_X-D) = \deg(D) + 1-g \qquad \text{(equiv.)} \qquad l(D) - i(D) = \deg(D) + 1-g
 \]
-This result is proven in~\cref{th:rrForRiemannSurfacewithLineBundles}. As we phrased the Riemann-Roch
+This result will be proven in~\cref{th:rrForRiemannSurfacewithLineBundles}. As we phrased the Riemann-Roch
 problem in the beginning, this formula would then be asking for the value of $l(D)$. There are cases where
-$l(K-D)$ disappears (for example if $D = 0$ or $D = K$), and there are many cases we can compute it easily
-enough. It is simple
-to compute the right hand side but in general it is harder to computer the left hand side. Thus, this formula
-becomes a new constriction that helps us find $l(D)$. There are a set of theorems known as \emph{vanishing
-theorems} that specify under which conditions $l(K-D)$ (or more generally, higher cohomology groups) vanish
-(see~\cite{deligneRelevementsModulop2etDecomposition1987}); under these conditions we exact recover $l(D)$.
+$l(K_X-D)$ disappears (for example if $D = 0$ or $D = K_X$), and there are many cases we can compute it easily
+enough. It is simple to compute the right hand side but in general it is harder to computer the left hand
+side. Thus, this formula becomes a new constriction that helps us find $l(D)$. There are a set of theorems
+known as \emph{vanishing theorems} that specify under which conditions $l(K_X-D)$ (or more generally, higher
+cohomology groups) vanish (covered in section~\ref{sec:Kodaira}, but for all the details
+see~\cite{deligneRelevementsModulop2etDecomposition1987}); under these conditions we recover $l(D)$ without
+a ``fudge factor''\footnote{The term ``fudge factor'' was common vocabulary in the Italian school of the 19th century in
+the context of intersection theory, and due to the work of Fulton (\cite{fultonIntersectionTheory1984}) the
+term is applicable to the cohomological context via the cycle map}.
 
 
-Let us work towards the intuition behind the generalization. The notation on left hand side in
-equation~(\ref{eq:riemannRoch1dIntro}) can be compactified by using the Euler-Poincar\'e characteristic (or
-simply the Euler characteristic): $\chi(X, \CO_X(D)) = \sum_{i=0}^\infty (-1)^i \dim H^i(X, \CO_X(D))$ so
-that:
+This formula works for Riemann surface/projective curves. Let us work towards the intuition behind the
+generalization. The notation on left hand side in equation~(\ref{eq:riemannRoch1dIntro}) can be compactified
+by using the Euler-Poincar\'e characteristic (or simply the Euler characteristic): $\chi(X, \CO_X(D)) =
+\sum_{i=0}^\infty (-1)^i \dim H^i(X, \CO_X(D))$ so that:
 \[
   \chi(X, \CO_X(D)) = \deg(D) + 1-g
 \]
-As $X$ is a curve $H^i(X, \CO_X(D)) = 0$ for $i > 1$, \textcolor{red}{cite? Reference for later?} giving the equality.
-The right hand side shall be drastically different, split into special invariants of vector bundles known as
-the Chern class and Todd class where the Chern class can be thought of as capturing some ``algebraic'' or
-``local'' information (this will generalize the $\deg(D)$) while the todd class shall capture the
-``geometric'' or ``global'' information (this will generalize the $1+g$). In fact, the
-Euler Characteristic can easily be generalized to be an invariant on vector bundles by using sheaf cohomology
-instead of singular cohomology, and hence the Riemann Roch
-theorem generalizes to a question about the existence of sections on vector bundles over a compact manifolds,
-namely if $(X,\CF)$ is a compact manifold along with a vector bundle $\CF$, then we want to compute:
+As $X$ is a curve $H^i(X, \CO_X(D)) = 0$ for $i > 1$\footnote{This is a very common fact and can be proven  in
+  multiple different ways. Algebraic proof: \cite[section~28.3]{NateAlgGeo}, topological
+proof:\cite[chapter~3]{NateAlgTop}, geometric proof:\cite[chapter~3]{NateKTheory}}   giving the equality. The
+right hand side shall be drastically different, split into special invariants of vector bundles known as the
+\emph{Chern character} and \emph{Todd class} where the Chern character can be thought of as capturing some ``algebraic'' or
+``local'' information given by $D$ (this will generalize the $\deg(D)$) while the Todd class shall capture the
+``geometric'' or ``global'' information (this will generalize the $1+g$). In fact, the Euler Characteristic
+can easily be generalized to be an invariant on vector bundles by using sheaf cohomology instead of singular
+cohomology, and hence the Riemann Roch theorem generalizes to a question about the existence of sections on
+vector bundles over a compact manifolds, namely if $(X,\CF)$ is a compact manifold along with a vector bundle
+$\CF$, then we want to compute:
 \[
   H^0(X, \CF)
 \]
-The result of this will be:
+Note that there is a bijective correspondence between vector bundle and locally free sheaves
+(see~\cite[chapter~4]{NateAlgGeo} for the details), and hence we may treat $\CF$ as either a vector bundle or
+a sheaf; the details for line bundles is given in section~\ref{sec:whyVecBundles}. The result of this will be:
 \[
   \chi(X, \CF) = \int_X \ch(X)\td(X)
 \]
@@ -945,7 +1003,12 @@ generalization to smooth quasi-projective schemes over a field near the end, and
 recent paper (\cite{navarroRiemannRochFormulaProjective2017}) generalizing to finite dimensional Noetherian
 schemes.
 
-\subsection*{How do Vector Bundles enter the Picture}
+\textcolor{red}{bonus chapter on Grothendieck Riemann Roch?}
+
+\section{Motivating the Generalization}
+
+here
+\subsection{How do Vector Bundles enter the Picture}\label{sec:whyVecBundles}
 
 To motivate how vector bundles will enter the picture, it is worth-while seeing how $\CO_X(D)$ can be
 interpreted as a line bundle. To that end, recall that the projective curve $X = \P^1$ as defined in classical
@@ -1014,7 +1077,7 @@ U_j$ we have a gluing map:
 \[
   g_{ij}: \pi^{-1}(U_i\cap U_j) \to \GL_n(K)
 \]
-such that $g_{jk}g_{ij} = g_{ik}$ (the cocycle condition) which specifies the gluing condition. When limiting
+such that $g_{jk}g_{ij} = g_{ik}$ (the cocycle condition). When limiting
 to line bundles, the gluing map becomes:
 \[
   g_{ij}: \pi^{-1}(U_i\cap U_j) \to K^*
@@ -1024,25 +1087,26 @@ the same point in $U_i\cap U_j$, then:
 \[
   v = A_{ij}w
 \]
-Moving onto the construction we have done earlier, as we are saying that $\CO_{\P^1}(n)$ ought to be
-considered as a line bundle, we see that we ought to consider:
-\[
-  g_{ij}: \CO_{\P^1}(U_i\cap U_j) \to \CO_{\P^1}^*(U_i\cap U_j) \cong k[x, 1/y]\setminus\{0\}
-\]
-where we take $\CO_{\P^1}^*(U_i\cap U_j)$ in place of $K^*$ as these are the ``units'' (i.e. isomorphisms) on
-this intersection. For example, given $f,g$ restrict to the same functions on the intersection, then we now
-``twist'' $g$ to be:
+Now, let us correspond $\CO_{\P^1}(n)$ to a line bundle $\CL(n)$. Let $\CL(n)$ be
+locally trivial on $U_1, U_2$: $\Gamma(U_i, \CL(n)) = \CO_{\CP^1}(n)(U_i)$. On their intersection define the gluing
+map: \[ g_{ij}: \CO_{\P^1}(U_i\cap U_j) \to \CO_{\P^1}^*(U_i\cap U_j) \cong k\left[x,
+\frac{1}{x}\right]\setminus\{0\} \] where we take $\CO_{\P^1}^*(U_i\cap U_j)$ in place of $K^*$ as these are
+the ``units'' (i.e. isomorphisms) on this intersection. For a given $f,g$ to restrict to the same functions on
+the intersection, we now ``twist'' $g$ to be:
 
 \[
   f(x) = x^ng(1/x) \qquad x^n \in \CO_{\P^1}^*(U_i\cap U_j)
 \]
-The word ``twist'' comes from both complex analysis where $z^n$ twists $\C$ onto itself around the
-branching point, and from algebraic geometry where the non-triviality of bundles can be interpreted by
-characteristic classes as some non-trivial twisting (we shall cover this intuition in
-\textcolor{red}{ref:HERE}). The details of this correspondence is given in~\cite[section~4.1]{NateAlgGeo}
-(especially how to transition from points of a bundle to section of a sheaf). Overall, we see that
-$\CO_{\P^1}(n)(\P^1)$ is the global sections of a line bundle; more generally $\CO_{\P^1}(n)$ remember all the
-sections over each open set $U$, as $\CO_{\P^1}(n)$ is a sheaf.
+The word ``twist'' comes from both complex analysis where $z^n$ twists $\C$ onto itself around the branching
+point, and from algebraic geometry where the non-triviality of bundles is partly captured by characteristic
+classes that represent the obstruction to some non-trivial global trivialization via twisting (we shall cover
+this intuition in chapter~\ref{cha:characteristicClass}).
+
+This gives how we can construct a line bundle $\CL(n)$ for sheaves $\CO_{\CP^1}(n)$. The converse works as
+well: the details of the correspondence is given in~\cite[section~4.1]{NateAlgGeo} (especially how to
+transition from points of a bundle to section of a sheaf). Overall, we see that $\CO_{\P^1}(n)(\P^1)$ is the
+global sections of a line bundle; more generally $\CO_{\P^1}(n)$ remember all the sections over each open set
+$U$, as $\CO_{\P^1}(n)$ is a sheaf.
 
 With this intuition, we can see how to interpret $\CO_X(D)$ as a line bundle. Choosing an affine cover $U_i$
 for $X$, we can define:
@@ -1056,11 +1120,10 @@ so that $\langle s_i \rangle_K = \CO_X(D)(U_i)$ is a generator as a $K$-algebra 
 \]
 So that $s_i$ has roots/poles of the appropriates order. Such a section exists, for $U_i \cong \A^1$ (as $X$
 is a curve) so $\CO_X(U_i) \cong k[x]$ and so by our earlier discussion we can certainly find an $s_i$ with
-exactly zeros and poles at $-D|_{U_i}$ and it is an exercise in ring-theory to show this is a generator (ex.
-think of choosing a uniformization parameter for a local ring).
+exactly zeros and poles at $-D|_{U_i}$ and it is an exercise in ring-theory to show this is a generator (think
+of choosing a uniformization parameter for a local ring).
 
-
-Let us label the collection of the meromorphic functions $\CO_X(D)(U_i)$. To find an $f \in \CO_X(D)(X)$ (i.e.
+Let us label the collection of these meromorphic functions $\CO_X(D)(U_i)$. To find an $f \in \CO_X(D)(X)$ (i.e.
 a global section), we need to insure we can glue together nicely on intersection. Consider (nonempty)
 $U_i\cap U_j$ and take the generators $s_i \in \CO_X(D)(U_i)$ and $s_j \in \CO_X(D)(U_j)$. It is not hard to
 see that $s_i|_{U_i\cap U_j} =
@@ -1077,16 +1140,13 @@ $U_i\cap U_j$. But then:
 \[
   g_{ij} = \frac{s_j}{s_i} \in \CO_X^*(U_i\cap U_j)
 \]
-But then we have the desired transition functions! Thus, we may glue them to form all global sections
-$\CO_{X}(D)(X)$for every $D$, and then $\CO_X(D)$ is a line bundle. In most cases (and in most spaces that
-will be considered in this paper), every line bundle $\CL$ is induced by a divisor $D$; \cite[section~4.3]{NateAlgGeo}
-shows how there is a bijective correspondence between line bundles and (Weil/Cartier) divisors on the
-appropriate type of scheme.
+Showing that we have the desired transition functions to define a line bundle! Thus, we may glue them to form
+all global sections $\CO_{X}(D)(X)$ for every $D$, and then $\CO_X(D)$ is a line bundle. In most cases (and in
+most spaces that will be considered in this paper), every line bundle $\CL$ is induced by a divisor $D$;
+\cite[section~4.3]{NateAlgGeo} shows how there is a bijective correspondence between line bundles and
+(Weil/Cartier) divisors on the appropriate type of scheme.
 
 
-\section{Motivating the Generalization}
-
-here
 
 \subsection{Motivating Euler Characteristic}
 
@@ -1107,23 +1167,25 @@ as:
 \[
   \chi(X, C) = \sum_{i=0}^\infty (-1)^ik_i
 \]
-One of the crowning results of algebraic topology in the 21st century is the invariance of this number of
-choice of CW complex. This lead to the development of \emph{singular cohomology} with the homology group
-$H_i(X, \Z)$ and the \emph{Betti numbers} $b_i = \rk(H_i(X, \Z))$ and:
+where $k_i$ is the number of CW-complexes per dimension. One of the crowning results of algebraic topology in
+the 21st century is the invariance of this number of choice of CW complex. This lead to the development of
+\emph{singular cohomology} with the homology group $H_i(X, \Z)$ and the \emph{Betti numbers} $b_i = \rk(H_i(X,
+\Z))$ and:
 \[
   \chi(X) = \sum_{i=0}^\infty (-1)^ib_i = \sum_{i=0}^\infty (-1)^i\rk(H_i(X, \Z))
 \]
 As this is a homological constant, it is often called the \emph{Euler-Poincar\'e} characteristic to
 distinguish it from the Euler characteristic for polyhedron, but we shall rarely make this distinction. As
-cohomology groups are invariant up to homotopy on $X$, the Euler characteristic is invariant to homotopy. It is
-often computationally easier to work with the cohomology group, and by the Poincar\'e duality (or its
-generalization, Serre duality), we have the equivalent sum: \textcolor{red}{check no sign problem}
+cohomology groups are invariant up to homotopy on $X$, the Euler characteristic is invariant to homotopy. It
+is often computationally easier to work with the cohomology group, and by the Poincar\'e duality
+\cite[section~4.3]{NateAlgTop} (or its generalization, Serre duality~\cite[section~5.3]{NateAlgGeo}), we have
+the equivalent sum:
 \[
   \chi(X) =  \sum_{i=0}^\infty (-1)^i\rk(H^i(X, \Z))
 \]
 How should we interpret the alternating nature of the sum when summing over homology/cohomology? The key idea
 is to notice that the alternating sum mimics the pattern when invoking the inclusion-exclusion principle.
-Looking at the Euler characteristic for polyhedron, we can take for example a cube, and hen we can think of
+Looking at the Euler characteristic for polyhedron, we can take for example a cube, and then we can think of
 each face as including the vertices and edges, and the edges as including the vertices. By counting all the
 faces, we have in fact double counted the edges. We thus subtract the sum of the edges. But this shall at the
 same time remove all the vertices from the sum, and hence we add them back in. This is exactly the
@@ -1134,9 +1196,39 @@ When converting to a cohomological perspective, we recover the inclusion-exclusi
 desired type of functions on each open set, and measure the obstruction to gluing these functions on
 intersections, intersection of intersections, and so on and so forth:
 \[
-  \text{img here}
+\begin{tikzcd}[column sep=large]
+\check{C}^0(\mathcal{U}, \CF) \arrow[r, "d^0"] & \check{C}^1(\mathcal{U}, \CF) \arrow[r, "d^1"] & \check{C}^2(\mathcal{U}, \CF) \arrow[r, "d^2"] & \cdots \\
+\prod_{i} \CF(U_i) \arrow[u, equal] \arrow[r, "\delta^0"] & \prod_{i<j} \CF(U_i \cap U_j) \arrow[u, equal] \arrow[r, "\delta^1"] & \prod_{i<j<k} \CF(U_i \cap U_j \cap U_k) \arrow[u, equal] \arrow[r, "\delta^2"] & \cdots
+\end{tikzcd}
 \]
-This same idea applies when considering the cohomology groups in the Euler characteristic sum.
+Representing this visually:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+    % Circles (larger radius)
+    \draw[fill=red, opacity=0.4] (0,0) circle (2.5cm);
+    \draw[fill=blue, opacity=0.4] (2.5,0) circle (2.5cm);
+    \draw[fill=green, opacity=0.4] (1.25, -2.1) circle (2.5cm);
+
+    % Labels for the sets (U_1, U_2, U_3)
+    \node at (-2, 2.5) {$U_1$};
+    \node at (4.5, 2.5) {$U_2$};
+    \node at (1.25, -4.8) {$U_3$};
+
+    % Labels within the unique parts of the sets
+    \node at (-1.2, 0) {\small $\mathcal{F}(U_1)$};
+    \node at (3.7, 0) {\small $\mathcal{F}(U_2)$};
+    \node at (1.25, -3.5) {\small $\mathcal{F}(U_3)$};
+
+    % Labels for intersections with smaller font
+    \node at (1.25, 0.8) {\small $\mathcal{F}(U_1 \cap U_2)$};
+    \node at (-0.2, -1.9) {\small $\mathcal{F}(U_1 \cap U_3)$};
+    \node at (2.7, -1.9) {\small $\mathcal{F}(U_2 \cap U_3)$};
+    \node at (1.25, -0.8) {\scriptsize $\mathcal{F}(U_1 \cap U_2 \cap U_3)$};
+\end{tikzpicture}
+\caption{Venn diagram for an open cover with three sets $U_1, U_2, U_3$ and their sections.}
+\end{figure}
 
 How should we interpret what invariance is captured by the Euler characteristic? The case of the convex and
 non-convex polyhedron hints at a notion of curvature, and indeed by the Gauss-Bonnet theorem a Riemann surface
@@ -1145,16 +1237,23 @@ taking:
 \[
   \chi(M) = \frac{1}{2\pi }\int_M K dA
 \]
-and generalizes to higher-dimensional surfaces (as shall be remarked on in
-section~\ref{sec:motivatingCharTheory}). These are very useful invariants, especially in $2$ dimension where
-the classification of Riemann surfaces up to homotopy if first broken down into the case where the Euler
-characteristic is positive, 0, or negative (representing spherical, flat, and hyperbolic curvature
-respectively). However, we see that the Euler characteristic can be defined on any space admitting a
-cohomology theory, suggesting some more broad interpretation is applicable.
+and generalizes to higher-dimensional surfaces. Another interpretation from the theory of vector fields is
+that that number of zeros/poles as well as point with non-trivial curve are given by the topology of the
+surface, and hence captured by $\chi$ (see~\cite{NateAlgTop}).
+
+These are very useful invariants, especially in $2$ dimension where the classification of Riemann surfaces up
+to homotopy if first broken down into the case where the Euler characteristic is positive, zero, or negative
+(representing spherical, flat, and hyperbolic curvature respectively), and these values are strongly tied to
+the properties of vector fields on the surface. However, we see that the Euler characteristic can be defined
+on any space admitting a cohomology theory, suggesting the vector-field interpretation may be more suitable. The
+following section covers these ideas.
+
+% (as shall be remarked on in
+% section~\ref{sec:motivatingCharTheory})
 
 \subsection{Motivating Characteristic Theory}\label{sec:motivatingCharTheory}
 
-By the discussion in sect \textcolor{red}{ref:HERE}, $\deg(D)$ and $1-g$ should be interpreted as a property
+By the discussion in section~\ref{sec:whyVecBundles}, $\deg(D)$ and $1-g$ should be interpreted as a property
 of a bundle. Let us return to the Gauss-Bonnet Theorem to find the motivation of this generalization. Recall
 that if $M$ is a compact two-dimensional Riemannian manifold with empty and $K$ is be the Gaussian curvature
 of $M$, then:
@@ -1166,97 +1265,184 @@ to an even dimensional closed Riemann manifold to the curvature class of the Eul
 \[
   \chi(M) = \int_M e(\Omega)
 \]
-where $e$ is the \emph{Euler class}, and $\Omega$ is the 2-form representing curvature which can be embedded int:
-\[
+where $e$ is the \emph{Euler class} (which is characteristic class), and $\Omega$ is the 2-form representing
+curvature which can be embedded in: \[
   \bigwedge^{2n} T^*M
 \]
-Or more generally, if $M$ is any smooth orientable $n$-dimensional manifold then:
+More generally, if $M$ is any smooth orientable $n$-dimensional manifold then:
 \[
   \chi(M) = (e(TM), [M])
 \]
-where $[M]$ is the fundamental class and $(-,-)$ is the cap product. The Euler class is a special form of the
-top Chern class.
+where $[M]$ is the fundamental class and $(-,-)$ is the cap product. Thus, the Euler characteristic $\chi$ is
+already strongly linked to characteristic theory as it can be seen as the perfect pairing between the Euler
+class and the fundamental class. The details of the definition of the Euler class can be seen
+in~\cite{NateKTheory}, the important point to remember is that it is the given by taking the \emph{top Chern
+class} of a manifold $M$ and a modified tangent bundle $E_{TM}$,
 
-A $i$th Chern class can be thought of as representing an obstruction to forming $n-i$ global linearly
-independent frames.
+This definition does not consider non-trivial vector bundles, in particular when $M$ is closed then $\chi(M)$
+can be considered as the Euler characteristic over the trivial bundle $\mathbbm{1}$ as:
+\[
+  H^i(M, \mathbbm{1}) = H^i(M, \Z)
+\]
+By considering different bundles $E$, using sheaf cohomology we can define:
+\[
+  \chi(M, E) = \sum_i^\infty (-1)^i \dim H^i(M, \CO_E)
+\]
+The extra non-trivial information within the cohomology groups introduce by $E$ motivates the focus on Chern
+classes for the generalization.
 
-In a sense, this is the ``geometric'' part of the Riemann Roch theorem. If we let $D = 0$ so that we looking
-at the holomorphic functions, then:
+
+Thus, let us motivate what the Chern classes represent. First off, the natural transformation $K_k(-) \Rw H^*$
+shows that the Chern class $c$ can is a sum of $i$th Chern classes, one for each $H^i$. Next, as $H^i$
+vanishes when $i > \dim(M)$, there can be at most finitely many $i$th Chern classes. As we are mapping into
+the cohomology ring, the Chern class will represent some obstruction information. Given a (complex) vector
+bundle $E$ of dimension, it is natural to ask whether it possible to define a $k$ frames $1\le k \le n$ on $E$
+that are linearly independent. The existence of an nontrivial $i$th Chern class shall represent the there is
+an obstruction to having a $n-i$ globally linearly independent frames, in particular it will not be possible
+to extend $n-i$ linearly independent frames to a $n-i+1$ linearly independent frame. As this is a
+vector-bundle dependent invariant, the Chern classes represent some algebraic complexity of $E$ in terms of
+the cohomology of $M$.
+
+Given a Chern class $c_i \in H^{2i}(M, \Z)$ (the $2i$ shall be explained in
+chapter~\ref{cha:characteristicClass}), what would evaluating $c_i$ represent? Given a representative $T$ of
+a homology class $H_{2i}(M, \Z)$, we can define the \emph{Chern number} $c_i(E)$ at $T$ to be:
+\[
+  \langle c_i(E), [T] \rangle = \int_T c_i(E)
+\]
+The Chern number counts the number of zeros/poles of a generic section of the vector bundle $E$, restricted to the
+submanifold $T$ (see~\cite{NateKTheory}). In terms of the earlier curvature interpretation, it is around
+zero or poles (where poles can be considered as zero's in the reverse orientation) that we accumulate non-trivial
+curling/divergence. Let us apply this intuition where $M$ is a Riemann surface and $E$ a line bundle on $M$.
+Then $i = 1$ so that $c_1(\CL(D)) \in H^2(M, \Z)$, for a line bundle $\CL(D)$ associated to $D$. Then by the
+above intuition, we see that:
+\[
+  \int_D c_1(\CL(D)) = \deg(D)
+\]
+In a sense, this is the ``algebraic'' part of the Riemann Roch theorem. If we let $D = 0$, then:
 \[
   \chi(M) = 1-g
 \]
-In terms of the Chern class, we get:
+To get this information from Chern classes, notice that as we can always define the tangent bundle $TM$ of
+$M$, we can compute $c_1(TM)$. Then by the \emph{Poincar\'e-Hopf Theorem} (\cite{NateAlgTop}
+or~\cite{NateDiffGeo}) we get that $c_1(TM) = 2-2g$. Thus we get:
 \[
   \chi(M) = \frac{1}{2}c_1(TM)
 \]
-So something is going on here that is connected them but also non-trivially. \textcolor{red}{(Important to
-  note that there are two bundles going on: the ``chosen'' bundle $\CL$ and the tangent bundle $TM$
-representing the geometric information).}
+It should be noted that in this case, the Euler class is equal to the top Chern class, $c_1(TM) = e(TM)$, and
+so in this low-dimension case we could have just applied the Gauss-Bonnet Theorem.
 
-\textcolor{red}{then go over the formula in two dimensions to show that it really is non-trivial}
+When moving up to higher dimensions, it is important to limit to smooth (complete) varieties, namely because the higher
+cohomological information on closed $n$-manifolds where $n\ge 2$ holds ``more'' information than there are
+geometric sub-manifolds; limiting to smooth varieties (and later proven by Grothendeick to proper
+schemes) shall restrict the cohomology groups enough to continue this pattern. To tie the geometric properties
+of manifolds to smooth varieties, we shall show in section~\ref{sec:kahlerMan} what conditions must be added
+on a manifold $M$ so that it has to be a smooth variety. For now, we shall simply assume $M$ is a smooth
+variety.
+
+For those who know the Riemann-Roch theorem for surfaces (ex. see~\cite[chapter~5.1,
+theorem~1.6]{hartshorneAlgebraicGeometry2013})
+\[
+\chi(D) = \chi(0) + \frac{1}{2}D.(D-K)
+\]
+they can verify that:
+\[
+  \chi(M, \CL(D)) =\frac{1}{2}c_1(\CL(D))^2 + \frac{1}{2}c_1(\CL(D))c_1(TM) + \frac{1}{12}(c_1(TM)^2 + c_2(TM))
+\]
+showing that the ability to write $\chi$ in terms of $TM$ and $\CL(D)$ does extend non-trivially to higher
+dimensions.
+
 
 So the goal now is to find a connection between the Euler-characteristic and some equation of Chern classes.
-We cannot directly use the total Chern class as $\chi$ and $c$ are algebraically different, in particular if
-we define the \emph{Chern character} denoted $\ch$ to be a representative power series of the Chern classes, then:
-\textcolor{red}{fix this}:
+Two important decomposition of the Euler characteristic is:
 \[
-  \ch(E_1\oplus E_2) = \ch(E_1)+ \ch(E_2) \qquad \chi(E_1\oplus E_2) = \chi(E_1)\cdot \chi(E_2)
+  \chi(M\oplus M', E)) = \chi(M, E)\cdot \chi(M', E)
 \]
-This shows that the Chern character is not the right invariant using Chern classes, but the Chern theorem
-suggests that the appropriate invariant does exist. It was \emph{John Arthur Todd} who found this geomeric
-idea before Chern classes where even discovered (\url{https://en.wikipedia.org/wiki/Todd_class}) and
-\emph{Hirzebruch} that put them to good use connecting them to find the ``algebraic'' information that would
-be stored in a bundle. In particular, we shall define the \emph{Todd Character} which shall have the property
-on line bundles that:
+which is a standard cohomology proof when $E = \mathbbm{1}$, and in~\cref{th:generalizedEulerCharAdditive} we shall show that:
 \[
-  \td(E_1\oplus E_2) = \td(E_1)\cdot \td(E_2)
+  \chi(M, E\oplus E') = \chi(M, E) + \chi(M, E')
 \]
-mimicking the Euler characteristic. Then we shall take advantage of the \emph{splitting principle} as well as
-a ``correction term'' given by the Chern character $\ch$ to take into account the algebraic information to
+Thus, we shall need two invariance to take into account the different algebraic behaviour of the manifold and
+vector bundles over direct products. The \emph{Chern character} shall be the right invariant that captures the
+algebraic information for any manifold $M$ and vector bundle $E$: we shall show that:
+\[
+  \ch(E\oplus E') = \ch(E) + \ch(E')
+\]
+for the geometric counter-part, it was \emph{John Arthur Todd} who found
+the geometric idea before Chern classes where even discovered
+(\url{https://en.wikipedia.org/wiki/Todd_class}). Hirzebruch put them to good use connecting
+them to Chern classes in defining the \emph{Todd class} which shall have the property that:
+\[
+  \td(M\oplus M') = \td(M)\cdot \td(M')
+\]
+where inputting $M, M', M\oplus M'$ should be thought of as inputting the tangent bundle of these manifolds.
+If we were working with trivial bundles, then we can simply write:
+\[
+  \chi(M) = \int_M \td(M)
+\]
+mimicking the Euler characteristic. Then with
+the ``correction term'' given by the Chern character $\ch$ to take into account the algebraic information to
 finally come up with:
 \[
-  T(M, E)) = \kappa_n(\ch(E)\td(TM))[M] = \int_X \ch(X)\td(X)
+  \chi(M,E) = \int_M \ch(M)\td(M)
 \]
-where $\kappa_n$ is the evaluation at the fundamental class, and the right hand side is the same evaluation
-except using the integration notation due to the isomorphisms with De-Rham cohomology groups. Notice how this
-can be seen as a great generalization of Chow's Theorem, where we are not limited to just looking at the
-curvature form, but had to limit to smooth varieties in order for the ``data'' to be well-defined (and this
-can be pushed quite far as shown in \textcolor{red}{ref:HERE}(the new paper from 21st century) This shall
-finally give us:
-\[
-  \chi(M, E) = T(M,E)
-\]
-which is our desired result.
+Notice how this can be seen as a great generalization of Chow's Theorem, where we are not limited to just
+looking at the curvature form, but had to limit to smooth varieties in order for the ``data'' to be
+well-defined (and this can be pushed quite far as shown in \textcolor{red}{ref:HERE}(the new paper from 21st
+century)
 
-\textcolor{red}{should definitely mention the connection of Chern character to K-theory, the homomorphism, the
-natural transformation form K-theory to cohomology, why the diagram doesn't commute, and how it is fixed with
-the Todd character}.
+% This shall finally give us:
+% \[
+%   \chi(M, E) = T(M,E)
+% \]
+% which is our desired result.
+%
+% \textcolor{red}{should definitely mention the connection of Chern character to K-theory, the homomorphism, the
+% natural transformation form K-theory to cohomology, why the diagram doesn't commute, and how it is fixed with
+% the Todd class}.
 
-\chapter{GAGA results}\label{sec:gaga}
+\textcolor{red}{linking gauss bonnet to Hirzebruch Riemann Roch}
+\url{https://mathoverflow.net/questions/73450/top-chern-class-euler-characteristic}
 
-Throughout this paper, we shall often freely interchange result on compact complex manifolds (often K\"ahler
-manifolds) with results on projective varieties. In order for this to be done without issue, the important
-results from \emph{G\'eom\'etrie alg\'ebrique et g\'eom\'etrie analytique} (or GAGA) must be outlined. We
-shall follow more closely \textcolor{red}{ref:HERE}.
+\section{Summary of the Proof}
 
-Define $Z$-topology and $\C$-topology on a variety/closed manifold $X$.
+\textcolor{red}{HERE} (it may be better to put this in the intro of the entire paper rather than here
+honestly)
 
-(Part of the point of this is that we will want to use things like para-compactness that gives bijective
-correspondence between some cohomology groups, but partitions of unity do not exist on $Z$-topology, so we
-``fix this'' by the GAGA result)
+% \chapter{GAGA results}\label{sec:gaga}
+%
+% Throughout this paper, we shall often freely interchange result on compact complex manifolds (often K\"ahler
+% manifolds) with results on projective varieties. In order for this to be done without issue, the important
+% results from \emph{G\'eom\'etrie alg\'ebrique et g\'eom\'etrie analytique} (or GAGA) must be outlined. We
+% shall follow more closely \textcolor{red}{ref:HERE}.
+%
+% Define $Z$-topology and $\C$-topology on a variety/closed manifold $X$.
+%
+% (Part of the point of this is that we will want to use things like para-compactness that gives bijective
+% correspondence between some cohomology groups, but partitions of unity do not exist on $Z$-topology, so we
+% ``fix this'' by the GAGA result)
+%
+% (was in next chapter)
+% \textcolor{red}{I think I need a word here on how to also translate all of this to sheaves!!}
+%
+% \textcolor{red}{ACTUALLY, I don't think that is necessary, all that should be taken care of in the GAGA
+% section}
+%
 
 \chapter{Necessary Vector Bundle Theory}\label{cha:characteristicClass}
 
-\textcolor{red}{I think I need a word here on how to also translate all of this to sheaves!!}
-
-\textcolor{red}{I also think I should mention that if the reader really wants to learn characteristic theory,
-just read a book on in, this is just enough to understand Hirzebruch Riemann Roch}
+This chapter will cover the necessary vector/fiber bundle theory that is used in Hirzebruch Riemann Roch. For
+an in-depth reading, there are my notes, \cite{NateKTheory} that also include the algebraic $K$-theory
+background necessary to generalize the results of this chapter to Fulton's Intersection Theory. For
+a different reference, I recommend Hatcher's textbook on vector bundles \cite{hatcherVectorBundlesKTheory2017}
+where he also covers geometric $K$-theory. Furthermore, this chapter shall freely use the bijective
+correspondence between locally free sheaves and vector bundles, and may convert between the language of sheaf
+theory and bundle theory without much warning.
 
 Let $E \to X$ be vector bundle, where $X$ is paracompact and finite dimensional (either as a manifold or
 topologically)\footnote{these conditions insure we get bijective maps between the cohomological spaces of
 sheaves and the underlying space}. A natural set of questions to ask is what are the possible (global)
 sections on $E$ with respect to $X$. A classical example of this question is to ask if there are any
-non-vanishing global sections on $TS^2$ with respect to $S^2$; \emph{Hedgehog Theorem} (or infamously, the
+non-vanishing global sections on $TS^2$ with respect to $S^2$; the \emph{Hedgehog Theorem} (or infamously, the
 \emph{Hairy Ball Theorem}) asserts that
 no such global section can exist~\cite{NateAlgTop}. As local sections are easy to produce by taking advantage
 of local trivialization, the question is what type of \emph{obstructions} are there in producing a global
@@ -1278,48 +1464,53 @@ computational results. In this case, a \emph{characteristic class} would be a na
 \]
 where $b_G(-)$ is the functor taking $X$ to the isomorphism of principal $G$-bundles over $X$. Note that there
 can be more than one characteristic class. Uncurling the categorical language, these natural
-transformations associate to each principal $G$ bundle $P \to X\in b_G(X)$ an element $c(P) \in H^*$ such
-that $c(f^*(P)) = f^*(c(P))$ (i.e. the pullback of the vector bundle commutes with the pullback of
-cohomology classes) that is true up to isomorphism (and even homotopy). The characteristic classes will be the ``right'' notion to capture the cohomological
+transformations associate (up to isomorphism\footnote{even up to homotopy, see~\cite{NateKTheory}}) to each principal $G$ bundle $P \to X\in b_G(X)$ an element $c(P) \in H^*$ such
+that
+\[
+  c(f^*(P)) = f^*(c(P))
+\]
+that is, the pullback of the vector bundle commutes with the pullback of
+cohomology classes. The characteristic classes will be the ``right'' notion to capture the cohomological
 information, in particular when working over real and complex vector bundles, the cohomology
-of the classifying space ($MO$ for real, $MU$ for complex) is given by the \emph{Stiefel-Whitney} and \emph{Chern} classes
+of the classifying space ($BO$ for real, $BU$ for complex) is given by the \emph{Stiefel-Whitney} and \emph{Chern} classes
 (see~\cite{NateKTheory}):
 \begin{equation}\label{eq:naturalCharClas}
-  H^*(MO; \Z/2\Z) \cong \Z_2[w_1, ..., w_n] \qquad \text{and} \qquad  H^*(MU; \Z)
+  H^*(BO; \Z/2\Z) \cong \Z_2[w_1, ..., w_n] \qquad \text{and} \qquad  H^*(BU; \Z)
   \cong \Z[c_1, ..., c_n]
 \end{equation}
-As our base spaces are (complete) varieties, we shall mainly focus on complex vector bundles and principal
+In this paper, our base spaces are (complete) varieties\footnote{in section~\ref{sec:GRR} we shall extend to
+proper schemes}, so we shall mainly focus on complex vector bundles and principal
 $\GL_n(\C)$-bundles. The complex case works with \emph{Chern class} and the \emph{Pontryagin class}: the Chern class
 is the natural characteristic class of complex vector bundles (as seen in
 equation~(\ref{eq:naturalCharClas})), while the Pontryagin class can be thought of as the characteristic
 classes of the complexification of a real vector bundle.
 
 The Chern class is central to the Hirzebruch Riemann Roch as they are directly used in defining the Chern
-character and the Todd character. On the other hand, the Pontryagin classes shall be useful in that they will
-allow us to fully classify all cobordant rings, a result that will be necessary for only requiring checking
-$\chi$ agree s with $\int_X \ch(E)\td(T_X)$ on complex projective space.
+character and the Todd class. On the other hand, the Pontryagin classes shall be useful in that they will
+allow us to fully classify all cobordant oriented manifolds, a result that will be necessary for only requiring checking
+$\chi$ agrees with $\int_X \ch(E)\td(T_X)$ on complex projective space.
 
-Another characteristic class that shall not cover be covered but is important to know as it is one of the
+Another characteristic class that shall not be covered but is important to know as it is one of the
 generalizations of the Euler characteristic is the \emph{Euler class}. As
 the name suggests, the Euler class is linked to the Euler characteristic, in particular if $M$ is an oriented
 closed $n$-manifold, $TM$ the tangent bundle, $e(TM) \in H^n(M; \Z)$, and $[M] \in H_n(M; \Z)$ the fundamental class of $M$, then:
 \[
   e(TM) \frown [M] = \chi(M)
 \]
-or, given the DeRham isomorphism, re-labeling the notation $e(TM)$ to the corresponding \emph{Euler form}:
+or, given the DeRham isomorphism (see~\cite{NateDiffGeo}), re-labeling the notation $e(TM)$ to the corresponding \emph{Euler form}:
 \[
   \int_M e(TM) = \chi(M)
 \]
-If $M$ where furthermore a Riemann manifold, then the classical generalization of the Gauss-Bonnet theorem for
-manifolds without boundary (the \emph{Chern Theorem}) let's us replace $e$ with $\Omega$, the curvature form,
+If $M$ where given a Riemann metric, then the classical generalization of the Gauss-Bonnet theorem for
+manifolds without boundary (the \emph{Chern Theorem}) let's us replace $TM$ with $\Omega$, the curvature form,
 giving:
 \[
   \int_M e(\Omega) = \chi(M)
 \]
 In other words, the Chern Theorem finds an alternative way of evaluating the Euler class at the fundamental
-class that relies on the curvature form $\Omega$ when it exists. The Hirzebruch Riemann Roch can be seen as
-finding an alternative evaluation at the Euler class when the underlying space $M$ has enough structure for
-its characterization to be done via the Chern classes.
+class that relies on the curvature form $\Omega$. The Hirzebruch Riemann Roch can be seen as
+finding another alternative evaluation at the Euler class when the underlying space $M$ has enough structure for
+its characterization to be done using the Chern classes.
 
 Finally, the definition of Chern class and Pontryagin class taken here can be thought of as the ``classical''
 definition. In algebraic geometry, there is natural ``intersection theory'' perspective of of the Chern class
@@ -1333,7 +1524,8 @@ show an important representation of the $K_0(X)$ group using chow groups.
 \section{Definitions and key Results}
 
 For reference, here is the definition of a vector bundle and Principal bundle we shall use (this differs from
-Hirzebruch gives the gluing definition of a vector bundle with structure groups):
+the definition Hirzebruch gives via gluing of a vector bundle with structure groups, but matches contemporary
+textbooks such as those by Hatcher and John/Jeffrey M. Lee):
 
 \index{Fiber Bundle}\index{Bundle!Fiber}
 \begin{defn}{Fiber Bundle}{fibBundle}
@@ -1399,7 +1591,7 @@ Hirzebruch gives the gluing definition of a vector bundle with structure groups)
 	bundle} \emph{complex vector bundle}.
 \end{defn}
 
-We shall also freely use the following fact (proven in~\cite{NateKTheory}):
+The following fact shall freely be used (proven in~\cite{NateKTheory}):
 
 \begin{thm}{Homotopy Invariance Vector Bundles}{homotopyInvarianceVecBundles}
 	Let $p: E \to B$ a vector bundle and $f_0,f_1: A \to B$ be homotopic maps. Then if $A$ is paracompact,
@@ -1491,7 +1683,7 @@ Hirsch:
 
 \section{Chern and Pontryagin Classes}
 
-We take the axiomatic approach taken by Grothendeick:
+The axiomatic approach taken by Grothendeick shall be taken:
 
 \begin{thm}{Existence and Uniqueness of Chern Classes}{existenceofChernClasses}
 	Let $E \to X$ be a complex vector bundle. Then there exists a sequence of functions $c_1, c_2, ...$ where
@@ -1538,11 +1730,6 @@ following:
 \[
     c(\xi_1 \oplus \cdots \oplus \xi_q) = c(\xi_1) \smile \cdots \smile c(\xi_q).
 \]
-which is equivalent due to the splitting principle. The Chern classes are the ``natural'' choice of
-
-\textcolor{red}{theorem of classifying cohomology of universal bundle}
-
-
 The real equivalent has more subtly due to the fact that real manifolds and vector bundles have a choice of
 orientation, and hence the natural cohomological setting to work in is over $\Z/2\Z$-coefficient and classify
 $H^*(BO; \Z/2\Z)$ where we take $\Z/2\Z$ to get rid of choice of orientability. This uses
@@ -1578,20 +1765,33 @@ To characterize Pontryagin classes, we state the following:
 What shall be important to use is the use of Pontryagin classes in the theory of cobordism in
 section~\ref{cha:cobordism}.
 
-\textcolor{red}{Should put here the theorem linking Pontryagin and Chern class, ex. Theorem 4.6.1 in
-Hirzebruch or an equivalent from Hatcher.}
+Pontryagin and Chern classes relate through the following relation:
+
+\begin{thm}{Chern and Pontryagin Relation}{chernPontryaginRelation}
+  The Chern classes $c_i$ of the almost complex manifold $X$ are related to the Pontryagin
+  classes $\cp_i$ of $X$ (regarded as a differentiable manifold) by:
+\[
+    \cp = \sum_{i=0}^{\infty} (-1)^i \cp_i = \sum_{i=0}^{\infty} c_i \sum_{j=0}^{\infty} (-1)^j c_j.
+\]
+\end{thm}
+
+\begin{Proof}
+  untangle and use~\cref{df:pontryaginClass}.
+\end{Proof}
+
 
 
 \section{Chern Character and K-Theory}\label{sec:chernCharacter}
 
-Fix a base space $X$. Let $c(-): K(X) \to H^*(X; \Z)$ be the Chern class. Recall that
+Fix a base space $X$ and let $K(X) = K_\C(X)$ be the set of isomorphism classes of complex vector bundles on
+$X$. Let $c(-): K(X) \to H^*(X; \Z)$ be the Chern class. Recall that
 \[
   c(E_1\oplus E_2) = c(E_1)\smile c(E_2)
 \]
 In particular, it brings the addition in $K(X)$ to multiplication in $H^*$. The collection $K(X)$ can be
 completed to form a group, also denoted $K(X)$, and it is known as the \emph{Grothendieck K-group}. The tensor
 gives it a natural ring structure. By the above construction, we see that $c(-)$ is \emph{not} a ring
-homomorphism. From the Chern class $c(-)$, we can construct a new map known as the \emph{Chern character}
+homomorphism for it is not the case that $c(E\otimes F) = c(E) + c(F)$. From the Chern class $c(-)$, we can construct a new map known as the \emph{Chern character}
 \[
   \ch(-): K(X) \to H^*(X; \Z)\otimes \Q
 \]
@@ -1601,7 +1801,9 @@ By the splitting principle, it suffices to work with line bundles. The total Che
 \[
   c(L) = 1 + c_1(L)
 \]
-where $c_1(L) \in H^2(X; \Z)$. As shown in \textcolor{red}{ref:HERE},
+where $c_1(L) \in H^2(X; \Z)$. Then it is a worth-while exercise to show that for \emph{line
+bundles}\footnote{use the correspondence between line bundles and cohomology classes,
+see~\cite{NateKTheory}} (not for general vector bundles!):
 \[
   c_1(L_1\otimes L_2) = c_1(L) + c_1(L)
 \]
@@ -1671,37 +1873,42 @@ Hilbert polynomial can be recovered by the Chern character, and vice-versa; see 
 require the following:
 
 \begin{prop}{Extension and Tensors With Chern Character}{extandTensorsWithChernCharacter}
-  let $\xi'', \xi, \xi'$ be vector bundles such that:
-\[
-  0 \to \xi'' \to \xi \to \xi' \to 0
-\]
-then:
-\[
-  \ch(\xi)(t) = \ch(\xi')(t) + \ch(\xi'')(t)
-\]
-And similarly
-\[
-    \operatorname{ch}(\xi \otimes \eta)(t) = \sum_{i,j} e^{(\gamma_j+\delta_j)t} = \sum_{i,j} e^{\gamma_j t}e^{\delta_j t} = \left(\sum_i e^{\gamma_j t}\right)\left(\sum_j e^{\gamma_j t}\right) = \operatorname{ch}(\xi)(t)\operatorname{ch}(\eta)(t).
-\]
+  \begin{enumerate}
+    \item let $E'', E, E'$ be vector bundles such that:
+  \[
+    0 \to E'' \to E \to E' \to 0
+  \]
+  then:
+  \[
+    \ch(E)(t) = \ch(E')(t) + \ch(E'')(t)
+  \]
+  And similarly
+  \[
+      \operatorname{ch}(E \otimes \eta)(t) = \sum_{i,j} e^{(\gamma_j+\delta_j)t} = \sum_{i,j} e^{\gamma_j t}e^{\delta_j t} = \left(\sum_i e^{\gamma_j t}\right)\left(\sum_j e^{\gamma_j t}\right) = \operatorname{ch}(E)(t)\operatorname{ch}(\eta)(t).
+  \]
+    \item Let $E_1, E_2$ be vector bundles. Then:
+      \[
+        \ch(E_1\otimes E_2) = \ch(E_1)\cdot \ch(E_2)
+    \]
+    where $\cdot$ is the cup product.
+  \end{enumerate}
 \end{prop}
 
 \begin{Proof}
   exercise.
 \end{Proof}
-\[
-  \ch(E_1\otimes E_2) = \ch(E_1)\cdot \ch(E_2)
-\]
-where again $\cdot$ is the cup product. Thus, there is a natural map:
+
+ Thus, there is a natural map:
 \[
   \ch: K(X) \to H^*(X; \Q)
 \]
-This shows that $\ch$ is the right notion for capturing the cohomological information of vector bundles which
+This shows that $\ch(-)$ is the right notion for capturing the cohomological information of vector bundles which
 respects the algebraic structure of $K(X)$. In chapter~\ref{cha:toddGenus}, we shall show that $\ch(E)$
 capture the bundle information, while $\td(X)$ (define in chapter~\ref{cha:toddGenus}) shall capture the
 relevant information from the underlying space.
 
 
-A natural question to ask is whether $f: X \to Y$ is a continuous map, then $\ch$ commutes with $f^*$, namely
+A natural question to ask is whether $f: X \to Y$ is a continuous map, then does $\ch$ commutes with $f^*$, namely
 if:
 \[
 \begin{tikzcd}
@@ -1711,16 +1918,17 @@ H^*(Y; \Q) \arrow[r, "f^*"]             & H^*(X; \Q)
 \]
 However this is not the case. What fixes the commutativity is the introduction of the Todd class. It is in
 fact a little more complicated as we would usually be taking coherent sheaves and working with the
-pushforward rather than the pullback, and so the details are left for section \textcolor{red}{ref:HERE}.
+pushforward rather than the pullback, and so the details are left for section~\ref{sec:GRR}:
 
 \[
 \begin{tikzcd}
 K(X) \arrow[r, "f_!"] \arrow[d, "\ch(-)\td(TX)"'] & K(Y) \arrow[d, "\ch(-)\td(TY)"] \\
-H^*(X; \Q) \arrow[r, "f_*"]             & H^*(Y; \Q)
+A^*(X; \Q) \arrow[r, "f_*"]             & A^*(Y; \Q)
 \end{tikzcd}
 \]
+where $A^*(-, \Q)$ is the \emph{chow ring} with rational coefficients.
 
-\chapter{Cohomology of Varieties -- new Euler Characteristics}
+\chapter{Cohomology of Varieties -- new Euler Characteristics}\label{cha:cohomVarieties}
 
 
 The Euler characteristic is in a sense ``too rough'' of an invariant for varieties. We require to capture some
@@ -1732,8 +1940,8 @@ Characteristic.
 
 We start by developing some basic Hodge theory. The key point is to show that the Dolbeault cohomology groups
 are finite dimensional, which is achieved by using the fact that elliptic operators have finite-dimensional
-kernels (see \textcolor{red}{ref:HERE}). Note that in the proof of Grothendieck Riemann Roch, this is replaced
-with the fact that $H^i(X, \SF)$ is finite-dimensional for $X$ projective and $F$ coherent
+kernels (see~\cref{th:kodariaFinDimThm}). Note that in the proof of Grothendieck Riemann Roch, this is replaced
+with the fact that $H^i(X, \CF)$ is finite-dimensional for $X$ projective and $F$ coherent
 (see~\cite{NateAlgGeo}, or~\cite{hartshorneAlgebraicGeometry2013}).
 
 Then, as all smooth projective manifold can be embedded into $\CP^n$ have an algebraic equation by Chow's
@@ -1747,7 +1955,7 @@ We then show how many interesting new Euler-characteristics can be
 defined. We shall then end off by mentioning some important Vanishing theorems that would allow us to compute
 $H^0(X, \CF)$.
 
-Finally, we define the derived Euler-characteristic which shall keep track of important intersection
+Finally, we define the virtual Euler-characteristic which shall keep track of important intersection
 information that will be important in the proof of Hirzebruch Riemann Roch.
 
 % Let $X$ be a smooth complex projective manifold so that $X$ is a submanifold of $\CP^n$ and by Chow's
@@ -1756,8 +1964,24 @@ information that will be important in the proof of Hirzebruch Riemann Roch.
 
 \section{Dolbeault Cohomology}
 
-Let $X$ be a complex manifold. For now, let it be one-dimensional. As holomorphic mappings respects complex and anti-complex structure, any 1-form
-with complex coefficients can be uniquely with respect written as a sum:
+We shall assume the basic knowledge of differential geometry that can be found in~\cite{NateDiffGeo}
+or~\cite{leeIntroductionSmoothManifolds2003}, and of complex analysis that can be found
+in~\cite{NateComplexAnalysis} or~\cite{ahlforsComplexAnalysisIntroduction2007}. This section shall be very
+rapid to cover the key ideas necessary to define the Euler characteristics, sometimes omitting some proofs
+that are better covered in a full text in Hodge Theory.
+
+Let $X$ be a real manifold. Then we can take the fiber-wise tensor product $TM\otimes \C$ to complexity the
+manifold. If $J: TM \to TM$ is an endomorphism st $J^2 = -1$, then $TM\otimes \C$ can be decmposed into:
+\[
+  TM\otimes \C T^{1,0}M \oplus T^{0,1}M
+\]
+where
+\[
+  T^{1,0}M = \set{x-iJx}{x \in TM} \qquad \text{and} \qquad T^{0,1}M =\set{x+iJx}{x \in TM}
+\]
+Thus, there is a natural decomposition of tangent bundles into holomorphic and anti-holomorphic components.
+For a moment, let it be one-dimensional. As holomorphic mappings respects complex and anti-complex structure,
+any 1-form with complex coefficients can be uniquely with respect written as a sum:
 \[
    fdz + gd\overline{z}
 \]
@@ -1765,7 +1989,7 @@ let $\Omega^{1,0}$ represent holomorphic $1$-forms, and $\Omega^{0,1}$ represent
 $1$-forms.The spaces $\Omega^{1,0}$ and $\Omega^{0,1}$ are both stable under holomorphic coordinate
 changes (use Cauchy-Riemann).
 
-A similar pattern takes shape in higher dimensions: let $X$ be $n$-dimensional. Like before, any $1$ form with
+A similar pattern takes shape in higher dimensions. Let $X$ be $n$-dimensional. Like before, any $1$ form with
 complex coefficients can be written as:
 \[
   \sum_{j=1}^n (f_jdz^{j} + g_jd\overline{z}^j)
@@ -1783,20 +2007,25 @@ Now, let $E^k$ be the space of all complex differential forms of total degree $k
   E^k = \Omega^{k,0} \oplus \Omega^{k-1, 1}\oplus \cdots \oplus \Omega^{1, k-1}\oplus \Omega^{0,k}
   = \bigoplus_{p+q=k} \Omega^{p,q}
 \]
-When the manifold is nice enough, ex. K\"ahler, $\Omega^k = E^k$ (where $\Omega^k$ is the collection of
-holomorphic forms, ``decomposition'' like we did above, that is the \emph{Hodge decomposition}). Note that the direct sum decomposition is stable under holomorphic coordinate changes, hence it determines
-a vector bundle decomposition. Note we get a natural projection for each direct summand:
+if $M$ is is a complexified manifold, then:
+\[
+  \Omega^k(M, \C) = \bigoplus_{p+q=k} \Omega^{p,q}
+\]
+Note that the direct sum decomposition is stable under holomorphic coordinate changes, hence it determines
+a vector bundle decomposition. From this direct product, there are natural projections for each direct summand:
 \[
   \pi^{p,q}: E^K \to \Omega^{p,q}
 \]
-
 Now, define $d: \Omega^r \to \Omega^{r+1}$ in the natural way where:
 \[
   d(\Omega^{p,q}) \sse \bigoplus_{r+s=p+q+1} \Omega^{r,s}
 \]
-When we were just working with smooth manifolds, this gave us ``enough'' cohomological information. We now
-have more structure and this is not granular enough. We define the \emph{Dolbeault operators}:
-
+\index{Dolbeault Operators}
+\begin{defn}{Dolbeault Operators}{dolbeaultOperators}
+  \[
+    \partial = \pi_{p+1, q}\circ d \qquad \text{and} \qquad \overline{\partial} = \pi_{p, q+1}\circ d
+  \]
+\end{defn}
 In coordinates, let:
 \[
     \alpha = \sum_{|I|=p,|J|=q} f_{IJ} dz^I \wedge d\bar{z}^J \in \Omega^{p,q}
@@ -1809,7 +2038,8 @@ and
 \[
     \bar{\partial}\alpha = \sum_{|I|,|J|} \sum_\ell \frac{\partial f_{IJ}}{\partial\bar{z}^\ell} d\bar{z}^\ell \wedge dz^I \wedge d\bar{z}^J.
 \]
-Furthermore:
+When $M$ is a complex manifold (equiv. it has a complex structure), then by the \emph{Newlander–Nirenberg
+theorem}:
 \[
     d = \partial + \bar{\partial}
 \]
@@ -1846,8 +2076,8 @@ $E$ be a holomorphic vector bundle on a complex manifold $X$. Then take the map:
   \overline{\partial}_E: \Gamma(E) \to \Omega^{0,1}(E)
 \]
 taking section of $E$ to $(0,1)$-forms with values in $E$. This will satisfy the Leibniz rule  with respect to
-$\overline{\partial}$, and is thus a $(0,1)$-connecting on $E$. Then we can do the same trick from Riemann
-geometry and extended it to  the exterior covariant derivative, namely;
+$\overline{\partial}$, and is thus a $(0,1)$-connection on $E$. Then we can do the same trick from Riemann
+Geometry and extended it to  the exterior covariant derivative, namely;
 \[
   \overline{\partial}_E: \Omega^{p,q}(E) \to \Omega^{p, q+1}(E)
 \]
@@ -1872,7 +2102,6 @@ which is unambiguously denoted as:
 \]
 \end{defn}
 if $\mathbbm{1}$ is the trivial bundle, then we get back the usual Dolbeault cohomology.
-\textcolor{red}{CHECK THIS}
 
 Let $\Omega^p$ be the sheaf of holomorphic $p$-forms on $M$. Then the following is the natural
 generization of DeRham's theorem for Dolbeault cohomology:
@@ -1884,7 +2113,7 @@ and if we are working over a vector bundle:
 \[
   H^{p,q}(M, E) \cong H^q(M, \Omega^p\otimes E)
 \]
-This is \emph{Dolbeault's Theorem}. This also means that:
+Furthermore:
 \[
   H^{0,q}(M, E) \cong H^q(M, \Omega^0\otimes E) = H^q(M, E)
 \]
@@ -1903,9 +2132,11 @@ For future reference, if $E$ is a complex vector bundle, we shall denote its con
 bundle $E^*$ in the natural way. Note that per-fiber, the dual can be given by Hermitian of the inverse of the
 matrix.
 
-\subsection*{Hodge Theorem: finiteness of Cohomology Groups}
+\subsection*{Hodge Theorem: Finiteness of Cohomology Groups}
 
-Let $M$ now be compact. Let us build-up to showing that each class in $H^{p,q}(M, \C)$ is representable by a harmonic form. For
+Let $M$ now be compact and complex. Let us build-up to showing that each class in $H^{p,q}(M, \C)$ is
+representable by a harmonic form. This will allow us to quote result from the theory of elliptic operators
+that will show these vector spaces are finite dimensional. For
 notational simplicity, let:
 \[
   A^{p,q}(W) = \Gamma(V, \Omega^{p,q}(W))
@@ -1942,7 +2173,7 @@ Thus, we get a well-defined pairing:
   H^{p,q}(M,E) \times H^{n-q, n-q}(M, E^*) \to \C\qquad (\alpha, \beta) \mapsto \langle \alpha,\beta \rangle
   = \int_M \alpha \wedge  \beta
 \]
-Now, by some linear algebra and differential geometry we see that $\overline{TM} \cong T^*M$. Then we get:
+Now, by some linear algebra and differential geometry we see that $\overline{TM} \cong T^*M$, and so:
 \begin{align*}
 \bigwedge^p TM \otimes \bigwedge^q TM &\cong \bigwedge^p TM \otimes \bigwedge^n T^*M \otimes \bigwedge^n TM \otimes \bigwedge^q T^*M \\
 &\cong \bigwedge^{n-p} T^*M \otimes \bigwedge^{n-q} TM \\
@@ -1974,12 +2205,12 @@ If $r = n-p$, $s = n-q$, then $\widetilde{\star}\circ \star$ is multiplication b
 produce natural anti-isomorphisms of:
 \begin{align*}
   \star&: \Omega^{p,q}(W) \to \Omega^{n-p, n-q}(W^*)\\
-  \widetilde{\star}&: \Omega^{r,s}(W*) \to \Omega^{n-r, n-s}(W)\\
+  \widetilde{\star}&: \Omega^{r,s}(W^*) \to \Omega^{n-r, n-s}(W)\\
 \end{align*}
 
 Using these, we can define the ``co-'' of $\overline{\partial}$:
 \[
-  \delta: \Omega^{p,q}(W) \to \omega^{p, q-1}(W) \qquad \delta= -\widetilde{\star} \circ
+  \delta: \Omega^{p,q}(W) \to \Omega^{p, q-1}(W) \qquad \delta= -\widetilde{\star} \circ
   \overline{\partial} \circ \star
 \]
 With this, if $\alpha,\beta \in A^{p,q}(W)$ then we can define:
@@ -2035,8 +2266,7 @@ Thus, when taking the Dolbeault cohomology group:
 \]
 Hence, the forms are naturally harmonic! This result is called the \emph{Hodge Theorem}. Furthermore, as this
 is an elliptic operator, we get by elliptic operator theory that each of these spaces is \emph{finite
-dimensional} \textcolor{red}{ref:HERE}.
-We thus also get:
+dimensional} (see~\cite{HodgeTheory2014}). We thus also get:
 \[
   H^r(M, \C) \cong \bigoplus_{p+q=r} B^{p,q}
 \]
@@ -2049,8 +2279,8 @@ is of type $(p,q)$ when regarded as an element of $H^{p+q}(M, \C)$.
 
 All of this is summarized in the following two theorems:
 
-\begin{thm}{Kodaria's Finite Dimension Theorem}{kodariaFinDimThm}
-   Then $H^{p,q}(M,E)$ is finite dimensional
+\begin{thm}{Kodaira Finite Dimension Theorem}{kodariaFinDimThm}
+   The Dolbeault cohomology group $H^{p,q}(M,E)$ is finite dimensional
   isomorphic to the vector space of complex harmonic forms of type $(p,q)$ with coefficients in $E$.
   Furthermore:
   \[
@@ -2060,7 +2290,7 @@ All of this is summarized in the following two theorems:
 \end{thm}
 
 \begin{Proof}
-  see a textbook in Hodge theory
+  See for example~\cite{HodgeTheory2014} or~\cite{voisinHodgeTheoryComplex2002}.
 \end{Proof}
 
 \begin{thm}{Serre-Hodge Duality Theorem}{serreHodgeDuality}
@@ -2070,7 +2300,7 @@ All of this is summarized in the following two theorems:
 \end{thm}
 
 \begin{Proof}
-  see a textbook in Hodge theory
+  See for example~\cite{HodgeTheory2014} or~\cite{voisinHodgeTheoryComplex2002}.
 \end{Proof}
 
 \index{Hodge Number}
@@ -2087,13 +2317,13 @@ All of this is summarized in the following two theorems:
 Note that in general $h^{p,q}(M) \ne h^{q,p}(M)$; if $M$ is a K\"ahler manifold this will be the case.
 
 
-\section{Geometric-Algebraic Bridge: K\"ahler manifold}
+\section{Geometric-Algebraic Bridge: K\"ahler Manifold}\label{sec:kahlerMan}
 
-Let $M_n$ be a compact complex Riemann manifold. A hermitian metric on $M$ is defined as:
+Let $M$ be a compact complex Riemann manifold. A Hermitian metric on $M$ is defined as:
 \[
   ds^2 = 2 \sum g_{\alpha\beta}(z, \overline{z}) (dz^\alpha \cdot d \overline{z}^\beta)
 \]
-where $\overline{g_{\alpha\beta}} = g_{\beta\alpha}$. To a Hermitian metric $ds^2$, we get a natural exterior
+where $\overline{g_{\alpha\beta}} = g_{\beta\alpha}$. From a Hermitian metric $ds^2$, we get a natural exterior
 differential form:
 \[
   \omega = i\sum g_{\alpha\beta}(z, \overline{z}) dz^\alpha \wedge  d \overline{z}^\beta
@@ -2131,25 +2361,83 @@ $B^{q,p}$ and $B^{p,q}$ which induces an isomorphism between these groups, and s
 \end{thm}
 
 \begin{Proof}
-  see a textbook in Hodge Theory.
+  See for example~\cite{HodgeTheory2014} or~\cite{voisinHodgeTheoryComplex2002}.
 \end{Proof}
 
 Note that these numbers do not depend on the choice of K\"ahler metric ($d\alpha = 0$ for a harmonic
 $(p,q)$-form regardless of metric) and hence it is enough for a K\"ahler metric to exist.
 
-\section*{*Fundamental Kodaira Results}\label{sec:Kodaira}
+Now, being a K\"ahler manifold is very close to being a projective variety. Recall from Hartshorne that
+a sheaf on a scheme is very ample\footnote{or ample, meaning it is very ample after tensoring with an
+appropriate $\CO(n)$} if has ``enough projectives'' (see Hartshorne's
+exposition at~\cite{hartshorneAlgebraicGeometry2013} or my exposition at~\cite{NateAlgGeo}). Not all K\"ahler
+manifolds have enough projectives, but it is a surprisingly simple condition that insures that a K\"ahler
+manifold can embed into projective space.
 
-\textcolor{red}{INTEGRATE THIS}
-\cite[p.138]{hirzebruchTopologicalMethodsAlgebraic1995}
+\index{Positivity!Real}
+\begin{defn}{Real Positivity}{realpositivity}
+  Let $x \in H^{1,1}(M, \R)$. Then $x$ is said to be \emph{positive} if $x$ can be choasen as the fundamental
+  class of a  metric on $M$. K\"ahler
+\end{defn}
 
-He now goes define a \emph{Hodge Manifold} which is a K\"ahler manifolds whose fundamental class is in the
-image of the natural homomorphism $H^2(M, \Z) \to H^2(M, \R)$. \textcolor{red}{redundatnly, it was mentioned
-here that there are compact complex manifolds that are not K\"ahler}. There are K\"ahler manifolds that are not
-Hodge, and but all algebraic manifold are Hodge. Note this definition is done by defining a certain order which
-I omitted.
+\begin{prop}{Properties of Real Positivity}{propofRealPositivity}
+  Let $M$ be a K\"ahler manifold. Then
+  \begin{enumerate}
+    \item At least one element of  $H^{1,1}(M,\R)$ is positive
+    \item The zero element of $H^{1,1}(M,\R)$ is not positive
+    \item If $x >0$ and $y > 0$ then $x+y> 0$ ($x,y \in H^{1,1}(M, \R)$)
+    \item If $x >0$ and $r > 0$ then $rx> 0$ ($x \in H^{1,1}(M, \R)$, $r \in \R$)
+    \item if $x,y \in H^{1,1}(M, \R)$ and $x > 0$, then there exists a posotivei integer $g$ (depending on
+      $x,y$) such that $gx-y > 0$.
+  \end{enumerate}
+\end{prop}
+
+\begin{Proof}
+  exercise.
+\end{Proof}
+
+\index{Positivity!Integral}
+\begin{defn}{Integral Positivity}{intPositivity}
+  Let $M$ be a K\"ahler manifold and $x \in H^{1,1}(M, \Z)$. Then $x$ is said to be \emph{positive} if it is
+  positive when regarded as an element of $H^{1,1}(M, \R)$.
+\end{defn}
+
+\index{Hodge Manifold}
+\begin{defn}{Hodge Manifold}{hodgeManifold}
+  A K\"ahler manifold $M$ is called a \emph{Hodge Manifold} if $H^{1,1}(M, \Z)$ contains at least one positive
+  element.
+\end{defn}
+
+Another way of saying this is that $M$ admits a K\"ahler metric whose fundamental class is in the image of the
+natural homomorphism $H^2(M, \Z) \to H^2(M, \R)$.
+
+\begin{example}{Complex Space is Hodge Manifold}{complexSpisHodgeManifold}
+  let $M = \CP^n$. Then
+  \[
+    H^{1,1}(\CP^n, \Z) = H^2(\CP^n, \Z) \cong \Z
+  \]
+  and so if $x \in H^{1,1}(\CP^n, \R) = H^2(\CP^n, \R)$, there is a real number $r > 0$ such that $rx$ lies in
+  the image of the aforementioned inclusion homomorphism. In particular, the positive elements of $H^2(\CP^n,
+  \Z)$ are the integral multiples of the cohomology classes of oriented planes.
+\end{example}
+
+\begin{thm}{Hodge Manifold Are Algebraic}{hodgeManifoldAreAlgebraic}
+  Let $M$ be a K\"ahler manifold. Then $M$ embeds into $\CP^n$ for some $n$ if and only if it is a Hodge
+  Manifold.
+\end{thm}
+
+\begin{Proof}
+  see~\cite{voisinHodgeTheoryComplex2002}.
+\end{Proof}
+
+Similarly, of $L$ is a line bundle over $M$, then it is \emph{projectively induced} if for some embedding of
+$M$ into $\CP^n$, $L$ is the restriction of $M$ to a line bundle $H$ with cohomology class $h_n$ ($h_n$
+representing the cohomology class of characterized by a hyperplane). Mirroring the result in divisor theory,
+a projectively induced line bundle can always be given by a divisor:
+
 
 \begin{thm}{Bertini Theorem}{bertiniThm}
-  Let $F$ be a projectively induced line bundle over the algebraic manifold $M$. Then a non-singular divisor
+  Let $F$ be a projectively induced line bundle over the algebraic manifold $M$. Then a divisor
   $D$ induces $F$, namely $F = \CL(D)$.
 \end{thm}
 
@@ -2157,66 +2445,29 @@ This is actually a special case of the general Bertini theorem that you find whe
 Theorem''.
 
 \begin{Proof}
-  will not prove
+  \cite{voisinHodgeTheoryComplex2002}
 \end{Proof}
 
-\begin{thm}{Characterizing Varieties Geoemtrically}{characterizingVarietiesGeoemtrically}
-  A compact complex manifold is a smooth complete variety (Hirzebruch: algebraic manifold) if and only if it is a Hodge Manifold.
-\end{thm}
+Next, just like in sheaf cohomology over schemes, higher-order cohomology shall vanish (given the vectr bundle
+is sufficiently ``twisted'' to be very ample):
 
-\begin{Proof}
-  not proven. It is a GAGA like result that is interesting.
-\end{Proof}
-
-Hirzebruch now states that we know that for two choices of complex vector bundles $E, E'$ over an algebraic
-manifold $M$, it can be that $\dim H^0(M, E) \ne H^0(M, E)$. But $\chi(M, E)$ does not depend on the
-continuous vector bundle $W$ and depends only on the Chern classes of $E$. He now introducing some vanishing
-theorems:
-
-\begin{thm}{Kodaira Vanishing Theorem}{kodariaVanishingThm}
-  Let $F$ be a complex line bundle over a compact complex manifold $M$. If $F^{-1}$ is positive, then the
-  cohomology group $H^i(M, F)$ vanish for all $i \ne n$.
-\end{thm}
-
-\textcolor{red}{I did not define positivity of a bundle, he did it at the beginning of this section}
-
-\begin{Proof}
-  proved by Kodaira
-\end{Proof}
-
-\textcolor{red}{INTEGRATE THIS:SOME STUFF HERE NEEDS CHAR STUFF}
-
-Using Serre duality, we get
-
-\begin{thm}{Kodaira Vanishing Theorem - Euler Characteristic}{kodairaVanishingThm-EulerChar}
-  let $F,M$ be as before and take $F\otimes K^{-1}$ for the canonical class $K$. If it is positive, then the
-  groups $H^i(M, F)$ vanish for all $i > 0$, so that:
-  \[
-    \dim h^0(M, F) = \chi(M, F)
-  \]
-\end{thm}
-
-\begin{Proof}
-  again Kodaira
-\end{Proof}
-
-\begin{thm}{Kodaira Vanishing Theorem II}{kodairaVanishingThmII}
-  Let $F$ be a complex line bundle over a hole manifold $M$, and let $F'$ be a positive line bundle over $M$.
+\begin{thm}{Kodaira Higher Order Vanishing Theorem}{kodairaVanishingThmII}
+  Let $F$ be a complex line bundle over a K\"ahler manifold $M$, and let $F'$ be a positive line bundle over $M$.
   Then
   \[
     H^i(M, F\otimes (F')^k)
   \]
-  vanishg for all $i > 0$ and $k$ sufficiently large.
+  vanish for all $i > 0$ and $k$ sufficiently large.
 \end{thm}
 
 \begin{Proof}
-  Kodaira.
+  \cite{voisinHodgeTheoryComplex2002}
 \end{Proof}
 
 From it we get:
 
 \begin{thm}{Characterizing Line Bundles On Algebraic Manifold}{characterizingLineBundlesOnAlgebraicManifold}
-  Let $M$ be an algebraic manifold, $F$ an analytic line bundle over $M$. Then there are projectively induced
+  Let $M$ be an Hodge Manifold, $F$ an analytic line bundle over $M$. Then there are projectively induced
   line bundles $A,B$ where $F = A\otimes B^{-1}$. Thus, we have:
   \[
     F = \CL(A)\otimes \CL(B)^{-1}
@@ -2224,39 +2475,8 @@ From it we get:
 \end{thm}
 
 \begin{Proof}
-  Hirzbruch actually proves this, see~\cite[p.141, thm~18.2.5]{hirzebruchTopologicalMethodsAlgebraic1995}.
+  see~\cite[p.141, thm~18.2.5]{hirzebruchTopologicalMethodsAlgebraic1995}.
 \end{Proof}
-
-Hirzebruch now states that he will make no distinction between a Hodge manifold and an algebraic manifold. In
-particular, if a compact complex manifold $M$ admits a Hodge metric, then $M$ is algebraic.
-
-\begin{thm}{Line Bundles Are Algebraic Over Projective Space}{lineBundlesAreAlgebraicOverProjSp}
-  let $L$ be a $\C$-fiber bundle over $M$ with $\CP^r$ as fibers and $\PGL_{r+1}(\C)$ as the structure group.
-  Then it is an algebraic manifold.
-\end{thm}
-
-\begin{Proof}
-  proved by Kodaira
-\end{Proof}
-
-
-We shall need a generization of the above for because we'll need the case where $F$ is the flag manifold $F(q)
-= \GL_q(\C)/\Delta(q,\C)$ and $L$ is the associated $\GL_q(\C)$-bundle $\xi$ over $M$.
-
-
-\begin{thm}{Borel Vanishing Theorem}{borelVanishingThm}
-  Let $L$ be a complex fibre bundle over the algebraic manifold $M$ with an algebraic manifold as fibre
-  and a connected structure group. Assume that the first Betti number of $F$ is zero. Then $L$ is itself
-  algebraic.
-\end{thm}
-
-\begin{Proof}
-  Borel, Hirzebruch gives a reference in~\cite[141]{hirzebruchTopologicalMethodsAlgebraic1995}
-\end{Proof}
-
-
-
-
 
 \section{Euler Characteristic and Generalization}\label{sec:eulerCharAndGeneralization}
 
@@ -2282,7 +2502,7 @@ and if $E = \mathbbm{1}$ then:
   \chi^p(M,\mathbbm{1}) = \chi^p(M) = \sum_{q=0}^n (-1)^q h^{p,q}(M)
 \]
 We can collect these characteristic in a generating function:
-\index{Euler-Hodge Characteristic}
+\index{Euler Characteristic!Euler-Hodge}
 \begin{defn}{$\chi_y$-characteristic}{totalEulerCharacteristic}
     \[
     \chi_y(M,E) = \sum_{p=0}^n \chi^p(M,E)y^p \qquad \text{(sim.)} \qquad \chi_y(M) = \sum_{p=0}^n \chi^p(M)y^p
@@ -2312,78 +2532,40 @@ of a compact K\"ahler manifold is equal to:
 \[
   \chi(M) = \sum_{i=0}^n (-1)^ig_i
 \]
-If $V_n$ and $V'_m$ are K\"ahler manifolds then
+If $M$ and $N$ are K\"ahler manifolds then by K\"unneths formula:
 \[
-    h^{p,q}(V_n \times V'_m) = \sum_{\substack{r+u=p \\ s+v=q}} h^{r,s}(V_n) h^{u,v}(V'_m).
+    h^{p,q}(M \times N) = \sum_{\substack{r+u=p \\ s+v=q}} h^{r,s}(M) h^{u,v}(N).
 \]
 
 Let $y$, $z$ be indeterminates and associate to each K\"ahler manifold $V$ the polynomial $\prod_{y,z}(V)
 = \sum_{p,q} h^{p,q} y^p z^q$. Then the above is equivalent to:
 \[
-    \prod_{y,z}(V_n \times V'_m) = \prod_{y,z}(V_n) \cdot \prod_{y,z}(V'_m).
+    \prod_{y,z}(M \times N) = \prod_{y,z}(M) \cdot \prod_{y,z}(N).
 \]
 
-Let $z = -1$ in. Then $\prod_{y,-1} = \chi_y$ and
+Let $z = -1$ in. Then $\prod_{y,-1}(-) = \chi_y(-)$ an so:
 \[
-    \chi_y(V_n \times V'_m) = \chi_y(V_n) \cdot \chi_y(V'_m),
+    \chi_y(M \times N) = \chi_y(M) \cdot \chi_y(N),
 \]
-which is a property common to $\chi_y$ and $T_y$.
 Next, let us understand $\chi_y(M)$ for specific values of $y$. Let us start with $y = -1$. Then:
 \[
   \chi_{-1}(M) = \sum_{p=0}^n (-1)^p\chi^p(M) = \sum_{p,q} (-1)^{p+q} h^{p,q}(M)
 \]
 is equal to the usual Euler characteristic.
 
+The most important value to prove will be for when $y = 1$. In this case, the $\chi_{1}$-characteristic will
+be equal to a value called the \emph{(spin) index} of $M$. When defining defining a generating function $T_y$ that
+will hold the Chern character and Todd class information, $y = -1$ shall represent $\ch(E)\smile \td(M)$, and when $y = 1$ it shall \emph{also} be equal to the
+index of $M$, and the proof of the Hirzebruch Riemann Roch boils down to showing that this forces the
+coefficients of $T_y$ and $\chi_y$ to be the equal and hence they must also agree when $y = -1$. The index results
+shall be proven in chapter~\ref{cha:cobordism} and the specific theorem for the character when $y=1$ is proven
+in~\cref{th:eulerCharandIndex}.
 
-If with $y = 1$, then we get the following key result:
-\begin{thm}{Euler Characteristic and Index}{eulerCharandIndex}
-  \[
-  \chi_1(M) = \sum_{p=0}^n \chi^p(M) = \sum_{p,q}(-1)^qh^{p,q}(M)
-\]
-is equal to the \emph{index} $\tau(M)$ (defined in \cite[8.2]{hirzebruchTopologicalMethodsAlgebraic1995}).
-\end{thm}
 
-\begin{Proof}
-  long proof at~\cite[p.125, Thm~15.8.2]{hirzebruchTopologicalMethodsAlgebraic1995}
-\end{Proof}
-
-This will be a key step in the proof of RR. Note that there is a more direct proof for the above that works
-for arbitrary compact complex manifolds $M$ (Hirzebruch sketches a proof
-in~\cite[appendix~25.4]{hirzebruchTopologicalMethodsAlgebraic1995}).
-
-Let us take a moment to understand the first Chern class on a K\"ahler manifold, considering it will be key
-for the RR on line bundles. Take the usual exact sequence:
-\[
-  0 \to \underline{\Z} \to \CO_M \to \CO_M^* \to 0
-\]
-where $\CO_M$ is the sheaf of holomorphic functions, and $\CO_M$ is the sheaf of never=zero holomorphic
-functions (invertible holomorphic functions). Then we get an exact cohomology sequence:
-\[
-  H^1(M, \CO_M^*) \xrightarrow{\delta_*^1} H^2(M, \Z) \to H^2(M, \CO_M^*)
-\]
-Then on a K\"ahler manifold we have $H^2(M, \CO_X^*) = H^2(M, \mathbbm{1}) \cong B^{0,2}(M)$. Thus, an element
-$a \in H^2(M, \Z)$ is mapped to a nonzero element of $H^2(M, \CO_M)$ if and only if $a$ is of type $(1,1)$.
-Then from characteristic theory for vector bundles we know that if $\xi \in H^1(M, \CO_M^*)$ is a complex
-$\C^*$-bundle, then:
-\[
-  \delta_*^1(\xi) = c_1(\xi)
-\]
-If $F$ is a complex line bundle over $M$ and $\xi$ is the assocaited $\C^*$-bundle, then $c_1(\xi)$ is the
-\emph{cohomology class} of $F$. Then we get:
-
-\begin{thm}{characterising Line bundles on K\"ahler Manifolds}{charLineBundleKahlMan}
-  Let $M$ be a compact K\"ahler manifold. Then an element $a \in H^2(M, \Z)$ is the cohomology class of
-  a complex lien bundle over $M$ if and only if it is of type $(1,1)$.
-\end{thm}
-
-\begin{Proof}
-  Hirzebruch references ppl at~\cite[p.127, Thm~15.9.1]{hirzebruchTopologicalMethodsAlgebraic1995}, and
-  says it is provable for non-K\"ahler manifolds and was done by Dolbeault.
-\end{Proof}
 
 
 Let us finish with the special case $M$ a K\"ahler manifolds and $h^{p,q} = 0$ when $p\ne q$. Then $\chi_y(M)$
-is (essentially) equal to the poincar\'e polyomial:
+is (essentially) equal to the Poincar\'e polynomial:
 \[
   P(t; M) = \sum b_rt^r
 \]
@@ -2399,30 +2581,63 @@ Why do we care about this special case? Because complex projectives varieties $\
 $F(n)$ both are K\"ahler manifolds with this property. The $\CP^n$ comes from basic Dolbeault cohomology. For
 the flag manifold $F(n)$, recall that $H^*(F(n), \Z)$ by the splitting principle is generated by element
 $\gamma_i \in H^2(F(n); \Z)$. Then by characteristic theory there are complex $\C^*$-bundles $\xi_i$ over
-$Fn)$ where $c_1(\xi_i) = \gamma_i$. The ``only if'' comes from~\cref{th:charLineBundleKahlMan} where we have
+$F(n)$ where $c_1(\xi_i) = \gamma_i$. The ``only if'' comes from~\cref{th:charLineBundleKahlMan} where we have
 that each $\gamma_i$ is of type $(1,1)$, and therefore the cohomology classes of $F(n)$ are of type $(p,p)$.
+Let us build-up to prove this theorem.
 
-For future reference, notice that $\chi_y$ and $T_y$ (\cite[14.4]{hirzebruchTopologicalMethodsAlgebraic1995})
-agree, as they are both essentially equal to the Poincar\'e polynomial.
+Take the usual exact sequence:
+\[
+  0 \to \underline{\Z} \to \CO_M \to \CO_M^* \to 0
+\]
+where $\underline{\Z}$ is the constant sheaf, $\CO_M$ is the sheaf of holomorphic functions, and $\CO_M^*$ is
+the sheaf of never-zero holomorphic functions (invertible holomorphic functions). Then we get an exact
+cohomology sequence:
+\[
+  H^1(M, \CO_M^*) \xrightarrow{\delta_*^1} H^2(M, \Z) \to H^2(M, \CO_M^*)
+\]
+Then on a K\"ahler manifold we have $H^2(M, \CO_X^*) = H^2(M, \mathbbm{1}) \cong B^{0,2}(M)$. Thus, an element
+$a \in H^2(M, \Z)$ is mapped to a nonzero element of $H^2(M, \CO_M)$ if and only if $a$ is of type $(1,1)$.
+Then from characteristic theory for vector bundles we know that if $\xi \in H^1(M, \CO_M^*)$ is a complex
+$\C^*$-bundle, then:
+\[
+  \delta_*^1(\xi) = c_1(\xi)
+\]
+If $F$ is a complex line bundle over $M$ and $\xi$ is the assocaited $\C^*$-bundle, then $c_1(\xi)$ is the
+\emph{cohomology class} of $F$. Then we get:
+
+\begin{thm}{characterising Line bundles on K\"ahler Manifolds}{charLineBundleKahlMan}
+  Let $M$ be a compact K\"ahler manifold. Then an element $a \in H^2(M, \Z)$ is the cohomology class of
+  a complex line bundle over $M$ if and only if it is of type $(1,1)$.
+\end{thm}
+
+\begin{Proof}
+  Hirzebruch references ppl at~\cite[p.127, Thm~15.9.1]{hirzebruchTopologicalMethodsAlgebraic1995}, and
+  says it is provable for non-K\"ahler manifolds and was done by Dolbeault.
+\end{Proof}
+% For future reference, notice that $\chi_y$ and $T_y$ (\cite[14.4]{hirzebruchTopologicalMethodsAlgebraic1995})
+% agree, as they are both essentially equal to the Poincar\'e polynomial.
 
 \subsection{Euler Characteristic on Intersections}\label{sec:propGenerlizedEulerChar}
 
-Part of the proof will requires some splitting properties that we can induct on. To that end, we shall develop
-some more properties of $\chi_y$. Let
+The Hirzebruch Riemann Roch will reduce to being proven on line bundles. As line bundles on projective
+varieties are associated to codimension $1$ subschemes, we can take a filtering of $M$ of codimension $1$
+subschemes to represent the line bundles. This will lead to decomposing $\chi$ in terms of the characteristic
+of all possible filterings. To that end, we shall develop some more properties of $\chi_y$. Let
 :
 \[
   0 \to E' \to E \to E'' \to 0
 \]
-be a short exact sequence of complex vector bundles. This naturally induces a short exact sequence of sheaves:
+be a short exact sequence of complex vector bundles. This naturally induces a short exact sequence of
+sheaves~\cite{NateAlgGeo}:
 \[
   0 \to \CO_{E'} \to \CO_E \to \CO_{E''} \to 0
 \]
-which is left as an exercise in sheaf theory. What is important is that we get that we get that each new
-Euler-characteristic is additive on exact sequences:
+which we take as we can take advantage of some sheaf theory in the following proofs. What is important is that
+we get that we get that each new Euler-characteristic is additive on exact sequences:
 \begin{thm}{Generalized Euler Characteristic Additive}{generalizedEulerCharAdditive}
   Let
 \[
-  0 \to \CH(E') \to \CH(E) \to \CH(E'') \to 0
+  0 \to \CO_{E'} \to \CO_E \to \CO_{E''} \to 0
 \]
   be a short exact sequence of complex vector bundles over $M$. Then:
   \begin{align*}
@@ -2433,7 +2648,7 @@ Euler-characteristic is additive on exact sequences:
 \end{thm}
 
 \begin{Proof}
-  exercise.
+  exercise (also an exercise in Hartshorne, see~\cite[section~2.5]{hartshorneAlgebraicGeometry2013})
 \end{Proof}
 
 \begin{thm}{Splitting Principle and Euler Characteristic}{splittingPrincipleandEulerChar}
@@ -2449,33 +2664,40 @@ Euler-characteristic is additive on exact sequences:
   Use induction and the above theorem
 \end{Proof}
 
-Let us now get some important ways Cartier divisors come into the picture. As usual let $E$ be a complex
-vector bundle over a complex manifold $M$, and let $D$ be a nonsingular divisor of $M$. Then it is associate
-to a line bundle $\CO_M(D) = \CL(D)$. We can now tensor $E\otimes \CL(D)$, and consider $(E\otimes \CL(D))_D$
-to be the restriction to $D$ of the vector bundle $E\otimes \CL(D)$. We can take the sheaf $\Omega((E\otimes
-\CL(D))_D)$ over $D$. Extending by zero this is a sheaf on $M$. By the corresponding of vector bundles and
-sheaf, without loss of generality we may denote this sheaf by $E_D$.
+Thus, $\chi$ on vector bundles split additivity, similarly to how the Chern character $\ch$ behaves.
+
+As Cartier divisors are in correspondence to line bundles, let us see how they come into the picture. As usual
+let $E$ be a complex vector bundle over a complex manifold $M$, and let $D$ be a  divisor of $M$.
+Then it is associate to a line bundle $\CO_M(D) = \CL(D)$. We can now tensor $E\otimes \CL(D)$, and consider
+$(E\otimes \CL(D))_D$ to be the restriction to $D$ of the vector bundle $E\otimes \CL(D)$. We can take the
+sheaf $\CO((E\otimes \CL(D))_D)$ over $D$. By Extending by zero, this is a sheaf on $M$ (in Hartshorne, this
+is denoted by the pushforward on the inclusion map $j_*(D)$~\cite{hartshorneAlgebraicGeometry2013}, where
+$j_*$ can also be interpreted as the Gysin map as described by Fulton~\cite{fultonIntersectionTheory1984}). By
+the corresponding of vector bundles and sheaf, we may without loss of generality denote this sheaf by
+$\CO_{E}|_D$.
 
 \begin{thm}{Extending via Divisors}{extViaDivisors}
-  let $M$ be a complex manifold , $D$ a nonsingular Cartier divisor of $M$, $E$ a complex vector bundle over
+  let $M$ be a complex manifold , $D$ a  Cartier divisor of $M$, $E$ a complex vector bundle over
   $M$. Then there is a short exact sequence:
   \[
-    0 \to \Omega(E) \to \Omega(E\otimes \CL(D)) \to E_D \to 0
+    0 \to \CO_E \to \CO_{E\otimes \CL(D)} \to \CO_{E}|_D \to 0
   \]
 \end{thm}
 
 \begin{Proof}
   This is a standard proof, this can be found in pure-sheaf form in
-  Hartshorne~\cite[chapter~2?]{hartshorneAlgebraicGeometry2013} or EYTNKA alg geo~\cite{NateAlgGeo}.
+  Hartshorne~\cite[chapter~2]{hartshorneAlgebraicGeometry2013} or EYTNKA alg geo~\cite{NateAlgGeo}.
 \end{Proof}
 
-Let $M$ now be compact and $D$ still a nonsingular divisor. It now is always a compact manifold. When it is
-not confusing, we shall denote $E_D$ to be the complex vector bundle over $D$. We shall also write:
-\[
-  \chi(D, E) := \chi(D, E_D),\ \chi^p(D, E) := \chi^p(D, E_D),\ \chi_y(D, E) := \chi_y(D, E_D)
-\]
+% Let $M$ now be compact and $D$ still a  divisor. It now is always a compact manifold.
+When it is not confusing, we shall denote $E_D$ to be the complex vector bundle over $D$. We shall also write:
+\begin{align*}
+  \chi(D, E) &:= \chi(D, E_D)\\
+  \chi^p(D, E) &:= \chi^p(D, E_D)\\
+  \chi_y(D, E) &:= \chi_y(D, E_D)
+\end{align*}
 \begin{thm}{Splitting Euler Characteristic Using Divisor}{splitPrinEulerCharAndDivisor}
-  Let $M$ be a compact complex manifold, $D$ a nonsingular divisor, $E$ a complex vector bundle over $M$. Then:
+  Let $M$ be a compact complex manifold, $D$ a  divisor, $E$ a complex vector bundle over $M$. Then:
   \[
     \chi(M,E) = \chi(M, E\otimes \CL(D)^{-1}) + \chi(D, E)
   \]
@@ -2489,8 +2711,13 @@ not confusing, we shall denote $E_D$ to be the complex vector bundle over $D$. W
   combine above results
 \end{Proof}
 
-Let us now apply these results to get some important identities. First, recall from sheaf theory that we get
-the following short exact sequence:
+We want to extend this inductively so that $\chi_y$ can be written in terms of $\chi^p$. First, recall from
+Riemann Geometry that we get the following short exact sequence:
+\[
+  0 \to T(D) \to T(M)|_D \to N_{M/D} \to 0
+\]
+where $N_{M/D}$ is the normal bundle of $D$ with respect to $M$. It is not hard to see it's fibers are of
+dimension $1$, and a little more work shows it is isomorphic to $\CL(D)_D$, and so:
 \[
   0 \to T(D) \to T(M)|_D \to \CL(D)_D \to 0
 \]
@@ -2502,23 +2729,25 @@ Dualizing we get:
 \[
   0 \to \bigwedge^{p-1}(T^*(D))\otimes \CL(D)_D^{-1} \to \bigwedge^p(T^*(M)|_D) \to \bigwedge^p(T^*(D)) \to 0
 \]
-Now if $E$ is a complex vector bundle over $M$, we can tensor each term by $E_D$. Then we get:
+Now if $E$ is a complex vector bundle over $M$, we can tensor each term by $E_D$. Then by the above theorems:
 \[
   \chi\left(D, E\otimes \bigwedge(T^*(M))\right) = \chi^{p-1}(D, E\otimes \CL(D)^{-1}) + \chi^p(D, E)
 \]
 Replacing $E$ with $E\otimes \bigwedge^p(T^*(M))$, manipulating we get:
-\begin{equation}\label{eq:10p}
+\index{Four-term Formula}
+\begin{defn}{Four-term Formula}{four-termFormula}
+  \[
   \chi^p(M,E) = \chi^p(M, E\otimes \CL(D)^{-1}) + \chi^p(D, E) + \chi^{p-1}(D, E\otimes \CL(D)^{-1})
-\end{equation}
+  \]
+\end{defn}
 This is true for $p>0$, and for $p=0$ interpret the last term on the right hand side as being $0$.
 Furthermore, $\chi^p(D, E)=0$ for $p = n = \dim M$ and if $p > n$ then all four terms are $0$. Letting $y$ be
 a indeterminate, the above equation holds with each term multiplied by $y^p$. Summing over $p\ge 0$ gives:
 \[
   \chi_y(M,E) = \chi_y(M, E\otimes \CL(D)^{-1}) + \chi_y(D, E) + y\chi_y(D, E\otimes \CL(D)^{-1})
 \]
-Now, by repeating the application of equation~(\ref{eq:10p}), we can write $\chi^p(D,E)$ as a linear
-combination of integers of the form $\chi^q(M, A)$ where $A$ is will be an  \textcolor{red}{appropriate?
-Hirzebruch just says certain??} complex vector bundle over $M$. For example:
+Now, by repeating the application of equation in~\cref{df:four-termFormula}, we can write $\chi^p(D,E)$ as a linear
+combination of integers of the form $\chi^q(M, A)$ where $A$ is will be an appropriate complex vector bundle over $M$. For example:
 \begin{equation}\label{eq:110}
   \chi^0(D, E) = \chi^0(M,E) - \chi^0(M, E\otimes \CL(D)^{-1})
 \end{equation}
@@ -2537,24 +2766,551 @@ Recursively continuing this, we get:
   \CL(D)^{-(i+1)}]
 \]
 This gives an important equation. These relation's do not necessarily hold for a general complex compact
-manifold, but if $M$ is K\"ahler, or can be embedded into projective space, the relations hold, a key fact
-relying on GAGA results and the isomorphism between line bundles and bundles given by divisors as shown
-in~\cite{NateAlgGeo}.
+manifold, in particular it is not guaranteed the right hand side cancels out, while the left hand side
+will be zero for $p> n$. If $M$ is K\"ahler, or can be embedded into projective space, the relations hold, a key fact
+relying on GAGA results that shall be in the next section.
 
 Combining these together in a generating function, we get:
-\[
+\begin{equation}\label{eq:11}
   \chi_y(D, E) = \sum_{i=0}^\infty (-y)^i [\chi_y(M, E\otimes \CL(D)^{-i}) - \chi_y (M, E\otimes
   \CL(D)^{-(i+1)}]
-\]
+\end{equation}
 
 \section{$\chi_y$-characteristic and Splitting Principle}\label{sec:virtualEulerChar}
 
-skipping for now
+In equation~(\ref{eq:11}), the right hand side is a complicated equation. The goal of this section is to show
+that the formula can be represented in terms of manifolds given by line bundles so that we may apply the splitting
+principle.
+
+The idea behind the following section goes as follows. Let's say $V \hookrightarrow M$ is complex codimension
+$1$. Then what is the relation between $\chi(M, E)$ and $\chi(V, E$)? What if we have a sequence $V_r
+\hookrightarrow V_{r-1} \hookrightarrow \cdots \hookrightarrow V_1 \hookrightarrow M$ codimension $1$ at
+each inclusion. Can we relate $\chi(M, E)$ to $V_r$ in terms of the information given by $V_1, ..., V_r$? Ideally, we can define some:
+\[
+  \chi((V_1, ..., V_r), E) = \cdots
+\]
+which will give us the Euler characteristic of $V_r$ given the information of the intersection. Converesely,
+it would be good if there exists functions $F_i$ such that:
+\[
+  \chi(M, E) = \sum_i F_i(V_1,.., V_r, E)
+\]
+which allows us to link the property of $\chi(M,E)$ to simpler sub-manifolds. We shall do exactly this in this
+section.
+
+The greatest advantage of this is that as each of these manifolds are codimension one with respect to the next
+one, so we can associate to them line bundles, and the line bundles are in bijective correspondence with
+cohomology classes (as $M$ is projective). Thus, given a set of line bundles $\{L_1, ..., L_r\}$, we get a
+filtering $V_1 \sse V_2 \sse \cdots \sse V_r \sse M$ allowing to reduce the eventual proof of Hirzebruch
+Riemann Roch to a proof on line bundles; we can also think of each $V_r$ as the intersection of $M$ with some
+hyper-plane (see \textcolor{red}{ref:HERE}). As it will turn out, the result is independent of order,
+and hence it is well-defined to take the set $\{L_1, ..., L_r\}$ instead of the tuple $(L_1, ..., L_r)$.
+
+By using the splitting principle, given $TM$ of $M$ splits into $A_1, ..., A_n$, We aim to find an equation
+for $\chi(M, E)$ in terms of the line bundles.
+
+A quick word must be given in terms of the reformulation of this in the Grothendieck Riemann Roch. The
+inclusion $j: V \to M$ will be used to pullback a cohomology class $j^*: H^*(M) \to H^*(V)$ giving
+a contra-variant theory. However, using Fulton's intersection theory we instead would take $j_*: A^*(V) \to
+A^*(M)$; this is the \emph{Gysin map}. As the Grothendieck Riemann Roch is a purely algebraic proof, Gysin map
+will be the ``correct'' generalization to scheme theory. Note that the Grothendieck Riemann Roch will note
+require to keep track of the set of line bundles $\{A_1, ..., A_n\}$ as the proof technique hinges on
+a very different approach (see section~\ref{sec:GRR}).
+
+% \textcolor{red}{Motivate here the idea of virtual, how it is a ``virtual'' object. for now I'm skipping for
+% the sake of writing down the math}
+%
+% \textcolor{red}{Should definitely comment how this is a composition of Gysin maps, so the gysin maps would
+% remember this information}.
+
+\subsection{Arithmetic's}
+
+Let us represent the arithmetic of the intersection. Let $M$ be a smooth manifold, $\{L_1, ..., L_r\}$ be
+associated line bundles. Define:
+\[
+  R = \Z[e, \ell_1, \ell_2, ..., \ell_r, \ell_1^{-1}, \ell_1^{-2}, ...,\ell_r^{-1}]
+\]
+where each $\ell_i$ if a free variables that should be thought of as  corresponding to a line bundle $L_i$ of
+$M$. Define a homomorphism $R \to \Z[[y]]$ by defining on the generators:
+\begin{align*}
+  h^M(e^{m}\cdot \ell_1^{m_1}\cdots \ell_r^{m_r}) &= \chi(M, E^{m} \otimes L_1^{m_1}\otimes \cdots \otimes L_r^{m_r})\\
+  h_y^M(e^{m}\cdot \ell_1^{m_1}\cdots \ell_r^{m_r}) &= \chi_y(M, E^{m} \otimes L_1^{m_1}\otimes \cdots \otimes L_r^{m_r})
+\end{align*}
+where the powers should be taken as taken the tensor product. Then by some elementary algebra this extends to
+a $\Z[[y]]$-module $R[[y]]$ with homomorphism extending to $R[[y]]$; label it $h$ as well. By definition:
+\[
+  h^M(1) = \chi(M) \qquad \text{and} \qquad h_y^M(1) = \chi_y(M)
+\]
+By using the results of the previous section, given a divisor $D$, we an define a $\Z[[y]]$-homomorphism
+\[
+  h_y^D(e^{m}\cdot \ell_1^{m_1}\cdots \ell_r^{m_r}) = \chi_y(D, E^{m} \otimes L_1^{m_1}\otimes \cdots \otimes
+  L_r^{m_r})
+\]
+where like before the line bundles have a natural restriction to $\CL(D)$. By equation~(\ref{eq:11}):
+\[
+  \chi_y(D, E) = h_y^D \left(e\frac{1-d^{-1}}{1+yd^{-1}}\right)
+\]
+and by~\cref{th:splitPrinEulerCharAndDivisor}:
+\[
+  \chi(D) = h^D(1-d^{-1}) \qquad \text{and} \qquad \chi(D, E) = h^D(e(1- d^{-1}))
+\]
+By taking successive ``divisors of divisor'', we multiply by further factors of $\frac{1-d^{-1}}{1+yd^{-1}}$,
+motivating the following definition:
+
+\index{Virtual Characteristic}\index{Euler Characteristic!Virtual}
+\begin{defn}{Virtual Characteristic}{virtualChar}
+  \[
+  \chi_y(\{L_1, ..., L_r\}, E)_M = h_y\left(e \prod_{i=1}^r \frac{1-\ell_i^{-1}}{1 + yl_i^{-1}}\right)
+\]
+\end{defn}
+
+If $E = \mathbbm{1}$, it shall simply be denoted as $\chi_y(\{L_1, ..., L_r\})_M$. By the construction of the
+virtual character, it is clear that it respects the same property as the usual $\chi_y$ character:
+\[
+  \chi_y(\{L_1, ..., L_r\}, E)_M = \sum_{p=0}^\infty \chi^p(\{L_1, ..., L_r\}, E)_My^p
+\]
+By taking $\chi_M = \chi^0_M$ we can write:
+\[
+  \chi(\{L_1, ..., L_r\}, E)_M = h \left(e \prod_{i=1}^r (1-\ell_i^{-1})\right)
+\]
+An important concrete example would then be:
+\[
+  \chi(L)_M = \chi(M) - \chi(M, L^{-1})
+\]
+Notice that we are subtracting; this motivates the term ``virtual'' as we are treating $L^{-1}$ as an
+``inverse'' vector bundles, a notion well-defined in $K$-theory.
+
+Let us now find $\chi_y$ in terms of virtual characteristics. By definition of $h$, we immediately get:
+\begin{equation}\label{eq:4'}
+  \chi_y(D, E) = \chi_y(\{\CL(D)\}, E)_M
+\end{equation}
+As $\chi_y(D,E)$ is a polynomial in $n-1$ terms, so is the right hand side. We shall extend this for larger
+when $N = D_1\cap\cdots \cap D_r$ which shall give a  $n-r$ degree polynomial when $M$ is a nonsingular
+variety (\cref{th:inductionCase}).
+
+\begin{thm}{Virtual Characteristic Divisor Restriction}{virtCharDivRest}
+  Let $M, E, L_1, ..., L_r$ as usual, and $D$ a  divisor of $M$, $\CL(D) = L_1$. Then:
+  \[
+    \chi_y(\{L_1, ..., L_r\}, E)_M = \chi_y( \{(L_1)_D, ..., (L_r)_D\}, E_D)_D
+  \]
+\end{thm}
+
+\begin{Proof}
+  Let:
+\[
+    R(x) = \frac{1-x^{-1}}{1+yx^{-1}}
+\]
+Then by definition
+\[
+    \chi_M((L_2)_D,\ldots,(L_r)_D|,E_D)_D = h^M\left(e\prod_{i=2}^r R(\ell_i)\right)
+\]
+It follows from our work above that:
+\[
+    h^M(e^m \ell_1^{h_1}\ldots \ell_r^{h_r}) = \hat{h}_M(e^m\mu \ell_1^{h_1}\ldots \ell_r^{h_r}R(\ell_1))
+\]
+Then by letting $t=R(\ell_1)$ we get:
+\[
+    h^M\left(e\prod_{i=2}^r R(\ell_i)\right) = h^M\left(e\prod_{i=1}^r R(\ell_i)\right)
+    = \chi_M(L_1,\ldots,L_r|,E)_M
+\]
+\end{Proof}
 
 
-\subsection{special case: varieties}\label{sec:virtualEulerCharOnProjVar}
+\begin{cor}{Virtual Characteristic and Trivial Bundle}{virtualCharandTrivialBundle}
+  Let $M, E, L_1, ..., L_r$ as usual, and assume one $L_i = \mathbbm{1}$ is the trivial bundle. THen:
+  \[
+    \chi_y(\{L_1, ..., L_r\}, E)_M = 0
+  \]
+\end{cor}
 
-here
+\begin{Proof}
+  immediate consequence
+\end{Proof}
+
+\begin{thm}{Algebra of Product of Line Bundles}{algebraofProdofLineBundles}
+  Let $M$ be a compact complex manifold, $E$ a complex vector bundle, $L_1, ..., L_r, A,B$ complex line
+  bundles. Then:
+  \begin{align*}
+\chi_y(\{L_1,\cdots,L_r,A\otimes B\},E)_M &=\\
+               &\chi_y(\{L_1,\cdots,L_r,A\},E)_M\\
+               &+ \chi_y(\{L_1,\cdots,L_r,B\},E)_M\\
+               &+ (y-1)\chi_y(\{L_1,\cdots,L_r,A,B\},E)_M\\
+               &- y\chi_y(\{L_1,\cdots,L_r,A,B,A\otimes B\},E)_M
+\end{align*}
+\end{thm}
+
+\begin{Proof}
+  Let $M$ be a compact complex manifold, $E$ a complex analytic vector bundle over $M$, and $L_i$, $A$, $B$ complex analytic line bundles over $M$. Then the following functional equation holds for the virtual $\chi_y$-characteristic:
+
+  \begin{align*}
+  \chi_y&(\{L, A \otimes B\}, E)_M = \\
+  &\chi_y(\{L, A\}, E)_M + \chi_y(\{L, B \}, E)_M + (y - 1)\chi_y(\{L, A,
+  B\}, E)_M - y\chi_y(\{L, A, B, A \otimes B\}, E)_M
+  \end{align*}
+  By definition:
+  \[
+  \chi_y(L_1, \dots, L_r |_M, E) = h_y^M(e \cdot \prod_{i=1}^r R(\ell_i))
+  \]
+  where the function $R(x)$ is given by:
+  \[
+  R(x) = \frac{x-1}{x+y}
+  \]
+  Starting with the case of a single lien bundle $L$. Let the term $u$ correspond to the common parts of the
+  bundles in the equation:
+  \[
+  u = e \cdot R(\ell)
+  \]
+  Now, we can express each term in the theorem's main equation using this notation:
+  \begin{enumerate}
+    \item $\chi_y(F, A \otimes B |_M, E) = h_y^M(u \cdot R(ab))$
+      \item $\chi_y(F, A |_M, E) = h_y^M(u \cdot R(a))$
+      \item $\chi_y(F, B |_M, E) = h_y^M(u \cdot R(b))$
+      \item $\chi_y(F, A, B |_M, E) = h_y^M(u \cdot R(a)R(b))$
+      \item $\chi_y(F, A, B, A \otimes B |_M, E) = h_y^M(u \cdot R(a)R(b)R(ab))$
+  \end{enumerate}
+  The theorem states:
+  \[
+  h_y^M(u \cdot R(ab)) = h_y^M(u \cdot R(a)) + h_y^M(u \cdot R(b)) + (y-1)h_y^M(u \cdot R(a)R(b)) - y \cdot h_y^M(u \cdot R(a)R(b)R(ab))
+  \]
+  Since $h_y^M$ is a homomorphism, it is linear with respect to polynomials in $y$. We can thus factor out $h_y^M(u \cdot \dots)$ from the right-hand side:
+  \[
+  h_y^M(u \cdot R(ab)) = h_y^M\left(u \cdot \left[R(a) + R(b) + (y-1)R(a)R(b) - yR(a)R(b)R(ab)\right]\right)
+  \]
+  Therefore, the theorem is proven if the following algebraic identity holds:
+  \[
+  R(ab) = R(a) + R(b) + (y-1)R(a)R(b) - yR(a)R(b)R(ab)
+  \]
+  and indeed:
+  \begin{align*}
+    &\ R(a) + R(b) + (y-1)R(a)R(b) - yR(a)R(b)R(ab)\\
+  &= \frac{a-1}{a+y} + \frac{b-1}{b+y} + (y-1)\frac{(a-1)(b-1)}{(a+y)(b+y)} - y \frac{(a-1)(b-1)}{(a+y)(b+y)} \frac{ab-1}{ab+y} \\
+  &= \frac{(a-1)(b+y) + (b-1)(a+y) + (y-1)(a-1)(b-1)}{(a+y)(b+y)} - y \frac{(a-1)(b-1)(ab-1)}{(a+y)(b+y)(ab+y)} \\
+  &= \frac{ab+ay-b-y + ab+by-a-y + (y-1)(ab-a-b+1)}{(a+y)(b+y)} - \dots \\
+  &= \frac{2ab+a(y-1)+b(y-1)-2y + (y-1)(ab-a-b+1)}{(a+y)(b+y)} - \dots \\
+  &= \frac{2ab+ay-a+by-b-2y + yab-ya-yb+y-ab+a+b-1}{(a+y)(b+y)} - \dots \\
+  &= \frac{ab(1+y) - (y+1)}{(a+y)(b+y)} - \dots \\
+  &= \frac{(y+1)(ab-1)}{(a+y)(b+y)} - y \frac{(a-1)(b-1)(ab-1)}{(a+y)(b+y)(ab+y)} \\
+  &= \frac{ab-1}{(a+y)(b+y)} \left[ (y+1) - y \frac{(a-1)(b-1)}{ab+y} \right] \\
+  &= \frac{ab-1}{(a+y)(b+y)} \left[ \frac{(y+1)(ab+y) - y(ab-a-b+1)}{ab+y} \right] \\
+  &= \frac{ab-1}{(a+y)(b+y)(ab+y)} \left[ yab+y^2+ab+y - (yab-ya-yb+y) \right] \\
+  &= \frac{ab-1}{(a+y)(b+y)(ab+y)} \left[ y^2+ab+ya+yb \right] \\
+  &= \frac{ab-1}{(a+y)(b+y)(ab+y)} \left[ (a+y)(b+y) \right] \\
+  &= \frac{ab-1}{ab+y} \\
+  &= R(ab)
+  \end{align*}
+  Then, by the product formula in the definition of the virtual characteristic, notice we get the equation (letting $\CL = L_1, ..., L_r$):
+\[
+  \chi(\{\CL, A\otimes B\}, E)_M = \chi(\{\CL,A\}, E)_M + \chi(\{\CL, B\}, E)_M - \chi(\{\CL, A,B\}, E)_M
+\]
+  as we sought to show.
+\end{Proof}
+
+Let us now say that every vector bundle splits on $M$. Then $TM$ splits into line bundles $A_1\oplus \cdots
+\oplus A_m$. Then $\bigwedge^p TM$ splits into $\binom{m}{p}$ line bundles of the form:
+\[
+  A_{i_1}^{-1}\otimes \cdots \otimes A_{i_p}^{-1} \qquad (i_1 < \cdots < i_p)
+\]
+By~\cref{th:splittingPrincipleandEulerChar}:
+\begin{align*}
+  \chi^p(M, E) &= \chi(M, E\otimes \bigwedge^p TM)\\
+               &= \sum_{i_1 < \cdots < i_p} \chi(M, E\otimes A_{i_1}^{-1}\otimes \cdots \otimes A_{i_p}^{-1})
+\end{align*}
+
+  By the definition of
+\[
+  \chi_y(M, E) = \sum h_y^M \left(e \prod_{i=1}^m (1+ya_i^{-1})\right)
+\]
+
+This shall now give us a decomposition of $\chi$ in terms of the virtual character
+
+\begin{thm}{Virtual Character Decomposition}{virtualCharacterDecomp}
+  Let $M$ be a complex manifolds where $TM$ splits completely into lienar terms intos $A_1, ..., A_m$. Let $E$
+  be a complex vector bundle. Then:
+  \[
+    (1+y)^m \chi(M, E) = \sum_{l=0}^m y^l \sum_{i_1 < \cdots < i_l} \chi_y(\{A_{i_1}, ..., A_{i_l}\}, E)_M
+  \]
+\end{thm}
+
+\begin{Proof}
+    Writing in term $h_y^M$:
+  \begin{align*}
+      \sum_{l=0}^m y^l \sum_{i_1<i_2<\cdots<i_l} h_y^M(eR(a_{i_1})\ldots R(a_{i_l})) &= h_Y^m\left(\sum_{l=0}^m y^l \sum_{i_1<i_2<\cdots<i_l} eR(a_{i_1})\ldots R(a_{i_l})\right) \\
+      &= h_y^M\left(e\prod_{i=1}^m(1+yR(a_i))\right) \\
+      &= h_y^M\left(e\prod_{i=1}^m(1+y)(1+ya_i^{-1})^{-1}\right) \\
+      &= (1+y)^mh_y^M\left(e\prod_{i=1}^m(1+ya_i^{-1})^{-1}\right)
+  \end{align*}
+  Thus, we get
+  \[
+      h_y^M(e^m a_1^{h_1}a_2^{h_2}\ldots a_r^{h_r}) = h^M\left(e^m a_1^{h_1}a_2^{h_2}\ldots a_r^{h_r}\prod_{i=1}^m(1+ya_i^{-1})\right)
+  \]
+  Then, letting:
+  \[
+      t = \prod_{i=1}^m(1+ya_i^{-1})
+  \]
+  gives:
+  \begin{align*}
+      (1+y)^mh_Y^m\left(w\prod_{i=1}^m(1+ya_i^{-1})^{-1}\right) &= (1+y)^mh\left(w\prod_{i=1}^m(1+ya_i^{-1})^{-1}(1+ya_i^{-1})\right) \\
+      &= (1+y)^mh(w) = (1+y)^m\chi(V,W)
+  \end{align*}
+  as we sought to show
+\end{Proof}
+
+
+
+
+
+
+\subsection{Relating Euler Characteristic to Chern Numbers}\label{sec:virtualEulerCharOnProjVar}
+
+Finally, let us show that the virtual characteristic with $r$ linear bundles is an $n-r$ polynomial, and that
+evaluating when $n=r$ works the same as evaluating $M$ at the cup-product of the respective $\ell_i \in h^2(m
+,\Z)$.
+
+\begin{lem}{0-dimensional Case}{0-dimensionalCase}
+  Le $M = \{p_1, ..., p_k\}$ be a $0$-dimensional manifold, $E$ an $n$-dimensional vector bundle over $M$, $L_1, ..., L_r$ line
+  bundles over $M$. Then:
+  \begin{enumerate}
+    \item $\chi_y(M, E) = nk$
+  \item $\chi_y(\{L_1, ... L_r\}, E) = 0$ for $r \ge 1$
+  \end{enumerate}
+\end{lem}
+
+\begin{Proof}
+  \begin{enumerate}
+    \item $\chi_y(M, E) = \chi(M,E) = \dim H^0(M, E) = nk$
+    \item By Bass-Serre theorem (see~\cite{NateKTheory}\footnote{We actually prove a special case of
+      Bass-Serre in~\cref{th:atiyah-serreOnVecBundles} which is a ``geometric'' proof as compared to the
+    algebraic proof in the cited result}), every line bundle is trivial, so by~\cref{co:virtualCharandTrivialBundle}
+    \[
+      \chi_y(\{L_1, ..., L_r\}, E) = 0
+    \]
+  \end{enumerate}
+\end{Proof}
+
+
+In general, recall $\chi_y(M,E)$ is a polynomial as the power series must terminate by definition. Let us prove by
+induction on the dimension $n$ on $M$ that the virtual $\chi_y$-characteristic is also a polynomial when $M$
+is a complete variety.
+
+
+\begin{thm}{Induction Case}{inductionCase}
+  Let $M$ be a complete variety of complex dimension $n$. Let $E$ be a $q$-dimensional complex vector
+  bundle, and let $L_1, ..., L_r$ be complex line bundles over $M$. Then:
+  \begin{enumerate}
+    \item For $r > 0$, $\chi_y(\{L_1, ..., L_r\}, E)_M = 0$ for $r > n$.
+    \item For $r \le n$, $\chi_y(\{L_1, ..., L_r\}, E)_M$ is a polynomial of degree $\le n-r$ in $y$ with
+      integer coefficients
+     \item If $r = n \ge 1$, then
+       \[
+       \chi_y(\{L_1, ..., L_n\}, E)_M = \chi(L_1, ..., L_n\})_M = \int_M q\smile l_1\smile l_2\smile \cdots \smile
+       l_n
+       \]
+       where $l_i \in H^2(M, \Z)$ are the cohomology classes of $L_i$.
+  \end{enumerate}
+\end{thm}
+We shall often use $\cdot$ instead of $\smile$ notation to de-clutter notation.
+
+\begin{Proof}
+\begin{enumerate}
+  \item Lemma~\cref{lm:0-dimensionalCase} prove it for $\dim M=0$. Suppose it is true for $\dim M<n$.
+    By~\cref{th:kodairaVanishingThmII} there are divisors $D$ and $S$ of $M$ such that
+    $\CL(D)=L_1\otimes\CL(S)$. Then by~\cref{th:virtualCharacterDecomp}:
+    \begin{align*}
+      \chi_M&(\{ \CL(D),L_2,\cdots,L_r \},E)\\
+    &= \chi_M(\{ L_1,\cdots,L_r \},E) + \chi_M(\{ \CL(S),L_2,\cdots,L_r \},E) \\
+                          &\ + (y-1)\chi_M(\{\CL(S),L_1,\cdots,L_r\},E)
+                          - y\chi_M(\{\CL(D),\CL(S),L_1,\cdots,L_r\},E)
+  \end{align*}
+We must show the 2nd term has degree $\leq n-r$. Note that
+induction hypothesis, together with~\cref{th:kodairaVanishingThmII} shows 1st, 3rd, 4th and 5th term all have
+degree $\leq n-r$ and vanish for $r>n$. Note that if $r=1$ then 1st term is $\chi_M(D,E_D)$ and 3rd term is
+$\chi_M(S,E_S)$; these terms are polynomials of degree $\leq n-1$ by the definition of the (non-virtual)
+$\chi_M$-characteristic. Therefore 2nd term is a polynomial of degree $\leq n-r$ and zero for $r>n$.
+\item By~\cref{th:kodairaVanishingThmII} there are  divisors $D$ and $S$ of $M$
+  such that $\CL(D)=L_1\otimes\CL(D)$.
+
+Then for $n\ge 2$, (1) gives:
+\[
+    \chi(\{ \CL(D),L_2,\ldots,\ell_n \},E) = \chi(\{ L_1,L_2,\ldots,\ell_n \},E) + \chi(\{
+    \CL(D),L_2,\ldots,\ell_n \},E)
+\]
+and for $n=1$
+\begin{equation}\label{eq:indHypToThis}
+    \chi(\{ \CL(D) \},E) = \chi(\{ L_1 \},E) + \chi(\{ \CL(D) \},E)
+\end{equation}
+
+Then by lemma~\cref{lm:0-dimensionalCase} the $n=1$ case gives
+\[
+    \chi(\{ L_1 \},E) = qd - qs = q\ell_1[M_1]
+\]
+where $d$, $s$ are the number of points of $D$, $S$. Therefore (2) is true for $\dim M=1$. Now for the sake of
+induction supposed it is is proved for $1\leq\dim M<n$. We now apply the induction hypothesis to
+equation~(\ref{eq:indHypToThis}). First, recall that if $h \in H^2(M, \Z)$ is the cohomology class
+representing the divisor $D$ then $c_1([D]) = h$. If $j: D \hookrightarrow M$ is an inclusion (treating $D$ as
+a communions $1$ submanifold), then for any $x \in H^{n-2}(M, \Z)$:
+\[
+  \int_D j^*(x) = \int_M h\smile x = \int_M hx
+\]
+Then by~\cref{th:virtCharDivRest}, we get:
+\begin{align*}
+    \chi(\{ L_1,L_2,\ldots,\ell_n \},E) &= \int_D q\cdot(\ell_2\ldots \ell_n)_D - \int_S q\cdot(\ell_2\ldots \ell_n)_S \\
+    &= \int_M q\cdot c_1(\CL(D))\ell_2\ldots \ell_n - \int_Mq\cdot c_1(\CL(S))\ell_2\ldots \ell_n \\
+    &= \int_M q\cdot \ell_1\ell_2\ldots \ell_n
+\end{align*}
+as we sought to show.
+\end{enumerate}
+\end{Proof}
+
+When $n = 1$, this is in fact Riemann-Roch for curves! Let $M = C$ be a curve, $L$ a line bundle with
+cohomology class $l  \in H^2(C, \Z)$. Then the $\chi$-genus of $L^{-1}$ is:
+\[
+  \chi(L^{-1}) = \int_C-l
+\]
+Then: $\chi(L) = \chi(C) - \chi(C, L^{-1})$ and so we get:
+\[
+  \chi(C, L) = \chi(L) + \int_C l
+\]
+Next by using~\cref{th:symmetryofHodgeNumberOnKahlerManifold} we get:
+\[
+  \chi(C) = 1 - g
+\]
+By classical algebraic topology, $\int_C l$ is called the \emph{degree} of $L$, which (naturally) is equal to
+$\deg(L)$. Using Poincar\'e duality we get:
+\[
+  \chi(C, L) = \dim H^0(C, L) - \dim H^1(C, L0 = \dim H^0(C, L) - \dim H^0(C, K\otimes L^{-1})
+\]
+Combining it all together, we obtain:
+\[
+  \dim H^0(C, L) - \dim H^0(C, K\otimes L^{-1}) = 1 - g + \deg(L)
+\]
+i.e., classical Riemann Roch!
+
+
+Finally, we must show the virtual Euler characteristic characterizes these relations:
+
+\begin{thm}{Uniqueness Result}{uniquenessResult}
+  let $M,E, L_1, ..., L_r$ be a usual, $\CL = \{L_1, ..., L_r\}$. Let $G$ function associating each $(\CL,
+  E)_M$ to a $\Q$-power series in $y$ and is independent of the order of $L_i$ (i.e. these terms must all
+  commute). Then if:
+  \begin{enumerate}
+    \item $G(M, E) = \chi_y(M,E)$
+    \item
+  \begin{align*}
+  G(\{L_1,\cdots,L_r,A\otimes B\},E)_M &=\\
+                 &G(\{L_1,\cdots,L_r,A\},E)_M\\
+                 &+ G(\{L_1,\cdots,L_r,B\},E)_M\\
+                 &+ (y-1)G(\{L_1,\cdots,L_r,A,B\},E)_M\\
+                 &- yG(\{L_1,\cdots,L_r,A,B,A\otimes B\},E)_M
+  \end{align*}
+  % (\textcolor{red}{I put the $y$ in red because it is not in Hirzebruch, maybe a typo maybe intentional})
+  \item If $D$ is a (nonsingular) divisor of $M$ and $L_1 = \CL(D)$, then:
+    \[
+      G(\CL, E)_M = G(\{(L_1)_D, ..., (L_r)_D\}, E_D)_D
+    \]
+  \end{enumerate}
+  Then for all $(\CL, E)_M$ with $r \ge 1$:
+  \[
+    \chi_y(\CL, E)_M = G(\CL, E)_M
+  \]
+  The same exact result holds when taking virtual characteristic.
+\end{thm}
+
+\begin{Proof}
+  We outline the result for the Euler-characteristic, leaving the virtual characteristic as an exercise.
+  First, $\chi_M$ has properties (2) and (3) and therefore the function $\chi_M-G$ has properties (2) and (3).
+  It is therefore sufficient to show that any function $G'$ which satisfies (2), (3) and the additional property
+  that:
+  \[
+    G'(M,E)=0
+  \]
+  must be identically zero.
+
+  We proceed by induction. By~\cref{th:kodairaVanishingThmII} there are divisors $D$ and $T$ of $M$ such that $\CL(D)=F_1\otimes\CL(T)$.
+  Then (2) implies equation
+  \begin{align*}
+    \chi_M&(\{ \CL(D),L_2,\cdots,L_r \},E)\\
+    &= \chi_M(\{ L_1,\cdots,L_r \},E) + \chi_M(\{ \CL(S),L_2,\cdots,L_r \},E) \\
+                        &\ + (y-1)\chi_M(\{\CL(S),L_1,\cdots,L_r\},E)
+                        - y\chi_M(\{\CL(D),\CL(S),L_1,\cdots,L_r\},E)
+  \end{align*}
+  from~\cref{th:inductionCase} with $\chi_M$ replaced by $G'$. This equation has five terms, and we have to
+  prove that the second term is zero. The induction hypothesis and (3) imply that terms 1, 3, 4, 5 are zero.
+  For $r=1$, it is necessary to use $G'=0$ to prove that terms 1, 3 are zero. Therefore term 2 is zero.
+\end{Proof}
+
+This shall be important when we show that the $T$-characteristic holding information about the Chern character
+and Todd class satisfies the same properties, and hence will have to be equal (see \textcolor{red}{ref:HERE}).
+
+\section{*Vanishing Theorems}\label{sec:Kodaira}
+
+In this section, we shall go over but not prove some important vanishing results that will let us sometimes
+reduce $\chi$ to $H^0$, therefore making it particularly simple to answer the Riemann Roch Problem:
+\begin{thm}{Kodaira Vanishing Theorem}{kodariaVanishingThm}
+  Let $F$ be a complex line bundle over a compact complex manifold $M$. If $F^{-1}$ is positive, then the
+  cohomology group $H^i(M, F)$ vanish for all $i \ne n$.
+\end{thm}
+
+
+\begin{Proof}
+  proved by Kodaira
+\end{Proof}
+
+Using Serre duality, we get
+
+\begin{thm}{Kodaira Vanishing Theorem - Euler Characteristic}{kodairaVanishingThm-EulerChar}
+  let $F,M$ be as before and take $F\otimes K^{-1}$ for the canonical class $K$. If it is positive, then the
+  groups $H^i(M, F)$ vanish for all $i > 0$, so that:
+  \[
+    \dim h^0(M, F) = \chi(M, F)
+  \]
+\end{thm}
+
+\begin{Proof}
+  again Kodaira
+\end{Proof}
+
+
+Hirzebruch now states that he will make no distinction between a Hodge manifold and an algebraic manifold. In
+particular, if a compact complex manifold $M$ admits a Hodge metric, then $M$ is algebraic.
+
+\begin{thm}{Line Bundles Are Algebraic Over Projective Space}{lineBundlesAreAlgebraicOverProjSp}
+  let $L$ be a $\C$-fiber bundle over $M$ with $\CP^r$ as fibers and $\PGL_{r+1}(\C)$ as the structure group.
+  Then it is an algebraic manifold.
+\end{thm}
+
+\begin{Proof}
+  proved by Kodaira
+\end{Proof}
+
+
+We shall need a generization of the above for because we'll need the case where $F$ is the flag manifold $F(q)
+= \GL_q(\C)/\Delta(q,\C)$ and $L$ is the associated $\GL_q(\C)$-bundle $\xi$ over $M$.
+
+
+\begin{thm}{Borel Vanishing Theorem}{borelVanishingThm}
+  Let $L$ be a complex fibre bundle over the algebraic manifold $M$ with an algebraic manifold as fibre
+  and a connected structure group. Assume that the first Betti number of $F$ is zero. Then $L$ is itself
+  algebraic.
+\end{thm}
+
+\begin{Proof}
+  Borel, Hirzebruch gives a reference in~\cite[p.141]{hirzebruchTopologicalMethodsAlgebraic1995}
+\end{Proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Todd Class}\label{cha:toddGenus}
@@ -2587,24 +3343,23 @@ is a ``correction class'' $C(TX)$ ($C$ for correction) where $TX$ is the tangent
 \[
   \chi(X, E) = \int_X \ch(E) \smile C(TX)
 \]
-This shall be the \emph{Todd class} $\td(X)$ where $\td(X) = C(TX)$. What properties should $\td$ require? For one, we must have:
+This shall be the \emph{Todd class} $\td(X)$ where $\td(X) = C(TX)$. What properties should $\td(-)$ require? For one, we must have:
 \[
   \chi(X, \mathbbm{1}) = \chi(X) = \int_X \td(X)
 \]
 For another, as $\chi(X\oplus Y) = \chi(X)\cdot \chi(Y)$, $\td(X\oplus Y) = \td(X)\cdot \td(Y)$, namely it is
-\emph{multiplicative} on direct sums. Finally, as all compact complex manifolds are ``built'' from the complex
-projective spaces as demonstrated in the cobordism isomorphism in~\cref{th:isoofAlgebraicCobordismRing}, it is
-necessary to have $\td(\CP^k)$ agree with $\chi(\CP^k)$. In particular, as we know the line bundles over
-$\CP^k$, we can deduce $\td$ by making it agree with the values of $\chi$ over each characteristic.
-
-To that end, let us show what it has to be the case where $X = \CP^1$ so that $T\CP^1 = \CO(2)$, the twisted
-line bundle, and $\chi(\CP^1) = 1$. To define $\td(\CP^1)$ (which again is inputting the tangent bundle
-$T\CP^1$), we shall need to define a power series (the details of why are in section~\ref{sec:mSequence}), in
-particular we shall have:
+\emph{multiplicative} on direct sums. Finally, we shall be able to reduce to proving the result  on the complex
+projective spaces as demonstrated in the cobordism isomorphism in~\cref{th:isoofAlgebraicCobordismRing}, hence
+it is necessary to have $\td(\CP^k)$ agree with $\chi(\CP^k)$. In particular, as we know the line bundles over
+$\CP^k$, we can deduce $\td(-)$ by making it agree with the values of $\chi(-)$. First, we shall show that
+$\td(-)$ will be correspond by a power series:
 \[
   Q(x) = 1 + a_1x + a_2\frac{x^2}{2!} + a_3 \frac{x^3}{3!} +  \cdots
 \]
-and have $\td(\CP^1) = Q\left(c_1(\CO(2))\right)$. It is easy to compute that
+which will return the appropriate polynomial of Chern classes given the tangent bundle (exactly how is explain
+in section~\ref{sec:mSequence}). We shall find the first term of this series by insuring $\td(\CP^1) =
+\chi(\CP^1)$. Recall that $T\CP^1 = \CO(2)$, the twisted line bundle, and $\chi(\CP^1) = 1$. Thus we want:
+$\td(\CP^1) = Q\left(c_1(\CO(2))\right)$. It is easy to compute that
 \[
   c_1(\CO(2)) = h \in H^2(\CP^1; \Z) \cong \Z[h]/(h^2)
 \]
@@ -2639,7 +3394,7 @@ as $h^2 = 0$. Thus:
 Giving equality in this special case. Repeating this process again for $\CP^k$ for $k \in \N$, we shall get
 the next coefficients. In section~\ref{sec:mSequence}, we go over the general algebraic method for finding
 such a power series, and in~\cref{pr:coefficientofL-genusPowerSeries} we shall show how we deduce the rest of
-this Todd power series. Overall, repeating this process will define $\td$ and we by construction have it agree on
+this Todd power series. Overall, repeating this process will define $\td(-)$ and we by construction have it agree on
 at least the Euler characteristic of $\CP^n$ with the standard line bundles. We shall show it is enough in the
 proof of Hirzebruch Riemann Roch by taking advantage of the results on Cobordism and the splitting principle.
 
@@ -2659,7 +3414,7 @@ bundle over a space $E \to X$.
 % \]
 % We shall show that we can find a new invariant on bundles that respects the multiplicative property, these
 % shall be characteristic power series. A characteristic power series that normalizes to $1$ on $\CP^n$ for the
-% appropriate coefficients shall be called the \emph{Todd character}, and in important ways shall be the inverse
+% appropriate coefficients shall be called the \emph{Todd class}, and in important ways shall be the inverse
 % of the Chern character\footnote{It can be thought of as the topological equivalent of the Serge Class}.
 
 \section{Algebraic Build-up: Multiplicative sequences}\label{sec:mSequence}
@@ -2923,10 +3678,10 @@ characteristic series, we shall give a name to the genus.
   \[
     \begin{cases}
       0 & \dim_\R X \not\equiv 0 \mod 4\\
-      K_n(p_1, ..., p_n)[X] & \dim_\R X = 4n
+      \int_X K_n(p_1, ..., p_n) & \dim_\R X = 4n
     \end{cases}
   \]
-  is called the \emph{K-genus} of $V^{n}$, where $K_n(p_1, ..., p_n)[X]$ represents taking the tangent bundle
+  is called the \emph{K-genus} of $V^{n}$, where $\int_X K_n(p_1, ..., p_n)$ represents taking the tangent bundle
   $TM$, finding the Pontryagin classes, and evaluating at the fundamental class $X$.
 
   \qn
@@ -2954,14 +3709,11 @@ By what we've discussed earlier, the $K$-genus is multiplicative.
 
 \subsection{Generating Function}
 
-One of the key ideas is to not directly work with the Euler characteristic or Todd class, but a generating
-function that combines the values. The idea is that we can figure out the coefficients of this generating
-function when plugin in different values of the dummy variable. To be precise, we shall have the generating
-function for the Todd class and Euler characteristic, they shall be equal when the dummy variable $y = 1$ as
-they will both be equal to the index, and when $y =-1$ we shall have that they are equal to their ``usual''
-values, namely the arithmetic and Todd genus.
-
-Let $B = \Q[y]$. Then consider the $m$-sequence $T_j(y; c_1, ..., c_j)$ with characteristic power series:
+As seen in chapter~\ref{cha:cohomVarieties}, we define a natural generating function $\chi_y$ combining the
+Euler characteristic $\chi^p$. The idea is that we can figure out the coefficients of this generating
+function when plugin in different values of the dummy variable $y$. Let us define do the same for the Todd
+class. Let $B = \Q[y]$. Then consider the $m$-sequence $T_j(y; c_1, ..., c_j)$ with characteristic power
+series:
 \[
   Q(y; x) = \frac{x(y+1)}{1-e^{-x(y+1)}} -yx = \frac{x(y+1)}{e^{x(y+1)}-1}+x
 \]
@@ -2993,11 +3745,11 @@ The polynomial $T_n(y;c_1,\ldots,c_n)$ can be written in a unique way in the for
     T_n(y;c_1,\ldots,c_n) = \sum_{p=0}^n T_n^p(c_1,\ldots,c_n)y^p.
 \]
 
-The polynomials $T_n^p(c_1,\ldots,c_n)$ satisfy
+satisfying the same grading as $\chi_y$, and the polynomials $T_n^p(c_1,\ldots,c_n)$ satisfy
 \[
     T_n^p(c_1,\ldots,c_n) = (-1)^n T_n^{n-p}(c_1,\ldots,c_n)
 \]
-Now, consider the factorization:
+that is the ``Poincar\'e duality''. Now, consider the factorization:
 \[
   1 + c_1x + \cdots + c_nx^n = \prod_{i=1}^n (1 + \gamma_i x)
 \]
@@ -3008,11 +3760,11 @@ Then we have:
   \frac{\gamma_i}{1- \exp(-\gamma_i)}\right]
 \]
 where the sum is over the $\binom{n}{p}$ pairwise combinations of distinct $\gamma_i$, and $\kappa_n[-]$ denotes the sum of all homogeneous polynomials of degree $n$ (mirroring evaluating at the
-fundamental class in section \textcolor{red}{ref:HERE}).
+fundamental class in).
 \end{prop}
 
 \begin{Proof}
-  Indeed;
+  Indeed:
  \begin{align*}
 	\sum_{p=0}^n T_n^p y^p &= \kappa_n \left[\prod_{i=1}^n \left(1
 	+ y\exp(-\gamma_i)\right)\frac{\gamma_i}{1-\exp(-\gamma_i)}\right]\\
@@ -3023,29 +3775,38 @@ fundamental class in section \textcolor{red}{ref:HERE}).
   as we sought to show
 \end{Proof}
 
-Finally note that $Q(0;x)=\frac{x}{1-e^{-x}}$, $Q(-1;x)=1+x$ and $Q(1;x)=\frac{x}{\tanh x}$. Therefore (see {\color{red} 1.5 and Lemma 1.3.1})
-
+Finally note that $Q(0;x)=\frac{x}{1-e^{-x}}$, $Q(-1;x)=1+x$ and $Q(1;x)=\frac{x}{\tanh x}$. Therefore:
 \[
 T_n^0(c_1,\ldots,c_n) = T_n(c_1,\ldots,c_n) \text{ (Todd polynomial)},
 \]
 
-\begin{gather*}
-\sum_{p=0}^n (-1)^p T_n^p(c_1,\ldots,c_n) = c_n,\\
-\sum_{p=0}^n T_n^p(c_1,\ldots,c_n) = \tilde{L}_n(c_1,\ldots,c_n), \text{ i.e.}\\
-\sum_{p=0}^n T_n^p(c_1,\ldots,c_n) \begin{cases}
- 0 \text{ if } n \text{ is odd}\\
- L_k(p_1,\ldots,p_k) \text{ if } n=2k.
-\end{cases}
-\end{gather*}
+\begin{prop}{$y=-1$ and $y=1$ Values}{valueofCertainpthToddPolys}
+  \begin{enumerate}
+     \item $\sum_{p=0}^n (-1)^p T_n^p(c_1,\ldots,c_n) = c_n$
+    \item $ \sum_{p=0}^n T_n^p(c_1,\ldots,c_n) = \tilde{L}_n(c_1,\ldots,c_n)$, that is:
+      \[
+        \sum_{p=0}^n T_n^p(c_1,\ldots,c_n) \begin{cases}
+       0 \text{ if } n \text{ is odd}\\
+       L_k(p_1,\ldots,p_k) \text{ if } n=2k.
+      \end{cases}
+      \]
+  \end{enumerate}
+\end{prop}
 
-1.9. The Todd polynomials are essentially the Bernoulli polynomials of higher order defined by {\color{red} Nörlund} (see {\color{red} N. E. Nörlund, Differenzenrechnung, Berlin, Springer-Verlag, 1924, especially p. 143}). The Bernoulli polynomial $B_j^{(n)}(\gamma_1,\ldots,\gamma_n)$ is defined by
-
-\[
-\prod_{i=1}^n \frac{\gamma_i x}{\exp(\gamma_i x)-1} = \sum_{j=0}^{\infty} \frac{x^j}{j!}B_j^{(n)}(\gamma_1,\ldots,\gamma_n).
-\]
-
-If the $c_i$ are regarded as the elementary symmetric functions in $\gamma_1,\ldots,\gamma_n$ [see {\color{red} 1.8 (14)}] then
-
+\begin{Proof}
+  exercise
+\end{Proof}
+The first equation we see links to the Euler-characteristic as the Euler class is given by the top Chern class,
+while the second equation will be equal to the spin index as will be defined in chapter~\ref{cha:cobordism}.
+%
+% 1.9. The Todd polynomials are essentially the Bernoulli polynomials of higher order defined by {\color{red} Nörlund} (see {\color{red} N. E. Nörlund, Differenzenrechnung, Berlin, Springer-Verlag, 1924, especially p. 143}). The Bernoulli polynomial $B_j^{(n)}(\gamma_1,\ldots,\gamma_n)$ is defined by
+%
+% \[
+% \prod_{i=1}^n \frac{\gamma_i x}{\exp(\gamma_i x)-1} = \sum_{j=0}^{\infty} \frac{x^j}{j!}B_j^{(n)}(\gamma_1,\ldots,\gamma_n).
+% \]
+%
+% If the $c_i$ are regarded as the elementary symmetric functions in $\gamma_1,\ldots,\gamma_n$ [see {\color{red} 1.8 (14)}] then
+%
 
 \section{Todd Class}
 
@@ -3053,11 +3814,11 @@ With the algebraic established, we can formally define the Todd class:
 
 \index{Todd Class}
 \begin{defn}{Todd Class}{toddClass}
-  Let $X$ be a complex smooth manifold, and $\xi$ a continuous $q$-vector bundle on $X$. Let $c_i \in H^{2i}(X, \Z)$
-  be its Chern classes. Then we can define the \emph{total Todd class} of $\xi$ by taking the Todd polynomials
+  Let $X$ be a complex smooth manifold, and $E$ a continuous $q$-vector bundle on $X$. Let $c_i \in H^{2i}(X, \Z)$
+  be its Chern classes. Then we can define the \emph{total Todd class} of $E$ by taking the Todd polynomials
   and taking:
   \[
-    \td(\xi) = \sum_{j=1}^\infty T_j(c_1, ..., c_j)
+    \td(E) = \sum_{j=1}^\infty T_j(c_1, ..., c_j)
   \]
   where $\{T_j(c_1, ..., c_j)\}$ is given by the characteristic series:
   \[
@@ -3068,7 +3829,7 @@ With the algebraic established, we can formally define the Todd class:
 The reader can verify that the direct product of manifolds $X\times Y$ is multiplicative on the Todd class.
 This means that if
 \[
-  0 \to \xi' \to \xi \to \xi'' \to 0
+  0 \to E' \to E \to E'' \to 0
 \]
 Then:
 \[
@@ -3076,7 +3837,7 @@ Then:
 \]
 and so:
 \[
-  \td(\xi)(t) = \td(\xi')(t)\cdot \td(\xi'')(t)
+  \td(E)(t) = \td(E')(t)\cdot \td(E'')(t)
 \]
 Mirroring the property of the Euler Characteristic.
 
@@ -3092,40 +3853,39 @@ Then note that :
 \]
 By our earlier work:
 \[
-  \td(\xi\oplus \xi') = \td(\xi)\td(\xi')
+  \td(E\oplus E') = \td(E)\td(E')
 \]
-In the special case where $q= 1$ and $c_1(\xi) = d \in H^2(X, \Z)$, then:
+In the special case where $q= 1$ and $c_1(E) = d \in H^2(X, \Z)$, then:
 \[
-  \td(\xi) = \frac{d}{1-e^{-d}}
+  \td(E) = \frac{d}{1-e^{-d}}
 \]
-Then for a general $q$-bundle we can apply the splitting principle. In terms of the Todd character, we get
+Then for a general $q$-bundle we can apply the splitting principle. In terms of the Todd class, we get
 define:
 \[
   \sum_{j=0}^q c_jx^j = \prod_{i=1}^q (1 + \gamma_ix)
 \]
-Thus, when dealing with a general complex vector bundle $\xi$ and take its Chern roots $\gamma_i$:
+Thus, when dealing with a general complex vector bundle $E$ and take its Chern roots $\gamma_i$:
 \[
-  \td(\xi) = \prod_{i=1}^q \frac{\gamma_i}{1-e^{-\gamma_i}}
+  \td(E) = \prod_{i=1}^q \frac{\gamma_i}{1-e^{-\gamma_i}}
 \]
 Let us compare this to the usual results we get about the Chern class: it is the natural ``dual'' of the Todd
 class in the following way:
-\begin{thm}{Relating Todd Class and Chern Character}{relatingToddClassandChernCharacter}
-  Let $\xi$ be a continuous $\GL_q(\C)$-bundle over $X$. Then:
+\begin{thm}{Borel-Serre Identity}{relatingToddClassandChernCharacter}
+  Let $E$ be a continuous $\GL_q(\C)$-bundle over $X$. Then:
   \[
-    \sum_{r=0}^q (-1)^r \ch \left(\bigwedge^r\xi^*\right) = (\td(\xi))^{-1}c_q(\xi)
+    \sum_{r=0}^q (-1)^r \ch \left(\bigwedge^rE^*\right) = (\td(E))^{-1}c_q(E)
   \]
 \end{thm}
 
 \begin{Proof}
-  Proof: If $\sum_{j=0}^q c_j(\xi) x^j = \prod_{i=1}^q (1 + \gamma_i x)$ by the properties of Chern classes
-  (\textcolor{red}{though, I did not actually prove this result in my vect. bundle notes. thm 4.4.3 in
-  Hirzebruch, p.64})
+  Proof: If $\sum_{j=0}^q c_j(E) x^j = \prod_{i=1}^q (1 + \gamma_i x)$ by the properties of Chern classes
+
 \[
-    \text{ch}\bigwedge^r \xi^* = \sum e^{-(\gamma_{i_1} + \cdots + \gamma_{i_r})}
+    \text{ch}\left(\bigwedge^r E^*\right) = \sum e^{-(\gamma_{i_1} + \cdots + \gamma_{i_r})}
 \]
 where the sum is over all combinations $i_1, \ldots, i_r$ with $1 \leq i_1 < \cdots < i_r \leq q$. Therefore
 \[
-    \sum_{r=0}^q (-1)^r \text{ch}\bigwedge^r \xi^* = \prod_{i=1}^q (1-e^{-\gamma_i}) = (\gamma_1 \cdots \gamma_q) \prod_{i=1}^q \frac{1-e^{-\gamma_i}}{\gamma_i} = (\text{td}(\xi))^{-1} c_q(\xi).
+    \sum_{r=0}^q (-1)^r \text{ch}\bigwedge^r E^* = \prod_{i=1}^q (1-e^{-\gamma_i}) = (\gamma_1 \cdots \gamma_q) \prod_{i=1}^q \frac{1-e^{-\gamma_i}}{\gamma_i} = (\text{td}(E))^{-1} c_q(E).
 \]
 \end{Proof}
 
@@ -3161,20 +3921,15 @@ To important terms that we must evaluate is at the $y = -1$ and $y=1$. For $y = 
   T_{-1}(M_n) &= \sum_{p=0}^n (-1)^p T^p(M_n)\\
               &= \prod_i Q(-1; \gamma_i)[M_n]\\
               &= \prod_i Q(1 + \gamma_i x)[M_n]\\
-              &= c[M_n] \\
               &\overset{!}{=} c_n[M_n] &\text{}\\
               &= \chi(M_n)
 \end{align*}
 where $\overset{!}{=}$ comes from ignoring the lower order terms because perfect pairing. Evaluating at $1$ we
-get:
+by~\cref{pr:valueofCertainpthToddPolys} we get:
 \[
   T_{1}(M_n) = \sum_{p=0}^n  T^p(M_n) = \tau(M_n)
 \]
-where $\tau$ is the index of $M_n$, with the equality holding since
-\[
-    Q(1;x) = \frac{x(2e^{2x} - (e^{2x} - 1))}{e^{2x} - 1} = \frac{x(e^{2x} + 1)}{e^{2x} - 1} = x\coth(x) = \frac{x}{\tanh(x)}
-\]
-This shall be important for the eventual comparison of with the Euler characteristic.
+where $\tau$ is shorthand for the Pontryagin number as it will be equal to the index of $M_n$.
 By~\cref{lm:geoCharofToddGenus}, the $T$-genus is the only genus associated to an $m$-sequence with rational
 coefficients which takes the value $1$ on every complex projective space $\CP^n$, and the $T_y$-genus is the
 only genus associated to an $m$-sequence with coefficients in $\mathbb{Q}[y]$ which takes the value
@@ -3199,10 +3954,10 @@ $1-y+y^2-\cdots+(-1)^n y^n$ on $\CP^n$.
   \]
   \end{enumerate}
 
-  The \textit{total Todd class} of a vector bundle, $\xi$, is
+  The \textit{total Todd class} of a vector bundle, $E$, is
 
 \[
-    \text{td}(\xi)(t) = \sum_{j=0}^{\infty} \text{td}_j(c_1,\ldots,c_j)t^j = 1 + \frac{1}{2}c_1(\xi) + \frac{1}{12}(c_1^2(\xi) + c_2(\xi))t^2 + \frac{1}{24}(c_1(\xi)c_2(\xi))t^3 + \cdots
+    \text{td}(E)(t) = \sum_{j=0}^{\infty} \text{td}_j(c_1,\ldots,c_j)t^j = 1 + \frac{1}{2}c_1(E) + \frac{1}{12}(c_1^2(E) + c_2(E))t^2 + \frac{1}{24}(c_1(E)c_2(E))t^3 + \cdots
 \]
 
 \end{prop}
@@ -3212,111 +3967,24 @@ $1-y+y^2-\cdots+(-1)^n y^n$ on $\CP^n$.
 \end{Proof}
 
 
-
-
-\section{T-characteristic -- combining Algebraic and Geometric information}\label{sec:T-Char}
-
-So far, we saw that the Todd character captures some information about the underlying space $X$. We shall want
-to capture some information about the bundle as well; this is given by the Chern character. Combining these
-two together, we get:
-
-\index{T-characteristic}
-\begin{defn}{T-characteristic}{t-characteristic}
-  Let $X$ be an admissible complex manifold, $\xi$ a $U(q)$-vector bundle. Then
-  \[
-    T(X, \xi)(t) = \kappa[\ch(\xi)\td(TM)] = \int_X \ch\cdot \td
-  \]
-  Is called the \emph{T-characteristic} of $\xi$ over $X$
-  % (see~\cite[p.226]{gallierComplexAlgebraicGeometry2011}).
-\end{defn}
-Note that if $\xi = \mathbbm{1}$, then $T(X,\mathbbm{1}) = \kappa[\ch(\mathbbm{1}\td(TM)] = \kappa[\td(TM)]$
-showing that we reduce to only holding information about $X$.
-As $\C^*$-bundles over $M_n$ are classified by elements $d \in H^2(M_n, \Z)$, we shall sometimes write $T(M_n,
-d)$ for $T(M_n, \xi)$ where $\xi$ is associated to $d$. \textcolor{red}{A thing with virtual, eq. 4 (WILL BE
-MOVED TO VIRTUAL SECTION} .
-
-If $\xi$ is a complex vector bundle of dimension $q$, $\xi'$ of dimension $q'$, both over $M_n$, then (by the
-virtual equation of eq4) we get:
-\[
-  T(M_n, \xi\oplus \xi') = T(M_n, \xi) + T(M_n, \xi')
-\]
-Then by the properties of the characters we get:
-\[
-  T(M\times N, \pi_M^*(\xi)\otimes \pi_N^*(\eta)) = T(M,\xi)T(N, \eta)
-\]
-Let us extend this to $T_y$-characteristics and show that it is additive and multiplicative in the same way.
-First, by~\cref{pr:computingToddPoly}:
-\[
-  T \left(M_n, \bigwedge^p(T^*M)\right) = T^p(M_n)
-\]
-Then $\wedge^p(T^*M)\otimes \xi$, so $T(M_n, \lambda^p(T^*M)) = T^p(M_n)$. By taking:
-\[
-  T_y(M_n, \xi) = \sum_{p=0}^n T^p(M_n, \xi)y^p
-\]
- we with (virtual eq.4) we get:
- \[
-   T(M_n,\xi) = \kappa_n \left[\ch(\xi)\ch\left(\bigwedge^p(T^*M)\right) \td(TM)\right]
- \]
- Then by applying the same proof techniques for proposition~\cref{pr:computingToddPoly} we get:
-\[
-  T_y(M_n, \xi) = \kappa_n \left[\left(\sum_{i=1}^q e^{(1+y)d_i}\right)\left(\sum_{j=0}^n T_j(y;c_1,\ldots,c_j)\right)\right]
-\]
-Notice that:
-\[
-  T_{-1}(M_n, \xi) = q\cdot\chi(M_n)
-\]
-recovering the Euler-Poincar\'e characteristic of $M_n$. Similarly, generalizing~\cref{pr:propofToddGenus} we
-get:
-\[
-  T^p(M_n, \xi) = (-10^n T^{n-p}(M_n, \xi^*)
-\]
-and if $p  =0$:
-\[
-  T(M_n, \xi) = (-1)^n T\left(M_n, \bigwedge^n(T^*M)\otimes \xi^*\right)
-\]
-Then, by doing the same techniques to generalize the Total Chern class to the Total $y$-Chern class, we can se
-that:
-\[
-  T_y(M_n, \xi\oplus \xi') = T_y(M_N, \xi) + T_y(M_n, \xi')
-\]
-\begin{center}
-  and
-\end{center}
-\[
-  T_y(M\times N, \pi_M^*(\xi)\otimes \pi_N^*(\eta)) = T_y(M, \xi)T_y(N, \eta)
-\]
-
-
-\section{Split Manifolds and Splitting Method}\label{sec:splitManandSplitMethods}
-
-\textcolor{red}{As far as I can tell, this is just explaining the splitting method and so I don't need to go
-over this because I already do in~\cite{NateKTheory}}
-
-
-\textcolor{red}{I will look at Gallier notes later to see if there is anything I need to fill in here}
-
-
-\textcolor{red}{Move 12.3 here more virtual results}
-
-
-
 \subsection{Virtual Todd Genus}
 
-Recall the if $E$ a vector bundle over a manifold $M$, there is a flag manifold $F(M)$ such that the pullback
-along $f: F(M) \to M$ makes $E$ split into linear bundles. The same applies even if $M = V$ is a variety with
-singularities; we can breakdown the pullback of $E$ into a filtration:
+Let us now translate the results over for splitting manifolds. Let $E \to M$ be complex vector bundle over a
+manifold, $F(M)$ the associate flag manifold such that the pullback along $f: F(M) \to M$ makes $E$ split into
+linear bundles. The same applies even if $M = V$ is a variety with singularities. We can breakdown the
+pullback of $E$ into a filtration:
 \[
   f^*(E) = E_r \supseteq E_{r-1} \supseteq \cdots \supseteq E_1 \supseteq E_0  =0
 \]
-This shall afford us the ability to calculate the Todd character, and hence the Todd genus,
-with greater ease. We shall not cover all the details, they can be found
-in~\cite{fultonIntersectionTheory1984} or~\cite{hirzebruchTopologicalMethodsAlgebraic1995}.
+This shall afford us the ability to calculate the Todd class, and hence the Todd genus, using line bundles.
+% with greater ease. We shall not cover all the details, they can be found
+% in~\cite{fultonIntersectionTheory1984} or~\cite{hirzebruchTopologicalMethodsAlgebraic1995}.
 
 Let us start by relating the Chern character to a sub-manifold Let $N_{n-k}\sse M_n$ be a submanifold of
 codimension $k$  and let $j: V_{n-k} \to M_n$ be an embedding. If $M_n$ is almost complex, then we have the
-pullback:
+pullback of vector bundles;
 \begin{equation}\label{eq:virtEq}
-  j^*(TM_n) = TN_{n-k} \oplus N_{M/N}
+  j^*(TM_n) \cong TN_{n-k} \oplus N_{M/N}
 \end{equation}
 where $N_{M/N}$ is the normal bundle of $N$ with respect to $M$; let us label it $\nu$. if $k = 1$, then we simply get:
 \[
@@ -3354,7 +4022,10 @@ motivates the following definition:
   \[
     T_y(v_1, ..., v_r)_M = \kappa_n \left[R(y; v_1)\cdots R(y; v_r) \sum_{j=0}^\infty T_j(y; c_1(M_n), ...)\right]
   \]
-  where the subscript denotes what is the original manifold, and will be omitted if it is clear from context.
+  Define the $T^p(v_1,..., v_r)$ to be the terms in the summand of $T_y$ when expanded:
+  \[
+    T_y(v_1, ..., v_r)_M = \sum_{p=0}^{n-r} T^p(v_1, ..., v_r)_My^p
+  \]
 \end{defn}
 
 By~\cref{pr:computingToddPoly}, the virtual Todd genus is a polynomial of degree $n-r$ in $y$ with rational
@@ -3362,13 +4033,146 @@ coefficients. if $r > n$, it is $0$, and if and only if $r = n$:
 \[
   T_y(v_1, ..., v_n)_M = v_1v_2\cdots v_n[M_n]
 \]
+The virtual Todd genus respects the same properties as the Tod genus, namely:
+\[
+  T(v_1, ..., v_r)_M = T_0(v_1, ..., v_r)_M = T^0(v_1, ..., v_r)_M
+\]
+and
+\[
+  T^p(v_1, ..., v_r)_M = (-1)^{n-r} T^{n-r-p}(v_1, ..., v_r)_M
+\]
+And by definition:
+\[
+  T_y(V_{n-1}) = T_y(v)_M
+\]
+for appropriate $v$ and were $V_{n-1} \hookrightarrow M_n$ is a codimension $1$ manifold. Let us now work
+towards showing that the virtual Todd genus satisfies some of the algebraic propertites of
+theorem~\cref{th:uniquenessResult}. Let
+\[
+R(x) = \frac{e^{ax-1}}{e^{ax}+y}
+\]
+for some intermediate $a,y$. Then:
+\[
+  R(u+v) = R(u) + R(v) + (y-1)R(u)R(v) - yR(u)R(v)R(u+v)
+\]
+Letting $a = 1+y$, we get an equation for $R(y;x)$. Then as $T_y$ decomposes into products of such equations
+we get:
 
-\textcolor{red}{Hirzebruch now takes the time to relate the fundamental classes $v_i$ in $M$ to the
-pushforward via $j^*$; detail in 11.2/11.3}
+\begin{thm}{Functional Equation of $T_y$}{funcalEquationofTy}
+  Let $v_1, ..., v_r$, $u,v$ be defined as before. Then:
+  \begin{align*}
+    &T_y(v_1, ..., v_r, u+v) =\\
+    &T_y(v_1, ..., v_r, u) + T_y(v_1, ..., v-r, v) + (y-1)T_y(v_1,. .. v_r)(u,v)
+    _ yT_y(v_1, ..., _r, u,v,u+v)
+  \end{align*}
+\end{thm}
+
+If $r = 0$:
+\[
+  T_y(u+v)  =T_y(u) + T_y(v) - (y-1)T_y(u,v) - yT_y(u,v,u+v)
+\]
+As $y=-1$ gives the Euler characteristic, we see that it satisfies:
+\[
+  T_{-1}(u+v) = T_{-1}(u) + T_{-1}() - 2T_{-1}(u,v) + T_{-1}(u,v,u+v)
+\]
+When $y  =0$, we get the Todd genus satisfies:
+\[
+  T(u+v)  =T(u) + T(v) - T(u,v)
+\]
+and when $y=1$, we shall see that the spin index will satisfy the equation:
+\[
+  T_1(u+v) = T_1(u) + T_1(v) - T_1(u,v,u+v)
+\]
+
+
+
+\section{T-characteristic -- combining Algebraic and Geometric information}\label{sec:T-Char}
+
+So far, we saw that the Todd class captures some information about the underlying space $X$. We shall want
+to capture some information about the bundle as well; this is given by the Chern character. Combining these
+two together, we get:
+
+\index{T-characteristic}
+\begin{defn}{T-characteristic}{t-characteristic}
+  Let $X$ be an compact complex manifold, $E$ a complex vector bundle. Then
+  \[
+    T(X, E) = \kappa[\ch(E)\td(TM)] = \int_X \ch(E)\cdot \td(X)
+  \]
+  Is called the \emph{T-characteristic} of $E$ over $X$
+  % (see~\cite[p.226]{gallierComplexAlgebraicGeometry2011}).
+\end{defn}
+Note that if $E = \mathbbm{1}$, then $T(X,\mathbbm{1}) = \kappa[\ch(\mathbbm{1})\td(TM)] = \kappa[\td(TM)]$
+showing that we reduce to only holding information about $X$.
+As $\C^*$-bundles over $M_n$ are classified by elements $d \in H^2(M_n, \Z)$, we shall sometimes write $T(M_n,
+d)$ for $T(M_n, E)$ where $E$ is associated to $d$. \textcolor{red}{A thing with virtual, eq. 4 (WILL BE
+MOVED TO VIRTUAL SECTION} .
+
+If $E$ is a complex vector bundle of dimension $q$, $E'$ of dimension $q'$, both over $M_n$, then (by the
+virtual equation of eq4) we get:
+\[
+  T(M_n, E\oplus E') = T(M_n, E) + T(M_n, E')
+\]
+Then by the properties of the characters we get:
+\[
+  T(M\times N, \pi_M^*(E)\otimes \pi_N^*(\eta)) = T(M,E)T(N, \eta)
+\]
+Let us extend this to $T_y$-characteristics and show that it is additive and multiplicative in the same way.
+First, by~\cref{pr:computingToddPoly}:
+\[
+  T \left(M_n, \bigwedge^p(T^*M)\right) = T^p(M_n)
+\]
+Then $\wedge^p(T^*M)\otimes E$, so $T(M_n, \lambda^p(T^*M)) = T^p(M_n)$. By taking:
+\[
+  T_y(M_n, E) = \sum_{p=0}^n T^p(M_n, E)y^p
+\]
+ we with (virtual eq.4) we get:
+ \[
+   T(M_n,E) = \kappa_n \left[\ch(E)\ch\left(\bigwedge^p(T^*M)\right) \td(TM)\right]
+ \]
+ Then by applying the same proof techniques for proposition~\cref{pr:computingToddPoly} we get:
+\[
+  T_y(M_n, E) = \kappa_n \left[\left(\sum_{i=1}^q e^{(1+y)d_i}\right)\left(\sum_{j=0}^n T_j(y;c_1,\ldots,c_j)\right)\right]
+\]
+Notice that:
+\[
+  T_{-1}(M_n, E) = q\cdot\chi(M_n)
+\]
+recovering the Euler-Poincar\'e characteristic of $M_n$. Similarly, generalizing~\cref{pr:propofToddGenus} we
+get:
+\[
+  T^p(M_n, E) = (-10^n T^{n-p}(M_n, E^*)
+\]
+and if $p  =0$:
+\[
+  T(M_n, E) = (-1)^n T\left(M_n, \bigwedge^n(T^*M)\otimes E^*\right)
+\]
+Then, by doing the same techniques to generalize the Total Chern class to the Total $y$-Chern class, we can se
+that:
+\[
+  T_y(M_n, E\oplus E') = T_y(M_N, E) + T_y(M_n, E')
+\]
+\begin{center}
+  and
+\end{center}
+\[
+  T_y(M\times N, \pi_M^*(E)\otimes \pi_N^*(\eta)) = T_y(M, E)T_y(N, \eta)
+\]
 
 Let us now develop this to the define the virtual $T$-characteristic
 
 \textcolor{red}{this is 12.3 of Hirzebruch. 12.3 is the last of section 12}
+
+\section{Split Manifolds and Splitting Method}\label{sec:splitManandSplitMethods}
+
+\textcolor{red}{As far as I can tell, this is just explaining the splitting method and so I don't need to go
+over this because I already do in~\cite{NateKTheory}}
+
+
+\textcolor{red}{I will look at Gallier notes later to see if there is anything I need to fill in here}
+
+
+\textcolor{red}{Move 12.3 here more virtual results}
+
 
 
 \subsection{Application to Splitting Principle}
@@ -3421,6 +4225,26 @@ integer.
 
 Let us now show that $T(X) = T(X_\Delta)$, that is the Todd genus is invariant under splitting. Essentially,
 $T(F(n)) = 1$ and $T(X_\Delta) = T(X)T(F(n)) = T(X)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{Reduction via Cobordism}\label{cha:cobordism}
 
@@ -3907,7 +4731,7 @@ Now we further know the Künneth formula for the $h^{p,q}$ of a product (of two,
 Therefore, (3) holds. Then, our previous theorem implies $I(M)=K(M)$ for some $K$, a multiplicative sequence. But, $K(\mathbb{P}_\mathbb{C}^{2k})=1$, there and we know there is one and only one multiplicative sequence $\equiv1$ on all $\mathbb{P}_\mathbb{C}^{2k}$, it is $L$. Therefore, $I(M)=L$, as claimed.
 \end{Proof}
 
-\section{Derived Index}
+\section{virtual Index}
 
 This is about the index of the intersection of manifolds that remember the manifolds that where intersected.
 This can be done within the modern language of \emph{derived algebraic geometry} by taking $M\otimes^{\bf{L}}
@@ -4051,7 +4875,6 @@ or as Hirzebruch writes it:
   \tanh(u+v) = \tanh(u) + \tanh(v) - \tanh(u)\tanh(v)\tanh(u+v)
 \]
 This immediately gives:
-Here's the LaTeX code for the theorem:
 
 \begin{thm}{Functional Equation of Virtual Index}{funcEqOfVirtIndex}
 The virtual index is a function which associates an integer $\tau(v_1, v_2, \ldots, v_r)$ to each (unordered)
@@ -4081,6 +4904,7 @@ particular an algebraic cocycle and the operational Chern classes will be in cor
 objects. However, even Chow rings don't remember the original intersection information, which is why these
 object are still technically ``derived'' objects.
 
+
 \chapter{Riemann Roch Theorems}\label{cha:RR}
 
 
@@ -4107,8 +4931,7 @@ As (1) implies paracompact, our work on fine and soft sheaves goes through.
       \[
         \dim_\C H^0(X, \CL) - \dim_\C H^0(X, \omega_X\otimes \CL^\vee) = \deg(\CL) + 1-g
       \]
-      where (by~\textcolor{red}{ref:HERE}, or~\cite[section~5.3]{NateAlgGeo}) $g = \dim H^0(X, \omega_X)
-      = \dim H^1(X, \CO_X)$ is the genus of $X$.
+      where $g = \dim H^0(X, \omega_X) = \dim H^1(X, \CO_X)$ is the genus of $X$.
   \end{enumerate}
 \end{thm}
 
@@ -4214,7 +5037,7 @@ Then~\cref{th:rrForRiemannSurfacewithLineBundles} becomes:
 \begin{align*}
   \chi(X, \CL) &= c_1(\CL)[X] + 1-g\\
                &= \left[c_1(\CL) + \frac{1}{2}(2-2g)\right][X]\\
-               &= \left[c_1(\CL) + \frac{1}{2}c_1(T_X^{1,0})\right][X]
+               &= \left[c_1(\CL) + \frac{1}{2}c_1(T^{1,0}M)\right][X]
 \end{align*}
 
 By Bass-Serre Cancellation (see~\cite[section~5.1]{NateKTheory}) or by some result from the theory of
@@ -4362,8 +5185,37 @@ We shall show that:
 \section{Hirzebruch Riemann Roch Theorem}\label{sec:HRR}
 
 here
+\subsection{Index, $T_y$-characteristic, $\chi_y$-characteristic}
+
+If with $y = 1$, then we get the following key result:
+\begin{thm}{Euler Characteristic and Index}{eulerCharandIndex}
+  \[
+  \chi_1(M) = \sum_{p=0}^n \chi^p(M) = \sum_{p,q}(-1)^qh^{p,q}(M)
+\]
+is equal to the \emph{index} $\tau(M)$ (defined in \cite[8.2]{hirzebruchTopologicalMethodsAlgebraic1995}).
+\end{thm}
+
+\begin{Proof}
+  long proof at~\cite[p.125, Thm~15.8.2]{hirzebruchTopologicalMethodsAlgebraic1995}
+\end{Proof}
+
+This will be a key step in the proof of RR. Note that there is a more direct proof for the above that works
+for arbitrary compact complex manifolds $M$ (Hirzebruch sketches a proof
+in~\cite[appendix~25.4]{hirzebruchTopologicalMethodsAlgebraic1995}).
+
+For the $T_y$-characteristic by~\cref{pr:valueofCertainpthToddPolys}:
+\[
+  T_{1}(M_n) = \sum_{p=0}^n  T^p(M_n) = \tau(M_n)
+\]
+with the equality holding since
+\[
+    Q(1;x) = \frac{x(2e^{2x} - (e^{2x} - 1))}{e^{2x} - 1} = \frac{x(e^{2x} + 1)}{e^{2x} - 1} = x\coth(x) = \frac{x}{\tanh(x)}
+\]
+
 \subsection{For Line Bundles}\label{sec:HRRlineBundle}
 
+
+\textcolor{red}{looks like 19.4/19.5 both incorporate the todd class/genus, so I will move this to here}
 
 Let $M$ be an algebraic manifold, $T(M)$ be the Todd genus, and $\chi(M)$ be the arithmetic genus. We shall
 show that $T(V) = \chi(V)$. This then RR for complex line bundles over $M$.
@@ -4468,14 +5320,14 @@ Here, will introduce the basics from Vakil!!
 
 \textcolor{red}{an important things here is the dictionary to the generalization's between the two!!}
 
-\textcolor{red}{This method also avoids the ``derived'' machinery}
+\textcolor{red}{This method also avoids the ``virtual'' machinery}
 
-\textcolor{red}{The derived machinery works only anyways because we stuck to line bundles, we wouldn't have
+\textcolor{red}{The virtual machinery works only anyways because we stuck to line bundles, we wouldn't have
 the parallel}
 
 
 
-\section{**RR on Derived Varieties?}\label{sec:DRR}
+\section{**RR on Derived Schemes?}\label{sec:DRR}
 
 \textcolor{red}{BUT MAYBE WE CAN EXTEND Hirzebruch Riemann Roch TO DERIVED VARIETIES : O}
 
@@ -4502,7 +5354,8 @@ schemes without issue using that paper}
 
 
 
-
+\newpage
+\printindex
 \newpage
 \printbibliography
 
