@@ -25,20 +25,21 @@
 \contentsline {section}{\numberline {4.2}Todd Class}{73}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Virtual Todd Genus}{76}{subsection.4.2.1}%
 \contentsline {section}{\numberline {4.3}T-characteristic -- combining Algebraic and Geometric information}{78}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Split Manifolds and Splitting Method}{80}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Application to Splitting Principle}{80}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Todd Genus Invariant Under Splitting}{81}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Reduction via Cobordism}{83}{chapter.5}%
-\contentsline {section}{\numberline {5.1}(Oriented) Cobordism Ring}{84}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Intersection Form: Index and Hirzebruch Signature Theorem}{89}{section.5.2}%
-\contentsline {section}{\numberline {5.3}virtual Index}{92}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Virtual index To Intersection Theory Objects}{93}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Why this definition works}{95}{subsection.5.3.2}%
-\contentsline {chapter}{\numberline {6}Riemann Roch Theorems}{97}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Classical Riemann Roch Proofs}{97}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Hirzebruch Riemann Roch Theorem}{102}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Index, $T_y$-characteristic, $\chi _y$-characteristic}{102}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}For Line Bundles}{103}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}For Vector Bundles}{105}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}*Grothendeick Riemann Roch}{105}{section.6.3}%
-\contentsline {section}{\numberline {6.4}**RR on Derived Schemes?}{105}{section.6.4}%
+\contentsline {section}{\numberline {4.4}Todd Genus Invariant Under Splitting}{82}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Algebraic Preliminaries}{82}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}The Flag Manifold}{83}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Multiplicative Property and Integrality Theorem}{84}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Reduction via Cobordism}{87}{chapter.5}%
+\contentsline {section}{\numberline {5.1}(Oriented) Cobordism Ring}{88}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Intersection Form: Spin Index and Hirzebruch Signature Theorem}{93}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Index and Splitting Principle}{96}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Virtual index To Intersection Theory Objects}{97}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Why this definition works}{99}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Riemann Roch Theorems}{101}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Classical Riemann Roch Proofs}{101}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Hirzebruch Riemann Roch Theorem}{106}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Index, $T_y$-characteristic, $\chi _y$-characteristic}{107}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}For Line Bundles}{110}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}For Vector Bundles}{112}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}*Grothendeick Riemann Roch}{112}{section.6.3}%
+\contentsline {section}{\numberline {6.4}**RR on Derived Schemes?}{112}{section.6.4}%

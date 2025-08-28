@@ -280,6 +280,31 @@
       \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
       \endverb
     \endentry
+    \entry{hodge1951kahler}{book}{}
+      \name{author}{1}{}{%
+        {{hash=97c996995d5ff64fde1379553c3a893c}{%
+           family={Hodge},
+           familyi={H\bibinitperiod},
+           given={W.\bibnamedelimi V.\bibnamedelimi D.},
+           giveni={W\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{97c996995d5ff64fde1379553c3a893c}
+      \strng{fullhash}{97c996995d5ff64fde1379553c3a893c}
+      \strng{bibnamehash}{97c996995d5ff64fde1379553c3a893c}
+      \strng{authorbibnamehash}{97c996995d5ff64fde1379553c3a893c}
+      \strng{authornamehash}{97c996995d5ff64fde1379553c3a893c}
+      \strng{authorfullhash}{97c996995d5ff64fde1379553c3a893c}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the London Mathematical Society}
+      \field{title}{A Special Type of K{"a}hler Manifold}
+      \field{volume}{1}
+      \field{year}{1951}
+      \field{pages}{104\bibrangedash 117}
+      \range{pages}{14}
+    \endentry
     \entry{leeIntroductionRiemannianManifolds2018}{book}{}
       \name{author}{1}{}{%
         {{hash=36896354ee3aedc1a13d683ea773634e}{%

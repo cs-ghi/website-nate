@@ -1,11 +1,11 @@
 \begin{theindex}
 
-  \item Algebraic Cobordism Ring, \hyperpage{86}
-  \item Algebraic K-genus, \hyperpage{85}
+  \item Algebraic Cobordism Ring, \hyperpage{90}
+  \item Algebraic K-genus, \hyperpage{89}
 
   \indexspace
 
-  \item Basis Sequence, \hyperpage{86}
+  \item Basis Sequence, \hyperpage{90}
   \item Bundle
     \subitem Fiber, \hyperpage{23}
     \subitem Principal, \hyperpage{24}
@@ -14,9 +14,9 @@
 
   \indexspace
 
-  \item Chern Numbers, \hyperpage{84}
+  \item Chern Numbers, \hyperpage{88}
   \item Classifying Vector Bundles, \hyperpage{24}
-  \item Cobordant, \hyperpage{83}
+  \item Cobordant, \hyperpage{87}
 
   \indexspace
 
@@ -38,8 +38,8 @@
   \indexspace
 
   \item G-bundle, \hyperpage{23}
-  \item Geometric Genus, \hyperpage{89}
-  \item Geometric Oriented Cobordism Ring, \hyperpage{89}
+  \item Geometric Genus, \hyperpage{93}
+  \item Geometric Oriented Cobordism Ring, \hyperpage{93}
 
   \indexspace
 
@@ -48,7 +48,7 @@
 
   \indexspace
 
-  \item Index, \hyperpage{89}
+  \item Index, \hyperpage{93}
 
   \indexspace
 
@@ -64,7 +64,7 @@
   \indexspace
 
   \item Pontryagin Class, \hyperpage{27}
-  \item Pontryagin Numbers, \hyperpage{84}
+  \item Pontryagin Numbers, \hyperpage{88}
   \item Positivity
     \subitem Integral, \hyperpage{42}
     \subitem Real, \hyperpage{41}
@@ -88,7 +88,8 @@
 
   \item Vector Bundle, \hyperpage{24}
   \item Virtual Characteristic, \hyperpage{50}
-  \item Virtual Index, \hyperpage{94}
+  \item Virtual Index, \hyperpage{98}
+  \item Virtual T-characteristic, \hyperpage{80}
   \item Virtual Todd Genus, \hyperpage{77}
 
 \end{theindex}

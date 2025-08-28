@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber hirzebruchriemannroch_theorem"] 1756332803 "hirzebruchriemannroch_theorem.bcf" "hirzebruchriemannroch_theorem.bbl" "hirzebruchriemannroch_theorem" 1756333795 0
-  "./bibliography.bib" 1756268289 13820 9d8562b7fa9b7d4e33e9df5b826673d6 ""
-  "hirzebruchriemannroch_theorem.bcf" 1756333794 117141 61f59f4b2939ec15ddf714bf013aea7f "pdflatex"
+["biber hirzebruchriemannroch_theorem"] 1756389116 "hirzebruchriemannroch_theorem.bcf" "hirzebruchriemannroch_theorem.bbl" "hirzebruchriemannroch_theorem" 1756390993 0
+  "./bibliography.bib" 1756389114 14018 9f352f862fbd336590499c8c31283fcf ""
+  "hirzebruchriemannroch_theorem.bcf" 1756390992 117122 e69455076bed93d2f82bbc493ffebb45 "pdflatex"
   (generated)
   "hirzebruchriemannroch_theorem.bbl"
   "hirzebruchriemannroch_theorem.blg"
   (rewritten before read)
-["makeindex hirzebruchriemannroch_theorem.idx"] 1756333783 "hirzebruchriemannroch_theorem.idx" "hirzebruchriemannroch_theorem.ind" "hirzebruchriemannroch_theorem" 1756333795 0
-  "hirzebruchriemannroch_theorem.idx" 1756333794 1887 02995bd0483778caf0c44a184238a9b0 "pdflatex"
+["makeindex hirzebruchriemannroch_theorem.idx"] 1756390974 "hirzebruchriemannroch_theorem.idx" "hirzebruchriemannroch_theorem.ind" "hirzebruchriemannroch_theorem" 1756390993 0
+  "hirzebruchriemannroch_theorem.idx" 1756390992 1939 ac00f41e68c52516b0ccd317aa9f955f "pdflatex"
   (generated)
   "hirzebruchriemannroch_theorem.ilg"
   "hirzebruchriemannroch_theorem.ind"
   (rewritten before read)
-["pdflatex"] 1756333784 "hirzebruchriemannroch_theorem.tex" "hirzebruchriemannroch_theorem.pdf" "hirzebruchriemannroch_theorem" 1756333795 0
+["pdflatex"] 1756390983 "hirzebruchriemannroch_theorem.tex" "hirzebruchriemannroch_theorem.pdf" "hirzebruchriemannroch_theorem" 1756390993 0
   "/Users/nathanaelchwojko-srawkey/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk" 1750178974 6964 e359522834ea6f7c544e2cad63fcb87c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -405,13 +405,13 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684428852 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "hirzebruchriemannroch_theorem.aux" 1756333794 42529 c89bd2392a2207dec8731d8ba53f7216 "pdflatex"
-  "hirzebruchriemannroch_theorem.bbl" 1756332806 28492 99bf489471ba1360b34079c0cb7b5439 "biber hirzebruchriemannroch_theorem"
-  "hirzebruchriemannroch_theorem.ind" 1756333784 2046 0d37c7e7438bcce3bcc4a92818ae36fc "makeindex hirzebruchriemannroch_theorem.idx"
-  "hirzebruchriemannroch_theorem.out" 1756333794 9386 c38e00cf64867a143fe7ebf3dbd831cd "pdflatex"
-  "hirzebruchriemannroch_theorem.run.xml" 1756333794 2482 79f4f92d00668f4247567b391be6aed2 "pdflatex"
-  "hirzebruchriemannroch_theorem.tex" 1756333771 238161 a16388e9aa7ad9e55abeb6d6981fcb28 ""
-  "hirzebruchriemannroch_theorem.toc" 1756333794 4148 c83bcbc3c81b24aa7382fefea3b6b0a0 "pdflatex"
+  "hirzebruchriemannroch_theorem.aux" 1756390992 45213 44ac767512399022a57686838c5a1542 "pdflatex"
+  "hirzebruchriemannroch_theorem.bbl" 1756389119 29624 2cebbd538311b83face464959c985093 "biber hirzebruchriemannroch_theorem"
+  "hirzebruchriemannroch_theorem.ind" 1756390974 2095 86f027b4cbba999e4045f29c2d182312 "makeindex hirzebruchriemannroch_theorem.idx"
+  "hirzebruchriemannroch_theorem.out" 1756390992 9647 059f315d24cd7c7c65a354ad4d3c4506 "pdflatex"
+  "hirzebruchriemannroch_theorem.run.xml" 1756390992 2482 79f4f92d00668f4247567b391be6aed2 "pdflatex"
+  "hirzebruchriemannroch_theorem.tex" 1756390845 253317 7486c09073c4c234bc10131c958dfa52 ""
+  "hirzebruchriemannroch_theorem.toc" 1756390992 4259 16fd41fd7bede724e1767604ecaff93c "pdflatex"
   (generated)
   "hirzebruchriemannroch_theorem.aux"
   "hirzebruchriemannroch_theorem.bcf"

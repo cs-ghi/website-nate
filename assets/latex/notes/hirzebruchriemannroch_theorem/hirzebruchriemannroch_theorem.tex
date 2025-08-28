@@ -17,44 +17,44 @@
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage[answerdelayed]{exercise}
 \usepackage[font=itshape]{quoting}
-\usepackage[most]{tcolorbox}         % Makes nice boxes for thms, cor, prop, or anything else.
+\usepackage[most]{tcolorbox}       % Makes nice boxes for thms, cor, prop, or anything else.
 \usepackage{amsmath, amssymb, amsthm} % Used to write better mathematical expressions (ex. \mathbb{R})
-\usepackage{array}                   % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
 \usepackage{bbm}                     % for mathbbm{1}
 \usepackage{blindtext}
 \usepackage{commutative-diagrams}
 \usepackage{dsfont}
-\usepackage{dynkin-diagrams}         % for Dynkin diagrams
+\usepackage{dynkin-diagrams}   % for Dynkin diagrams
 \usepackage{enumitem}
-\usepackage{etoolbox}
+\usepackage{etoolbox}          % for Dynkin diagrams
 \usepackage{euscript}
 \usepackage{extarrows}               % Used to compile any UTF-8 Character (and supports Unicode)
 \usepackage{fancyhdr}
-\usepackage{float}                   % package with ``H'' for figures and tables, ex. Images, tables, etc
-\usepackage{graphicx}                % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
+\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
 \usepackage{hhline}
 \usepackage{hyperref}
 \usepackage{cleveref}
-\usepackage{inputenc}                % Used to compile any UTF-8 Character (and supports Unicode)
-\usepackage{listings}                % Create nice colour code blocks (customized in preamble)
-\usepackage{longtable}               % create tables that extend past one page
+\usepackage{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
+\usepackage{longtable}        % create tables that extend past one page
 \usepackage{makeidx}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
-% \usepackage{microtype}               % makes nice text. Fixes some under-/over- filled box problems.
-\usepackage{multicol}                % For multiple columns
+% \usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
+\usepackage{multicol}         % For multiple columns
 \usepackage{pgfplots}
 \usepackage{scalerel}
-\usepackage{setspace}                % More flexibility on spacing in document.
+\usepackage{setspace}         % More flexibility on spacing in document.
 \usepackage{stackengine}
-\usepackage{stackrel}                % for left-right arrows, staking symbol above and bellow
-\usepackage{thmtools}                % Customize theorem environment (in preamble).
-\usepackage{tikz-cd}                 % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
+\usepackage{thmtools}         % Customize theorem environment (in preamble).
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
 \usepackage{tikz}                    % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
 \usepackage{titlesec}
-\usepackage{wasysym}                 % emoji's!
-\usepackage{wrapfig}                 % To wrap text around figure
-\usepackage{xcolor}                  % Colour text.
+\usepackage{wasysym}          % emoji's!
+\usepackage{wrapfig}          % To wrap text around figure
+\usepackage{xcolor}           % Colour text.
 
 % \usepackage{comment}
 
@@ -631,12 +631,7 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 
 \textcolor{red}{don't forget to get rid of all the "We"s}
 
-In a sense, the introduction will pretend to be accessible, but we shall inevitably have to
-assume some background in a little bit of everything in geometry and algebra: Riemann geometry, complex and
-algebraic geometry, Basic K-theory and the theory of characteristic classes, and Elementary Hodge theory.
-The introduction can be thought of as me trying to make the ideas of the paper as accessible as possible to
-an undergraduate, but that goal has to drop as soon as we start proving things or else it will the paper
-will be hundreds of pages of background material.
+\textcolor{red}{I think it is okay if you ``complain'' about the lack of resources.}
 
 Also, I chose to define the Chern character in a ``classical'' way as given by
 Hatcher~\cite{hatcherVectorBundlesKTheory2017} or Hirzebruch~\cite{hirzebruchTopologicalMethodsAlgebraic1995}
@@ -682,6 +677,7 @@ Background: the minimum is (where any author can be replaced with an equivalent)
   \item complex analysis up to Alford
   \item differential geometry up to John M. Lee
   \item algebraic topology up to Hatcher
+  \item GAGA will simply be assumed (there is no space to prove it)
 \end{enumerate}
 
 I will introduce the necessary Hodge Theory and cobordism theory, and only the characteristic theory that is
@@ -695,8 +691,8 @@ Particularities:
     see~\cite{NateAlgTop}.
    \item Theory of symmetric function (the basis that can be found in many group theory/field theory textbooks):
      see~\cite{NateAlgebra}.
-    \item Hartshorne level of algebraic geometry
-    \item Alford level of complex analysis.
+  \item Hartshorne level of algebraic geometry
+  \item Alford level of complex analysis.
 \end{enumerate}
 
 Bonus section in chapter~\ref{cha:RR} about Grothendeick Riemann Roch which will be self-contained and will be
@@ -760,7 +756,8 @@ non-compact case\footnote{Though these cases are still very much being studied, 
 functions on (suitable) compact spaces is equivalent to the category of algebraic functions on these spaces
 (\cite{hallGAGATheorems2022}, \cite{chowCompactComplexAnalytic1949}),
 meaning compact spaces are ``intrinsically'' algebraic. We shall prove some of the pertinent parts of this
-correspondence in~\ref{sec:gaga}.
+correspondence in \textcolor{red}{getting rid of it}
+% ~\ref{sec:gaga}.
 
 Let us try finding holomorphic/meromorphic functions on $X = \CP^1$ and see if they are
 determined by the points of $\CP^1$ just like in the case of $\C$. Immediately, $\CP^1$ has only constant holomorphic functions by an easy
@@ -1930,6 +1927,8 @@ where $A^*(-, \Q)$ is the \emph{chow ring} with rational coefficients.
 
 \chapter{Cohomology of Varieties -- new Euler Characteristics}\label{cha:cohomVarieties}
 
+\textcolor{red}{Must mention almost complex manifolds or eliminate all references to them, or make am mention
+that it generalizes to almost complex manifolds}
 
 The Euler characteristic is in a sense ``too rough'' of an invariant for varieties. We require to capture some
 of the complex structure to find the right invariants. In particular, we shall refine the usual
@@ -2521,10 +2520,16 @@ Inspired by Hartshorne~\cite{hartshorneAlgebraicGeometry2013}, call:
   \chi(M) = \sum_{q=0}^n (-1)^q h^{0,q}(M)
 \]
 the \emph{arithmetic genus} of $M$. By Serre Duality:
-\begin{align*}
+\begin{prop}{$\chi_p$-characteristic and Serre Duality}{EulerPCharandSerreDuality}
+  \begin{align*}
   \chi^p(M,E) &= (-1)^n \chi^{n-p}(M, E^*)\\
   \chi(M,E)&= (-1)^n \chi(M, K\otimes E^*)
 \end{align*}
+\end{prop}
+
+\begin{Proof}
+ apply Serre duality.
+\end{Proof}
 
 
 Let us now assume $M$ is K\"ahler. Let $g_q = h^{q,0}$. Then by the symmetry, the arithmetic genus $\chi(M)$
@@ -2602,10 +2607,10 @@ $\C^*$-bundle, then:
 \[
   \delta_*^1(\xi) = c_1(\xi)
 \]
-If $F$ is a complex line bundle over $M$ and $\xi$ is the assocaited $\C^*$-bundle, then $c_1(\xi)$ is the
+If $F$ is a complex line bundle over $M$ and $\xi$ is the associated $\C^*$-bundle, then $c_1(\xi)$ is the
 \emph{cohomology class} of $F$. Then we get:
 
-\begin{thm}{characterising Line bundles on K\"ahler Manifolds}{charLineBundleKahlMan}
+\begin{thm}{Characterizing Line bundles on K\"ahler Manifolds}{charLineBundleKahlMan}
   Let $M$ be a compact K\"ahler manifold. Then an element $a \in H^2(M, \Z)$ is the cohomology class of
   a complex line bundle over $M$ if and only if it is of type $(1,1)$.
 \end{thm}
@@ -2857,7 +2862,7 @@ By taking successive ``divisors of divisor'', we multiply by further factors of 
 motivating the following definition:
 
 \index{Virtual Characteristic}\index{Euler Characteristic!Virtual}
-\begin{defn}{Virtual Characteristic}{virtualChar}
+\begin{defn}{Virtual Characteristic}{virtualEChar}
   \[
   \chi_y(\{L_1, ..., L_r\}, E)_M = h_y\left(e \prod_{i=1}^r \frac{1-\ell_i^{-1}}{1 + yl_i^{-1}}\right)
 \]
@@ -3967,7 +3972,7 @@ $1-y+y^2-\cdots+(-1)^n y^n$ on $\CP^n$.
 \end{Proof}
 
 
-\subsection{Virtual Todd Genus}
+\subsection{Virtual Todd Genus}\label{sec:virtToddGenus}
 
 Let us now translate the results over for splitting manifolds. Let $E \to M$ be complex vector bundle over a
 manifold, $F(M)$ the associate flag manifold such that the pullback along $f: F(M) \to M$ makes $E$ split into
@@ -4084,8 +4089,6 @@ and when $y=1$, we shall see that the spin index will satisfy the equation:
   T_1(u+v) = T_1(u) + T_1(v) - T_1(u,v,u+v)
 \]
 
-
-
 \section{T-characteristic -- combining Algebraic and Geometric information}\label{sec:T-Char}
 
 So far, we saw that the Todd class captures some information about the underlying space $X$. We shall want
@@ -4104,11 +4107,21 @@ two together, we get:
 Note that if $E = \mathbbm{1}$, then $T(X,\mathbbm{1}) = \kappa[\ch(\mathbbm{1})\td(TM)] = \kappa[\td(TM)]$
 showing that we reduce to only holding information about $X$.
 As $\C^*$-bundles over $M_n$ are classified by elements $d \in H^2(M_n, \Z)$, we shall sometimes write $T(M_n,
-d)$ for $T(M_n, E)$ where $E$ is associated to $d$. \textcolor{red}{A thing with virtual, eq. 4 (WILL BE
-MOVED TO VIRTUAL SECTION} .
+d)$ for $T(M_n, E)$ where $E$ is associated to $d$. By the results in section~\ref{sec:virtToddGenus}:
+\[
+  T(M, d) = T(M) - T(-d)_M
+\]
+which we can also deduce from the definitions:
 
-If $E$ is a complex vector bundle of dimension $q$, $E'$ of dimension $q'$, both over $M_n$, then (by the
-virtual equation of eq4) we get:
+\begin{align*} &= T(M_n) - T(-d)_M \\ &= \kappa_n[\text{td}(TM)] - \kappa_n[(1 - e^d) \cdot \text{td}(TM)] \\
+&= \kappa_n[\text{td}(TM) - (1 - e^d) \cdot \text{td}(TM)] \\ &= \kappa_n[\left(1 - (1 - e^d)\right) \cdot
+\text{td}(TM)] \\ &= \kappa_n[\left(1 - 1 + e^d\right) \cdot \text{td}(TM)] \\ &= \kappa_n[e^d \cdot
+\text{td}(TM)]\\
+&= T(M, d)
+\end{align*}
+Notice how this mirrors the same property as the Euler characteristic (\textcolor{red}{ref:HERE}). If $E$ is a complex
+vector bundle of dimension $q$, $E'$ of dimension $q'$, both over $M_n$, then using the
+above equation we get:
 \[
   T(M_n, E\oplus E') = T(M_n, E) + T(M_n, E')
 \]
@@ -4125,7 +4138,7 @@ Then $\wedge^p(T^*M)\otimes E$, so $T(M_n, \lambda^p(T^*M)) = T^p(M_n)$. By taki
 \[
   T_y(M_n, E) = \sum_{p=0}^n T^p(M_n, E)y^p
 \]
- we with (virtual eq.4) we get:
+Thus we can re-write the $T$-characteristic as:
  \[
    T(M_n,E) = \kappa_n \left[\ch(E)\ch\left(\bigwedge^p(T^*M)\right) \td(TM)\right]
  \]
@@ -4137,17 +4150,25 @@ Notice that:
 \[
   T_{-1}(M_n, E) = q\cdot\chi(M_n)
 \]
-recovering the Euler-Poincar\'e characteristic of $M_n$. Similarly, generalizing~\cref{pr:propofToddGenus} we
-get:
+recovering the Euler-Poincar\'e characteristic of $M_n$, and multiplying by $q$ as it is the dimension of $E$.
+Similarly, generalizing~\cref{pr:propofToddGenus} we get:
 \[
-  T^p(M_n, E) = (-10^n T^{n-p}(M_n, E^*)
+  T^p(M_n, E) = (-1)^n T^{n-p}(M_n, E^*)
 \]
 and if $p  =0$:
 \[
   T(M_n, E) = (-1)^n T\left(M_n, \bigwedge^n(T^*M)\otimes E^*\right)
 \]
-Then, by doing the same techniques to generalize the Total Chern class to the Total $y$-Chern class, we can se
-that:
+Recovering the duality of $\chi^p$. Next, by extending $\ch(-)$ so that it works on ``generating  functions'':
+  \[
+    \ch_{(y)}(E) = e^{(1+y)\gamma_1} + \cdots + e^{(1+y)\gamma_q}
+  \]
+where $\gamma_i$ are the Chern roots of $E$. Then:
+\[
+  \ch_{(y)}(E\oplus E') = \ch_{(y)}(E) + \ch_{(y)}(E') \qquad \text{and} \qquad \ch_{(y)}(E\otimes E')
+  = \ch_{(y)}(E)\cdot \ch_{(y)}(E')
+\]
+and so combining with the results previous results we get:
 \[
   T_y(M_n, E\oplus E') = T_y(M_N, E) + T_y(M_n, E')
 \]
@@ -4158,77 +4179,189 @@ that:
   T_y(M\times N, \pi_M^*(E)\otimes \pi_N^*(\eta)) = T_y(M, E)T_y(N, \eta)
 \]
 
-Let us now develop this to the define the virtual $T$-characteristic
+Let us now develop this to the define the virtual $T$-characteristic. Motivated by the case for the Euler
+characteristic (\cref{df:virtualEChar}), we define the following:
 
-\textcolor{red}{this is 12.3 of Hirzebruch. 12.3 is the last of section 12}
-
-\section{Split Manifolds and Splitting Method}\label{sec:splitManandSplitMethods}
-
-\textcolor{red}{As far as I can tell, this is just explaining the splitting method and so I don't need to go
-over this because I already do in~\cite{NateKTheory}}
-
-
-\textcolor{red}{I will look at Gallier notes later to see if there is anything I need to fill in here}
-
-
-\textcolor{red}{Move 12.3 here more virtual results}
+\index{Virtual T-characteristic}
+\begin{defn}{Virtual T-characteristic}{virtualTChar}
+  \[
+    T_y(\{v_1, ..., v_r\}, E)_M = \kappa_n \left[ \ch_{(y)}(E) \prod_{i=0}^r R(y; v_i) \sum_{j=0}^\infty
+    T_j(y; c_1(M_n), ...)\right]
+  \]
+\end{defn}
 
 
 
-\subsection{Application to Splitting Principle}
+\begin{prop}{Properties of Virtual T-characteristic and Submanifolds}{propVirtTChar}
+  \begin{enumerate}
+    \item   Let $V_{n-1}$ be an almost complex submanifold of $M_n$ ,$v \in H^2(M_n, \Z)$ the cohomology class
+    determined by $V_{n-1}$ and $j: V_{n-1} \hookrightarrow M_n$ be its embedding into $M_n$. Let $v_2, ..., v_r
+    \in H^2(M_n ,\Z)$ and $E$ a $q$-dimensional complex bundle over $M_n$. Then:
+    \[
+      T_y(\{j^*v_2, ..., j^*v_r\}, j^*(E))_V = T_y(\{v, v_2, ..., v_r\}, E)_M
+    \]
+   \item the functional equation in~\cref{th:funcalEquationofTy} extends to the virtual $T$-characteristic.
+   \item $T_y(\{v_1, ..., v_r\}, E)$ is a $n-r$ degree polynomial in $y$ with rational coefficients, and if $r
+     =n$:
+     \[
+       T_y(\{v_1, ..., v_n\}, E) = q\cdot \int_M v_1\cdots v_n
+     \]
+   \item $y^{n-r}T_{\frac{1}{y}}(\{v_1, ..., v_r\}, E)_M = (-1)^{n-r}T_y(\{v_1, ..., v_r\}, E)_M$
+   \item If $M$ is an $n$-dimensional smooth manifold, $L$ is a line bundle over $M$ with chern class $1+v$, $v \in H^2(M, \Z)$, $E$ is
+     a $q$-dimensional vector bundle over $M$, and $v_1, ..., v_r \in H^2(M, \Z)$, then:
+     \begin{align*}
+       T_y&(\{v_1, ..., v_r\}, E)_M =\\
+          & T_y(\{v_1, ..., v_r\}, E)_M + T_y(\{v_1, ..., v_r\}, E\otimes L^{-1})_M + yT_y(\{v_1, ..., v_r,
+          v\}, E\otimes L^{-1})_M
+     \end{align*}
+   \item following the above convention and letting $V\sse M$ be a codimension $1$ submanifold:
+     \[
+       T^p(M_n, E) = T^p(V_{n-1}, j^*(E)) + T^p(M_n, E\otimes L^{-1}) + T^{p-1}(V, j^*(E\otimes L^{-1}))
+     \]
+  \end{enumerate}
+\end{prop}
+
+\begin{Proof}
+  definition unpacking.
+\end{Proof}
 
 
-The important thing is when the Todd genus comes back into the discussion. I will put here the last section,
-13.6:
 
-13.6. Let $X$ be a compact almost complex split manifold of complex dimension $n$. We use the notations of 13.5 a) and derive a formula which will imply that the TODD genus $T(X)$ can be expressed in terms of virtual indices:
+Let us apply this to a split manifold. Let $M$ be a compact almost complex split manifold of complex dimension
+$n$ so that $c(M) = \prod_{i=1}^n (1+a_i)$ for appropriate $a_i$. Then the Todd genus $T(M)$ can be expressed in terms of virtual indices:
+\begin{prop}{Todd Genus in Terms of Virtual T-characteristic}{toddGenusinTermsofVirtualT-characteristic}
+  Let $M$ be a complex split manifold, $TM$ split into $A_1, ..., A_n$. Then:
+    \[
+  (1+y)^n T(M) = \sum_{l=0}^n y^l \sum_{1\leq i_1<\cdots<i_l\leq n} T_y(a_{i_1},\ldots,a_{i_l})_M
+  \]
+\end{prop}
 
-\[
-(1+y)^n T(X) = \sum_{l=0}^n y^l \sum_{1\leq i_1<\cdots<i_l\leq n} T_y(a_{i_1},\ldots,a_{i_l})_X \tag{13}
-\]
-
-For the proof we recall the definition of the virtual $T_y$-genus in 11.2 (7), apply (12), and obtain for the right hand side of (13)
-
+\begin{Proof}
 \begin{align*}
-\kappa_n\left[\prod_{i=1}^n (1+yR(y;a_i)) \prod_{i=1}^n Q(y;a_i)\right]
-&= \kappa_n\left[\prod_{i=1}^n (Q(y;a_i) + a_i y)\right] \\
-&= \kappa_n\left[\prod_{i=1}^n \frac{(1+y)a_i}{1-\exp(-(1+y)a_i)}\right] \\
-&= (1+y)^n \kappa_n\left[\prod_{i=1}^n \frac{a_i}{1-\exp(-a_i)}\right] = (1+y)^n T(X)
+  \kappa_n\left[\prod_{i=1}^n (1+yR(y;a_i)) \prod_{i=1}^n Q(y;a_i)\right]
+  &= \kappa_n\left[\prod_{i=1}^n (Q(y;a_i) + a_i y)\right] \\
+  &= \kappa_n\left[\prod_{i=1}^n \frac{(1+y)a_i}{1-\exp(-(1+y)a_i)}\right] \\
+  &= (1+y)^n \kappa_n\left[\prod_{i=1}^n \frac{a_i}{1-\exp(-a_i)}\right]\\
+  &= (1+y)^n T(M)
 \end{align*}
 
-For $y=1$ the virtual $T_y$-genus becomes the virtual index:
-
-\[
-2^n T(X) = \sum_{l=0}^n \sum_{1\leq i_1<\cdots<i_l\leq n} \tau(a_{i_1},\ldots,a_{i_l})_X \tag{13*}
-\]
-
-Since the virtual index is an integer ({\color{red}Theorem 9.3.1}) a corollary is
-
-{\bf Theorem 13.6.1.} {\it The TODD genus of a compact almost complex split manifold multiplied by $2^n$ is an integer.}
-
-Formula (13) can be generalised to apply to the virtual $T$-genus. If $b_1,\ldots,b_r \in H^2(X,Z)$, $(r\leq n)$, then
-
-\[
-(1+y)^{n-r} T(b_1,b_2,\ldots,b_r)_X = x_n\left[\prod_{i=1}^r R(y;b_i)(1+yR(y;b_i))^{-1}\prod_{j=1}^n(1+yR(y;a_j))\prod_{k=1}^n Q(y;a_k)\right] \tag{14}
-\]
-
-This formula, and the definition of the virtual $T_y$-genus, imply that $(1+y)^{n-r}T(b_1,\ldots,b_r)_X$ can be expressed as a sum of terms each of which is a virtual $T_y$-genus multiplied by a polynomial in $y$ with integral coefficients. If $y=1$ then $2^{n-r}T(b_1,\ldots,b_r)_X$ is expressed as a sum of
-
-\begin{thm}{Splitting and Virtual Todd Genus}{splittingAndVirtToddGenus}
-Let $X$ be a compact almost complex split manifold, and let $b_1,\ldots,b_r$ be elements of
-$H^2(X,\mathbb{Z})$. The virtual \textsc{Todd} genus $T(b_1,\ldots,b_r)_X$ multiplied by $2^{n-r}$ is an
-integer.
-\end{thm}
+\end{Proof}
 
 
-\subsection{Todd Genus Invariant Under Splitting}\label{sec:ToddGenusSplittingInvariatn}
 
+
+\section{Todd Genus Invariant Under Splitting}\label{sec:ToddGenusSplittingInvariatn}
+
+Let $X_\Delta$ be the pullback on which
 Let us now show that $T(X) = T(X_\Delta)$, that is the Todd genus is invariant under splitting. Essentially,
-$T(F(n)) = 1$ and $T(X_\Delta) = T(X)T(F(n)) = T(X)$.
+if $\bf{F}(n)$ is the appropriate flag manifold, then $T(F(n)) = 1$ we shall show
+\[
+  T(X_\Delta) = T(X)T(F(n)) = T(X)
+\]
 
+\subsection{Algebraic Preliminaries} \label{sec:AlgebraicPreliminaries}
 
+Let $\mathbb{F}$ be a field of characteristic 0, and let $c_1, \dots, c_n$ be indeterminates over $\mathbb{F}$. We consider the field extension $\mathbb{F}(c_1, \dots, c_n)(\gamma_1, \dots, \gamma_n)$ where the $c_i$ are the elementary symmetric functions of the $\gamma_j$. The $n!$ elements $\gamma_1^{a_1} \gamma_2^{a_2} \cdots \gamma_{n-1}^{a_{n-1}}$ with $0 \le a_i \le n-i$ form a basis for this extension.
 
+Any formal power series $P$ in $\gamma_1, \dots, \gamma_n$ with coefficients in $\mathbb{F}$ can be uniquely expressed as:
+\[
+P = \sum_{a_1, \dots, a_{n-1}} e_{a_1, \dots, a_{n-1}} \gamma_1^{a_1} \cdots \gamma_{n-1}^{a_{n-1}}
+\]
+where the coefficients $e_{a_1, \dots, a_{n-1}}$ are power series in $c_1, \dots, c_n$.
 
+\begin{defn}{Indicator}{IndicatorDef}
+The **indicator** of a formal power series $P$ in the variables $\gamma_1, \dots, \gamma_n$ is defined as:
+\[
+e(P) = (-1)^{n(n-1)/2} e_{n-1, n-2, \dots, 1}
+\]
+where $e_{n-1, n-2, \dots, 1}$ is the coefficient of the basis element $\gamma_1^{n-1}\gamma_2^{n-2}\cdots\gamma_{n-1}^1$.
+\end{defn}
+
+The indicator can be calculated with the formula:
+\[
+e(P) = \frac{\sum_{s \in S_n} \text{sign}(s) \cdot s(P)}{\prod_{i>j} (\gamma_i - \gamma_j)}
+\]
+where the denominator is the Vandermonde determinant.
+
+\begin{lem}{Invariance of Indicator}{IndicatorInvariance}
+If a polynomial $P$ is invariant under the interchange of $\gamma_i$ and $\gamma_j$ for some $i \neq j$, then its indicator $e(P)$ is zero.
+\end{lem}
+
+\begin{lem}{Indicator of a Product}{IndicatorProduct}
+Let $P = \prod_{i>j} \frac{\gamma_i - \gamma_j}{1 - e^{-(\gamma_i - \gamma_j)}}$. Then the indicator is $e(P) = 1$.
+\end{lem}
+
+\subsection{The Flag Manifold} \label{sec:FlagManifold}
+
+The flag manifold $\mathbf{F}(n) = GL(n, \mathbb{C}) / \mathcal{T}(n, \mathbb{C})$, where $\mathcal{T}(n, \mathbb{C})$ is the subgroup of upper triangular matrices, is a complex analytic split manifold. Its cohomology ring is given by:
+\[
+H^*(\mathbf{F}(n), \mathbb{Z}) \cong \mathbb{Z}[\gamma_1, \dots, \gamma_n] / I^+(c_1, \dots, c_n)
+\]
+where $I^+$ is the ideal generated by the elementary symmetric functions of the $\gamma_i$ of positive degree. The total Chern class of its tangent bundle is:
+\[
+c(T\mathbf{F}(n)) = \prod_{i>j} (1 + \gamma_i - \gamma_j)
+\]
+
+\begin{thm}{Todd Genus of the Flag Manifold}{ToddGenusFlag}
+The Todd genus of the flag manifold $\mathbf{F}(n)$ is 1.
+\end{thm}
+\begin{Proof}
+This result is derived from \cref{lm:IndicatorProduct} and the definition of the Todd genus:
+\[
+T(\mathbf{F}(n)) = \kappa_n \left[ \prod_{i>j} \frac{\gamma_i - \gamma_j}{1 - e^{-(\gamma_i - \gamma_j)}} \right] = 1
+\]
+where $\kappa_n$ denotes evaluation on the fundamental cycle.
+\end{Proof}
+
+\subsection{Multiplicative Property and Integrality Theorem} \label{sec:Integrality}
+
+\begin{thm}{Multiplicative Property of the T-characteristic}{MultiplicativeProperty}
+Let $E$ be a $q$-dimensional complex vector bundle over a compact $n$-dimensional almost complex manifold $M$. Let $\mathcal{E}$ be the associated fiber bundle with the flag manifold $\mathbf{F}(q)$ as fiber, and let $\phi: \mathcal{E} \to M$ be the projection. For any complex line bundle $C$ over $M$, the T-characteristic is multiplicative:
+\[
+T(\mathcal{E}, \phi^* C) = T(M, C) \cdot T(\mathbf{F}(q)) = T(M, C)
+\]
+This also holds for the virtual T-characteristic of a virtual submanifold $(b_1, \dots, b_r)_M$:
+\[
+T(\phi^*b_1, \dots, \phi^*b_r, \phi^*C)_{\mathcal{E}} = T(b_1, \dots, b_r, C)_M
+\]
+\end{thm}
+\begin{Proof}
+The proof relies on expressing the T-characteristic as an integral over the total space and using the indicator $e(P)$ from \cref{sec:AlgebraicPreliminaries} to evaluate the contribution from the fiber, which is shown to be 1 by \cref{lm:IndicatorProduct}.
+\end{Proof}
+
+\cref{th:MultiplicativeProperty} is a crucial tool for relating the invariants of a manifold to those of its associated split manifold. By applying this result to the split manifold $M_\Delta$ associated with $M$, we arrive at the main integrality theorem.
+
+\begin{thm}{Integrality Theorem}{IntegralityTheorem}
+Let $M$ be a compact almost complex manifold of complex dimension $n$.
+\begin{enumerate}
+    \item The Todd genus $T(M)$ multiplied by $2^n$ is an integer.
+    \item More generally, for any classes $b_1, \dots, b_r \in H^2(M, \mathbb{Z})$, the virtual Todd genus $T(b_1, \dots, b_r)_M$ multiplied by $2^{n-r}$ is an integer.
+\end{enumerate}
+\end{thm}
+\begin{Proof}
+\cref{th:MultiplicativeProperty} implies that $T(M) = T(M_\Delta)$. For a split manifold, $2^n T(M_\Delta)$ can be expressed as a sum of virtual indices, which are known to be integers. The result follows.
+\end{Proof}
+
+\subsection*{Further Multiplicative Properties}
+
+\begin{thm}{Multiplicative Property of the Generalized Todd Genus}{GeneralizedMultiplicativeProperty}
+The multiplicative property extends to the generalized $T_y$-genus. For a fiber bundle $\mathcal{E}$ over $M$ with fiber $\mathbf{F}(q)$, we have:
+\[
+T_y(\mathcal{E}) = T_y(M) \cdot T_y(\mathbf{F}(q))
+\]
+This property also holds for fiber bundles where the fiber is a complex projective space $\CP^{q-1}$. Specifically, if $\mathcal{E}'$ is a fiber bundle over $M$ with fiber $\CP^{q-1}$ associated with a $(q)$-dimensional complex vector bundle, then:
+\[
+T_y(\mathcal{E}') = T_y(M) \cdot T_y(\CP^{q-1})
+\]
+\end{thm}
+% ```
+%
+%
+%
+% \textcolor{red}{theorem 14.3.1 is the one that says $T(V) = T(V^\Delta)$}
+%
+%
+%
 
 
 
@@ -4599,7 +4732,7 @@ Certainly this ring is graded, and it is \emph{anti-commutative}, namely:
 for now.}
 
 
-\section{Intersection Form: Index and Hirzebruch Signature Theorem}
+\section{Intersection Form: Spin Index and Hirzebruch Signature Theorem}
 
 On any $4k$-dimensional manifold, there is a natural generalization of the symplectic form known as the
 \emph{intersection form}: given a choice of $x,y \in H^{2k}(M, \R)$, Define:
@@ -4731,7 +4864,7 @@ Now we further know the Künneth formula for the $h^{p,q}$ of a product (of two,
 Therefore, (3) holds. Then, our previous theorem implies $I(M)=K(M)$ for some $K$, a multiplicative sequence. But, $K(\mathbb{P}_\mathbb{C}^{2k})=1$, there and we know there is one and only one multiplicative sequence $\equiv1$ on all $\mathbb{P}_\mathbb{C}^{2k}$, it is $L$. Therefore, $I(M)=L$, as claimed.
 \end{Proof}
 
-\section{virtual Index}
+\section{Index and Splitting Principle}
 
 This is about the index of the intersection of manifolds that remember the manifolds that where intersected.
 This can be done within the modern language of \emph{derived algebraic geometry} by taking $M\otimes^{\bf{L}}
@@ -4908,20 +5041,39 @@ object are still technically ``derived'' objects.
 \chapter{Riemann Roch Theorems}\label{cha:RR}
 
 
-here
+In this final chapter, we shall proof the Hirzebruch Riemann Roch. We start off with giving a proof of the
+classical Riemann-Roch theorem for curves and also a simple extension to the Riemann-Roch for vector bundles
+over curves as it provides insight on the algebra of increasing the dimension of the bundle beyond the
+dimension of the base space. We shall then start the proof of Hirzebruch Riemann Roch for line bundles by connection the
+$\chi_y$-characteristic to the $T_y$-characteristic by showing they are both equal to the spin index $\tau$
+when $y =1$, and shall force their coefficients to be equal and hence also agree at $y=-1$ which is the
+Euler-Poincar\'e Characteristic for both the $\chi_y$- and $T_y$-characteristic. It is then extended to
+Hirzebruch Riemann Roch for vector bundles by one again taking advantage of the splitting principle, giving
+the final complete proof.
+
+A section at the end of this chapter will be dedicated to very rapidly going over the Grothendieck Riemann
+Roch. As a detailed proof would require build-up in intersection theory, the proof shall assume all the
+necessary background knowledge and will reference~\cite{fultonIntersectionTheory1984} for the necessary
+background information.
+
+I also have an idea on how this should naturally generalize to derived schemes, so I added a section about
+this idea at the very end.
 
 
 \section{Classical Riemann Roch Proofs}\label{sec:RR}
-(This may not be important for us; it will give the fact that $\dim_\C H^i = 0$ for certain $i$.)
 
-$X$ is admissible if:
-\begin{enumerate}
-  \item $X$ is $\sigma$-compact (locally compact and a countable union of compacts)
-  \item $X$  has finite combinatorial dimension $X$
-\end{enumerate}
+% $X$ is admissible if:
+% \begin{enumerate}
+%   \item $X$ is $\sigma$-compact (locally compact and a countable union of compacts)
+%   \item $X$  has finite combinatorial dimension $X$
+% \end{enumerate}
+%
+% As (1) implies paracompact, our work on fine and soft sheaves goes through. The whole point is to have $H^i
+% = 0$ for large enough $i$.
 
-As (1) implies paracompact, our work on fine and soft sheaves goes through.
-
+Let us start with the most classical form, presented similarly to the proof in Hartshorne
+(see~\cite{hartshorneAlgebraicGeometry2013}) with some extra details added as compared to Hartshorne so that
+we don't reference some of the heavy machinery he built up:
 
 \begin{thm}{RR For Riemann Surface with Line Bundles}{rrForRiemannSurfacewithLineBundles}
   Let $X$ be a compact Riemann surface and $\CL$ a complex analytic line bundle on $X$. Then
@@ -5192,11 +5344,118 @@ If with $y = 1$, then we get the following key result:
   \[
   \chi_1(M) = \sum_{p=0}^n \chi^p(M) = \sum_{p,q}(-1)^qh^{p,q}(M)
 \]
-is equal to the \emph{index} $\tau(M)$ (defined in \cite[8.2]{hirzebruchTopologicalMethodsAlgebraic1995}).
+is equal to the \emph{spin index} $\tau(M)$% (defined in \cite[8.2]{hirzebruchTopologicalMethodsAlgebraic1995}).
 \end{thm}
 
+Throughout this proof, let $M_n$ represent an $n$-dimensional manifold, and $M$ represent the same manifold
+when it is not necessary to remember the dimension.
+
 \begin{Proof}
-  long proof at~\cite[p.125, Thm~15.8.2]{hirzebruchTopologicalMethodsAlgebraic1995}
+  Proof: If $n$ is odd then by~\cref{pr:EulerPCharandSerreDuality}:
+\[
+    \chi^p(M_n) = (-1)^n \chi^{n-p}(M_n) = -\chi^{n-p}(M_n)
+\]
+Thus $\sum_{p=0}^n \chi^p(M_n) = 0$. On the other hand, $\tau(M_n) = 0$ for odd $n$. Thus for $n$ odd the theorem is true for arbitrary compact complex manifolds.
+
+Now suppose $n$ is even and $z_j = x_{2j-1} + i x_{2j}$ are local complex coordinates.  We use the orientation
+given by the natural order $dx_1 \wedge dx_2 \wedge \cdots \wedge dx_{2n}$. Often in the literate for K\"ahler
+manifolds, he orientation for $M_n$ is given by $dx_1 \wedge dx_3 \wedge \cdots \wedge dx_{2n-1} \wedge dx_2
+\wedge dx_4 \wedge \cdots \wedge dx_{2n}$ (ex. see~\cite{hodge1951kahler}). The two orientations differ by a
+sign $(-1)^{\frac{n(n-1)}{2}}$. Without loss of generality, assume $n = 2m$ to avoid sign issues.
+
+Let us now decompose $H^n(M, \R)$ into the orthogonal subspaces on which it will be easy to compute $\tau$.
+Let $B^{p,q}$ be the complex vector space of harmonic forms of type $(p,q)$.
+By~\cref{th:charLineBundleKahlMan}, the fundamental form $\omega$ is a harmonic form of type $(1,1)$ whose
+product with any other harmonic form is again harmonic. Define a homomorphism
+\[
+    L: B^{p,q} \to B^{p+1,q+1}
+\]
+by associating to each form $\alpha \in B^{p,q}$ the form $L(\alpha) = \omega \alpha \in B^{p+1,q+1}$. Then, since $\omega$ is real, $\overline{L\alpha} = L\bar{\alpha}$. By 15.4 there is an anti-isomorphism
+\[
+    \star: B^{p,q} \to B^{n-p,n-q}
+\]
+for which $\star(\alpha) = \overline{\star(\bar{\alpha})} = \star(\bar{\alpha})$. We consider the homomorphism
+\[
+    \Lambda: B^{p,q} \to B^{p-1,q-1}
+\]
+defined by $\Lambda = (-1)^{p+q}\star L\star$. Then $\Lambda = (-1)^{p+q}*L*$ and $\overline{\Lambda\alpha} = \Lambda\bar{\alpha}$.
+
+The kernel of $\Lambda$ is denoted by $B_0^{p,q}$ and called the subspace of effective harmonic forms of type $(p,q)$.
+
+\begin{enumerate}
+  \item  $\Lambda L^k: B_0^{p-k,q-k} \to B^{p-1,q-1}$ $(p+q \leq n, k \geq 1)$ is (up to a non-zero scalar factor) equal to $L^{k-1}$.
+
+\item $L^k: B_0^{p-k,q-k} \to B^{p,q}$ $(p+q \leq n)$ is a monomorphism.
+
+For $p+q \leq n$ there is a direct sum decomposition
+
+\item $B^{p,q} = B_0^{p,q} \oplus LB_0^{p-1,q-1} \oplus \cdots \oplus L^r B_0^{p-r,q-r}$ $(r = \min(p,q))$.
+
+We define $B_k^{p,q} = L^k B_0^{p-k,q-k}$. The elements of $B_k^{p,q}$ are called harmonic forms of type $(p,q)$ and class $k$. The following formula is then decisive for the proof:
+
+\item $\star\varphi = (-1)^{q+k}\bar{\varphi}$ for $\varphi \in B_k^{p,q}$ and $p+q=n$. Note that $\bar{\varphi}$ is an element of $B_k^{q,p}$.
+
+The cohomology group $H^n(M_n,\mathbb{C})$ is a complex vector space [see {\color{red} 15.7 (18)}]
+\item
+\[
+  H^n(M_n,\mathbb{C}) = \sum_{\substack{p+q=n \\k \leq \min(p,q)}} B_k^{p,q}.
+\]
+We recall that the scalar product
+\[
+    (\alpha,\beta) = \int_{M_n} \alpha \wedge \star\beta
+\]
+is defined for harmonic forms $\alpha$, $\beta$ of the same total degree.
+
+\item The summands in the direct sum decomposition (e) are mutually orthogonal with respect to the scalar product.
+
+Proof: The scalar product can be non-zero only if $\alpha \wedge \star\beta$ is of type $(n,n)$. Therefore $B_k^{p,q}$, $B_{k'}^{p',q'}$ are orthogonal for $(p,q) \neq (p',q')$. If $\alpha \in B_k^{p,q}$ and $\beta \in B_{k'}^{p,q}$ for $k > k'$ and $p+q=n$ then
+\[
+    (\alpha,\beta) = (L^k \alpha_0, L^{k'} \beta_0) \text{ with } \alpha_0, \beta_0 \text{ effective } (\Lambda \alpha_0 = \Lambda \beta_0 = 0).
+\]
+Since $L$ and $\Lambda$ are adjoint operators, $(L\alpha,\varphi) = (\alpha,\Lambda\varphi)$, and therefore, by (a), $(\alpha,\beta) = (\alpha_0,\Lambda^k L^{k'} \beta_0) = 0$.
+\end{enumerate}
+
+The cohomology groups $H^n(M_n,\mathbb{R})$ can be identified with the real vector space of real harmonic forms. There is a direct sum decomposition
+
+\[
+  H^n(M_n,\mathbb{R}) = \sum_{\substack{p+q=n \\ k \leq p \leq q}} E_k^{p,q}
+\]
+where $E_k^{p,q}$ is the real vector space of real harmonic forms $\alpha$ which can be written in the form $\alpha = \varphi + \bar{\varphi}$ with $\varphi \in B_k^{p,q}$ (and hence $\bar{\varphi} \in B_k^{q,p}$). Clearly $\tau(M_n)$ is the index (see {\color{red} 8.1}) of the quadratic form
+\[
+    Q(\alpha,\beta) = \int_{M_n} \alpha \wedge \beta \quad (\alpha,\beta \in H^n(M_n,\mathbb{R})).
+\]
+
+By (d) and (f) the real vector space summands in the sum (g) are mutually orthogonal with respect to this quadratic form. Now (d) implies that the quadratic form $(-1)^{q+k}Q(\alpha,\beta)$ is positive definite when restricted to $E_k^{p,q}$.
+
+Therefore
+\[
+    \tau(M_n) = \sum (-1)^{q+k} \dim_{\mathbb{R}} E_k^{p,q}
+\]
+(the sum is over $p+q=n$, $k \leq p \leq q$).
+
+Clearly $\dim_{\mathbb{R}} E_k^{p,q} = 2\dim_{\mathbb{C}} B_k^{p,q}$ for $p < q$. If $n=2m$ then $\dim_{\mathbb{R}} E_k^{m,m} = \dim_{\mathbb{C}} B_k^{m,m}$.
+
+Therefore
+\[
+    \tau(M_n) = \sum (-1)^{q+k} \dim_{\mathbb{C}} B_k^{p,q} \quad (p+q=n, k \leq \min(p,q)).
+\]
+
+Now let $h^{p,q} = \dim_{\mathbb{C}} B^{p,q}$ as before. It follows from (b) and (c) that
+\[
+    h^{p-k,q-k} - h^{p-k-1,q-k-1} = \dim_{\mathbb{C}} B_k^{p,q} \text{ for } p+q \leq n.
+\]
+Since $h^{r,s} = h^{s,r} = h^{n-r,n-s}$ we have
+\[
+    h^{p-k-1,q-k-1} = h^{p+k+1,q+k+1} \text{ for } p+q=n.
+\]
+Finally (h), (i) and (j) imply
+\begin{align*}
+  \tau(M_n) &= \sum_{\substack{k \geq 0 \\ p+q=n}} (-1)^{q-k}h^{p-k,q-k} + \sum_{\substack{k \geq 0 \\ p+q=n}} (-1)^{q+k+1}h^{p+k+1,q+k+1} \\
+    &= \sum_{p+q \leq n} (-1)^qh^{p,q} + \sum_{p+q>n} (-1)^qh^{p,q} \\
+    &= \sum_{p,q} (-1)^qh^{p,q}
+\end{align*}
+
+
 \end{Proof}
 
 This will be a key step in the proof of RR. Note that there is a more direct proof for the above that works
@@ -5211,6 +5470,32 @@ with the equality holding since
 \[
     Q(1;x) = \frac{x(2e^{2x} - (e^{2x} - 1))}{e^{2x} - 1} = \frac{x(e^{2x} + 1)}{e^{2x} - 1} = x\coth(x) = \frac{x}{\tanh(x)}
 \]
+\textcolor{red}{from section 13.6}
+
+For $y=1$ the virtual $T_y$-genus becomes the virtual index:
+
+\[
+2^n T(M) = \sum_{l=0}^n \sum_{1\leq i_1<\cdots<i_l\leq n} \tau(a_{i_1},\ldots,a_{i_l})_M \tag{13*}
+\]
+
+Since the virtual index is an integer ({\color{red}Theorem 9.3.1}) a corollary is
+
+{\bf Theorem 13.6.1.} {\it The TODD genus of a compact almost complex split manifold multiplied by $2^n$ is an integer.}
+
+Formula (13) can be generalised to apply to the virtual $T$-genus. If $b_1,\ldots,b_r \in H^2(M,Z)$, $(r\leq n)$, then
+
+\[
+(1+y)^{n-r} T(b_1,b_2,\ldots,b_r)_M = x_n\left[\prod_{i=1}^r R(y;b_i)(1+yR(y;b_i))^{-1}\prod_{j=1}^n(1+yR(y;a_j))\prod_{k=1}^n Q(y;a_k)\right] \tag{14}
+\]
+
+This formula, and the definition of the virtual $T_y$-genus, imply that $(1+y)^{n-r}T(b_1,\ldots,b_r)_M$ can be expressed as a sum of terms each of which is a virtual $T_y$-genus multiplied by a polynomial in $y$ with integral coefficients. If $y=1$ then $2^{n-r}T(b_1,\ldots,b_r)_M$ is expressed as a sum of
+
+\begin{thm}{Splitting and Virtual Todd Genus}{splittingAndVirtToddGenus}
+Let $M$ be a compact almost complex split manifold, and let $b_1,\ldots,b_r$ be elements of
+$H^2(M,\mathbb{Z})$. The virtual \textsc{Todd} genus $T(b_1,\ldots,b_r)_M$ multiplied by $2^{n-r}$ is an
+integer.
+\end{thm}
+
 
 \subsection{For Line Bundles}\label{sec:HRRlineBundle}
 
