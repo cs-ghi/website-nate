@@ -1090,35 +1090,21 @@ are multiple different topologies that can be put on a space some having may res
 others may not. In this paper, we always worked with the natural quotient topology induced by the euclidean topology we
 implicitly were adding to $\R$.
 
-Defining a $1$-dimensional space as the set of numbers and subset of numbers is too vague. It
-doesn't define any notion of ``locality'' that is the key notion in topology, namely we have no notion of open
-or closed sets, and there are no restrictions on which sets can be part of a space (ex. we don't want the
-countable intersection of open sets in our collection, and for the euclidean topology we certainly don't want
-non-measurable sets to be open). Even worse, as every tuple is technically a set, the definition of space
-presented above includes $\R^2, \R^3, ..., $ and in some model's of math can include any sets as all these
-space are ultimately sets of numbers, but it is ``evident'' that the definition is really only considering
-one-dimensional and $0$-dimensional spaces. The first step to fixing this is by defining a topological space
-as a set of sets containing the empty set and itself, is closed under finite intersection, and arbitrary
-unions. We now have a notion of locality, and can start adding further constrictions such as being metrizable
-to actually have distance be well-defined. In fact, a metric cannot be defined on a non-Hausdorff space, and
-so the use of ``distance'' in the above is apocryphal. All details can be found in~\cite{NateTop}.
+Defining a $1$-dimensional space as the set of numbers and subset of numbers is too vague. As the definition
+currently stands, there are way too many possible subsets of $\R$, and by set-theoretic arguments the current
+definition would be able to produce $\R^2, \R^3, ..., $. Fixing this is a non-trivial task, as it turns out
+that there is no universal definition of dimension that works in all contexts. The details can be found in
+textbooks such as \cite{NateTop}.
 
-To not rely on distance, the Hausdorff condition is formally defined as:
+Furthermore, non-Hausdorff spaces are \emph{not} metrizable, and hence it is not well-defined to say that the
+\emph{distance} between two points is zero. All details can be found in~\cite{NateTop}. This is why the notion
+of Hausdorffness above eliminates the use of distance by working with open subsets.
 
-This shows that points can be \emph{separated}. The approach taken here with the idea of distance is to avoid
-introducing the more abstract notion of ``separation'' and stick to the intuitive notion of distance.
+The use of gluing to represent non-Hausdorff spaces is in fact well-founded by the following exercise: any
+non-Hausdorff space is the quotient space of a Hausdorff space. Thus, \emph{all} non-Hausdorff spaces can be
+obtained by gluing, making the construction in this paper a reasonable intuition for non-Hausdorff spaces in
+a mathematical context.
 
-The examples of glued sets almost respect the rules of an equivalence relationship; we technically should
-separate each number into a singleton set so that our space is a set of equivalence classes. The details can
-be found in~\cite{chwojkosrawleyPreliminaryChapter2023}.
-
-
-\textcolor{red}{We can in a sense say that we are looking at complete topologies, topologies that come from
-the order completion of $\le$. There is a sense in which $\R$ is the universal object of this completion
-(HERE), and then $\R^n$ is the universal higher-dimensional analog by the universal property of products.
-Then it is an easy exercise to see that any non-Hausdorff space is the quotient of a Hausdorff space, so any
-non-Hausdorff complete space can be represented by a quotient of a subset of $\R^n$}.
-% \newpage
 
 \printbibliography
 \end{document}
