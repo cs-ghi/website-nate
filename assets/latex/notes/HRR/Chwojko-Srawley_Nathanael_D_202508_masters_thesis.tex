@@ -1,4 +1,5 @@
-\documentclass{book}
+\documentclass{ut-thesis}
+
 %\documentclass{book}
 %If you're going to print this, perhaps get ride of oneside so that \parts{} will have their own page!
 \title{
@@ -7,8 +8,13 @@
 	\end{huge}
 	}
 \author{Nathanael Chwojko-Srawley}
+\degree{Masters}
+\department{Mathematics}
+\gradyear{2025}
 %\date{} % If you want to specify a date
 \usepackage{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{extarrows}
 \usepackage{multicol} % For multiple columns
 \usepackage{stackengine}
@@ -36,7 +42,7 @@
 \usepackage{amsthm}           % Used to create theorem enviroments.
 \usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
 \usepackage{blindtext}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+% \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage[answerdelayed]{exercise}
@@ -496,9 +502,6 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 
 \begin{document}
 \maketitle
-\tableofcontents
-
-\newpage
 
 This paper is an exposition on the \emph{Hirzebruch-Riemann-Roch Theorem}, a generalization of the classical
 Riemann Roch theorem for curves and Riemann surfaces. The Classical Riemann Roch Theorem asserts that if $D$
@@ -658,6 +661,9 @@ why the concepts are being covered as they are presented.
 % Bonus section in chapter~\ref{cha:RR} about Grothendeick Riemann Roch which will be self-contained and will be
 % to show what is different in the generalization and the key steps for the generalization.
 
+\tableofcontents
+
+\newpage
 \chapter{Motivation: Riemann Roch Problem}\label{cha:motivation}
 
 
@@ -3382,9 +3388,7 @@ However, this does not give the expected result:
   showing we do not recover the Euler characteristic.
 \end{example}
 
-The problem is that we are not taking into considering the geometric information of $M$\footnote{recall the
-Euler class is not defined directly as the Top Chern class on  $TM$ to take into account the geometric
-information of the given manifold, see~\cite{NateKTheory}}. What would be desired
+The problem is that we are not taking into considering the geometric information of $M$. What would be desired
 is a ``correction class'' $C(TM)$ ($C$ for correction) where $TM$ is the tangent bundle where:
 \[
   \chi(M, E) = \int_M \ch(E) \smile C(TM)
@@ -5921,7 +5925,8 @@ Let us reduce this proof in the way stated at the beginning:
     The Grothendieck-Riemann-Roch theorem holds for the projection $\pi: \P^n \times Y \to Y$.
 \end{prop}
 \begin{Proof}
-    We need to show that for any $\alpha \in K(\P^n \times Y)$, $\pi_*(T_{\P^n \times Y}(\alpha)) = T_Y(\pi_* \alpha)$. By the Künneth formula, it suffices to check for elements of the form $\alpha = \beta \otimes \gamma$, where $\beta \in K(\P^n)$ and $\gamma \in K(Y)$.
+    We need to show that for any $\alpha \in K(\P^n \times Y)$, $\pi_*(T_{\P^n \times Y}(\alpha)) = T_Y(\pi_*
+    \alpha)$. By the K\"unneth formula, it suffices to check for elements of the form $\alpha = \beta \otimes \gamma$, where $\beta \in K(\P^n)$ and $\gamma \in K(Y)$.
     The tangent bundle splits as $T{\P^n \times Y} \cong \pi_1^* T{\P^n} \oplus \pi_2^* TY$, so the Todd class is multiplicative: $\td(T{\P^n \times Y}) = \pi_1^* \td(T{\P^n}) \cdot \pi_2^* \td(TY)$. The Chern character is also multiplicative for exterior products.
     The right side of the GRR formula becomes:
     \begin{align*}
@@ -5994,7 +5999,7 @@ theory.
 \section{** Current Generalization Results}\label{sec:DRR}
 
 Since the publication of the Hirzebruch-Riemann-Roch in 1954, many generalizations have taken place. In the
-purely algebraic perspective, Grothendeick proved the Grothendieck-Riemann-Roch in 1957. In 1963, Atiyah and
+purely algebraic perspective, Grothendieck proved the Grothendieck-Riemann-Roch in 1957. In 1963, Atiyah and
 Singer proved the \emph{Atiyah-Singer Index Theorem} (ASIT), a generalization in a more analytic context by taking
 advantage of the fact that the Hodge operator $\overline{\partial}$ is an \emph{elliptic operator} and uses
 \emph{Bott periodicity} to replace the more constricted use-case of cobordism (notice they are both
@@ -6017,7 +6022,6 @@ point of view, the results were extended as far as non-compact orbifolds in 2016
 %
 % \textcolor{red}{flesh out idea of how this may extend to derived categories, and maybe even derived Noetherian
 % schemes without issue using that paper}
-
 
 
 
