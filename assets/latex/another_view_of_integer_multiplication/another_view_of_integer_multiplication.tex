@@ -325,7 +325,7 @@
 \newcommand{\Int}{{\operatorname{int}}}
 \newcommand{\Irr}{{\operatorname{Irr}}}
 \newcommand{\Jac}{{\operatorname{Jac}}}
-\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Mor}{{\operatorname{Mor}}}
 \newcommand{\Nil}{{\operatorname{Nil}}}
 \newcommand{\Obj}{{\operatorname{Obj}}}
 \newcommand{\Out}{{\operatorname{Out}}}
@@ -634,7 +634,8 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 \begin{document}
 \maketitle
 
-I want to explore the natural numbers and integers via a formalist philosophy that is not set-theoretical,
+
+I want to explore the natural numbers and the polynomial rings via a formalist philosophy that is not set-theoretical,
 adding operations and relations and seeing what objects we came up with. I will aim towards representing $\N, \Z,
 \Q$ and polynomial rings of these; the formalism of what happens next is well codified in standard
 undergraduate. The aim is not to get there directly, but to explore on our way there.
@@ -644,7 +645,7 @@ The main relations of interest will be:
   \item existence: imposing the existence of an element, and then if any operation is added imposing (formal)
     completion.
   \item identification: imposing $x*x =x$
-  \item vitalization: imposing the existence of an inverse pivoted around an identity. \textcolor{red}{Why is
+  \item virtualization: imposing the existence of an inverse pivoted around an identity. \textcolor{red}{Why is
     it natural to virtualize when there is an identity; delete this when you figured it out}
   \item element-wise absorption law: given two separate elements $x,y$ is $xy = x$ or $xy = y$
 \end{itemize}
@@ -677,10 +678,27 @@ We shall always assume:
         modelling. In lattice theory, the absorption law is a natural choice. When function addition and
         composition are taken on affine linear functions, right distributivity is natural.
 
-        If we are concerned with area as we add dimensions, then distributivity is a natural candidate.
-        With commutativity, it suffices to define left-distribution. This imposes the
-        following diagram to commute:
+        As we are assuming associativity and commutativity, for any object $(S,+)$ and any $*$ (not
+        necessarily distributive), then we have $(S, +, *) \to (\Mor(S, +), \circ)$ which can be done using
+        regular (left or right) representation. We shall almost always
+        assume this is faithful, meaning there are no annihilators (which is automatic if there is an
+        identity). What distributivity guarantees us is that we can insure the endomorphisms are
+        \emph{linear}\footnote{not just affine! affine is right but not left distributive}.
 
+        \textcolor{red}{we want faithful reps. If there is an id then automatically, If not we must not have
+        ``annihilators''. Think about whether you need to consider this.}
+
+        As $\N$ has this property and we can internet multiplying numbers as getting integral boxes, we shall
+        desires this linearity. We shall think about what it means to have distributivity in the case of
+        polynomial rings, especially since $x\cdot (-)$ is so important for finding char and min polynomials,
+        not to even mention its use in representation theory.
+
+        % If we are concerned with area as we add dimensions, then distributivity is a natural candidate.
+        % With commutativity, it suffices to define left-distribution. This imposes the
+        % following diagram to commute:
+
+        The following commutative diagram is placed to represent the linearity of $\End$ in what may be more
+        familiar categorical language to some readers:
         \[
           \begin{tikzcd}
 R\times R\times R \arrow[r, "{(\id, +)}"] \arrow[d, "{(\cdot, \cdot)}"] & R\times R \arrow[d, "\cdot"] \\
@@ -691,19 +709,63 @@ R\times R \arrow[r, "+"]                                                & R
 {(r\cdot s, r\cdot t)} \arrow[r, "+"]                           & r\cdot s + r\cdot t = r\cdot (s+t)
 \end{tikzcd}
         \]
-  \end{itemize}
+      \item at most 2 binary operations: imposing a third binary operation that distributes with both
+        operations is forcing that the original structure essentially respects a ring homomorphism for every
+        element, usually making the 3rd operation trivial or the identity. Usually, unary operators are added
+        instead (think convolution or $d$). An exception is the Jacobi identity if we drop associativity and
+        make it anti-commutative. The reason for all of this gets complicated quickly and explores behaviour
+        beyond our intended target of $\N$ and $k[x]$, so we are not going to add it.
+\end{itemize}
 
-I will try to recover $\N$ by adding restrictions and see if we get something interesting.
+After the exploration, I may choose to find some interesting models for the algebraic structures that were
+found.
 
-Let's consider free commutative semigroup, so group but without necessarily identity or invertibility but
-associativity. We keep associativity because order of multiplication can be done ``per pair of prime
-divisors'' (see \textcolor{red}{ref:HERE} for the intuition for associativity).
 
-Let's take the free cyclic semigroup generated by a singleton, say $\epsilon$. Then this would give us the
-``multiplication'' structure. We can shorten notation and write $\epsilon^n$, which is well-defined notation because
-of associativity.
+\section{Doing the Work}
 
-We would like
+Let us start with the existence of a single element $\epsilon$ and binary operation suggestively labeled $+$.
+It will eventually act like usual addition but for now only assume we can create formal elements using
+$\epsilon$ and $+$ under the equivalent of associativity and commutativity. We shall do the usual short hand
+of labelling
+\[
+  \underbrace{\epsilon+ \cdots + \epsilon}_{\text{$n$ times}} = n\epsilon
+\]
+The collection of all these elements can be denoted:
+\[
+  S =\{\epsilon, 2\epsilon, 3\epsilon, ...\}
+\]
+The set $S$ has no identity element. What we can do is impose $\epsilon + \epsilon = \epsilon$. If we do this,
+then everything shall simply collapse down to a singleton:
+\[
+  S = \{\epsilon\}
+\]
+As there is only one binary operation, we cannot virtualize or absorb distinct elements, so our exploration is
+exhaustive.
+
+What is not more interesting is to have a 2nd binary operation with distributivity, suggestively labeled
+$\cdot$. We take the usual convention of:
+\[
+  \underbrace{\epsilon\cdot\ \cdots\ \cdot \epsilon}_{\text{$n$ times}} = \epsilon^n
+\]
+
+If we add $\epsilon^2 = \epsilon$, then everything becomes $\epsilon$ again, so let's not impose
+this yet. As $\epsilon+\epsilon=\epsilon$ and we assume linearity (i.e. distributivity):
+\begin{align*}
+ \epsilon^2 = (\epsilon)(\epsilon) = (\epsilon+\epsilon)\epsilon = \epsilon^2 + \epsilon^2
+\end{align*}
+
+Note that we are \emph{not} assuming that there is an (additive or multiplicative) inverse, we have yet to introduce ``virtual'' objects.
+Thus, $n\epsilon^i = \epsilon^i$. What about $\epsilon + \epsilon^2$?
+
+
+\begin{enumerate}
+  \item the above is isomorphic to $0 + x(\Z/2\Z)[x]$
+  \item Note that $\Z_0[x]/(x^2-x)$ has $x$ as an identity.
+\end{enumerate}
+
+
+
+
 
 % \newpage
 % \printbibliography
