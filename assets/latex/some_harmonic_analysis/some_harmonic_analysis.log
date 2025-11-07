@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  6 NOV 2025 20:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  6 NOV 2025 20:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1410,19 +1410,19 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 
 ] [2] [3]
 
-LaTeX Warning: Reference `pr:characterFormOrthogonalBasis' on page 4 undefined on input line 817.
+LaTeX Warning: Reference `pr:characterFormOrthogonalBasis' on page 4 undefined on input line 818.
 
 [4]
 
-LaTeX Warning: Reference `df:fourierTransform(gelfandTransform)' on page 5 undefined on input line 848.
+LaTeX Warning: Reference `df:fourierTransform(gelfandTransform)' on page 5 undefined on input line 849.
 
 [5] [6]
 
-LaTeX Warning: Reference `th:fourierReciprocity' on page 7 undefined on input line 935.
+LaTeX Warning: Reference `th:fourierReciprocity' on page 7 undefined on input line 936.
 
 [7{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [8]
 
-LaTeX Warning: Citation 'NateRealAnalysis' on page 9 undefined on input line 1004.
+LaTeX Warning: Citation 'NateRealAnalysis' on page 9 undefined on input line 1001.
 
 [9] [10]
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1430,12 +1430,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (175.62474pt too wide) in paragraph at lines 1089--1090
+Overfull \hbox (175.62474pt too wide) in paragraph at lines 1086--1087
 [][][]$\OT1/cmtt/m/n/10 https : / / mathoverflow . net / questions / 37021 / is-[]fourier-[]analysis-[]a-[]special-[]case-[]of-[]representation-[]theory-[]or-[]an-[]analogue$[][] 
  []
 
 
-LaTeX Warning: Reference `th:fourierReciprocity' on page 11 undefined on input line 1126.
+LaTeX Warning: Reference `th:fourierReciprocity' on page 11 undefined on input line 1123.
 
 [11] [12] (./some_harmonic_analysis.aux)
 
@@ -1454,15 +1454,15 @@ Package logreq Info: Writing requests to 'some_harmonic_analysis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46427 strings out of 476025
- 956588 string characters out of 5790017
+ 46426 strings out of 476025
+ 956586 string characters out of 5790017
  1884388 words of memory out of 5000000
- 65878 multiletter control sequences out of 15000+600000
- 523701 words of font info for 127 fonts, out of 8000000 for 9000
+ 65879 multiletter control sequences out of 15000+600000
+ 523650 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,110p,1019b,1553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on some_harmonic_analysis.pdf (12 pages, 278604 bytes).
+Output written on some_harmonic_analysis.pdf (12 pages, 278572 bytes).
 PDF statistics:
  242 PDF objects out of 1000 (max. 8388607)
  164 compressed objects within 2 object streams

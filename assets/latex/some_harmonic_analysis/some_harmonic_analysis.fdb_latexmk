@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber some_harmonic_analysis"] 1762478101 "some_harmonic_analysis.bcf" "some_harmonic_analysis.bbl" "some_harmonic_analysis" 1762478127 0
+["biber some_harmonic_analysis"] 1762478101 "some_harmonic_analysis.bcf" "some_harmonic_analysis.bbl" "some_harmonic_analysis" 1762479305 0
   "./bibliography.bib" 1762477799 42 4b2d02948995176f06415648c1ed201d ""
-  "some_harmonic_analysis.bcf" 1762478127 107424 9dc4e5d31955330ca4ab1f58caacc65f "pdflatex"
+  "some_harmonic_analysis.bcf" 1762479305 107424 9dc4e5d31955330ca4ab1f58caacc65f "pdflatex"
   (generated)
   "some_harmonic_analysis.bbl"
   "some_harmonic_analysis.blg"
   (rewritten before read)
-["makeindex some_harmonic_analysis.idx"] 1762478101 "some_harmonic_analysis.idx" "some_harmonic_analysis.ind" "some_harmonic_analysis" 1762478127 0
-  "some_harmonic_analysis.idx" 1762478127 211 560c250fff17ecf75fb797f8691aabfe "pdflatex"
+["makeindex some_harmonic_analysis.idx"] 1762478101 "some_harmonic_analysis.idx" "some_harmonic_analysis.ind" "some_harmonic_analysis" 1762479305 0
+  "some_harmonic_analysis.idx" 1762479305 211 560c250fff17ecf75fb797f8691aabfe "pdflatex"
   (generated)
   "some_harmonic_analysis.ilg"
   "some_harmonic_analysis.ind"
   (rewritten before read)
-["pdflatex"] 1762478124 "some_harmonic_analysis.tex" "some_harmonic_analysis.pdf" "some_harmonic_analysis" 1762478127 0
+["pdflatex"] 1762479302 "some_harmonic_analysis.tex" "some_harmonic_analysis.pdf" "some_harmonic_analysis" 1762479305 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -326,11 +326,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684428852 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "some_harmonic_analysis.aux" 1762478127 3843 e9fff35f4b0a54adf20ba7b9132d55e1 "pdflatex"
+  "some_harmonic_analysis.aux" 1762479305 3843 cb5f5f9f303fe554c9da6371d6b9052b "pdflatex"
   "some_harmonic_analysis.bbl" 1762478104 466 ee04f40f768daeed26442158e95aba61 "biber some_harmonic_analysis"
   "some_harmonic_analysis.ind" 1762478101 278 df8a24a8ee77c5da4d0625d6a58a1fc0 "makeindex some_harmonic_analysis.idx"
-  "some_harmonic_analysis.run.xml" 1762478127 2433 a1d6092dfba7658bd665597894dd5df6 "pdflatex"
-  "some_harmonic_analysis.tex" 1762478119 53944 c6c1901683ce96ed639cbe18592bf93d ""
+  "some_harmonic_analysis.run.xml" 1762479305 2433 a1d6092dfba7658bd665597894dd5df6 "pdflatex"
+  "some_harmonic_analysis.tex" 1762479296 53634 733bfff8f8621b3c05c88832a10035a6 ""
   (generated)
   "some_harmonic_analysis.aux"
   "some_harmonic_analysis.bcf"

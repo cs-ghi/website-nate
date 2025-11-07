@@ -753,13 +753,13 @@ Then $\{\delta_g\}_{g \in G}$ and:
 	= a_i
 \]
 This inner product can be thought as expressly chosen so that the collection $\delta_{g_i}$ forms an
-orthonormal basis, or conversely given this standard inner product, the indicator function will always be an
+orthonormal basis, or converse given this standard inner product, the indicator function will always be an
 orthonormal basis. By Pontryagin duality, $G\cong \hat{G}$, but this group isomorphism does not
 \emph{a-priori} preserve the
 orthogonality of the basis given by $G$. The key insight of Fourier analysis is that it does!
 \begin{prop}{Character Form Orthogonal Basis: Fourier Basis}{characterFormOrthogonalBasis}
 	The characters $\widehat{G}$ form an orthogonal basis for $\Hom_{\Top}(G, \C)$. Normalizing by
-	$1/\sqrt{|G|}$ forms an orthonormal basis.
+	$1.\sqrt{|G|}$ forms an orthonormal basis.
 \end{prop}
 
 \begin{Proof}
@@ -951,18 +951,17 @@ Now let's check the value at $g=(0,1)$, where we expect 0:
 Let us now connect this to Representation Theory. So far, we have established that for a finite abelian group
 $G$, the Fourier transform is a unitary $\C$-algebra isomorphism between the algebra of functions on $G$ with
 convolution, $(\Hom_\Top(G, \C), *)$, and the algebra of functions on the dual group $\hat{G}$ with pointwise
-multiplication. The representation theory perspective shows that Fourier
-analysis is the simplest case of a Artin-Wedderburn decomposition.
+multiplication. The representation theory perspective reveals that Fourier
+analysis is the simplest case of a universal decomposition principle.
 The key is to view the $\C$-group algebra $\C[G]$ with the natural $G$-action given by left multiplication
 (convolution), namely $\rho: G \to \GL(\C[G])$ given by:
 \[
 	\rho(g): f \mapsto g * f
 \]
-From this viewpoint, the study of the $\C$-algebra $(\C[G], +, *)$ and the $\C[G]$-module $\C[G]$  is the same
-thing that is the study of the regular
+From this viewpoint, the study of the algebra $(\C[G], *)$ is implicitly a study of the regular
 representation of $G$. Now, this representation can be broken down into the direct sum of 1-dimensional
 irreducible representations. Namely, for a finite abelian group, the set of irreducible representations is
-exactly the dual group: $\Irr(G) = \widehat{G}$ and so we get:
+exactly the dual group: $\Irr(G) = \widehat{G}$. Thus, we get:
 \[
 	\C[G] \cong \bigoplus_{\chi \in \widehat{G}} V_\chi
 \]
@@ -971,10 +970,14 @@ where each $V_\chi$ is a 1-dimensional subspace corresponding to the character $
 This decomposition is made concrete by the Fourier transform. The Fourier Inversion Formula, $f =
 \frac{1}{|G|} \sum_{\chi \in \hat{G}} \hat{f}(\chi)\chi$, is the literal expression of this decomposition. It
 writes the function $f$ as a sum of components, where each term $\hat{f}(\chi)\chi$ is the projection of $f$
-onto the 1-dimensional irreducible subspace $V_\chi$. Then the Fourier coefficient $\hat{f}(\chi)$ is the
-coordinate of $f$ in the irreducible component corresponding to $\chi$. Note that we can define projection functions $p_\chi = \frac{1}{|G|}\sum_{g \in G}\overline{\chi(g)}g$ that we
+onto the 1-dimensional irreducible subspace $V_\chi$. Then the fourier coefficient $\hat{f}(\chi)$ is the
+coordinate of $f$ in the irreducible component corresponding to $\chi$.
+
+Note that we can define projection functions $p_\chi = \frac{1}{|G|}\sum_{g \in G}\overline{\chi(g)}g$ that we
 can construct in $\C[G]$ that project onto the irreducible subspace $V_\chi$. Convolving any function $f$ with
-$p_\chi$ annihilates all other ``frequency components'', leaving the part of $f$ that lies in $V_\chi$. Hence, the Fourier basis \emph{the} unique basis that diagonalizes the natural action of the group on its own algebra of functions.
+$p_\chi$ annihilates all other ``frequency components'', leaving the part of $f$ that lies in $V_\chi$.
+
+Hence, the Fourier basis \emph{the} unique basis that diagonalizes the natural action of the group on its own algebra of functions.
 
 If $G$ is a \emph{non-abelian} finite group, the concept of a dual group $\hat{G}$ and a simple transform
 onto it ceases to be useful (it is now a set with no natural group structure). However, the representation
@@ -982,6 +985,7 @@ theory perspective remains: the generalized Fourier transform (given by the \emp
 decomposes a function $f$ on the group into a sum of \emph{matrix coefficients} corresponding to these
 higher-dimensional matrix representations.
 
+Of course. It's a natural and important step to see how this beautiful, finite theory blossoms into the broader world of harmonic analysis on infinite groups. The following section is designed to follow your proof of Fourier Reciprocity for the finite case, explaining the new tools required for the generalization and how they mirror the concepts we've already established.
 
 \subsection{Generalization to Locally Compact Abelian Groups}
 \label{sec:lcaGeneralization}
