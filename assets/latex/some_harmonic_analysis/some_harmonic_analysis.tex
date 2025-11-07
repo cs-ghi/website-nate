@@ -634,7 +634,8 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 \begin{document}
 \maketitle
 
-This is a direct extract from my algebra notes that I wanted to make a stand alone blog.
+This is a direct extract from my algebra notes that I wanted to make a stand alone blog,
+see~\cite{NateAlgebra}.
 
 \section{*Application to Harmonic Analysis}
 
@@ -997,9 +998,8 @@ The essential new ingredient is the \emph{Haar measure}. For any LCA group $G$, 
 	\]
 	This measure is unique up to a positive scaling constant. For abelian groups, it is also right-translation-invariant.
 \end{defn}
-
 See~\cite{NateRealAnalysis} for details on how to construct such a measure on any LCA that is unique up to
-scaling. This measure is the direct generalization of taking the order of the group, $|G|$.
+scaling. This measure is the direct generalization of taking the order of the group.
 \begin{example}{Haar Measure}{haarMeas}
 \begin{enumerate}
 	\item For a finite group with the discrete topology, the Haar measure is the counting measure, and $\mu(G) = |G|$.
@@ -1009,7 +1009,7 @@ scaling. This measure is the direct generalization of taking the order of the gr
 \end{enumerate}
 \end{example}
 
-With the Haar measure in hand, we can now redefine our main objects of study by replacing every sum over $G$ with an integral with respect to $d\mu$.
+With the Haar measure, we can redefine our main objects of study by replacing every sum over $G$ with an integral with respect to $d\mu$.
 
 \begin{enumerate}
 	\item \emph{The Group Algebra $L^1(G)$:} The space of all functions becomes too large. The natural replacement for the convolution algebra $\C[G]$ is the space of absolutely integrable functions, $L^1(G, d\mu)$. For two functions $f, h \in L^1(G)$, their convolution is defined by the integral:
@@ -1029,7 +1029,7 @@ With the Haar measure in hand, we can now redefine our main objects of study by 
 	\]
 	This highlights why it is essential to treat $\hat{G}$ as a distinct space. The theory that governs this relationship is \emph{Pontryagin Duality}, which states that the double-dual is canonically isomorphic to the original group: $\widehat{\widehat{G}} \cong G$.
 
-	\item \emph{The Fourier Transform:} The definition of the Fourier transform is the direct analogue of the finite case, replacing the sum with an integral. For a function $f \in L^1(G)$, its Fourier transform is a function $\hat{f}$ on the dual group $\hat{G}$:
+	\item \emph{The Fourier Transform:} The definition of the Fourier transform is the direct analogue of the finite case, replacing the sum with an integral. For a function $f \in L^1(G)\cap L^2(G)$, its Fourier transform is a function $\hat{f}$ on the dual group $\hat{G}$:
 	\[
 		\hat{f}(\chi) = \int_G f(g) \overline{\chi(g)} d\mu(g)
 	\]
@@ -1107,7 +1107,7 @@ The kernel of this map is the vector subspace of functions that are zero at $g_i
 \]
 Just because $f(g_i)=0$ does not imply that the sum on the right-hand side is zero. The value of $f$ at other points, $f(k^{-1}g_i)$, can be non-zero. Therefore, the kernel of the point-evaluation map is \emph{not} an ideal with respect to convolution. This implies the points of $G$ do not correspond to the maximal ideals of its convolution algebra.
 
-The key insight is that the correct ``geometric points '' for the convolution algebra are not the elements of $G$, but the characters of the dual group $\widehat{G}$.
+The key insight is that the correct ``geometric points'' for the convolution algebra are not the elements of $G$, but the characters of the dual group $\widehat{G}$.
 
 \begin{prop}{Characters and Maximal Ideals}{charsAndMaxIdeals}
     Let $G$ be a finite abelian group. The maximal ideals of the convolution algebra $(\Hom_\Top(G,
@@ -1130,13 +1130,16 @@ The key insight is that the correct ``geometric points '' for the convolution al
     \[
         \Hom_\Top(G, \mathbb{C}) / I_\chi \cong \mathbb{C}
     \]
-	This shows that every character $\chi \in \widehat{G}$ defines a maximal ideal. Conversely, it is a
-	standard result from the theory of Banach algebras (of which $\mathbb{C}[G]$ is an example) that all such
-	maximal ideals arise in this way from homomorphisms into $\mathbb{C}$ (see the \emph{Gelfand-Mazur
-	Theorem}), completing the proof.
+	This shows that every character $\chi \in \widehat{G}$ defines a maximal ideal. Conversely, After applying
+  the Fourier transform we get the usual multiplication and ring structure, and then an approach similar to
+  the Gelfand-Kolmogorov theorem gives the desired result.
+
+
+  For the infinite case, the maximal ideals of the Banach algebra $L^1(G, \mu)$ arise in this same way from
+  homomorphisms into $\mathbb{C}$ (see the \emph{Gelfand-Mazur Theorem}).
 \end{Proof}
 
-Thus, if convolution algebra $\mathbb{C}[G]$ as our primary object, the natural geometric space that emerges
+Thus, with the convolution algebra $\mathbb{C}[G]$ as our primary object, the natural geometric space that emerges
 is not the group $G$ itself, but its Pontryagin dual, $\widehat{G}$. The Fourier transform is the mechanism
 that allows us to evaluate the functions of our algebra at the points of this ``true'' underlying space. This
 perspective, generalized by Gelfand, is the foundation of non-commutative geometry.
@@ -1172,6 +1175,6 @@ perspective, generalized by Gelfand, is the foundation of non-commutative geomet
 
 
 % \newpage
-% \printbibliography
+\printbibliography
 
 \end{document}
