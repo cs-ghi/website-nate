@@ -46,7 +46,7 @@
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
       \endverb
     \endentry
-    \entry{NateAlgTop}{book}{}
+    \entry{NateHodge}{book}{}
       \name{author}{1}{}{%
         {{hash=17e33e23808fa6250bed45d881448509}{%
            family={Chwojko-Srawley},
@@ -61,6 +61,64 @@
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
       \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Everything You Need To Know About Hodge Theory}
+      \field{volume}{1}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fnotes%2FEYNTKA_hodge.pdf&name=A%20little%20%20Hodge%20Theory&source=notes
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fnotes%2FEYNTKA_hodge.pdf&name=A%20little%20%20Hodge%20Theory&source=notes
+      \endverb
+    \endentry
+    \entry{hartshorneAmpleSubvarietiesAlgebraic2009}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ee65baaab88f9233fbad3d51c399ee25}{%
+           family={Hartshorne},
+           familyi={H\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{fullhash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{bibnamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authorbibnamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authornamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authorfullhash}{ee65baaab88f9233fbad3d51c399ee25}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{[Nachdr. der Ausg.] 1970}
+      \field{isbn}{978-3-540-05184-8}
+      \field{series}{Lecture notes in mathematics Series: Tata Institute of Fundamental Research, Bombay}
+      \field{title}{Ample subvarieties of algebraic varieties}
+      \field{year}{2009}
+    \endentry
+    \entry{NateAlgTop}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{3}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
@@ -88,14 +146,13 @@
       \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{X}
       \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{1}
       \field{title}{Everything You Need To Know About Complex Analysis}
-      \field{year}{NA}
       \verb{urlraw}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_complex_analysis.pdf
       \endverb

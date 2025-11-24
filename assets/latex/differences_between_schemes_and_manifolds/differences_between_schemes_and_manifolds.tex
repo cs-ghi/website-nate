@@ -636,73 +636,134 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 
 This is just a quick extract from~\cite{NateAlgGeo} that I wanted to post that compares schemes and smooth
 manifolds. It is not comprehensive, it is just the first things that came to mind. For a full discussion, see the cited notes.
+
 \begin{enumerate}
-  \item The scheme given by $V(x)\cup V(yz) \sse \A_k^3$ has two irreducible components of different
-    dimensions. A [connected] manifold (differential and even topological) will always be of a single dimension.
+	\item The scheme given by $V(x)\cup V(yz) \sse \A_k^3$ has two irreducible components of different
+		dimensions (dimension is defined rigorously in section~\cite[dimension]{NateAlgGeo}). A manifold (differential
+		and even topological) will always be of a single dimension.
 	\item A manifold cannot self-intersect\footnote{Naturally, a submersion of a manifold may have
 			intersections, however (naturally) the immersion is not a manifold}, while schemes (even affine
 			schemes, even varieties) can: consider $V(y^2-x^3-x^2) \sse \A_k^2$.
 	\item The patches of manifold are very regular, being diffeomorphic to $\R^n$, however patches of a scheme
 		may be ``pathological'', for example if the ring is not Noetherian then there may be uncountably many
-		connected components. Schemes are often over a certain other ring (and sometimes over schemes) that give
-    some regularity; in a geometric setting they are often over fields to parallels varieties.
-	\item In Manifold Theory, the notion of irreducible component is trivial as only points are irreducible. From an
-		analytic perspective, this can be thought of as the lack of separability of points by functions for
-    schemes; part of this consequence is the existence of ``large'' points for schemes.
+		connected components. This reflects how affine schemes represent ``local algebraic information'' which
+		is more complicated than ``local smooth linear information'' that real manifolds work with. Some of
+		the conditions and properties we shall introduce later will add some regularity to the components.
+	\item In Manifold Theory, the notion of irreducible component is trivial as only points are irreducible.
+		From an analytic perspective, this can be thought of as the lack of separability of points by
+		functions for schemes; part of this consequence is the existence of ``large'' points for schemes. More
+		generally the correspondence between irreducible sets and non-closed points (in at least Noetherian schemes)
+		shows that schemes have a lot more ``global'' information on its codimension subsets as compared to
+		real smooth manifolds.
+		\item The topology of $\R^n$ (and hence $\C^n$) is the product of open sets of $\R$, namely
+			\[
+				\prod_i^n  (a_i, b_i) \qquad a_i, b_i \in \R,\ a_i < b_i
+			\]
+			forms a topological basis for $\R^n$. This is far from the case for $\A_k^n$: it's closed sets
+			would always be finite! However, there will still be a meaningful way to create the topology on
+			$\A_k^n$ via $\A_k^1$ by taking the \emph{fibered product}
+	\item If a scheme $X$ is irreducible, all its open sets are dense. Many of the schemes we shall work with
+		will be the union of irreducible subschemes, where for each irreducible subscheme all affine open subsets are dense
+		in the irreducible subscheme; having dense open subsets is far from being the case for most manifolds.
+	\item More generally, the behaviour of schemes matches more closely with the behaviour of complex geometry
+		(we shall draw such analogies often, for example \emph{Hartog's Extension Lemma}
+		(\cite[chapter~8]{NateComplexAnalysis}) shall have parallels with normal schemes, the existence of certain
+		holomorphic/meromorphic functions shall tie into divisor theory, compact complex Riemann surfaces
+		shall correspond to projective curves, and so forth).
+	\item Any smooth real manifold $M$ can be embedded into $\R^N$ for appropriate $N$. For classical affine (resp.
+		projective) varieties of dimension $n$, they essentially by definition embed into $\A_k^n$ (resp.
+		$\P_k^n$). For complex manifolds, it is \emph{not} the case they all embed in $\C^N$\footnote{If it
+			does embed, such complex manifold are called \emph{stein manifolds} and they share many properties
+		of quasi-projective varieties}, and no compact complex scheme embeds into $\C^N$.This is because
+		complex manifolds have much more rigidity that $\C^n$ lacks \cite{NateHodge}\footnote{consider
+		that there is a unique complex structure on the complex torus for each complex number}. Schemes
+		follow in this complexity.
 
-	\item If a scheme $X$ is irreducible, all its open sets are dense. Many schemes
-		will be the union of irreducible subschemes where, in each irreducible subscheme, all affine open subsets
-    are dense; having only dense open subsets is far from being the case for most manifolds.
+		By the Kodaira Embedding Theorem \cite{NateHodge}, a ``positive Kh\"aler manifold'' can embed into projective
+		space . Proper schemes (the equivalent of compact complex manifolds) with an \emph{ample line bundle}
+		(the equivalent of positive Kh\"aler structure) shall embedded into projective space. In fact, this
+		means that positive Kh\"aler manifolds are isomorphic to a proper scheme with an ample bundle!. This is the closest
+		to an embedding theorem that is widely used and will be proven in section~\cite[Maps to Projective Schemes]{NateAlgGeo}.
 
-  \item More generally, the behaviour of schemes matches more closely with the behaviour of complex geometry
-    (for example \emph{Hartog's Extension Lemma} (\cite[chapter~8]{NateComplexAnalysis}) shall have parallels
-    with normal schemes, the existence of certain holomorphic/meromorphic functions shall tie into divisor
-    theory and Riemann-Roch, compact complex Riemann surfaces shall correspond to projective curves, and so forth).
+		For a closed immersions $X \hookrightarrow \A_R^n$ so that $X\cong V \sse \A_R^n$ where $V$ is closed,
+		this means that $X$ is topologically sub-variety, though it may have a more complicated sheaf
+		structure (for more details see section~\cite[Varieties]{NateAlgGeo}).
 
+		For an open embedding $X \hookrightarrow \A_R^n$ so that $X\cong U \sse A_\R^n$ where $U$ is open,
+		this means that $X$ is a \emph{quasi-affine subscheme}, which by definition is an open subscheme of
+		affine space. Their characterization is more complicated: the map $X \to \Spec(\CO_X(X))$ must be an
+		open embedding and, as will be discussed in section~\cite[Quasi-Coherent Sheaves]{NateAlgGeo}, all quasi-coherent
+		sheaves of $\CO_X$-modules must be generated by global sections. To check that each $\CO_X$-module is
+		generated by global sections is difficult, there is a simpler characterization by the Goodman-Hartshorne Theorem
+		\cite{hartshorneAmpleSubvarietiesAlgebraic2009}, but it is still a complicated characterization
+		showing the greater complexities that arise when working with non-proper schemes.
+
+		More generally, there shall be other interesting
+		spaces to embed certain types of schemes into (ex. into toric varieties, Grassmannians, flag varieties,
+		etc.) which shall have different purposes depending on what Moduli problem is being studied.
 	\item Schemes will be able to have ``double points'', recall the line with two origin is a popular counter
-		for a manifold as it is not Hausdorff at the origin.
+		for a manifold as it is not Hausdorff at the origin. These shall be important as many moduli spaces
+		will be non-separated schemes.
+	\item A scheme remembers multiplicity. For example, we can define a lot of functions on a single point,
+		however scheme functions (i.e. regular functions) can hold multiplicity information (ex. $\Spec
+		k[x]/(x)^2$). A smooth manifold $(M, \CA)$ with maximal atlas does not hold this information.
+	\item There can be multiple structure sheaves on the same topological space defining different schemes (think of the
+		different fields that can form the sheaf over a singleton). Manifolds of dimension $\le 3$ have unique
+		differential structures up to diffeomorphism. In fact, in section~\cite[Fibered Products]{NateAlgGeo} we shall
+		introduce the process of \emph{base change} from which there shall be ways to change the structure
+		sheaf without changing the underlying space.
 
-  \item A scheme remembers multiplicity (ex. $\Spec k[x]/(x)^2$). A smooth manifold $(M, \CA)$ with maximal
-    atlas does not hold this information. \item There can be multiple structure sheaves on the same set
-    defining different schemes (think of the different fields that can form the sheaf over a singleton).
-    Manifolds of dimension $\le 3$ have unique differential structures up to diffeomorphism.
-
-	\item Though there wasn't an atlas defined for schemes (as the notion of maximal atlas is not as
-		relevant), schemes can be
-		constructed via gluing just like an atlas on a manifold.
-
-  \item the natural additional structure on a smooth manifold is a \emph{tangent bundle} with transition
-    mappings of the form $D(\textbf{y}\circ\textbf{x}^{-1})$, namely they are not just smooth transitions
-    between open sets and fibers, but need to respect a $\GL_n(\R)$-action given by the derivation $D$. There
-    is an equivalent \emph{tangent sheaf} for schemes, but more care must be done as schemes are not ``locally
-    linear'' everywhere in the way that smooth manifolds must be. Much of the intuition of Poincar\'e's
-    duality (see~\cite[section~4.3]{NateAlgTop}) will influence the generalization.
-
+	\item Though there wasn't an atlas defined for schemes, schemes can be constructed via gluing affine just like an atlas on a manifold.
+	\item the natural additional structure on a smooth manifold is a \emph{tangent bundle} with transition
+		mappings of the form $D(\textbf{y}\circ\textbf{x}^{-1})$, namely they are not just smooth transitions
+		between open sets and fibers, but need to respect a $\GL_n(\R)$-action given by the derivation $D$.
+		We shall define the equivalent for schemes in section~\cite[Differentials]{NateAlgGeo}, but more care must be done as schemes are not ``locally linear''
+		everywhere in the way that smooth manifolds must be. Much of the intuition of Poincar\'e's duality
+		(see~\cite[section~4.3]{NateAlgTop}) will influence the generalization.
+	\item Schemes shall be able to better remember different levels of \emph{local} behaviour. For example,
+		a germ is not a smooth manifold on a point, but the equivalent for a scheme shall be a scheme, known
+		as a \emph{local scheme}. This is because commutative rings represent this information, and (affine)
+		schemes are the geometric representation of commutative rings.
 	\item Scheme functions are more ``rigid''; while on a manifold we may have partitions of unity due to the
-		flexibility of euclidean topology, no exact equivalent can be defined for schemes. This rigidity
-    will also add structure and make it easier to defined some concepts (ex. closed subschemes shall be a
-    rather ``natural'' concept as compared to the work that goes into ensuring closed submanifolds are locally
-    isomorphic to $\R^k$).
+		flexibility of euclidean topology, no exact equivalent can be defined for schemes.  This rigidity
+		will also add structure and make it easier to defined some concepts (ex. closed subschemes, introduced
+		in section~\cite[Open and Closed Subschemes]{NateAlgGeo}, shall be a rather ``natural'' concept as compared to the work
+		that goes into ensuring closed submanifolds are locally isomorphic to $\R^k$).
 
-    As smooth functions on each $U \sse M$ from a sheaf, sheaves that admit a ``partition of unity'' will be
-    called \emph{fine sheaves}. A weaker notion of \emph{soft sheaf} will be the closest equivalent to having
-    the partition of unity property.
-
-
+		As smooth functions on each $U \sse M$ from a sheaf, sheaves that admit a ``partition of unity'' will
+		be called \emph{fine sheaves}. A weaker notion of \emph{soft sheaf} will be introduced in
+		section~\cite[Sheaf Cohomology]{NateAlgGeo} that will be the closest equivalent to having the partition of unity
+		property.
 	\item Schemes unify ``arithmetic'' and ``geometry'' in a way manifold theory is poorly equipped for. As an
-    example, there is no equivalent of $\Spec \Z$, $\Spec \Z[t]$, or $\Spec \CO_K$ (where $\CO_K$ is a ring
-    of integers) for smooth manifolds. In this way, scheme theory also allows for a new domain of study that
-		is intractable in differential geometry.
-
-  \item Very often in practice (especially in the setting of $k$-schemes and study curves, surfaces, moduli
-    spaces, etc.) we work with integral separated schemes that most of the time are proper, and we have many
-    methods to ``normalize'' singularities (ex. Intersections, cusps, etc) to make these scheme
-    regular\footnote{Though as we'll see, there is no universal way of doing this with the exception of some
-    low-dimension that have been completely proved}. In fact, a result known as \emph{GAGA} shows when we can
-    interpret proper schemes with appropriate coherent sheaves as complex manifolds. Naturally, arithmetic
-    schemes will not be part of this manifold/scheme correspondence.
+		example, there is no equivalent of $\Spec \Z$, $\Spec \CO_K$ or $\Spec \Z[t]$ where $\CO_K$ is a ring
+		of integers. In this way, scheme theory also allows for a new type of object that
+		is not tractable in differential geometry. Often, to deal with more ``geometric'' schemes,
+		one works with $\overline{k}$-schemes where $\overline{k}$ denotes the algebraic closure of a characteristic $0$
+		field. In fact, when defining $Z$-points in section~\ref{sec:z-valuedPoints} where $Z$ is a scheme, if $Z
+		= \Spec{\overline{k}}$ then such points shall be called \emph{geometric points}. Working over
+		a non-algebraically closed field often implies the schemes contains some arithmetic information.
+	\item Schemes have ``fat'' points. Such points are necessary for examples such as $k[x,y] \to k(x)[y]$
+		whose Spec dual will map closed points to non-closed points (and we shall later see the image is
+		\emph{dense}.
+	\item Though the above show how schemes differ from manifolds geometrically, many of the usual geometric
+		tools are applicable in the study of schemes. For example, $\C[x,y](x^2-y^3)$ is not a normal ring. This can
+		be hard to see, but viewing the Spec of it, the fact it is non-smooth (in the euclidean topology, as
+		a closed subset of $\C^2$) at $(0,0)$ is in fact exactly
+		why it is not normal. This type of geometric shortcut can be incredibly powerful as we can now study
+		the smoothness (more particularly the normalness, meaning smoothness in codimension 1) to determine
+		the integral closure of $k[x,y]$.
 \end{enumerate}
+
+Though this is a long list of mostly differences, very often in practice (especially in the setting of $k$-schemes or
+when studying curves, surfaces, moduli spaces, etc.) we work with schemes that most of the time are proper
+(the correct generalization of compact manifolds), and have many methods to ``normalize'' singularities (ex.
+eliminate intersections, cusps, etc) to make these scheme regular\footnote{Though as we'll see, there is no universal
+	way of doing this with the exception of some low-dimension that have been completely proved, and sometimes
+this singularity information is important.}. In fact, as we shall see in section~\cite[gaga]{NateAlgGeo}, a result known as
+\emph{GAGA} shows when proper schemes with appropriate coherent sheaves are equivalent to a compact complex manifolds.
+Naturally, arithmetic schemes will not be part of this manifold-scheme correspondence.
+
+
 % \newpage
 \printbibliography
-
 \end{document}
