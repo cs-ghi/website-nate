@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  24 NOV 2025 18:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  25 NOV 2025 14:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1234,7 +1234,7 @@ Package biblatex Info: ... and expl3
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
 \c@tcb@cnt@thm=\count550
-Package hyperref Info: Option `colorlinks' set `true' on input line 624.
+Package hyperref Info: Option `colorlinks' set `true' on input line 625.
 \@indexfile=\write6
 \openout6 = `langlands_for_sl2.idx'.
 
@@ -1246,27 +1246,54 @@ Package csquotes Info: ... none found.
 
 LaTeX Warning: Label `[' multiply defined.
 
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
 )
 \openout1 = `langlands_for_sl2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 635.
-LaTeX Font Info:    ... okay on input line 635.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 636.
+LaTeX Font Info:    ... okay on input line 636.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count551
@@ -1286,20 +1313,20 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 635.
-LaTeX Info: Redefining \microtypecontext on input line 635.
-Package microtype Info: Applying patch `item' on input line 635.
-Package microtype Info: Applying patch `toc' on input line 635.
-Package microtype Info: Applying patch `eqnum' on input line 635.
-Package microtype Info: Applying patch `footnote' on input line 635.
-Package microtype Info: Applying patch `verbatim' on input line 635.
+Package hyperref Info: Link coloring ON on input line 636.
+LaTeX Info: Redefining \microtypecontext on input line 636.
+Package microtype Info: Applying patch `item' on input line 636.
+Package microtype Info: Applying patch `toc' on input line 636.
+Package microtype Info: Applying patch `eqnum' on input line 636.
+Package microtype Info: Applying patch `footnote' on input line 636.
+Package microtype Info: Applying patch `verbatim' on input line 636.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 635.
+LaTeX Info: Redefining \showhyphens on input line 636.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1370,36 +1397,118 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - book entry 'bushnellLocalLanglandsConjecture2006' (bibliography.bib): Invalid format '2006-00-00 2006' of date field 'date' - ignoring.
 
 )
-Package biblatex Info: Reference section=0 on input line 635.
-Package biblatex Info: Reference segment=0 on input line 635.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 641.
+Package biblatex Info: Reference section=0 on input line 636.
+Package biblatex Info: Reference segment=0 on input line 636.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 647.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 641.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 647.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 641.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 647.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 641.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 647.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-)
-LaTeX Font Info:    Trying to load font information for U+euf on input line 682.
+) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+
+LaTeX Warning: Reference `lm:lem1' on page 2 undefined on input line 737.
+
+[2] [3]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.780 \begin{thm}{}{3.2}
+                        
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.796 \begin{titledBox}{Remark 3.4}{rmk3.4}
+                                           
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.800 \begin{cor}{}{3.5}
+                        
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.807 \begin{titledBox}{Remark 3.6}{rmk3.6}
+                                           
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 814.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 814.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 814.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 814.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 814.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 814.
+
+[4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 840.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
-) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+)
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.849 \begin{defn}{Whittaker Space}{whittakerSp}
+                                                
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.864 \begin{defn}{L-packet}{l-packet}
+                                      
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.871 ...erties of L-packets: I}{propofL-packetsI}
+                                                   [5]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.895 ...ties of L-packets: II}{propofL-packetsII}
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.910 ...prop}{Size of L-packets}{sizeofL-packets}
+                                                   [6] (./langlands_for_sl2.aux)
 
-] [2] (./langlands_for_sl2.aux)
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1408,21 +1517,21 @@ Package logreq Info: Writing requests to 'langlands_for_sl2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46281 strings out of 476025
- 955266 string characters out of 5790017
- 1878388 words of memory out of 5000000
- 65841 multiletter control sequences out of 15000+600000
- 519960 words of font info for 84 fonts, out of 8000000 for 9000
+ 46443 strings out of 476025
+ 957342 string characters out of 5790017
+ 1881388 words of memory out of 5000000
+ 65925 multiletter control sequences out of 15000+600000
+ 523773 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,110p,1014b,1553s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,13n,110p,1077b,1553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{cite.0@bushnellLocalLanglandsConjecture2006} has been referenced but does not exist, replaced by a fixed one
 
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on langlands_for_sl2.pdf (2 pages, 166976 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on langlands_for_sl2.pdf (6 pages, 270907 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 20637 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 236 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 27317 words of extra memory for PDF output out of 29859 (max. 10000000)
 
