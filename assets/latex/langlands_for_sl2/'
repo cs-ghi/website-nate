@@ -639,20 +639,15 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 
 \section{Abstract}
 
-Let $F$ be a locally compact nonarchimedean field with residue characteristic $p$ (e.g. finite extensions of
-$\mathbb{Q}_p$), and let $K$ be an algebraically closed field of characteristic $\ne p$. This paper analyzes
-smooth $K$-representations of $\SL_2(F)$ via restriction from $\GL_2(F)$. The reader can assume $K
-= \mathbb{C}$ to link this to the intuition of complex representations like
-in~\cite{bushnellLocalLanglandsConjecture2006}. While the Local Langlands correspondence for $\GL_n$ is
-a bijection, the restriction to $\SL_2$ creates fibers of size $1$, $2$, or $4$. This paper provides a structural proof of the size of these fibers—known as \emph{L-packets} or \emph{L-indistinguishable classes}—using Clifford Theory adapted for $p$-adic groups and the uniqueness of Whittaker models.
-
-\begin{titledBox}{Inspiration}{insp}
-  This paper is completely inspired and modeled by~\cite{henniartRepresentationsSL2F2025}.
-  This is my own re-writing of the first sections of Henniart's and Vign\'eras paper with details useful to
-  me (and a few math typos fixed).
-\end{titledBox}
+Let $F$ be a locally compact nonarchimedean field with residue characteristic (ex. $F/\Q_p$), and $K
+= \overline{K}$ an algebraically closed field of characteristic $\ne p$. This paper will be about
+$K$-representations of of $\SL_2(F)$. The reader can assume $K = \C$ to link this to the intuition complex
+representations like in~\cite{bushnellLocalLanglandsConjecture2006}. The goal is to show how the Local Langlands
+correspondence goes from being a bijection to a surjection, with fibers of size $1$, $2$, or $4$; these fibers
+are called \emph{L-packets} or \emph{L-indistinguishable's}.
 
 \section{Build up}
+
 
 Let us start with some useful results from representation theory:
 
@@ -664,7 +659,7 @@ Let us start with some useful results from representation theory:
 
 \begin{Proof}
 	Let $W \subseteq V$ be an irreducible subrepresentation of $\pi|_N$ (assuming $V$ is finite-dimensional, such a $W$ exists).
-	For any $g \in G$, define the subspace $gW = \{ \pi(g)w \mid w \in W \}$. I claim that $gW$ is an irreducible
+	For any $g \in G$, define the subspace $gW = \{ \pi(g)w \mid w \in W \}$. We claim that $gW$ is an irreducible
 	subrepresentation of $N$.
 
 	For any $n \in N$ and $v' \in gW$ (where $v' = \pi(g)w$), the action is:
@@ -686,15 +681,15 @@ Let us start with some useful results from representation theory:
 \end{Proof}
 
 Thus, assume $H\nsubg G$ is a finite index normal subgroup, and let $\pi$ be an irreducible $K$-representation
-of $H$. Let us show that it is a component of a $K$-representation $\Pi$ of $G$ whose restriction to $H$
+of $H$. Let us show that it is a component of an $K$-representation $\Pi$ of $G$ whose restriction to $H$
 contains $\pi$. First, induct so that we get $\Ind_H^G\pi$. This is finite length still as $[G:H] < \infty$,
 and contains an irreducible representation, say $\Pi$. Then there is a non-trivial map $\Pi \hookrightarrow \Ind_H^G
 \pi$. By Frobenius:
 \[
-  \Hom_G(\Pi, \Ind_H^G \pi) \cong \Hom_H(\Pi|_H, \pi)
+  \Hom_G(\Pi, \Ind_H^G, \pi) \cong \Hom_H(\Pi|_H, \pi)
 \]
 Hence, as $\pi$ is irreducible and the restriction is semisimple, $\pi$ must be in the direct summands of
-$\Pi|_H$. Next, if $\chi$ is a $K$-character of $G$ that is trivial on $H$, the restriction of $\Pi\otimes
+$\Pi|_H$. Next, if $\chi$ is an $K$-character of $G$ that is trivial on $H$, the restriction of $\Pi\otimes
 \chi$ to $H$ contains $\pi$, for
 \[
   (\Pi \otimes \chi)|_H \cong \Pi|_H
@@ -723,7 +718,7 @@ If there is another irreducible $K$-representation $\Pi'$ that contains $\pi$, i
 \end{Proof}
 
 \begin{prop}{Clifford Theory for Smooth Representations}{basicProp}
-  Let $H\nsubg G$ be normal with a compact quotient $G/H$ and assume that $V$ is smooth (so $V|_H$ is smooth).
+  Let $H\nsubg G$ be normal with a compact quotient $G/H$ and that $V$ is smooth (so $V|_H$ is smooth).
 
   \begin{enumerate}
     \item  If $V$ is \emph{finitely generated} then $V|_H$ is finitely generated %[Henniart 2001, lemme 4.1].
@@ -760,11 +755,15 @@ If there is another irreducible $K$-representation $\Pi'$ that contains $\pi$, i
         This relies on the fact that representations of compact groups are semisimple (complete reducibility).
         Consider the action of the quotient group $K = G/H$. $V$ can be viewed somewhat like a representation of $K$.
         Since $K$ is compact, the unitary representations decompose into a direct sum of finite-dimensional irreducibles.
-        Because $V|_H$ has an irreducible subrepresentation (or is Noetherian), we can form the sum of all conjugates $gW$.
+        Because $V|_H$ has an irreducible subsrepresentation (or is Noetherian), we can form the sum of all conjugates $gW$.
         Since $G/H$ is compact, there are only finitely many non-isomorphic conjugates (Clifford theory implies the orbit is finite if the index is finite; compactness mirrors this).
         Thus $V|_H$ is a finite direct sum of isotypic components.
     \end{enumerate}
 \end{Proof}
+
+We introduce the two properties:
+
+
 
 \begin{prop}{Extension of Admissible Representations}{admissibleExt}
    Let $W$ be an admissible irreducible $R$-representation of $H$. Assume:
@@ -802,30 +801,19 @@ If there is another irreducible $K$-representation $\Pi'$ that contains $\pi$, i
   Let $V = \check{V'}$. Then $W \hookrightarrow V|_H$, completing the proof.
 \end{Proof}
 
-\subsection*{Setup for Abelian Clifford Theory}
+Let us now focus on the case where $G$ is locally profinite and smooth representations. Suppose $H$ is a normal closed subgroup of a
+locally profinite group $G$ and $V$ a $K$-representation of $G$. If $[G:H]<\infty$, $H$ is open, and
+conversely if $H$ is open and cocompact the index if finite. If $V$ is smooth, $V|_H$ is smooth and if $H$ is
+open and $V|_H$ is smooth the $V$ is smooth.
 
-Suppose $H$ is a closed \emph{normal} subgroup of a \emph{locally profinite} group $G$.
-Recall that if $V$ is a smooth representation of $G$, then $V|_H$ is smooth.
-Furthermore, if $V|_H$ has finite length (as guaranteed by~\cref{pr:admissibleExt} when $V$ is admissible and $G/H$ is compact), we define the following structural components:
-
-\begin{defn}{Clifford Components}{cliffordDefs}
-Let $V$ be an irreducible representation of $G$ such that $V|_H$ has finite length.
-\begin{itemize}
-    \item Let $W \subseteq V|_H$ be an irreducible subrepresentation and $\pi$ its isomorphism class.
-    \item Let $G_\pi = \{ g \in G \mid \pi^g \cong \pi \}$ be the \emph{stabilizer} of $\pi$ in $G$, where
-      $\pi^g(h) = \pi(g^{-1}hg)$.
-    \item Let $V_\pi$ be the \emph{$\pi$-isotypic component} of $V|_H$.
-\end{itemize}
-\end{defn}
-
-Since $V$ is smooth, $\operatorname{Stab}_G(W)$ is open, implies that $G_\pi$ is an open subgroup of $G$.
-Consequently, we have the fundamental Clifford decomposition:
+Let $V$ be irreducible and $V|_H$ have finite length. Let $W$ be an irreducible component of $V|_H$, $\pi$ an
+isomorphism class, and $G_\pi$ the $G$-stabilizer of $\pi$. Let $V_\pi$ be the $\pi$-isotypic component of
+$V|_H$. Then the $G$-stabilizer of $V_\pi$ is $G_\pi$. The $G$-stabilizer of $W$ is open in $G$ as it contains
+the nonzero $G$-stabilizer of $v\in W$ and $V$ is smooth, and furthermore it is contained in $G_\pi$. Both of
+these groups have finite index in $G$ and by Clifford's theory $V = \Ind_{G_\pi}^G(V_\pi)$. The representation
+$G_\pi$ on $V_\pi$ is irreducible and the length of $V|_H$ is:
 \[
-  V \cong \operatorname{Ind}_{G_\pi}^G(V_\pi)
-\]
-and the length formula:
-\[
-  \operatorname{length}(V|_H) = [G:G_\pi] \cdot \operatorname{length}(V_\pi|_H)
+  \len(V|_H) = [G:G_\pi]\len(V_\pi|_H)
 \]
 \begin{lem}{Clifford Theory for Abelian Quotients}{lem2}
   Let $V$ be an irreducible representation of $G$, $H$ a closed subgroup, and assume $V|_H$ has finite length.
@@ -872,9 +860,7 @@ and the length formula:
 \begin{enumerate}
 \item[(a)] For any closed subgroup \(Q\) of \(G\) and a smooth \(K\)-representation \(X\) of \(Q\), the representation \(\mathrm{Ind}_Q^G X\) is the space of functions \(f: G \to X\) with the property \(f(qgk) = qf(g)\) for \(q \in Q\), \(g \in G\), \(k \in K_f\) for some open subgroup \(K_f\) of \(G\), with the action of \(G\) by right translation, and where \(\mathrm{ind}_Q^G 1\) is the subrepresentation on the subspace of functions of compact support modulo \(Q\). When \(G/Q\) is compact, \(\mathrm{Ind}_Q^G X = \mathrm{ind}_Q^G X\).
 
-Let \(V \supset U\) be \(G\)-stable subspaces with \(V/U\) irreducible. Suppose \(V\) generated by an element
-\(f\) (indeed \(V'/U' \simeq V/U\) for the \(G\)-stable space \(V'\) generated by \(f \in V \setminus U\) and
-the kernel \(U'\) of the map \(V' \to V/U\)). There is an open subgroup \(K\) of \(G\) which fixes \(f\). Then \(U \subset V \subset \mathrm{ind}_K^G 1\) and one is reduced to the case where \(G/H\) is finite.
+Let \(V \supset U\) be \(G\)-stable subspaces with \(V/U\) irreducible. We can suppose \(V\) generated by an element \(f\) (indeed \(V'/U' \simeq V/U\) for the \(G\)-stable space \(V'\) generated by \(f \in V \setminus U\) and the kernel \(U'\) of the map \(V' \to V/U\)). There is an open subgroup \(K\) of \(G\) which fixes \(f\). We have \(U \subset V \subset \mathrm{ind}_K^G 1\) and one is reduced to the case where \(G/H\) is finite.
 
 \item[(b)] The proof of Lemma \ref{lm:lem1} remains valid with the smooth induction \(\mathrm{Ind}_H^G\), which is the smooth compact induction \(\mathrm{ind}_H^G 1\), because \(G/H\) is compact, so that \(\mathrm{ind}_H^G(\Pi|_H) = \Pi \otimes \mathrm{ind}_H^G 1\).
 
@@ -884,66 +870,38 @@ Hence \(\dim(\mathrm{End}_{J}(V_{\pi}|_J)) \ge 2\) and \(V_{\pi}|_J\) is reducib
 
 The group \(G_{\pi}\) is a subgroup \(I\) of \(G\) containing \(H\) with \(\mathrm{len}(V|_I) = \mathrm{len}(V|_H)\). If \(I\) has this property, the restriction to \(H\) of any irreducible component on \(V|_I\) is irreducible, hence \(I\) is contained in \(G_{\pi}\).
 
-\item[(d)] follows from (c).
+\item[(d)] follows from (3).
 \end{enumerate}
 \end{enumerate}
 \end{Proof}
 
-% \begin{titledBox}{Restriction and Multiplicity}{resToMult}
-%   Assume that \(V|_H\) has multiplicity 1.
-%   The \(G\)-stabilizer of the isomorphism class of the irreducible components of \(V|_H\) is \(G_{\pi}\).
-%   Let \(I\) be a subgroup of \(G\) such that \(H \subseteq I \subseteq G\).
-%
-%   Since \(G/H\) is abelian, \(G_\pi\) is normal. The length of the restriction to \(I\) is determined by the index of the composite group \(IG_\pi\):
-%   \[ \mathrm{len}(V|_I) = [G : I G_\pi] \]
-%
-%   \textbf{Deduction for Prime Index:}
-%   Suppose \([G:I] = p\) is a prime number (so \(I\) is maximal).
-%   \begin{itemize}
-%       \item If \(V|_I\) is \textbf{reducible}, then \(G_\pi \subseteq I\).
-%       \item If \(V|_I\) is \textbf{irreducible}, then \(G_\pi \not\subseteq I\) (and \(IG_\pi = G\)).
-%   \end{itemize}
-% \end{titledBox}
+\begin{titledBox}{Restriction and Multiplicity}{resToMult}
+Assume that \(V|_H\) has multiplicity 1. The \(G\)-stabilizer of any irreducible component of \(V\) is \(G_{\pi}\). Denote \(G_{\pi} = G_V\). Let \(I\) be a subgroup of \(G\) containing \(H\). The number of orbits of \(I\) in the irreducible components of \(V|_{G_V}\) is \(\mathrm{len}(V|_I)\). This number is the same for \(I\) and \(IG_V\), hence \(\mathrm{len}(V|_I) = \mathrm{len}(V|_{IG_V})\). We deduce that \(G_V \subset I\) if \(V|_I\) is reducible and \(|G/I|\) is a prime number.
 
-Finally, with these results specifically for the case where the multiplicity is $1$, we need a way to detect
-it. To that end, recall that the functor $\mathrm{Hom}_U(-, \theta)$ is always left-exact for a representation
-$\theta$ of $H$ (this is even an exercise in Dummit and Foote).
+\end{titledBox}
 
-\begin{lem}{Multiplicity One Criterion}{lem3}
-  Let $V$ be an irreducible $K$-representation of $G$, $H$ a closed subgroup, and assume $V|_H$ has finite length.
-  Let $\theta$ be a smooth $K$-representation of a closed subgroup $U \subseteq H$.
+\begin{lem}{lemma 3}{lem3}
+  Let $V$ be an irreducible representation of $G$,  $H$ a closed subgroup,$V|_H$ finite length, $W$ an
+  irreducible representation contain in $V|_H$, and $\pi$ its isomorphism class.
 
   \qn
-  If the functor $\mathrm{Hom}_U(-, \theta)$ is exact on the category of smooth $K$-representations of $H$ and
-  \[ \dim_K \mathrm{Hom}_U(V|_H, \theta) = 1, \]
-  then $V|_H$ has multiplicity 1 (i.e., every irreducible constituent appears exactly once).
+Let \(\theta\) be a smooth \(K\)-representation of a closed subgroup \(U \subg H\). Then if the functor \(\mathrm{Hom}_U(-, \theta)\) is exact on smooth \(K\)-representations of \(H\) and \(\dim \mathrm{Hom}_U(V, \theta) = 1\), then \(V|_H\) has multiplicity 1.
 \end{lem}
-
 \begin{Proof}
-  Since $V|_H$ has finite length, let $0 = V_0 \subset V_1 \subset \dots \subset V_n = V|_H$ be a composition series where each quotient $W_i = V_i/V_{i-1}$ is irreducible.
-  Let $\pi$ denote an isomorphism class of irreducible representations of $H$. Let $m_V(\pi)$ be the multiplicity of $\pi$ in this series (the number of indices $i$ such that $W_i \cong \pi$).
-
-  By the exactness of the functor $\mathrm{Hom}_U(-, \theta)$, the dimension is additive:
-  \[
-    \dim \mathrm{Hom}_U(V|_H, \theta) = \sum_{i=1}^n \dim \mathrm{Hom}_U(W_i, \theta)
-  \]
-  Grouping by isomorphism class and using the hypothesis:
-  \[
-    1 = \sum_{\pi} m_V(\pi) \dim \mathrm{Hom}_U(\pi, \theta)
-  \]
-  Since $m_V(\pi)$ and $\dim \mathrm{Hom}_U(\pi, \theta)$ are non-negative integers, there must be exactly one isomorphism class $\pi_0$ such that:
-  \[ m_V(\pi_0) = 1 \quad \text{and} \quad \dim \mathrm{Hom}_U(\pi_0, \theta) = 1 \]
-  and for all other $\pi \neq \pi_0$, either the multiplicity is 0 or the Hom-dimension is 0.
-
-  However, by Clifford's Theorem (which applies because $V$ is irreducible on $G$), the multiplicity $m_V(\pi)$ is constant for all irreducible constituents appearing in $V|_H$. Since we found one constituent ($\pi_0$) with multiplicity 1, all constituents must have multiplicity 1.
+We denote by \(m_V(\pi)\) the multiplicity of any irreducible smooth \(K\)-representation \(\pi\) of \(H\) in
+\(V|_H\). By exactness,
+\[
+	\sum_{\pi} m_V(\pi) \dim \mathrm{Hom}_U(\pi, \theta) = \dim \mathrm{Hom}_U(V, \theta) = 1.
+\]
+There is a single \(\pi\) with \(m_V(\pi) = \dim \mathrm{Hom}_U(V, \theta) = 1\).
 \end{Proof}
 
 \section{p-adic Reductive Group}
 
-We now focus in on when $G$ is a $p$-adic reductive group (like $\GL_n(F)$) and ensure that it satisfies the result we want.
+We now focus in on when $G$ is a $p$-adic group and insure that it satisfies the result we want.
 % Insure to incorporate this: \url{https://en.wikipedia.org/wiki/Reductive_group}
 Let $G$ be a $p$-adic (algebraic) reductive group, that is the group of $F$-rational points of a reductive
-connected $F$-group $\underline{G}$, so $G= \underline{G}(F)$. We first ensure that the inclusion is
+connected $F$-group $\underline{G}$, so $G= \underline{G}(F)$. We first insure that the inclusion is
 ``well-defined'', as in it is closed and hence we have that $G/f(H)$ will be Hausdorff and $f(H)$ is locally
 profinite. In particular, by our earlier work we will choose it so that it is compact abelian.
 
@@ -971,28 +929,29 @@ profinite. In particular, by our earlier work we will choose it so that it is co
 \end{thm}
 
 \begin{Proof}
-  We go over why the assumptions of~\cref{pr:admissibleExt} are true. Recall:
+  We go over why the special properties of~\cref{pr:admissibleExt} are true. Recall:
   \begin{enumerate}[label=(2-\arabic*)]
       \item Any finitely generated admissible $R$-representation of $G$ has finite length.
       \item Any finitely generated smooth $R$-representation of $H$ is Noetherian.
   \end{enumerate}
   In general, it is \emph{not} true that a locally profinite group satisfies (2-1). However, a reductive
-  connected p-adic group does. This is too much to prove, however we have seen in~\cite{NatePadicRep} for
-  $\GL_n(F)$ that supercuspidal have length $1$ and principal series have length at most $3$, and hence
-  satisfy the condition.
+  connective p-adic group does. This is too much to prove, however we have seen in~\cite{NatePadicRep} for
+  $\GL_n(F)$ that supercuspidal have length $1$ and principles series have length at most $3$, and hence
+  satisfy the $G$ satisfies this condition.
 
   Next, $f(H)$ satisfies (2-2), but this is now harder to show and is a result of \emph{Bernstein's Theorem}.
-  The high-level intuition is that the Hecke algebras $\mathcal{H}(G, K_0)$ are Noetherian and $\mathcal{H}(G)$ is built from
+  The high-level intuition is that the Hecke algebras $\CH(G, K_0)$ are Noetherian and $\CH(G)$ is built from
   these (using the Bernstein Blocks we talked about in class). Needless to say, we are taking this for
   granted.
-\end{Proof}
 
+
+
+\end{Proof}
 \begin{prop}{}{prop:3.3}
-    Let $f : H \to G$ be a surjective central\footnote{The kernel of the map is contained in the center of $H$} $F$-morphism of connected reductive $F$-groups. Then, the subgroup $f(H)$ of $G$ is normal of abelian compact quotient $G/f(H)$.
+    Let $f : H \to G$ be a surjective central $F$-morphism of connected reductive $F$-groups. Then, the subgroup $f(H)$ of $G$ is normal of abelian compact quotient $G/f(H)$.
 \end{prop}
 
 \begin{Proof}
-  Complicated, see~\cite{henniartRepresentationsSL2F2025}.
     % There is an $F$-morphism $\kappa:G\times G \to H$ such that $\kappa(f(x), f(y))=xhx^{-1}y^{-1}$ for all $x, y \in H$ \textcolor{red}{[Borel and Tits 1972, définition 2.2]}. So for all $u, v \in G$ we have $uvu^{-1}v^{-1} = f \circ \kappa(u,v) \in f(H)$. The subgroup $f(H)$ of $H$ is closed (Lemma 3.1) and normal with abelian quotient $G/f(H)$ \textcolor{red}{[loc. cit., proposition 2.7]}.
 
     % The compactness of $G/H$ is stated in \textcolor{red}{[Silberger 1979]} without proof and in \textcolor{red}{[Labesse and Schwermer 2019, Proposition A.2.1]} with indications for the proof. The idea is to reduce to a connected reductive $F$-anisotropic modulo the centre $F$-group.
@@ -1002,68 +961,38 @@ profinite. In particular, by our earlier work we will choose it so that it is co
     % Let $X^*(S)$ denote the group of algebraic characters of $S$, and $\mathcal{S}(p_F)$ denote $\mathrm{Hom}(X^*(S), p_F^{\mathbb{Z}})$. The subgroup $\mathcal{S}(p_F)$ of $S$ is free abelian of finite rank with a compact quotient $S/\mathcal{S}(p_F)$. On the other hand, $f$ induces a surjective $F$-morphism $S' \to S$ sending $S'(p_F)$ onto a sublattice of $\mathcal{S}(p_F)$. Hence $S/f(S')$ is finite. So $M/f(S')$ is compact since $M/S$ is compact, a fortiori $M/f(M')$ is compact.
 \end{Proof}
 
-  The condition that the morphism $f$ is \emph{central} is necessary. Without it, the image may fail to be normal or co-compact.
 
-\begin{example}{Necessity of Central}{necessityofCentral}
-  Assume $\mathrm{char}(F) = 2$. Let $\underline{G} = \underline{\mathrm{GL}}_2$ and $\underline{G}' = \underline{\mathrm{SL}}_2$.
-  Consider the Frobenius map $\varphi(x) = x^2$ (applied entry-wise to matrices).
-  Define the morphism $f: \underline{G} \to \underline{G}'$ by:
-  \[ f(g) = \varphi(g) \cdot (\det g)^{-1} \]
-  (Note: In char 2, $\det(\varphi(g)) = (\det g)^2$, so $\det(f(g)) = (\det g)^2 (\det g)^{-2} = 1$, so the map lands in $\mathrm{SL}_2$).
+\begin{titledBox}{Remark 3.4}{rmk3.4}
+The condition that f is central in \textcolor{blue}{Proposition 3.3} is necessary. Indeed, assume \(\mathrm{char}_F = 2\) and \(f: \underline{\mathrm{GL}}_2 \to \underline{\mathrm{SL}}_2\), \(f(g) = \varphi(g) / \det g\) where \(\varphi(x) = x^2\) for \(x \in F\) is the Frobenius.\textsuperscript{4} The \(F\)-morphism \(f\) is surjective but not central. Let \(G = \mathrm{GL}_2(F)\), \(G' = \mathrm{SL}_2(F)\), \(T'\) the diagonal torus of \(G'\) and \(U\) the group of unipotent upper triangular matrices in \(G'\). Then \(f(G) = T'\varphi(G')\) is closed but not normal and not cocompact in \(G'\) (since \(\varphi(U) = U \cap T'\varphi(G')\) and \(U/\varphi(U)\) homeomorphic to \(F/F^2\) is not compact).
+\end{titledBox}
 
-  This map is surjective as algebraic groups, but it is \emph{not central}.
-  Let $U$ be the subgroup of unipotent upper-triangular matrices in $\mathrm{SL}_2(F)$ (isomorphic to the additive group of $F$).
-  The image of $U$ under $f$ is $\varphi(U)$, which corresponds to the subgroup of squares $F^2 \subset F$.
-  \begin{enumerate}
-      \item \emph{Not Normal:} The image $f(G(F))$ involves matrices with entries in $F^2$. Conjugating a matrix with square entries by a matrix with non-square entries generally results in non-square entries.
-      \item \emph{Not Cocompact:} The quotient group contains the term $U / \varphi(U)$, which is homeomorphic to the additive quotient $F / F^2$. For a local field of characteristic 2 (like $\mathbb{F}_{2^k}((t))$), the space $F/F^2$ is \emph{not compact} (it is essentially an infinite-dimensional vector space or a copy of the field itself).
-  \end{enumerate}
-\end{example}
-
-
-\begin{cor}{Descent via Derived Groups}{3.5}
-Assume \(K\) is algebraically closed. Let \(f: \underline{H} \to \underline{G}\) be an \(F\)-morphism of connected reductive \(F\)-groups.
-Suppose that \(f\) induces a \emph{central isogeny} on the derived groups:
-\[ f^{\mathrm{der}}: \underline{H}^{\mathrm{der}} \to \underline{G}^{\mathrm{der}} \]
-Then the subgroup \(f(H) \subset G\) satisfies the conclusions of \cref{th:3.2} (i.e., restrictions of admissible representations are semisimple of finite length, and admissible extensions exist).
+\begin{cor}{}{3.5}
+Assume \(K\) algebraically closed. Let \(f: \underline{H} \to \underline{G}\) be an \(F\)-morphism of connected reductive \(F\)-groups which induces a central \(F\)-isogeny \(\underline{H}^{\mathrm{der}} \to \underline{G}^{\mathrm{der}}\) between the derived groups. Then the conclusions of \textcolor{blue}{Theorem 3.2} apply to \(f(H)\).
 \end{cor}
-
 \begin{Proof}
-    \textbf{Step 1: Covering the Group.}
-    By definition of a central isogeny, the map \(f^{\mathrm{der}}\) is surjective with a finite kernel contained in the center of \(\underline{H}^{\mathrm{der}}\) \textcolor{red}{[Springer 1998, §12.2.6]}.
-    Let \(\underline{Z}\) be the connected center of \(\underline{G}\). Structural theory of reductive groups tells us that \(\underline{G}\) is generated by its center and its derived group. Specifically, the multiplication map
-    \[ m: \underline{Z} \times \underline{G}^{\mathrm{der}} \to \underline{G} \]
-    is surjective \textcolor{red}{[Springer 1998, Corollary 8.1.6]}.
-
-    \textbf{Step 2: Constructing a Central Morphism.}
-    Consider the map \(\Psi: \underline{Z} \times \underline{H} \to \underline{G}\) defined by \(\Psi(z, h) = z \cdot f(h)\).
-    Since \(f\) covers \(\underline{G}^{\mathrm{der}}\) and we explicitly included \(\underline{Z}\), \(\Psi\) is surjective.
-    Its kernel lies in the product of the center of \(\underline{Z}\) (which is \(\underline{Z}\) itself) and the kernel of \(f\), which is central. Thus, \(\Psi\) is a surjective central morphism.
-
-    \textbf{Step 3: Applying Proposition 3.3.}
-    By \cref{pr:prop:3.3}, the image \(\Psi(Z \times H) = Z \cdot f(H)\) is a normal subgroup of \(G\) with a compact abelian quotient.
-    Consequently, by \cref{th:3.2}, the restriction of any irreducible representation \(V\) of \(G\) to the subgroup \(Z \cdot f(H)\) has finite length and is semisimple.
-
-    \textbf{Step 4: Removing the Center (Schur's Lemma).}
-    Since \(V\) is irreducible and \(K\) is algebraically closed, by Schur's Lemma, the center \(Z\) acts on \(V\) via a scalar character \(\omega: Z \to K^\times\).
-    Therefore, the submodule structure of \(V\) restricted to \(Z \cdot f(H)\) is identical to the submodule structure restricted to just \(f(H)\) (since the action of \(Z\) preserves all subspaces).
-    Thus, \(V|_{f(H)}\) is also semisimple of finite length.
+The \(F\)-isogeny \(\underline{H}^{\mathrm{der}} \to \underline{G}^{\mathrm{der}}\) is surjective with finite kernel contained in the centre of \(\underline{H}^{\mathrm{der}}\) \textcolor{red}{[Springer 1998, §12.2.6]}. If \(\underline{Z}\) is the connected centre of \(\underline{G}\), the natural map \(\underline{Z} \times \underline{G}^{\mathrm{der}} \to \underline{G}\) is surjective \textcolor{red}{[Springer 1998, Corollary 8.1.6]}. Hence the obvious map \(\underline{Z} \times \underline{H} \to \underline{G}\) is surjective and central. \textcolor{blue}{Proposition 3.3} applies to \(Zf(H)\). But \(K\) being algebraically closed, \(Z\) acts by a character in any irreducible smooth \(K\)-representations of \(G\), and we get the corollary.
 \end{Proof}
+
+\begin{titledBox}{Remark 3.6}{rmk3.6}
+There is a more elementary proof that the restriction to \(f(H)\) of any irreducible admissible \(K\)-representation of \(G\) is semisimple of finite length in \textcolor{red}{[Silberger 1979]}.
+\end{titledBox}
+
+
+
 
 \section{Restriction of $GL_2(F)$ to $SL_2(F)$}
 
 
-Let $G = \GL_2(F)$, $G' =\SL_2(F)$, $Z$ the center, $T$ the torus, $B$ the Borel subgroup, $U$ the unipotent
-subgroup. If $X \sse G$ is a subset, $X' = X\cap G'$ and $x = (x_{ij})$ represents a matrix in $G$. We first
-set up for the Clifford theory.
+Let $G = \GL_2(F)$, $G' =\SL_2(F)$, $Z$ the center, $G$ the torus, $B$ the Borel subgroup, $U$ the unipotent
+subgroup. If $X \sse G$ is a subset, $X' = X\cap G'$ and $x = (x_{ij})$ represents a matrix in $G$
 
 Take $H= ZG'$. It is a closed normal compact group where $G/H$ is isomorphic to $F^*/(F^*)^2$. It is
-normal as $Z$ is obviously normal and $G' = \ker\det$ where $\mathrm{im}\det = F^*$, and $gZG'g^{-1} = ZG'$. It is
+normal as $Z$ is obviously normal and $G' = \ker\det$ where $\im\det = F^*$, and $gZG'g^{-1} = ZG'$. It is
 closed since $H= \det^{-1}\left((F^*)^2\right)$. It is cocompact since:
 \[
   \frac{F^*}{\left(F^*\right)^2} \cong \frac{\Z}{2\Z} \times \frac{\CO_F^*}{(\CO_F^*)^2}
 \]
-and $\CO_F^*$ is compact and so is the quotient by a closed subgroup The $\mathbb{F}_2$-dimension of $G/H$ is that of
+and $\CO_F^*$ is compact and so is the quotient by a closed subgroup The $\F_2$-dimension of $G/H$ is that of
 $F^*/(F^*)^2$ which is:
 \begin{equation}\label{eq:4-1}
 \dim_{\mathbb{F}_2} F^* / (F^*)^2 =
@@ -1073,327 +1002,179 @@ $F^*/(F^*)^2$ which is:
 \end{cases}
 \quad \text{where } 2\CO_F = \FP_F^e.
 \end{equation}
-Hence if $\operatorname{char}_F \ne 2$, $ZG'$ is open.
+Hence if $\Char_F \ne 2$, $ZG'$ is open. Next, let $\overline{F}^\sep$ represent the separable algebraic
+closure, $\CW_F$ and $G_F$ the Weil group and galois group of $\overline{F}^\sep/F$ respectively. Let $\Psi$
+be a smooth additive $K$-character on of $F$, trivial on $\CO_F$ but not on $\fp_F^{-1}$ (i.e. a level
+1 character, but not on $\fp_F^{-1}$ (i.e. A level 1 character).
 
 
-Next, we set up to show that the multiplicity of the restriction is $1$. Fix a separable closure $F^{\mathrm{sc}}$ of $F$ and will consider only extensions of $F$ contained in
-$F^{\mathrm{sc}}$. Write $W_F$ for the Weil group and $\mathrm{Gal}_F$ for the Galois group of
-$F^{\mathrm{sc}}/F$. Let $\Psi$ be a smooth additive $K$-character of $F$, trivial on $\CO_F$ but not on
-$\mathfrak{p}_F^{-1}$.
-
+\index{Whittaker Space}
 \begin{defn}{Whittaker Space}{whittakerSp}
-  The smooth $K$-characters of $U$ have the form
+  The space of smooth $K$-characters of $U$ have the form
   \[
-    \theta_Y(u) = \Psi \circ \tr(Y(u-1)) = \Psi(Y_{2,1}u_{1,2}), \qquad u\in U
+    \theta(u) = \psi \circ \tr(Y(u-1)) = \Psi(Y_{2,1}, u_{1,2}) \qquad u\in U
   \]
   for a lower triangular nilpotent matrix $Y \in M_2(F)$. The case $Y=0$ gives the trivial character of $U$,
   the cases with $Y\ne 0$ give the \emph{nondegenerate characters} of $U$.
-
-  \qn
-  When $Y_{2,1} = 1$, we denote $\theta_Y = \theta$.
 \end{defn}
 
+When $Y_{2,1} = 1$, then \textcolor{red}{here}, so denote $\theta_Y = \theta$.
 
-The normalizer of $U$ in $G$ is $TU$. By conjugation, $U$ acts trivially on $U$ and its characters. A diagonal matrix $t = \mathrm{diag}(t_1, t_2)$ acts on $u \in U$ by $(tut^{-1})_{1,2} = (t_1/t_2)u_{1,2}$. Also, $t$ acts on the matrix $Y$ defining the character by $(tYt^{-1})_{2,1} = (t_2/t_1)Y_{2,1}$.
 
-It follows that $T$ acts transitively on the nondegenerate characters of $U$, the quotient $T/Z$ acting simply transitively. By the same formulas, two nontrivial characters $\theta_Y$ and $\theta_{Y'}$ of $U$ are conjugate in $G'$ if and only if they are conjugate by an element of $T'$ (the diagonal torus in $\SL_2$) and if and only if $Y_{1,2}$ and $Y'_{1,2}$ differ by a square in $F^*$.
-
-The $T$-normalizer of $\theta_Y$ is equal to $Z$ if $Y \neq 0$ and to $T$ if $Y=0$.
-The $\theta_Y$-coinvariant functor $\tau \mapsto W_Y(\tau)$ from the smooth $K$-representations $\tau$ of $U$
-to the smooth $K$-representations of the $T$-normalizer of $\theta_Y$ is exact. This functor is essentially the dual of $\operatorname{Hom}_U(\tau, \theta)$.
-\begin{itemize}
-    \item A smooth $K$-representation $\tau$ of $U$ is called \emph{degenerate} when $W_Y(\tau) = 0$ for all $Y \neq 0$, and \emph{nondegenerate} otherwise.
-    \item A smooth representation of $G$ or $G'$ is called degenerate (or nondegenerate) if its restriction to $U$ is as well.
-\end{itemize}
-
-The finite-dimensional irreducible smooth $K$-representations of $G$ are of the form $\chi \circ \det$ for a smooth character $\chi$ of $F^*$ and are degenerate. If $\Pi$ is an infinite-dimensional irreducible smooth $K$-representation of $G$, then:
-\[ \dim W_Y(\Pi) = 1 \]
-for all $Y \neq 0$ by the uniqueness of Whittaker models \textcolor{red}{[Vignéras 1996, chap III, 5.10]} .
-
-This uniqueness is structurally decisive. By applying the \emph{Multiplicity One Criterion} (\cref{lm:lem3}), we conclude that the restriction $\Pi|_{G'}$ is \emph{multiplicity free} (i.e., it
-decomposes into a direct sum of \emph{distinct} irreducible representations). Moreover, by Clifford's Theorem,
-these components form a single orbit under the conjugation action of $G$. This natural grouping of ``conjugate
-siblings'' forms the basis of the classification for $G'$.
+\textcolor{red}{mores words here before defining}
 
 \index{L-packet}
 \begin{defn}{L-packet}{l-packet}
-Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\). The \emph{L-packet} associated to \(\Pi\), denoted \(L(\Pi)\), is the set of isomorphism classes of the irreducible components of the restriction \(\Pi|_{G'}\).
+Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\). Then the set \(L(\Pi)\) of isomorphism classes
+of irreducible components of the restriction \(\Pi|_{G'}\) is called an \emph{L-packet}.
 \end{defn}
 
-Since every irreducible representation of \(G'\) can be lifted to \(G\) (by~\cref{pr:admissibleExt}), we can classify the irreducible smooth \(K\)-representations of \(G'\) by analyzing these L-packets.
+We classify the irreducible smooth \(K\)-representations of \(G'\) by these L-packets.
 
 \begin{prop}{Properties of L-packets: I}{propofL-packetsI}
   \begin{enumerate}
-    \item If \(\Pi\) is an irreducible smooth \(K\)-representation of \(G\), the restriction \(\Pi|_{G'}\)
-    is semisimple of finite length and has multiplicity 1.
-    \item Any irreducible smooth \(K\)-representation of \(G'\) belongs to a unique \(L\)-packet.
-    \item For two irreducible smooth \(K\)-representations \(\Pi_1, \Pi_2\) of \(G\):
-    \[
-      L(\Pi_1) = L(\Pi_2) \iff \Pi_1 \cong (\chi \circ \det) \otimes \Pi_2
-    \]
-    for some smooth character \(\chi\) of \(F^*\).
+  \item If \(\Pi\) is an irreducible smooth \(K\)-representation of \(G\) the restriction of \(\Pi\) to \(G'\)
+    is semisimple of finite length and multiplicity 1.
+    \item  Any irreducible smooth \(K\)-representation of \(G'\) belongs to a unique \(L\)-packet.
+
+    \item For two irreducible smooth \(K\)-representations \(\Pi_1, \Pi_2\) of \(G\),
+  \[
+    L(\Pi_1) = L(\Pi_2) \iff \Pi_1 = (\chi \circ \det) \otimes \Pi_2
+  \]
+
   \end{enumerate}
+  Note that the trivial character of \(G'\) is the unique finite-dimensional irreducible smooth
+  \(K\)-representation of \(G'\), it is degenerate and forms an \(L\)-packet \(L(1) = L(\chi \circ \det)\) for
+  any smooth \(K\)-character \(\chi\) of \(F^*\). for some \(K\)-character \(\chi \circ \det\) of \(G\).
 \end{prop}
 
 \begin{Proof}
   \begin{enumerate}
-    \item \textbf{Semisimplicity:} We established in the previous section that \(H = ZG'\) is a normal subgroup with a compact abelian quotient. By \cref{th:3.2} (Descent Properties), the restriction \(\Pi|_H\) is semisimple of finite length. Since \(Z\) acts by scalars (as \(K\) is algebraically closed), the restriction to \(G'\) retains the same reducible structure.
+    \item By~\cref{th:3.2}, taking the natural inclusion $f: \underline{H} \to \underline{G}$, since $G/H$ is compact
+      the restriction $\Pi|_H$ is semisimple of finite length. Since $Z$ acts by a scalar character in any
+      irreducible representation $\Pi$ (as $K$ is algebraically closed), the restriction from $H$ to $G'$ does
+      not change the reducibility or the of subrepresentations (it only forgets the central character). Therefore, $\Pi|_{G'}$ is semisimple of finite length.
 
-    \textbf{Multiplicity 1:} We apply the Multiplicity One Criterion (\cref{lm:lem3}). Let \(U\) be the unipotent subgroup and \(\theta\) a non-degenerate character. By the uniqueness of Whittaker models for \(\mathrm{GL}_2(F)\), for any infinite-dimensional \(\Pi\), we have \(\dim \mathrm{Hom}_U(\Pi, \theta) = 1\). Thus, \(\Pi|_{G'}\) is multiplicity free. (For the finite-dimensional case, \(\Pi\) is 1-dimensional and trivial on \(G'\), so the result holds trivially).
+      For multiplicity, \cref{lm:lem3} states that if a functor $\text{Hom}_U(-, \theta)$ is exact and $\dim
+      \text{Hom}_U(\Pi, \theta) = 1$, then $\Pi|_H$ has multiplicity 1. Let $U$ be the subgroup of unipotent
+      upper triangular matrices and $\theta$ be a non-degenerate character of $U$ (see~\cref{df:whittakerSp}). By the
+      uniqueness of Whittaker models for $GL_2(F)$, for any infinite-dimensional irreducible representation
+      $\Pi$, we have $\dim_R \mathcal{W}_Y(\Pi) = 1$ (which is isomorphic to $\text{Hom}_U(\Pi, \theta)$).
+      By~\cref{lm:lem3}, the restriction $\Pi|_{G'}$ is multiplicity 1. (Note: Finite-dimensional representations are
+      characters $\chi \circ \det$, which are trivial on $G'$, hence the restriction is the trivial
+      representation, which also has multiplicity 1).
 
-    \item \textbf{Existence:} By the Extension Property (\cref{pr:admissibleExt}), any irreducible representation \(\pi\) of \(G'\) is contained in the restriction of some representation of \(G\). Thus, \(\pi\) belongs to at least one L-packet.
-    \textbf{Uniqueness:} By Clifford's Theorem, the irreducible components of a restriction \(\Pi|_{G'}\) form a single orbit under the conjugation action of \(G\). By Definition \ref{df:l-packet}, the L-packet \(L(\Pi)\) is exactly this orbit. Since distinct orbits are disjoint, \(\pi\) cannot belong to two different packets.
+    \item By~\cref{th:3.2}, for any irreducible $\pi$ of $G'$, there exists a $\Pi$ of $G$ such that $\pi
+      \subset \Pi|_{G'}$. Thus, $\pi \in L(\Pi)$. For uniqueness, Suppose $\pi$ belongs to two packets, i.e.,
+      $\pi \subset \Pi_1|{G'}$ and $\pi \subset \Pi_2|{G'}$. This implies that $\Pi_1$ and $\Pi_2$ share a
+      common irreducible component upon restriction. By~\cref{lm:lem2} (1)-(2), the irreducible
+      components of the restriction are $G$-conjugate. Furthermore, the set of components constitutes the
+      $L$-packet. Since $\Pi|_{G'}$ is semisimple (first part of this proof), the components are determined uniquely by
+      the restriction. If $\pi$ is a component of both, the orbit of $\pi$ under $G$-conjugation is the same
+      set. Thus $L(\Pi_1) = L(\Pi_2)$.
+      \item \begin{enumerate}
+    \item[($\Lw$)] Assume $\Pi_1 \cong (\chi \circ \det) \otimes \Pi_2$ for some smooth character $\chi$
+      By restricting to $G'$:
+  \[
+  \Pi_1|
+  {G'} \cong ((\chi \circ \det) \otimes \Pi_2)|
+  {G'}
+  \]
+    notice that any $g \in G' = SL_2(F)$, $\det(g) = 1$. Thus $(\chi \circ \det)(g) = \chi(1) = 1$. Therefore,
+    $\Pi_1|{G'} \cong \Pi_2|{G'}$. Since their restrictions are isomorphic, their sets of irreducible components ($L$-packets) are identical.
+  \item[($\Rw$)] Assume $L(\Pi_1) = L(\Pi_2)$. This means $\Pi_1|{G'}$ and $\Pi_2|{G'}$ share the same
+    irreducible components. Let $\pi$ be one such component. Take the restriction to $H = ZG'$. Since
+    $Z$
+    is central, $\Pi_1$ and $\Pi_2$ act on $Z$ by scalars. Since $G/H$ is abelian, by~\cref{lm:lem1}
+    and~\cref{lm:lem3}(2)
+    % implies that if two irreducible representations of $G$ ($\Pi_1$ and $\Pi_2$) contain the same
+    % representation $\pi$ of $H$ upon restriction, then
+    $\Pi_1$ is isomorphic to a twist of $\Pi_2$ by a
+    character $\psi$ of $G$ which is trivial on $H$.
+    \[
+    \Pi_1 \cong \Pi_2 \otimes \psi
+    \]
 
-    \item
-    \begin{itemize}
-        \item[($\Leftarrow$)] Assume \(\Pi_1 \cong \Pi_2 \otimes (\chi \circ \det)\). Restricting to \(G'\):
-        \[ \Pi_1|_{G'} \cong (\Pi_2|_{G'}) \otimes (\chi \circ \det)|_{G'} \]
-        Since \(\det(G') = \{1\}\), the twisting character is trivial on \(G'\). Thus \(\Pi_1|_{G'} \cong \Pi_2|_{G'}\), which implies their components (and thus their L-packets) are identical.
-
-        \item[($\Rightarrow$)] Assume \(L(\Pi_1) = L(\Pi_2)\). This implies that \(\Pi_1|_{G'}\) and \(\Pi_2|_{G'}\) share an irreducible component \(\pi\).
-        By the logic of \cref{lm:lem2} (Clifford Theory for Abelian Quotients). Although \(G/G' \cong F^*\) is not compact, we can pass through the intermediate compact subgroup \(H = ZG'\).
-        Since \(\Pi_1\) and \(\Pi_2\) share a component on \(G'\), they must share a component on \(H\) (possibly up to a twist of the central character).
-        Since \(G/H\) is abelian, \cref{lm:lem2}(2b) implies that \(\Pi_1\) is a twist of \(\Pi_2\) by some character \(\psi\) of \(G\) trivial on \(H\).
-        Since \(\det\) gives the isomorphism \(G/G' \cong F^*\), any such twist is of the form \(\chi \circ \det\).
-    \end{itemize}
+    Since $\psi$ is trivial on $G'$, it must factor through the determinant (as $G/G' \cong F^*$ via det).
+    Thus $\psi = \chi \circ \det$ for some character $\chi$ of $F^*$. Therefore, $\Pi_1 \cong \Pi_2 \otimes
+    (\chi \circ \det)$.
+  \end{enumerate}
   \end{enumerate}
 \end{Proof}
 
-\begin{titledBox}{remark}{rmk}
-  The trivial character of \(G'\) is the unique finite-dimensional irreducible smooth \(K\)-representation of \(G'\). It is degenerate. It forms the L-packet \(L(\mathbf{1}) = L(\chi \circ \det)\) for any smooth character \(\chi\) of \(F^*\).
-\end{titledBox}
-
-Thus, the irreducible components of \(\Pi|_{G'}\) are \(G\)-conjugate (and indeed \(B\)-conjugate, since the Iwasawa decomposition \(G = BG'\) implies the Borel subgroup covers the quotient).
-
-Let us now determine the size of an \(L\)-packet. As established in \cref{lm:lem3}, since \(G/G'\) is abelian,
-the stabilizer \(G_{\pi}\) of a component \(\pi \in L(\Pi)\) is a normal subgroup and does not depend on the
-choice of \(\pi\). Let us denote this as \(G_{\Pi}\). Since \(G_{\Pi}\) contains the center \(Z\), its image
-under the determinant \(\det(G_{\Pi})\) must contain \(\det(Z) = (F^*)^2\). We have the following isomorphism
-of quotients:
+Thus, the irreducible components of $\Pi|_{G'}$ are $G$-conjugate (even $B$-conjugate as $G = BG'$!). Let us
+next get an idea of how many irreducible representations are in an $L$-packet. As the
+$G$-stabilizer of $\pi \in L(\Pi)$ does not depend on the choice of $\pi \in L(\Pi)$, we may write $G_\Pi$
+instead of $G_\pi$. By~\cref{lm:lem3}(a), $G_\Pi$ is normal and is certainly open. Furthermore, it contains
+$G'Z$. Then, $\det G_\Pi\sse F^*$ is open (as the determinant is an open map) and contains $(F^*)^2$ (as
+$G_\Pi$ contains the center). Then:
 \[
-  G/G_\Pi \cong \frac{G/G'}{G_\Pi/G'} \xrightarrow{\sim} \frac{F^*}{\det(G_\Pi)}
+  G/G_\Pi \cong \frac{G/G'}{G_\Pi/G'} \cong \frac{F^*}{\det G_\Pi}
 \]
-This isomorphism allows us to count the size of the packet using the arithmetic of the field \(F\).
+
 
 \begin{prop}{Properties of L-packets: II}{propofL-packetsII}
   Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\) and \(\pi \in L(\Pi)\) be an irreducible component. Let \(G_\Pi\) denote the \(G\)-stabilizer of \(\pi\).
   \begin{enumerate}
-    \item \textbf{Maximality:} \(G_\Pi\) is the largest subgroup \(I\) of \(G\) (containing \(G'\)) such that \(\mathrm{length}(\Pi|_I) = \mathrm{length}(\Pi|_{G'})\). (In fact, \(\mathrm{length}(\Pi|_{G_\Pi}) = 1\)).
-    \item \textbf{Induction:} \(\Pi \cong \operatorname{Ind}_{G_\Pi}^G \pi\). (Since multiplicity is 1, the isotypic component \(V_\pi\) is isomorphic to \(\pi\)).
-    \item \textbf{Structure:} The L-packet \(L(\Pi)\) is a principal homogeneous space (a \emph{torsor}) for the quotient group \(G/G_\Pi\).
-    \item \textbf{Cardinality:} \(|L(\Pi)|\) is a power of 2. Specifically, \(|L(\Pi)|\) divides the index \([F^* : (F^*)^2]\).
-    \[
-      |L(\Pi)| \text{ divides } \begin{cases}
-        2^{2+e} & \text{if } \mathrm{char}_F \neq 2, \\
-        \infty & \text{if } \text{char}_F = 2.
-      \end{cases}
-    \]
-  \end{enumerate}
-\end{prop}
-
-
-\begin{Proof}
-  \begin{enumerate}
-    \item By \cref{pr:propofL-packetsI}, the restriction \(\Pi|_{G'}\) has multiplicity 1. By \cref{lm:lem3}, specifically part (2c), \(G_\Pi\) is the unique maximal subgroup \(I\) such that \(\mathrm{length}(\Pi|_I) = \mathrm{length}(\Pi|_{G'})\).
-    (Note: While the lemma refers to \(H = ZG'\), the scalar action of \(Z\) ensures that lengths on \(H\) and \(G'\) are identical).
-
-    \item Since multiplicity is 1, the isotypic component \(V_\pi\) coincides with the irreducible
-      representation \(\pi\). The isomorphism \(\Pi \cong \operatorname{Ind}_{G_\Pi}^G \pi\) is then the
-      standard Clifford reduction formula established in the setup to \cref{lm:lem3}.
-
-    \item Clifford theory establishes that \(G\) acts transitively on \(L(\Pi)\) with stabilizer \(G_\Pi\). Since \(G/G'\) is abelian, \(G_\Pi\) is normal. Thus, the quotient group \(G/G_\Pi\) acts simply transitively on the set \(L(\Pi)\), making it a \(G/G_\Pi\)-torsor.
-
-    \item The cardinality is the index: \(|L(\Pi)| = [G : G_\Pi]\).
-    The determinant induces an isomorphism \(G/G_\Pi \cong F^*/\det(G_\Pi)\).
-    Since \(G_\Pi\) contains the center \(Z\), its determinant image contains \(\det(Z) = (F^*)^2\).
-    Therefore, the group \(F^*/\det(G_\Pi)\) is a quotient of the elementary abelian 2-group \(F^*/(F^*)^2\).
-    By Lagrange's Theorem, the size of this quotient must be a power of 2 dividing \([F^* : (F^*)^2]\).
-  \end{enumerate}
-\end{Proof}
-
-
-
-\begin{thm}{Size of L-packets (Odd Residual Characteristic)}{sizeofL-packets}
-  If the residual characteristic \(p\) is odd, then the cardinality of an \(L\)-packet is either \(1\), \(2\), or \(4\).
-\end{thm}
-
-\begin{Proof}
-  According to \cref{pr:propofL-packetsII}(4), \(|L(\Pi)|\) divides the order of the group \(F^*/(F^*)^2\).
-  Recall Equation \eqref{eq:4-1}, which states that \(\dim_{\mathbb{F}_2} F^*/(F^*)^2 = 2 + e\), where \(e = v_F(2)\).
-  Since \(p\) is odd, \(2\) is a unit in the ring of integers \(\CO_F\), implying \(e = 0\).
-  Therefore, the group has dimension 2 over \(\mathbb{F}_2\), so \(|F^*/(F^*)^2| = 2^2 = 4\).
-  The divisors of 4 are 1, 2, and 4.
-\end{Proof}
-
-When $p =2$, this is more difficult (If $F = \mathbb{Q}_2$, the group size is $|F^*/(F^*)^2| = 8$). However, the
-packets are \emph{still} of size $1,2,4$ as long as $\operatorname{char}_K \ne 2$. We shall not prove this, but it was proven
-for:
-\begin{itemize}
-  \item $K = \mathbb{C}$ and $\operatorname{char}_F = 0$ (see \textcolor{red}{[Labesse and Langlands 1979; Shelstad 1979]}
-  \item $\operatorname{char}_F = 2$ and $\operatorname{char}_K = 2$ \textcolor{red}{[Cui et al. 2024, Proposition 6.6]}
-\end{itemize}
-
-The isomorphism \(G/G_\Pi \cong F^*/\det G_\Pi\) invites an interpretation via Local Class Field Theory. Recall that open subgroups of \(F^*\) of finite index correspond to norm groups of abelian extensions.
-\begin{itemize}
-    \item Any open subgroup of index 2 is the norm group \(N_{E/F}(E^*)\) for a unique quadratic separable extension \(E/F\).
-    \item Any open subgroup of index 4 containing \((F^*)^2\) is the norm group \(N_{K/F}(K^*)\) for a unique biquadratic separable extension \(K/F\).
-\end{itemize}
-
-\begin{defn}{Associated Field Extension}{fieldExt}
-  Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\). We denote by \(E_\Pi\) the separable extension of \(F\) corresponding to the stabilizer via Class Field Theory, i.e., the extension such that:
-  \[ N_{E_\Pi/F}(E_\Pi^*) = \det G_\Pi \]
-\end{defn}
-
-We can now relate the L-packet size to the group of self-twists of \(\Pi\).
-
-\begin{defn}{Group of Self-Twists}{selfTwists}
-  We denote by \(X_\Pi\) the group of characters \(\chi \circ \det\) of \(G\) (where \(\chi\) is a smooth character of \(F^*\)) such that:
-  \[ \Pi \otimes (\chi \circ \det) \cong \Pi \]
-  If \(\mathrm{char}(K) \neq 2\), the non-trivial characters in \(X_\Pi\) correspond to quadratic characters \(\eta_E\) associated with quadratic extensions \(E/F\).
-\end{defn}
-
-\begin{prop}{Twists and Packet Size}{twistsPacketSize}
-  \begin{enumerate}
-      \item \(X_\Pi\) is isomorphic to the group of smooth characters of \(G\) trivial on \(G_\Pi\).
-      \item The cardinality of the L-packet equals the number of self-twists: \(|L(\Pi)| = |X_\Pi|\).
+    \item \(G_\Pi\) is the largest subgroup \(I\) of \(G\) such that \(\text{lg}(\Pi|_I) = \text{lg}(\Pi|_{G'})\).
+    \item \(\Pi = \text{ind}_{G_\Pi}^G V_\pi\) where \(V_\pi\) is the space of \(\pi\).
+    \item \(L(\Pi)\) is a principal homogeneous space (a \emph{torsor}) for \(G/G_\Pi\).
+    \item \(|L(\Pi)|\) is a power of 2, and \(|L(\Pi)|\) divides \(2^{2+e}\) when \(\text{char}_F \neq 2\).
   \end{enumerate}
 \end{prop}
 
 \begin{Proof}
   \begin{enumerate}
-      \item This is a direct application of \cref{lm:lem3}(1). Since \(G/H\) is abelian, the self-twists of \(\Pi\) are exactly the characters trivial on the stabilizer \(G_\Pi\).
-      \item By Pontryagin duality  for the finite abelian group \(G/G_\Pi\)
-        (see~\cite{chwojko-srawleyPontryaginDuality}), the number of characters trivial on \(G_\Pi\) equals
-        the index \([G:G_\Pi]\). By \cref{pr:propofL-packetsII} we have \(|L(\Pi)| = [G:G_\Pi]\).
+    \item By~\cref{pr:propofL-packetsI}, the restriction \(\Pi|_{G'}\) has multiplicity 1. We apply~\cref{lm:lem3}(3), which states that when a restriction has multiplicity 1, the stabilizer \(G_\pi\) is the largest subgroup \(I\) containing \(H\) such that \(\text{lg}(\Pi|_I) = \text{lg}(\Pi|_H)\). Here, \(H = ZG'\). Since \(Z\) acts by scalars in \(\Pi\), restriction from \(H\) to \(G'\) does not change the length, so \(\text{lg}(\Pi|_H) = \text{lg}(\Pi|_{G'})\). Thus, \(G_\Pi\) is the largest subgroup maintaining the length of the restriction.
+
+    \item Since \(G/H\) is compact (isomorphic to \(F^*/(F^*)^2\)), the index \([G:G_\Pi]\) is finite. By Clifford's theory (Section 2.2.6), \(V = \text{Ind}_{G_\Pi}^G(V_\pi)\). In the context of smooth representations with compact quotient, the smooth induction coincides with the compact induction, yielding \(\Pi \cong \text{ind}_{G_\Pi}^G V_\pi\).
+
+    \item The group \(G\) acts transitively on the set of irreducible components \(L(\Pi)\) by conjugation. The stabilizer of any component \(\pi\) is \(G_\Pi\). Since \(G/G' \cong F^*\) is abelian, any subgroup containing \(G'\) is normal in \(G\), so \(G_\Pi\) is normal. Thus, the group \(G/G_\Pi\) acts simply transitively on \(L(\Pi)\).
+
+    \item The cardinality is given by the index \(|L(\Pi)| = [G : G_\Pi]\). The determinant map \(\det: G \to
+      F^*\) induces an isomorphism \(G/G_\Pi \cong F^*/\det G_\Pi\). Since \(Z\) acts by scalars on \(\Pi\),
+      \(Z \subset G_\Pi\), and consequently \(\det(Z) = (F^*)^2 \subset \det G_\Pi\). Since \(\det G_\Pi\) is
+      an open subgroup of \(F^*\) containing \((F^*)^2\), the index \([F^* : \det G_\Pi]\) divides \([F^* :
+      (F^*)^2]\). By Equation~\ref{eq:4-1}, \(|F^*/(F^*)^2| = 2^{2+e}\) (for \(\text{char}_F \neq 2\)). Thus,
+      \(|L(\Pi)|\) is a power of 2 dividing \(2^{2+e}\).
   \end{enumerate}
 \end{Proof}
 
-Finally, we address how the Whittaker model interacts with the L-packet. While all components are conjugate, they are distinct with respect to a fixed Whittaker character.
 
-\begin{prop}{Uniqueness of Whittaker Component}{whittakerComponent}
-  Fix a lower triangular matrix \(Y \neq 0\) and the associated character \(\theta_Y\) of \(U\).
-  There exists a \emph{unique} component \(\pi \in L(\Pi)\) such that \(\pi\) admits a non-zero Whittaker model for \(\theta_Y\) (i.e., \(W_Y(\pi) \neq 0\)).
+\begin{prop}{Size of L-packets}{sizeofL-packets}
+  If $p$ is odd, then the cardinality of an $L$-packet is either $1$, $2$, or $4$.
 \end{prop}
 
 \begin{Proof}
-  Recall that \(\Pi|_{G'}\) decomposes as a direct sum of the components in the L-packet:
-  \[ \Pi|_{G'} = \bigoplus_{\pi \in L(\Pi)} \pi \]
-  The Whittaker functor \(\tau \mapsto W_Y(\tau)\) is exact and additive on direct sums. Therefore:
-  \[ \dim_K W_Y(\Pi) = \sum_{\pi \in L(\Pi)} \dim_K W_Y(\pi) \]
-  We know from the uniqueness of Whittaker models for \(\mathrm{GL}_2\) that \(\dim_K W_Y(\Pi) = 1\).
-  Since dimensions are non-negative integers, exactly one term in the summation must be 1, and the rest must be 0.
+  If $p$ is odd, then $|F^*/(F^*)^2| = 4$ as $\Char_F \ne 2$ (and hence $2$ doesn't ramify), giving the
+  desired result.
 \end{Proof}
 
+When $p =2$, this more difficult as \textcolor{red}{HERE}. This is proven via LLC.
 
 
 \section{Representations}
 
-We now briefly take a look at how we translate the result about parabolic induction and cuspidal
-representations. Reminders of the definitions will be put, but it will be assumed the reader already knows
-this (see~\cite{NatePadicRep} for my covering of this material). For this section, let \(\mathrm{Gr}_K^\infty(G)\) denote the Grothendieck group of finite
-length smooth \(K\)-representations of \(G\), and let \([\tau]\) denote the image in
-\(\mathrm{Gr}_K^\infty(G)\) of a representation \(\tau\). Similar notation applies to \(G'\).
-
-
-\begin{defn}{Parabolic Induction}{parabolicInd}
-  Let \((\sigma, V)\) be a smooth \(K\)-representation of the torus \(T\). The \emph{smooth parabolic induction} \(\operatorname{ind}_B^G(\sigma)\) is the space of functions \(f: G \to V\) satisfying:
-  \[
-    f(tugk) = \sigma(t)f(g)
-  \]
-  for all \(t \in T, u \in U, g \in G\), and some open compact subgroup \(K_f \subset G\), under the action of right translation.
-
-
-  The modulus character \(\delta: B \to \mathbb{R}_{>0}\) is defined by:
-  \[
-    \delta(\mathrm{diag}(a, d)) = q^{-\mathrm{val}(a/d)} \qquad (a, d \in F^*)
-  \]
-  To define the square root of \(\delta\), fix a square root \(q^{1/2}\) of \(q\) in \(K^*\):
-  \[
-    \nu(\mathrm{diag}(a, d)) = (q^{1/2})^{-\mathrm{val}(a/d)}
-  \]
-  Then the \emph{normalized parabolic induction} is defined as \(i_B^G(\sigma) = \operatorname{ind}_B^G(\sigma \nu)\).
-\end{defn}
-
-This construction behaves well with respect to twisting. For a smooth character \(\chi \circ \det\) of \(G\):
-\[ i_B^G(\sigma) \otimes (\chi \circ \det) \simeq i_B^G(\sigma \otimes (\chi \circ \det)) \]
-Analogous definitions apply to \(G'\). Since \(G = BG'\) and \(G/B\) is compact, the restriction map \(f \mapsto f|_{G'}\) induces isomorphisms:
-\[
-  (\operatorname{ind}_B^G(\sigma))|_{G'} \xrightarrow{\sim} \operatorname{ind}_{B'}^{G'}(\sigma|_{T'}), \qquad (i_B^G(\sigma))|_{G'} \xrightarrow{\sim} i_{B'}^{G'}(\sigma|_{T'})
-\]
-Hence, the parabolic case is rather simple.
-\begin{defn}{Cuspidal Representations}{cuspidalDef}
-  When \(\chi\) is a smooth \(K\)-character of \(T\), the induction \(\operatorname{ind}_B^G(\chi)\) is called a \emph{principal series} representation.
-  \begin{itemize}
-      \item An irreducible smooth \(K\)-representation of \(G\) is called \emph{supercuspidal} if it is not a subquotient of any principal series.
-      \item It is called \emph{cuspidal} if its \(U\)-coinvariants are zero (\((-)_U = 0\)).
-  \end{itemize}
-  A supercuspidal representation is always cuspidal. The converse holds provided \(q+1 \neq 0\) in \(K\). Both classes of representations are infinite-dimensional.
-\end{defn}
-
-The property of cuspidality descends to the L-packet.
-
-\begin{prop}{Cuspidality of L-packets}{cuspidalPacket}
-  Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\) and \(\pi \in L(\Pi)\) a component of its restriction.
-  \begin{enumerate}
-      \item \(\Pi\) is cuspidal if and only if \(\pi\) is cuspidal.
-      \item \(\Pi\) is supercuspidal if and only if \(\pi\) is supercuspidal.
-  \end{enumerate}
-  Consequently, an L-packet \(L(\Pi)\) is called a \emph{cuspidal packet} if \(\Pi\) is cuspidal.
-\end{prop}
-
-\begin{Proof}
-  \(L(\Pi)\) constitutes the \(B\)-orbit of \(\pi\) (since \(G=BG'\)). The \(U\)-coinvariant functor is exact and commutes with restriction to \(G'\). Thus, the vanishing of coinvariants for \(\Pi\) implies the vanishing for its components, and vice versa.
-\end{Proof}
-
-\subsubsection*{Construction via Types}
-
-The rest would now be going into the details of the construction which is too much for this paper, but here is
-a glimpse. Let \(\Pi\) be a cuspidal \(K\)-representation of \(G\). It is constructed via compact induction from an \emph{extended maximal simple type} \((J, \Lambda)\):
-\[
-  \Pi \cong \operatorname{ind}_J^G(\Lambda)
-\]
-References: \textcolor{red}{[Bushnell and Kutzko 1994; Bushnell and Henniart 2002]} for \(K=\mathbb{C}\), and \textcolor{red}{[Vignéras 1996, III.3.4]} for general \(K\).
-
-The group \(J\) contains the center \(Z\) and a unique maximal open compact subgroup \(J^0\). Let \(J^1\) be
-the pro-\(p\) radical of \(J^0\). The restriction \(\Lambda|_{J^0}\) is of the form \(\kappa \otimes
-\tilde{\sigma}\), where \(\kappa\) is a representation of \(J^0\) and \(\tilde{\sigma}\) is the inflation of
-an irreducible representation \(\sigma\) of \(J^0/J^1\).
-
-The open normal subgroup \(JG'\) has index \(|F^*/\det J|\) in \(G\).
-
-\begin{prop}{Mackey Decomposition and Packet Size}{mackeyPacket}
-  The restriction of \(\Pi\) to the intermediate group \(JG'\) decomposes as:
-  \[ \Pi|_{JG'} = \bigoplus_{g \in G/JG'} \operatorname{ind}_{J_g'}^{JG'} \lambda^g \]
-  where \(J' = J \cap G'\) and \(g\) runs over coset representatives. This leads to the formula for the packet size:
-  \[ |L(\Pi)| = [F^* : \det J] \cdot \mathrm{length}(\operatorname{ind}_{J'}^{G'} (\lambda|_{J'})) \]
-\end{prop}
-
-\begin{prop}{Quadratic Extension Criterion}{quadExtCrit}
-  If the index \([F^* : \det J] = 2\), then \(\det G_\Pi \subset \det J\).
-  In this case, \(\det G_\Pi = \det J\) if and only if \(G_\Pi = JG'\).
-  This determines a unique quadratic separable extension \(E/F\) such that \(\det J = N_{E/F}(E^*)\).
-\end{prop}
-
-\subsubsection*{Next Steps}
-
-With the structural properties of L-packets established (cardinality, relationship to field extensions, and type theory), the natural progression is to classify these packets explicitly.
-\begin{itemize}
-    \item \textbf{Level 0:} Cases where the type \((J, \Lambda)\) has trivial pro-\(p\) part (depth zero).
-    \item \textbf{Positive Level:} Cases where the representation is deeper.
-\end{itemize}
-The subsequent sections should define the specific types \((J, \Lambda)\) for the primitive (cuspidal)
-representations and calculate the corresponding groups \(X_\Pi\) and stabilizer groups \(G_\Pi\) to verify the
-cardinality bounds derived in \cref{pr:twistsPacketSize}.
-
-
-
-
-\newpage
-\printbibliography
+here
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \newpage
+% \printbibliography
 
 \end{document}
