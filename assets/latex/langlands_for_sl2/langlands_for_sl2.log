@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  26 NOV 2025 03:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  26 NOV 2025 03:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1407,59 +1407,59 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.686 \end{Proof}
+l.689 \end{Proof}
                  ] [2] [3] [4] [5{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [6]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.950 \begin{lem}{image is closed}{lem:3.1}
+l.953 \begin{lem}{image is closed}{lem:3.1}
                                            
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.961 ...{``Pushforward'' of representations}{3.2}
+l.964 ...{``Pushforward'' of representations}{3.2}
                                                    [7]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.990 \begin{prop}{}{prop:3.3}
+l.993 \begin{prop}{}{prop:3.3}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1007 ...ecessity of Central}{necessityofCentral}
+l.1010 ...ecessity of Central}{necessityofCentral}
                                                    [8]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1024 ...in{cor}{Descent via Derived Groups}{3.5}
+l.1027 ...in{cor}{Descent via Derived Groups}{3.5}
                                                   
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1053.
+(hyperref)                removing `math shift' on input line 1056.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1053.
+(hyperref)                removing `subscript' on input line 1056.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1053.
+(hyperref)                removing `math shift' on input line 1056.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1053.
+(hyperref)                removing `math shift' on input line 1056.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1053.
+(hyperref)                removing `subscript' on input line 1056.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1053.
+(hyperref)                removing `math shift' on input line 1056.
 
 [9]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 1074.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 1077.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-euf.cfg
@@ -1468,62 +1468,62 @@ File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1084 \begin{defn}{Whittaker Space}{whittakerSp}
+l.1087 \begin{defn}{Whittaker Space}{whittakerSp}
                                                   [10]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1119 \begin{defn}{L-packet}{l-packet}
+l.1122 \begin{defn}{L-packet}{l-packet}
                                        
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1125 ...rties of L-packets: I}{propofL-packetsI}
+l.1128 ...rties of L-packets: I}{propofL-packetsI}
                                                    [11]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1162 \begin{titledBox}{remark}{rmk}
+l.1165 \begin{titledBox}{remark}{rmk}
                                      
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1178 ...ies of L-packets: II}{propofL-packetsII}
+l.1181 ...ies of L-packets: II}{propofL-packetsII}
                                                    [12]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1216 ...sidual Characteristic)}{sizeofL-packets}
+l.1219 ...sidual Characteristic)}{sizeofL-packets}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1242 ...n}{Associated Field Extension}{fieldExt}
+l.1245 ...n}{Associated Field Extension}{fieldExt}
                                                    [13] [14]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1298 ...defn}{Parabolic Induction}{parabolicInd}
+l.1301 ...defn}{Parabolic Induction}{parabolicInd}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1324 ...}{Cuspidal Representations}{cuspidalDef}
+l.1327 ...}{Cuspidal Representations}{cuspidalDef}
                                                    [15]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1335 ...uspidality of L-packets}{cuspidalPacket}
+l.1338 ...uspidality of L-packets}{cuspidalPacket}
                                                   
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1364 ...mposition and Packet Size}{mackeyPacket}
+l.1367 ...mposition and Packet Size}{mackeyPacket}
                                                    [16]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1371 ...dratic Extension Criterion}{quadExtCrit}
+l.1374 ...dratic Extension Criterion}{quadExtCrit}
                                                    [17]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
@@ -1535,16 +1535,16 @@ Package logreq Info: Writing requests to 'langlands_for_sl2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48356 strings out of 476025
- 999323 string characters out of 5790017
+ 48358 strings out of 476025
+ 999339 string characters out of 5790017
  1877388 words of memory out of 5000000
  67681 multiletter control sequences out of 15000+600000
- 533287 words of font info for 185 fonts, out of 8000000 for 9000
+ 533338 words of font info for 186 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,110p,1073b,1750s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on langlands_for_sl2.pdf (18 pages, 396444 bytes).
+Output written on langlands_for_sl2.pdf (18 pages, 396578 bytes).
 PDF statistics:
  395 PDF objects out of 1000 (max. 8388607)
  294 compressed objects within 3 object streams

@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber langlands_for_sl2"] 1764145805 "langlands_for_sl2.bcf" "langlands_for_sl2.bbl" "langlands_for_sl2" 1764145814 0
+["biber langlands_for_sl2"] 1764145805 "langlands_for_sl2.bcf" "langlands_for_sl2.bbl" "langlands_for_sl2" 1764146624 0
   "./bibliography.bib" 1764143272 1583 5e4043893b3de8404b011df20a1450ed ""
-  "langlands_for_sl2.bcf" 1764145813 108273 aebb568887e1779157c22fd43296c694 "pdflatex"
+  "langlands_for_sl2.bcf" 1764146624 108273 aebb568887e1779157c22fd43296c694 "pdflatex"
   (generated)
   "langlands_for_sl2.bbl"
   "langlands_for_sl2.blg"
   (rewritten before read)
-["makeindex langlands_for_sl2.idx"] 1764140802 "langlands_for_sl2.idx" "langlands_for_sl2.ind" "langlands_for_sl2" 1764145814 0
-  "langlands_for_sl2.idx" 1764145813 36 22ea4148857f00c5edeace8338f9d4e2 "pdflatex"
+["makeindex langlands_for_sl2.idx"] 1764140802 "langlands_for_sl2.idx" "langlands_for_sl2.ind" "langlands_for_sl2" 1764146624 0
+  "langlands_for_sl2.idx" 1764146624 36 22ea4148857f00c5edeace8338f9d4e2 "pdflatex"
   (generated)
   "langlands_for_sl2.ilg"
   "langlands_for_sl2.ind"
   (rewritten before read)
-["pdflatex"] 1764145808 "langlands_for_sl2.tex" "langlands_for_sl2.pdf" "langlands_for_sl2" 1764145814 0
+["pdflatex"] 1764146619 "langlands_for_sl2.tex" "langlands_for_sl2.pdf" "langlands_for_sl2" 1764146624 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -357,11 +357,11 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "bibliography.bib" 1764143272 1583 5e4043893b3de8404b011df20a1450ed ""
-  "langlands_for_sl2.aux" 1764145813 7802 b011d2610ea8b60cec0b7c90d4d1a4e7 "pdflatex"
+  "langlands_for_sl2.aux" 1764146624 7802 64c5707f8cac9aca964badb2e56351a6 "pdflatex"
   "langlands_for_sl2.bbl" 1764145808 5816 5ecf5270e882af4ba3bd90dc982b7292 "biber langlands_for_sl2"
   "langlands_for_sl2.ind" 1764140802 67 25ee3385ed72cd2bd3931da104df242e "makeindex langlands_for_sl2.idx"
-  "langlands_for_sl2.run.xml" 1764145813 2398 37a84f6259bdb4a5843a519dba15508e "pdflatex"
-  "langlands_for_sl2.tex" 1764145798 77089 f7678e33bf5ff245f3b96b58f6c4c7a0 ""
+  "langlands_for_sl2.run.xml" 1764146624 2398 37a84f6259bdb4a5843a519dba15508e "pdflatex"
+  "langlands_for_sl2.tex" 1764146609 77218 1fd6c437ff17766f36f3e4aadefdabad ""
   (generated)
   "langlands_for_sl2.aux"
   "langlands_for_sl2.bcf"
