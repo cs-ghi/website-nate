@@ -682,6 +682,25 @@ Just as for clock arithmetic, we can treat $n$ like $0$.
   is a prime: modular arithmetic modulo $n$ where $n$ is a prime is called a \emph{finite field}.
 \end{exercise}
 
+\begin{exercise}{Combining Clocks}{combiningClocks}
+  Consider three clocks: a $2$-hour clock, a $5$-hour clock, and a $10$-hour clock. When one hour passes, the
+  hour-hand of each clock moves to the next hour-position. For example, if all clocks start at $0$ o'clock,
+  after $1$ hour the 2-,5-, and 10-hour clocks will be at 1, 1, and 1 o'clock respectively, after $2$ hours they will
+  be at 0,2, and 2 o'clock respectively, after $5$ hours they will be at 1,0, and 5 o'clock respectively, and so
+  forth.
+
+
+  Now, if you know what time it is on the $10$-hour clock, you know what time it is on the $2$-hour and
+  $5$-hour clock. If you are given what time it is on the $2$-hour and $5$-hour clock, can you deduce what
+  time it is on the $10$-hour clock?
+
+  The generalized version of this question goes as follows: Let $n = p_1p_2\cdots p_n$ be a natural number
+  that decomposes into a product of $n$ distinct primes. If you have $n+1$ clocks, one clock an $n$-hour
+  clock, and $n$ clocks that are each $p_i$-hour clocks for each prime divisor $p_i$ of $n$, can you deduce
+  what time it is on the $n$-hour clock if you know the time for each $p_i$-hour clock? What if we allowed for
+  non-distinct prime factors (ex. $4= 2\cdot 2$)?
+\end{exercise}
+
 \section{*Formal Definition of Modular Arithmetic}
 
 This section outlines how modular arithmetic is defined formally in mathematics, and benefits the reader who
