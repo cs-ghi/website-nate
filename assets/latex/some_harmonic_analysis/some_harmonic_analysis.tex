@@ -77,6 +77,7 @@
 \usepackage{etoolbox}          % for Dynkin diagrams
 \usepackage{dynkin-diagrams}   % for Dynkin diagrams
 
+\usepackage{cleveref}
 % ╔═════════════════════════════════════════════════════╗
 % ║           for figures via inkspace                  ║
 % ╚═════════════════════════════════════════════════════╝
@@ -499,7 +500,6 @@ label type=definition
 \end{enumerate}}
 
 
-
 %Custom enviroments
  \newenvironment{note}
  {\begin{tcolorbox}[enhanced, sharp corners, colback=white , borderline={0.2pt}{0pt}{black}]
@@ -644,7 +644,7 @@ characters. Label
 this collection $\hat{G} = \Hom_{\Ab}(G, \C^*)$. This is a group with point-wise multiplication.
 
 \begin{prop}{Pontryagin Dual}{pontryaginDual}
-	Let $G$ be a finite abelian group, $\hat{G} = \Hom_\Ab(G, \C^*)$ the group of characters under
+	Let $G$ be a finite abelian group, $\hat{G} = (\Hom_\Ab(G, \C^*), \cdot)$ the group of characters under
 	point-wise multiplication. Then there is an isomorphism:
 	\[
 		G \cong \widehat{G}
@@ -684,14 +684,17 @@ If $G$ is infinite, it is rarely the case that $G \cong \widehat{G}$ (think $\wi
 	proof.
 \end{Proof}
 
-
-Let $G$ have the discrete topology so that the set of continuous functions from $G$ to $\C$ is all set
-functions. We want a $\C$-algebra isomorphism between $\C[G]$ and $\Hom_\Top(G, \C)$. These two sets are
-clearly bijective via the natural mapping:
+This let's us understand the group-operation of $G$ using point-wise function multiplication. Let us now take
+a different approach. We can consider all ``continuous'' functions $f: G \to (\C, +)$. Let $G$ have the
+discrete topology so that the set of continuous functions from $G$ to $\C$ is all set functions. A-priori,
+this collection has no memory of the group operation of $G$. However, it is clearly in bijective
+correspondence to the $\C$-vector space $\C[G]$ via the natural mapping:
 \[
-	\sum_i a_ig_i \mapsto (g_i \mapsto a_i)
+	\sum_i a_ig_i \mapsto \left(g_i \mapsto a_i\right)_i
 \]
-And this map preserves addition if addition is defined point-wise in the hom-set:
+We want a $\C$-algebra
+isomorphism between $\C[G]$ and $\Hom_\Top(G, \C)$.
+This preserves the addition of $\C[G]$ map preserves addition if addition is defined point-wise in the hom-set:
 \begin{align*}
 	&\ \Phi\left(\sum_i a_ig_i + \sum_i b_ig_i\right)\\
 	&=\Phi\left(\sum_i (a_i+b_i)g_i\right)\\
@@ -699,15 +702,17 @@ And this map preserves addition if addition is defined point-wise in the hom-set
 	  &= (g_i \mapsto a_i) + (g_i \mapsto b_i)\\
 	  &= \Phi\left(\sum_i a_ig_i\right) + \Phi\left(\sum_i b_ig_i\right)
 \end{align*}
-But it does \emph{not} preserve multiplication if the operation is pointwise multiplication:
+which should be intuitive since addition was defined formally. On the other hand, it does \emph{not} preserve
+multiplication if the operation is pointwise multiplication:
 \begin{align*}
-	&\ \Phi\left(\sum_{g \in G} a_ig\sum_{g\in G} b_ig\right)\\
+	&\ \Phi\left(\left(\sum_{g \in G} a_ig_i\right)\left(\sum_{g\in G} b_ig_i\right)\right)\\
 	&=\Phi\left(\sum_{g\in G}\sum_{g_kg_\ell=g} (a_kb_\ell)g\right)\\
 	  &\mapsto (g_i \mapsto \sum_{g_kg_\ell=g_i} (a_kb_\ell))\\
 	  &\ne (g_i \mapsto a_ib_i)\\
 	  &\ne (g_i \mapsto a_i) \cdot (g_i \mapsto b_i)\\
 	  &= \Phi\left(\sum_i a_ig_i\right) \cdot \Phi\left(\sum_i b_ig_i\right)
 \end{align*}
+And it is impossible to define a group-structure on $G$ that will make this an equality unless $G = \{e\}$.
 This is because the points $g_i$ act on each other. There is a natural multiplication function defined on
 $\Hom_\Top(G, \C)$ called \emph{convolution}:
 
@@ -731,33 +736,40 @@ $\Hom_\Top(G, \C)$ called \emph{convolution}:
 	refer to the above calculations.
 \end{Proof}
 
-Now, $(\Hom_\Top(G, \C), +, *)$ is a $|G|$-dimensional $\C$ vector-space with the natural basis
-given by the indicator function:
+Now, as $G\cong \hat{G}$ and $G$ forms an orthonormal basis for $\Hom_\Top(G, \C)$ via indicator functions, it
+is natural to ask whether $\hat{G}$ can form such a basis. First, $G$ representing an orthonormal basis is
+equivalent to defining ``evaluation'' for $f: G \to \C$ using the usual dot product. To see this, consider:
 \[
 	\delta_h(g) = \begin{cases}
 		1 & g=h\\
 		0 & g \ne h
 	\end{cases}
 \]
-Namely for any $f: G \to \C$ there is a unique decomposition:
+Then for any $f: G \to \C$ there is a unique decomposition (or finite series):
 \[
 	f = \sum_{h \in G} f(h)\delta_h \qquad \text{so that} \qquad f(g) = \sum_{h \in G} f(h)\delta_h(g)
 	= f(g)\cdot 1 = f(g)
 \]
-The key feature of this basis is that it acts like evaluation when taking the inner product. Define:
+The key feature of this basis is that it acts like evaluation when taking the inner product: by taking the
+unique inner product (up to isomorphism):
 \[
 	\langle f,g \rangle = \sum_{h \in G} f(h)\overline{g(h)}
 \]
-Then $\{\delta_g\}_{g \in G}$ and:
+Then $\{\delta_g\}_{g \in G}$ is an orthogonal basis and:
 \[
-	\langle f, \delta_{g_i} \rangle = f(g_i) \cdot \overline{\delta_{g_i}(g_i)} = f(g_i) \cdot 1 = f(g_i)
+  \langle f, \delta_{g_i} \rangle = \sum_{h\in G} f(h) \cdot \overline{\delta_{g_i}(h)} = f(g_i) \cdot 1 = f(g_i)
 	= a_i
 \]
-This inner product can be thought as expressly chosen so that the collection $\delta_{g_i}$ forms an
-orthonormal basis, or conversely given this standard inner product, the indicator function will always be an
-orthonormal basis. By Pontryagin duality, $G\cong \hat{G}$, but this group isomorphism does not
-\emph{a-priori} preserve the
-orthogonality of the basis given by $G$. The key insight of Fourier analysis is that it does!
+this ``evaluation'' behaviour of the inner product with the indicator is because the inner product is just the
+dot product, which in this case becomes a projection function
+\[
+  \langle f, \delta_{g_i} \rangle =  f(g_i)\delta_{g_i}
+\]
+This is just a special case of Riesz Representation Theorem that says that any linear functional is
+inner-product representable using these $\delta_{g_i}$.
+
+Now, the characters $\hat{G}$ are not \emph{a-priori} orthogonal like the indicator functions given by $G$:
+one of the key results of harmonic analysis is that they do!
 \begin{prop}{Character Form Orthogonal Basis: Fourier Basis}{characterFormOrthogonalBasis}
 	The characters $\widehat{G}$ form an orthogonal basis for $\Hom_{\Top}(G, \C)$. Normalizing by
 	$1/\sqrt{|G|}$ forms an orthonormal basis.
@@ -793,7 +805,8 @@ orthogonality of the basis given by $G$. The key insight of Fourier analysis is 
 	as we sought to show.
 \end{Proof}
 
-This inner product can be thought of as extracting the ``phase'' information.
+As the indicator functionals represent evaluation, the question arises what taking the inner product with the
+characters represent. This is most commonly thought thought of as extracting the ``phase'' information.
 \begin{example}{Phase-Space Basis}{phaseSpBasis}
 Let $G = \Z/2\Z \times \Z/2\Z = \{(0,0), (1,0), (0,1), (1,1)\}$. A character $\chi: G \to \C^*$ is determined by its values on the generators $g_1=(1,0)$ and $g_2=(0,1)$. Since both generators have order 2, we must have $\chi(g_1)^2 = \chi(g_1^2) = \chi(0,0) = 1$ and likewise for $g_2$. Thus, the character's values on the generators must be either $1$ or $-1$. This gives $2\times 2=4$ possible characters, which we can index by pairs $(k_1, k_2) \in \{0,1\}^2$.
 
@@ -824,11 +837,19 @@ compute $\langle \chi_{10}, \chi_{11} \rangle$:
 	&= (1)(1) + (-1)(-1) + (1)(-1) + (-1)(1) \\
 	&= 1 + 1 - 1 - 1 = 0
 \end{align*}
-
 \end{example}
 
+Using the above example, let us change perspective's on how to interpret this change of basis. The
+function $f: G \to \C$ can be thought of as taking the ``points'' $g \in G$ and mapping them (continuously) to
+the complex numbers. These points are evaluated by the use of a Riesz-representation of $f$ using the
+indicator functions that form an orthonormal basis. Bus we just found another orthonormal basis for $\Hom_\Top(G,
+\C)$ with which we can take the inner product. We may thus think of the characters $\chi \in \hat{G}$ as
+points in their own right: these points are represent ``phases'' information rather than ``location''
+information that the indicator functions represent. This motivates the following definition:
+
+
 \index{Fourier Transform}\index{Gelfand Transform}
-\begin{defn}{Fourier Transform (Gelfand Transform)}{fourierTransform(gelfandTransform)}
+\begin{defn}{Fourier Transform (Gelfand Transform)}{fourierTransform}
 	Let $G$ be a finite abelian group with the discrete topology. Then the \emph{Fourier transform} is:
 	\[
 		(\widehat{-}): \Hom_\Top(G, \C) \mapsto \Hom_\Top(\hat{G}, \C) \qquad f \mapsto (\chi \mapsto \langle
@@ -845,17 +866,33 @@ periodic functions, or Legesgue measurable functions. It wasn't until later wher
 and Gelfand generalized it to the context of locally compact abelian groups, where the above is the special
 case where $G$ is finite.
 
+Now, certainly as vector spaces $\Hom_\Top(G, \C)\cong_\C \Hom_\Top(\hat{G}, \C)$ mapping:
+\[
+  (g \mapsto \langle f, \delta_g \rangle) \mapsto (\chi \mapsto \langle f, \chi \rangle)
+\]
+But does this map preserve the inner product, and more so can the convolution product of $\Hom_\Top(G, \C)$ be
+preserved given the appropriate choice of product on $\Hom_\Top(\hat{G}, \C)$? This answer is yes and can be
+thought as the corner-stone result of harmonic analysis on discrete abelian groups:
+
 \index{Fourier Reciprocity}
 \begin{thm}{Fourier Reciprocity}{fourierReciprocity}
-	The map given in definition~\ref{df:fourierTransform(gelfandTransform)} is a unitary $\C$-algebra isomorphism, with
-	point-wise multiplication on $(\Hom_\Top(\hat{G}, \C), +, \cdot)$.
+	The map given in definition~\ref{df:fourierTransform} is a unitary $\C$-algebra isomorphism,
+  \[
+    (\Hom_\Top(G, \C), +, *) \cong (\Hom_\Top(\hat{G}, \C), +, \cdot)
+  \]
+  with $\cdot$ in $(\Hom_\Top(\hat{G}, \C), +, \cdot)$ being point-wise multiplication.
 \end{thm}
 
 Recall that unitary means $\langle \hat{f}, \hat{g} \rangle = \langle f,g \rangle$.
-Often, the $\C$-algebra homomorphism is called the  \emph{Convolution Theorem}, the unitary property is called the
-\emph{Plancherel's Theorem}, and invertibility (i.e. bijectivity) is called the \emph{Fourier Inversion
-Theorem}.
+In a conventional real analysis course:
+\begin{itemize}
+  \item the $\C$-algebra homomorphism is called the  \emph{Convolution Theorem},
+  \item the unitary property is called the \emph{Plancherel's Theorem},
+  \item invertibility (i.e. bijectivity) is called the \emph{Fourier Inversion Theorem}.
+\end{itemize}
 \begin{Proof}
+  Some of these are essentially already proven, but for the completeness of this theorem all will be laid
+  out.
 	\begin{enumerate}
 		\item \textit{1. Linearity:} Let $f, h \in \Hom_\Top(G, \C)$ and $a,b \in \C$.
 		\begin{align*}
@@ -890,11 +927,12 @@ Theorem}.
 		\begin{align*}
 			\frac{1}{|G|}\sum_{\chi \in \hat{G}} \hat{f}(\chi)\chi(g) &= \frac{1}{|G|}\sum_{\chi \in \hat{G}} \left( \sum_{h \in G} f(h)\overline{\chi(h)} \right) \chi(g) && \text{by definition of } \hat{f}\\
 			&= \frac{1}{|G|} \sum_{h \in G} f(h) \sum_{\chi \in \hat{G}} \chi(g)\overline{\chi(h)} && \text{swapping order of summation} \\
-			&= \frac{1}{|G|} \sum_{h \in G} f(h) \sum_{\chi \in \hat{G}} \chi(g-h)
+      &= \frac{1}{|G|} \sum_{h \in G} f(h) \sum_{\chi \in \hat{G}} \chi(gh^{-1})
 		\end{align*}
 		The inner sum is an example of the \emph{Second Orthogonality Relation} and is a standard exercise the
 		reader should do. In particular, the sum of all characters evaluated at a group element (giving all
-		powers of a certain root of unity) is $|G|$ if $x=e$ and $0$ otherwise. Thus $\sum_{\chi \in \hat{G}} \chi(g-h) = |G|\delta_{g,h}$.
+		powers of a certain root of unity) is $|G|$ if $x=e$ and $0$ otherwise. Thus $\sum_{\chi \in \hat{G}}
+    \chi(gh^{-1}) = |G|\delta_{g,h}$.
 		\[
 			\frac{1}{|G|} \sum_{h \in G} f(h) (|G|\delta_{g,h}) = \sum_{h \in G} f(h)\delta_{g,h} = f(g)
 		\]
@@ -954,18 +992,16 @@ $G$, the Fourier transform is a unitary $\C$-algebra isomorphism between the alg
 convolution, $(\Hom_\Top(G, \C), *)$, and the algebra of functions on the dual group $\hat{G}$ with pointwise
 multiplication. The representation theory perspective shows that Fourier
 analysis is the simplest case of a Artin-Wedderburn decomposition.
-The key is to view the $\C$-group algebra $\C[G]$ with the natural $G$-action given by left multiplication
-(convolution), namely $\rho: G \to \GL(\C[G])$ given by:
+
+First, take the regular representation of $G$, that is left-multiplication (convolution) $\rho: G \to \GL(\C[G])$ given by:
 \[
 	\rho(g): f \mapsto g * f
 \]
-From this viewpoint, the study of the $\C$-algebra $(\C[G], +, *)$ and the $\C[G]$-module $\C[G]$  is the same
-thing that is the study of the regular
-representation of $G$. Now, this representation can be broken down into the direct sum of 1-dimensional
+Now, this representation can be broken down into the direct sum of 1-dimensional
 irreducible representations. Namely, for a finite abelian group, the set of irreducible representations is
-exactly the dual group: $\Irr(G) = \widehat{G}$ and so we get:
+exactly the Pontryagin dual: $\Irr(G) = \widehat{G}$ and so we get:
 \[
-	\C[G] \cong \bigoplus_{\chi \in \widehat{G}} V_\chi
+	\C[G] \cong_\C \bigoplus_{\chi \in \widehat{G}} V_\chi
 \]
 where each $V_\chi$ is a 1-dimensional subspace corresponding to the character $\chi$.
 
@@ -973,8 +1009,9 @@ This decomposition is made concrete by the Fourier transform. The Fourier Invers
 \frac{1}{|G|} \sum_{\chi \in \hat{G}} \hat{f}(\chi)\chi$, is the literal expression of this decomposition. It
 writes the function $f$ as a sum of components, where each term $\hat{f}(\chi)\chi$ is the projection of $f$
 onto the 1-dimensional irreducible subspace $V_\chi$. Then the Fourier coefficient $\hat{f}(\chi)$ is the
-coordinate of $f$ in the irreducible component corresponding to $\chi$. Note that we can define projection functions $p_\chi = \frac{1}{|G|}\sum_{g \in G}\overline{\chi(g)}g$ that we
-can construct in $\C[G]$ that project onto the irreducible subspace $V_\chi$. Convolving any function $f$ with
+coordinate of $f$ in the irreducible component corresponding to $\chi$. Note that we can define projection
+functions $p_\chi = \frac{1}{|G|}\sum_{g \in G}\overline{\chi(g)}g$ and
+ in $\C[G]$ these project onto the irreducible subspace $V_\chi$. Convolving any function $f$ with
 $p_\chi$ annihilates all other ``frequency components'', leaving the part of $f$ that lies in $V_\chi$. Hence, the Fourier basis \emph{the} unique basis that diagonalizes the natural action of the group on its own algebra of functions.
 
 If $G$ is a \emph{non-abelian} finite group, the concept of a dual group $\hat{G}$ and a simple transform
@@ -987,16 +1024,23 @@ higher-dimensional matrix representations.
 \subsection{Generalization to Locally Compact Abelian Groups}
 \label{sec:lcaGeneralization}
 
-What happens when we wish to analyze functions on abelian groups like $(\R, +)$, $(\Z, +)$, or the circle group $(S^1, \cdot)$? These are examples of \emph{Locally Compact Abelian (LCA)} groups. Moving from the finite to the infinite setting requires us to replace our finite sums with integrals, but to integrate on an arbitrary group, we first need a notion of ``volume'' or ``measure''.
+What happens when we wish to analyze functions on abelian groups like $(\R, +)$, $(\Z, +)$, or the circle
+group $(S^1, \cdot)$? These are examples of \emph{Locally Compact Abelian (LCA)} groups. Moving from the
+finite to the infinite setting requires us to sum on an arbitrary number of elements which introduces the
+usual problem of undefinedness. To tame the infinite behaviour, notice that in the finite case we can think of
+the delta functions as \emph{measures} so that any $f$ is a sum of weighted singular measures. Thus, we aim to
+introduce a natural measure on abelian groups preserving the group structure.
 The essential new ingredient is the \emph{Haar measure}. For any LCA group $G$, there exists a measure $\mu$ that gives a consistent way to integrate functions on the group.
 
 \index{Haar Measure}
 \begin{defn}{Haar Measure}{haarMeasure}
-	A \emph{Haar measure} on an LCA group $G$ is a measure $\mu$ on the Borel $\sigma$-algebra of $G$ that is left-translation-invariant. That is, for any measurable set $E \subseteq G$ and any element $g \in G$:
+	A \emph{left-Haar measure} on an Locally compact (not necessarily abelian) group $G$ is a measure $\mu$ on the Borel $\sigma$-algebra of $G$ that is left-translation-invariant. That is, for any measurable set $E \subseteq G$ and any element $g \in G$:
 	\[
 		\mu(gE) = \mu(E)
 	\]
-	This measure is unique up to a positive scaling constant. For abelian groups, it is also right-translation-invariant.
+	This measure is unique up to a positive scaling constant. A similar definition works for the
+  \emph{right-Haar measure}. For abelian groups, it is also right-translation-invariant, and it is simply
+  called the \emph{Haar measure}.
 \end{defn}
 See~\cite{NateRealAnalysis} for details on how to construct such a measure on any LCA that is unique up to
 scaling. This measure is the direct generalization of taking the order of the group.
@@ -1007,6 +1051,8 @@ scaling. This measure is the direct generalization of taking the order of the gr
 	\item For $(S^1, \cdot)$, the Haar measure can be taken as $d\theta$.
 	\item For $(\Z, +)$, the Haar measure is again the counting measure.
 \end{enumerate}
+Note that in the infinite case, we can no longer represent points as indicator functions. Instead the
+\emph{direct-delta distributions} would take this role; see~\cite{NateRealAnalysis} for more details.
 \end{example}
 
 With the Haar measure, we can redefine our main objects of study by replacing every sum over $G$ with an integral with respect to $d\mu$.
