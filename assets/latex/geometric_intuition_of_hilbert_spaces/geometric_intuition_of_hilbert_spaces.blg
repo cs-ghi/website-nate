@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'geometric_intuition_of_hilbert_spaces.blg'
+[51] biber-darwin:340> INFO - === Sat Feb  7, 2026, 20:36:25
+[67] Biber.pm:419> INFO - Reading 'geometric_intuition_of_hilbert_spaces.bcf'
+[120] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
+[131] Biber.pm:4419> INFO - Processing section 0
+[140] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[141] bibtex.pm:1713> INFO - LaTeX decoding ...
+[145] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[191] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[191] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[191] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[191] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[196] bbl.pm:660> INFO - Writing 'geometric_intuition_of_hilbert_spaces.bbl' with encoding 'UTF-8'
+[198] bbl.pm:763> INFO - Output to geometric_intuition_of_hilbert_spaces.bbl
+[198] Biber.pm:131> WARN - ISBN '978-3-540-07402-1 978-3-540-37913-3' in entry 'diestelGeometryBanachSpacesSelected1975' is invalid - run biber with '--validate_datamodel' for details.
+[198] Biber.pm:133> INFO - WARNINGS: 1
