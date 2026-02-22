@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>EYTNKA_PDE.bcf</file>
+      <file>EYNTKA_PDE.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>EYTNKA_PDE.bbl</file>
+      <file>EYNTKA_PDE.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -64,19 +64,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>EYTNKA_PDE</infile>
+      <infile>EYNTKA_PDE</infile>
     </cmdline>
     <input>
-      <file>EYTNKA_PDE.bcf</file>
+      <file>EYNTKA_PDE.bcf</file>
     </input>
     <output>
-      <file>EYTNKA_PDE.bbl</file>
+      <file>EYNTKA_PDE.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>EYTNKA_PDE.bbl</file>
+      <file>EYNTKA_PDE.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>EYTNKA_PDE.bcf</file>
+      <file>EYNTKA_PDE.bcf</file>
     </requires>
     <requires type="editable">
       <file>algebra_book_cite.bib</file>
