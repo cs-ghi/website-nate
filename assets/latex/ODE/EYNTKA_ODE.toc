@@ -1,0 +1,30 @@
+\contentsline {chapter}{\numberline {1}First-Order Scalar Equations}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}The General Initial Value Problem (IVP)}{9}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Separable Equations}{10}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Linear Equations and Integrating Factors}{11}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Exact Equations and Differential Forms}{13}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Bernoulli Equations}{14}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Second-Order Linear Equations}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Definitions and Theoretical Framework}{15}{section.2.1}%
+\contentsline {section}{\numberline {2.2}The Structure of Solutions}{16}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Homogeneous Equations with Constant Coefficients}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Cauchy-Euler Equations}{20}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Inhomogeneous Equations}{21}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Systems of Linear Equations}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Linear Systems and Geometry}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Matrix Exponential}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Eigenvalues and Diagonalization}{25}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Defective Matrices and Jordan Forms}{26}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Phase Portraits and Stability}{27}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Qualitative Theory and Stability}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Autonomous Systems and Phase Space}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Lyapunov's Direct Method}{31}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Limit Cycles}{32}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Boundary Value Problems and Sturm-Liouville Theory}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction to Boundary Value Problems}{35}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The Sturm-Liouville Theorems}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}The Fredholm Alternative}{38}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Green's Functions}{38}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Series Solutions and Special Functions}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Analytic Functions and Ordinary Points}{41}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Regular Singular Points and the Method of Frobenius}{43}{section.6.2}%

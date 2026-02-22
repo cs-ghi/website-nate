@@ -1,0 +1,51 @@
+\contentsline {chapter}{\numberline {1}1-dimensional PDEs}{13}{chapter.1}%
+\contentsline {section}{\numberline {1.1}1st order}{13}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Multi-Dimensional}{17}{section.1.2}%
+\contentsline {chapter}{\numberline {2}wave equations}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}The d'Alembert's Formula}{19}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Duhamel's Principle}{21}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Boundary Problems}{23}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Separation of Variables}{25}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Wave Equation in Higher Dimensions}{26}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Fourier Series}{26}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Method of Spherical Means}{27}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Spherical Mean in 3 Dimension}{29}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Spherical Means for odd Dimension}{31}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Huygen's Principle}{33}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Duhamel's Principle in Higher Dimensions}{33}{subsection.2.3.6}%
+\contentsline {chapter}{\numberline {3}Weak Solutions and Distributions}{35}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Distributions}{37}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Intuition}{38}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Definitions}{38}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}More continuity properties}{42}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Time-dependent Distributions}{43}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Distributional Solution for wave equation}{44}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}More on Distributional Solutions}{46}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}A Fundamental Solution for the Square Operator}{47}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Energy Identity}{47}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Fourier Transform and Tempered Distributions}{48}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Sobelev Space}{50}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}L squared estimtes for wave equation solutions}{51}{subsection.3.2.5}%
+\contentsline {chapter}{\numberline {4}Non-Linear Equations}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Existence and Uniqueness Inhomogeneous PDE}{53}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Non-linear Cauchy Problem}{55}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Local Existence and Uniqueness}{56}{section.4.3}%
+\contentsline {section}{\numberline {4.4}The model non-linear PDE}{57}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Littlewood-Paley Theory}{63}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Little-Paley Decomposition}{63}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Calculus Inequality}{68}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Moser Inequality}{68}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Further Applications of Littlewood-Paley Theory}{69}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Global Existence for Non-Linear Wave Equation}{71}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Goal}{71}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The Invariant Vector Fields}{72}{section.6.2}%
+\contentsline {section}{\numberline {6.3}The Klainerman-Sobelev Inequality}{73}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Proof of main theorem}{77}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Looking at Low Dimensions Solutions}{81}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Proof of lower bounds}{82}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}The Null Condition And Global Existence For Dimension 3}{82}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Statement Of Null Condition}{84}{subsection.6.5.3}%
+\contentsline {subsection}{\numberline {6.5.4}Improved Decay}{87}{subsection.6.5.4}%
+\contentsline {subsection}{\numberline {6.5.5}An energy inequality and H\"ormander's estimate}{87}{subsection.6.5.5}%
+\contentsline {subsection}{\numberline {6.5.6}Proof of the main Theorem}{89}{subsection.6.5.6}%
+\contentsline {chapter}{\numberline {7}Future Reading}{93}{chapter.7}%
