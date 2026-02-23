@@ -1,0 +1,21 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'alien_perspective_on_analysis.blg'
+[51] biber-darwin:340> INFO - === Mon Feb 23, 2026, 15:50:08
+[62] Biber.pm:419> INFO - Reading 'alien_perspective_on_analysis.bcf'
+[115] Biber.pm:979> INFO - Found 5 citekeys in bib section 0
+[126] Biber.pm:4419> INFO - Processing section 0
+[134] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[135] bibtex.pm:1713> INFO - LaTeX decoding ...
+[139] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[160] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[160] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[160] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[160] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[167] bbl.pm:660> INFO - Writing 'alien_perspective_on_analysis.bbl' with encoding 'UTF-8'
+[169] bbl.pm:763> INFO - Output to alien_perspective_on_analysis.bbl
+[169] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[169] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[169] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[169] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[169] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[169] Biber.pm:133> INFO - WARNINGS: 5
