@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  23 FEB 2026 15:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  23 FEB 2026 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1390,17 +1390,17 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 642
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] [3{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+] [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.758 \begin{defn}{Algebraic Derivative}{algder}
-                                                 [4]
+l.759 \begin{defn}{Algebraic Derivative}{algder}
+                                                 [3]
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.796 ... Constancy Failure}{locallyConstantFails}
-                                                  
+l.797 ... Constancy Failure}{locallyConstantFails}
+                                                   [4]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1414,18 +1414,18 @@ Package logreq Info: Writing requests to 'alien_perspective_on_analysis.run.xml'
 
  ) 
 Here is how much of TeX's memory you used:
- 46483 strings out of 476025
- 958934 string characters out of 5790017
+ 46471 strings out of 476025
+ 958833 string characters out of 5790017
  1871388 words of memory out of 5000000
- 65962 multiletter control sequences out of 15000+600000
- 522430 words of font info for 118 fonts, out of 8000000 for 9000
+ 65959 multiletter control sequences out of 15000+600000
+ 522277 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,110p,1026b,1476s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on alien_perspective_on_analysis.pdf (5 pages, 219666 bytes).
+Output written on alien_perspective_on_analysis.pdf (5 pages, 218370 bytes).
 PDF statistics:
- 214 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 29413 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 201 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 29389 words of extra memory for PDF output out of 29859 (max. 10000000)
 

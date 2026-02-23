@@ -680,10 +680,10 @@ To find ``Reality,'' the aliens look at the symmetries of their universe: the Ab
     This construction is \emph{not unique}. There are infinitely many involutions in the Galois group, all conjugate to each other. The alien can build \emph{a} real line, but they cannot distinguish \emph{which} one is ``ours'' without making an arbitrary choice. To them, $\sqrt[3]{2}$ might be ``real'' in one coordinate system, but ``complex'' in another.
 \end{note}
 
-\subsection{The Topological Completion}
-Once $F_\sigma$ is chosen, the ordering is algebraic: $x \ge 0 \iff \exists y \in F_\sigma, x=y^2$. But how do they recover $\C$? They cannot use a topology intrinsic to $\oln{\Q}$ alone. Instead, they define a \emph{norm} relative to their chosen involution.
-
-Since $F_\sigma$ is real closed, the sum of two squares is always a square. The alien defines the ``$\sigma$-norm'' $|\cdot|_\sigma : \oln{\Q} \to F_\sigma$ as:
+Once $F_\sigma$ is chosen, the ordering is algebraic: $x \ge 0 \iff \exists y \in F_\sigma, x=y^2$. But how do
+they recover $\C$? They cannot use a topology intrinsic to $\oln{\Q}$ alone. Instead, they define a
+\emph{norm} relative to their chosen involution. Since $F_\sigma$ is real closed, the sum of two squares is
+always a square. The alien defines the ``$\sigma$-norm'' $|\cdot|_\sigma : \oln{\Q} \to F_\sigma$ as:
 \[ |z|_\sigma = \sqrt{z \cdot \sigma(z)} \]
 Algebraically, if $z = x + iy$, then $z \cdot \sigma(z) = x^2 + y^2$, which has a square root in $F_\sigma$. This allows them to define a metric $d(a, b) = |a - b|_\sigma$.
 
@@ -696,10 +696,9 @@ They now run the standard completion process (Cauchy sequences):
 
 \section{The Archimedean Anomaly}
 
-The topology derived above---the Order Topology---would be viewed by the aliens as algebraically natural, but geometrically ``dangerous.''
-
-\subsection{The Topology of Squares}
-The aliens admit the definition is elegant because it requires no new concepts. They don't need a visualization of a number line; they just use squares.
+The topology derived above---the Order Topology---would be viewed by the aliens as algebraically natural, but
+geometrically ``strange''. The aliens admit the definition is elegant because it requires no new concepts.
+They don't need a visualization of a number line; they just use squares.
 Rather than defining open intervals $(a,b)$ via inequalities, they define the basis of the topology as:
 \[
 U_{a,b} = \{ x \in F \mid (x-a) \in (F^\times)^2 \text{ and } (b-x) \in (F^\times)^2 \}
@@ -707,23 +706,23 @@ U_{a,b} = \{ x \in F \mid (x-a) \in (F^\times)^2 \text{ and } (b-x) \in (F^\time
 Because $F$ is a Real Closed Field, the ``positive'' elements are exactly the squares. So, the alien sees the
 order topology not as ``left vs. right,'' but as a statement about the solvability of quadratic equations. To be ``in the interval'' means you can take the square root of your distance to the endpoints.
 
-\subsection{The Singularity}
-However, once they start studying this topology, they find it completely bizarre compared to the rest of their universe ($\Q_p$, finite fields).
-
-Most valuations in algebra are \textbf{Non-Archimedean} (satisfying the strong triangle inequality $|x+y| \le \max(|x|, |y|)$). This creates a stable, bounded universe. The Order Topology on $F$ is the only one that is \textbf{Archimedean} ($|x+y| \le |x| + |y|$).
+However, once they start studying this topology, they find it completely bizarre compared to the rest of their
+algebraic universe (ex. $\Q_p$, finite fields). Most valuations in algebra are Non-Archimedean
+(satisfying the strong triangle inequality $|x+y| \le \max(|x|, |y|)$). This creates a stable, bounded
+universe. The Order Topology on $F$ is the only one that is Archimedean (since $|x+y| \le |x| + |y|$).
 
 \begin{itemize}
     \item \textbf{Explosive Growth}: $F$ is the only place where adding small things together eventually creates an arbitrarily large monster. In $\Q_p$, ``infinity'' is not a direction you can reach by walking. In $F$, it is.
     \item \textbf{Directedness}: The existence of the order creates an asymmetry. In $\C$ or $\Q_p$, $x$ and $-x$ are topologically indistinguishable. In $F$, there is a fundamental difference between ``positive'' (a square) and ``negative'' (not a square).
 \end{itemize}
 
-To the alien, the universe is mostly disconnected dust ($\Q_p$), but there is one \textbf{singular point at infinity} ($\R$) where the dust fuses together, explodes in size, and gains a direction.
+To the alien, the universe is mostly disconnected dust ($\Q_p$), but there is one \emph{singular point at infinity} ($\R$) where the dust fuses together, explodes in size, and gains a direction.
 
 \section{The Rigidity Paradox}
 
 The standard modern intuition is to consider real calculus (smooth functions, bump functions) to be the standard, and complex calculus (holomorphic functions) to be a restrictive special case satisfying the Cauchy-Riemann equations.
 
-To the alien, this is backward. The ``Natural'' calculus is on $\oln{\Q}$ (or $\C$): a function $f: \C \to \C$
+To the alien, this is backward. The ``natural'' calculus is on $\oln{\Q}$ (or $\C$): a function $f: \C \to \C$
 is differentiable if it is locally linear \emph{over the field} $\C$. This means the local approximation must
 be multiplication by a scalar $\lambda \in \C$.
 
@@ -733,9 +732,11 @@ If we translate this requirement into the language of the fixed field $\R \subse
 \begin{pmatrix} a & -b \\ b & a \end{pmatrix} \iff \text{Cauchy-Riemann}
 \]
 
-There is another reason the alien considers Cauchy-Riemann functions the only ``natural'' ones. Remember, they constructed their coordinates by making an \emph{arbitrary choice} of $\sigma$.
-
-A ``natural'' function (like a polynomial $P(z) = z^2+1$) is defined using only field operations; it does not care which $\sigma$ you chose. A ``non-natural'' function (like $f(z) = \Re(z) = \frac{z+\sigma(z)}{2}$) requires you to know exactly which involution was chosen.
+There is another reason the alien considers Cauchy-Riemann functions the only ``natural'' ones. Remember, they
+constructed their coordinates by making an \emph{arbitrary choice} of $\sigma$. A ``natural'' function (like a
+polynomial $P(z) = z^2+1$) is defined using only field operations; it does not care which $\sigma$ you chose.
+A ``non-natural'' function (like $f(z) = \Re(z) = \frac{z+\sigma(z)}{2}$) requires you to know exactly which
+involution was chosen.
 
 The Cauchy-Riemann equations can be written in Wirtinger derivative notation as $\frac{\partial f}{\partial \bar{z}} = 0$. Translated to Alien-speak:
 \[ \frac{\partial f}{\partial z^\sigma} = 0 \]
@@ -749,7 +750,7 @@ If $\C$ is the natural world, why does $\R$ allow for ``wild'' objects like bump
     \item In $\R$: By restricting to the fixed field, we effectively \emph{turn off} the sensor in the imaginary dimension. We no longer require the derivative to match an approach from the $i$-direction.
 \end{itemize}
 
-The aliens view Smooth Real functions not as a richer class, but as a \emph{broken} class. They are the pathological consequence of taking a slice of the universe and ignoring the ambient constraints of the algebraic closure.
+The aliens view Smooth real functions not as a richer class, but as a \emph{broken} class. They are the pathological consequence of taking a slice of the universe and ignoring the ambient constraints of the algebraic closure.
 
 \section{Algebraic Differentiation: The Dual Numbers}
 
@@ -774,8 +775,8 @@ Since the derivative of a polynomial with coefficients in $F$ has coefficients i
 
 What is interesting about using automatic differentiation is that the input is forced to be a algebraic
 (polynomials, rational polynomials, series, etc.). The Algebraic Derivative is blind to the ``smooth
-monsters'' of real analysis. If you try to feed it a bump function (which has no Taylor series at the
-boundary), the algebraic machine jams. To the alien, bump functions are ghosts that appear only when you
+pathologies'' of real analysis. If you try to feed it a bump function (which has no Taylor series at the
+boundary), the algebraic machine returns nonsense (i.e. $0$). To the alien, bump functions are ghosts that appear only when you
 introduce topology.
 
 \section{The Spectrum of Topologies}
