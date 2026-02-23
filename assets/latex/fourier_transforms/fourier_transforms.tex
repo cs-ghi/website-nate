@@ -1,0 +1,1080 @@
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
+
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{Fourier Transforms}
+\author{Nathanael Chwojko-Srawley}
+\date{\today}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         packages                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\usepackage{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{makeidx}
+\usepackage{stackengine}
+\usepackage{scalerel}
+\usepackage{amsmath, amssymb, bm} % Used to write better mathematical expressions (ex. \mathbb{R})
+\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mathrsfs}
+\usepackage{euscript}
+\usepackage[font=itshape]{quoting}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{amsthm}           % Used to create theorem enviroments.
+\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{hhline}
+\usepackage{wasysym}          % emoji's!
+\usepackage{dsfont}
+\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
+\usepackage{setspace}         % More flexibility on spacing in document.
+\usepackage{commutative-diagrams}
+\usepackage{tikz}             % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{longtable}        % create tables that extend past one page
+\usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
+\usepackage{xcolor}           % Colour text.
+\usepackage{wrapfig}          % To wrap text around figure
+\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
+\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[answerdelayed]{exercise}
+\usepackage{etoolbox}          % for Dynkin diagrams
+\usepackage{dynkin-diagrams}   % for Dynkin diagrams
+\usepackage{pgfplots}
+\usepackage[most]{tcolorbox} 	      % Makes nice boxes for thms, cor, prop, or anything else.
+\usepackage{thmtools}         % Customize theorem environment (in preamble).
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% ╔═════════════════════════════════════════════════════╗
+% ║           for figures via inkspace                  ║
+% ╚═════════════════════════════════════════════════════╝
+
+% to import figures via: https://github.com/gillescastel/inkscape-figures
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+
+% This command is the ONLY command imported via the packages snippet, think of it as a tiny package written out
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                 bibliography and citing                   ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\usepackage{csquotes}
+% \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\usepackage{biblatex}
+
+\addbibresource{bibliography.bib}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                    colours (colors)                       ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{reddish}{HTML}{A01A3A}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       book format                        ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\pagestyle{fancy}
+
+\setlength\headheight{20pt}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+\fancyfoot[R,RO]{\thepage}{}
+
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
+}
+
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+%have format the title command
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
+
+
+\setlength{\parindent}{0pt} % don't like indentation infront of paragraphs
+\setlength{\parskip}{1ex}   %so that there is still space between paragarphs
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       Shortcuts                          ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+%\ExerciseLevelInToc
+
+% I like original mathcal better, but need lowercase.
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+
+% Custom Commands
+\newcommand{\A}{{\mathbb{A}}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\F}{{\mathbb{F}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\T}{{\mathbb{T}}}
+\newcommand{\V}{{\mathbb{V}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\renewcommand{\H}{{\mathbb{H}}}
+\renewcommand{\P}{{\mathbb{P}}}
+
+
+\newcommand{\SA}{\mathscr{A}}
+\newcommand{\SH}{\mathscr{H}}
+\newcommand{\SF}{\mathscr{F}}
+\newcommand{\SG}{\mathscr{G}}
+\newcommand{\SK}{\mathscr{K}}
+\newcommand{\SN}{\mathscr{N}}
+\newcommand{\SQ}{\mathscr{Q}}
+\newcommand{\SR}{\mathscr{R}}
+\newcommand{\SV}{\mathscr{V}}
+\newcommand{\SZ}{\mathscr{Z}}
+\newcommand{\SC}{\mathscr{C}}
+\newcommand{\SP}{\mathscr{P}}
+\newcommand{\SI}{\mathscr{I}}
+
+
+\newcommand{\TA}{\mathtt{A}}
+\newcommand{\TF}{\mathtt{F}}
+\newcommand{\TG}{\mathtt{G}}
+\newcommand{\TN}{\mathtt{N}}
+\newcommand{\TQ}{\mathtt{Q}}
+\newcommand{\TR}{\mathtt{R}}
+\newcommand{\TV}{\mathtt{V}}
+\newcommand{\TZ}{\mathtt{Z}}
+\newcommand{\TC}{\mathtt{C}}
+
+\newcommand{\CA}{{\mathcal{A}}}
+\newcommand{\CB}{{\mathcal{B}}}
+\newcommand{\CE}{{\mathcal{E}}}
+\newcommand{\CC}{{\mathcal{C}}}
+\newcommand{\CD}{{\mathcal{D}}}
+\newcommand{\CF}{{\mathcal{F}}}
+\newcommand{\CG}{{\mathcal{G}}}
+\newcommand{\CH}{{\mathcal{H}}}
+\newcommand{\CI}{{\mathcal{I}}}
+\newcommand{\CL}{{\mathcal{L}}}
+\newcommand{\CM}{{\mathcal{M}}}
+\newcommand{\CN}{{\mathcal{N}}}
+\newcommand{\CO}{{\mathcal{O}}}
+\newcommand{\co}{{\mathpzc{o}}}
+\newcommand{\CQ}{{\mathcal{Q}}}
+\newcommand{\CR}{{\mathcal{R}}}
+\newcommand{\CU}{{\mathcal{U}}}
+\newcommand{\CK}{{\mathcal{K}}}
+\newcommand{\CS}{{\mathcal{S}}}
+\newcommand{\CT}{{\mathcal{T}}}
+\newcommand{\CV}{{\mathcal{V}}}
+\newcommand{\CZ}{{\mathcal{Z}}}
+% EXCPETION:
+\newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\RP}{\mathbb{R}\mathrm{P}}
+
+\newcommand{\ff}{{\mathscr{F}}}
+
+\newcommand{\fa}{{\mathfrak{a}}}
+\newcommand{\fp}{{\mathfrak{p}}}
+\newcommand{\fg}{{\mathfrak{g}}}
+\newcommand{\fb}{{\mathfrak{b}}}
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fd}{{\mathfrak{d}}}
+\newcommand{\fm}{{\mathfrak{m}}}
+\newcommand{\fn}{{\mathfrak{n}}}
+\newcommand{\fo}{{\mathfrak{o}}}
+\newcommand{\fq}{{\mathfrak{q}}}
+\newcommand{\FA}{{\mathfrak{A}}}
+\newcommand{\FB}{{\mathfrak{B}}}
+\newcommand{\FP}{{\mathfrak{P}}}
+\newcommand{\FK}{{\mathfrak{K}}}
+\newcommand{\FC}{{\mathfrak{C}}}
+\newcommand{\FD}{{\mathfrak{D}}}
+\newcommand{\FM}{{\mathfrak{M}}}
+\newcommand{\FN}{{\mathfrak{N}}}
+\newcommand{\FO}{{\mathfrak{O}}}
+
+
+\newcommand{\EB}{\EuScript{B}}
+\newcommand{\EC}{\EuScript{C}}
+\newcommand{\EF}{\EuScript{F}}
+\newcommand{\EH}{\EuScript{H}}
+\newcommand{\EL}{\EuScript{L}}
+\newcommand{\EM}{\EuScript{M}}
+\newcommand{\EN}{\EuScript{N}}
+\newcommand{\EO}{\EuScript{O}}
+
+\newcommand{\sse}{\subseteq}
+\newcommand{\nsse}{\not\subseteq}
+\newcommand{\ssne}{\subsetneq}
+\newcommand{\qn}{\quad\newline}
+\newcommand{\wto}{\rightharpoonup}
+\newcommand{\placeholder}{\_\_\_\_\_}
+\newcommand{\subg}{\leqslant}
+%\newcommand{\subgne}{\lneqslant}
+\newcommand{\supg}{\geqslant}
+\newcommand{\nsubg}{\trianglelefteq}
+\newcommand{\csubg}{\blacktriangleleft}
+\newcommand{\nsupg}{\trianglerighteq}
+\newcommand{\uniflim}{\operatorname{unif lim}}
+\newcommand{\isosubg}{\lesssim}
+\renewcommand{\mid}{\big|}
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\oln}[1]{{\overline{#1}}}
+\renewcommand{\bf}[1]{\textbf{#1}}
+
+\renewcommand{\mod}{\,\operatorname{mod}\,}
+
+\newcommand{\ev}{{\operatorname{ev}}}
+\newcommand{\ab}{{\operatorname{ab}}}
+\newcommand{\an}{{\operatorname{an}}}
+\newcommand{\tr}{{\operatorname{tr}}}
+\newcommand{\nm}{{\operatorname{Nm}}}
+\newcommand{\op}{{\operatorname{op}}}
+\newcommand{\ad}{{\operatorname{ad}}}
+\newcommand{\rk}{{\operatorname{rk}}}
+\newcommand{\im}{{\operatorname{im}}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\ch}{{\operatorname{ch}}}
+\newcommand{\sh}{{\operatorname{sh}}}
+\newcommand{\Cl}{{\operatorname{Cl}\,}}
+\newcommand{\CaCl}{{\operatorname{CaCl}\,}}
+\newcommand{\SL}{{\operatorname{SL}}}
+\newcommand{\GL}{{\operatorname{GL}}}
+\newcommand{\aff}{{\textbf{aff}}}
+\newcommand{\Sh}{{\textbf{Sh}}}
+\newcommand{\Ab}{{\textbf{Ab}}}
+\newcommand{\Set}{{\textbf{Set}}}
+\newcommand{\Mod}{{\textbf{Mod}}}
+\newcommand{\QCoh}{{\textbf{QCoh}}}
+\newcommand{\Coh}{{\textbf{Coh}}}
+\newcommand{\PSh}{{\textbf{PSh}}}
+\newcommand{\Sch}{{\textbf{Sch}}}
+\newcommand{\Top}{{\textbf{Top}}}
+\newcommand{\RgSp}{{\textbf{RgSp}}}
+\newcommand{\Grp}{{\textbf{Grp}}}
+\newcommand{\Ring}{{\textbf{Ring}}}
+\newcommand{\CRing}{{\textbf{CRing}}}
+\newcommand{\Alg}{{\textbf{Alg}}}
+\newcommand{\dAlg}{{\textbf{-Alg}}}
+\newcommand{\rad}{{\operatorname{rad}}}
+\newcommand{\Der}{{\operatorname{Der}}}
+\newcommand{\res}{{\operatorname{res}}}
+\newcommand{\pre}{{\operatorname{pre}}}
+\newcommand{\Gal}{{\operatorname{Gal}}}
+\newcommand{\Rep}{{\operatorname{Rep}}}
+\newcommand{\Aut}{{\operatorname{Aut}}}
+\newcommand{\Sym}{{\operatorname{Sym}}}
+\newcommand{\Hom}{{\operatorname{Hom}}}
+\newcommand{\Emb}{{\operatorname{Emb}}}
+\newcommand{\Ext}{{\operatorname{Ext}}}
+\newcommand{\SExt}{{\mathcal{E}\emph{xt}}}
+\newcommand{\Pic}{{\operatorname{Pic}\,}}
+\newcommand{\End}{{\operatorname{End}}}
+\newcommand{\Inn}{{\operatorname{Inn}}}
+\newcommand{\Ind}{{\operatorname{Ind}}}
+\newcommand{\Out}{{\operatorname{Out}}}
+\newcommand{\Jac}{{\operatorname{Jac}}}
+\newcommand{\Nil}{{\operatorname{Nil}}}
+\newcommand{\CDiv}{{\operatorname{CDiv}\,}}
+\newcommand{\WDiv}{{\operatorname{WDiv}\,}}
+\renewcommand{\div}{{\operatorname{div}\,}}
+\newcommand{\ord}{{\operatorname{ord}\,}}
+\newcommand{\red}{{\operatorname{red}}}
+\newcommand{\Tor}{{\operatorname{Tor}}}
+\newcommand{\Rat}{{\operatorname{Rat}}}
+\newcommand{\Ann}{{\operatorname{Ann}}}
+\newcommand{\Syl}{{\operatorname{Syl}}}
+\newcommand{\SHom}{{\emph{Hom}}}
+\newcommand{\supp}{{\operatorname{supp}}}
+\newcommand{\sgn}{{\operatorname{sgn}}}
+\newcommand{\conj}{{\operatorname{conj}}}
+\newcommand{\kdim}{{\operatorname{kdim}}}
+\newcommand{\coker}{{\operatorname{coker}}}
+\newcommand{\Obj}{{\operatorname{Obj}}}
+\newcommand{\Mor}{{\operatorname{Mor}}}
+\newcommand{\Frac}{{\operatorname{Frac}}}
+\newcommand{\Spec}{{\operatorname{Spec}\,}}
+\newcommand{\Proj}{{\operatorname{Proj}\,}}
+\newcommand{\mSpec}{{\operatorname{mSpec}\,}}
+\newcommand{\smooth}{{\operatorname{smooth}}}
+\newcommand{\Tens}[1]{#1\otimes \_\_}
+\newcommand{\Char}{{\operatorname{char}}}
+\newcommand{\Span}{{\operatorname{span}}}
+\newcommand{\codim}{{\operatorname{codim}}}
+\newcommand{\esssup}{{\operatorname{ess sup}}}
+
+\newcommand{\Lim}{\varprojlim}
+\newcommand{\colim}{\varinjlim}
+\newcommand{\coLim}{\varinjlim}
+\newcommand{\Dlim}{\lim\limits_{\longrightarrow}}
+\newcommand{\coDlim}{\lim\limits_{\longleftarrow}}
+\newcommand{\fHom}[1]{\operatorname{Hom}(#1, \_\_)}
+\newcommand{\cofHom}[1]{\operatorname{Hom}(\_\_, #1)}
+\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\acton}{\curvearrowright}
+\newcommand{\actson}{\curvearrowright}
+
+\newcommand\cH{\check{\mathrm{H}}}
+
+\renewcommand{\Re}{{\operatorname{Re}}}
+\renewcommand{\Im}{{\operatorname{Im}}}
+
+%for saturated ideals in the localization section
+\newcommand{\LIm}{{}^{\iota} }
+\newcommand{\LPre}{{}^{\pi} }
+
+% Arrows
+\newcommand{\rw}{\rightarrow}
+\newcommand{\rrw}{\rightrightarrows}
+\newcommand{\Rw}{\Rightarrow}
+\newcommand{\lw}{\leftarrow}
+\newcommand{\Lw}{\Leftarrow}
+\newcommand{\lrw}{\leftrightarrow}
+\newcommand{\LRw}{\Leftrightarrow}
+
+\newcommand*\productop{\mathbin{\Pi}}
+\newcommand{\dprod}{\productop}
+
+% \newcommand{\dcup}{\sqcup}
+% \newcommand{\Dcup}{\bigsqcup}
+
+\newcommand{\dcup}{\coprod}
+\newcommand{\Dcup}{\coprod}
+\newcommand{\set}[2]{\left\{#1 \ \middle|\ #2\right\}}
+
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+\def\rddots{\mathstrut^{.^{.^{.}}}}
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%% new delimiter
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+% \emptyset
+% \underline
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    Custom Commands                       ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% swap varphi and phi
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
+
+
+%mod should not have the crazy amount of space to its right!
+\renewcommand{\mod}{\,\operatorname{mod}\,}
+
+
+\newcommand{\nbot}{\mathrel{\rlap{$\bot$}\mkern2mu/}}
+
+%a nice large circle
+\newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                     environments                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+
+%remember the option: breakable
+
+% create tcolor boxes
+\newtcbtheorem[number within=section]{thm}{Theorem}%
+{
+colback=green!5,
+colframe=green!35!black,
+fonttitle=\bfseries,
+label type=theorem
+}{th}
+
+\newtcbtheorem[number within=section, use counter from=thm]{lem}{Lemma}%
+{
+colback=blue!5,
+colframe=black!35!black,
+fonttitle=\bfseries,
+label type=lemma
+}{lm}
+\newtcbtheorem[number within=section, use counter from=thm]{prop}{Proposition}%
+{
+colback=white!5,
+colframe=white!35!black,
+fonttitle=\bfseries,
+label type=proposition
+}{pr}
+\newtcbtheorem[number within=section, use counter from=thm]{cor}{Corollary}%
+{colback=blue!5,
+colframe=blue!35!black,
+fonttitle=\bfseries,
+label type=corollary
+}{co}
+\newtcbtheorem[number within=section, use counter from=thm]{axiom}{Axiom}%
+{colback=black!5,
+colframe=yellow!35!black,
+fonttitle=\bfseries,
+label type=axiom
+}{ax}
+\newtcbtheorem[number within=section, use counter from=thm]{defn}{Definition}%
+{colback=red!5,
+colframe=red!35!black,
+fonttitle=\bfseries,
+label type=definition
+}{df}
+
+
+% for <s-cr> to create \item[$\LRw$] instead of \item
+\newenvironment{equivEnumerate}
+ {\begin{enumerate}
+	}{
+\end{enumerate}}
+
+
+
+%Custom enviroments
+ \newenvironment{note}
+ {\begin{tcolorbox}[enhanced, sharp corners, colback=white , borderline={0.2pt}{0pt}{black}]
+   \begin{quote}\textbf{Note}:
+   }{
+   \end{quote}\end{tcolorbox}}
+
+ \newenvironment{intuition}
+ {\begin{quote}\textbf{Intuition}:
+   }{
+   \end{quote}}
+
+\newtcbtheorem[number within=section, use counter from=thm]{titledBox}{}{%
+  enhanced,
+  sharp corners,
+  colback=white,
+  colframe=black,
+  borderline={0.2pt}{0pt}{black},
+  left=2mm,
+  right=2mm,
+  top=2mm,
+  bottom=2mm,
+  title style={opacity=1},
+  attach title to upper,
+  before upper={\textbf{\tcbtitletext}\quad},
+  coltitle=black,
+  fonttitle=\bfseries,
+  separator sign={\quad}
+}{box}
+
+
+%better example and proof environments
+\def\exampletext{Example} % If English
+\colorlet{colexam}{red!55!black} % Global example color
+
+
+\newtcbtheorem[number within=section, use counter from=thm]{example}{Example}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+% Example Frame Start
+empty,% Empty previously set parameters
+title={\exampletext \thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
+% Attaching a box requires an overlay
+attach boxed title to top left,
+   % Ensures proper line breaking in longer titles
+   minipage boxed title,
+% (boxed title style requires an overlay)
+boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+coltitle=colexam,fonttitle=\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+   before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+% Handles box when it exists on one page only
+overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: first page
+overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: middle page
+overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: last page
+overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); }%
+}{ex}
+
+
+
+\def\prooftext{Proof} % If English
+\NewDocumentEnvironment{Proof}{ O{} }
+{
+    \colorlet{colexam}{black!55!black} % Global example color
+    \newtcolorbox[number within=section]{testproofbox}{%
+        empty,% Empty previously set parameters
+        title={\emph{\prooftext} \thetcbcounter: #1},
+        attach boxed title to top left,
+        minipage boxed title,
+        boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+        coltitle=colexam,
+        fonttitle=\bfseries,
+        before=\par\medskip\noindent,
+        parbox=false,
+        boxsep=0pt,
+        left=3mm,
+        right=0mm,
+        top=2pt,
+        breakable,
+        pad at break=0mm,
+        before upper=\csname @totalleftmargin\endcsname0pt,
+        % Removed height constraints
+        % Added flexible width
+        width=\dimexpr\textwidth-3mm\relax,
+        % Modified overlays
+        overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+    \begin{testproofbox}
+}
+{\end{testproofbox}\endlist}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    for Dynkin diagrams                   ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\def\row#1/#2!{#1_{\IfStrEq{#2}{}{n}{#2}} & \dynkin{#1}{#2}\\}
+\newcommand{\tble}[1]{
+   \renewcommand*\do[1]{\row##1!}
+   \[
+      \begin{array}{ll}\docsvlist{#1}\end{array}
+   \]
+}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         links                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\definecolor{LinkColour}{HTML}{A64A3B} % favourite
+% \definecolor{LinkColour}{HTML}{8C3D32} % 2nd place
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=magenta,
+  linkcolor=LinkColour,
+  urlcolor=blue,
+}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                          misc                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\stackMath %to be able to stack text in math mode
+\makeindex
+
+%import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.svg,
+\begin{document}
+\maketitle
+
+
+Consider the heat equation on a compact interval:
+\begin{equation}\label{eq:linHeatEq}
+	\frac{du}{dt} = \frac{\partial^2 u}{\partial x^2}
+\end{equation}
+where $u$ is a solution. If $u$ represents a rod that is at time $t = 0$ half hot and half cold and is touching in the
+middle, then we let time move forward, the temperature will dampen out due to the 2nd term. The shape goes from
+a bump function, to a function that looks like $\tan^{-1}(x)$, and as time $\to \infty$ it converges to
+a constant function representing the average temperature. These are all functions with distinctly different behaviours.
+
+Now, assume that the heat of the rod at $t = 0$ has the shape of $\sin(x)$ or $\cos(x)$. Then as we let time
+propagate these functions dampen uniformly, notably \emph{they are always
+the same function}, simply scaled. This is essentially the behaviour of \emph{eigenvectors}, namely as time
+moves forward we are scaling by a factor. To have eigenvectors, we need a linear transformation between vector
+spaces. Let $S_t$ be the \emph{time evolution operator} that takes in a state $f_{t_0}$ (a function on the
+domain that is a $t_0$-slice of a solution $u(x,t_0)$) and outputs $f_{t_0+t}$, in particular $S_t: \SP(X) \to
+\SP(X)$ where $\SP(X)$ is the state space over $X$  and $S_t$ is the evolve by $t$ operator:
+\[
+	S_t(u(-, t_0)) = u(-, t_0+t)
+\]
+Or, viewed as an (abelian) monoid action\footnote{The heat equation is not well-defined on the full real line
+$\R$, it fails the Hadamard’s conditions for well-posedness; see~\cite{NatePDE}}:
+\[
+	S: [0, \infty) \times \SP(X) \to \SP(X) \qquad t\cdot f_{t_0} = f_{t_0+t}
+\]
+Note that it isn't ``obvious'' what type of space $\SP(X)$ is, we will harmlessly assume that this is the
+Hilbert spaces; see~\cite{NatePDE} for the justification of this assumption. At minimum it is certainly the
+case that any (smooth) $L^2$-integrable function is a valid starting state that can then evolve according to
+the heat equation. If the reader can accept that there is a reasonable sense in which integrable function can
+be differentiated as shall be demonstrated~\cite{NateRealAnalysis}, the reader can let $\SP(X)
+= L^2([0,1])$.
+
+Now, certainly $S_t$ is linear as the heat equation is linear and homogeneous\footnote{It is also continuous and
+normal, but for that we would need to choose whether we consider $\SP$ as a Banach space or a distribution
+space; intuitively the heat equation dissipates energy so $\|S_t f\| \le \|f\|$}. We can thus ask if it has
+eigenvectors, that is function $f_r \in \SP(X)$ where
+\[
+	S_tf_r(x) = \lambda f_{r+t}(x)
+\]
+If we let $t$ vary, we can define a function $\lambda(t)$ dependent on the time. Given a compact domain $X
+=[a,b]$, by direct computations we can check that $\sin(kx)$ is an eigenvector, where this is indeed a state
+as it is a $t$-slice of:
+\[
+	u(x,t) = e^{-k^2 t} \sin(kx)
+\]
+For example at $t = 0$:
+\[
+S_t(\sin(kx)) = e^{-k^2 t} \sin(kx)
+\]
+With the assumption that $\SP$ is a Hilbert space, if these eigenfunctions form an orthonormal basis, we can
+decompose a functions into a ``weighted sum'' of these well-behaved functions with respect to time. For the
+rest of this section we shall take for granted $\{\sin(kx)\}_{k \in \N}$ form orthonormal basis for $S_t$
+(proven in~\cite{NateRealAnalysis}) after appropriately normalized depending on the
+domain.
+
+It must be pointed out that the same argument works for $\cos(kx)$:
+\[
+S_t(\cos(kx)) = e^{-k^2 t} \cos(kx)
+\]
+and these \emph{also} form an orthonormal basis that \emph{also} diagonalize $S_t$. These two sets certainly
+cannot be combined since the result is no longer orthogonal:
+\[
+	 \int_0^1 \sin(\pi x) \cos(2\pi x)  dx = \frac{-2}{3\pi} \ne 0
+\]
+Thus, the question shifts into one about finding a \emph{natural} eigenbasis for $S_t$. A-priori, it is not
+necessarily the case that these are the only eigenbasis. What we need is for the eigenbasis to ``respect''
+some inherent geometry of the space. Phrased differently, the eigenbasis needs to be \emph{invariant} with
+respect to some operator(s), where the operators represent some symmetry of the space. To get a better grasp
+of invariance of operators, we may start looking at other PDEs and considering diagonalizing the operator
+$S_t$ with respect to the solutions of those PDEs.
+
+
+For example, if we solve the Heat equation on a sphere:
+\[
+	\frac{\partial u}{\partial t} = \Delta_{\text{sphere}} u
+\]
+the operator can still be diagonalized (see~\cite{NatePDE}). What we shall want is for an eigenbasis that
+respects the spherical geometry,
+namely for it to be invariant to an $SO(3)$ action. Such eigenfunctions do exist, they are the \emph{Spherical Harmonics}
+$Y_{l}^{m}(\theta, \phi)$, and they are invariant to rotation\footnote{important technicality: $SO(3)$ is not
+abelian, hence it cannot be that \emph{all} rotation operators simultaneously commute. The best solution
+is to pick a ``maximal set'' of commuting symmetries: usually the Total Angular Momentum ($L^2$,
+representing the amount of rotation invariance) and Azimuthal Symmetry ($L_z$, rotation around the
+z-axis).}
+\[
+	\Delta (f \circ R) = (\Delta f) \circ R
+\]
+To give another example that is famous in physics, consider Quantum Harmonic Oscillator
+\[
+	i \frac{\partial \psi}{\partial t} = -\frac{\partial^2 \psi}{\partial x^2} + x^2 \psi
+\]
+This PDE is diagonalizable (see~\cite{NatePDE}), but it is \emph{not} diagonalizable by $e^{2\pi i k}$.
+Instead it was shown to be diagonalized (uniquely) by the \emph{Hermite Functions} (a Gaussian multiplied by a polynomial)
+\[
+	\phi_n(x) = H_n(x) e^{-x^2/2}
+\]
+By trying to diagonalize with $e^{2\pi k}$, the $x^2$ multiplication term turns into a Laplacian in $k$-space
+($-\partial_k^2$), so the result will effectively just swap the PDE for an identical PDE in frequency space
+without solving it. In physics, this fact shall be the key to showing that it is in fact \emph{invariant} to
+the Fourier transform, creating fascinating link between abstract harmonic analysis and the concrete geometry
+of quantum mechanics, a connection to be explored in another book.
+
+% Another importance invariance that should be mentioned for its use in number theory is \emph{dilation
+% invariance} which results in the \emph{Mellin transform}, but it has no bearing on this section so
+
+
+
+So what is the invariance we want to impose for the operator $S_t$ with respect to the heat equation? In the
+example of the sphere, we had that the group $SO(3)$. A compact interval has no invariance simply because it
+is not a group. However, by gluing the end points of the interval we get a 1-\emph{torus} (a
+circle)\footnote{More generally, any rectangular domain is homeomorphic to $[0,1]^n$ which then can be glued
+to become $\T^n = (S^1)^n$, and so this same translation structure appears in higher dimensions}. We now have
+the rotation group operation on $\T^1$, or equivalently the translation operation on $\R/\Z$\footnote{Really
+$\C/\Z$ as we shall justify shortly}. This does shift the geometry and hence the inherent dynamics of our
+PDEs; the problem of solving a PDE on a compact interval will be a subset of solving PDEs on a torus as shall
+be addressed shortly. Let us first simply consider $S_t$ on $L^2(\T^1)$ and see how it interacts with the
+translation operator. Since we are working on the torus, we now have that $\sin(2\pi kx)$ and $\cos(2\pi lx)$
+\emph{are} orthogonal (where the $2\pi$-scaling was to ensure a full period of each lies within the torus),
+and $\{\sin(kx), \cos(lx)\}_{k,l \in \N}$ is an orthonormal basis (after appropriate scaling and stretching).
+Now, note that $\sin$ and $\cos$ basis are \emph{not} translation invariant, for example:
+\[
+	\tau_a(\sin(kx)) = \cos(ka)\sin(kx) + \sin(ka)\cos(kx)
+\]
+and so they are not eigenvectors of $\tau_a$. However, they still \emph{block-diagonalize} the translation
+operator $\tau_a$ with blocks of size $2$:
+\[
+	\begin{pmatrix} \cos(ka) & \sin(ka)\\
+	 -\sin(ka) & \cos(ka) \end{pmatrix}
+\]
+If we look at these blocks, we shall see that they are all rotation matrices by an angle $ka$; in other words the
+imposition is that we did not have enough eigenvalues. By extending the codomain to $\C$, we can readily
+verify that:
+\[
+	\tau_a(e^{iz}) = e^{ia}\cdot e^{iz}
+\]
+and so $\{e^{ikz}\}_{k \in \Z}$ is our desired eigenbasis for $\tau_a$. Now, do these translations of these
+functions commute with $S_t$, namely:
+\[
+	S_t(\tau_a(f)) = \tau_a(S_t(f)) \qquad \forall a \in \T^1
+\]
+Indeed:
+\begin{align*}
+	\tau_a(S_t(e^{ikx})) &= \tau_a(e^{-k^2 t} e^{ikx})\\
+	&=  e^{-k^2 t} e^{ik(x+a)}\\
+	&= e^{-k^2 t} e^{ika} e^{ikx}\\
+	&= e^{ika} S_t(e^{ikx})\\
+	&= S_t(e^{ika} e^{ikx}) & \text{$S_t$ is linear}\\
+	&= S_t(\tau_a(e^{ikx}))
+\end{align*}
+
+What this means physically is that the heat equation dissipates the same way no matter where you are on a
+ringed-shape rod. If the rod was half wood and half metal, then this translation invariance shall fail.
+
+Now, notice that as $\tau_a \circ S_t = S_t \circ \tau_a$ for all $a \in \T^1$ (or in commutator bracket
+notation $[\gamma_a, S_t] = 0$ for all $a,t$), the eigenvectors of $\tau_a$ are the same eigenvectors as
+$S_t$. The eigenvectors of $S_t$ are in general hard to compute, but the eigenvectors of $\tau_a$ are
+\emph{precisely} the functions $e^{ikx}$.
+
+
+\subsection*{Boundary Problem}
+
+The immediate point that is still pending and must clarified when switching to $\T^1$ is that this shifts the
+dynamics of any PDE we are solving, as now points at the boundary are affected by their neighbourhood.
+However, for PDE's that will respect the group structure of $\T^1$, the effects at the boundary can be
+``cancelled out'' in two separate ways that shall recover the original two basis $\{\sin(kx)\}_{k \in \Z}$ and
+$\{\cos(kx)\}_{k \in \Z}$ we saw before (again, appropriately normalized). The key insight is that the
+interval $[0,1]$ can be viewed as a \emph{sub-domain} of the torus $\T^1$ (identified with $[-1,1]$) subject
+to a symmetry constraint. While the torus possesses full translation invariance, the interval possesses
+\emph{reflection invariance}. By imposing a symmetry on the torus, we create ``virtual boundaries'' at the
+fixed points of the reflection ($x=0$ and $x=1$). This gives rise to two distinct orthonormal bases for
+$L^2([0,1])$, each corresponding to a different physical boundary condition:
+
+\begin{itemize}
+    \item \emph{Odd Symmetry (Dirichlet Conditions):}
+    Consider the subspace of functions on $\T^1$ that are \emph{odd}, satisfying $u(-x) = -u(x)$. At the
+    fixed point $x=0$, this symmetry forces $u(0) = -u(0)$, implying $u(0) = 0$. Physically, the heat
+    flowing from the right is perfectly cancelled by the ``negative heat'' flowing from the left, creating a
+    virtual cold wall. The eigenfunctions respecting this symmetry are precisely the sine functions:
+    \[ \sin(n\pi x) = \frac{e^{in\pi x} - e^{-in\pi x}}{2i} \]
+    Restricting these functions to $[0,1]$ yields the \emph{Sine Basis}, which diagonalizes the Laplacian
+    subject to $u(0)=u(1)=0$.
+
+    \item \emph{Even Symmetry (Neumann Conditions):}
+    Consider the subspace of functions on $\T^1$ that are \emph{even}, satisfying $u(-x) = u(x)$. At the
+    fixed point, the derivative must be odd, forcing $u'(0) = 0$. Physically, this represents an insulated
+    boundary where heat reflects back without loss. The eigenfunctions respecting this symmetry are the cosine
+    functions:
+    \[ \cos(n\pi x) = \frac{e^{in\pi x} + e^{-in\pi x}}{2} \]
+    Restricting these to $[0,1]$ yields the \emph{Cosine Basis}, which diagonalizes the Laplacian subject
+    to $u'(0)=u'(1)=0$.
+\end{itemize}
+
+This leads to a remarkable result in Harmonic Analysis known as \emph{half-range expansions}: while sines and
+cosines \emph{together} form a basis for the full torus, \emph{either} set alone forms a complete orthonormal
+basis for the interval $[0,1]$.
+
+
+
+
+
+\subsection*{Decoupling PDE}
+
+To understand the consequences better, take a solution $u: \T^1\times [0, \infty) \to \C$. Then, think of
+each (space) neighborhood in the usual heat equation as influencing its infinitesimal neighbourhood, namely
+the $\frac{\partial^2 u}{\partial x^2}$ term determines how each neighbouring point affects each other as
+time propagates. We can think of this as being uncountably many dependent equations.
+
+Therefore, by applying the Fourier transform, we are changing the basis of our state space
+from the position basis $\{ \delta_x \}_{x \in \T^1}$ to the eigenbasis of the spatial
+operator $\{ e^{ikx} \}_{k \in \Z}$.
+
+By taking the Fourier transform, i.e. transforming to the
+translation-invariant orthonormal basis, we change a solution to:
+\[
+	u(x,t): \T^1 \times [0, \infty) \to \C\qquad \xmapsto{\CF_x}\qquad \hat{u}(k, t): \Z\times [0,\infty) \to \C
+\]
+where the $\Z$ is the index for the eigenbasis $\{f_k\}_{k \in \Z}$. Then if $\hat{u}_k$ is the function whose
+input is the index of the eigenvector and output is its coefficient, we see that as $\hat{u}_k$ propagates
+through time, $\hat{u}_k(t)$ is only dependent on the original function up to scaling. In fact
+we shall show that the heat equation PDE decomposes into the equations:
+\[
+	\frac{d \hat{u}_k}{dt} = -k^2 \hat{u}_k \qquad \forall k \in \Z
+\]
+where now we have \emph{countably many decoupled} equations.
+
+
+\subsection*{Non-Compact Domain}
+
+Notice that $\sin, \cos, e^{z}$ are not $L^2$-integrable on $\R^n$ (resp. $\C^n$), hence these cannot form an
+orthonormal basis on $L^2(\R^n)$. Thus, the initial foray into Fourier will focus on functions with domain
+$\T^n$. In~\cite{NateRealAnalysis} we shall show how to generalize the tools to the non-compact
+case, more specifically, the locally compact case.
+
+
+\subsection*{Digression to Lie Theory}
+
+We have established that the Fourier basis functions $e^{ikx}$ are the eigenfunctions of the ``global''
+spatial translation operator $\tau_a$. However, the reader likely recognizes these functions primarily as
+the solutions to the differential equation $f' = \lambda f$. This connection between the \emph{global}
+translation $\tau_a$ and the \emph{local} derivative $D = \frac{d}{dx}$ is a central theme of Lie Theory.
+
+In~\cite{NateRealAnalysis}, it shall be shown that it makes sense to infinitely differentiate
+integrable functions. For now, we rely on the intuition that any continuous function can be approximated by
+a smooth function (and locally by a polynomial).
+
+Consider the Taylor expansion of a function $f$ around a point $x$:
+\[
+	f(z) = f(x) + f'(x)(z-x) + \frac{f''(x)}{2!}(z-x)^2 + \dots
+\]
+If we wish to evaluate $f$ at a shifted point $x+y$, the Taylor series gives:
+\[
+	f(x+y) = f(x) + y f'(x) + \frac{y^2}{2!} f''(x) + \dots
+\]
+Notice that we can re-write this using the differentiation operator $D = \frac{d}{dx}$:
+\[
+	f(x+y) = \left( I + yD + \frac{y^2 D^2}{2!} + \dots \right) f(x)
+\]
+Recognizing the series inside the parenthesis as the definition of the matrix exponential, we arrive at the
+compact operator identity:
+\[
+	\tau_y = e^{y D}
+\]
+This equation states that \emph{differentiation generates translation}.
+
+Now, consider the spectral consequences. If an operator $A$ has an eigenvector $v$ with eigenvalue $\lambda$
+($Av = \lambda v$), then the operator exponential $e^A$ acts on $v$ as:
+\[
+e^A v = \left( I + A + \frac{A^2}{2!} + \dots \right) v = \left( 1 + \lambda + \frac{\lambda^2}{2!} + \dots \right) v = e^\lambda v
+\]
+Applying this to our spatial operators: since $f(x) = e^{ikx}$ is an eigenfunction of the derivative $D$
+with eigenvalue $ik$ (i.e., $D e^{ikx} = ik e^{ikx}$), it must automatically be an eigenfunction of the
+translation operator $\tau_y = e^{yD}$ with eigenvalue $e^{iyk}$.
+
+This confirms our earlier finding: the Fourier basis $e^{ikx}$ simultaneously diagonalizes the derivative
+(and by extension the Laplacian $\Delta = D^2$) and the translation group.
+
+\begin{thm}{Spectral Mapping Theorem}{spectralMappingThm}
+	Any eigenvector with eigenvalue $\lambda$ of an operator $A$ is an eigenvector of the operator $e^A$ with
+	eigenvalue $e^\lambda$.
+\end{thm}
+
+\begin{Proof}
+	Follows from the power series definition of the matrix exponential shown above.
+\end{Proof}
+
+To see this explicitly, observe the action of these operators on the basis function $f_k(x) = e^{ikx}$:
+\begin{itemize}
+	\item \emph{Derivative:} $D f_k = (ik) f_k$ \hfill (Eigenvalue $ik$)
+	\item \emph{Laplacian:} $\Delta f_k = D^2 f_k = (ik)^2 f_k = -k^2 f_k$ \hfill (Eigenvalue $-k^2$)
+	\item \emph{Translation:} $\tau_a f_k = e^{aD} f_k = e^{a(ik)} f_k$ \hfill (Eigenvalue $e^{ika}$)
+\end{itemize}
+
+In the language of representation theory, the differentiation operator is the \emph{Lie Algebra} generator
+$\mathfrak{g}$, and the translation operator is the \emph{Lie Group} element $e^{\mathfrak{g}}$. The Fourier
+basis provides the unique coordinate system where the group action and its generator are both simple scalings.
+
+\subsection*{Generalizing using Representation Theory}
+
+In the previous section, our motivation was to solve a specific time-dependent PDE (the heat equation). We
+discovered that the key to solving it lay not in the time evolution $S_t$ itself, but in the underlying
+symmetry of the spatial domain (translation invariance). The basis functions $e^{ikx}$ worked because they
+diagonalized the translation operator $\tau_a$.
+
+We now abstract this principle. We no longer need a specific ``time'' equation; instead, we look for the
+basis that diagonalizes the action of the symmetry group itself. By finding the irreducible representations
+of the symmetry group, we construct a ``universal'' eigenbasis that will automatically diagonalize \emph{any}
+linear operator respecting that symmetry (be it the Laplacian, the Heat Operator, or others).
+
+To make this concrete, let us recall the representation theory of finite groups.
+If $G$ is a finite group, we can represent $G$ on a vector space $V$ (over a field $k$) by
+taking a homomorphism $\rho: G \to \GL(V)$.
+\[
+    G \actson V \qquad \rho(g)v = g \cdot v
+\]
+As we are not interested in any arithmetic limitations, we take $k = \C$. Then by Maschke's theorem
+(see~\cite[chapter~24]{NateAlgebra}) the induced $\C[G]$-module structure on $V$ is
+semi-simple, meaning:
+\[
+	 V \cong_G \bigoplus_i V_i
+\]
+where $V_i$ are irreducible representations. Given the basis for the above isomorphism, any $g \in G$
+will give a matrix representation $\rho(g)$ which respects this block-diagonal decomposition:
+\[
+\rho(g) = \begin{bmatrix}
+\mathbf{M}_1(g) & 0 & 0 & 0 \\
+0 & \mathbf{M}_2(g) & 0 & 0 \\
+0 & 0 & \mathbf{M}_3(g) & 0 \\
+0 & 0 & 0 & \dots
+\end{bmatrix}
+\]
+where $\mathbf{M}_i(g)$ represents the matrix block acting on the subspace $V_i$. Crucially, if $G$ is
+\emph{abelian}, Schur's Lemma implies that \emph{all} irreducible representations are $1$-dimensional. Hence,
+the matrices become scalars:
+\[
+\rho(g) = \begin{bmatrix}
+\lambda_1(g) & 0 & 0 & 0 \\
+0 & \lambda_2(g) & 0 & 0 \\
+0 & 0 & \lambda_3(g) & 0 \\
+0 & 0 & 0 & \dots
+\end{bmatrix}
+\]
+As each $\rho(g)$ is representable by a diagonal matrix using the same basis, the operators $\{\rho(g)\}_{g
+\in G}$ are a commuting family of linear operators (i.e. they are \emph{simultaneously diagonalizable}).
+
+Now, we generalize this to function spaces. While for a finite group the vector space of functions $\C[G]$ is
+finite-dimensional, equipping it with an inner product structure is essential to define unitarity and
+orthogonality. A finite group $G$ carries a natural unique measure (the counting measure), which we can
+normalize to be a probability measure (the Haar measure $\mu(g) = 1/|G|$). This allows us to define the
+Hilbert space $L^2(G)$ with inner product:
+\[
+    \langle f, h \rangle = \frac{1}{|G|} \sum_{x \in G} f(x)\overline{h(x)}
+\]
+We define the \emph{Right Regular Representation}\footnote{or, Left Regular
+Representations $(L_g\cdot f)(x) = f(g^{-1}x)$} of $G$ on this space:
+\[
+	G \actson L^2(G) \qquad (R_g \cdot f)(x) = f(xg)
+\]
+We verify that this action is unitary (and hence can be diagonalized with an orthonormal basis). Since
+right-multiplication by $g$ is a bijection on the group $G$ (it permutes the elements), the sum over $x$ is
+identical to the sum over $y = xg$:
+\begin{align*}
+    \langle R_g f, R_g h \rangle &= \frac{1}{|G|} \sum_{x \in G} f(xg)\overline{h(xg)} \\
+    &= \frac{1}{|G|} \sum_{y \in G} f(y)\overline{h(y)} \\
+    &= \langle f, h \rangle
+\end{align*}
+Thus, the operators $R_g$ are unitary. Since $G$ is abelian, the operators $\{R_g\}_{g \in G}$ form a
+commuting family of unitary operators. By the spectral theorem for unitary operators, there exists an
+orthonormal basis $\mathcal{B}$ of $L^2(G)$ that simultaneously diagonalizes the action.
+If $\phi \in \mathcal{B}$ is such a basis vector, then:
+\[
+	R_g(\phi) = \chi_{\phi}(g)\phi
+\]
+where $\chi_{\phi}(g) \in \C$ is the eigenvalue. Since the representation is a homomorphism ($R_{gh} = R_g
+R_h$), the eigenvalues must satisfy the multiplicative property $\chi_\phi(gh) = \chi_\phi(g)\chi_\phi(h)$.
+Moreover, since $R_g$ is unitary, $|\chi_\phi(g)|=1$ and hence the codomain is $S^1$. These homomorphisms
+$\chi: G \to S^1$ are precisely the \emph{characters} of the group. Thus,
+
+\begin{quote}
+	the group-theoretic eigenbasis for $L^2(G)$ is simply the set of characters!
+\end{quote}
+
+We shall explore this more in~\cite{NateRealAnalysis}
+
+\begin{titledBox}{Advanced: Operators Commuting with Translations}{advancedOpCommutingTrans}
+    We focused on finding the basis that diagonalizes translations ($R_g$). But what are the operators that
+    commute with all translations?
+    \[ T \circ R_g = R_g \circ T \qquad \forall g \in G \]
+    A fundamental result in Harmonic Analysis states that any such linear operator $T$ is a \emph{Convolution Operator}.
+    That is, there exists a function $k \in L^1(G)$ (the kernel) such that $Tf = f * k$.
+    This explains why the Heat Operator, the Laplacian, and other physical operators can all be written as convolutions:
+    they are simply the most general linear maps that respect the symmetry of the space.
+\end{titledBox}
+
+\subsubsection*{The Infinite Compact Case}
+
+In the case where the domain is infinite (like the torus $\T^n$), we must be more careful. First, let us
+stick to compact domains so that we generalize the finite case directly. Functions defined on a rectangular
+domain with periodic boundary conditions are equivalent to functions on the torus $\T^n = (S^1)^n$.
+Our state space is the Hilbert space $L^2(\T^n, \C)$.
+
+We want to act by translation by $\R^n$, but since the domain is periodic, this descends to a faithful action
+of the compact group $\R^n/\Z^n \cong \T^n$. It is easy to check that translation is unitary ($\langle
+\tau_y f, \tau_y g \rangle = \langle f,g \rangle$) using the translation invariance of the Lebesgue measure.
+
+We now invoke the \emph{Peter-Weyl Theorem}, which is the generalization of Maschke's theorem to compact
+topological groups (see~\cite{NateGeoRepTheory}). It states that the unitary representation of a compact
+group on $L^2(G)$ decomposes into a Hilbert direct sum of finite-dimensional irreducible representations:
+\[
+	L^2(G) \cong_{G} \widehat{\bigoplus_i} V_i
+\]
+Since $\T^n$ is abelian, all irreducible representations $V_i$ are \emph{one-dimensional}. Being one-dimensional
+and unitary, they are given by characters $\chi: \T^n \to S^1$.
+
+Thus, the Peter-Weyl theorem guarantees that the characters of $\T^n$ form a complete orthonormal basis for
+$L^2(\T^n)$. We have recovered our Fourier basis purely from the algebraic structure of the domain, without
+reference to any specific differential equation!
+
+\subsection*{* The Duality of Points and Spectrum}
+
+
+The statement that the Fourier transform changes the basis from ``positions'' $\{\delta_x\}$ to ``waves''
+$\{e^{ikx}\}$ hints at a broader duality: it changes the very nature of the ``points'' that constitute our
+space.
+
+Let us define a function $f$ by its values at geometric points. In the language of distributions, we can write
+any function as a continuous sum of Dirac deltas:
+\[
+    f(x) = \int_{\T^1} f(y) \delta_y(x) \, dy
+\]
+Here, the building blocks are points $y \in \T^1$. A ``point'' is simply a linear functional that evaluates a
+function at a specific location: $\text{ev}_y(f) = f(y)$.
+
+Now consider the Fourier Transform. It maps a function $f$ on the group $G$ to a function $\hat{f}$ on the
+dual group $\widehat{G}$ (the set of characters). What are the ``points'' of this new space? They are the
+irreducible representations (the frequencies).
+\[
+    \hat{f}(\chi) = \int_G f(x) \overline{\chi(x)} \, dx
+\]
+When we transform a geometric point $\delta_y$, it becomes a function on the dual group:
+\[
+    \widehat{\delta_{y}}(\chi) = \overline{\chi(y)}
+\]
+This reveals that the Fourier Transform is an isomorphism between two different kinds of spaces:
+\begin{itemize}
+    \item The \emph{Physical Space} $G$, whose points are geometric locations $x$.
+    \item The \emph{Spectral Space} $\widehat{G}$, whose points are irreducible representations $\chi$.
+\end{itemize}
+
+This is a specific instance of a grander theme in mathematics known as \emph{Gelfand Duality}. In this
+framework, any commutative $C^*$-algebra (like the algebra of continuous functions) corresponds to a
+topological space (its spectrum). The Fourier Transform is the map that identifies the algebra of functions
+under convolution ($L^1(G)$) with the algebra of functions under pointwise multiplication ($C_0(\widehat{G})$).
+Effectively, we trade the geometry of the group for the geometry of its representation theory.
+
+\newpage
+\printbibliography
+
+\end{document}
