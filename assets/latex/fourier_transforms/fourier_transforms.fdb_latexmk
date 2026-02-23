@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber fourier_transforms"] 1771822704 "fourier_transforms.bcf" "fourier_transforms.bbl" "fourier_transforms" 1771825720 0
+["biber fourier_transforms"] 1771822704 "fourier_transforms.bcf" "fourier_transforms.bbl" "fourier_transforms" 1771826279 0
   "./bibliography.bib" 1771822484 1947 bac3a7c2a08cf3e284338291f9cb4c71 ""
-  "fourier_transforms.bcf" 1771825720 108445 afab1eb4f74d32cf80e476b0c16dbfc4 "pdflatex"
+  "fourier_transforms.bcf" 1771826278 108445 afab1eb4f74d32cf80e476b0c16dbfc4 "pdflatex"
   (generated)
   "fourier_transforms.bbl"
   "fourier_transforms.blg"
   (rewritten before read)
-["makeindex fourier_transforms.idx"] 1771822493 "fourier_transforms.idx" "fourier_transforms.ind" "fourier_transforms" 1771825720 0
-  "fourier_transforms.idx" 1771825719 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex fourier_transforms.idx"] 1771822493 "fourier_transforms.idx" "fourier_transforms.ind" "fourier_transforms" 1771826279 0
+  "fourier_transforms.idx" 1771826277 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "fourier_transforms.ilg"
   "fourier_transforms.ind"
   (rewritten before read)
-["pdflatex"] 1771825716 "fourier_transforms.tex" "fourier_transforms.pdf" "fourier_transforms" 1771825720 0
+["pdflatex"] 1771826274 "fourier_transforms.tex" "fourier_transforms.pdf" "fourier_transforms" 1771826279 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -405,12 +405,12 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684428852 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "fourier_transforms.aux" 1771825720 2179 6a7c2d97b04b1332b7e6b0dae49f1655 "pdflatex"
+  "fourier_transforms.aux" 1771826278 2179 6a7c2d97b04b1332b7e6b0dae49f1655 "pdflatex"
   "fourier_transforms.bbl" 1771822706 5067 5ea826d5c9401f3b868a9dd3acbe5578 "biber fourier_transforms"
   "fourier_transforms.ind" 1771822493 0 d41d8cd98f00b204e9800998ecf8427e "makeindex fourier_transforms.idx"
-  "fourier_transforms.out" 1771825719 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "fourier_transforms.run.xml" 1771825720 2405 cc70da9a30ef05f9ef8f889c6023e953 "pdflatex"
-  "fourier_transforms.tex" 1771825715 49464 c55632e2fcd49d42bd00e3efc021add8 ""
+  "fourier_transforms.out" 1771826278 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "fourier_transforms.run.xml" 1771826278 2405 cc70da9a30ef05f9ef8f889c6023e953 "pdflatex"
+  "fourier_transforms.tex" 1771826274 49453 e77e3b18cb37aa8ac20cfc1fbc845840 ""
   (generated)
   "fourier_transforms.aux"
   "fourier_transforms.bcf"
