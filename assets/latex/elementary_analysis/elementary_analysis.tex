@@ -1353,10 +1353,10 @@ In metric spaces, we can define the concept of sequential compactness:
 	exists a convergent subsequence that converges in $A$
 \end{defn}
 
-\subsection{Comapctness in compact metric spaces}
+\subsection{Compactness in compact metric spaces}
 
 \begin{thm}{Generalized Heine-Borel Theorem}{generalizedHeine-Borelorem}
-	A subset of a compelte metric space is compact if and only if it is closed and totally bounded.
+	A subset of a complete metric space is compact if and only if it is closed and totally bounded.
 \end{thm}
 
 \begin{Proof}
@@ -1430,7 +1430,72 @@ For ``closed and bounded $\LRw$ compact'' in a metric space you need:
 \]
 which we'll never use in these notes, but it's a fun trivial.
 
+\chapter{Differentiation}\label{cha:differentiation}
 
+here
+
+\chapter{Integration}\label{cha:integration}
+here
+
+\section{Differentiation Under the Integral Sign}
+
+A fundamental question in analysis is identifying the conditions under which we can commute the integral and derivative operators. This is formalized by the Leibniz Integral Rule.
+
+\begin{thm}{Leibniz Integral Rule (Constant Limits)}{leibnizRule}
+    Let $f(x, t)$ be a function defined for $x \in [a, b]$ and $t \in [c, d]$. Suppose that:
+    \begin{enumerate}
+        \item $f(x, t)$ is continuous on the rectangle $[a, b] \times [c, d]$.
+        \item The partial derivative $\frac{\partial f}{\partial t}$ exists and is continuous on $[a, b] \times [c, d]$.
+    \end{enumerate}
+    Then, $F(t) = \int_{a}^{b} f(x, t) \, dx$ is differentiable on $(c, d)$ and:
+    \[
+        \frac{d}{dt} \left( \int_{a}^{b} f(x, t) \, dx \right) = \int_{a}^{b} \frac{\partial}{\partial t} f(x, t) \, dx
+    \]
+\end{thm}
+
+\begin{Proof}
+    Let $F(t) = \int_{a}^{b} f(x, t) \, dx$. By the definition of the derivative:
+    \[
+        F'(t) = \lim_{h \to 0} \frac{F(t+h) - F(t)}{h} = \lim_{h \to 0} \frac{\int_{a}^{b} f(x, t+h) \, dx - \int_{a}^{b} f(x, t) \, dx}{h}
+    \]
+    By the linearity of the integral, we can combine the terms:
+    \[
+        F'(t) = \lim_{h \to 0} \int_{a}^{b} \frac{f(x, t+h) - f(x, t)}{h} \, dx
+    \]
+    We now fix $x$ and consider $f(x, t)$ strictly as a function of $t$. By the Mean Value Theorem, for any fixed $x$, there exists a value $c_{x,h}$ strictly between $t$ and $t+h$ such that:
+    \[
+        \frac{f(x, t+h) - f(x, t)}{h} = \frac{\partial f}{\partial t}(x, c_{x,h})
+    \]
+    We substitute this back into our expression. We wish to show that the limit of the integral approaches $\int \frac{\partial f}{\partial t}$. To do so, we analyze the difference:
+    \[
+        \left| \int_{a}^{b} \frac{\partial f}{\partial t}(x, c_{x,h}) \, dx - \int_{a}^{b} \frac{\partial f}{\partial t}(x, t) \, dx \right|
+    \]
+    Using the inequality $|\int g| \le \int |g|$:
+    \[
+        \le \int_{a}^{b} \left| \frac{\partial f}{\partial t}(x, c_{x,h}) - \frac{\partial f}{\partial t}(x, t) \right| \, dx
+    \]
+    Here we rely on the compactness of the domain. Since $\frac{\partial f}{\partial t}$ is continuous on the
+    closed, bounded rectangle $[a, b] \times [c, d]$, it is \emph{uniformly continuous}.
+
+    This implies that for any $\epsilon > 0$, there exists a $\delta > 0$ such that if the distance between two points is less than $\delta$, the difference in function values is less than $\frac{\epsilon}{b-a}$.
+
+    Since $c_{x,h}$ is between $t$ and $t+h$, we know $|c_{x,h} - t| < |h|$. If we choose $|h| < \delta$, then for all $x \in [a, b]$:
+    \[
+        \left| \frac{\partial f}{\partial t}(x, c_{x,h}) - \frac{\partial f}{\partial t}(x, t) \right| < \frac{\epsilon}{b-a}
+    \]
+    Substituting this bound back into the integral:
+    \[
+        \int_{a}^{b} \left| \frac{\partial f}{\partial t}(x, c_{x,h}) - \frac{\partial f}{\partial t}(x, t) \right| \, dx < \int_{a}^{b} \frac{\epsilon}{b-a} \, dx = (b-a) \cdot \frac{\epsilon}{b-a} = \epsilon
+    \]
+    Thus, as $h \to 0$, the difference goes to 0, proving the equality.
+\end{Proof}
+
+\begin{note}
+    If the limits of integration also depend on $t$, i.e., $a(t)$ and $b(t)$, and are differentiable, the general Leibniz rule applies:
+    \[
+        \frac{d}{dt} \int_{a(t)}^{b(t)} f(x, t) \, dx = f(b(t), t) \cdot b'(t) - f(a(t), t) \cdot a'(t) + \int_{a(t)}^{b(t)} \frac{\partial f}{\partial t} \, dx
+    \]
+\end{note}
 
 \newpage
 \printindex

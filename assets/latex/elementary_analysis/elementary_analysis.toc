@@ -8,4 +8,7 @@
 \contentsline {subsection}{\numberline {2.0.1}Clustering and Perfec Metric Space}{18}{subsection.2.0.1}%
 \contentsline {subsection}{\numberline {2.0.2}Arithmetical operations and continuity}{20}{subsection.2.0.2}%
 \contentsline {section}{\numberline {2.1}Compactness}{20}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Comapctness in compact metric spaces}{20}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.1}Compactness in compact metric spaces}{20}{subsection.2.1.1}%
+\contentsline {chapter}{\numberline {3}Differentiation}{23}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Integration}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Differentiation Under the Integral Sign}{25}{section.4.1}%

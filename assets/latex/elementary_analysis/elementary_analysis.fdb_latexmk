@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber elementary_analysis"] 1770405599 "elementary_analysis.bcf" "elementary_analysis.bbl" "elementary_analysis" 1770406120 0
+["biber elementary_analysis"] 1770405599 "elementary_analysis.bcf" "elementary_analysis.bbl" "elementary_analysis" 1771892314 0
   "./bibliography.bib" 1770405390 39 5aaa071a9a63d7a182920b2202d74f7e ""
-  "elementary_analysis.bcf" 1770406120 107703 5a5b0a3d7905adc5e28793922300f4b4 "pdflatex"
+  "elementary_analysis.bcf" 1771892314 107703 5a5b0a3d7905adc5e28793922300f4b4 "pdflatex"
   (generated)
   "elementary_analysis.bbl"
   "elementary_analysis.blg"
   (rewritten before read)
-["makeindex elementary_analysis.idx"] 1770405599 "elementary_analysis.idx" "elementary_analysis.ind" "elementary_analysis" 1770406120 0
-  "elementary_analysis.idx" 1770406118 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex elementary_analysis.idx"] 1770405599 "elementary_analysis.idx" "elementary_analysis.ind" "elementary_analysis" 1771892314 0
+  "elementary_analysis.idx" 1771892311 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "elementary_analysis.ilg"
   "elementary_analysis.ind"
   (rewritten before read)
-["pdflatex"] 1770406115 "elementary_analysis.tex" "elementary_analysis.pdf" "elementary_analysis" 1770406120 0
+["pdflatex"] 1771892308 "elementary_analysis.tex" "elementary_analysis.pdf" "elementary_analysis" 1771892314 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -399,13 +399,13 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684428852 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1684428826 7883454 1923ba623cc8bc97a98e0215fdf1ef2c ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "elementary_analysis.aux" 1770406120 9516 e3e42c5fef6d4b6c66de6a57bc53fe1b "pdflatex"
+  "elementary_analysis.aux" 1771892314 10462 5ac3f646a8e8562cbb3769a7b7ef569d "pdflatex"
   "elementary_analysis.bbl" 1770405602 466 ee04f40f768daeed26442158e95aba61 "biber elementary_analysis"
   "elementary_analysis.ind" 1770405599 0 d41d8cd98f00b204e9800998ecf8427e "makeindex elementary_analysis.idx"
-  "elementary_analysis.out" 1770406120 2431 407f6d6da501cf7e83dbca7b9fcd573f "pdflatex"
-  "elementary_analysis.run.xml" 1770406120 2412 5490f20b3647931a884a4a51e645ad73 "pdflatex"
-  "elementary_analysis.tex" 1770406114 57924 9cecad83467a1a275cd480d6f21aa626 ""
-  "elementary_analysis.toc" 1770406120 1051 bd05a6301a00ae8084666b449fecff98 "pdflatex"
+  "elementary_analysis.out" 1771892314 2911 37e2d985a941511fb7c6f704f55bee1b "pdflatex"
+  "elementary_analysis.run.xml" 1771892314 2412 5490f20b3647931a884a4a51e645ad73 "pdflatex"
+  "elementary_analysis.tex" 1771892306 61501 71dacc857fffa82a9e158183ffe2de0f ""
+  "elementary_analysis.toc" 1771892314 1291 9cd20c4ae77f45b218c3221969858ad2 "pdflatex"
   (generated)
   "elementary_analysis.aux"
   "elementary_analysis.bcf"

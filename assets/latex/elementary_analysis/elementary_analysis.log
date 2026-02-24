@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  6 FEB 2026 14:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.18)  23 FEB 2026 19:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1759,23 +1759,46 @@ pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.4}
 <to be read again> 
                    \relax 
 l.1403 \begin{example}{Example}{ex4}
-                                     [21] (./elementary_analysis.ind)
+                                     [21] [22
 
-LaTeX Warning: Empty bibliography on input line 1439.
+]
+Chapter 3.
+[23] [24
+
+]
+Chapter 4.
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@thm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1444 ...ral Rule (Constant Limits)}{leibnizRule}
+                                                  
+
+Package tcolorbox Warning: Discard zero height first box part due to break problems (possible loss of zero height content) on input line 1491.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26] [27] (./elementary_analysis.ind)
+
+LaTeX Warning: Empty bibliography on input line 1504.
 
 (./elementary_analysis.aux)
 Package rerunfilecheck Info: File `elementary_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: 407F6D6DA501CF7E83DBCA7B9FCD573F;2431.
+(rerunfilecheck)             Checksum: 37E2D985A941511FB7C6F704F55BEE1B;2911.
 Package logreq Info: Writing requests to 'elementary_analysis.run.xml'.
 \openout1 = `elementary_analysis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58873 strings out of 476025
- 1339508 string characters out of 5790017
- 2275540 words of memory out of 5000000
- 78018 multiletter control sequences out of 15000+600000
- 620013 words of font info for 217 fonts, out of 8000000 for 9000
+ 58899 strings out of 476025
+ 1339835 string characters out of 5790017
+ 2275791 words of memory out of 5000000
+ 78031 multiletter control sequences out of 15000+600000
+ 620096 words of font info for 218 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,14n,110p,1016b,1491s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -1791,10 +1814,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on elementary_analysis.pdf (21 pages, 406232 bytes).
+Output written on elementary_analysis.pdf (27 pages, 421733 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 84 named destinations out of 1000 (max. 500000)
- 55541 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 432 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 55565 words of extra memory for PDF output out of 61914 (max. 10000000)
 
