@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>4 Expanding Hausdorff Property: Separations axioms</title>
+<!--Generated on Wed Feb 25 18:23:20 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="LaTeXML-navbar-left.css" type="text/css">
+<link rel="start" href="./" title="">
+<link rel="prev" href="Ch3.html" title="3 Topological Invariances">
+<link rel="next" href="Ch5.html" title="5 Elements of Functional Analysis">
+<link rel="chapter" href="Ch1.html" title="1 Introduction to Topology">
+<link rel="chapter" href="Ch2.html" title="2 Constructing Topologies">
+<link rel="chapter" href="Ch3.html" title="3 Topological Invariances">
+<link rel="chapter" href="Ch5.html" title="5 Elements of Functional Analysis">
+<link rel="chapter" href="Ch6.html" title="6 Dimension Theory">
+<link rel="chapter" href="Ch7.html" title="7 Fundamental Group">
+<link rel="appendix" href="A1.html" title="Appendix A Topological Groups">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="Ch3.html" title="" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Topological Invariances</span></a><a href="Ch5.html" title="" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Elements of Functional Analysis</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter ltx_authors_1line" lang="en">
+<h1 class="ltx_title ltx_font_bold ltx_font_italic ltx_title_chapter" style="font-size:298%;">4 Expanding Hausdorff Property: Separations axioms</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">A lot of nice things started to happen when we introduce the Hausdorff condition on spaces. However, that still let’s in
+some edge cases which do not confrom with the Euclidean topology intuitions we’ve built up in analysis courses. <math id="p1.m1" class="ltx_Math" alttext="{\mathcal{T}}_{\mathbb{R}}" display="inline"><msub><mi class="ltx_font_mathcaligraphic">𝒯</mi><mi>ℝ</mi></msub></math>
+will have a stronger condition, called <em class="ltx_emph ltx_font_italic">normal</em> (or <math id="p1.m2" class="ltx_Math" alttext="T_{4}" display="inline"><msub><mi>T</mi><mn>4</mn></msub></math>) which will let us use our intuition we’ve built up
+before. We’ll now build up from the Hausdorff condition to the normal condition to show what other nice results happen
+while strengthening the Hausdorff condition. Once we reach the normal condition, we’ll show some really intersting
+consequences of normal the existence of normal spaces!</p>
+</div>
+<section id="S1" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.1 </span>Regularity and Normality</h2>
+
+<div id="S1.p1" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{defn}</span>
+<p class="ltx_p">Regularregular
+Suppose <math id="S1.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is a topological space in which one-point sets are closed. <math id="S1.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is <em class="ltx_emph ltx_font_bold ltx_font_italic">regular</em> if given <math id="S1.p1.m3" class="ltx_Math" alttext="x\in X" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow></math>, and a closed set <math id="S1.p1.m4" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> in <math id="S1.p1.m5" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> such that <math id="S1.p1.m6" class="ltx_Math" alttext="x\notin B" display="inline"><mrow><mi>x</mi><mo>∉</mo><mi>B</mi></mrow></math>, then there exists disjoint open sets <math id="S1.p1.m7" class="ltx_Math" alttext="U,W" display="inline"><mrow><mi>U</mi><mo>,</mo><mi>W</mi></mrow></math> such that <math id="S1.p1.m8" class="ltx_Math" alttext="x\in U" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>U</mi></mrow></math> <math id="S1.p1.m9" class="ltx_Math" alttext="B\subseteq W" display="inline"><mrow><mi>B</mi><mo>⊆</mo><mi>W</mi></mrow></math>.</p>
+</div>
+<figure id="F1" class="ltx_figure"><img src="regularSpace" id="F1.g1" class="ltx_graphics ltx_centering" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 4.1</span>: </span><span class="ltx_text" style="font-size:90%;">visual from lectures</span></figcaption>
+</figure>
+<div id="S1.p2" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{note}</span>
+<p class="ltx_p">Note that we are starting with the assumption that one point sets are closed. The converse of this, though it might
+seem intuitive enough, is not necessarily true (perhaps the trivial topology is a “pathological” example)</p>
+</div>
+<div id="S1.p3" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{example}</span>
+<p class="ltx_p">Hausdorff but Not Regular SpacehausButNotRegSp
+Here’s a Hausdorff space that is not regular. One example is the space <math id="S1.p3.m1" class="ltx_Math" alttext="\mathbb{R}_{K}" display="inline"><msub><mi>ℝ</mi><mi>K</mi></msub></math> constructed by Munkres. The
+underlying set is the reals, and the basis is chosen as the usual open intervals, along with all sets of the form
+<math id="S1.p3.m2" class="ltx_Math" alttext="(a,b)\setminus K" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∖</mo><mi>K</mi></mrow></math> where <math id="S1.p3.m3" class="ltx_Math" alttext="K=\{1/n\big{|}n\in\mathbb{N}\}" display="inline"><mrow><mi>K</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mn>1</mn><mo>/</mo><mi>n</mi></mrow><mo lspace="0em" mathsize="120%" rspace="0em">|</mo><mrow><mi>n</mi><mo>∈</mo><mi>ℕ</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></math>. This topology is clearly finer than the usual
+topology on the reals, and the reals form a Hausdorff space under the usual topology, so <math id="S1.p3.m4" class="ltx_Math" alttext="\mathbb{R}_{K}" display="inline"><msub><mi>ℝ</mi><mi>K</mi></msub></math> is also
+Hausdorff (passing to a finer topology preserves Hausdorffness).</p>
+</div>
+<div id="S1.p4" class="ltx_para ltx_noindent">
+<p class="ltx_p">However, <math id="S1.p4.m1" class="ltx_Math" alttext="\mathbb{R}_{K}" display="inline"><msub><mi>ℝ</mi><mi>K</mi></msub></math> is not a regular space. For instance, the closed subset K in this space (closed because its
+complement is open by construction in this topology) and the point 0 cannot be separated by disjoint open subsets.</p>
+</div>
+<div id="S1.p5" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{defn}</span>
+<p class="ltx_p">Normalnormal
+<math id="S1.p5.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is <em class="ltx_emph ltx_font_bold ltx_font_italic">normal</em> if we give disjoint closed subspace <math id="S1.p5.m2" class="ltx_Math" alttext="A,B\subseteq X" display="inline"><mrow><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow><mo>⊆</mo><mi>X</mi></mrow></math>, then there exists disjoint open subsets
+<math id="S1.p5.m3" class="ltx_Math" alttext="u,W" display="inline"><mrow><mi>u</mi><mo>,</mo><mi>W</mi></mrow></math> such that <math id="S1.p5.m4" class="ltx_Math" alttext="A\subseteq U" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>U</mi></mrow></math> and <math id="S1.p5.m5" class="ltx_Math" alttext="B\subseteq W" display="inline"><mrow><mi>B</mi><mo>⊆</mo><mi>W</mi></mrow></math></p>
+</div>
+<figure id="F2" class="ltx_figure"><img src="normalSpace" id="F2.g1" class="ltx_graphics ltx_centering" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 4.2</span>: </span><span class="ltx_text" style="font-size:90%;">visual from lecture</span></figcaption>
+</figure>
+<div id="S1.p6" class="ltx_para ltx_noindent">
+<br class="ltx_break">
+<p class="ltx_p">Don’t let image decieve you that we’re going up “dimensions” of things (i.e. from point to line), but rather we’re
+going from points to <em class="ltx_emph ltx_font_italic">closed set</em>. This might seem obvious if you just read it, but the visual is a bit miss-leading.
+There isn’t something “higher” dimensionally than a open or closed set (perhaps the entire space, but you can’t really
+define much there)</p>
+</div>
+<div id="S1.p7" class="ltx_para ltx_noindent">
+<br class="ltx_break">
+<p class="ltx_p">Normal is a stronger condition than regular. For example take</p>
+<table id="Ex1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex1.m1" class="ltx_Math" alttext="{\mathcal{T}}=\left\{\text{here}\right\}" display="block"><mrow><mi class="ltx_font_mathcaligraphic">𝒯</mi><mo>=</mo><mrow><mo>{</mo><mtext>here</mtext><mo>}</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Then <math id="S1.p7.m1" class="ltx_Math" alttext="{\mathcal{T}}" display="inline"><mi class="ltx_font_mathcaligraphic">𝒯</mi></math> is regular, but not normal.</p>
+</div>
+<div id="S1.p8" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{titledBox}</span>
+<p class="ltx_p">Chain of Implications
+Given that points closed, then:</p>
+<p class="ltx_p ltx_align_center">Normal <math id="S1.p8.m1" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo stretchy="false">⇒</mo></math> Regular <math id="S1.p8.m2" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo stretchy="false">⇒</mo></math> Hausdorff</p>
+</div>
+<div id="S1.p9" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{lem}</span>
+<p class="ltx_p">equivalent formulations (“zoom-in” axiom)zoomInAxiom
+Let <math id="S1.p9.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be a topological space such that one-point sets are closed then</p>
+<ol id="S1.I1" class="ltx_enumerate">
+<li id="S1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="S1.I1.i1.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is regular if and only if given <math id="S1.I1.i1.p1.m2" class="ltx_Math" alttext="x\in X" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>X</mi></mrow></math>, and open <math id="S1.I1.i1.p1.m3" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> containing <math id="S1.I1.i1.p1.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, <math id="S1.I1.i1.p1.m5" class="ltx_Math" alttext="\exists" display="inline"><mo>∃</mo></math> open set <math id="S1.I1.i1.p1.m6" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> such
+that <math id="S1.I1.i1.p1.m7" class="ltx_Math" alttext="x\in V" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>V</mi></mrow></math>, and <math id="S1.I1.i1.p1.m8" class="ltx_Math" alttext="\overline{V}\subseteq U" display="inline"><mrow><mover accent="true"><mi>V</mi><mo>¯</mo></mover><mo>⊆</mo><mi>U</mi></mrow></math></p>
+</div>
+</li>
+<li id="S1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S1.I1.i2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><math id="S1.I1.i2.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is normal if and only if given a closed set <math id="S1.I1.i2.p1.m2" class="ltx_Math" alttext="A\subseteq X" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>X</mi></mrow></math> and open set <math id="S1.I1.i2.p1.m3" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> containing <math id="S1.I1.i2.p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, then <math id="S1.I1.i2.p1.m5" class="ltx_Math" alttext="\exists" display="inline"><mo>∃</mo></math> open set <math id="S1.I1.i2.p1.m6" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> such that <math id="S1.I1.i2.p1.m7" class="ltx_Math" alttext="A\subseteq V" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>V</mi></mrow></math> and <math id="S1.I1.i2.p1.m8" class="ltx_Math" alttext="\overline{V}\subseteq U" display="inline"><mrow><mover accent="true"><mi>V</mi><mo>¯</mo></mover><mo>⊆</mo><mi>U</mi></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="S1.p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">intuition</span>:</p>
+</div>
+<figure id="F3" class="ltx_figure"><img src="regularityAndzoomIn" id="F3.g1" class="ltx_graphics ltx_centering" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 4.3</span>: </span><span class="ltx_text" style="font-size:90%;">visual illustration of proof</span></figcaption>
+</figure>
+<div id="S1.p11" class="ltx_para">
+<p class="ltx_p">Similarly for normality, except you can start with the closed set <math id="S1.p11.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> instead of the center point
+∎</p>
+</div>
+</div>
+<div id="S1.p12" class="ltx_para ltx_noindent">
+<p class="ltx_p">Note that regular spaces behave nicely under subspaces and product spaces
+<span class="ltx_ERROR undefined">{thm}</span>subspaces of Regular SpacessupSpAndRegular
+A subspace of a regular space is regular.</p>
+</div>
+<div id="S1.p13" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{thm}</span>
+<p class="ltx_p">Product of Regular SpacesprodAndRegular
+A Product of regualr spaces is regular.</p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="S1.p14" class="ltx_para">
+<p class="ltx_p">Munkre p.197
+∎</p>
+</div>
+</div>
+<div id="S1.p15" class="ltx_para ltx_noindent">
+<p class="ltx_p">However, Though normal spaces have a stronger condition, they do not behave as nicely!
+<span class="ltx_ERROR undefined">{example}</span>Sorgenfrey PlanesorgenfreyPlane
+For example, take the Sorgenfrey plane:</p>
+<table id="Ex2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex2.m1" class="ltx_Math" alttext="\beta_{{\mathbb{R}}_{l}^{2}}=\left\{[a,b)\times[c,d)\big{|}a&lt;b,c&lt;d,a,b,c,d\in{%
+\mathbb{R}}\right\}" display="block"><mrow><msub><mi>β</mi><msubsup><mi>ℝ</mi><mi>l</mi><mn>2</mn></msubsup></msub><mo>=</mo><mrow><mo>{</mo><mrow><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow><mo rspace="0.222em">×</mo><mrow><mo stretchy="false">[</mo><mi>c</mi><mo>,</mo><mi>d</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0em" mathsize="120%" rspace="0em">|</mo><mrow><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><mo>,</mo><mrow><mrow><mi>c</mi><mo>&lt;</mo><mrow><mi>d</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></mrow></mrow><mo>,</mo><mrow><mi>d</mi><mo>∈</mo><mi>ℝ</mi></mrow></mrow></mrow><mo>}</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">This space is not normal. TO show this p.198 of Munrkes (long proof)</p>
+</div>
+<div id="S1.p16" class="ltx_para ltx_noindent">
+<p class="ltx_p">Note that Since <math id="S1.p16.m1" class="ltx_Math" alttext="{\mathbb{R}}_{l}" display="inline"><msub><mi>ℝ</mi><mi>l</mi></msub></math> is regular, then <math id="S1.p16.m2" class="ltx_Math" alttext="({\mathbb{R}}_{l})^{2}" display="inline"><msup><mrow><mo stretchy="false">(</mo><msub><mi>ℝ</mi><mi>l</mi></msub><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></math> is also regular. Normal spaces are in a sense worse than regular
+spaces because they don’t have this condition! I like to think of it as if one adds further restrictions on a space (or
+a concept) then there is less flexibility given because more conditions need to be satisfied in order for things to
+work.</p>
+</div>
+<div id="S1.p17" class="ltx_para ltx_noindent">
+<br class="ltx_break">
+<p class="ltx_p">However, one one must note that the converse is actually true, that is, if the product space is normal, then the spaces
+are normal</p>
+</div>
+<div id="S1.p18" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{prop}</span>
+<p class="ltx_p"><math id="S1.p18.m1" class="ltx_Math" alttext="X\times Y" display="inline"><mrow><mi>X</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>Y</mi></mrow></math> Normal Implies <math id="S1.p18.m2" class="ltx_Math" alttext="X,Y" display="inline"><mrow><mi>X</mi><mo>,</mo><mi>Y</mi></mrow></math> NormalpordOfNormalThenComponentsNormal
+title</p>
+</div>
+<div id="Thmsolution17" class="ltx_theorem ltx_theorem_solution">
+<h6 class="ltx_title ltx_runin ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Solution 17</span></span></h6>
+<div id="Thmsolution17.p1" class="ltx_para">
+<p class="ltx_p">If <math id="Thmsolution17.p1.m1" class="ltx_Math" alttext="A,A^{\prime}" display="inline"><mrow><mi>A</mi><mo>,</mo><msup><mi>A</mi><mo>′</mo></msup></mrow></math> are disjiont closed subsets of <math id="Thmsolution17.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math>, then <math id="Thmsolution17.p1.m3" class="ltx_Math" alttext="A\times Y" display="inline"><mrow><mi>A</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>Y</mi></mrow></math>, <math id="Thmsolution17.p1.m4" class="ltx_Math" alttext="A^{\prime}\times Y" display="inline"><mrow><msup><mi>A</mi><mo>′</mo></msup><mo lspace="0.222em" rspace="0.222em">×</mo><mi>Y</mi></mrow></math> are disjiont closed of <math id="Thmsolution17.p1.m5" class="ltx_Math" alttext="X\times Y" display="inline"><mrow><mi>X</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>Y</mi></mrow></math>.
+Therefore, we can use normality and find <math id="Thmsolution17.p1.m6" class="ltx_Math" alttext="O,O^{\prime}" display="inline"><mrow><mi>O</mi><mo>,</mo><msup><mi>O</mi><mo>′</mo></msup></mrow></math> open disjoint neighbourhoods. Write <math id="Thmsolution17.p1.m7" class="ltx_Math" alttext="O=\bigcup_{i}U_{i}\times V_{i}" display="inline"><mrow><mi>O</mi><mo rspace="0.111em">=</mo><mrow><msub><mo>⋃</mo><mi>i</mi></msub><mrow><msub><mi>U</mi><mi>i</mi></msub><mo lspace="0.222em" rspace="0.222em">×</mo><msub><mi>V</mi><mi>i</mi></msub></mrow></mrow></mrow></math>,
+and <math id="Thmsolution17.p1.m8" class="ltx_Math" alttext="O^{\prime}=\bigcup_{j}U_{j}^{\prime}\times V_{j}^{\prime}" display="inline"><mrow><msup><mi>O</mi><mo>′</mo></msup><mo rspace="0.111em">=</mo><mrow><msub><mo>⋃</mo><mi>j</mi></msub><mrow><msubsup><mi>U</mi><mi>j</mi><mo>′</mo></msubsup><mo lspace="0.222em" rspace="0.222em">×</mo><msubsup><mi>V</mi><mi>j</mi><mo>′</mo></msubsup></mrow></mrow></mrow></math> where eac h<math id="Thmsolution17.p1.m9" class="ltx_Math" alttext="U_{i},U_{j}^{\prime}" display="inline"><mrow><msub><mi>U</mi><mi>i</mi></msub><mo>,</mo><msubsup><mi>U</mi><mi>j</mi><mo>′</mo></msubsup></mrow></math> is open in <math id="Thmsolution17.p1.m10" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> and <math id="Thmsolution17.p1.m11" class="ltx_Math" alttext="V_{i}" display="inline"><msub><mi>V</mi><mi>i</mi></msub></math>, <math id="Thmsolution17.p1.m12" class="ltx_Math" alttext="V_{j}^{\prime}" display="inline"><msubsup><mi>V</mi><mi>j</mi><mo>′</mo></msubsup></math> is open in <math id="Thmsolution17.p1.m13" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math>. Pick
+<math id="Thmsolution17.p1.m14" class="ltx_Math" alttext="y\in Y" display="inline"><mrow><mi>y</mi><mo>∈</mo><mi>Y</mi></mrow></math>. Then</p>
+<table id="Ex3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex3.m1" class="ltx_Math" alttext="\bigcup\left\{U_{i}\big{|}y\in V_{i}\right\}\qquad\bigcup\left\{U_{j}^{\prime}%
+\big{|}y\in V_{j}^{\prime}\right\}" display="block"><mrow><mrow><mo movablelimits="false" rspace="0em">⋃</mo><mrow><mo>{</mo><msub><mi>U</mi><mi>i</mi></msub><mo lspace="0em" mathsize="120%" rspace="0em">|</mo><mrow><mi>y</mi><mo>∈</mo><msub><mi>V</mi><mi>i</mi></msub></mrow><mo>}</mo></mrow></mrow><mspace width="2em"></mspace><mrow><mo movablelimits="false" rspace="0em">⋃</mo><mrow><mo>{</mo><msubsup><mi>U</mi><mi>j</mi><mo>′</mo></msubsup><mo lspace="0em" mathsize="120%" rspace="0em">|</mo><mrow><mi>y</mi><mo>∈</mo><msubsup><mi>V</mi><mi>j</mi><mo>′</mo></msubsup></mrow><mo>}</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">are disjiont open neighbourhoods of <math id="Thmsolution17.p1.m15" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> and <math id="Thmsolution17.p1.m16" class="ltx_Math" alttext="A^{\prime}" display="inline"><msup><mi>A</mi><mo>′</mo></msup></math></p>
+</div>
+</div>
+<div id="S1.p19" class="ltx_para ltx_noindent">
+<br class="ltx_break">
+<p class="ltx_p">There is one weird space I found that is said to be “vacuously normal” but not regular or Hausdorff, which confuses.
+me. Let <math id="S1.p19.m1" class="ltx_Math" alttext="S=\left\{0,1\right\}" display="inline"><mrow><mi>S</mi><mo>=</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>}</mo></mrow></mrow></math> be the underlying set. Then Take the following is as the open sets:</p>
+<table id="Ex4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex4.m1" class="ltx_Math" alttext="\left\{\emptyset,\left\{1\right\},\left\{0,1\right\}\right\}" display="block"><mrow><mo>{</mo><mi mathvariant="normal">∅</mi><mo>,</mo><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>}</mo></mrow><mo>}</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Note that the closed sets are:</p>
+<table id="Ex5" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex5.m1" class="ltx_Math" alttext="\left\{\emptyset,\left\{0\right\},\left\{0,1\right\}\right\}" display="block"><mrow><mo>{</mo><mi mathvariant="normal">∅</mi><mo>,</mo><mrow><mo>{</mo><mn>0</mn><mo>}</mo></mrow><mo>,</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>}</mo></mrow><mo>}</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S1.p20" class="ltx_para ltx_noindent">
+<p class="ltx_p">This space is not Hausdorff since <math id="S1.p20.m1" class="ltx_Math" alttext="\left\{\right\}" display="inline"><mrow><mo>{</mo><mo>}</mo></mrow></math> is not closed. However, normality looks like it applies.</p>
+</div>
+</section>
+<section id="S2" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.2 </span>What spaces are normal?</h2>
+
+<div id="S2.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Though regular spaces act more nicely when being manipulated, normal spaces on themselves are strong enough to have lots
+of strong equivalent implications.</p>
+</div>
+<div id="S2.p2" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{lem}</span>
+<p class="ltx_p">Metrizable Spaces Are NormalnormalAndMetrizability
+Metrizable spaces are normal</p>
+</div>
+<div id="S2.p3" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{Proof}</span>
+<p class="ltx_p">Let <math id="S2.p3.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be a metrizable space. Assign it the metric <math id="S2.p3.m2" class="ltx_Math" alttext="d" display="inline"><mi>d</mi></math>. Let <math id="S2.p3.m3" class="ltx_Math" alttext="A,B" display="inline"><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow></math> be disjoint closed sets. We want to show that
+there exists two open sets (<math id="S2.p3.m4" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math>, <math id="S2.p3.m5" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math>), each containing their respective closed sets, each open. Take an <math id="S2.p3.m6" class="ltx_Math" alttext="a\in A" display="inline"><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></math>.
+Then choose an <math id="S2.p3.m7" class="ltx_Math" alttext="\epsilon_{a}&gt;0" display="inline"><mrow><msub><mi>ϵ</mi><mi>a</mi></msub><mo>&gt;</mo><mn>0</mn></mrow></math> such that <math id="S2.p3.m8" class="ltx_Math" alttext="B_{\epsilon_{a}}(a)\cap B=\emptyset" display="inline"><mrow><mrow><mrow><msub><mi>B</mi><msub><mi>ϵ</mi><mi>a</mi></msub></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mi>B</mi></mrow><mo>=</mo><mi mathvariant="normal">∅</mi></mrow></math>. This follows from <math id="S2.p3.m9" class="ltx_Math" alttext="a\notin B" display="inline"><mrow><mi>a</mi><mo>∉</mo><mi>B</mi></mrow></math> and
+<math id="S2.p3.m10" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> being closed, so the limit poitns of <math id="S2.p3.m11" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> and <math id="S2.p3.m12" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> so they both have their border. If there was a point <math id="S2.p3.m13" class="ltx_Math" alttext="a\in\partial A" display="inline"><mrow><mi>a</mi><mo rspace="0.1389em">∈</mo><mrow><mo lspace="0.1389em" rspace="0em">∂</mo><mi>A</mi></mrow></mrow></math> and an ball <math id="S2.p3.m14" class="ltx_Math" alttext="B_{\epsilon}(a)" display="inline"><mrow><msub><mi>B</mi><mi>ϵ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></math> that intersected <math id="S2.p3.m15" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>, then we can shrink the epsilon ball by the Hausdorff
+property of Metric spaces. So <math id="S2.p3.m16" class="ltx_Math" alttext="d(a,B)&gt;0" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>B</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>. This is the key observation. From here the proof develops quite
+naturally. Take</p>
+<table id="Ex6" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex6.m1" class="ltx_Math" alttext="U=\bigcup_{a\in A}B(a,\epsilon_{a}/2)\qquad\text{and}\qquad V=\bigcup_{b\in B}%
+B(b,\epsilon_{b},2)" display="block"><mrow><mrow><mi>U</mi><mo rspace="0.111em">=</mo><mrow><mrow><munder><mo movablelimits="false">⋃</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></munder><mrow><mi>B</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mrow><msub><mi>ϵ</mi><mi>a</mi></msub><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mspace width="2em"></mspace><mtext>and</mtext></mrow></mrow><mspace width="2em"></mspace><mrow><mi>V</mi><mo rspace="0.111em">=</mo><mrow><munder><mo movablelimits="false">⋃</mo><mrow><mi>b</mi><mo>∈</mo><mi>B</mi></mrow></munder><mrow><mi>B</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo>,</mo><msub><mi>ϵ</mi><mi>b</mi></msub><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">what’s left to show is that they do not intersect. Take <math id="S2.p3.m17" class="ltx_Math" alttext="x\in U\cap V" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mi>U</mi><mo>∩</mo><mi>V</mi></mrow></mrow></math>. Then</p>
+<table id="Ex7" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex7.m1" class="ltx_Math" alttext="z\in B(a,\epsilon_{a}/2)\cap B(b,\epsilon_{b}/2)" display="block"><mrow><mi>z</mi><mo>∈</mo><mrow><mrow><mi>B</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mrow><msub><mi>ϵ</mi><mi>a</mi></msub><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>∩</mo><mrow><mi>B</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo>,</mo><mrow><msub><mi>ϵ</mi><mi>b</mi></msub><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">for some <math id="S2.p3.m18" class="ltx_Math" alttext="a\in A" display="inline"><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></math>, <math id="S2.p3.m19" class="ltx_Math" alttext="b\in B" display="inline"><mrow><mi>b</mi><mo>∈</mo><mi>B</mi></mrow></math>. Then by the triangle inequality, and some manipulating of inequalities, we get</p>
+<table id="Ex8" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex8.m1" class="ltx_Math" alttext="d(a,b)&lt;\frac{\epsilon_{a}+\epsilon_{b}}{2}" display="block"><mrow><mrow><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mfrac><mrow><msub><mi>ϵ</mi><mi>a</mi></msub><mo>+</mo><msub><mi>ϵ</mi><mi>b</mi></msub></mrow><mn>2</mn></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">If <math id="S2.p3.m20" class="ltx_Math" alttext="\epsilon_{a}\leq\epsilon_{b}" display="inline"><mrow><msub><mi>ϵ</mi><mi>a</mi></msub><mo>≤</mo><msub><mi>ϵ</mi><mi>b</mi></msub></mrow></math>, then <math id="S2.p3.m21" class="ltx_Math" alttext="d(a,b)&lt;\epsilon_{b}" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><msub><mi>ϵ</mi><mi>b</mi></msub></mrow></math>, so the ball <math id="S2.p3.m22" class="ltx_Math" alttext="B(b,\epsilon_{b})" display="inline"><mrow><mi>B</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo>,</mo><msub><mi>ϵ</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math> contains the point <math id="S2.p3.m23" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>,
+a contradiction. Similarly if <math id="S2.p3.m24" class="ltx_Math" alttext="\epsilon_{b}\leq\epsilon_{a}" display="inline"><mrow><msub><mi>ϵ</mi><mi>b</mi></msub><mo>≤</mo><msub><mi>ϵ</mi><mi>a</mi></msub></mrow></math>. Thus, the two open sets are disjiont, proving normality
+observation</p>
+</div>
+<div id="S2.p4" class="ltx_para ltx_noindent">
+<br class="ltx_break">
+<p class="ltx_p">There is a second proof that I found
+<a href="https://math.stackexchange.com/questions/2992758/proving-every-metrizable-space-is-normal-space" title="" class="ltx_ref ltx_href">here</a>.</p>
+</div>
+<div id="S2.p5" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{lem}</span>
+<p class="ltx_p">Compact Hausdorff Spaces Are NormalnormalAndCompHaus
+Compact Hausdorff Spaces Are Normal</p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p">longer proof. Oct 22nd.
+∎</p>
+</div>
+</div>
+<div id="S2.p7" class="ltx_para ltx_noindent">
+<p class="ltx_p">If we weaken the condition of compactness a bit to locally compact, we’ll get that this implies it’s regular:
+<span class="ltx_ERROR undefined">{lem}</span>Locally Compact Hausdorff Spaces Are Regular
+Locally compact Hausdorff spaces are Regular</p>
+</div>
+<div id="S2.p8" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{Proof}</span>
+<p class="ltx_p">p.202</p>
+</div>
+<div id="S2.p9" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{thm}</span>
+<p class="ltx_p">Second-Countable Regular Implies NormalnormalAnd2ndCountableRegular
+Every second-countable regular space is normal</p>
+</div>
+<div id="S2.p10" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{note}</span>
+<p class="ltx_p">the converse is not true: normal spaces are <em class="ltx_emph ltx_font_italic">not</em> necessarily second-countable. Take the example from Munkres.</p>
+</div>
+<div id="S2.p11" class="ltx_para">
+<span class="ltx_ERROR undefined">{Proof}</span>
+<p class="ltx_p">This is essentially the needed visual:</p>
+</div>
+<figure id="F4" class="ltx_figure"><img src="regularsecondCountableisNormal" id="F4.g1" class="ltx_graphics ltx_centering" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figure 4.4</span>: </span><span class="ltx_text" style="font-size:90%;">visual from Munkre</span></figcaption>
+</figure>
+<div id="S2.p12" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{prop}</span>
+<p class="ltx_p">Metrizable implies normal
+Metrizable implies normal</p>
+</div>
+<div id="S2.p13" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{Proof}</span>
+<p class="ltx_p">here</p>
+</div>
+<div id="S2.p14" class="ltx_para ltx_noindent">
+<p class="ltx_p">However, normal does not imply metrizable:
+<span class="ltx_ERROR undefined">{example}</span> Normal, but not Metrizable, SpacesnormalNotMetrizSp
+<a href="https://math.stackexchange.com/questions/157906/normal-non-metrizable-spaces" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://math.stackexchange.com/questions/157906/normal-non-metrizable-spaces</a></p>
+</div>
+</section>
+<section id="S3" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.3 </span>Urysohn Lemma</h2>
+
+<div id="S3.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Urysohn lemma is one of the larger topological insights, and has a great multitude of applicatoin in other very large
+and important thoerems (hence why it’s called a lemma, it’s like the key step for many important theorems).</p>
+</div>
+<div id="S3.p2" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{thm}</span>
+<p class="ltx_p">Urysohnurysohn
+Let <math id="S3.p2.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be a normal space. Let <math id="S3.p2.m2" class="ltx_Math" alttext="A,B" display="inline"><mrow><mi>A</mi><mo>,</mo><mi>B</mi></mrow></math> be disjoint closed sets. THere exists a continuous function <math id="S3.p2.m3" class="ltx_Math" alttext="f:X\rightarrow[0,1]" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>X</mi><mo stretchy="false">→</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow></math>
+st <math id="S3.p2.m4" class="ltx_Math" alttext="A\subseteq f^{-1}(0)" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, and <math id="S3.p2.m5" class="ltx_Math" alttext="B\subseteq f^{-1}(1)" display="inline"><mrow><mi>B</mi><mo>⊆</mo><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p">p.207-210
+∎</p>
+</div>
+</div>
+<div id="S3.p4" class="ltx_para">
+<span class="ltx_ERROR undefined">{example}</span>
+<p class="ltx_p">Urysohn’s LemmaurysLemma
+Let <math id="S3.p4.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be a normal connected space. Then <math id="S3.p4.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> must have uncountably many poitn
+ 
+<br class="ltx_break"></p>
+</div>
+<div id="Thmsolution18" class="ltx_theorem ltx_theorem_solution">
+<h6 class="ltx_title ltx_runin ltx_title_theorem"><span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Solution 18</span></span></h6>
+<div id="Thmsolution18.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="Thmsolution18.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> have more than 1 point. Then <math id="Thmsolution18.p1.m2" class="ltx_Math" alttext="x,y\in X" display="inline"><mrow><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow><mo>∈</mo><mi>X</mi></mrow></math>. Since <math id="Thmsolution18.p1.m3" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is Normal, then</p>
+</div>
+</div>
+</section>
+<section id="S4" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.4 </span>Metrization Theorem</h2>
+
+<div id="S4.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">As a consequence of Urysohn’ Lemma, we have a couple of very neat results:
+<span class="ltx_ERROR undefined">{thm}</span>Urysohn Metrization TheoremurysohnMetrizationThm
+If <math id="S4.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is regualr and second-countable, then <math id="S4.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> is metrizable</p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="S4.p2" class="ltx_para">
+<p class="ltx_p">here
+∎</p>
+</div>
+</div>
+</section>
+<section id="S5" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.5 </span>Tiezte Extension Theorem</h2>
+
+<div id="S5.p1" class="ltx_para ltx_noindent">
+<span class="ltx_ERROR undefined">{thm}</span>
+<p class="ltx_p">Tietze Extension TheoremTietzeExtensionThm
+Let <math id="S5.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> be a normal space and let <math id="S5.p1.m2" class="ltx_Math" alttext="A\subseteq X" display="inline"><mrow><mi>A</mi><mo>⊆</mo><mi>X</mi></mrow></math> be a closed subset. let <math id="S5.p1.m3" class="ltx_Math" alttext="f:A\rightarrow[0,1]" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>A</mi><mo stretchy="false">→</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow></math> be a continuous funciton. THen
+there exists a continuous function <math id="S5.p1.m4" class="ltx_Math" alttext="F:X\rightarrow[0,1]" display="inline"><mrow><mi>F</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>X</mi><mo stretchy="false">→</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow></math> such that <math id="S5.p1.m5" class="ltx_Math" alttext="F|_{A}=f" display="inline"><mrow><msub><mrow><mi>F</mi><mo stretchy="false">|</mo></mrow><mi>A</mi></msub><mo>=</mo><mi>f</mi></mrow></math>.</p>
+</div>
+<div id="S5.p2" class="ltx_para ltx_noindent">
+<br class="ltx_break">
+<p class="ltx_p">Similarly if we replace <math id="S5.p2.m1" class="ltx_Math" alttext="[0,1]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></math> by <math id="S5.p2.m2" class="ltx_Math" alttext="{\mathbb{R}}" display="inline"><mi>ℝ</mi></math></p>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Proof.</h6>
+<div id="S5.p3" class="ltx_para">
+<p class="ltx_p">here
+∎</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Ch3.html" title="" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Topological Invariances</span></a><a href="Ch5.html" title="" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Elements of Functional Analysis</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Wed Feb 25 18:23:20 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
