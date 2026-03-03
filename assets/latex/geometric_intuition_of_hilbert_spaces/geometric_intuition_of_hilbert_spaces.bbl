@@ -19,40 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{diestelGeometryBanachSpacesSelected1975}{book}{}
-      \name{author}{1}{}{%
-        {{hash=6d09ed12f93d2c2d4a83d866c49db542}{%
-           family={Diestel},
-           familyi={D\bibinitperiod},
-           given={Joseph},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{6d09ed12f93d2c2d4a83d866c49db542}
-      \strng{fullhash}{6d09ed12f93d2c2d4a83d866c49db542}
-      \strng{bibnamehash}{6d09ed12f93d2c2d4a83d866c49db542}
-      \strng{authorbibnamehash}{6d09ed12f93d2c2d4a83d866c49db542}
-      \strng{authornamehash}{6d09ed12f93d2c2d4a83d866c49db542}
-      \strng{authorfullhash}{6d09ed12f93d2c2d4a83d866c49db542}
-      \field{sortinit}{E}
-      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-3-540-07402-1 978-3-540-37913-3}
-      \field{series}{Lecture Notes in Mathematics}
-      \field{title}{Geometry of Banach Spaces-Selected Topics}
-      \field{volume}{485}
-      \field{year}{1975}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb http://link.springer.com/10.1007/BFb0082079
-      \endverb
-      \verb{url}
-      \verb http://link.springer.com/10.1007/BFb0082079
-      \endverb
-    \endentry
     \entry{millerGEOMETRYMEASURECATk}{article}{}
       \name{author}{1}{}{%
         {{hash=43ef4402a90281613424f133f8eaa73e}{%
