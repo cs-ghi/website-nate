@@ -1,0 +1,5 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'a_foray_into_the_fouriermukai_transform.blg'
+[46] biber-darwin:340> INFO - === Thu Mar 12, 2026, 18:58:42
+[55] Utils.pm:410> ERROR - a_foray_into_the_fouriermukai_transform.bcf is malformed, last biblatex run probably failed. Deleted a_foray_into_the_fouriermukai_transform.bbl
+[55] Biber.pm:136> INFO - ERRORS: 1
