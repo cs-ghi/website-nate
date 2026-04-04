@@ -6,6 +6,7 @@
 \usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
 \usepackage{titling}
 
+\usepackage{mathdots}
 \renewcommand{\maketitle}{
     \quad
     \vspace{1em}
@@ -17,7 +18,7 @@
     \vspace{1em}
 }
 
-\title{Hodge Conjecture}
+\title{Roadmap To The Hodge Conjecture}
 \author{Nathanael Chwojko-Srawley}
 \date{\today}
 
@@ -25,55 +26,172 @@
 %  ║                         packages                         ║
 %  ╚══════════════════════════════════════════════════════════╝
 
-\usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
-\usepackage{stackengine}
-\usepackage{colortbl}
-\usepackage{scalerel}
-\usepackage{amsmath, amssymb} % Used to write better mathematical expressions (ex. \mathbb{R})
-\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
-\usepackage{mathrsfs}
-\usepackage{euscript}
-\usepackage[font=itshape]{quoting}
-\usepackage{mathtools}
-  \usepackage{enumitem}
-\usepackage{amsthm}           % Used to create theorem enviroments.
-\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
-\usepackage{hhline}
-%\usepackage{luatexja}
-%\usepackage{fontspec}
-\usepackage{dsfont}
-\usepackage{wasysym}          % emoji's!
-\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
-%\usepackage{subcaption}      % More options with sub-captions.
-\usepackage{setspace}         % More flexibility on spacing in document.
-\usepackage{hyperref}         % let's me put hyperlinks
-%\usepackage{tikz}             % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
-\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
-%\usepackage{quiver}           % for better commutative diagrams
-\usepackage{bookmark}         % creating heading shortcut bar on the left as in word
-\usepackage{longtable}        % create tables that extend past one page
-%\usepackage{siunitx}         % required for alignment
-%\usepackage{multirow}        % for multiple rows
-\usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
-%\usepackage{fancyvrb}        % Let's you write code (different style than listings).
-\usepackage[most]{tcolorbox} 	      % Makes nice boxes for thms, cor, prop, or anything else.
-%\usepackage{enumitem}        % More flexibility on enumeration (don't know much).
-\usepackage{xcolor}           % Colour text.
-\usepackage{wrapfig}          % To wrap text around figure
-\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
-\usepackage{thmtools}         % Customize theorem environment (in preamble).
-%\usepackage{marvosym}        % Provide ``basic'' symbols (hazard, religious, smiley face etc.)
-\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
-%\usepackage[english]{babel}  % If I want to blindtext in english.
-\usepackage{blindtext}
-\usepackage[a4paper, total={6in, 8.5in}]{geometry}
-%\usepackage[symbol]{footmisc} % For daggers and asterisk for footnotes. 1: *, 2: dagger, etc.
-\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+
+% ── §2  Math core ─────────────────────────────────────────────────────────────
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}           % \bm{...} bold math
+\usepackage{mathtools}    % extends amsmath
+\usepackage{amsthm}       % theorem environments
+\usepackage{thmtools}     % \declaretheoremstyle, \declaretheorem
+
+
+% ── §3  Math fonts & extra symbol packages ────────────────────────────────────
+\usepackage{bbm}          % \mathbbm{1} (indicator function, etc.)
+\usepackage{dsfont}       % \mathds
+\usepackage{mathrsfs}     % \mathscr
+\usepackage{euscript}     % \EuScript
+\usepackage{wasysym}      % miscellaneous symbols (\smiley etc.)
+\usepackage{mathdots}     % \iddots (plus fixes scaling for \ddots, \vdots)
+\usepackage{stmaryrd}     % double square braket using \llbracket and \rrbracket and mapsfrom
+
+% for the Sha symbol (Tate-Shafarevich group)
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathord}{mcy}{"58}
+
+
+% ── §4  Math arrow / stacking packages ───────────────────────────────────────
+\usepackage{extarrows}    % \xlongrightarrow etc.
+\usepackage{scalerel}     % \scalerel, \scaleto
+\usepackage{stackengine}  % \stackon etc.
+\usepackage{stackrel}     % extended \stackrel
+\stackMath                % enable stacking in math mode
+
+
+% ── §5  Graphics & diagrams ───────────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{adjustbox}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usetikzlibrary{patterns,decorations.pathreplacing,arrows.meta,matrix,calc}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{commutative-diagrams}
+\usepackage{etoolbox}          % required by dynkin-diagrams
+\usepackage{dynkin-diagrams}
+
+% Dynkin diagram table helper (uses etoolbox \ifstrempty)
+\def\row#1/#2!{#1_{\ifstrempty{#2}{n}{#2}} & \dynkin{#1}{#2}\\}
+\newcommand{\tble}[1]{%
+  \renewcommand*\do[1]{\row##1!}%
+  \[\begin{array}{ll}\docsvlist{#1}\end{array}\]}
+
+
+
+% ── §6  Page layout ───────────────────────────────────────────────────────────
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{titlesec}
-%\usepackage{pst-plot}          %To make nice plots: https://tex.stackexchange.com/questions/47594/how-can-i-make-a-graph-of-a-function#47596
-% \usepackage[answerdelayed]{exercise}
-\usepackage{etoolbox}          % for Dynkin diagrams
-\usepackage{dynkin-diagrams}   % for Dynkin diagrams
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[font=itshape]{quoting}
+\usepackage{blindtext}
+\usepackage{array}
+\usepackage{makeidx}
+\usepackage{fancyhdr}
+
+
+% ── §7  Tables ────────────────────────────────────────────────────────────────
+\usepackage{longtable}
+\usepackage{hhline}
+\usepackage{multirow}  % For multi-row table cells
+
+
+
+% ── §8  Colour (early — needed by listings and tcolorbox) ────────────────────
+\usepackage{xcolor}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{reddish}{HTML}{A01A3A}
+\definecolor{Dark}{gray}{0.2}
+\definecolor{MedDark}{gray}{0.4}
+\definecolor{Medium}{gray}{0.6}
+\definecolor{Light}{gray}{0.8}
+\usepackage[most]{tcolorbox}
+
+
+% ── §9  Code listings ─────────────────────────────────────────────────────────
+\usepackage{listings}
+\lstset{
+  frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  backgroundcolor=\color{lightyellow},
+  breaklines=true,
+  breakatwhitespace=true,
+}
+
+
+% ── §10  Exercise & misc boxes ────────────────────────────────────────────────
+\usepackage[answerdelayed]{exercise}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage{comment}
+
+
+% ── §11  Inkscape figure pipeline ────────────────────────────────────────────
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+
+% ── §12  Bibliography (no \addbibresource — that stays per-book) ──────────────
+\usepackage[backend=biber]{biblatex}
+
+% To make sure the heading is in the bibliogrpahy, add this option:
+% \printbibliography[heading=bibintoc]
+
+% ── §13 Table of Contents inclusions ─────────────────────────────────────────
+\makeatletter
+\@ifclassloaded{book}{%
+    \usepackage[notlof,notlot]{tocbibind}
+}{%
+    % Do nothing for other classes
+}
+\makeatother
+
+
+
+% ── §14  Cross-references ─────────────────────────────────────────────────────
+
+% Load xr-hyper BEFORE hyperref
+\usepackage{xr-hyper}
+
+% Load hyperref and cleveref (NOTE must be (basically) last two packages)
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+
+%add nonstandard cref names
+\crefname{example}{example}{examples}
+\Crefname{example}{Example}{Examples}
+
+\crefname{box}{box}{boxes}
+\Crefname{box}{Box}{Boxes}
+
+\crefname{Question}{exercise}{exercises}
+\Crefname{Question}{Exercise}{Exercises}
 
 % \usepackage{CJKutf8} % for some chinese
 
@@ -127,7 +245,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\V}{\mathbb{V}}
-\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Z}{{\mathbb{Z}}}
 \renewcommand{\H}{\mathbb{H}}
 
 % mathcal
@@ -151,7 +269,10 @@
 \newcommand{\CT}{\mathcal{T}}
 \newcommand{\CV}{\mathcal{V}}
 \newcommand{\CZ}{\mathcal{Z}}
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\cl}{\operatorname{cl}}
 
+\renewcommand{\div}{{\operatorname{div}}}
 %mathscr
 \newcommand{\ff}{\mathscr{F}}
 
@@ -278,7 +399,6 @@
 \newcommand{\rrw}{\rightrightarrows}
 \newcommand{\acton}{\curvearrowright}
 \newcommand{\actson}{\curvearrowright}
-\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
 
 % dcups
 \newcommand{\dcup}{\sqcup}
@@ -306,59 +426,33 @@
 \colorlet{colexam}{red!55!black} % Global example color
 
 
-\newtcbtheorem{exercise}{Exercise}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
-% Example Frame Start
-empty,% Empty previously set parameters
-title={\exampletext \thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
-% Attaching a box requires an overlay
-attach boxed title to top left,
-   % Ensures proper line breaking in longer titles
-   minipage boxed title,
-% (boxed title style requires an overlay)
-boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
-coltitle=colexam,fonttitle=\bfseries,
-before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
-   before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
-% Handles box when it exists on one page only
-overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-% Handles multipage box: first page
-overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-% Handles multipage box: middle page
-overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
-% Handles multipage box: last page
-overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); }%
-}{ex}
 
-
-\def\prooftext{Proof} % If English
-\NewDocumentEnvironment{Proof}{ O{} }
-{
-  \colorlet{colexam}{black!55!black} % Global example color
-  \newtcolorbox[number within=section]{testproofbox}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
-    % Example Frame Start
-    empty,% Empty previously set parameters
-    title={\emph{\prooftext} \thetcbcounter: #1},% use \thetcbcounter to access the testexample counter text
-    % Attaching a box requires an overlay
-    attach boxed title to top left,
-       % Ensures proper line breaking in longer titles
-       minipage boxed title,
-    % (boxed title style requires an overlay)
-    boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
-    coltitle=colexam,fonttitle=\bfseries,
-    before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
-       before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
-    % Handles box when it exists on one page only
-    overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-    % Handles multipage box: first page
-    overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
-    % Handles multipage box: middle page
-    overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
-    % Handles multipage box: last page
-    overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
-    }
-  \begin{testproofbox}
+\newtcolorbox{ProofTcb}[1][]{%
+  empty,
+  % The \emph{} now wraps both "Proof" and the optional argument.
+  % The colon is placed outside the condition, at the very end.
+  title={\emph{Proof\if\relax\detokenize{#1}\relax\else\space #1\fi}:},
+  attach boxed title to top left,
+  minipage boxed title,
+  boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+  coltitle=black!55!black, fonttitle=\bfseries,
+  before=\par\medskip\noindent, parbox=false,
+  boxsep=0pt, left=3mm, right=0mm, top=2pt, breakable, pad at break=0mm,
+  before upper=\csname @totalleftmargin\endcsname0pt,
+  width=\dimexpr\textwidth-3mm\relax,
+  overlay unbroken={\draw[black!55!black,line width=.5pt]
+    ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west);},
+  overlay first={\draw[black!55!black,line width=.5pt]
+    ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west);},
+  overlay middle={\draw[black!55!black,line width=.5pt]
+    ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west);},
+  overlay last={\draw[black!55!black,line width=.5pt]
+    ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west);}
 }
-{\end{testproofbox}\endlist}
+
+\newenvironment{Proof}[1][]
+  {\begin{ProofTcb}[#1]}
+  {\end{ProofTcb}}
 
 \newtcbtheorem[number within=section]{titledBox}{}{%
   enhanced,
@@ -408,128 +502,1682 @@ overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- 
 
 \setcounter{secnumdepth}{1}  % start numbering at section, no chapter
 
+
+% ─────────────────────────────────────────────────────────────────────────────
+% §22  CONDITIONAL ENVIRONMENTS — web (LaTeXML) vs PDF (tcolorbox)
+% ─────────────────────────────────────────────────────────────────────────────
+\ifdefined\latexml
+  % ── Web mode: load the semantic bridge ────────────────────────────────────
+  %    web_patch.sty defines all theorem-like environments as amsthm wrappers.
+  \usepackage{web_patch}
+\else
+  % ── PDF mode: full tcolorbox visual stack ─────────────────────────────────
+  \usepackage[most]{tcolorbox}
+  \usetikzlibrary{fit}
+  \tcbuselibrary{most}
+
+  % Theorem-like environments — all share the thm counter within section.
+  \newtcbtheorem[number within=section]{thm}{Theorem}{%
+    colback=green!5, colframe=green!35!black,
+    fonttitle=\bfseries, label type=theorem}{th}
+
+  \newtcbtheorem[number within=section, use counter from=thm]{lem}{Lemma}{%
+    colback=blue!5, colframe=black!35!black,
+    fonttitle=\bfseries, label type=lemma}{lm}
+
+  \newtcbtheorem[number within=section, use counter from=thm]{prop}{Proposition}{%
+    colback=white!5, colframe=white!35!black,
+    fonttitle=\bfseries, label type=proposition}{pr}
+
+  \newtcbtheorem[number within=section, use counter from=thm]{cor}{Corollary}{%
+    colback=blue!5, colframe=blue!35!black,
+    fonttitle=\bfseries, label type=corollary}{co}
+
+  \newtcbtheorem[number within=section, use counter from=thm]{axiom}{Axiom}{%
+    colback=black!5, colframe=yellow!35!black,
+    fonttitle=\bfseries, label type=axiom}{ax}
+
+  \newtcbtheorem[number within=section, use counter from=thm]{defn}{Definition}{%
+    colback=red!5, colframe=red!35!black,
+    fonttitle=\bfseries, label type=definition}{df}
+
+\newtcbtheorem[number within=section, use counter from=thm]{conjecture}{Conjecture}{%
+colback=black!5, colframe=yellow!35!black,
+fonttitle=\bfseries, label type=axiom}{cn}
+
+
+% \mathscr shortcuts
+\newcommand{\SA}{\mathscr{A}}
+\newcommand{\SC}{\mathscr{C}}
+\newcommand{\SE}{\mathscr{E}}
+\newcommand{\SF}{\mathscr{F}}
+\newcommand{\SG}{\mathscr{G}}
+\newcommand{\SH}{\mathscr{H}}
+\newcommand{\SI}{\mathscr{I}}
+\newcommand{\SK}{\mathscr{K}}
+\newcommand{\SN}{\mathscr{N}}
+\newcommand{\SP}{\mathscr{P}}
+\newcommand{\SQ}{\mathscr{Q}}
+\newcommand{\SR}{\mathscr{R}}
+\newcommand{\SV}{\mathscr{V}}
+\newcommand{\SZ}{\mathscr{Z}}
+
+\newcommand{\sing}{{\operatorname{sing}\,}}
+\newcommand{\diag}{{\operatorname{diag}}}
+\newcommand{\CaCl}{{\operatorname{CaCl}\,}}
+\newcommand{\Cl}{{\operatorname{Cl}\,}}
+\newcommand{\CDiv}{{\operatorname{CDiv}\,}}
+\newcommand{\WDiv}{{\operatorname{WDiv}\,}}
+
 \begin{document}
 
-\section{Introduction}
+\maketitle
+\tableofcontents
 
-\subsection{The Animating Question}
+\section{Introduction}\label{sec:introduction}
 
-One of the oldest ambitions in geometry is to understand a space by studying
-the subspaces that live inside it. A surface in $\R^3$ is often understood
-by its curves; a three-dimensional body is understood by its surfaces and their
+
+One of the most successful techniques in geometry is to understand a space by studying
+the subspaces that live inside it. A surface in $\R^3$ is often understood by
+its curves; a three-dimensional body is understood by its surfaces and their
 intersections. The passage from geometry to topology in the twentieth century
 made this idea precise: the \emph{homology} and \emph{cohomology} groups of a
-space $X$ provide a robust algebraic framework for counting and classifying
-``holes'' of each dimension, and the cup product on cohomology mirrors the
-geometric operation of intersecting subspaces.
+space $X$ provide an algebraic framework for counting and classifying ``holes''
+of each dimension, and the cap product on cohomology mirrors the geometric
+operation of intersecting subspaces.
 
-This framework is enormously powerful, but it is also enormously general.
-The cohomology ring $H^*(X, \Z)$ is defined for any topological space, and
-it treats all continuous deformations as equivalent. It does not know, or care,
-whether a given cohomology class arises from a subspace with any special
-geometric or algebraic structure.
+This framework is quite general. The cohomology ring $H^*(X, \Z)$ is defined
+for any topological space, and it treats all continuous deformations,
+homotopies, as equivalent. It does not know, or care, whether a given
+cohomology class arises from a subspace with any special geometric or algebraic
+structure. Even limiting to spaces admitting Poincar\'{e} duality (mostly
+consisting of manifolds and varieties), given an $[\eta] \in H^n(X,\Z)$, there
+need not be a ``reasonable'' $S \sse X$ such that $[S] = [\eta]$. Algebraic
+geometry imposes much stronger constraints. If $X$ is a smooth projective
+variety---a space carved out by polynomial equations inside complex projective
+space $\CP^N$---then the subspaces of primary interest are not arbitrary
+topological subsets but \emph{algebraic subvarieties}: subsets themselves
+defined by polynomial equations. These are rigid finite-dimensional objects,
+governed by the algebra of polynomial rings rather than the flexibility of
+continuous maps.
 
-Algebraic geometry imposes much stronger constraints. If $X$ is a smooth
-projective variety---a space carved out by polynomial equations inside complex
-projective space $\CP^N$---then the subspaces of primary interest are not
-arbitrary topological subsets but \emph{algebraic subvarieties}: subsets
-themselves defined by polynomial equations. These are rigid, finite-dimensional
-objects, governed by the algebra of polynomial rings rather than the
-flexibility of continuous maps.
-
-Every algebraic subvariety $Z \subset X$ of complex codimension $p$
-determines a cohomology class $[Z] \in H^{2p}(X, \Z)$ via Poincar\'{e}
-duality. The \emph{Hodge Conjecture} asks whether the converse holds, at
-least rationally: if a cohomology class ``looks like'' it could come from an
-algebraic subvariety---in a sense we will make precise using Hodge
-theory---must it actually be a $\Q$-linear combination of classes of algebraic
-subvarieties?
-
-The motivation for asking this is not purely aesthetic. If the answer is
-yes, it means that the coarse topological invariants of a variety, together
-with the analytic data of its complex structure, are sufficient to detect
-all the algebraic geometry happening inside it. Concretely, one would gain
-the following:
+Every algebraic subvariety $Z \subset X$ of complex codimension $p$ determines a cohomology class $[Z] \in
+H^{2p}(X, \Z)$ via Poincar\'{e} duality. The \emph{Hodge Conjecture} asks whether the converse holds, at least
+rationally: if a cohomology class ``looks like'' it could come from an algebraic subvariety---in a sense made
+precise by Hodge theory---must it actually be a $\Q$-linear combination of classes of algebraic subvarieties?
+If the answer is yes, it means that the coarse topological invariants of a variety, together with the analytic
+data of its complex structure, are sufficient to detect all the algebraic geometry happening inside it.
+Concretely, one gains the following:
 \begin{itemize}
-  \item \textbf{Algebraic representatives for topological data.}
-    Cohomology classes are abstract: they are equivalence classes of cocycles.
+  \item \emph{Algebraic representatives for topological data.}
+    Cohomology are equivalence classes of cocycles.
     Algebraic subvarieties are concrete geometric objects that can be
     written down, intersected, deformed in families, and studied with the
     tools of commutative algebra. Knowing that a class is algebraic
     converts a topological invariant into a geometrically actionable object.
-  \item \textbf{A bridge between analysis and algebra.}
+  \item \emph{A bridge between analysis and algebra.}
     The Hodge decomposition is an analytic statement (it depends on
-    harmonic theory and the choice of a K\"{a}hler metric), while
+    harmonic theory and the choice of a K\"{a}hler metric) while
     algebraicity is a purely algebro-geometric property. The conjecture
     asserts that these two worlds see the same structure, providing a
     dictionary that translates between partial differential equations
     and polynomial equations.
-  \item \textbf{Control over intersection theory.}
+  \item \emph{Control over intersection theory.}
     If every Hodge class is algebraic, then the intersection theory of
     algebraic cycles---encoded in the Chow ring---accounts for all the
-    relevant cohomological information. This would mean that the Chow ring,
-    an object defined without any reference to topology, captures exactly the
-    piece of cohomology that the complex structure ``sees.''
+    relevant cohomological information. The Chow ring, an object defined
+    without any reference to topology, would capture exactly the piece of
+    cohomology that the complex structure ``sees.''
 \end{itemize}
 
 The Hodge Conjecture is one of the seven Clay Mathematics Institute
 Millennium Prize Problems. It has been open since Hodge formulated it in
 1950, and it remains one of the central unsolved problems in mathematics.
 
-\subsection{Roadmap and Prerequisites}
+\subsection{Roadmap and Prerequisites}\label{subsec:roadmap}
 
 This article builds toward the precise statement of the Hodge Conjecture in
 three stages, corresponding to the three mathematical disciplines it unifies.
 
-\textbf{Stage 1: Topology (\S\ref{sec:topology}).}
-We review singular cohomology with careful attention to the coefficient
-ring, Poincar\'{e} duality over $\Z$, and the geometric interpretation
-of the cup product as transverse intersection of submanifolds. The reader
-comfortable with these topics at the level of~\cite{NateAlgTop} may skim
-this section, but should note our conventions on orientations and
-coefficient tracking, as these will be essential later.
+\emph{Stage 1: Topology (\S\ref{sec:topology}).}
+We review singular cohomology with careful attention to the coefficient ring, Poincar\'{e} duality over $\Z$,
+and the geometric interpretation of the cup product as transverse intersection of submanifolds. The reader
+comfortable with these topics at the level of~\cite{NateAlgTop} may skim this section, but should note our
+conventions on orientations and coefficient tracking, as these will be essential later.
 
-\textbf{Stage 2: Analysis (\S\ref{sec:analysis}--\S\ref{sec:complex}).}
-We move to smooth manifolds and de~Rham cohomology, then introduce
-Hodge theory: the Laplacian, harmonic forms, and the real Hodge
-decomposition. We then pass to complex manifolds, where the interplay
-between holomorphic and anti-holomorphic directions produces the
-$(p,q)$-decomposition of differential forms. On K\"{a}hler manifolds,
-the analytic and complex structures lock together, yielding the
-celebrated Hodge decomposition of cohomology with complex coefficients.
-The reader should be comfortable with smooth manifolds, differential
-forms, and the basics of complex manifolds at the level
-of~\cite{NateDiffGeo} and~\cite{NateComplexAnalysis}. Familiarity with
-Hodge theory at the level of~\cite{NateHodge} will make \S\ref{sec:analysis}
-a review.
+\emph{Stage 2: Analysis (\S\ref{sec:analysis}--\S\ref{sec:complex}).}
+We move to smooth manifolds and de~Rham cohomology, then introduce Hodge theory: the Laplacian, harmonic
+forms, and the real Hodge decomposition. We then pass to complex manifolds, where the interplay between
+holomorphic and anti-holomorphic directions produces the $(p,q)$-decomposition of differential forms. On
+K\"{a}hler manifolds, the analytic and complex structures lock together, yielding the Hodge decomposition of
+cohomology with complex coefficients. The reader should be comfortable with smooth manifolds, differential
+forms, and the basics of complex manifolds at the level of~\cite{NateDiffGeo} and~\cite{NateComplexAnalysis}.
+Familiarity with Hodge theory at the level of~\cite{NateHodge} will make \S\ref{sec:analysis} a review.
 
-\textbf{Stage 3: Algebraic Geometry (\S\ref{sec:bridge}--\S\ref{sec:algebraic}).}
-We introduce line bundles, Chern classes, and the exponential sequence,
-culminating in the Lefschetz $(1,1)$ theorem (the Hodge Conjecture for
-codimension~$1$, which is a theorem) and the Kodaira embedding theorem.
-We then develop algebraic cycles, the Chow ring, and the cycle class map.
-This stage assumes familiarity with sheaves and sheaf cohomology at the
-level of~\cite{NateAlgGeo}.
+\emph{Stage 3: Algebraic Geometry (\S\ref{sec:bridge}--\S\ref{sec:algebraic}).}
+We introduce line bundles, Chern classes, and the exponential sequence, culminating in the Lefschetz $(1,1)$
+theorem (the Hodge Conjecture for codimension~$1$, which is a theorem) and the Kodaira embedding theorem. We
+then develop algebraic cycles, the Chow ring, and the cycle class map. This stage assumes familiarity with
+sheaves and sheaf cohomology at the level of~\cite{NateAlgGeo}.
 
-\textbf{The Conjecture (\S\ref{sec:hodge_conjecture}--\S\ref{sec:integral}).}
+\emph{The Conjecture (\S\ref{sec:hodge_conjecture}--\S\ref{sec:integral}).}
 With all three stages in place, we give the precise statement of the Hodge
-Conjecture, explain the role of each hypothesis, survey what is known, and
-then discuss the Integral Hodge Conjecture and why it fails.
+Conjecture, explain the role of each hypothesis, survey what is known, and then
+discuss the Integral Hodge Conjecture and why it fails.
 
-Throughout, we will be meticulous about two points that are easy to
-conflate but essential to keep separate:
+% Throughout, we will be meticulous about two points that are easy to conflate
+% but essential to keep separate:
+% \begin{enumerate}
+%   \item \emph{The category of space.} We will always say explicitly whether we
+%     are working with a topological space, a smooth manifold, a complex
+%     manifold, a K\"{a}hler manifold, or a smooth projective variety. Many
+%     theorems require specific hypotheses, and silently upgrading the space is a
+%     common source of error.
+%   \item \emph{The coefficient ring.} Cohomology with $\Z$, $\Q$, $\R$, and
+%     $\C$ coefficients all play distinct roles. Over $\Z$, we have Poincar\'{e}
+%     duality and torsion phenomena. Over $\R$, we have the de~Rham theorem and
+%     harmonic representatives. Over $\C$, we have the Hodge decomposition. Over
+%     $\Q$, the Hodge Conjecture is stated. We will track coefficient changes
+%     explicitly every time they occur.
+% \end{enumerate}
+
+
+
+\section{The Topological Stage}\label{sec:topology}
+
+Let $X$ be a topological space. We write $C_\bullet(X, \Z)$ for the singular
+chain complex: the sequence of free abelian groups $C_n(X, \Z)$ generated by
+continuous maps $\sigma: \Delta^n \to X$ from the standard $n$-simplex,
+equipped with the boundary homomorphism $\partial_n: C_n \to C_{n-1}$
+satisfying $\partial_{n-1} \circ \partial_n = 0$. The singular homology groups
+are
+\[
+  H_n(X, \Z) = \frac{\ker(\partial_n)}{\im(\partial_{n+1})}
+\]
+
+To pass to cohomology, we dualize. For an abelian group $G$, apply
+$\Hom(-, G)$ to obtain the cochain complex $C^\bullet(X, G)$ with coboundary
+map $\delta^n: C^n(X,G) \to C^{n+1}(X,G)$ defined by precomposition with
+$\partial_{n+1}$. The singular cohomology groups are
+\[
+  H^n(X, G) = \frac{\ker(\delta^n)}{\im(\delta^{n-1})}
+\]
+
+The choice of $G$ affects the information
+that cohomology records. Over the integers, $H^n(X, \Z)$ is a finitely
+generated abelian group (for reasonable spaces) and therefore splits as a
+direct sum of a free part and a torsion part. Over a field $k$ (such as $\Q$,
+$\R$, or $\C$), cohomology becomes a $k$-vector space, and the relationship
+between homology and cohomology simplifies considerably: $H^n(X, k)$ is
+naturally isomorphic to the linear dual $\Hom(H_n(X, k),\, k)$, with no
+correction term. Over $\Z$, this clean duality fails by a torsion defect
+measured by an $\Ext^1$ term (the Universal Coefficient Theorem). The torsion
+correction will not concern us until \S\ref{sec:integral}, where it becomes the
+mechanism by which the Integral Hodge Conjecture fails in Atiyha's and Hirzebruch's paper
+(\textcolor{red}{cite:HERE}). For now, we simply flag
+that \emph{changing coefficients from $\Z$ to a field kills torsion and
+simplifies duality}.
+
+When $G = R$ is a commutative ring, the cohomology groups carry additional
+multiplicative structure: the \emph{cup product}
+\[
+  \smile\;: H^p(X, R) \times H^q(X, R) \longrightarrow H^{p+q}(X, R)
+\]
+defined at the cochain level by evaluating cochains on the front and back faces
+of a simplex and multiplying the results in $R$
+(see~\cite{NateAlgTop} for the explicit formula). The cup product is
+associative, unital (with unit $1 \in H^0(X, R)$), and graded-commutative:
+\[
+  \alpha \smile \beta = (-1)^{pq}\, \beta \smile \alpha
+  \quad\text{for } \alpha \in H^p(X,R),\; \beta \in H^q(X,R)
+\]
+This makes $H^*(X, R) = \bigoplus_{n \geq 0} H^n(X, R)$ into a
+graded-commutative ring. In our setting, $R$ will always be one of $\Z$, $\Q$,
+$\R$, or $\C$.
+
+The cohomology ring is contravariantly functorial: a continuous map $f: X \to
+Y$ induces a ring homomorphism $f^*: H^*(Y, R) \to H^*(X, R)$ that respects
+the cup product:
+\[
+  f^*(\alpha \smile \beta) = f^*(\alpha) \smile f^*(\beta)
+\]
+
+Graded-commutativity has an immediate algebraic consequence that will gain
+geometric meaning in the next subsection. If $\alpha \in H^p(X, R)$ with $p$
+odd, then $\alpha \smile \alpha = -(\alpha \smile \alpha)$, forcing $2(\alpha
+\smile \alpha) = 0$. Over a ring where $2$ is invertible (such as $\Q$, $\R$,
+or $\C$), this means $\alpha \smile \alpha = 0$ for any odd-degree class.
+
+\subsection{Poincar\'{e} Duality and the Cup Product as Intersection}%
+\label{subsec:poincare}
+
+We now restrict to compact, oriented, smooth manifolds of dimension $n$, where cohomology acquires a geometric
+character that will persist through the rest of this article; let $M$ be such a manifold. The orientation
+determines a fundamental class $[M] \in H_n(M, \Z)$, and Poincar\'{e} duality (PD) asserts that the map
+\[
+  \operatorname{PD}: H^p(M, \Z) \xrightarrow{\;\sim\;} H_{n-p}(M, \Z),
+  \qquad \alpha \longmapsto \alpha \frown [M]
+\]
+is an isomorphism, where $\frown$ denotes the cap product
+\[
+  \frown\;: H^p(M, R) \times H_n(M, R) \longrightarrow H_{n-p}(M, R)
+\]
+In words: every cohomology class in degree $p$ corresponds to a unique homology
+class in the complementary degree $n - p$. Over $\Z$, this isomorphism
+requires orientability; over $\Z/2\Z$ it holds for all compact manifolds, but
+we will not need that generality.
+
+The geometric content of PD is that a closed, oriented submanifold $A \subset
+M$ of dimension $k$ (hence codimension $c_A = n - k$) represents a homology
+class $[A] \in H_k(M, \Z)$, and its Poincar\'{e} dual is a cohomology class
+$\eta_A \in H^{c_A}(M, \Z)$. The degree of the cohomology class equals the
+codimension of the submanifold. This shift from dimension to codimension is
+the key to linking the cup product with intersection theory.
+
+To make this link explicit, we introduce the \emph{intersection product} on
+homology classes. Given two closed, oriented submanifolds $A, B \subset M$ of
+codimensions $c_A$ and $c_B$ that intersect transversely, their intersection $A
+\cap B$ is a submanifold of codimension $c_A + c_B$. We write
+\[
+  [A] \cdot [B] := [A \cap B] \in H_{n - c_A - c_B}(M, \Z)
+\]
+for the intersection product of the corresponding homology classes. The
+relationship between the intersection product, Poincar\'{e} duality, and the
+cup product is then captured by the identity
+\[
+  \operatorname{PD}([A] \cdot [B])
+    = \operatorname{PD}([A]) \smile \operatorname{PD}([B])
+\]
+or equivalently,
+\[
+  \eta_{A \cap B} = \eta_A \smile \eta_B
+\]
+In other words, PD intertwines the intersection product on homology with the
+cup product on cohomology. The grading is consistent on both sides: codimensions
+add under transverse intersection ($c_A + c_B$), and degrees add under the cup
+product. We will use the notation $[A] \cdot [B]$ for the intersection product
+and $\eta_A \smile \eta_B$ for the cup product consistently throughout this
+article; PD provides the dictionary between them.
+
+The requirement of transversality is not a serious constraint. If $A$ and $B$
+do not intersect transversely, one perturbs either submanifold within its
+homology class (using the flexibility of the equivalence relation in homology)
+until transversality is achieved; the resulting class is independent of the
+perturbation chosen (see exercise~\ref{q:selfIntersection} for the case
+$A = B$, where perturbation is mandatory).
+
+The algebraic identity $\alpha \smile \beta = (-1)^{pq}\,\beta \smile \alpha$
+from the previous subsection now gains geometric meaning. The underlying space
+of $A \cap B$ and $B \cap A$ is the same, but the orientation of the
+intersection depends on the order in which the normal bundles are combined.
+Swapping two subspaces of codimensions $c_A$ and $c_B$ reverses the orientation
+by the sign $(-1)^{c_A c_B}$, which is precisely the sign appearing in
+graded-commutativity. In particular, if $\alpha \in H^p(M, R)$ with $p$ odd and
+$2$ is invertible in $R$, then $\alpha \smile \alpha = 0$: the self-intersection
+of an odd-codimension class vanishes.
+
+Just as PD translates between homology and cohomology, the cap product
+translates between the cup product on cohomology and the intersection product
+on homology. If $\alpha \in H^p(M, R)$ and $\sigma \in H_n(M, R)$, the cap
+product $\alpha \frown \sigma \in H_{n-p}(M, R)$ can be read as ``intersecting
+the cycle $\sigma$ with the condition imposed by $\alpha$.'' In the presence of
+PD, the cup and intersection products carry equivalent information: knowing one
+determines the other. We will primarily work with the cup product (since it
+gives the ring structure on cohomology), but the intersection product
+perspective clarifies why the ring structure on cohomology encodes geometry.
+
+To summarize the topological stage: for a compact, oriented, smooth
+$n$-manifold $M$ with coefficients in $\Z$, PD identifies $H^p(M, \Z) \cong
+H_{n-p}(M, \Z)$, converting codimension into cohomological degree. Under this
+identification, the cup product on cohomology corresponds to the intersection
+product of submanifolds, and codimensions add under both operations. We have a
+ring $H^*(M, \Z)$ that algebraically encodes the intersection theory of
+submanifolds. The next task is to find analytic representatives for these
+classes.
+
+
+\section{The Analytic Stage}\label{sec:analysis}
+
+We now upgrade from topological spaces to smooth manifolds, where differential
+forms provide analytic representatives for cohomology classes.
+
+Let $M$ be a smooth manifold of dimension $n$. The space of smooth differential
+$k$-forms on $M$ is denoted $\Omega^k(M)$; these are smooth sections of the
+exterior power $\bigwedge^k T^*M$. The exterior derivative
+$d: \Omega^k(M) \to \Omega^{k+1}(M)$ satisfies $d \circ d = 0$, so the
+sequence
+\[
+  0 \longrightarrow \Omega^0(M) \xrightarrow{\;d\;} \Omega^1(M)
+    \xrightarrow{\;d\;} \Omega^2(M) \xrightarrow{\;d\;} \cdots
+    \xrightarrow{\;d\;} \Omega^n(M) \longrightarrow 0
+\]
+is a cochain complex, the \emph{de Rham complex}. Its cohomology groups are the
+\emph{de Rham cohomology} groups:
+\[
+  H^k_{dR}(M) = \frac{\ker(d: \Omega^k \to \Omega^{k+1})}
+    {\im(d: \Omega^{k-1} \to \Omega^k)}
+  = \frac{\{\text{closed $k$-forms}\}}{\{\text{exact $k$-forms}\}}.
+\]
+A closed form ($d\omega = 0$) captures information that is locally trivial
+(by the Poincar\'{e} lemma, every closed form is locally exact) but may fail to
+be globally trivial. The de Rham cohomology groups measure this failure.
+
+The bridge between the de Rham complex and singular cohomology is integration.
+Given a smooth singular $k$-chain $\sigma$ and a $k$-form $\omega$, the
+integral $\int_\sigma \omega$ defines a bilinear pairing
+\[
+  \Omega^k(M) \times C_k(M, \R) \longrightarrow \R,
+  \qquad (\omega, \sigma) \longmapsto \int_\sigma \omega
+\]
+Stokes' theorem asserts that this pairing is compatible with the boundary and
+coboundary maps:
+\[
+  \int_\sigma d\omega = \int_{\partial \sigma} \omega.
+\]
+As a consequence, the integral of a closed form over a cycle depends only on
+the cohomology class of the form and the homology class of the cycle. The
+pairing therefore descends to a well-defined bilinear map
+\[
+  H^k_{dR}(M) \times H_k(M, \R) \longrightarrow \R,
+  \qquad ([\omega], [\sigma]) \longmapsto \int_\sigma \omega
+\]
+and the content of de Rham's theorem is that this pairing is perfect.
+
+\begin{thm}{De Rham's Theorem}{deRhamThm}
+  Let $M$ be a smooth manifold. The integration pairing induces a natural
+  isomorphism of graded $\R$-algebras
+  \[
+    H^k_{dR}(M) \xrightarrow{\;\sim\;} H^k(M, \R)
+  \]
+\end{thm}
+
+Two remarks are in order. First, de Rham's theorem holds for all smooth
+manifolds; orientation plays no role here (orientation is needed for
+Poincar\'{e} duality and for integrating top-degree forms over $M$ itself, but
+not for the de Rham isomorphism.) Second, the isomorphism is one of
+$\R$-algebras: the wedge product of forms corresponds to the cup product on
+singular cohomology. This means the multiplicative structure that encodes
+intersection theory (as developed in \S\ref{subsec:poincare}) is faithfully
+represented by the wedge product of differential forms.
+
+From this point forward, we will freely identify $H^k_{dR}(M)$ with
+$H^k(M, \R)$ and write cohomology classes as equivalence classes of closed
+forms. The advantage is substantial: differential forms can be differentiated,
+integrated, pointwise decomposed, and subjected to the tools of partial
+differential equations. These tools will produce, in the next subsection, a
+canonical representative for every cohomology class.
+
+It is worth pausing to ask what the passage to $\R$-coefficients has done to
+the ``geometric representatives'' on the homology side. In singular homology
+with $\Z$-coefficients, the basic geometric objects are singular simplices
+(continuous maps from $\Delta^k$ into $M$), and cycles are formal
+$\Z$-linear combinations of these. Over $\R$, the basic objects are the same
+simplices, but we now allow real-valued formal sums, and the resulting
+homology classes pair with differential forms via integration. The natural
+question is whether there is a class of geometric objects on $M$ that serves
+as the ``native'' counterpart to differential forms, in the same way that
+singular simplices are the native objects of singular theory.
+
+The answer is \emph{currents}. A $k$-current on $M$ is a continuous linear
+functional on the space $\Omega^k_c(M)$ of compactly supported smooth
+$k$-forms (with respect to the standard Fr\'{e}chet topology). Every closed,
+oriented submanifold $S \subset M$ of dimension $k$ defines a $k$-current
+$T_S$ by integration:
+\[
+  T_S(\omega) = \int_S \omega
+\]
+But the space of currents is vastly larger: it includes limits of sequences of
+submanifolds, spaces with singularities, and objects best described as
+``differential forms with distributional coefficients.'' The boundary operator
+on currents is defined by dualizing the exterior derivative:
+\[
+  (\partial T)(\omega) = T(d\omega)
+\]
+and one can verify that when $T = T_S$ for a submanifold $S$ with boundary
+$\partial S$, this recovers the classical Stokes' theorem: $\partial T_S =
+T_{\partial S}$ (see exercise~\ref{q:stokesCurrents}).
+
+Currents are needed not because submanifolds are insufficient to represent
+real homology classes (a theorem of Thom guarantees that over $\R$, every
+homology class can be represented by a smooth submanifold), but because the
+space of currents provides the analytic completeness required for the PDE
+methods that drive Hodge theory. Solving the Laplace equation, which we turn to
+next, requires limits and completions that the space of smooth submanifolds
+does not support.
+
+
+\subsection{The Hodge Laplacian and Harmonic Forms}\label{subsec:laplacian}
+
+The de Rham complex gives us differential forms as representatives for
+cohomology classes, but a cohomology class $[\omega] \in H^k_{dR}(M)$ contains
+infinitely many representatives: $\omega$, $\omega + d\alpha$,
+$\omega + d\beta$, and so on. To single out a canonical representative, we
+need a notion of ``best'' form within a class. This requires measuring the size
+of a form, which in turn requires a metric.
+
+Let $M$ be a compact, oriented, smooth manifold of dimension $n$, equipped with
+a Riemannian metric $g$ (every smooth manifold admits a Riemannian metric, by
+a partition-of-unity argument; the specific choice will matter for the
+representatives we select, but the resulting cohomology groups will not depend
+on it). The metric $g$ provides a pointwise inner product on tangent vectors,
+which extends to cotangent vectors and then to all exterior powers
+$\bigwedge^k T^*_x M$, giving a pointwise inner product
+$\langle \cdot, \cdot \rangle_x$ on $k$-forms at each point $x \in M$.
+
+Combined with the orientation, the metric determines a volume form
+$\vol_g \in \Omega^n(M)$ and the \emph{Hodge star operator}
+\[
+  \star: \Omega^k(M) \longrightarrow \Omega^{n-k}(M)
+\]
+defined by the property that for any two $k$-forms $\alpha, \beta$,
+\[
+  \alpha \wedge \star\beta = \langle \alpha, \beta \rangle_x \, \vol_g
+\]
+The Hodge star converts a $k$-form into its ``orthogonal complement''
+$(n-k)$-form, echoing the dimension-to-codimension shift of Poincar\'{e}
+duality at the level of individual forms rather than cohomology classes.
+
+Integrating the pointwise inner product over $M$ yields a global $L^2$ inner
+product on $k$-forms:
+\[
+  \langle \alpha, \beta \rangle_{L^2}
+    = \int_M \alpha \wedge \star\beta
+    = \int_M \langle \alpha, \beta \rangle_x \, \vol_g.
+\]
+This makes $\Omega^k(M)$ into a (pre-)Hilbert space, and we can now ask for
+adjoints of linear operators. The exterior derivative
+$d: \Omega^k(M) \to \Omega^{k+1}(M)$ has a formal adjoint
+$d^*: \Omega^{k+1}(M) \to \Omega^k(M)$ defined by the requirement
+\[
+  \langle d\alpha, \beta \rangle_{L^2}
+    = \langle \alpha, d^*\beta \rangle_{L^2}
+\]
+for all compactly supported forms $\alpha, \beta$. An integration-by-parts
+argument (using Stokes' theorem and the compactness of $M$) shows that $d^*$
+can be expressed explicitly via the Hodge star:
+\[
+  d^* = (-1)^{n(k+1)+1} \star d \star
+  \quad \text{on } \Omega^{k+1}(M)
+\]
+Where $d$ builds forms up by one degree, $d^*$ tears them down by one degree.
+(On functions, $d$ is the gradient; on $1$-forms in $\R^3$, $d^*$ is the
+negative divergence. The interplay between these two operators is the engine
+behind the classical energy methods of mathematical physics.)
+
+With $d$ and $d^*$ in hand, we construct a second-order operator that maps
+$k$-forms to $k$-forms. Since $d$ raises degree by $1$ and $d^*$ lowers it by
+$1$, the compositions $d^*d: \Omega^k \to \Omega^k$ and
+$dd^*: \Omega^k \to \Omega^k$ are both endomorphisms. The \emph{Hodge
+Laplacian} is their sum:
+\[
+  \Delta = dd^* + d^*d: \Omega^k(M) \longrightarrow \Omega^k(M)
+\]
+On $0$-forms (smooth functions $f$), the term $d^*f$ vanishes (there are no
+$(-1)$-forms), so $\Delta f = d^*df$, which recovers the classical Laplace
+operator $-\div(\nabla f)$ up to sign conventions.
+
+A $k$-form $\omega$ is called \emph{harmonic} if $\Delta\omega = 0$. We write
+$\CH^k(M)$ for the space of harmonic $k$-forms. The following characterization
+is the key algebraic observation that makes harmonic forms so useful.
+
+Since $\Delta$ is a sum of two non-negative operators (with respect to the
+$L^2$ inner product), $\Delta\omega = 0$ if and only if both summands vanish
+individually. To see this, compute:
+\[
+  \langle \Delta\omega, \omega \rangle_{L^2}
+    = \langle dd^*\omega, \omega \rangle_{L^2}
+      + \langle d^*d\omega, \omega \rangle_{L^2}
+    = \langle d^*\omega, d^*\omega \rangle_{L^2}
+      + \langle d\omega, d\omega \rangle_{L^2}
+    = \|d^*\omega\|^2 + \|d\omega\|^2
+\]
+Because norms are non-negative, $\Delta\omega = 0$ if and only if
+$d\omega = 0$ and $d^*\omega = 0$. That is, a form is harmonic if and only if
+it is simultaneously \emph{closed} (killed by $d$) and \emph{co-closed}
+(killed by $d^*$). Every harmonic form is automatically a cocycle, so it
+represents a de Rham cohomology class. The content of the Hodge decomposition,
+which we turn to next, is that every cohomology class contains exactly one such
+form:
+
+\begin{thm}{Hodge Decomposition Theorem}{hodgeDecomp}
+  Let $M$ be a compact, oriented Riemannian manifold. For each $k \in \N_{>0}$, the space
+  of smooth $k$-forms decomposes as an orthogonal direct sum with respect to
+  the $L^2$ inner product:
+  \[
+    \Omega^k(M) = \im(d) \oplus \im(d^*) \oplus \CH^k(M),
+  \]
+  where $\im(d) = d(\Omega^{k-1}(M))$ is the space of exact forms,
+  $\im(d^*) = d^*(\Omega^{k+1}(M))$ is the space of co-exact forms, and
+  $\CH^k(M) = \ker(\Delta)$ is the (finite-dimensional) space of harmonic
+  $k$-forms.
+\end{thm}
+
+The proof is analytic: it relies on elliptic regularity for the Laplacian
+$\Delta$ on a compact manifold (see~\cite{NateHodge} for the full argument).
+The finite-dimensionality of $\CH^k(M)$ is a consequence of the fact that
+$\Delta$ is an elliptic operator on a compact manifold, so its kernel is a
+finite-dimensional subspace of $\Omega^k(M)$.
+
+The three summands are mutually orthogonal with respect to $\langle \cdot,
+\cdot \rangle_{L^2}$. The orthogonality of $\im(d)$ and $\im(d^*)$ follows
+directly from the adjunction: for $\alpha = d\beta$ exact and $\gamma =
+d^*\eta$ co-exact,
+\[
+  \langle d\beta, d^*\eta \rangle_{L^2}
+    = \langle d(d\beta), \eta \rangle_{L^2}
+    = \langle 0, \eta \rangle_{L^2} = 0
+\]
+since $d^2 = 0$. The orthogonality of $\CH^k$ to the other two summands
+follows from the characterization of harmonic forms: if $\omega$ is harmonic
+then $d\omega = 0$ and $d^*\omega = 0$, so $\langle \omega, d\beta
+\rangle_{L^2} = \langle d^*\omega, \beta \rangle_{L^2} = 0$ and
+$\langle \omega, d^*\eta \rangle_{L^2} = \langle d\omega, \eta
+\rangle_{L^2} = 0$.
+
+The consequence for cohomology is immediate, but the argument is worth spelling
+out. De Rham cohomology is defined as $H^k_{dR}(M) = \ker(d) / \im(d)$, so we
+need to understand which forms in the decomposition are closed. Exact forms are
+automatically closed ($d(d\beta) = 0$), and harmonic forms are closed by
+definition. The key point is that the co-exact summand contributes nothing to
+$\ker(d)$: if $\gamma = d^*\eta$ is both co-exact and closed, then
+\[
+  \|\gamma\|^2_{L^2}
+    = \langle d^*\eta, \gamma \rangle_{L^2}
+    = \langle \eta, d\gamma \rangle_{L^2}
+    = \langle \eta, 0 \rangle_{L^2} = 0
+\]
+forcing $\gamma = 0$. Therefore, the space of closed forms decomposes as
+\[
+  \ker(d) = \im(d) \oplus \CH^k(M)
+\]
+and taking the quotient by $\im(d)$ gives the isomorphism
+\[
+  H^k_{dR}(M) = \frac{\ker(d)}{\im(d)} \cong \CH^k(M)
+\]
+Combined with de Rham's theorem (\ref{th:deRhamThm}), this gives
+\begin{equation}\label{eq:realHodgeDecomp}
+  \boxed{H^k(M, \R) \cong \CH^k(M)}
+\end{equation}
+Every real cohomology class contains a unique harmonic representative. The
+abstract equivalence class $[\omega] \in H^k(M, \R)$ is now pinned down to a
+single, concrete differential form determined by the metric $g$ and the
+equation $\Delta\omega = 0$.
+
+This is a striking conclusion. Cohomology is a topological invariant (unchanged
+under continuous deformations), while the Laplacian depends on the Riemannian
+metric (a piece of geometric data). The Hodge theorem tells us that the
+\emph{space} of harmonic forms is a topological invariant (its dimension is the
+Betti number $b_k = \dim H^k(M, \R)$), even though the individual harmonic
+forms within it change as the metric varies.
+
+The harmonic representative also has a variational characterization: among all
+closed forms in a cohomology class $[\omega]$, the harmonic one is the unique
+minimizer of the $L^2$ norm $\|\cdot\|_{L^2}$
+(see exercise~\ref{q:harmonicMinimizer}). One can think of it as the form in
+the class that uses the least ``energy'' to represent the topological
+information. This is a vast generalization of Dirichlet's principle from
+classical potential theory: topology dictates that a hole exists, and the
+Riemannian metric dictates the most efficient way to wrap a form around it.
+
+
+\section{The Complex Stage}\label{sec:complex}
+
+We now pass from smooth manifolds to complex manifolds, where the additional
+structure of a complex coordinate system introduces a bigrading on differential
+forms that will ultimately produce the Hodge decomposition over $\C$.
+
+Let $X$ be a complex manifold of complex dimension $n$ (hence real dimension
+$2n$). By definition, $X$ is covered by holomorphic charts
+$(z_1, \ldots, z_n)$ with holomorphic transition maps. Writing
+$z_j = x_j + iy_j$, each chart also provides real coordinates
+$(x_1, y_1, \ldots, x_n, y_n)$, so $X$ is in particular a smooth manifold of
+real dimension $2n$.
+
+The complex structure on $X$ is encoded by the \emph{almost complex structure},
+an endomorphism $J: TX \to TX$ of the real tangent bundle satisfying
+$J^2 = -\id$. In holomorphic coordinates, $J$ acts by
+$J(\partial/\partial x_j) = \partial/\partial y_j$ and
+$J(\partial/\partial y_j) = -\partial/\partial x_j$, mimicking multiplication
+by $i$. For $X$ to be a complex manifold (as opposed to an almost
+complex manifold), $J$ must be \emph{integrable}: the Newlander--Nirenberg
+theorem guarantees that integrability of $J$ is equivalent to the existence of
+the holomorphic charts we started with.
+
+To decompose differential forms, we complexify. The complexified cotangent
+bundle $T^*X \otimes_\R \C$ splits into eigenspaces of the dual action of $J$:
+\[
+  T^*X \otimes_\R \C = T^{*1,0}X \oplus T^{*0,1}X
+\]
+where $T^{*1,0}X$ is spanned by the forms $dz_j = dx_j + i\,dy_j$
+(eigenvalue $-i$ for $J^*$) and $T^{*0,1}X$ is spanned by
+$d\bar{z}_j = dx_j - i\,dy_j$ (eigenvalue $+i$ for $J^*$). Taking exterior
+powers, the space of complex-valued $k$-forms decomposes as
+\[
+  \Omega^k(X, \C) = \bigoplus_{p+q=k} \Omega^{p,q}(X)
+\]
+where $\Omega^{p,q}(X)$ consists of forms involving $p$ of the $dz_j$'s and
+$q$ of the $d\bar{z}_j$'s. A form $\omega \in \Omega^{p,q}(X)$ is said to
+have \emph{bidegree} or \emph{type} $(p,q)$. In local coordinates, such a form
+looks like
+\[
+  \omega = \sum_{|I|=p,\, |J|=q} f_{I\bar{J}}\, dz_{i_1} \wedge \cdots
+    \wedge dz_{i_p} \wedge d\bar{z}_{j_1} \wedge \cdots \wedge d\bar{z}_{j_q}
+\]
+where the $f_{I\bar{J}}$ are smooth complex-valued functions.
+
+The exterior derivative $d: \Omega^k(X, \C) \to \Omega^{k+1}(X, \C)$ respects
+this bigrading in a controlled way. Since $d$ raises the total degree by $1$,
+and the bigrading decomposes the total degree as $p + q$, the operator $d$
+can only shift the bidegree by $(1,0)$ or $(0,1)$. This gives the
+decomposition
+\[
+  d = \partial + \bar{\partial}
+\]
+where $\partial: \Omega^{p,q}(X) \to \Omega^{p+1,q}(X)$ raises the
+holomorphic degree and $\bar{\partial}: \Omega^{p,q}(X) \to
+\Omega^{p,q+1}(X)$ raises the anti-holomorphic
+degree\footnote{On a general almost complex manifold, $d$ applied to a
+$(p,q)$-form can also produce a $(p+2, q-1)$-component and a
+$(p-1, q+2)$-component. The decomposition $d = \partial + \bar\partial$
+(with no other terms) is equivalent to the integrability of $J$, and hence
+equivalent to $X$ being a genuine complex manifold by the
+Newlander--Nirenberg theorem.}.
+Expanding $0 = d^2 = (\partial + \bar\partial)^2$ and collecting terms by
+bidegree yields three independent identities:
+\[
+  \partial^2 = 0 \qquad\qquad
+  \bar\partial^2 = 0 \qquad\qquad
+  \partial\bar\partial + \bar\partial\partial = 0
+\]
+The first two identities mean that $\partial$ and $\bar\partial$ are each
+individually differential operators that square to zero, so each one can serve
+as the differential of a cochain complex. The third identity (the
+anti-commutation relation) will play a role when we discuss Kähler manifolds.
+
+Complex conjugation acts on the bigrading by swapping $dz_j$ and
+$d\bar{z}_j$, so it sends $\Omega^{p,q}(X)$ to $\Omega^{q,p}(X)$. A
+real-valued form $\omega$ (one satisfying $\bar\omega = \omega$) therefore has
+equal $(p,q)$ and $(q,p)$ components. This symmetry between holomorphic and
+anti-holomorphic directions will reappear at the level of cohomology once we
+introduce the Hodge decomposition.
+
+\subsection{Dolbeault Cohomology}\label{subsec:dolbeault}
+
+Since $\bar\partial^2 = 0$, the operator
+$\bar\partial: \Omega^{p,q}(X) \to \Omega^{p,q+1}(X)$ defines a cochain
+complex for each fixed holomorphic degree $p$:
+\[
+  0 \longrightarrow \Omega^{p,0}(X) \xrightarrow{\;\bar\partial\;}
+    \Omega^{p,1}(X) \xrightarrow{\;\bar\partial\;} \Omega^{p,2}(X)
+    \xrightarrow{\;\bar\partial\;} \cdots \xrightarrow{\;\bar\partial\;}
+    \Omega^{p,n}(X) \longrightarrow 0
+\]
+The cohomology of this complex is the \emph{Dolbeault cohomology}:
+\[
+  H^{p,q}_{\bar\partial}(X) =
+    \frac{\ker(\bar\partial: \Omega^{p,q} \to \Omega^{p,q+1})}
+         {\im(\bar\partial: \Omega^{p,q-1} \to \Omega^{p,q})}
+\]
+This is a purely analytic invariant: it depends on the complex structure of $X$
+and is defined using smooth complex-valued differential forms and the operator
+$\bar\partial$.
+
+The case $q = 0$ has a particularly clean interpretation. A $(p,0)$-form
+$\omega$ satisfies $\bar\partial\omega = 0$ if and only if its coefficient
+functions are holomorphic (this is the higher-form analogue of the
+Cauchy--Riemann equations). Since there is no $\Omega^{p,-1}$ term, there are
+no exact forms to quotient by, so $H^{p,0}_{\bar\partial}(X)$ is simply the
+vector space of \emph{global holomorphic $p$-forms} on $X$. For a compact
+complex manifold, this is a finite-dimensional vector space whose dimension
+$h^{p,0} = \dim H^{p,0}_{\bar\partial}(X)$ is an important invariant. In
+particular, $h^{1,0}$ is the number of independent holomorphic $1$-forms, and
+$h^{n,0}$ (where $n = \dim_\C X$) is either $0$ or $1$ for many classes of
+varieties, determined by the canonical bundle.
+
+The Dolbeault cohomology groups, while defined analytically, have a purely
+algebro-geometric description via sheaf cohomology. Recall that $\Omega^p_X$
+denotes the sheaf of holomorphic $p$-forms on $X$ (the sheaf of sections of
+$\bigwedge^p T^{*1,0}X$ that are holomorphic).
+
+\begin{thm}{Dolbeault's Theorem}{dolbeaultThm}
+  Let $X$ be a complex manifold. There is a natural isomorphism
+  \[
+    H^{p,q}_{\bar\partial}(X) \cong H^q(X, \Omega^p_X)
+  \]
+  where the right-hand side is the sheaf cohomology of $\Omega^p_X$.
+\end{thm}
+
+The proof proceeds by the same strategy as de Rham's theorem: one shows that
+the sheaves $\Omega^{p,q}$ of smooth $(p,q)$-forms provide a fine (and hence
+acyclic) resolution of the sheaf $\Omega^p_X$ via the $\bar\partial$ operator,
+and then applies the abstract de Rham theorem for sheaf cohomology
+(see~\cite{NateHodge} for details). This result is the link that connects the
+analytic world of differential forms to the algebraic world of sheaf
+cohomology. It will be used in \S\ref{subsec:exponential} when we analyze the
+exponential sequence, and it underpins much of the interplay between analysis
+and algebraic geometry in the sections that follow.
+
+We close this subsection with a warning that is essential for the rest of the
+article. On a general complex manifold, the Dolbeault cohomology groups
+$H^{p,q}_{\bar\partial}(X)$ are well-defined for each pair $(p,q)$, but they
+do \emph{not} assemble into a decomposition of the de Rham cohomology. That is,
+the natural map
+\[
+  \bigoplus_{p+q=k} H^{p,q}_{\bar\partial}(X) \longrightarrow H^k(X, \C)
+\]
+need not be an isomorphism. It can fail to be injective, fail to be surjective, or both. The issue is that a
+form can be $d$-closed without its $(p,q)$ components being individually $\bar\partial$-closed, and the de
+Rham and Dolbeault cohomology classes can interact in complicated ways. This failure can even occurs on many
+compact complex manifolds such as the Hopf surface $(\C^2 \setminus \{0\}) / \langle z \mapsto 2z \rangle$,
+which has $b_1 = 1$ but $h^{1,0} + h^{0,1} = 2$. The additional structure required to force the decomposition
+to hold is a K\"{a}hler metric.
+
+\subsection{K\"{a}hler Manifolds}\label{subsec:kahler}
+
+On a general complex manifold, the Dolbeault cohomology groups $H^{p,q}_{\bar\partial}(X)$ do not decompose
+$H^k(X, \C)$. The missing ingredient is a metric that is compatible with the complex structure in a
+sufficiently strong sense. K\"{a}hler manifolds are the class of complex manifolds where this compatibility
+holds. Let $X$ be a complex manifold of complex dimension $n$ with almost complex structure $J$. A
+\emph{Hermitian metric} on $X$ is a Riemannian metric $g$ that is compatible with $J$ in the pointwise sense:
+\[
+  g(Ju, Jv) = g(u, v)
+\]
+for all tangent vectors $u, v$. Every complex manifold admits a Hermitian
+metric (by a partition-of-unity argument, just as in the Riemannian case).
+Given a Hermitian metric, we define the associated \emph{K\"{a}hler form}
+$\omega \in \Omega^{1,1}(X)$ by
+\[
+  \omega(u, v) = g(Ju, v)
+\]
+The skew-symmetry of $\omega$ follows from the symmetry of $g$ and the
+identity $g(Ju, v) = -g(u, Jv)$ (which is a consequence of the compatibility
+condition). In local holomorphic coordinates, the K\"{a}hler form takes the
+explicit shape
+\[
+  \omega = \frac{i}{2} \sum_{j,k} g_{j\bar{k}}\, dz_j \wedge d\bar{z}_k
+\]
+where $g_{j\bar{k}} = g(\partial/\partial z_j, \partial/\partial \bar{z}_k)$.
+This expression makes it visually clear that $\omega$ has type $(1,1)$: it
+involves exactly one $dz$ and one $d\bar{z}$ in each term.
+
+A Hermitian metric is called a \emph{K\"{a}hler metric} if the associated
+K\"{a}hler form is closed:
+\[
+  d\omega = 0
+\]
+A complex manifold admitting a K\"{a}hler metric is called a \emph{K\"{a}hler
+manifold}. The consequence of the condition $d\omega = 0$ are far-reaching: on a Hermitian manifold that is not K\"{a}hler,
+the complex structure $J$ and the Riemannian geometry (parallel transport,
+geodesics) can drift apart as one moves around the manifold, namely parallel
+transporting a tangent vector around a loop may rotate it relative to the
+$J$-eigenspaces. The K\"{a}hler condition prevents this drift. It guarantees
+that parallel transport with respect to the Levi-Civita connection of $g$
+preserves the complex structure $J$, locking the Riemannian and complex
+geometries together globally.
+
+The principal examples of K\"{a}hler manifolds are projective ones. Complex
+projective space $\CP^n$ carries a natural K\"{a}hler metric, the
+\emph{Fubini--Study metric}, whose K\"{a}hler form $\omega_{FS}$ is closed by
+construction. Any smooth complex submanifold $X \subset \CP^N$ inherits a
+K\"{a}hler metric by restricting $\omega_{FS}$ to $X$ (the restriction of a
+closed form is closed). In particular, every smooth projective variety is
+K\"{a}hler. The converse, however, is false: not every compact K\"{a}hler
+manifold embeds into $\CP^N$. The K\"{a}hler condition is a purely analytic
+requirement (a closed $(1,1)$-form compatible with $J$), while projectivity is
+an algebro-geometric one (existence of a projective embedding). The precise
+characterization of which K\"{a}hler manifolds are projective is the content
+of the Kodaira embedding theorem, which we will discuss in
+\S\ref{subsec:kodaira}.
+
+Because a K\"{a}hler metric locks the Riemannian and complex structures
+together, the three Laplacians one can build on a complex Hermitian manifold
+become proportional. Recall from \S\ref{subsec:laplacian} the (real) Hodge
+Laplacian $\Delta_d = dd^* + d^*d$. On a complex Hermitian manifold, one can
+similarly define
+\[
+  \Delta_\partial = \partial\partial^* + \partial^*\partial
+  \qquad\qquad
+  \Delta_{\bar\partial} = \bar\partial\bar\partial^* +
+    \bar\partial^*\bar\partial
+\]
+where $\partial^*$ and $\bar\partial^*$ are the formal $L^2$-adjoints of
+$\partial$ and $\bar\partial$ with respect to the Hermitian metric. On a
+general Hermitian manifold, these three operators have no particular
+relationship to one another. On a K\"{a}hler manifold, the compatibility
+between $g$ and $J$ forces the \emph{K\"{a}hler identities}, from which one
+derives
+\[
+  \Delta_d = 2\Delta_\partial = 2\Delta_{\bar\partial}
+\]
+This proportionality is the entire reason the Hodge decomposition works. Since
+the three Laplacians share the same kernel, a form is $\Delta_d$-harmonic if
+and only if it is $\Delta_{\bar\partial}$-harmonic. The real Hodge theory
+from \S\ref{subsec:laplacian} (which gives canonical representatives for
+$H^k(X, \R)$) and the complex Dolbeault theory (which tracks the $(p,q)$
+bigrading) are therefore governed by the same equation, and their solutions
+are the same forms. This is the mechanism by which the $(p,q)$-bigrading
+descends from forms to cohomology, as we make precise in the next subsection.
+
+\subsection{The Hodge Decomposition for K\"{a}hler Manifolds}%
+\label{subsec:hodge_kahler}
+
+Let $X$ be a compact K\"{a}hler manifold of complex dimension $n$. The real
+Hodge decomposition (equation~\eqref{eq:realHodgeDecomp}) gives $H^k(X, \R) \cong
+\CH^k(X)$, where $\CH^k(X)$ denotes the space of real-valued harmonic
+$k$-forms with respect to the Riemannian metric underlying the K\"{a}hler
+metric. To access the $(p,q)$-bigrading, we extend scalars: tensoring with
+$\C$ gives
+\[
+  H^k(X, \C) = H^k(X, \R) \otimes_\R \C \cong \CH^k(X) \otimes_\R \C
+\]
+The right-hand side is the space of complex-valued harmonic $k$-forms. Since
+$\Delta_d = 2\Delta_{\bar\partial}$ on a K\"{a}hler manifold, a form is
+$\Delta_d$-harmonic if and only if each of its $(p,q)$-components is
+individually $\Delta_{\bar\partial}$-harmonic. We can therefore decompose
+each complex-valued harmonic $k$-form uniquely by type, and the
+$(p,q)$-components remain harmonic. This gives the following.
+
+\begin{thm}{Hodge Decomposition for K\"{a}hler Manifolds}{hodgeKahler}
+  Let $X$ be a compact K\"{a}hler manifold of complex dimension $n$. For each
+  $k$, there is a direct sum decomposition
+  \[
+    H^k(X, \C) \cong \bigoplus_{p+q=k} H^{p,q}(X)
+  \]
+  where $H^{p,q}(X) \cong \CH^{p,q}(X)$ is the space of harmonic forms of
+  type $(p,q)$, and $\CH^{p,q}(X) \cong H^{p,q}_{\bar\partial}(X)$.
+  Furthermore, this decomposition satisfies the Hodge symmetry
+  \[
+    \overline{H^{p,q}(X)} = H^{q,p}(X)
+  \]
+  and in particular $h^{p,q} = h^{q,p}$, where $h^{p,q} = \dim_\C H^{p,q}(X)$
+  are the \emph{Hodge numbers} of $X$.
+\end{thm}
+
+The Hodge symmetry $\overline{H^{p,q}} = H^{q,p}$ follows directly from the
+fact that $H^k(X, \C)$ was obtained by complexifying the \emph{real} vector
+space $H^k(X, \R)$. Complex conjugation acts on $H^k(X, \C)$ as an
+involution, and it swaps $dz_j$ with $d\bar{z}_j$, sending a $(p,q)$-form to
+a $(q,p)$-form. Since conjugation preserves the harmonic condition (the
+Laplacian commutes with conjugation on a K\"{a}hler manifold), it restricts to
+an isomorphism $H^{p,q}(X) \cong \overline{H^{q,p}(X)}$.
+
+When $X$ is additionally a smooth projective variety, Serre duality provides a
+second symmetry: $H^{p,q}(X) \cong H^{n-p,n-q}(X)^*$, giving
+$h^{p,q} = h^{n-p,n-q}$. Together with Hodge symmetry, this produces the full
+set of symmetries of the \emph{Hodge diamond}, the standard way of displaying
+the Hodge numbers. For a compact K\"{a}hler manifold of complex dimension $n$,
+the Hodge diamond is arranged as follows:
+\[
+  \begin{array}{ccccccccc}
+    & & & & h^{n,n} & & & & \\
+    & & & h^{n,n-1} & & h^{n-1,n} & & & \\
+    & & \iddots & & \vdots & & \ddots & & \\
+    & h^{n,0} & & \cdots & h^{p,q} & \cdots & & h^{0,n} & \\
+    & & \ddots & & \vdots & & \iddots & & \\
+    & & & h^{1,0} & & h^{0,1} & & & \\
+    & & & & h^{0,0} & & & & \\
+  \end{array}
+\]
+The $k$-th row from the bottom contains the Hodge numbers $h^{p,q}$ with
+$p + q = k$, and the $k$-th Betti number is the row sum:
+$b_k = \sum_{p+q=k} h^{p,q}$. Hodge symmetry is the reflection about the
+vertical axis ($h^{p,q} = h^{q,p}$), and Serre duality is the reflection
+about the horizontal center ($h^{p,q} = h^{n-p,n-q}$). The bottom entry is
+always $h^{0,0} = 1$ (the constant functions), and the top entry is
+$h^{n,n} = 1$ for a connected manifold.
+
+Several points deserve emphasis as we transition to the algebraic side of
+the story. First, the decomposition depends on the \emph{complex structure}
+of $X$, not on the choice of K\"{a}hler metric. Different K\"{a}hler metrics
+on the same complex manifold produce different harmonic representatives, but
+the subspaces $H^{p,q}(X) \subset H^k(X, \C)$ are the same. Second, the
+Hodge numbers are discrete invariants (non-negative integers), so they cannot
+change under continuous deformations of the complex structure; they are
+invariants of the deformation class. Third, the decomposition is a statement
+about complex coefficients: $H^k(X, \C)$ splits as a direct sum of the
+$H^{p,q}$ pieces. When we formulate the Hodge Conjecture, we will instead
+work with \emph{rational} coefficients $H^k(X, \Q)$ sitting inside
+$H^k(X, \C)$ via the inclusion $\Q \hookrightarrow \C$. Rational classes do
+not respect the $(p,q)$-decomposition in general (a rational class can have
+nonzero components in several $H^{p,q}$ summands), and the Hodge Conjecture
+concerns exactly those rational classes that \emph{do} land in a single
+summand $H^{p,p}$.
+
+\section{The Bridge: Line Bundles and Characteristic Classes}\label{sec:bridge}
+
+We now begin the transition from analysis to algebraic geometry. The objects
+that bridge the two worlds are holomorphic line bundles: they are analytic
+objects (defined by holomorphic transition functions) that encode algebraic
+data (divisors, projective embeddings). This subsection establishes the
+dictionary.
+
+Let $X$ be a complex manifold of complex dimension $n$. A \emph{holomorphic
+line bundle} on $X$ is a holomorphic vector bundle $L \to X$ of rank $1$.
+Concretely, $L$ is described by an open cover $\{U_\alpha\}$ of $X$ and
+holomorphic transition functions $g_{\alpha\beta}: U_\alpha \cap U_\beta \to
+\C^*$ satisfying the cocycle condition
+$g_{\alpha\beta} g_{\beta\gamma} = g_{\alpha\gamma}$ on triple overlaps. Two
+line bundles are isomorphic if and only if their transition functions differ by
+a coboundary: $g_{\alpha\beta}' = f_\alpha g_{\alpha\beta} f_\beta^{-1}$ for
+some holomorphic functions $f_\alpha: U_\alpha \to \C^*$. The transition
+functions $\{g_{\alpha\beta}\}$ are therefore a \v{C}ech $1$-cocycle with
+values in $\CO_X^*$ (the sheaf of nowhere-vanishing holomorphic functions),
+and the isomorphism classes of line bundles are classified by the first
+\v{C}ech cohomology group. This gives the identification
+\[
+  \Pic(X) \cong H^1(X, \CO_X^*)
+\]
+where $\Pic(X)$, the \emph{Picard group}, is the group of isomorphism classes
+of holomorphic line bundles under tensor product ($L \otimes L'$ corresponds to
+multiplying transition functions, and $L^{-1} = L^*$ corresponds to inverting
+them).
+
+A word on cohomology theories is in order, since we are now working with
+\emph{sheaf cohomology} $H^q(X, \SF)$ for a sheaf $\SF$ on $X$, which is a
+priori different from the singular and de Rham cohomologies of previous
+sections. The three theories are connected as follows. For the \emph{constant
+sheaf} $\underline{R}$ associated to a ring $R$ (such as $\Z$, $\R$, or $\C$),
+sheaf cohomology recovers singular cohomology: $H^q(X, \underline{R}) \cong
+H^q(X, R)$. De Rham's theorem (\ref{th:deRhamThm}) can be understood in this
+framework: the de Rham complex $\Omega^0 \xrightarrow{d} \Omega^1
+\xrightarrow{d} \cdots$ is a fine resolution of the constant sheaf
+$\underline{\R}$, so its cohomology computes $H^q(X, \R)$. Dolbeault's theorem
+(\ref{th:dolbeaultThm}) is the analogous statement for the sheaf $\Omega^p_X$
+of holomorphic $p$-forms: the Dolbeault complex $\Omega^{p,0}
+\xrightarrow{\bar\partial} \Omega^{p,1} \xrightarrow{\bar\partial} \cdots$ is
+a fine resolution of $\Omega^p_X$, so its cohomology computes
+$H^q(X, \Omega^p_X)$. When we write $H^1(X, \CO_X^*)$, however, the sheaf
+$\CO_X^*$ is neither constant nor the kernel of a convenient differential
+operator, so this cohomology group does not reduce to anything we have computed
+before. It is genuinely new information, and the exponential sequence in
+\S\ref{subsec:exponential} will be the tool that relates it to singular
+cohomology.
+
+On a compact complex manifold, there are no nonconstant global holomorphic
+functions (by the maximum principle applied to each coordinate chart of a
+compact space). This means that the usual algebraic tool of studying a space
+through its ring of functions is vacuous. Line bundles provide the substitute:
+while $X$ has no global functions, a line bundle $L$ may have many global
+\emph{sections} $s \in H^0(X, L)$ (holomorphic maps $s: X \to L$ with
+$\pi \circ s = \id_X$). Sections of line bundles play the role that functions
+play on affine varieties, and as we will see in \S\ref{subsec:kodaira}, having
+enough sections of the right line bundle is exactly what allows a compact
+complex manifold to be embedded into projective space.
+
+A global section $s$ of a line bundle $L$ vanishes along a subset
+$Z = \{x \in X : s(x) = 0\}$. If $s$ is chosen generically (transverse to the
+zero section), then $Z$ is a smooth complex submanifold of $X$ of complex
+codimension $1$ (real codimension $2$). These codimension-$1$ subvarieties are
+the geometric objects that line bundles naturally produce, and they connect to
+classical algebraic geometry through the theory of divisors.
+
+A \emph{Weil divisor} on $X$ is a formal $\Z$-linear combination of
+irreducible closed analytic (or algebraic) subvarieties of complex
+codimension $1$:
+\[
+  D = \sum_i n_i [V_i] \qquad n_i \in \Z
+\]
+The group of Weil divisors is denoted $\WDiv(X)$. A \emph{Cartier divisor} is a divisor that can be described
+locally as the vanishing locus of a single meromorphic function: it is given by an open cover $\{U_\alpha\}$
+and meromorphic functions $f_\alpha$ on each $U_\alpha$ such that $f_\alpha / f_\beta$ is holomorphic and
+nowhere vanishing on $U_\alpha \cap U_\beta$. On a smooth variety (or more generally a locally factorial
+variety\footnote{or scheme theoretically an integral, separated, Noetherian scheme that is locally factorial
+}), every Weil divisor is Cartier, and the two notions coincide.
+
+The connection to line bundles is direct. Given a Cartier divisor
+$\{(U_\alpha, f_\alpha)\}$, the ratios $g_{\alpha\beta} = f_\alpha / f_\beta$
+are holomorphic and nowhere vanishing on overlaps, so they define transition
+functions for a line bundle, denoted $\CO_X(D)$. Conversely, a meromorphic
+section of a line bundle determines a Cartier divisor (its divisor of zeros
+and poles). Two Cartier divisors $D$ and $D'$ give isomorphic line bundles if
+and only if $D - D'$ is \emph{linearly equivalent to zero}: $D - D' = \div(f)$
+for a global meromorphic function $f$ on $X$. This establishes, for smooth
+varieties, a group isomorphism
+\[
+  \Pic(X) \cong \CDiv(X) / \{\text{linear equivalence}\}
+\]
+between the Picard group and the group of Cartier divisor classes.
+
+The next step is to extract a \emph{topological} invariant from a line bundle: its first Chern class $c_1(L)
+\in H^2(X, \Z)$. This is accomplished by the exponential sequence. The exponential map $f \mapsto e^{2\pi i
+f}$ sends a holomorphic function to a nowhere-vanishing holomorphic function. At the level of sheaves on a
+complex manifold $X$, this defines a surjective morphism $\exp: \CO_X \to \CO_X^*$ whose kernel is the
+constant sheaf $\underline{\Z}$ (the integers, viewed as the holomorphic functions $f$ satisfying $e^{2\pi i
+f} = 1$). This gives the \emph{exponential exact sequence} of sheaves:
+\[
+  0 \longrightarrow \underline{\Z} \hookrightarrow
+    \CO_X \xrightarrow{\;\exp\;} \CO_X^* \longrightarrow 0
+\]
+
+Taking the long exact sequence in sheaf cohomology, and recalling from
+\S\ref{subsec:linebundles} that $H^1(X, \CO_X^*) \cong \Pic(X)$ and that
+$H^q(X, \underline{\Z}) \cong H^q(X, \Z)$ (singular cohomology), we obtain
+\begin{equation}\label{eq:longExactSeq}
+  \cdots \longrightarrow H^1(X, \CO_X) \longrightarrow
+    H^1(X, \CO_X^*) \xrightarrow{\;c_1\;} H^2(X, \Z)
+    \xrightarrow{\;\iota\;} H^2(X, \CO_X) \longrightarrow \cdots
+\end{equation}
+The connecting homomorphism $c_1: H^1(X, \CO_X^*) \to H^2(X, \Z)$ is the \emph{first Chern class}. For a
+holomorphic line bundle $L$ with transition functions $\{g_{\alpha\beta}\}$, the class $c_1(L)$ is constructed
+explicitly by choosing local holomorphic logarithms $\log g_{\alpha\beta}$ and forming the \v{C}ech
+$2$-cocycle $\frac{1}{2\pi i}(\log g_{\alpha\beta} + \log g_{\beta\gamma} - \log g_{\alpha\gamma})$, which
+takes integer values precisely because the ambiguity in the logarithm is an integer multiple of $2\pi i$. The
+long exact sequence reveals the structure of the first Chern class as a map from the (analytic) Picard group to
+the topological cohomology group $H^2(X, \Z)$.
+
+The \emph{kernel} of $c_1$ consists of line bundles that are topologically trivial but holomorphically
+nontrivial. By exactness, $\ker(c_1) \cong H^1(X, \CO_X) / H^1(X, \Z)$ (as $X$ is compact\footnote{Hence $
+  H^0(X, \mathcal{O}_X^*) \to H^1(X, \mathbb{Z})$ is injective, so $H^1(X, \mathbb{Z}) \to H^1(X,
+\mathcal{O}_X)$ is surjective}). When $X$ is a compact K\"{a}hler manifold, this quotient is a complex torus
+called the \emph{Picard variety} (or Jacobian, in the case of curves). It parametrizes a continuous family of
+holomorphically inequivalent line bundles that are all topologically the same bundle. The first Chern class
+sees only the discrete, topological part of a line bundle.
+
+The \emph{image} of $c_1$ is constrained by the map
+$\iota: H^2(X, \Z) \to H^2(X, \CO_X)$ appearing in the long exact sequence.
+By exactness, a class $\alpha \in H^2(X, \Z)$ lies in the image of $c_1$ (and
+hence is the first Chern class of some line bundle) if and only if
+$\iota(\alpha) = 0$ in $H^2(X, \CO_X)$. This condition will be the key
+ingredient in the proof of the Lefschetz $(1,1)$ theorem in
+\S\ref{subsec:lefschetz}, where we identify the vanishing of $\iota(\alpha)$
+with the condition that $\alpha$ has Hodge type $(1,1)$.
+
+The first Chern class has the following formal properties, all of which follow
+from its definition as a connecting homomorphism:
 \begin{enumerate}
-  \item \textbf{The category of space.} We will always say explicitly
-    whether we are working with a topological space, a smooth manifold,
-    a complex manifold, a K\"{a}hler manifold, or a smooth projective
-    variety. Many theorems require specific hypotheses, and silently
-    upgrading the space is a common source of error.
-  \item \textbf{The coefficient ring.} Cohomology with $\Z$, $\Q$, $\R$,
-    and $\C$ coefficients all play distinct roles. Over $\Z$, we have
-    Poincar\'{e} duality and torsion phenomena. Over $\R$, we have the
-    de~Rham theorem and harmonic representatives. Over $\C$, we have
-    the Hodge decomposition. Over $\Q$, the Hodge Conjecture is stated.
-    We will track coefficient changes explicitly every time they occur.
+  \item $c_1(L \otimes L') = c_1(L) + c_1(L')$ (the tensor product of line
+    bundles maps to addition in $H^2(X, \Z)$)
+  \item $c_1(L^*) = -c_1(L)$ (the dual bundle has the opposite class)
+  \item $c_1$ is functorial: if $f: Y \to X$ is holomorphic, then
+    $c_1(f^*L) = f^*(c_1(L))$
+  \item For the trivial bundle $\CO_X$, $c_1(\CO_X) = 0$
 \end{enumerate}
+In particular, $c_1$ is a group homomorphism from $(\Pic(X), \otimes)$ to
+$(H^2(X, \Z), +)$. It is the mechanism that converts the algebraic data of a
+line bundle (or equivalently, a divisor class) into a topological invariant.
+The next subsection shows that this topological invariant can also be computed
+analytically, via curvature.
+
+\subsection{Chern-Weil Theory}\label{subsec:chernweil}
+
+The exponential sequence produces $c_1(L) \in H^2(X, \Z)$ by purely
+sheaf-theoretic means. We now give a second, differential-geometric
+construction of the same class that reveals its Hodge type: viewed in
+$H^2(X, \C)$ via the inclusion $H^2(X, \Z) \hookrightarrow H^2(X, \C)$, the
+first Chern class lies in the $(1,1)$ summand of the Hodge decomposition.
+
+Let $L \to X$ be a holomorphic line bundle on a complex manifold $X$. To do
+differential geometry on $L$, we equip it with a \emph{Hermitian metric} $h$: a
+smooth choice of Hermitian inner product on each fiber $L_x$. (Since the fibers
+are one-dimensional, $h$ is simply a smooth positive function $h_\alpha$ on
+each trivializing open set $U_\alpha$, transforming as
+$h_\alpha = |g_{\alpha\beta}|^2 h_\beta$ under the transition functions.) Such
+a metric always exists, by a partition-of-unity argument.
+
+A Hermitian metric determines a unique \emph{connection} on $L$ that is
+compatible with both the metric and the holomorphic structure. Recall that a
+connection on a line bundle is a $\C$-linear map
+$\nabla: \Omega^0(L) \to \Omega^1(L)$ (from smooth sections of $L$ to
+$L$-valued $1$-forms) satisfying the Leibniz rule
+$\nabla(f \cdot s) = df \otimes s + f \cdot \nabla s$ for $f \in
+\Omega^0(X, \C)$ and $s \in \Omega^0(L)$. In a local trivialization over
+$U_\alpha$, a connection takes the form $\nabla = d + A_\alpha$ where
+$A_\alpha \in \Omega^1(U_\alpha)$ is the \emph{connection $1$-form}. The
+\emph{Chern connection} is the unique connection satisfying two requirements:
+it is compatible with $h$ (parallel transport preserves the Hermitian inner
+product), and its $(0,1)$-part equals $\bar\partial$ (it is compatible with the
+holomorphic structure). In a local trivialization, the Chern connection form is
+\[
+  A_\alpha = \partial \log h_\alpha
+\]
+
+The \emph{curvature} of the connection is the $2$-form
+$\Theta = dA_\alpha = \nabla^2$, which is globally defined (independent of the
+trivialization). For the Chern connection, the curvature takes the explicit
+form
+\[
+  \Theta = \bar\partial\partial \log h_\alpha
+    = -\partial\bar\partial \log h_\alpha
+\]
+(using the anti-commutation $\partial\bar\partial = -\bar\partial\partial$ from
+\S\ref{subsec:pqforms}). Two observations are immediate from this formula.
+First, $\Theta$ is a closed $2$-form: $d\Theta = 0$, because
+$\Theta = -\partial\bar\partial \log h_\alpha$ and
+$d(\partial\bar\partial) = (\partial + \bar\partial)(\partial\bar\partial) = 0$
+(using $\partial^2 = 0$ and $\bar\partial^2 = 0$). Second, $\Theta$ has type
+$(1,1)$: the operator $\partial\bar\partial$ sends functions to $(1,1)$-forms
+by construction.
+
+The content of Chern-Weil theory (for line bundles) is that the de Rham class
+of $\frac{i}{2\pi}\Theta$ is independent of the choice of Hermitian metric $h$
+and represents the image of $c_1(L)$ in real cohomology:
+\[
+  \boxed{c_1(L) = \left[\frac{i}{2\pi}\Theta\right] \in H^2(X, \R)}
+\]
+(The factor $\frac{i}{2\pi}$ is a normalization ensuring that $c_1$ takes
+integer values on integral cycles.) If a different Hermitian metric $h'$ is
+chosen, the resulting curvature $\Theta'$ differs from $\Theta$ by an exact
+form $\Theta' - \Theta = d\eta$, so the cohomology class is unchanged.
+
+Since $\Theta$ has type $(1,1)$, the harmonic representative of $c_1(L)$ in
+$H^2(X, \C)$ lies entirely in $H^{1,1}(X)$ (on a compact K\"{a}hler manifold,
+the harmonic projection preserves the $(p,q)$-type). Therefore, for any
+holomorphic line bundle $L$ on a compact K\"{a}hler manifold,
+\[
+  c_1(L) \in H^2(X, \Z) \cap H^{1,1}(X)
+\]
+where the intersection is taken inside $H^2(X, \C)$ via the natural inclusion
+$H^2(X, \Z) \hookrightarrow H^2(X, \C)$. This is the forward direction of the
+Lefschetz $(1,1)$ theorem: every line bundle produces an integral $(1,1)$-class
+(see exercise~\ref{q:c1Tautological} for an explicit computation on $\CP^n$).
+
+The Chern-Weil construction generalizes to holomorphic vector bundles $E$ of
+arbitrary rank $r$. One equips $E$ with a Hermitian metric and a Chern
+connection, whose curvature is now a matrix-valued $2$-form
+$\Theta_E \in \Omega^{1,1}(X, \End(E))$. The higher Chern classes
+$c_k(E) \in H^{2k}(X, \Z)$ are then represented by $(k,k)$-forms built from
+the elementary symmetric polynomials applied to the eigenvalues of
+$\frac{i}{2\pi}\Theta_E$. We will use this generalization in
+\S\ref{subsec:hodgeclasses} to understand why the fundamental class of a
+codimension-$p$ subvariety lands in $H^{p,p}$.
+
+\subsection{The Lefschetz $(1,1)$ Theorem}\label{subsec:lefschetz}
+
+In \S\ref{subsec:chernweil}, we showed that for any holomorphic line bundle $L$
+on a compact K\"{a}hler manifold $X$, the first Chern class satisfies
+$c_1(L) \in H^2(X, \Z) \cap H^{1,1}(X)$. The Lefschetz $(1,1)$ theorem is the
+converse: every integral class of type $(1,1)$ arises from a line bundle.
+
+\begin{thm}{Lefschetz $(1,1)$ Theorem}{lefschetz11}
+  Let $X$ be a compact K\"{a}hler manifold. A class
+  $\alpha \in H^2(X, \Z)$ lies in the image of
+  $c_1: \Pic(X) \to H^2(X, \Z)$ if and only if the image of $\alpha$ in
+  $H^2(X, \C)$ lies in $H^{1,1}(X)$. Equivalently, the first Chern class map
+  induces a surjection
+  \[
+    c_1: \Pic(X) \twoheadrightarrow H^2(X, \Z) \cap H^{1,1}(X)
+  \]
+\end{thm}
+
+\begin{Proof}[sketch]
+  The forward direction ($c_1(L) \in H^{1,1}$) was established in
+  \S\ref{subsec:chernweil} via Chern-Weil theory. For the converse, we use
+  the exponential long exact sequence from equation~\eqref{eq:longExactSeq}:
+  \[
+    \cdots \longrightarrow H^1(X, \CO_X) \longrightarrow \Pic(X)
+      \xrightarrow{\;c_1\;} H^2(X, \Z) \xrightarrow{\;\iota\;}
+      H^2(X, \CO_X) \longrightarrow \cdots
+  \]
+  By exactness, a class $\alpha \in H^2(X, \Z)$ lies in the image of $c_1$ if
+  and only if $\iota(\alpha) = 0$ in $H^2(X, \CO_X)$. It remains to show that
+  $\iota(\alpha) = 0$ is equivalent to $\alpha$ having Hodge type $(1,1)$.
+
+  The map $\iota$ is the composition
+  $H^2(X, \Z) \hookrightarrow H^2(X, \C) \twoheadrightarrow H^{0,2}(X)$,
+  where the first map is the natural inclusion and the second is the projection
+  onto the $(0,2)$-component of the Hodge decomposition. (This identification
+  uses the Dolbeault theorem (\ref{th:dolbeaultThm}):
+  $H^2(X, \CO_X) \cong H^{0,2}_{\bar\partial}(X) = H^{0,2}(X)$, since
+  $\CO_X = \Omega^0_X$.) Therefore, $\iota(\alpha) = 0$ if and only if the
+  $(0,2)$-component of $\alpha$ vanishes. By Hodge symmetry, the $(0,2)$
+  component vanishes if and only if the $(2,0)$-component also vanishes
+  (since $\alpha$ comes from an integral, hence real, class, and conjugation
+  swaps $(2,0)$ and $(0,2)$). Therefore $\iota(\alpha) = 0$ if and only if
+  $\alpha \in H^{1,1}(X)$.
+\end{Proof}
+
+The Lefschetz $(1,1)$ theorem is a remarkable result: a purely topological
+datum ($\alpha \in H^2(X, \Z)$), subject to a purely analytic condition (lying
+in $H^{1,1}(X)$), is guaranteed to have an algebro-geometric origin (a
+holomorphic line bundle, or equivalently a divisor class). Topology, analysis,
+and algebra converge on the same object.
+
+This theorem is the codimension-$1$ case of a more general pattern, and
+it serves as the template for the Hodge Conjecture. Let us draw out the
+analogy explicitly: in codimension $1$, the story involves three ingredients
+\begin{enumerate}
+  \item A class of \emph{geometric objects}: divisors, which are formal
+    $\Z$-linear combinations of codimension-$1$ subvarieties.
+  \item A \emph{topological invariant} extracted from these objects: the first
+    Chern class $c_1 \in H^2(X, \Z)$.
+  \item An \emph{analytic characterization} of which topological classes arise:
+    exactly those in $H^{1,1}(X)$.
+\end{enumerate}
+In higher codimension, the Hodge Conjecture asks whether the same pattern
+persists. For codimension $p$, the geometric objects are no longer divisors but
+\emph{algebraic $p$-cycles}: formal $\Z$-linear combinations of codimension-$p$
+subvarieties. Each such subvariety determines a class in $H^{2p}(X, \Z)$ via
+Poincar\'{e} duality (generalizing how a divisor determines a class in
+$H^2(X, \Z)$). The Chern-Weil argument from \S\ref{subsec:chernweil}
+generalizes to show that these classes land in $H^{p,p}(X)$ (generalizing how
+$c_1(L)$ lands in $H^{1,1}$). The conjecture asks: does every integral (or
+rational) class of type $(p,p)$ arise as a linear combination of classes of
+algebraic subvarieties?
+
+For codimension $1$, the answer is yes (the Lefschetz theorem we just proved).
+For codimension $p \geq 2$, the question remains open. The difficulty is
+that the exponential sequence, which powered the codimension-$1$ proof, has no
+direct analogue in higher codimension. There is no single sheaf-theoretic exact
+sequence that relates codimension-$p$ algebraic cycles to cohomology. Instead,
+one must develop the intersection theory of algebraic cycles independently
+(the Chow ring) and study the resulting map to cohomology (the cycle class
+map). This is the content of \S\ref{sec:algebraic}, after we address one
+remaining foundational question: which compact K\"{a}hler manifolds are
+actually projective varieties?
+
+\subsection{The Kodaira Embedding Theorem}\label{subsec:kodaira}
+
+The Lefschetz $(1,1)$ theorem tells us that on a compact K\"{a}hler manifold,
+integral $(1,1)$-classes correspond to line bundles. The Kodaira embedding
+theorem tells us when one of these line bundles can be used to embed the
+manifold into projective space, thereby identifying it as a smooth projective
+variety.
+
+Recall from \S\ref{subsec:chernweil} that the curvature of a Hermitian holomorphic line bundle $L$ is a closed
+$(1,1)$-form $\Theta$. We say $L$ is \emph{positive} if $\frac{i}{2\pi}\Theta$ is a positive-definite
+$(1,1)$-form (meaning it defines a K\"{a}hler metric on $X$). This is the analytic notion of positivity; it is
+equivalent to the algebro-geometric notion of \emph{ampleness} (by the Kodaira-Nakano vanishing theorem and
+the standard cohomological characterization of ample line bundles; see~\cite{NateAlgGeo}). If $L$ is a
+positive line bundle, its cohomology class $c_1(L) = [\frac{i}{2\pi}\Theta]$ is the class of a K\"{a}hler
+form, hence a K\"{a}hler class. Conversely, if the K\"{a}hler class $[\omega]$ of some K\"{a}hler metric
+happens to be integral ($[\omega] \in H^2(X, \Z)$), then by the Lefschetz $(1,1)$ theorem there exists a line
+bundle $L$ with $c_1(L) = [\omega]$, and the positivity of $\omega$ translates to the positivity of $L$.
+
+A positive line bundle $L$ provides the familiar embedding into projective space as follows: for sufficiently
+large $m$, the tensor power $L^{\otimes m}$ has enough global holomorphic
+sections $s_0, s_1, \ldots, s_N \in H^0(X, L^{\otimes m})$ to separate points
+and tangent directions on $X$. One then defines a map
+\[
+  \phi: X \longrightarrow \CP^N, \qquad
+    x \longmapsto [s_0(x) : s_1(x) : \cdots : s_N(x)]
+\]
+The positivity of $L$ guarantees (via vanishing theorems) that for $m$
+sufficiently large, $\phi$ is a holomorphic embedding. The image $\phi(X)$ is a
+smooth projective variety, and $L^{\otimes m} \cong \phi^*\CO_{\CP^N}(1)$ is
+the pullback of the hyperplane bundle.
+
+\begin{thm}{Kodaira Embedding Theorem}{kodaira}
+  A compact complex manifold $X$ admits a holomorphic embedding into $\CP^N$
+  (for some $N$) if and only if $X$ carries a positive holomorphic line bundle.
+  Equivalently, $X$ is a smooth projective variety if and only if it admits a
+  K\"{a}hler metric whose K\"{a}hler class is integral.
+\end{thm}
+
+A compact K\"{a}hler manifold whose K\"{a}hler class is integral is called a
+\emph{Hodge manifold}. The Kodaira embedding theorem therefore identifies
+Hodge manifolds with smooth projective varieties. From this point forward,
+we will work exclusively with smooth projective varieties over $\C$, and we
+will use the terms ``smooth projective variety'' and ``Hodge manifold''
+interchangeably. These are the spaces for which the Hodge decomposition holds,
+Poincar\'{e} duality is available over $\Z$, and the full machinery of
+algebraic geometry (algebraic cycles, intersection theory, the Chow ring)
+applies.
+
+
+
+\section{The Algebraic Stage}\label{sec:algebraic}
+
+
+We now work exclusively with smooth projective varieties over $\C$. By the
+Kodaira embedding theorem (\ref{th:kodaira}), these are the same as compact
+K\"{a}hler manifolds with an integral K\"{a}hler class, so all the analytic
+machinery of the previous sections (de Rham cohomology, the Hodge
+decomposition, Chern-Weil theory) is available. At the same time, these spaces
+carry a Zariski topology and a theory of algebraic subvarieties defined by
+polynomial equations, and we now develop the algebraic side.
+
+Two foundational results justify moving freely between the analytic and
+algebraic viewpoints. Chow's theorem (1949) asserts that every closed analytic
+subvariety of $\CP^N$ is in fact algebraic: it is the zero locus of
+homogeneous polynomials. For a smooth projective variety $X \subset \CP^N$,
+this means that the notions of ``analytic subvariety'' and ``algebraic
+subvariety'' coincide. Serre's GAGA theorem (1956) extends this to cohomology:
+for any coherent sheaf $\SF$ on $X$, the natural map from algebraic sheaf
+cohomology to analytic sheaf cohomology is an isomorphism. In particular, the
+sheaf cohomology groups $H^q(X, \Omega^p_X)$ and $H^1(X, \CO_X^*)$ that
+appeared in the Dolbeault and exponential sequences can be computed either
+analytically or algebraically, with the same result.
+
+With these identifications in place, we turn to the purely algebraic objects
+that the Hodge Conjecture concerns: algebraic cycles.
+
+\subsection{Algebraic Cycles and Rational Equivalence}\label{subsec:cycles}
+
+Let $X$ be a smooth projective variety of complex dimension $n$. An
+\emph{algebraic $p$-cycle} on $X$ (or a cycle of codimension $p$) is a formal
+$\Z$-linear combination of closed irreducible subvarieties of $X$ of complex
+codimension $p$:
+\[
+  Z = \sum_i n_i [V_i] \qquad n_i \in \Z
+\]
+where each $V_i \subset X$ is a closed irreducible subvariety of codimension
+$p$. The group of all codimension-$p$ cycles is denoted $Z^p(X)$; it is a free
+abelian group generated by the irreducible codimension-$p$ subvarieties.
+
+Just as singular homology quotients cycles by boundaries, and the Picard group
+quotients divisors by linear equivalence, the Chow group quotients algebraic
+cycles by \emph{rational equivalence}. Two codimension-$p$ cycles $Z_0$ and
+$Z_1$ are \emph{rationally equivalent} if their difference can be written as a
+sum of terms of the form $\div(f_j)$, where each $f_j$ is a nonzero rational
+function on some codimension-$(p-1)$ subvariety $W_j \subset X$, and $\div(f_j)$
+is the divisor of zeros minus poles of $f_j$ on
+$W_j$\footnote{Equivalently, $Z_0$ and $Z_1$ are rationally equivalent if
+  there exists a cycle $\CZ$ on $X \times \mathbb{P}^1$ such that the fibers of $\CZ$
+over $0$ and $\infty$ are $Z_0$ and $Z_1$ respectively. This is the algebraic
+analogue of a homotopy between two cycles.}. The \emph{Chow group} of
+codimension-$p$ cycles modulo rational equivalence is
+\[
+  CH^p(X) = \frac{Z^p(X)}{\{\text{rational equivalence}\}}
+\]
+In codimension $1$, this recovers exactly the theory of divisors from
+\S\ref{subsec:linebundles}: $Z^1(X) = \WDiv(X)$, rational equivalence is
+linear equivalence, and $CH^1(X) \cong \Pic(X)$ (for smooth varieties). The
+Chow groups generalize divisor class groups to all codimensions.
+
+The parallel with the topological side is worth making explicit. In singular
+homology, one forms free abelian groups of singular chains, quotients by
+boundaries, and obtains homology groups. In the Chow theory, one forms free
+abelian groups of algebraic cycles, quotients by rational equivalence, and
+obtains Chow groups. The key difference is that rational equivalence is a much
+finer relation than homological equivalence (two cycles can be homologous
+without being rationally equivalent), so the Chow groups retain more
+algebro-geometric information than the homology groups. This also means that the
+natural map from Chow groups to cohomology, which we construct next, is in
+general far from injective.
+
+
+\subsection{The Chow Ring and the Cycle Class Map}\label{subsec:chowring}
+
+The Chow groups $CH^p(X)$ assemble into a graded abelian group
+$CH^*(X) = \bigoplus_{p=0}^{n} CH^p(X)$. To upgrade this to a graded ring, we
+need a product $CH^p(X) \times CH^q(X) \to CH^{p+q}(X)$ that mirrors the
+intersection of subvarieties. The geometric idea is straightforward: if
+$V \subset X$ has codimension $p$ and $W \subset X$ has codimension $q$, and
+they meet in the ``expected'' codimension $p+q$, then their set-theoretic
+intersection $V \cap W$ (counted with appropriate multiplicities) should
+define a codimension-$(p+q)$ cycle.
+
+Making this idea rigorous requires substantial work. Several difficulties must
+be addressed. First, $V$ and $W$ may not intersect in the expected codimension:
+components of $V \cap W$ may have codimension strictly less than $p+q$ (this
+is the problem of \emph{excess intersection}). Second, even when the
+intersection has the correct codimension, the multiplicities must be defined
+carefully at non-transverse points. Third, the resulting product must be shown
+to be independent of the choice of representatives within a rational
+equivalence class.
+
+The resolution of the first problem is the \emph{moving lemma}: given any two
+cycles, one can find rationally equivalent replacements that intersect in the
+expected codimension. The resolution of the second problem (defining
+multiplicities at non-transverse intersections) was the subject of extensive
+work by Serre, who showed that the correct multiplicity at a component $Z$ of
+$V \cap W$ is given by an alternating sum of Tor modules of the local rings.
+Fulton~\cite{NateAlgGeo} later developed a refined intersection theory that
+avoids the moving lemma entirely, working instead with \emph{normal cones} to
+define intersection products intrinsically. The resulting theory produces a
+well-defined, commutative, associative product on $CH^*(X)$ that satisfies
+\[
+  [V] \cdot [W] = [V \cap W] \in CH^{p+q}(X)
+\]
+when $V$ and $W$ intersect properly (in the expected codimension), with the
+understanding that the right-hand side is counted with multiplicities. This
+makes $CH^*(X)$ into a graded-commutative ring, the \emph{Chow ring}. In
+codimension $1$, the product $CH^1(X) \times CH^1(X) \to CH^2(X)$ recovers
+the classical intersection of divisors.
+
+The Chow ring is a purely algebro-geometric object: its definition involves
+only algebraic subvarieties and rational functions, with no reference to
+topology, differential forms, or metrics. The connection to cohomology is
+provided by the \emph{cycle class map}.
+
+\begin{defn}{Cycle Map}{cycleMap}
+  Let $V \subset X$ be a closed irreducible subvariety of codimension $p$. As a
+closed oriented submanifold of real codimension $2p$ (using the canonical
+orientation of complex manifolds), $V$ determines a fundamental homology class
+$[V] \in H_{2n-2p}(X, \Z)$. Applying Poincar\'{e} duality gives a cohomology
+class $\eta_V \in H^{2p}(X, \Z)$. Extending by linearity to formal
+$\Z$-linear combinations of subvarieties defines the \emph{cycle class map}:
+\[
+  \cl: CH^p(X) \longrightarrow H^{2p}(X, \Z), \qquad
+    \left[\sum_i n_i V_i\right] \longmapsto \sum_i n_i\, \eta_{V_i}
+\]
+\end{defn}
+
+
+This map is well-defined (rationally equivalent cycles have the same cohomology
+class, since the divisor of a rational function on a subvariety is a boundary
+in homology). It is also a ring homomorphism: the intersection product on
+$CH^*(X)$ maps to the cup product on $H^*(X, \Z)$, consistent with the
+identification of cup products and transverse intersections from
+\S\ref{subsec:poincare}:
+\[
+  \cl([V] \cdot [W]) = \cl([V]) \smile \cl([W])
+\]
+
+The cycle class map is the bridge between the algebraic and topological worlds,
+but it is a lossy bridge in both directions.
+
+It is \emph{not injective} in general. Two algebraic cycles can have the same
+cohomology class (be homologically equivalent) without being rationally
+equivalent. Rational equivalence is a much finer relation: it sees the
+algebraic geometry of how cycles can be deformed through families of rational
+curves, while homological equivalence only sees the underlying topology. The
+kernel of $\cl$ is in general a large and poorly understood group, and its
+study is a central topic in the theory of algebraic cycles (the conjectures of
+Bloch and Beilinson give conjectural descriptions of this kernel in terms of
+Hodge-theoretic data).
+
+It is \emph{not surjective} in general. There exist cohomology classes in
+$H^{2p}(X, \Z)$ that do not lie in the image of $\cl$: they cannot be written
+as $\Z$-linear combinations of classes of algebraic subvarieties. Determining
+exactly which cohomology classes \emph{do} lie in the image of $\cl$ is the
+content of the Hodge Conjecture. As we saw in \S\ref{subsec:chernweil}, the
+Chern-Weil argument shows that the image of $\cl$ is contained in the
+$(p,p)$-part of the Hodge decomposition. The conjecture asserts, roughly, that
+this necessary condition is also sufficient (after passing to $\Q$-coefficients).
+
+\section{The Integral Hodge Conjecture}\label{sec:integral_hodge_conjecture}
+
+Let $X$ be a smooth projective variety of complex dimension $n$. The cycle class map from
+\S\ref{subsec:chowring} sends a codimension-$p$ algebraic cycle to a class in $H^{2p}(X, \Z)$. We now show
+that the image of this map is constrained: it lands in a specific piece of the Hodge decomposition. Let $V
+\subset X$ be a smooth closed subvariety of complex codimension $p$. We give two arguments that $\cl(V) \in
+H^{p,p}(X)$.
+
+The first argument is direct. The inclusion $\iota: V \hookrightarrow X$ is a
+holomorphic map, and $V$ is a complex manifold of complex dimension $n - p$.
+The current of integration $T_V$ (defined by
+$T_V(\omega) = \int_V \iota^*\omega$ for test forms $\omega$) is a closed
+current of real dimension $2(n-p)$, hence real codimension $2p$. Because $V$
+is a complex submanifold, $T_V$ vanishes on any test form that does not have
+at least $p$ holomorphic and $p$ anti-holomorphic directions along the normal
+to $V$. More precisely, if $\omega \in \Omega^{r,s}(X)$ with $r + s = 2p$ and
+$(r,s) \neq (p,p)$, then $\iota^*\omega = 0$ (since pulling back to $V$
+requires exactly $n-p$ holomorphic and $n-p$ anti-holomorphic coordinates,
+leaving $p$ of each type in the normal directions). Therefore $T_V$ has type
+$(p,p)$ as a current, and its cohomology class $\cl(V) \in H^{2p}(X, \C)$
+lies in $H^{p,p}(X)$.
+
+The second argument uses characteristic classes. The subvariety $V$ determines
+an ideal sheaf $\CI_V \subset \CO_X$, and on a smooth projective variety one
+can resolve $\CI_V$ by a finite complex of locally free sheaves (vector
+bundles). The class $\cl(V)$ can then be expressed as a polynomial in the Chern
+classes of these bundles (this is the content of the Grothendieck-Riemann-Roch
+theorem applied to the structure sheaf $\CO_V$). By the Chern-Weil
+construction from \S\ref{subsec:chernweil}, each Chern class $c_k(E)$ is
+represented by a $(k,k)$-form built from the curvature of $E$. Since
+polynomials in $(k,k)$-classes remain of type $(p,p)$ under the cup product,
+$\cl(V) \in H^{p,p}(X)$.
+
+Both arguments assumed $V$ is smooth. In general, the subvarieties appearing in
+algebraic cycles need not be smooth: they may have singularities. The conclusion
+$\cl(V) \in H^{p,p}(X)$ remains valid for singular $V$, by Hironaka's
+resolution of singularities: one replaces $V$ by a smooth variety
+$\tilde{V} \to V$ and checks that the pushforward of the fundamental class is
+unchanged. Alternatively, the theory of currents on singular analytic spaces
+(due to Lelong) directly produces a closed $(p,p)$-current for any analytic
+subvariety, smooth or not
+(see exercise~\ref{q:cycleClassPP}).
+
+To summarize: the image of the cycle class map satisfies
+\[
+  \im(\cl: CH^p(X) \to H^{2p}(X, \Z)) \subset H^{2p}(X, \Z) \cap H^{p,p}(X)
+\]
+where the intersection is taken inside $H^{2p}(X, \C)$. The classes on the
+right-hand side deserve a name.
+
+\begin{defn}{Integral Hodge Class}{hodgeClass}
+  A class $\alpha \in H^{2p}(X, \Z)$ is called an \emph{integral Hodge class} if its
+  image in $H^{2p}(X, \C)$ under the natural inclusion
+  $H^{2p}(X, \Z) \hookrightarrow H^{2p}(X, \C)$ lies entirely in $H^{p,p}(X)$.
+  The space of Hodge classes of codimension $p$ is
+  \[
+    \operatorname{Hdg}_\Z^p(X) = H^{2p}(X, \Z) \cap H^{p,p}(X)
+  \]
+\end{defn}
+
+\section{The Hodge Conjecture}\label{sec:hodgeConjecture}
+
+
+
+\begin{defn}{Hodge Class}{hodgeClass}
+  A class $\alpha \in H^{2p}(X, \Q)$ is called a \emph{Hodge class} if its
+image in $H^{2p}(X, \C)$ under the natural inclusion
+$H^{2p}(X, \Q) \hookrightarrow H^{2p}(X, \C)$ lies entirely in $H^{p,p}(X)$.
+The space of Hodge classes of codimension $p$ is
+\[
+  \operatorname{Hdg}^p(X) = H^{2p}(X, \Q) \cap H^{p,p}(X)
+\]
+\end{defn}
+
+
+Note the shift to $\Q$-coefficients. Over $\Z$, the intersection
+$H^{2p}(X, \Z) \cap H^{p,p}(X)$ is called the space of \emph{integral Hodge
+classes}, and we will return to it in \S\ref{sec:integral}. The passage to
+$\Q$ allows us to take rational linear combinations of algebraic cycles, which
+is essential for the statement of the conjecture.
+
+We can now state the Hodge Conjecture in its standard form.
+
+\begin{conjecture}{The Hodge Conjecture}{hodgeConjecture}
+  Let $X$ be a smooth projective variety over $\C$. For every $p \geq 0$,
+  every Hodge class is a rational linear combination of fundamental classes of
+  algebraic subvarieties. That is, the cycle class map tensored with $\Q$
+  \[
+    \cl \otimes \Q: CH^p(X) \otimes_\Z \Q \longrightarrow \operatorname{Hdg}^p(X)
+  \]
+  is surjective.
+\end{conjecture}
+
+In words: if a rational cohomology class of degree $2p$ happens to have Hodge
+type $(p,p)$, then it must be a $\Q$-linear combination of classes of
+codimension-$p$ algebraic subvarieties of $X$.
+
+\subsection{Why $(p,p)$? And Why $\Q$?}\label{subsec:whypp}
+
+The constraint that Hodge classes live in $H^{p,p}(X)$ was derived earlier by analyzing the image of the cycle class map. It
+is worth understanding this constraint from the opposite direction: why can a
+rational cohomology class of type $(r,s)$ with $r \neq s$ never be algebraic?
+
+The reason is complex conjugation. The group $H^{2p}(X, \Q)$ is a rational
+vector space, and in particular it is contained in $H^{2p}(X, \R)$. Every
+class $\alpha \in H^{2p}(X, \R)$ satisfies $\bar\alpha = \alpha$ (it is
+invariant under complex conjugation). On the other hand, conjugation acts on
+the Hodge decomposition by swapping the $(r,s)$ and $(s,r)$ components:
+$\overline{H^{r,s}(X)} = H^{s,r}(X)$. If $\alpha$ lies in a single Hodge
+summand $H^{r,s}(X)$, then $\bar\alpha \in H^{s,r}(X)$, and the condition
+$\bar\alpha = \alpha$ forces $H^{r,s}(X) = H^{s,r}(X)$, hence $r = s$. Since
+$r + s = 2p$, this gives $r = s = p$. A rational class that lives in a single
+Hodge summand must therefore live in $H^{p,p}(X)$. Classes with components in
+summands where $r \neq s$ are forced by conjugation symmetry to spread across
+at least two summands, and no algebraic subvariety can produce such a class.
+
+The passage from $\Z$ to $\Q$ coefficients is equally essential. Over $\Z$, the
+conjecture (asking that every class in $H^{2p}(X, \Z) \cap H^{p,p}(X)$ be a
+$\Z$-linear combination of classes of subvarieties) is false. Atiyah and
+Hirzebruch constructed counterexamples in 1962, which we discuss in
+\S\ref{sec:integral}. The failure comes from torsion classes in
+$H^{2p}(X, \Z)$ that are invisible over $\Q$ (they are killed by tensoring
+with $\Q$). The rational Hodge Conjecture sidesteps torsion entirely, and
+$\Q$ is the smallest coefficient field over which the conjecture has a chance
+of being true.
+
+Over $\R$, the conjecture becomes vacuous in a different way. Every class in
+$H^{2p}(X, \R) \cap H^{p,p}(X)$ is an $\R$-linear combination of Hodge
+classes (since $\operatorname{Hdg}^p(X) = H^{2p}(X, \Q) \cap H^{p,p}(X)$
+spans $H^{2p}(X, \R) \cap H^{p,p}(X)$ over $\R$), and if the rational Hodge
+Conjecture holds, these are in turn $\R$-linear combinations of algebraic
+classes. Over $\C$, the situation is even more trivially resolved, since
+$H^{p,p}(X)$ itself is a complex vector space and the conjecture imposes no
+constraint. The conjecture is interesting precisely at $\Q$-coefficients,
+where the arithmetic structure of rational numbers interacts nontrivially with
+the analytic structure of the Hodge decomposition.
+
+\subsection{What Is Known}\label{subsec:known}
+
+The Hodge Conjecture is open in general, but several important special cases
+have been established.
+
+The most fundamental is the Lefschetz $(1,1)$ theorem
+(\ref{th:lefschetz11}), which proves the conjecture for $p = 1$ (codimension
+$1$) on any compact K\"{a}hler manifold. As we saw in \S\ref{subsec:lefschetz},
+the proof relies on the exponential sequence, a tool that is specific to line
+bundles and has no direct analogue in higher codimension.
+
+By Poincar\'{e} duality and the Hard Lefschetz theorem, the conjecture for
+codimension $p$ on a variety of dimension $n$ is equivalent to the conjecture
+for codimension $n - p$. In particular, since the conjecture holds for
+codimension $1$ (by Lefschetz), it also holds for codimension $n - 1$ (cycles
+of dimension $1$, i.e., curves). The first open case is therefore codimension
+$2$ on a variety of dimension $4$.
+
+For abelian varieties (complex tori that are projective), the Hodge Conjecture
+has been verified in several cases. The conjecture is known for abelian
+varieties of dimension at most (and including) $4$\footnote{in was only in 2024 that it was settled for dimension 4!}, and for abelian varieties with certain special endomorphism algebras
+(complex multiplication types). However, the general case for abelian varieties
+remains open and is considered an important testing grounds for
+the conjecture.
+
+The conjecture is also true in a somewhat degenerate sense for varieties whose
+Hodge structure is trivial: if $h^{r,s}(X) = 0$ for all $r \neq s$ with
+$r + s = 2p$, then $H^{2p}(X, \Q) = \operatorname{Hdg}^p(X)$ (every rational
+class is automatically a Hodge class), and the conjecture reduces to showing
+that rational cohomology is spanned by algebraic cycles. This holds for many
+classes of varieties (such as projective spaces, Grassmannians, and flag
+varieties) whose cohomology is generated by Chern classes of tautological
+bundles.
+
+% On the negative side, Grothendieck observed that the original formulation Hodge
+% proposed in 1950 (which made predictions about the intermediate cohomology
+% groups $H^k(X, \Q)$ for $k$ not necessarily even) is false. The version we have
+% stated (restricting to even degree $2p$ and type $(p,p)$) is the corrected
+% formulation, and it remains open.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
+
 
