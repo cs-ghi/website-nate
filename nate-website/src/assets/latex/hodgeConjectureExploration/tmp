@@ -1,0 +1,603 @@
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
+
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{Hodge Conjecture}
+\author{Nathanael Chwojko-Srawley}
+\date{\today}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         packages                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{stackengine}
+\usepackage{colortbl}
+\usepackage{scalerel}
+\usepackage{amsmath, amssymb} % Used to write better mathematical expressions (ex. \mathbb{R})
+\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
+\usepackage{mathrsfs}
+\usepackage{euscript}
+\usepackage[font=itshape]{quoting}
+\usepackage{mathtools}
+  \usepackage{enumitem}
+\usepackage{amsthm}           % Used to create theorem enviroments.
+\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{hhline}
+%\usepackage{luatexja}
+%\usepackage{fontspec}
+\usepackage{dsfont}
+\usepackage{wasysym}          % emoji's!
+\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
+%\usepackage{subcaption}      % More options with sub-captions.
+\usepackage{setspace}         % More flexibility on spacing in document.
+\usepackage{hyperref}         % let's me put hyperlinks
+%\usepackage{tikz}             % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+%\usepackage{quiver}           % for better commutative diagrams
+\usepackage{bookmark}         % creating heading shortcut bar on the left as in word
+\usepackage{longtable}        % create tables that extend past one page
+%\usepackage{siunitx}         % required for alignment
+%\usepackage{multirow}        % for multiple rows
+\usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
+%\usepackage{fancyvrb}        % Let's you write code (different style than listings).
+\usepackage[most]{tcolorbox} 	      % Makes nice boxes for thms, cor, prop, or anything else.
+%\usepackage{enumitem}        % More flexibility on enumeration (don't know much).
+\usepackage{xcolor}           % Colour text.
+\usepackage{wrapfig}          % To wrap text around figure
+\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
+\usepackage{thmtools}         % Customize theorem environment (in preamble).
+%\usepackage{marvosym}        % Provide ``basic'' symbols (hazard, religious, smiley face etc.)
+\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+%\usepackage[english]{babel}  % If I want to blindtext in english.
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8.5in}]{geometry}
+%\usepackage[symbol]{footmisc} % For daggers and asterisk for footnotes. 1: *, 2: dagger, etc.
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+%\usepackage{pst-plot}          %To make nice plots: https://tex.stackexchange.com/questions/47594/how-can-i-make-a-graph-of-a-function#47596
+% \usepackage[answerdelayed]{exercise}
+\usepackage{etoolbox}          % for Dynkin diagrams
+\usepackage{dynkin-diagrams}   % for Dynkin diagrams
+
+% \usepackage{CJKutf8} % for some chinese
+
+
+% \renewcommand{\thesection}{\arabic{section}}
+%header information
+\pagestyle{fancy}
+
+\setlength\headheight{20pt}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+\fancyfoot[R,RO]{\thepage}{}
+
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
+}
+
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
+
+
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+\newcommand{\Equiv}[1]{\equiv_{\scalemath{0.6}{#1}}}
+\newcommand{\Plus}[1]{+_{\scalemath{0.6}{#1}}\,}
+\newcommand{\Minus}[1]{-_{\scalemath{0.6}{#1}}\,}
+\newcommand{\Cdot}[1]{\cdot{\scalemath{0.6}{#1}}\,}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                     Custom Commands                      ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% mathbb
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\H}{\mathbb{H}}
+
+% mathcal
+\newcommand{\co}{\mathfrak{o}} %mathcal{o} looks like wreath product, so I changed it to mathfrak
+\newcommand{\CA}{\mathcal{A}}
+\newcommand{\CB}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\CD}{\mathcal{D}}
+\newcommand{\CF}{\mathcal{F}}
+\newcommand{\CG}{\mathcal{G}}
+\newcommand{\CH}{\mathcal{H}}
+\newcommand{\CI}{\mathcal{I}}
+\newcommand{\CL}{\mathcal{L}}
+\newcommand{\CN}{\mathcal{N}}
+\newcommand{\CO}{\mathcal{O}}
+\newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\CQ}{\mathcal{Q}}
+\newcommand{\CR}{\mathcal{R}}
+\newcommand{\CK}{\mathcal{K}}
+\newcommand{\CS}{\mathcal{S}}
+\newcommand{\CT}{\mathcal{T}}
+\newcommand{\CV}{\mathcal{V}}
+\newcommand{\CZ}{\mathcal{Z}}
+
+%mathscr
+\newcommand{\ff}{\mathscr{F}}
+
+%Euscript
+\newcommand{\EF}{\EuScript{F}}
+\newcommand{\EL}{\EuScript{L}}
+\newcommand{\EO}{\EuScript{O}}
+\newcommand{\EC}{\EuScript{C}}
+
+%mathfrak (lowercase)
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fc}{\mathfrak{c}}
+\newcommand{\fd}{\mathfrak{d}}
+\newcommand{\fm}{\mathfrak{m}}
+\newcommand{\fn}{\mathfrak{n}}
+\newcommand{\fo}{\mathfrak{o}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+
+%mathfrak (upper case)
+\newcommand{\FA}{\mathfrak{A}}
+\newcommand{\FB}{\mathfrak{B}}
+\newcommand{\FP}{\mathfrak{P}}
+\newcommand{\FC}{\mathfrak{C}}
+\newcommand{\FD}{\mathfrak{D}}
+\newcommand{\FM}{\mathfrak{M}}
+\newcommand{\FN}{\mathfrak{N}}
+\newcommand{\FO}{\mathfrak{O}}
+
+% operatorname
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\nm}{\operatorname{Nm}}
+\newcommand{\op}{\operatorname{op}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\ab}{\operatorname{ab}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\GL}{\operatorname{GL}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\Rep}{\operatorname{Rep}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Mod}{\operatorname{Mod}}
+\newcommand{\Grp}{\operatorname{Grp}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Emb}{\operatorname{Emb}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Inn}{\operatorname{Inn}}
+\newcommand{\Ind}{\operatorname{Ind}}
+\newcommand{\Out}{\operatorname{Out}}
+\newcommand{\Jac}{\operatorname{Jac}}
+\newcommand{\Nil}{\operatorname{Nil}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\Syl}{\operatorname{Syl}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\conj}{\operatorname{conj}}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\stab}{\operatorname{stab}}
+\newcommand{\kdim}{\operatorname{kdim}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\Obj}{\operatorname{Obj}}
+\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Frac}{\operatorname{Frac}}
+\newcommand{\Frob}{\operatorname{Frob}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\mSpec}{\operatorname{mSpec}}
+\newcommand{\Char}{\operatorname{char}}
+\newcommand{\fHom}[1]{\operatorname{Hom}(#1, \_\_)}
+\newcommand{\cofHom}[1]{\operatorname{Hom}(\_\_, #1)}
+\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\Span}{\operatorname{span}}
+
+%shorthands
+\renewcommand{\bf}[1]{\textbf{#1}}
+\newcommand{\qn}{\quad\newline}
+\newcommand{\oln}{\overline}
+\renewcommand{\phi}{\varphi}
+\newcommand{\placeholder}{\_\_\_\_\_}
+\newcommand{\set}[2]{\left\{#1 \ \middle|\ #2\right\}}
+
+% connectors
+\renewcommand{\mid}{\big|}
+\newcommand{\sse}{\subseteq}
+\newcommand{\subg}{\leqslant}
+\newcommand{\supg}{\geqslant}
+\newcommand{\ssne}{\subsetneq}
+\newcommand{\isosubg}{\lesssim}
+\newcommand{\nsse}{\not\subseteq}
+\newcommand{\nsubg}{\trianglelefteq}
+\newcommand{\nsupg}{\trianglerighteq}
+\newcommand{\csubg}{\blacktriangleleft}
+%\newcommand{\subgne}{\lneqslant}
+
+% limits
+\newcommand{\Lim}{\varprojlim}
+\newcommand{\colim}{\varinjlim}
+\newcommand{\coLim}{\varinjlim}
+\newcommand{\Dlim}{\lim\limits_{\longrightarrow}}
+\newcommand{\coDlim}{\lim\limits_{\longleftarrow}}
+
+
+%for saturated ideals in the localization section (I don't like these, I think I'll delete)
+\newcommand{\LIm}{{}^{\iota} }
+\newcommand{\LPre}{{}^{\pi} }
+
+% Arrows
+\newcommand{\rw}{\rightarrow}
+\newcommand{\Rw}{\Rightarrow}
+\newcommand{\lw}{\leftarrow}
+\newcommand{\Lw}{\Leftarrow}
+\newcommand{\lrw}{\leftrightarrow}
+\newcommand{\LRw}{\Leftrightarrow}
+\newcommand{\rrw}{\rightrightarrows}
+\newcommand{\acton}{\curvearrowright}
+\newcommand{\actson}{\curvearrowright}
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+% dcups
+\newcommand{\dcup}{\sqcup}
+\newcommand{\Dcup}{\bigsqcup}
+
+%a nice large circle
+\newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{2}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%somehow not a default command
+\def\rddots{\mathstrut^{.^{.^{.}}}}
+
+%% new delimiter
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                          proofs                          ║
+%  ╚══════════════════════════════════════════════════════════╝
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\def\exampletext{Exercise} % If English
+\colorlet{colexam}{red!55!black} % Global example color
+
+
+\newtcbtheorem{exercise}{Exercise}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+% Example Frame Start
+empty,% Empty previously set parameters
+title={\exampletext \thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
+% Attaching a box requires an overlay
+attach boxed title to top left,
+   % Ensures proper line breaking in longer titles
+   minipage boxed title,
+% (boxed title style requires an overlay)
+boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+coltitle=colexam,fonttitle=\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+   before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+% Handles box when it exists on one page only
+overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: first page
+overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: middle page
+overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: last page
+overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); }%
+}{ex}
+
+
+\def\prooftext{Proof} % If English
+\NewDocumentEnvironment{Proof}{ O{} }
+{
+  \colorlet{colexam}{black!55!black} % Global example color
+  \newtcolorbox[number within=section]{testproofbox}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+    % Example Frame Start
+    empty,% Empty previously set parameters
+    title={\emph{\prooftext} \thetcbcounter: #1},% use \thetcbcounter to access the testexample counter text
+    % Attaching a box requires an overlay
+    attach boxed title to top left,
+       % Ensures proper line breaking in longer titles
+       minipage boxed title,
+    % (boxed title style requires an overlay)
+    boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+    coltitle=colexam,fonttitle=\bfseries,
+    before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+       before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+    % Handles box when it exists on one page only
+    overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: first page
+    overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: middle page
+    overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+    % Handles multipage box: last page
+    overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+  \begin{testproofbox}
+}
+{\end{testproofbox}\endlist}
+
+\newtcbtheorem[number within=section]{titledBox}{}{%
+  enhanced,
+  sharp corners,
+  colback=white,
+  colframe=black,
+  borderline={0.2pt}{0pt}{black},
+  left=2mm,
+  right=2mm,
+  top=2mm,
+  bottom=2mm,
+  title style={opacity=1},
+  attach title to upper,
+  before upper={\textbf{\tcbtitletext}\quad},
+  coltitle=black,
+  fonttitle=\bfseries,
+  separator sign={\quad}
+}{box}
+\setlength{\parindent}{0pt} % don't like indentation infront of paragraphs
+\setlength{\parskip}{1ex}   %so that there is still space between paragarphs
+
+% \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\usepackage{biblatex}
+
+\addbibresource{bibliography.bib}
+
+\makeatletter
+\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{reddish}{HTML}{A01A3A}
+
+\definecolor{LinkColour}{HTML}{A64A3B} % favourite
+% \definecolor{LinkColour}{HTML}{8C3D32} % 2nd place
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=magenta,
+  linkcolor=LinkColour,
+  urlcolor=blue,
+}
+
+\setcounter{secnumdepth}{1}  % start numbering at section, no chapter
+
+\begin{document}
+
+\section{Introduction}\label{sec:introduction}
+
+
+One of the oldest ambitions in geometry is to understand a space by studying
+the subspaces that live inside it. A surface in $\R^3$ is often understood by
+its curves; a three-dimensional body is understood by its surfaces and their
+intersections. The passage from geometry to topology in the twentieth century
+made this idea precise: the \emph{homology} and \emph{cohomology} groups of a
+space $X$ provide an algebraic framework for counting and classifying ``holes''
+of each dimension, and the cap product on cohomology mirrors the geometric
+operation of intersecting subspaces.
+
+This framework is quite general. The cohomology ring $H^*(X, \Z)$ is defined
+for any topological space, and it treats all continuous deformations,
+homotopies, as equivalent. It does not know, or care, whether a given
+cohomology class arises from a subspace with any special geometric or algebraic
+structure. Even limiting to spaces admitting Poincar\'{e} duality (mostly
+consisting of manifolds and varieties), given an $[\eta] \in H^n(X,\Z)$, there
+need not be a ``reasonable'' $S \sse X$ such that $[S] = [\eta]$. Algebraic
+geometry imposes much stronger constraints. If $X$ is a smooth projective
+variety---a space carved out by polynomial equations inside complex projective
+space $\CP^N$---then the subspaces of primary interest are not arbitrary
+topological subsets but \emph{algebraic subvarieties}: subsets themselves
+defined by polynomial equations. These are rigid, finite-dimensional objects,
+governed by the algebra of polynomial rings rather than the flexibility of
+continuous maps.
+
+Every algebraic subvariety $Z \subset X$ of complex codimension $p$ determines a cohomology class $[Z] \in
+H^{2p}(X, \Z)$ via Poincar\'{e} duality. The \emph{Hodge Conjecture} asks whether the converse holds, at least
+rationally: if a cohomology class ``looks like'' it could come from an algebraic subvariety---in a sense made
+precise by Hodge theory---must it actually be a $\Q$-linear combination of classes of algebraic subvarieties?
+If the answer is yes, it means that the coarse topological invariants of a variety, together with the analytic
+data of its complex structure, are sufficient to detect all the algebraic geometry happening inside it.
+Concretely, one gains the following:
+\begin{itemize}
+  \item \emph{Algebraic representatives for topological data.}
+    Cohomology classes are abstract, namely they are equivalence classes of cocycles.
+    Algebraic subvarieties are concrete geometric objects that can be
+    written down, intersected, deformed in families, and studied with the
+    tools of commutative algebra. Knowing that a class is algebraic
+    converts a topological invariant into a geometrically actionable object.
+  \item \emph{A bridge between analysis and algebra.}
+    The Hodge decomposition is an analytic statement (it depends on
+    harmonic theory and the choice of a K\"{a}hler metric) while
+    algebraicity is a purely algebro-geometric property. The conjecture
+    asserts that these two worlds see the same structure, providing a
+    dictionary that translates between partial differential equations
+    and polynomial equations.
+  \item \emph{Control over intersection theory.}
+    If every Hodge class is algebraic, then the intersection theory of
+    algebraic cycles---encoded in the Chow ring---accounts for all the
+    relevant cohomological information. The Chow ring, an object defined
+    without any reference to topology, would capture exactly the piece of
+    cohomology that the complex structure ``sees.''
+\end{itemize}
+
+The Hodge Conjecture is one of the seven Clay Mathematics Institute
+Millennium Prize Problems. It has been open since Hodge formulated it in
+1950, and it remains one of the central unsolved problems in mathematics.
+
+\subsection{Roadmap and Prerequisites}\label{subsec:roadmap}
+
+This article builds toward the precise statement of the Hodge Conjecture in
+three stages, corresponding to the three mathematical disciplines it unifies.
+
+\emph{Stage 1: Topology (\S\ref{sec:topology}).}
+We review singular cohomology with careful attention to the coefficient ring, Poincar\'{e} duality over $\Z$,
+and the geometric interpretation of the cup product as transverse intersection of submanifolds. The reader
+comfortable with these topics at the level of~\cite{NateAlgTop} may skim this section, but should note our
+conventions on orientations and coefficient tracking, as these will be essential later.
+
+\emph{Stage 2: Analysis (\S\ref{sec:analysis}--\S\ref{sec:complex}).}
+We move to smooth manifolds and de~Rham cohomology, then introduce Hodge theory: the Laplacian, harmonic
+forms, and the real Hodge decomposition. We then pass to complex manifolds, where the interplay between
+holomorphic and anti-holomorphic directions produces the $(p,q)$-decomposition of differential forms. On
+K\"{a}hler manifolds, the analytic and complex structures lock together, yielding the Hodge decomposition of
+cohomology with complex coefficients. The reader should be comfortable with smooth manifolds, differential
+forms, and the basics of complex manifolds at the level of~\cite{NateDiffGeo} and~\cite{NateComplexAnalysis}.
+Familiarity with Hodge theory at the level of~\cite{NateHodge} will make \S\ref{sec:analysis} a review.
+
+\emph{Stage 3: Algebraic Geometry (\S\ref{sec:bridge}--\S\ref{sec:algebraic}).}
+We introduce line bundles, Chern classes, and the exponential sequence, culminating in the Lefschetz $(1,1)$
+theorem (the Hodge Conjecture for codimension~$1$, which is a theorem) and the Kodaira embedding theorem. We
+then develop algebraic cycles, the Chow ring, and the cycle class map. This stage assumes familiarity with
+sheaves and sheaf cohomology at the level of~\cite{NateAlgGeo}.
+
+\emph{The Conjecture (\S\ref{sec:hodge_conjecture}--\S\ref{sec:integral}).}
+With all three stages in place, we give the precise statement of the Hodge
+Conjecture, explain the role of each hypothesis, survey what is known, and then
+discuss the Integral Hodge Conjecture and why it fails.
+
+% Throughout, we will be meticulous about two points that are easy to conflate
+% but essential to keep separate:
+% \begin{enumerate}
+%   \item \emph{The category of space.} We will always say explicitly whether we
+%     are working with a topological space, a smooth manifold, a complex
+%     manifold, a K\"{a}hler manifold, or a smooth projective variety. Many
+%     theorems require specific hypotheses, and silently upgrading the space is a
+%     common source of error.
+%   \item \emph{The coefficient ring.} Cohomology with $\Z$, $\Q$, $\R$, and
+%     $\C$ coefficients all play distinct roles. Over $\Z$, we have Poincar\'{e}
+%     duality and torsion phenomena. Over $\R$, we have the de~Rham theorem and
+%     harmonic representatives. Over $\C$, we have the Hodge decomposition. Over
+%     $\Q$, the Hodge Conjecture is stated. We will track coefficient changes
+%     explicitly every time they occur.
+% \end{enumerate}
+
+
+
+\section{The Topological Stage}\label{sec:topology}
+
+\subsection{Singular Cohomology and the Role of Coefficients}\label{subsec:singular}
+
+Let $X$ be a topological space. We write $C_\bullet(X, \Z)$ for the singular
+chain complex: the sequence of free abelian groups $C_n(X, \Z)$ generated by
+continuous maps $\sigma: \Delta^n \to X$ from the standard $n$-simplex,
+equipped with the boundary homomorphism $\partial_n: C_n \to C_{n-1}$
+satisfying $\partial_{n-1} \circ \partial_n = 0$. The singular homology groups
+are
+\[
+  H_n(X, \Z) = \frac{\ker(\partial_n)}{\im(\partial_{n+1})}.
+\]
+
+To pass to cohomology, we dualize. For an abelian group $G$, apply
+$\Hom(-, G)$ to obtain the cochain complex $C^\bullet(X, G)$ with coboundary
+map $\delta^n: C^n(X,G) \to C^{n+1}(X,G)$ defined by precomposition with
+$\partial_{n+1}$. The singular cohomology groups are
+\[
+  H^n(X, G) = \frac{\ker(\delta^n)}{\im(\delta^{n-1})}.
+\]
+
+The choice of $G$ affects the information
+that cohomology records. Over the integers, $H^n(X, \Z)$ is a finitely
+generated abelian group (for reasonable spaces) and therefore splits as a
+direct sum of a free part and a torsion part. Over a field $k$ (such as $\Q$,
+$\R$, or $\C$), cohomology becomes a $k$-vector space, and the relationship
+between homology and cohomology simplifies considerably: $H^n(X, k)$ is
+naturally isomorphic to the linear dual $\Hom(H_n(X, k),\, k)$, with no
+correction term. Over $\Z$, this clean duality fails by a torsion defect
+measured by an $\Ext^1$ term (the Universal Coefficient Theorem). The torsion
+correction will not concern us until \S\ref{sec:integral}, where it becomes the
+mechanism by which the Integral Hodge Conjecture fails in Atiyha's and Hirzebruch's paper
+(\textcolor{red}{cite:HERE}). For now, we simply flag
+that \emph{changing coefficients from $\Z$ to a field kills torsion and
+simplifies duality}.
+
+When $G = R$ is a commutative ring, the cohomology groups carry additional
+multiplicative structure: the \emph{cup product}
+\[
+  \smile\;: H^p(X, R) \times H^q(X, R) \longrightarrow H^{p+q}(X, R),
+\]
+defined at the cochain level by evaluating cochains on the front and back faces
+of a simplex and multiplying the results in $R$
+(see~\cite{NateAlgTop} for the explicit formula). The cup product is
+associative, unital (with unit $1 \in H^0(X, R)$), and graded-commutative:
+\[
+  \alpha \smile \beta = (-1)^{pq}\, \beta \smile \alpha
+  \quad\text{for } \alpha \in H^p(X,R),\; \beta \in H^q(X,R).
+\]
+This makes $H^*(X, R) = \bigoplus_{n \geq 0} H^n(X, R)$ into a
+graded-commutative ring. In our setting, $R$ will always be one of $\Z$, $\Q$,
+$\R$, or $\C$.
+
+The cohomology ring is contravariantly functorial: a continuous map $f: X \to
+Y$ induces a ring homomorphism $f^*: H^*(Y, R) \to H^*(X, R)$ that respects
+the cup product:
+\[
+  f^*(\alpha \smile \beta) = f^*(\alpha) \smile f^*(\beta).
+\]
+
+Graded-commutativity has an immediate algebraic consequence that will gain
+geometric meaning in the next subsection. If $\alpha \in H^p(X, R)$ with $p$
+odd, then $\alpha \smile \alpha = -(\alpha \smile \alpha)$, forcing $2(\alpha
+\smile \alpha) = 0$. Over a ring where $2$ is invertible (such as $\Q$, $\R$,
+or $\C$), this means $\alpha \smile \alpha = 0$ for any odd-degree class.
+
+We record the key structural facts that subsequent sections depend on:
+\begin{enumerate}
+  \item The chain groups $C_n(X, \Z)$ are free abelian. This means the
+    singular chain complex is a free resolution provided by geometry, and
+    applying $\Hom(-, G)$ to it is the standard homological algebra procedure
+    for computing derived functors.
+  \item Over a field, cohomology and homology are dual vector spaces.
+    Over $\Z$, they differ by torsion.
+  \item The cup product (defined when coefficients are a commutative ring) makes $H^*(X, R)$ into a
+    graded-commutative ring, and continuous maps induce ring homomorphisms going in the reverse
+    direction.
+\end{enumerate}
+
+\end{document}
+

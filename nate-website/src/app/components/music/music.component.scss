@@ -1,0 +1,69 @@
+@import 'src/sass/variables';
+@import 'src/sass/mixins';
+@import 'src/sass/grid';
+
+.flexx{
+  display:flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+// about section header
+.about-info h3 {
+  color: $bg-secondary;
+  font-size: 26px;
+  letter-spacing: 1px;
+  font-weight: 600; }
+
+// about section description
+.about-info p {
+  color: #bab0b0;
+  // padding: 1em 0;
+  margin-bottom: 25px;
+  line-height: 27px; 
+  // text-justify: distribute;
+  // background-color: greenyellow;
+}
+
+  // .section-about .about-info p strong {
+  //   color: #e1e1e1; }
+
+@media (max-width:800px){
+
+ 
+  .about-img img{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .flexx{
+    flex-direction: column;
+  }
+  
+  .about-info h3{
+    text-align:center;
+    padding-top:2em;
+  }
+
+}
+  
+.section-about .about-img img {
+  
+	width: 300px;
+  height: auto;
+  border: 7px solid rgba(255, 255, 255, 0.03);
+  // -webkit-border-radius: 5px;
+  // border-radius: 5px;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+.about-info a{
+  transition: 0.4s;
+  color:#c4b9b9; 
+}
+a:hover{
+  cursor: pointer;
+  color: rgb(255, 254, 254) !important;
+}

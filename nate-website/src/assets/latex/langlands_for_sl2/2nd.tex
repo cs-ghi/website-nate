@@ -1,0 +1,1400 @@
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
+
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{Langlands for SL2}
+\author{Nathanael Chwojko-Srawley}
+\date{\today}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         packages                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{stackengine}
+\usepackage{colortbl}
+\usepackage{scalerel}
+\usepackage{amsmath, amssymb} % Used to write better mathematical expressions (ex. \mathbb{R})
+\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
+\usepackage{mathrsfs}
+\usepackage{bbm}                     % for mathbbm{1}
+\usepackage{euscript}
+\usepackage{commutative-diagrams}
+\usepackage[font=itshape]{quoting}
+\usepackage{mathtools}
+  \usepackage{enumitem}
+\usepackage{amsthm}           % Used to create theorem enviroments.
+\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{hhline}
+%\usepackage{luatexja}
+%\usepackage{fontspec}
+\usepackage{dsfont}
+\usepackage{wasysym}          % emoji's!
+\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
+%\usepackage{subcaption}      % More options with sub-captions.
+\usepackage{setspace}         % More flexibility on spacing in document.
+\usepackage{hyperref}         % let's me put hyperlinks
+\usepackage{cleveref}         % let's me put hyperlinks
+%\usepackage{tikz}             % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+%\usepackage{quiver}           % for better commutative diagrams
+\usepackage{bookmark}         % creating heading shortcut bar on the left as in word
+\usepackage{longtable}        % create tables that extend past one page
+%\usepackage{siunitx}         % required for alignment
+%\usepackage{multirow}        % for multiple rows
+\usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
+%\usepackage{fancyvrb}        % Let's you write code (different style than listings).
+\usepackage[most]{tcolorbox} 	      % Makes nice boxes for thms, cor, prop, or anything else.
+%\usepackage{enumitem}        % More flexibility on enumeration (don't know much).
+\usepackage{xcolor}           % Colour text.
+\usepackage{wrapfig}          % To wrap text around figure
+\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
+\usepackage{thmtools}         % Customize theorem environment (in preamble).
+%\usepackage{marvosym}        % Provide ``basic'' symbols (hazard, religious, smiley face etc.)
+\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+%\usepackage[english]{babel}  % If I want to blindtext in english.
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8.5in}]{geometry}
+%\usepackage[symbol]{footmisc} % For daggers and asterisk for footnotes. 1: *, 2: dagger, etc.
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+%\usepackage{pst-plot}          %To make nice plots: https://tex.stackexchange.com/questions/47594/how-can-i-make-a-graph-of-a-function#47596
+% \usepackage[answerdelayed]{exercise}
+\usepackage{etoolbox}          % for Dynkin diagrams
+\usepackage{dynkin-diagrams}   % for Dynkin diagrams
+
+% ╔═════════════════════════════════════════════════════╗
+% ║           for figures via inkspace                  ║
+% ╚═════════════════════════════════════════════════════╝
+
+% to import figures via: https://github.com/gillescastel/inkscape-figures
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+
+% This command is the ONLY command imported via the packages snippet, think of it as a tiny package written out
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                 bibliography and citing                   ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\usepackage{csquotes}
+% \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\usepackage{biblatex}
+
+\addbibresource{bibliography.bib}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                    colours (colors)                       ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{reddish}{HTML}{A01A3A}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       book format                        ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\pagestyle{fancy}
+
+\setlength\headheight{20pt}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+\fancyfoot[R,RO]{\thepage}{}
+
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
+}
+
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+%have format the title command
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
+
+
+\setlength{\parindent}{0pt} % don't like indentation infront of paragraphs
+\setlength{\parskip}{1ex}   %so that there is still space between paragarphs
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       Shortcuts                          ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+%\ExerciseLevelInToc
+
+% I like original mathcal better, but need lowercase.
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+
+% mathbb
+\newcommand{\A}{{\mathbb{A}}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\F}{{\mathbb{F}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\V}{{\mathbb{V}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\BI}{{\mathbb{I}}}
+\renewcommand{\H}{{\mathbb{H}}}
+\renewcommand{\P}{{\mathbb{P}}}
+
+
+% mathcal
+% \newcommand{\co}{{\mathfrak{o}}} %mathcal{o} looks like wreath product, so I changed it to mathfrak
+\newcommand{\co}{{\mathpzc{o}}}
+\newcommand{\CA}{{\mathcal{A}}}
+\newcommand{\CB}{{\mathcal{B}}}
+\newcommand{\CC}{{\mathcal{C}}}
+\newcommand{\CD}{{\mathcal{D}}}
+\newcommand{\CF}{{\mathcal{F}}}
+\newcommand{\CG}{{\mathcal{G}}}
+\newcommand{\CH}{{\mathcal{H}}}
+\newcommand{\CI}{{\mathcal{I}}}
+\newcommand{\CK}{{\mathcal{K}}}
+\newcommand{\CL}{{\mathcal{L}}}
+\newcommand{\CM}{{\mathcal{M}}}
+\newcommand{\CN}{{\mathcal{N}}}
+\newcommand{\CO}{{\mathcal{O}}}
+\newcommand{\CQ}{{\mathcal{Q}}}
+\newcommand{\CR}{{\mathcal{R}}}
+\newcommand{\CS}{{\mathcal{S}}}
+\newcommand{\CT}{{\mathcal{T}}}
+\newcommand{\CV}{{\mathcal{V}}}
+\newcommand{\CW}{{\mathcal{W}}}
+\newcommand{\CZ}{{\mathcal{Z}}}
+% EXCPETION:
+\newcommand{\CP}{{\mathcal{P}}}
+% \newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\RP}{\mathbb{R}\mathrm{P}}
+
+
+%Euscript
+\newcommand{\EB}{\EuScript{B}}
+\newcommand{\EC}{{\EuScript{C}}}
+\newcommand{\EF}{{\EuScript{F}}}
+\newcommand{\EL}{{\EuScript{L}}}
+\newcommand{\EO}{{\EuScript{O}}}
+
+
+%mathfrak (lowercase)
+\newcommand{\fa}{{\mathfrak{a}}}
+\newcommand{\fb}{{\mathfrak{b}}}
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fd}{{\mathfrak{d}}}
+\newcommand{\fm}{{\mathfrak{m}}}
+\newcommand{\fn}{{\mathfrak{n}}}
+\newcommand{\fo}{{\mathfrak{o}}}
+\newcommand{\fp}{{\mathfrak{p}}}
+\newcommand{\fq}{{\mathfrak{q}}}
+
+
+%mathfrak (upper case)
+\newcommand{\FA}{{\mathfrak{A}}}
+\newcommand{\FB}{{\mathfrak{B}}}
+\newcommand{\FC}{{\mathfrak{C}}}
+\newcommand{\FD}{{\mathfrak{D}}}
+\newcommand{\FK}{{\mathfrak{K}}}
+\newcommand{\FM}{{\mathfrak{M}}}
+\newcommand{\FN}{{\mathfrak{N}}}
+\newcommand{\FO}{{\mathfrak{O}}}
+\newcommand{\FP}{{\mathfrak{P}}}
+
+
+%mathscr
+\newcommand{\ff}{{\mathscr{F}}}
+\newcommand{\SA}{\mathscr{A}}
+\newcommand{\SC}{\mathscr{C}}
+\newcommand{\SF}{\mathscr{F}}
+\newcommand{\SG}{\mathscr{G}}
+\newcommand{\SH}{\mathscr{H}}
+\newcommand{\SI}{\mathscr{I}}
+\newcommand{\SK}{\mathscr{K}}
+\newcommand{\SN}{\mathscr{N}}
+\newcommand{\SQ}{\mathscr{Q}}
+\newcommand{\SR}{\mathscr{R}}
+\newcommand{\SV}{\mathscr{V}}
+\newcommand{\SZ}{\mathscr{Z}}
+
+
+% operatorname -- 2 letters (lowercase and upper case)
+\newcommand{\ab}{{\operatorname{ab}}}
+\newcommand{\ad}{{\operatorname{ad}}}
+\newcommand{\ch}{{\operatorname{ch}}}
+\newcommand{\ev}{{\operatorname{ev}}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\im}{{\operatorname{im}}}
+\newcommand{\nm}{{\operatorname{Nm}}}
+\newcommand{\op}{{\operatorname{op}}}
+\newcommand{\rk}{{\operatorname{rk}}}
+\newcommand{\sh}{{\operatorname{sh}}}
+\newcommand{\tr}{{\operatorname{tr}}}
+
+\newcommand{\Ab}{{\operatorname{Ab}}}
+\newcommand{\Br}{{\operatorname{Br}}}
+\newcommand{\Ch}{{\operatorname{Ch}}}
+\newcommand{\Cl}{{\operatorname{Cl}}}
+\newcommand{\GL}{{\operatorname{GL}}}
+\newcommand{\Nm}{{\operatorname{Nm}}}
+\newcommand{\SL}{{\operatorname{SL}}}
+
+\renewcommand{\Re}{{\operatorname{Re}}}
+\renewcommand{\Im}{{\operatorname{Im}}}
+
+
+%categories
+\newcommand{\Grp}{{\textbf{Grp}}}
+\newcommand{\Fld}{{\textbf{Fld}}}
+\newcommand{\Sh}{{\textbf{Sh}}}
+\newcommand{\Set}{{\textbf{Set}}}
+\newcommand{\Mod}{{\textbf{Mod}}}
+\newcommand{\PSh}{{\textbf{PSh}}}
+\newcommand{\Sch}{{\textbf{Sch}}}
+\newcommand{\Top}{{\textbf{Top}}}
+\newcommand{\RgSp}{{\textbf{RgSp}}}
+\newcommand{\Ring}{{\textbf{Ring}}}
+
+
+%operatorname -- 3+ letters (lowercase and upper case)
+\newcommand{\rad}{{\operatorname{rad}}}
+\newcommand{\sep}{{\operatorname{sep}}}
+\newcommand{\res}{{\operatorname{res}}}
+\newcommand{\sgn}{{\operatorname{sgn}}}
+\newcommand{\pre}{{\operatorname{pre}}}
+\newcommand{\ord}{{\operatorname{ord}}}
+\newcommand{\vol}{{\operatorname{vol}}}
+\newcommand{\lcm}{{\operatorname{lcm}}}
+\newcommand{\len}{{\operatorname{len}}}
+
+\newcommand{\conj}{{\operatorname{conj}}}
+\newcommand{\disc}{{\operatorname{disc}}}
+\newcommand{\stab}{{\operatorname{stab}}}
+\newcommand{\kdim}{{\operatorname{kdim}}}
+\newcommand{\diag}{{\operatorname{diag}}}
+
+\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\coker}{{\operatorname{coker}}}
+\newcommand{\codim}{{\operatorname{codim}}}
+
+\newcommand{\Ann}{{\operatorname{Ann}}}
+\newcommand{\Aut}{{\operatorname{Aut}}}
+\newcommand{\Der}{{\operatorname{Der}}}
+\newcommand{\Div}{{\operatorname{Div}}}
+\newcommand{\Emb}{{\operatorname{Emb}}}
+\newcommand{\End}{{\operatorname{End}}}
+\newcommand{\Ext}{{\operatorname{Ext}}}
+\newcommand{\Gal}{{\operatorname{Gal}}}
+\newcommand{\Hom}{{\operatorname{Hom}}}
+\newcommand{\Ind}{{\operatorname{Ind}}}
+\newcommand{\Inn}{{\operatorname{Inn}}}
+\newcommand{\Int}{{\operatorname{int}}}
+\newcommand{\Irr}{{\operatorname{Irr}}}
+\newcommand{\Jac}{{\operatorname{Jac}}}
+\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Nil}{{\operatorname{Nil}}}
+\newcommand{\Obj}{{\operatorname{Obj}}}
+\newcommand{\Out}{{\operatorname{Out}}}
+\newcommand{\Pic}{{\operatorname{Pic}\,}}
+\newcommand{\Rep}{{\operatorname{Rep}}}
+\newcommand{\Res}{{\operatorname{Res}}}
+\newcommand{\Spl}{{\operatorname{Spl}}}
+\newcommand{\Syl}{{\operatorname{Syl}}}
+\newcommand{\Sym}{{\operatorname{Sym}}}
+\newcommand{\Tor}{{\operatorname{Tor}}}
+
+\newcommand{\Char}{{\operatorname{char}}}
+\newcommand{\Frac}{{\operatorname{Frac}}}
+\newcommand{\Frob}{{\operatorname{Frob}}}
+\newcommand{\Proj}{{\operatorname{Proj}\,}}
+\newcommand{\RMod}{{}_R\operatorname{Mod}}
+\newcommand{\SExt}{{\mathcal{E}\emph{xt}}}
+\newcommand{\SHom}{{\emph{Hom}}}
+\newcommand{\Span}{{\operatorname{span}}}
+\newcommand{\Spec}{{\operatorname{Spec}\,}}
+\newcommand{\Supp}{{\operatorname{Supp}}}
+\newcommand{\Tens}[1]{#1\otimes --}
+\newcommand{\fHom}[1]{\operatorname{Hom}(#1, --)}
+
+\newcommand{\mSpec}{{\operatorname{mSpec}}}
+\newcommand{\cofHom}[1]{\operatorname{Hom}(--, #1)}
+
+
+% connectors
+% \renewcommand{\mid}{\big|}
+\newcommand{\sse}{\subseteq}
+\newcommand{\subg}{\leqslant}
+\newcommand{\supg}{\geqslant}
+\newcommand{\ssne}{\subsetneq}
+\newcommand{\isosubg}{\lesssim}
+\newcommand{\nsse}{\not\subseteq}
+\newcommand{\nsubg}{\trianglelefteq}
+\newcommand{\nsupg}{\trianglerighteq}
+\newcommand{\csubg}{\blacktriangleleft}
+\renewcommand{\mid}{\big|}
+
+
+% Arrows
+\newcommand{\rw}{\rightarrow}
+\newcommand{\Rw}{\Rightarrow}
+\newcommand{\lw}{\leftarrow}
+\newcommand{\Lw}{\Leftarrow}
+\newcommand{\lrw}{\leftrightarrow}
+\newcommand{\LRw}{\Leftrightarrow}
+\newcommand{\acton}{\curvearrowright}
+\newcommand{\actson}{\curvearrowright}
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+% arrows for commutative diagram: create four new angled double-struck arrows
+\newcommand\myrot[1]{\mathrel{\rotatebox[origin=c]{#1}{$\Rightarrow$}}}
+\newcommand\NEarrow{\myrot{45}}
+\newcommand\NWarrow{\myrot{135}}
+\newcommand\SWarrow{\myrot{-135}}
+\newcommand\SEarrow{\myrot{-45}}
+
+
+%shorthands
+\newcommand{\oln}[1]{{\overline{#1}}}
+\renewcommand{\bf}[1]{\textbf{#1}}
+\newcommand{\qn}{\quad\newline}
+
+
+% limits
+\newcommand{\Lim}{{\varprojlim}}
+\newcommand{\coLim}{{\varinjlim}}
+\newcommand{\Dlim}{\lim\limits_{\longrightarrow}}
+\newcommand{\coDlim}{\lim\limits_{\longleftarrow}}
+
+
+%for saturated ideals in the localization section (I don't like these, I think I'll delete)
+\newcommand{\LIm}{{}^e }
+\newcommand{\LPre}{{}^c }
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    Custom Commands                       ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% swap varphi and phi
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
+\newcommand{\placeholder}{\_\_\_\_\_}
+
+\newcommand{\set}[2]{\left\{#1 \ \middle|\ #2\right\}}
+
+%mod should not have the crazy amount of space to its right!
+\renewcommand{\mod}{\,\operatorname{mod}\,}
+
+% dcups
+\newcommand{\dcup}{\sqcup}
+\newcommand{\Dcup}{\coprod}
+% \newcommand{\Dcup}{\bigsqcup}
+
+\newcommand{\nbot}{\mathrel{\rlap{$\bot$}\mkern2mu/}}
+
+%a nice large circle
+\newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%somehow not a default command
+\def\rddots{\mathstrut^{.^{.^{.}}}}
+
+%% new delimiter
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                     environments                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+
+%remember the option: breakable
+
+% create tcolor boxes
+\newtcbtheorem[number within=section]{thm}{Theorem}%
+{
+colback=green!5,
+colframe=green!35!black,
+fonttitle=\bfseries,
+label type=theorem
+}{th}
+
+\newtcbtheorem[number within=section, use counter from=thm]{lem}{Lemma}%
+{
+colback=blue!5,
+colframe=black!35!black,
+fonttitle=\bfseries,
+label type=lemma
+}{lm}
+\newtcbtheorem[number within=section, use counter from=thm]{prop}{Proposition}%
+{
+colback=white!5,
+colframe=white!35!black,
+fonttitle=\bfseries,
+label type=proposition
+}{pr}
+\newtcbtheorem[number within=section, use counter from=thm]{cor}{Corollary}%
+{colback=blue!5,
+colframe=blue!35!black,
+fonttitle=\bfseries,
+label type=corollary
+}{co}
+\newtcbtheorem[number within=section, use counter from=thm]{axiom}{Axiom}%
+{colback=black!5,
+colframe=yellow!35!black,
+fonttitle=\bfseries,
+label type=axiom
+}{ax}
+\newtcbtheorem[number within=section, use counter from=thm]{defn}{Definition}%
+{colback=red!5,
+colframe=red!35!black,
+fonttitle=\bfseries,
+label type=definition
+}{df}
+
+
+% for <s-cr> to create \item[$\LRw$] instead of \item
+\newenvironment{equivEnumerate}
+ {\begin{enumerate}
+	}{
+\end{enumerate}}
+
+
+
+%Custom enviroments
+ \newenvironment{note}
+ {\begin{tcolorbox}[enhanced, sharp corners, colback=white , borderline={0.2pt}{0pt}{black}]
+   \begin{quote}\textbf{Note}:
+   }{
+   \end{quote}\end{tcolorbox}}
+
+ \newenvironment{intuition}
+ {\begin{quote}\textbf{Intuition}:
+   }{
+   \end{quote}}
+
+\newtcbtheorem[number within=section, use counter from=thm]{titledBox}{}{%
+  enhanced,
+  sharp corners,
+  colback=white,
+  colframe=black,
+  borderline={0.2pt}{0pt}{black},
+  left=2mm,
+  right=2mm,
+  top=2mm,
+  bottom=2mm,
+  title style={opacity=1},
+  attach title to upper,
+  before upper={\textbf{\tcbtitletext}\quad},
+  coltitle=black,
+  fonttitle=\bfseries,
+  separator sign={\quad}
+}{box}
+
+
+%better example and proof environments
+\def\exampletext{Example} % If English
+\colorlet{colexam}{red!55!black} % Global example color
+
+
+\newtcbtheorem[number within=section, use counter from=thm]{example}{Example}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+% Example Frame Start
+empty,% Empty previously set parameters
+title={\exampletext \thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
+% Attaching a box requires an overlay
+attach boxed title to top left,
+   % Ensures proper line breaking in longer titles
+   minipage boxed title,
+% (boxed title style requires an overlay)
+boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+coltitle=colexam,fonttitle=\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+   before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+% Handles box when it exists on one page only
+overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: first page
+overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: middle page
+overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: last page
+overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); }%
+}{ex}
+
+
+
+\def\prooftext{Proof} % If English
+\NewDocumentEnvironment{Proof}{ O{} }
+{
+    \colorlet{colexam}{black!55!black} % Global example color
+    \newtcolorbox[number within=section]{testproofbox}{%
+        empty,% Empty previously set parameters
+        title={\emph{\prooftext} \thetcbcounter: #1},
+        attach boxed title to top left,
+        minipage boxed title,
+        boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+        coltitle=colexam,
+        fonttitle=\bfseries,
+        before=\par\medskip\noindent,
+        parbox=false,
+        boxsep=0pt,
+        left=3mm,
+        right=0mm,
+        top=2pt,
+        breakable,
+        pad at break=0mm,
+        before upper=\csname @totalleftmargin\endcsname0pt,
+        % Removed height constraints
+        % Added flexible width
+        width=\dimexpr\textwidth-3mm\relax,
+        % Modified overlays
+        overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+    \begin{testproofbox}
+}
+{\end{testproofbox}\endlist}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    for Dynkin diagrams                   ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\def\row#1/#2!{#1_{\IfStrEq{#2}{}{n}{#2}} & \dynkin{#1}{#2}\\}
+\newcommand{\tble}[1]{
+   \renewcommand*\do[1]{\row##1!}
+   \[
+      \begin{array}{ll}\docsvlist{#1}\end{array}
+   \]
+}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         links                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\definecolor{LinkColour}{HTML}{A64A3B} % favourite
+% \definecolor{LinkColour}{HTML}{8C3D32} % 2nd place
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=magenta,
+  linkcolor=LinkColour,
+  urlcolor=blue,
+}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                          misc                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\stackMath %to be able to stack text in math mode
+\makeindex
+
+%import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.svg,
+\begin{document}
+\maketitle
+
+\section{Abstract}
+
+Let $F$ be a locally compact nonarchimedean field with residue characteristic $p$ (e.g. finite extensions of
+$\mathbb{Q}_p$), and let $K$ be an algebraically closed field of characteristic $\ne p$. This paper analyzes
+smooth $K$-representations of $\SL_2(F)$ via restriction from $\GL_2(F)$. The reader can assume $K
+= \mathbb{C}$ to link this to the intuition of complex representations like
+in~\cite{bushnellLocalLanglandsConjecture2006}. While the Local Langlands correspondence for $\GL_n$ is
+a bijection, the restriction to $\SL_2$ creates fibers of size $1$, $2$, or $4$. This paper provides a structural proof of the size of these fibers—known as \emph{L-packets} or \emph{L-indistinguishable classes}—using Clifford Theory adapted for $p$-adic groups and the uniqueness of Whittaker models.
+
+\begin{titledBox}{Inspiration}{insp}
+  This paper is completely inspired and modeled by~\cite{henniartRepresentationsSL2F2025}.
+  This is my own re-writing of the first sections of Henniart's and Vign\'eras paper with details useful to
+  me (and a few math typos fixed).
+\end{titledBox}
+
+\section{Build up}
+
+Let us start with some useful results from representation theory:
+
+\begin{thm}{Clifford's Theorem}{cliffordThm}
+	Let $G$ be a group, $N \trianglelefteq G$ a normal subgroup, $K$ a field, and $\pi: G \to \GL(V)$ an irreducible
+	representation. Then the restriction $\pi|_N$ is semisimple and breaks up into a direct sum of irreducible representations
+	of $N$ of equal dimensions. These irreducible representations of $N$ lie in a single orbit under the action of $G$ by conjugation.
+\end{thm}
+
+\begin{Proof}
+	Let $W \subseteq V$ be an irreducible subrepresentation of $\pi|_N$ (assuming $V$ is finite-dimensional, such a $W$ exists).
+	For any $g \in G$, define the subspace $gW = \{ \pi(g)w \mid w \in W \}$. I claim that $gW$ is an irreducible
+	subrepresentation of $N$.
+
+	For any $n \in N$ and $v' \in gW$ (where $v' = \pi(g)w$), the action is:
+	\[ \pi(n)v' = \pi(n)\pi(g)w = \pi(g) \pi(g^{-1}ng) w \]
+	Since $N$ is normal, $n' = g^{-1}ng \in N$. Since $W$ is an $N$-submodule, $\pi(n')w \in W$.
+	Thus $\pi(n)v' \in gW$, so $gW$ is $N$-invariant.
+
+	Furthermore, the map $\pi(g): W \to gW$ is a vector space isomorphism. Thus, $\dim(gW) = \dim(W)$.
+	Since $W$ is irreducible, $gW$ must also be irreducible (any proper submodule of $gW$ would pull back to a proper submodule of $W$).
+
+	Consider the sum of these subspaces $V' = \sum_{g \in G} gW$.
+	For any $h \in G$, $\pi(h)V' = \sum_{g \in G} \pi(h)gW = \sum_{g \in G} (hg)W$.
+	Since $hg$ runs over $G$ as $g$ does, $V'$ is $G$-invariant.
+	Since $V$ is irreducible and $V' \neq 0$, we must have $V' = V$.
+
+	Therefore, $V$ is a sum of irreducible $N$-subrepresentations ($gW$), implying $\pi|_N$ is semisimple.
+	By construction, every irreducible component is of the form $gW$, which implies they are all conjugate
+	(lie in one orbit) and have dimension equal to $\dim(W)$.
+\end{Proof}
+
+Thus, assume $H\nsubg G$ is a finite index normal subgroup, and let $\pi$ be an irreducible $K$-representation
+of $H$. Let us show that it is a component of a $K$-representation $\Pi$ of $G$ whose restriction to $H$
+contains $\pi$. First, induct so that we get $\Ind_H^G\pi$. This is finite length still as $[G:H] < \infty$,
+and contains an irreducible representation, say $\Pi$. Then there is a non-trivial map $\Pi \hookrightarrow \Ind_H^G
+\pi$. By Frobenius:
+\[
+  \Hom_G(\Pi, \Ind_H^G \pi) \cong \Hom_H(\Pi|_H, \pi)
+\]
+Hence, as $\pi$ is irreducible and the restriction is semisimple, $\pi$ must be in the direct summands of
+$\Pi|_H$. Next, if $\chi$ is a $K$-character of $G$ that is trivial on $H$, the restriction of $\Pi\otimes
+\chi$ to $H$ contains $\pi$, for
+\[
+  (\Pi \otimes \chi)|_H \cong \Pi|_H
+\]
+If there is another irreducible $K$-representation $\Pi'$ that contains $\pi$, it is a twist of $\Pi$:
+
+\begin{lem}{Gallagher's Lemma}{lem1}
+    Let $K$ be an algebraically closed field, $G$ a group, and $H \trianglelefteq G$ a normal subgroup such that the quotient $A = G/H$ is a finite abelian group.
+    Let $\Pi$ be an irreducible representation of $G$. If $\Pi'$ is an irreducible representation of $G$ such that
+    \[ \mathrm{Hom}_H(\Pi'|_H, \Pi|_H) \neq 0 \]
+    (i.e. their restrictions overlap), then $\Pi' \simeq \Pi \otimes \chi$ for some character $\chi$ of $A$ (lifted to $G$).
+\end{lem}
+
+\begin{Proof}
+    By assumption, $\mathrm{Hom}_H(\Pi'|_H, \Pi|_H) \neq 0$. Since $G/H$ is finite, Induction is both the left and right adjoint to Restriction. Using Frobenius Reciprocity:
+    \[ 0 \neq \mathrm{Hom}_H(\Pi'|_H, \Pi|_H) \cong \mathrm{Hom}_G(\Pi', \mathrm{Ind}_H^G(\Pi|_H)) \]
+    Thus, $\Pi'$ is isomorphic to a subrepresentation of $\mathrm{Ind}_H^G(\Pi|_H)$.
+
+    By the Tensor Identity (Projection Formula), we have:
+    \[ \mathrm{Ind}_H^G(\Pi|_H) \cong \mathrm{Ind}_H^G(1_H \otimes \Pi|_H) \cong (\mathrm{Ind}_H^G 1_H) \otimes \Pi \]
+    Since $G/H$ is a finite abelian group and $K$ is algebraically closed, the regular representation of the quotient decomposes into 1-dimensional characters:
+    \[ \mathrm{Ind}_H^G 1_H \cong \bigoplus_{\chi \in \widehat{G/H}} \chi \]
+    Substituting this back, we get:
+    \[ \mathrm{Ind}_H^G(\Pi|_H) \cong \left( \bigoplus_{\chi} \chi \right) \otimes \Pi \cong \bigoplus_{\chi} (\chi \otimes \Pi) \]
+    Since $\Pi'$ is irreducible and is a subrepresentation of this direct sum, it must be isomorphic to one of the summands. Note that since $\Pi$ is irreducible and $\chi$ is 1-dimensional, $\chi \otimes \Pi$ is also irreducible. Therefore, $\Pi' \simeq \chi \otimes \Pi$ for some character $\chi$.
+\end{Proof}
+
+\begin{prop}{Clifford Theory for Smooth Representations}{basicProp}
+  Let $H\nsubg G$ be normal with a compact quotient $G/H$ and assume that $V$ is smooth (so $V|_H$ is smooth).
+
+  \begin{enumerate}
+    \item  If $V$ is \emph{finitely generated} then $V|_H$ is finitely generated %[Henniart 2001, lemme 4.1].
+
+  \item If $V$ is \emph{irreducible}, any irreducible subrepresentation of $V|_H$ (when there exists one)
+    extends to a (smooth and irreducible) representation of an open subgroup of $G$ of finite index which is
+    admissible if $V$ is as well% [loc. cit., proposition 4.4].
+
+  \item If $V$ is \emph{irreducible} and $V|_H$ contains an irreducible subrepresentation or is
+    \emph{noetherian} (any subrepresentation is finitely generated), then $V|_H$ is semisimple of finite
+    length %[loc. cit., théorème 4.2].
+  \end{enumerate}
+\end{prop}
+
+\begin{Proof}
+    \begin{enumerate}
+      \item
+        Let $\{v_1, \dots, v_n\}$ be a generating set for $V$ as a $G$-module. Since $G/H$ is compact, there exists a
+        compact set $C \subseteq G$ such that $G = H \cdot C$ (i.e., $C$ surjects onto the quotient).
+        Any element $v \in V$ can be written as a finite sum $\sum g_i v_{j_i}$. Writing $g_i = h_i c_i$ with $h_i \in H, c_i \in C$,
+        we see that $V$ is generated as an $H$-module by the subspace $W = \mathrm{span}_{\mathbb{C}} \{ c \cdot v_k \mid c \in C, 1 \le k \le n \}$.
+        Since $V$ is smooth, the stabilizer of each $v_k$ is open. Since $C$ is compact, the image $C \cdot v_k$ lies in a finite dimensional
+        subspace (smooth action of a compact set on a vector generates a finite dim space). Thus $W$ is finite dimensional.
+        A finite generating set for $W$ generates $V$ over $H$.
+
+      \item
+        Let $W \subset V|_H$ be an irreducible subrepresentation. Let $S = \mathrm{Stab}_G(W) = \{g \in G \mid gW \subseteq W\}$.
+        Since $W$ is irreducible and $H$ is normal, $S$ is the stabilizer of the equivalence class of $W$.
+        By standard Clifford theory arguments (\textcolor{red}{cite here}) (adapted for smooth representations), $V$ is induced from a representation of $S$.
+        Since $V$ is smooth, stabilizers are open, so $S$ is an open subgroup.
+        If $G/H$ is compact, $G/S$ is finite (since $S$ contains $H$ and is open in the compact topology of $G/H$).
+
+      \item
+        This relies on the fact that representations of compact groups are semisimple (complete reducibility).
+        Consider the action of the quotient group $K = G/H$. $V$ can be viewed somewhat like a representation of $K$.
+        Since $K$ is compact, the unitary representations decompose into a direct sum of finite-dimensional irreducibles.
+        Because $V|_H$ has an irreducible subrepresentation (or is Noetherian), we can form the sum of all conjugates $gW$.
+        Since $G/H$ is compact, there are only finitely many non-isomorphic conjugates (Clifford theory implies the orbit is finite if the index is finite; compactness mirrors this).
+        Thus $V|_H$ is a finite direct sum of isotypic components.
+    \end{enumerate}
+\end{Proof}
+
+\begin{prop}{Extension of Admissible Representations}{admissibleExt}
+   Let $W$ be an admissible irreducible $R$-representation of $H$. Assume:
+  \begin{enumerate}[label=(A\arabic*)]
+      \item Any finitely generated admissible $R$-representation of $G$ has finite length.
+      \item Any finitely generated smooth $R$-representation of $H$ is noetherian.
+  \end{enumerate}
+
+  Then:
+  \begin{enumerate}[label=(\arabic*)]
+      \item If (A1) and (A2) are true, $W$ is contained in some irreducible admissible $R$-representation of $G$ restricted to $H$.
+      \item If (A1) is true, $W$ is a quotient of some irreducible admissible $R$-representation of $G$ restricted to $H$.
+  \end{enumerate}
+\end{prop}
+
+\begin{Proof}
+  We prove (2) first, as (1) follows from it via duality.
+
+  \textbf{Proof of (2):}
+  Let $\mathcal{I}(W) = \operatorname{Ind}_H^G W$. Since $G/H$ is compact and $W$ is admissible and finitely generated (being irreducible), $\mathcal{I}(W)$ is admissible and finitely generated.
+  By assumption (A1), $\mathcal{I}(W)$ has finite length. Therefore, it must contain an irreducible subrepresentation $V$.
+  \[ 0 \neq \operatorname{Hom}_G(V, \operatorname{Ind}_H^G W) \]
+  By Frobenius Reciprocity (Restriction is left adjoint to Induction), we have:
+  \[ \operatorname{Hom}_G(V, \operatorname{Ind}_H^G W) \cong \operatorname{Hom}_H(V|_H, W) \]
+  Thus, there exists a non-zero map $V|_H \to W$. Since $W$ is irreducible, this map is surjective. Hence, $W$ is a quotient of $V|_H$.
+
+  \textbf{Proof of (1):}
+  Let $\check{W}$ be the smooth contragredient (dual) of $W$. Since $W$ is admissible, $\check{W}$ is also admissible and irreducible.
+  We apply result (2) to $\check{W}$. There exists an irreducible admissible representation $V'$ of $G$ such that $\check{W}$ is a quotient of $V'|_H$:
+  \[ V'|_H \twoheadrightarrow \check{W} \]
+  Taking the smooth dual of this sequence reverses the arrows:
+  \[ (\check{W})^\vee \hookrightarrow (V'|_H)^\vee \]
+  Since $W$ is admissible, it is reflexive, so $(\check{W})^\vee \cong W$.
+  Using the compatibility of duality and restriction (which relies on $H$ being open/normal and the Noetherian properties from (A2) to ensure well-behaved admissible duals over $R$), we have $(V'|_H)^\vee \cong (\check{V'})|_H$.
+  Let $V = \check{V'}$. Then $W \hookrightarrow V|_H$, completing the proof.
+\end{Proof}
+
+\subsection*{Setup for Abelian Clifford Theory}
+
+Suppose $H$ is a closed \emph{normal} subgroup of a \emph{locally profinite} group $G$.
+Recall that if $V$ is a smooth representation of $G$, then $V|_H$ is smooth.
+Furthermore, if $V|_H$ has finite length (as guaranteed by~\cref{pr:admissibleExt} when $V$ is admissible and $G/H$ is compact), we define the following structural components:
+
+\begin{defn}{Clifford Components}{cliffordDefs}
+Let $V$ be an irreducible representation of $G$ such that $V|_H$ has finite length.
+\begin{itemize}
+    \item Let $W \subseteq V|_H$ be an irreducible subrepresentation and $\pi$ its isomorphism class.
+    \item Let $G_\pi = \{ g \in G \mid \pi^g \cong \pi \}$ be the \emph{stabilizer} of $\pi$ in $G$, where
+      $\pi^g(h) = \pi(g^{-1}hg)$.
+    \item Let $V_\pi$ be the \emph{$\pi$-isotypic component} of $V|_H$.
+\end{itemize}
+\end{defn}
+
+Since $V$ is smooth, $\operatorname{Stab}_G(W)$ is open, implies that $G_\pi$ is an open subgroup of $G$.
+Consequently, we have the fundamental Clifford decomposition:
+\[
+  V \cong \operatorname{Ind}_{G_\pi}^G(V_\pi)
+\]
+and the length formula:
+\[
+  \operatorname{length}(V|_H) = [G:G_\pi] \cdot \operatorname{length}(V_\pi|_H)
+\]
+\begin{lem}{Clifford Theory for Abelian Quotients}{lem2}
+  Let $V$ be an irreducible representation of $G$, $H$ a closed subgroup, and assume $V|_H$ has finite length.
+  Let $W$ be an irreducible subrepresentation of $V|_H$ and $\pi$ its isomorphism class.
+  Let $X_V = \{ \chi \in \widehat{G/H} \mid V \otimes \chi \cong V \}$ be the group of self-twists.
+
+  Assume that the quotient \(A = G/H\) is \emph{abelian}. Then:
+
+  \begin{enumerate}
+    \item \(G_{\pi}\) is a normal subgroup of \(G\), $G_\pi \nsubg G$ and does not depend on the choice of the constituent \(\pi\) in \(V|_{H}\).
+    The smooth \(K\)-characters of \(G\) trivial on \(G_{\pi}\) are exactly the elements of \(X_V\).
+
+    \item Assume \(K\) is algebraically closed.
+    \begin{enumerate}
+      \item Any irreducible subquotient of the smooth induction \(\mathrm{Ind}_H^G \mathbf{1}\) is a smooth character \(\chi\) of \(G\) trivial on \(H\).
+
+      \item Any irreducible \(K\)-representation of \(G\) containing \(\pi\) (upon restriction to $H$) is isomorphic to \(V \otimes \chi\) for some smooth character \(\chi\) of \(G\) trivial on \(H\).
+
+      \item \emph{Multiplicity 1:} If \(V|_H\) has multiplicity 1, then:
+      \begin{itemize}
+          \item \(W = V_{\pi}\) (the isotypic component coincides with the irreducible subrepresentation).
+          \item For a smooth character \(\chi\) of \(G\) trivial on \(H\), \(V \otimes \chi \simeq V\) if and only if \(\chi\) is trivial on \(G_{\pi}\).
+          \item \(G_{\pi}\) is the largest subgroup \(I\) (with $H \subseteq I \subseteq G$) such that \(\mathrm{length}(V|_I) = \mathrm{length}(V|_H)\).
+      \end{itemize}
+
+      \item \emph{Degree of Self-Twists:} If \(V|_H\) has multiplicity 1, the number of self-twists is:
+      \[
+        |X_V| = \begin{cases}
+            [G:G_{\pi}] & \text{if } \mathrm{char}(K) = 0, \\
+            [G:G_{\pi,\ell}] & \text{if } \mathrm{char}(K) = \ell > 0,
+        \end{cases}
+      \]
+      where \(G_{\pi,\ell}\) is the smallest subgroup of \(G\) containing \(G_{\pi}\) such that the index \([G:G_{\pi,\ell}]\) is relatively prime to \(\ell\).
+    \end{enumerate}
+  \end{enumerate}
+\end{lem}
+
+
+\begin{Proof}
+\begin{enumerate}
+\item The isotypic components of \(\Pi|_H\) are \(G\)-conjugate, their \(G\)-stabilizers are \(G\)-conjugate and contain \(H\) hence they are equal because \(G/H\) is abelian. Since \(V \otimes \chi \simeq \mathrm{Ind}_{G_{\pi}}^G(\chi|_{G_{\pi}} \otimes V_{\pi})\) for any smooth \(K\)-character \(\chi\) of \(G\), the smooth \(K\)-characters of \(G\) trivial on \(G(\pi)\) are in \(X_V\).
+
+\item
+\begin{enumerate}
+\item[(a)] For any closed subgroup \(Q\) of \(G\) and a smooth \(K\)-representation \(X\) of \(Q\), the representation \(\mathrm{Ind}_Q^G X\) is the space of functions \(f: G \to X\) with the property \(f(qgk) = qf(g)\) for \(q \in Q\), \(g \in G\), \(k \in K_f\) for some open subgroup \(K_f\) of \(G\), with the action of \(G\) by right translation, and where \(\mathrm{ind}_Q^G 1\) is the subrepresentation on the subspace of functions of compact support modulo \(Q\). When \(G/Q\) is compact, \(\mathrm{Ind}_Q^G X = \mathrm{ind}_Q^G X\).
+
+Let \(V \supset U\) be \(G\)-stable subspaces with \(V/U\) irreducible. Suppose \(V\) generated by an element
+\(f\) (indeed \(V'/U' \simeq V/U\) for the \(G\)-stable space \(V'\) generated by \(f \in V \setminus U\) and
+the kernel \(U'\) of the map \(V' \to V/U\)). There is an open subgroup \(K\) of \(G\) which fixes \(f\). Then \(U \subset V \subset \mathrm{ind}_K^G 1\) and one is reduced to the case where \(G/H\) is finite.
+
+\item[(b)] The proof of Lemma \ref{lm:lem1} remains valid with the smooth induction \(\mathrm{Ind}_H^G\), which is the smooth compact induction \(\mathrm{ind}_H^G 1\), because \(G/H\) is compact, so that \(\mathrm{ind}_H^G(\Pi|_H) = \Pi \otimes \mathrm{ind}_H^G 1\).
+
+\item[(c)] Any smooth character \(\chi\) of \(G\) trivial on \(H\) with \(\mathrm{ind}_{G_{\pi}}^G(V_{\pi}) \simeq \mathrm{ind}_{G_{\pi}}^G(V_{\pi} \otimes \chi|_{G_{\pi}})\) is trivial on \(G_{\pi}\). Indeed, restricting to \(G_{\pi}\) we see that \(V_{\pi} \otimes \chi|_{G_{\pi}}\) is conjugate to \(V_{\pi}\) by some \(g \in G\). Restricting to \(H\) gives that \(\pi \simeq \pi^g\), so \(g \in G_{\pi}\), hence \(V_{\pi} \otimes \chi|_{G_{\pi}} \simeq V_{\pi}\). As \(\mathrm{Ker}(\chi)\) is open in \(G\) and \(G/H\) is compact, \(J = \mathrm{Ker}(\chi) \cap G_{\pi}\) has finite index in \(G_{\pi}\). If \(\chi\) is not trivial on \(G_{\pi}\) then the action of \(J\) on \(V_{\pi}\) is reducible. Indeed, \(\mathrm{ind}_{J}^{G_{\pi}}(1)\) contains subrepresentations \(1\) and \(\chi|_{G_{\pi}}\), and by Frobenius reciprocity \(\mathrm{End}_J(V_{\pi}|_J)\) is equal to \(\mathrm{Hom}_{G_{\pi}}(V_{\pi}, \mathrm{ind}_J^{G_{\pi}}(V_{\pi}|_J)) = \mathrm{Hom}_{G_{\pi}}(V_{\pi}, V_{\pi} \otimes \mathrm{ind}_J^{G_{\pi}}(1))\).
+
+Hence \(\dim(\mathrm{End}_{J}(V_{\pi}|_J)) \ge 2\) and \(V_{\pi}|_J\) is reducible. By the hypothesis of multiplicity 1, \(V_{\pi}|_H\) is irreducible, hence \(V_{\pi}|_J\) is irreducible as \(H \subset J\). So \(\chi\) is trivial on \(G_{\pi}\).
+
+The group \(G_{\pi}\) is a subgroup \(I\) of \(G\) containing \(H\) with \(\mathrm{len}(V|_I) = \mathrm{len}(V|_H)\). If \(I\) has this property, the restriction to \(H\) of any irreducible component on \(V|_I\) is irreducible, hence \(I\) is contained in \(G_{\pi}\).
+
+\item[(d)] follows from (c).
+\end{enumerate}
+\end{enumerate}
+\end{Proof}
+
+% \begin{titledBox}{Restriction and Multiplicity}{resToMult}
+%   Assume that \(V|_H\) has multiplicity 1.
+%   The \(G\)-stabilizer of the isomorphism class of the irreducible components of \(V|_H\) is \(G_{\pi}\).
+%   Let \(I\) be a subgroup of \(G\) such that \(H \subseteq I \subseteq G\).
+%
+%   Since \(G/H\) is abelian, \(G_\pi\) is normal. The length of the restriction to \(I\) is determined by the index of the composite group \(IG_\pi\):
+%   \[ \mathrm{len}(V|_I) = [G : I G_\pi] \]
+%
+%   \textbf{Deduction for Prime Index:}
+%   Suppose \([G:I] = p\) is a prime number (so \(I\) is maximal).
+%   \begin{itemize}
+%       \item If \(V|_I\) is \textbf{reducible}, then \(G_\pi \subseteq I\).
+%       \item If \(V|_I\) is \textbf{irreducible}, then \(G_\pi \not\subseteq I\) (and \(IG_\pi = G\)).
+%   \end{itemize}
+% \end{titledBox}
+
+Finally, with these results specifically for the case where the multiplicity is $1$, we need a way to detect
+it. To that end, recall that the functor $\mathrm{Hom}_U(-, \theta)$ is always left-exact for a representation
+$\theta$ of $H$ (this is even an exercise in Dummit and Foote).
+
+\begin{lem}{Multiplicity One Criterion}{lem3}
+  Let $V$ be an irreducible $K$-representation of $G$, $H$ a closed subgroup, and assume $V|_H$ has finite length.
+  Let $\theta$ be a smooth $K$-representation of a closed subgroup $U \subseteq H$.
+
+  \qn
+  If the functor $\mathrm{Hom}_U(-, \theta)$ is exact on the category of smooth $K$-representations of $H$ and
+  \[ \dim_K \mathrm{Hom}_U(V|_H, \theta) = 1, \]
+  then $V|_H$ has multiplicity 1 (i.e., every irreducible constituent appears exactly once).
+\end{lem}
+
+\begin{Proof}
+  Since $V|_H$ has finite length, let $0 = V_0 \subset V_1 \subset \dots \subset V_n = V|_H$ be a composition series where each quotient $W_i = V_i/V_{i-1}$ is irreducible.
+  Let $\pi$ denote an isomorphism class of irreducible representations of $H$. Let $m_V(\pi)$ be the multiplicity of $\pi$ in this series (the number of indices $i$ such that $W_i \cong \pi$).
+
+  By the exactness of the functor $\mathrm{Hom}_U(-, \theta)$, the dimension is additive:
+  \[
+    \dim \mathrm{Hom}_U(V|_H, \theta) = \sum_{i=1}^n \dim \mathrm{Hom}_U(W_i, \theta)
+  \]
+  Grouping by isomorphism class and using the hypothesis:
+  \[
+    1 = \sum_{\pi} m_V(\pi) \dim \mathrm{Hom}_U(\pi, \theta)
+  \]
+  Since $m_V(\pi)$ and $\dim \mathrm{Hom}_U(\pi, \theta)$ are non-negative integers, there must be exactly one isomorphism class $\pi_0$ such that:
+  \[ m_V(\pi_0) = 1 \quad \text{and} \quad \dim \mathrm{Hom}_U(\pi_0, \theta) = 1 \]
+  and for all other $\pi \neq \pi_0$, either the multiplicity is 0 or the Hom-dimension is 0.
+
+  However, by Clifford's Theorem (which applies because $V$ is irreducible on $G$), the multiplicity $m_V(\pi)$ is constant for all irreducible constituents appearing in $V|_H$. Since we found one constituent ($\pi_0$) with multiplicity 1, all constituents must have multiplicity 1.
+\end{Proof}
+
+\section{p-adic Reductive Group}
+
+We now focus in on when $G$ is a $p$-adic reductive group (like $\GL_n(F)$) and ensure that it satisfies the result we want.
+% Insure to incorporate this: \url{https://en.wikipedia.org/wiki/Reductive_group}
+Let $G$ be a $p$-adic (algebraic) reductive group, that is the group of $F$-rational points of a reductive
+connected $F$-group $\underline{G}$, so $G= \underline{G}(F)$. We first ensure that the inclusion is
+``well-defined'', as in it is closed and hence we have that $G/f(H)$ will be Hausdorff and $f(H)$ is locally
+profinite. In particular, by our earlier work we will choose it so that it is compact abelian.
+
+\begin{lem}{image is closed}{lem:3.1}
+    Let $f : \underline{H} \to \underline{G}$ be an $F$-morphism of reductive connected $F$-groups. Then the subgroup $f(H)$ of $G$ is closed.
+\end{lem}
+
+\begin{Proof}
+  see~\cite{henniartRepresentationsSL2F2025}. Note this is \emph{not} obvious: in general it is constructable
+  (i.e. finite union of locally closed sets). The proof first shows it is locally closed, and then shows it
+  has to be closed.
+\end{Proof}
+
+
+\begin{thm}{``Pushforward'' of representations}{3.2}
+  Let \(f: \underline{H} \to \underline{G}\) be an \(F\)-morphism of reductive connected \(F\)-groups such
+  that \(f(H)\) is a normal subgroup of \(G\) of compact quotient \(G/f(H)\). Then:
+
+  \begin{enumerate}
+    \item  The restriction to \(f(H)\) of any irreducible admissible \(K\)-representation of \(G\) is semisimple of finite length.
+    \item Any irreducible admissible \(K\)-representation of \(f(H)\) is contained in some irreducible
+      admissible \(K\)-representation of \(G\) restricted to \(f(H)\), and extends to an irreducible
+      admissible representation of some open subgroup of \(G\) of finite index.
+  \end{enumerate}
+\end{thm}
+
+\begin{Proof}
+  We go over why the assumptions of~\cref{pr:admissibleExt} are true. Recall:
+  \begin{enumerate}[label=(2-\arabic*)]
+      \item Any finitely generated admissible $R$-representation of $G$ has finite length.
+      \item Any finitely generated smooth $R$-representation of $H$ is Noetherian.
+  \end{enumerate}
+  In general, it is \emph{not} true that a locally profinite group satisfies (2-1). However, a reductive
+  connected p-adic group does. This is too much to prove, however we have seen in~\cite{NatePadicRep} for
+  $\GL_n(F)$ that supercuspidal have length $1$ and principal series have length at most $3$, and hence
+  satisfy the condition.
+
+  Next, $f(H)$ satisfies (2-2), but this is now harder to show and is a result of \emph{Bernstein's Theorem}.
+  The high-level intuition is that the Hecke algebras $\mathcal{H}(G, K_0)$ are Noetherian and $\mathcal{H}(G)$ is built from
+  these (using the Bernstein Blocks we talked about in class). Needless to say, we are taking this for
+  granted.
+\end{Proof}
+
+\begin{prop}{}{prop:3.3}
+    Let $f : H \to G$ be a surjective central\footnote{The kernel of the map is contained in the center of $H$} $F$-morphism of connected reductive $F$-groups. Then, the subgroup $f(H)$ of $G$ is normal of abelian compact quotient $G/f(H)$.
+\end{prop}
+
+\begin{Proof}
+  Complicated, see~\cite{henniartRepresentationsSL2F2025}.
+    % There is an $F$-morphism $\kappa:G\times G \to H$ such that $\kappa(f(x), f(y))=xhx^{-1}y^{-1}$ for all $x, y \in H$ \textcolor{red}{[Borel and Tits 1972, définition 2.2]}. So for all $u, v \in G$ we have $uvu^{-1}v^{-1} = f \circ \kappa(u,v) \in f(H)$. The subgroup $f(H)$ of $H$ is closed (Lemma 3.1) and normal with abelian quotient $G/f(H)$ \textcolor{red}{[loc. cit., proposition 2.7]}.
+
+    % The compactness of $G/H$ is stated in \textcolor{red}{[Silberger 1979]} without proof and in \textcolor{red}{[Labesse and Schwermer 2019, Proposition A.2.1]} with indications for the proof. The idea is to reduce to a connected reductive $F$-anisotropic modulo the centre $F$-group.
+    %
+    % Let $S$ be a maximal $F$-split subtorus of $G$, and $B$ a parabolic $F$-subgroup of $G$ containing $S$. The $G$-centralizer $M$ of $S$ is compact modulo its centre and is a Levi component of $B$. Let $U$ be the unipotent radical of $B$. By \textcolor{red}{[Borel 1991, Theorem 22.6]}, the inverse image $S'$ of $S$ in $H$ is a maximal $F$-split torus in $H$, and the inverse image $B'$ of $B$ is a parabolic $F$-subgroup of $H$. Put $M'$ for the $H$-centralizer of $S'$ and $U'$ for the unipotent radical of $B'$. From \textcolor{red}{[loc. cit.]}, $f$ induces a surjective central $F$-morphism $M' \to M$ and an $F$-isomorphism $U' \to U$. On the other hand, we have the Iwasawa decomposition $G=KB$ for an open compact subgroup $K$ of $G$. The product map $K \times B \to G$ gives a surjective map $K \times B/f(B') \to G/f(H)$. We have $B/f(B') = M/f(M')$, so we just need to prove the compactness of $M/f(M')$.
+    %
+    % Let $X^*(S)$ denote the group of algebraic characters of $S$, and $\mathcal{S}(p_F)$ denote $\mathrm{Hom}(X^*(S), p_F^{\mathbb{Z}})$. The subgroup $\mathcal{S}(p_F)$ of $S$ is free abelian of finite rank with a compact quotient $S/\mathcal{S}(p_F)$. On the other hand, $f$ induces a surjective $F$-morphism $S' \to S$ sending $S'(p_F)$ onto a sublattice of $\mathcal{S}(p_F)$. Hence $S/f(S')$ is finite. So $M/f(S')$ is compact since $M/S$ is compact, a fortiori $M/f(M')$ is compact.
+\end{Proof}
+
+  The condition that the morphism $f$ is \emph{central} is necessary. Without it, the image may fail to be normal or co-compact.
+
+\begin{example}{Necessity of Central}{necessityofCentral}
+  Assume $\mathrm{char}(F) = 2$. Let $\underline{G} = \underline{\mathrm{GL}}_2$ and $\underline{G}' = \underline{\mathrm{SL}}_2$.
+  Consider the Frobenius map $\varphi(x) = x^2$ (applied entry-wise to matrices).
+  Define the morphism $f: \underline{G} \to \underline{G}'$ by:
+  \[ f(g) = \varphi(g) \cdot (\det g)^{-1} \]
+  (Note: In char 2, $\det(\varphi(g)) = (\det g)^2$, so $\det(f(g)) = (\det g)^2 (\det g)^{-2} = 1$, so the map lands in $\mathrm{SL}_2$).
+
+  This map is surjective as algebraic groups, but it is \emph{not central}.
+  Let $U$ be the subgroup of unipotent upper-triangular matrices in $\mathrm{SL}_2(F)$ (isomorphic to the additive group of $F$).
+  The image of $U$ under $f$ is $\varphi(U)$, which corresponds to the subgroup of squares $F^2 \subset F$.
+  \begin{enumerate}
+      \item \emph{Not Normal:} The image $f(G(F))$ involves matrices with entries in $F^2$. Conjugating a matrix with square entries by a matrix with non-square entries generally results in non-square entries.
+      \item \emph{Not Cocompact:} The quotient group contains the term $U / \varphi(U)$, which is homeomorphic to the additive quotient $F / F^2$. For a local field of characteristic 2 (like $\mathbb{F}_{2^k}((t))$), the space $F/F^2$ is \emph{not compact} (it is essentially an infinite-dimensional vector space or a copy of the field itself).
+  \end{enumerate}
+\end{example}
+
+
+\begin{cor}{Descent via Derived Groups}{3.5}
+Assume \(K\) is algebraically closed. Let \(f: \underline{H} \to \underline{G}\) be an \(F\)-morphism of connected reductive \(F\)-groups.
+Suppose that \(f\) induces a \emph{central isogeny} on the derived groups:
+\[ f^{\mathrm{der}}: \underline{H}^{\mathrm{der}} \to \underline{G}^{\mathrm{der}} \]
+Then the subgroup \(f(H) \subset G\) satisfies the conclusions of \cref{th:3.2} (i.e., restrictions of admissible representations are semisimple of finite length, and admissible extensions exist).
+\end{cor}
+
+\begin{Proof}
+    \textbf{Step 1: Covering the Group.}
+    By definition of a central isogeny, the map \(f^{\mathrm{der}}\) is surjective with a finite kernel contained in the center of \(\underline{H}^{\mathrm{der}}\) \textcolor{red}{[Springer 1998, §12.2.6]}.
+    Let \(\underline{Z}\) be the connected center of \(\underline{G}\). Structural theory of reductive groups tells us that \(\underline{G}\) is generated by its center and its derived group. Specifically, the multiplication map
+    \[ m: \underline{Z} \times \underline{G}^{\mathrm{der}} \to \underline{G} \]
+    is surjective \textcolor{red}{[Springer 1998, Corollary 8.1.6]}.
+
+    \textbf{Step 2: Constructing a Central Morphism.}
+    Consider the map \(\Psi: \underline{Z} \times \underline{H} \to \underline{G}\) defined by \(\Psi(z, h) = z \cdot f(h)\).
+    Since \(f\) covers \(\underline{G}^{\mathrm{der}}\) and we explicitly included \(\underline{Z}\), \(\Psi\) is surjective.
+    Its kernel lies in the product of the center of \(\underline{Z}\) (which is \(\underline{Z}\) itself) and the kernel of \(f\), which is central. Thus, \(\Psi\) is a surjective central morphism.
+
+    \textbf{Step 3: Applying Proposition 3.3.}
+    By \cref{pr:prop:3.3}, the image \(\Psi(Z \times H) = Z \cdot f(H)\) is a normal subgroup of \(G\) with a compact abelian quotient.
+    Consequently, by \cref{th:3.2}, the restriction of any irreducible representation \(V\) of \(G\) to the subgroup \(Z \cdot f(H)\) has finite length and is semisimple.
+
+    \textbf{Step 4: Removing the Center (Schur's Lemma).}
+    Since \(V\) is irreducible and \(K\) is algebraically closed, by Schur's Lemma, the center \(Z\) acts on \(V\) via a scalar character \(\omega: Z \to K^\times\).
+    Therefore, the submodule structure of \(V\) restricted to \(Z \cdot f(H)\) is identical to the submodule structure restricted to just \(f(H)\) (since the action of \(Z\) preserves all subspaces).
+    Thus, \(V|_{f(H)}\) is also semisimple of finite length.
+\end{Proof}
+
+\section{Restriction of $GL_2(F)$ to $SL_2(F)$}
+
+
+Let $G = \GL_2(F)$, $G' =\SL_2(F)$, $Z$ the center, $T$ the torus, $B$ the Borel subgroup, $U$ the unipotent
+subgroup. If $X \sse G$ is a subset, $X' = X\cap G'$ and $x = (x_{ij})$ represents a matrix in $G$. We first
+set up for the Clifford theory.
+
+Take $H= ZG'$. It is a closed normal compact group where $G/H$ is isomorphic to $F^*/(F^*)^2$. It is
+normal as $Z$ is obviously normal and $G' = \ker\det$ where $\mathrm{im}\det = F^*$, and $gZG'g^{-1} = ZG'$. It is
+closed since $H= \det^{-1}\left((F^*)^2\right)$. It is cocompact since:
+\[
+  \frac{F^*}{\left(F^*\right)^2} \cong \frac{\Z}{2\Z} \times \frac{\CO_F^*}{(\CO_F^*)^2}
+\]
+and $\CO_F^*$ is compact and so is the quotient by a closed subgroup The $\mathbb{F}_2$-dimension of $G/H$ is that of
+$F^*/(F^*)^2$ which is:
+\begin{equation}\label{eq:4-1}
+\dim_{\mathbb{F}_2} F^* / (F^*)^2 =
+\begin{cases}
+2 + e & \text{if } \text{char}_F \neq 2, \\
+\infty & \text{if } \text{char}_F = 2,
+\end{cases}
+\quad \text{where } 2\CO_F = \FP_F^e.
+\end{equation}
+Hence if $\operatorname{char}_F \ne 2$, $ZG'$ is open.
+
+
+Next, we set up to show that the multiplicity of the restriction is $1$. Fix a separable closure $F^{\mathrm{sc}}$ of $F$ and will consider only extensions of $F$ contained in
+$F^{\mathrm{sc}}$. Write $W_F$ for the Weil group and $\mathrm{Gal}_F$ for the Galois group of
+$F^{\mathrm{sc}}/F$. Let $\Psi$ be a smooth additive $K$-character of $F$, trivial on $\CO_F$ but not on
+$\mathfrak{p}_F^{-1}$.
+
+\begin{defn}{Whittaker Space}{whittakerSp}
+  The smooth $K$-characters of $U$ have the form
+  \[
+    \theta_Y(u) = \Psi \circ \tr(Y(u-1)) = \Psi(Y_{2,1}u_{1,2}), \qquad u\in U
+  \]
+  for a lower triangular nilpotent matrix $Y \in M_2(F)$. The case $Y=0$ gives the trivial character of $U$,
+  the cases with $Y\ne 0$ give the \emph{nondegenerate characters} of $U$.
+
+  \qn
+  When $Y_{2,1} = 1$, we denote $\theta_Y = \theta$.
+\end{defn}
+
+
+The normalizer of $U$ in $G$ is $TU$. By conjugation, $U$ acts trivially on $U$ and its characters. A diagonal matrix $t = \mathrm{diag}(t_1, t_2)$ acts on $u \in U$ by $(tut^{-1})_{1,2} = (t_1/t_2)u_{1,2}$. Also, $t$ acts on the matrix $Y$ defining the character by $(tYt^{-1})_{2,1} = (t_2/t_1)Y_{2,1}$.
+
+It follows that $T$ acts transitively on the nondegenerate characters of $U$, the quotient $T/Z$ acting simply transitively. By the same formulas, two nontrivial characters $\theta_Y$ and $\theta_{Y'}$ of $U$ are conjugate in $G'$ if and only if they are conjugate by an element of $T'$ (the diagonal torus in $\SL_2$) and if and only if $Y_{1,2}$ and $Y'_{1,2}$ differ by a square in $F^*$.
+
+The $T$-normalizer of $\theta_Y$ is equal to $Z$ if $Y \neq 0$ and to $T$ if $Y=0$.
+The $\theta_Y$-coinvariant functor $\tau \mapsto W_Y(\tau)$ from the smooth $K$-representations $\tau$ of $U$
+to the smooth $K$-representations of the $T$-normalizer of $\theta_Y$ is exact. This functor is essentially the dual of $\operatorname{Hom}_U(\tau, \theta)$.
+\begin{itemize}
+    \item A smooth $K$-representation $\tau$ of $U$ is called \emph{degenerate} when $W_Y(\tau) = 0$ for all $Y \neq 0$, and \emph{nondegenerate} otherwise.
+    \item A smooth representation of $G$ or $G'$ is called degenerate (or nondegenerate) if its restriction to $U$ is as well.
+\end{itemize}
+
+The finite-dimensional irreducible smooth $K$-representations of $G$ are of the form $\chi \circ \det$ for a smooth character $\chi$ of $F^*$ and are degenerate. If $\Pi$ is an infinite-dimensional irreducible smooth $K$-representation of $G$, then:
+\[ \dim W_Y(\Pi) = 1 \]
+for all $Y \neq 0$ by the uniqueness of Whittaker models \textcolor{red}{[Vignéras 1996, chap III, 5.10]} .
+
+This uniqueness is structurally decisive. By applying the \emph{Multiplicity One Criterion} (\cref{lm:lem3}), we conclude that the restriction $\Pi|_{G'}$ is \emph{multiplicity free} (i.e., it
+decomposes into a direct sum of \emph{distinct} irreducible representations). Moreover, by Clifford's Theorem,
+these components form a single orbit under the conjugation action of $G$. This natural grouping of ``conjugate
+siblings'' forms the basis of the classification for $G'$.
+
+\index{L-packet}
+\begin{defn}{L-packet}{l-packet}
+Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\). The \emph{L-packet} associated to \(\Pi\), denoted \(L(\Pi)\), is the set of isomorphism classes of the irreducible components of the restriction \(\Pi|_{G'}\).
+\end{defn}
+
+Since every irreducible representation of \(G'\) can be lifted to \(G\) (by~\cref{pr:admissibleExt}), we can classify the irreducible smooth \(K\)-representations of \(G'\) by analyzing these L-packets.
+
+\begin{prop}{Properties of L-packets: I}{propofL-packetsI}
+  \begin{enumerate}
+    \item If \(\Pi\) is an irreducible smooth \(K\)-representation of \(G\), the restriction \(\Pi|_{G'}\)
+    is semisimple of finite length and has multiplicity 1.
+    \item Any irreducible smooth \(K\)-representation of \(G'\) belongs to a unique \(L\)-packet.
+    \item For two irreducible smooth \(K\)-representations \(\Pi_1, \Pi_2\) of \(G\):
+    \[
+      L(\Pi_1) = L(\Pi_2) \iff \Pi_1 \cong (\chi \circ \det) \otimes \Pi_2
+    \]
+    for some smooth character \(\chi\) of \(F^*\).
+  \end{enumerate}
+\end{prop}
+
+\begin{Proof}
+  \begin{enumerate}
+    \item \textbf{Semisimplicity:} We established in the previous section that \(H = ZG'\) is a normal subgroup with a compact abelian quotient. By \cref{th:3.2} (Descent Properties), the restriction \(\Pi|_H\) is semisimple of finite length. Since \(Z\) acts by scalars (as \(K\) is algebraically closed), the restriction to \(G'\) retains the same reducible structure.
+
+    \textbf{Multiplicity 1:} We apply the Multiplicity One Criterion (\cref{lm:lem3}). Let \(U\) be the unipotent subgroup and \(\theta\) a non-degenerate character. By the uniqueness of Whittaker models for \(\mathrm{GL}_2(F)\), for any infinite-dimensional \(\Pi\), we have \(\dim \mathrm{Hom}_U(\Pi, \theta) = 1\). Thus, \(\Pi|_{G'}\) is multiplicity free. (For the finite-dimensional case, \(\Pi\) is 1-dimensional and trivial on \(G'\), so the result holds trivially).
+
+    \item \textbf{Existence:} By the Extension Property (\cref{pr:admissibleExt}), any irreducible representation \(\pi\) of \(G'\) is contained in the restriction of some representation of \(G\). Thus, \(\pi\) belongs to at least one L-packet.
+    \textbf{Uniqueness:} By Clifford's Theorem, the irreducible components of a restriction \(\Pi|_{G'}\) form a single orbit under the conjugation action of \(G\). By Definition \ref{df:l-packet}, the L-packet \(L(\Pi)\) is exactly this orbit. Since distinct orbits are disjoint, \(\pi\) cannot belong to two different packets.
+
+    \item
+    \begin{itemize}
+        \item[($\Leftarrow$)] Assume \(\Pi_1 \cong \Pi_2 \otimes (\chi \circ \det)\). Restricting to \(G'\):
+        \[ \Pi_1|_{G'} \cong (\Pi_2|_{G'}) \otimes (\chi \circ \det)|_{G'} \]
+        Since \(\det(G') = \{1\}\), the twisting character is trivial on \(G'\). Thus \(\Pi_1|_{G'} \cong \Pi_2|_{G'}\), which implies their components (and thus their L-packets) are identical.
+
+        \item[($\Rightarrow$)] Assume \(L(\Pi_1) = L(\Pi_2)\). This implies that \(\Pi_1|_{G'}\) and \(\Pi_2|_{G'}\) share an irreducible component \(\pi\).
+        By the logic of \cref{lm:lem2} (Clifford Theory for Abelian Quotients). Although \(G/G' \cong F^*\) is not compact, we can pass through the intermediate compact subgroup \(H = ZG'\).
+        Since \(\Pi_1\) and \(\Pi_2\) share a component on \(G'\), they must share a component on \(H\) (possibly up to a twist of the central character).
+        Since \(G/H\) is abelian, \cref{lm:lem2}(2b) implies that \(\Pi_1\) is a twist of \(\Pi_2\) by some character \(\psi\) of \(G\) trivial on \(H\).
+        Since \(\det\) gives the isomorphism \(G/G' \cong F^*\), any such twist is of the form \(\chi \circ \det\).
+    \end{itemize}
+  \end{enumerate}
+\end{Proof}
+
+\begin{titledBox}{remark}{rmk}
+  The trivial character of \(G'\) is the unique finite-dimensional irreducible smooth \(K\)-representation of \(G'\). It is degenerate. It forms the L-packet \(L(\mathbf{1}) = L(\chi \circ \det)\) for any smooth character \(\chi\) of \(F^*\).
+\end{titledBox}
+
+Thus, the irreducible components of \(\Pi|_{G'}\) are \(G\)-conjugate (and indeed \(B\)-conjugate, since the Iwasawa decomposition \(G = BG'\) implies the Borel subgroup covers the quotient).
+
+Let us now determine the size of an \(L\)-packet. As established in \cref{lm:lem3}, since \(G/G'\) is abelian,
+the stabilizer \(G_{\pi}\) of a component \(\pi \in L(\Pi)\) is a normal subgroup and does not depend on the
+choice of \(\pi\). Let us denote this as \(G_{\Pi}\). Since \(G_{\Pi}\) contains the center \(Z\), its image
+under the determinant \(\det(G_{\Pi})\) must contain \(\det(Z) = (F^*)^2\). We have the following isomorphism
+of quotients:
+\[
+  G/G_\Pi \cong \frac{G/G'}{G_\Pi/G'} \xrightarrow{\sim} \frac{F^*}{\det(G_\Pi)}
+\]
+This isomorphism allows us to count the size of the packet using the arithmetic of the field \(F\).
+
+\begin{prop}{Properties of L-packets: II}{propofL-packetsII}
+  Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\) and \(\pi \in L(\Pi)\) be an irreducible component. Let \(G_\Pi\) denote the \(G\)-stabilizer of \(\pi\).
+  \begin{enumerate}
+    \item \textbf{Maximality:} \(G_\Pi\) is the largest subgroup \(I\) of \(G\) (containing \(G'\)) such that \(\mathrm{length}(\Pi|_I) = \mathrm{length}(\Pi|_{G'})\). (In fact, \(\mathrm{length}(\Pi|_{G_\Pi}) = 1\)).
+    \item \textbf{Induction:} \(\Pi \cong \operatorname{Ind}_{G_\Pi}^G \pi\). (Since multiplicity is 1, the isotypic component \(V_\pi\) is isomorphic to \(\pi\)).
+    \item \textbf{Structure:} The L-packet \(L(\Pi)\) is a principal homogeneous space (a \emph{torsor}) for the quotient group \(G/G_\Pi\).
+    \item \textbf{Cardinality:} \(|L(\Pi)|\) is a power of 2. Specifically, \(|L(\Pi)|\) divides the index \([F^* : (F^*)^2]\).
+    \[
+      |L(\Pi)| \text{ divides } \begin{cases}
+        2^{2+e} & \text{if } \mathrm{char}_F \neq 2, \\
+        \infty & \text{if } \text{char}_F = 2.
+      \end{cases}
+    \]
+  \end{enumerate}
+\end{prop}
+
+
+\begin{Proof}
+  \begin{enumerate}
+    \item By \cref{pr:propofL-packetsI}, the restriction \(\Pi|_{G'}\) has multiplicity 1. By \cref{lm:lem3}, specifically part (2c), \(G_\Pi\) is the unique maximal subgroup \(I\) such that \(\mathrm{length}(\Pi|_I) = \mathrm{length}(\Pi|_{G'})\).
+    (Note: While the lemma refers to \(H = ZG'\), the scalar action of \(Z\) ensures that lengths on \(H\) and \(G'\) are identical).
+
+    \item Since multiplicity is 1, the isotypic component \(V_\pi\) coincides with the irreducible
+      representation \(\pi\). The isomorphism \(\Pi \cong \operatorname{Ind}_{G_\Pi}^G \pi\) is then the
+      standard Clifford reduction formula established in the setup to \cref{lm:lem3}.
+
+    \item Clifford theory establishes that \(G\) acts transitively on \(L(\Pi)\) with stabilizer \(G_\Pi\). Since \(G/G'\) is abelian, \(G_\Pi\) is normal. Thus, the quotient group \(G/G_\Pi\) acts simply transitively on the set \(L(\Pi)\), making it a \(G/G_\Pi\)-torsor.
+
+    \item The cardinality is the index: \(|L(\Pi)| = [G : G_\Pi]\).
+    The determinant induces an isomorphism \(G/G_\Pi \cong F^*/\det(G_\Pi)\).
+    Since \(G_\Pi\) contains the center \(Z\), its determinant image contains \(\det(Z) = (F^*)^2\).
+    Therefore, the group \(F^*/\det(G_\Pi)\) is a quotient of the elementary abelian 2-group \(F^*/(F^*)^2\).
+    By Lagrange's Theorem, the size of this quotient must be a power of 2 dividing \([F^* : (F^*)^2]\).
+  \end{enumerate}
+\end{Proof}
+
+
+
+\begin{thm}{Size of L-packets (Odd Residual Characteristic)}{sizeofL-packets}
+  If the residual characteristic \(p\) is odd, then the cardinality of an \(L\)-packet is either \(1\), \(2\), or \(4\).
+\end{thm}
+
+\begin{Proof}
+  According to \cref{pr:propofL-packetsII}(4), \(|L(\Pi)|\) divides the order of the group \(F^*/(F^*)^2\).
+  Recall Equation \eqref{eq:4-1}, which states that \(\dim_{\mathbb{F}_2} F^*/(F^*)^2 = 2 + e\), where \(e = v_F(2)\).
+  Since \(p\) is odd, \(2\) is a unit in the ring of integers \(\CO_F\), implying \(e = 0\).
+  Therefore, the group has dimension 2 over \(\mathbb{F}_2\), so \(|F^*/(F^*)^2| = 2^2 = 4\).
+  The divisors of 4 are 1, 2, and 4.
+\end{Proof}
+
+When $p =2$, this is more difficult (If $F = \mathbb{Q}_2$, the group size is $|F^*/(F^*)^2| = 8$). However, the
+packets are \emph{still} of size $1,2,4$ as long as $\operatorname{char}_K \ne 2$. We shall not prove this, but it was proven
+for:
+\begin{itemize}
+  \item $K = \mathbb{C}$ and $\operatorname{char}_F = 0$ (see \textcolor{red}{[Labesse and Langlands 1979; Shelstad 1979]}
+  \item $\operatorname{char}_F = 2$ and $\operatorname{char}_K = 2$ \textcolor{red}{[Cui et al. 2024, Proposition 6.6]}
+\end{itemize}
+
+The isomorphism \(G/G_\Pi \cong F^*/\det G_\Pi\) invites an interpretation via Local Class Field Theory. Recall that open subgroups of \(F^*\) of finite index correspond to norm groups of abelian extensions.
+\begin{itemize}
+    \item Any open subgroup of index 2 is the norm group \(N_{E/F}(E^*)\) for a unique quadratic separable extension \(E/F\).
+    \item Any open subgroup of index 4 containing \((F^*)^2\) is the norm group \(N_{K/F}(K^*)\) for a unique biquadratic separable extension \(K/F\).
+\end{itemize}
+
+\begin{defn}{Associated Field Extension}{fieldExt}
+  Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\). We denote by \(E_\Pi\) the separable extension of \(F\) corresponding to the stabilizer via Class Field Theory, i.e., the extension such that:
+  \[ N_{E_\Pi/F}(E_\Pi^*) = \det G_\Pi \]
+\end{defn}
+
+We can now relate the L-packet size to the group of self-twists of \(\Pi\).
+
+\begin{defn}{Group of Self-Twists}{selfTwists}
+  We denote by \(X_\Pi\) the group of characters \(\chi \circ \det\) of \(G\) (where \(\chi\) is a smooth character of \(F^*\)) such that:
+  \[ \Pi \otimes (\chi \circ \det) \cong \Pi \]
+  If \(\mathrm{char}(K) \neq 2\), the non-trivial characters in \(X_\Pi\) correspond to quadratic characters \(\eta_E\) associated with quadratic extensions \(E/F\).
+\end{defn}
+
+\begin{prop}{Twists and Packet Size}{twistsPacketSize}
+  \begin{enumerate}
+      \item \(X_\Pi\) is isomorphic to the group of smooth characters of \(G\) trivial on \(G_\Pi\).
+      \item The cardinality of the L-packet equals the number of self-twists: \(|L(\Pi)| = |X_\Pi|\).
+  \end{enumerate}
+\end{prop}
+
+\begin{Proof}
+  \begin{enumerate}
+      \item This is a direct application of \cref{lm:lem3}(1). Since \(G/H\) is abelian, the self-twists of \(\Pi\) are exactly the characters trivial on the stabilizer \(G_\Pi\).
+      \item By Pontryagin duality  for the finite abelian group \(G/G_\Pi\)
+        (see~\cite{chwojko-srawleyPontryaginDuality}), the number of characters trivial on \(G_\Pi\) equals
+        the index \([G:G_\Pi]\). By \cref{pr:propofL-packetsII} we have \(|L(\Pi)| = [G:G_\Pi]\).
+  \end{enumerate}
+\end{Proof}
+
+Finally, we address how the Whittaker model interacts with the L-packet. While all components are conjugate, they are distinct with respect to a fixed Whittaker character.
+
+\begin{prop}{Uniqueness of Whittaker Component}{whittakerComponent}
+  Fix a lower triangular matrix \(Y \neq 0\) and the associated character \(\theta_Y\) of \(U\).
+  There exists a \emph{unique} component \(\pi \in L(\Pi)\) such that \(\pi\) admits a non-zero Whittaker model for \(\theta_Y\) (i.e., \(W_Y(\pi) \neq 0\)).
+\end{prop}
+
+\begin{Proof}
+  Recall that \(\Pi|_{G'}\) decomposes as a direct sum of the components in the L-packet:
+  \[ \Pi|_{G'} = \bigoplus_{\pi \in L(\Pi)} \pi \]
+  The Whittaker functor \(\tau \mapsto W_Y(\tau)\) is exact and additive on direct sums. Therefore:
+  \[ \dim_K W_Y(\Pi) = \sum_{\pi \in L(\Pi)} \dim_K W_Y(\pi) \]
+  We know from the uniqueness of Whittaker models for \(\mathrm{GL}_2\) that \(\dim_K W_Y(\Pi) = 1\).
+  Since dimensions are non-negative integers, exactly one term in the summation must be 1, and the rest must be 0.
+\end{Proof}
+
+
+
+\section{Representations}
+
+We now briefly take a look at how we translate the result about parabolic induction and cuspidal
+representations. Reminders of the definitions will be put, but it will be assumed the reader already knows
+this (see~\cite{NatePadicRep} for my covering of this material). For this section, let \(\mathrm{Gr}_K^\infty(G)\) denote the Grothendieck group of finite
+length smooth \(K\)-representations of \(G\), and let \([\tau]\) denote the image in
+\(\mathrm{Gr}_K^\infty(G)\) of a representation \(\tau\). Similar notation applies to \(G'\).
+
+
+\begin{defn}{Parabolic Induction}{parabolicInd}
+  Let \((\sigma, V)\) be a smooth \(K\)-representation of the torus \(T\). The \emph{smooth parabolic induction} \(\operatorname{ind}_B^G(\sigma)\) is the space of functions \(f: G \to V\) satisfying:
+  \[
+    f(tugk) = \sigma(t)f(g)
+  \]
+  for all \(t \in T, u \in U, g \in G\), and some open compact subgroup \(K_f \subset G\), under the action of right translation.
+
+
+  The modulus character \(\delta: B \to \mathbb{R}_{>0}\) is defined by:
+  \[
+    \delta(\mathrm{diag}(a, d)) = q^{-\mathrm{val}(a/d)} \qquad (a, d \in F^*)
+  \]
+  To define the square root of \(\delta\), fix a square root \(q^{1/2}\) of \(q\) in \(K^*\):
+  \[
+    \nu(\mathrm{diag}(a, d)) = (q^{1/2})^{-\mathrm{val}(a/d)}
+  \]
+  Then the \emph{normalized parabolic induction} is defined as \(i_B^G(\sigma) = \operatorname{ind}_B^G(\sigma \nu)\).
+\end{defn}
+
+This construction behaves well with respect to twisting. For a smooth character \(\chi \circ \det\) of \(G\):
+\[ i_B^G(\sigma) \otimes (\chi \circ \det) \simeq i_B^G(\sigma \otimes (\chi \circ \det)) \]
+Analogous definitions apply to \(G'\). Since \(G = BG'\) and \(G/B\) is compact, the restriction map \(f \mapsto f|_{G'}\) induces isomorphisms:
+\[
+  (\operatorname{ind}_B^G(\sigma))|_{G'} \xrightarrow{\sim} \operatorname{ind}_{B'}^{G'}(\sigma|_{T'}), \qquad (i_B^G(\sigma))|_{G'} \xrightarrow{\sim} i_{B'}^{G'}(\sigma|_{T'})
+\]
+Hence, the parabolic case is rather simple.
+\begin{defn}{Cuspidal Representations}{cuspidalDef}
+  When \(\chi\) is a smooth \(K\)-character of \(T\), the induction \(\operatorname{ind}_B^G(\chi)\) is called a \emph{principal series} representation.
+  \begin{itemize}
+      \item An irreducible smooth \(K\)-representation of \(G\) is called \emph{supercuspidal} if it is not a subquotient of any principal series.
+      \item It is called \emph{cuspidal} if its \(U\)-coinvariants are zero (\((-)_U = 0\)).
+  \end{itemize}
+  A supercuspidal representation is always cuspidal. The converse holds provided \(q+1 \neq 0\) in \(K\). Both classes of representations are infinite-dimensional.
+\end{defn}
+
+The property of cuspidality descends to the L-packet.
+
+\begin{prop}{Cuspidality of L-packets}{cuspidalPacket}
+  Let \(\Pi\) be an irreducible smooth \(K\)-representation of \(G\) and \(\pi \in L(\Pi)\) a component of its restriction.
+  \begin{enumerate}
+      \item \(\Pi\) is cuspidal if and only if \(\pi\) is cuspidal.
+      \item \(\Pi\) is supercuspidal if and only if \(\pi\) is supercuspidal.
+  \end{enumerate}
+  Consequently, an L-packet \(L(\Pi)\) is called a \emph{cuspidal packet} if \(\Pi\) is cuspidal.
+\end{prop}
+
+\begin{Proof}
+  \(L(\Pi)\) constitutes the \(B\)-orbit of \(\pi\) (since \(G=BG'\)). The \(U\)-coinvariant functor is exact and commutes with restriction to \(G'\). Thus, the vanishing of coinvariants for \(\Pi\) implies the vanishing for its components, and vice versa.
+\end{Proof}
+
+\subsubsection*{Construction via Types}
+
+The rest would now be going into the details of the construction which is too much for this paper, but here is
+a glimpse. Let \(\Pi\) be a cuspidal \(K\)-representation of \(G\). It is constructed via compact induction from an \emph{extended maximal simple type} \((J, \Lambda)\):
+\[
+  \Pi \cong \operatorname{ind}_J^G(\Lambda)
+\]
+References: \textcolor{red}{[Bushnell and Kutzko 1994; Bushnell and Henniart 2002]} for \(K=\mathbb{C}\), and \textcolor{red}{[Vignéras 1996, III.3.4]} for general \(K\).
+
+The group \(J\) contains the center \(Z\) and a unique maximal open compact subgroup \(J^0\). Let \(J^1\) be
+the pro-\(p\) radical of \(J^0\). The restriction \(\Lambda|_{J^0}\) is of the form \(\kappa \otimes
+\tilde{\sigma}\), where \(\kappa\) is a representation of \(J^0\) and \(\tilde{\sigma}\) is the inflation of
+an irreducible representation \(\sigma\) of \(J^0/J^1\).
+
+The open normal subgroup \(JG'\) has index \(|F^*/\det J|\) in \(G\).
+
+\begin{prop}{Mackey Decomposition and Packet Size}{mackeyPacket}
+  The restriction of \(\Pi\) to the intermediate group \(JG'\) decomposes as:
+  \[ \Pi|_{JG'} = \bigoplus_{g \in G/JG'} \operatorname{ind}_{J_g'}^{JG'} \lambda^g \]
+  where \(J' = J \cap G'\) and \(g\) runs over coset representatives. This leads to the formula for the packet size:
+  \[ |L(\Pi)| = [F^* : \det J] \cdot \mathrm{length}(\operatorname{ind}_{J'}^{G'} (\lambda|_{J'})) \]
+\end{prop}
+
+\begin{prop}{Quadratic Extension Criterion}{quadExtCrit}
+  If the index \([F^* : \det J] = 2\), then \(\det G_\Pi \subset \det J\).
+  In this case, \(\det G_\Pi = \det J\) if and only if \(G_\Pi = JG'\).
+  This determines a unique quadratic separable extension \(E/F\) such that \(\det J = N_{E/F}(E^*)\).
+\end{prop}
+
+\subsubsection*{Next Steps}
+
+With the structural properties of L-packets established (cardinality, relationship to field extensions, and type theory), the natural progression is to classify these packets explicitly.
+\begin{itemize}
+    \item \textbf{Level 0:} Cases where the type \((J, \Lambda)\) has trivial pro-\(p\) part (depth zero).
+    \item \textbf{Positive Level:} Cases where the representation is deeper.
+\end{itemize}
+The subsequent sections should define the specific types \((J, \Lambda)\) for the primitive (cuspidal)
+representations and calculate the corresponding groups \(X_\Pi\) and stabilizer groups \(G_\Pi\) to verify the
+cardinality bounds derived in \cref{pr:twistsPacketSize}.
+
+
+
+
+\newpage
+\printbibliography
+
+
+
+
+
+
+\end{document}
+

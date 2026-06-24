@@ -1,0 +1,914 @@
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
+
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{Geometric Intuition of Hilbert Spaces}
+\author{Nathanael Chwojko-Srawley}
+\date{\today}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         packages                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\usepackage{extarrows}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{stackengine}
+\usepackage{colortbl}
+\usepackage{scalerel}
+\usepackage{amsmath, amssymb} % Used to write better mathematical expressions (ex. \mathbb{R})
+\usepackage{stackrel}         % for left-right arrows, staking symbol above and bellow
+\usepackage{mathrsfs}
+\usepackage{bbm}                     % for mathbbm{1}
+\usepackage{euscript}
+\usepackage{commutative-diagrams}
+\usepackage[font=itshape]{quoting}
+\usepackage{mathtools}
+  \usepackage{enumitem}
+\usepackage{amsthm}           % Used to create theorem enviroments.
+\usepackage{graphicx}         % Let's you use images in LaTeX; ex the \includegraphics command.
+\usepackage{hhline}
+%\usepackage{luatexja}
+%\usepackage{fontspec}
+\usepackage{dsfont}
+\usepackage{wasysym}          % emoji's!
+\usepackage{float}            % package with ``H'' for figures and tables, ex. Images, tables, etc
+%\usepackage{subcaption}      % More options with sub-captions.
+\usepackage{setspace}         % More flexibility on spacing in document.
+\usepackage{hyperref}         % let's me put hyperlinks
+%\usepackage{tikz}             % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+\usepackage{tikz-cd}          % for commutative diagrams https://tex.stackexchange.com/questions/419221/how-to-do-the-pushout-with-universal-property
+%\usepackage{quiver}           % for better commutative diagrams
+\usepackage{bookmark}         % creating heading shortcut bar on the left as in word
+\usepackage{longtable}        % create tables that extend past one page
+%\usepackage{siunitx}         % required for alignment
+%\usepackage{multirow}        % for multiple rows
+\usepackage{microtype}        % makes nice text. Fixes some under-/over- filled box problems.
+%\usepackage{fancyvrb}        % Let's you write code (different style than listings).
+\usepackage[most]{tcolorbox} 	      % Makes nice boxes for thms, cor, prop, or anything else.
+%\usepackage{enumitem}        % More flexibility on enumeration (don't know much).
+\usepackage{xcolor}           % Colour text.
+\usepackage{wrapfig}          % To wrap text around figure
+\usepackage{listings}         % Create nice colour code blocks (customized in preamble)
+\usepackage{thmtools}         % Customize theorem environment (in preamble).
+%\usepackage{marvosym}        % Provide ``basic'' symbols (hazard, religious, smiley face etc.)
+\usepackage{array}            % \begin{table}{>{\em}c c} -> 1st column italic (bfseries for bold)
+%\usepackage[english]{babel}  % If I want to blindtext in english.
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8.5in}]{geometry}
+%\usepackage[symbol]{footmisc} % For daggers and asterisk for footnotes. 1: *, 2: dagger, etc.
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+%\usepackage{pst-plot}          %To make nice plots: https://tex.stackexchange.com/questions/47594/how-can-i-make-a-graph-of-a-function#47596
+% \usepackage[answerdelayed]{exercise}
+\usepackage{etoolbox}          % for Dynkin diagrams
+\usepackage{dynkin-diagrams}   % for Dynkin diagrams
+\usepackage{cleveref}
+
+% ╔═════════════════════════════════════════════════════╗
+% ║           for figures via inkspace                  ║
+% ╚═════════════════════════════════════════════════════╝
+
+% to import figures via: https://github.com/gillescastel/inkscape-figures
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+
+% This command is the ONLY command imported via the packages snippet, think of it as a tiny package written out
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                 bibliography and citing                   ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\usepackage{csquotes}
+% \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\usepackage{biblatex}
+
+\addbibresource{bibliography.bib}
+
+% ╔═══════════════════════════════════════════════════════════╗
+% ║                    colours (colors)                       ║
+% ╚═══════════════════════════════════════════════════════════╝
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightyellow}{rgb}{1,1,0.6}
+\definecolor{reddish}{HTML}{A01A3A}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       book format                        ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\pagestyle{fancy}
+
+\setlength\headheight{20pt}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+\fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+\fancyfoot[R,RO]{\thepage}{}
+
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
+}
+
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+%have format the title command
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
+
+
+\setlength{\parindent}{0pt} % don't like indentation infront of paragraphs
+\setlength{\parskip}{1ex}   %so that there is still space between paragarphs
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                       Shortcuts                          ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+%\ExerciseLevelInToc
+
+% I like original mathcal better, but need lowercase.
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+
+% mathbb
+\newcommand{\A}{{\mathbb{A}}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\F}{{\mathbb{F}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\V}{{\mathbb{V}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\BI}{{\mathbb{I}}}
+\renewcommand{\H}{{\mathbb{H}}}
+\renewcommand{\P}{{\mathbb{P}}}
+
+
+% mathcal
+% \newcommand{\co}{{\mathfrak{o}}} %mathcal{o} looks like wreath product, so I changed it to mathfrak
+\newcommand{\co}{{\mathpzc{o}}}
+\newcommand{\CA}{{\mathcal{A}}}
+\newcommand{\CB}{{\mathcal{B}}}
+\newcommand{\CC}{{\mathcal{C}}}
+\newcommand{\CD}{{\mathcal{D}}}
+\newcommand{\CF}{{\mathcal{F}}}
+\newcommand{\CG}{{\mathcal{G}}}
+\newcommand{\CH}{{\mathcal{H}}}
+\newcommand{\CI}{{\mathcal{I}}}
+\newcommand{\CK}{{\mathcal{K}}}
+\newcommand{\CL}{{\mathcal{L}}}
+\newcommand{\CM}{{\mathcal{M}}}
+\newcommand{\CN}{{\mathcal{N}}}
+\newcommand{\CO}{{\mathcal{O}}}
+\newcommand{\CQ}{{\mathcal{Q}}}
+\newcommand{\CR}{{\mathcal{R}}}
+\newcommand{\CS}{{\mathcal{S}}}
+\newcommand{\CT}{{\mathcal{T}}}
+\newcommand{\CV}{{\mathcal{V}}}
+\newcommand{\CZ}{{\mathcal{Z}}}
+% EXCPETION:
+\newcommand{\CP}{{\mathcal{P}}}
+% \newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\RP}{\mathbb{R}\mathrm{P}}
+
+
+%Euscript
+\newcommand{\EB}{\EuScript{B}}
+\newcommand{\EC}{{\EuScript{C}}}
+\newcommand{\EF}{{\EuScript{F}}}
+\newcommand{\EL}{{\EuScript{L}}}
+\newcommand{\EO}{{\EuScript{O}}}
+
+
+%mathfrak (lowercase)
+\newcommand{\fa}{{\mathfrak{a}}}
+\newcommand{\fb}{{\mathfrak{b}}}
+\newcommand{\fc}{{\mathfrak{c}}}
+\newcommand{\fd}{{\mathfrak{d}}}
+\newcommand{\fm}{{\mathfrak{m}}}
+\newcommand{\fn}{{\mathfrak{n}}}
+\newcommand{\fo}{{\mathfrak{o}}}
+\newcommand{\fp}{{\mathfrak{p}}}
+\newcommand{\fq}{{\mathfrak{q}}}
+
+
+%mathfrak (upper case)
+\newcommand{\FA}{{\mathfrak{A}}}
+\newcommand{\FB}{{\mathfrak{B}}}
+\newcommand{\FC}{{\mathfrak{C}}}
+\newcommand{\FD}{{\mathfrak{D}}}
+\newcommand{\FK}{{\mathfrak{K}}}
+\newcommand{\FM}{{\mathfrak{M}}}
+\newcommand{\FN}{{\mathfrak{N}}}
+\newcommand{\FO}{{\mathfrak{O}}}
+\newcommand{\FP}{{\mathfrak{P}}}
+
+
+%mathscr
+\newcommand{\ff}{{\mathscr{F}}}
+\newcommand{\SA}{\mathscr{A}}
+\newcommand{\SC}{\mathscr{C}}
+\newcommand{\SF}{\mathscr{F}}
+\newcommand{\SG}{\mathscr{G}}
+\newcommand{\SH}{\mathscr{H}}
+\newcommand{\SI}{\mathscr{I}}
+\newcommand{\SK}{\mathscr{K}}
+\newcommand{\SN}{\mathscr{N}}
+\newcommand{\SQ}{\mathscr{Q}}
+\newcommand{\SR}{\mathscr{R}}
+\newcommand{\SV}{\mathscr{V}}
+\newcommand{\SZ}{\mathscr{Z}}
+
+
+% operatorname -- 2 letters (lowercase and upper case)
+\newcommand{\ab}{{\operatorname{ab}}}
+\newcommand{\ad}{{\operatorname{ad}}}
+\newcommand{\ch}{{\operatorname{ch}}}
+\newcommand{\ev}{{\operatorname{ev}}}
+\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\im}{{\operatorname{im}}}
+\newcommand{\nm}{{\operatorname{Nm}}}
+\newcommand{\op}{{\operatorname{op}}}
+\newcommand{\rk}{{\operatorname{rk}}}
+\newcommand{\sh}{{\operatorname{sh}}}
+\newcommand{\tr}{{\operatorname{tr}}}
+
+\newcommand{\Ab}{{\operatorname{Ab}}}
+\newcommand{\Br}{{\operatorname{Br}}}
+\newcommand{\Ch}{{\operatorname{Ch}}}
+\newcommand{\Cl}{{\operatorname{Cl}}}
+\newcommand{\GL}{{\operatorname{GL}}}
+\newcommand{\Nm}{{\operatorname{Nm}}}
+\newcommand{\SL}{{\operatorname{SL}}}
+
+\renewcommand{\Re}{{\operatorname{Re}}}
+\renewcommand{\Im}{{\operatorname{Im}}}
+
+
+%categories
+\newcommand{\Grp}{{\textbf{Grp}}}
+\newcommand{\Fld}{{\textbf{Fld}}}
+\newcommand{\Sh}{{\textbf{Sh}}}
+\newcommand{\Set}{{\textbf{Set}}}
+\newcommand{\Mod}{{\textbf{Mod}}}
+\newcommand{\PSh}{{\textbf{PSh}}}
+\newcommand{\Sch}{{\textbf{Sch}}}
+\newcommand{\Top}{{\textbf{Top}}}
+\newcommand{\RgSp}{{\textbf{RgSp}}}
+\newcommand{\Ring}{{\textbf{Ring}}}
+
+
+%operatorname -- 3+ letters (lowercase and upper case)
+\newcommand{\rad}{{\operatorname{rad}}}
+\newcommand{\sep}{{\operatorname{sep}}}
+\newcommand{\res}{{\operatorname{res}}}
+\newcommand{\sgn}{{\operatorname{sgn}}}
+\newcommand{\pre}{{\operatorname{pre}}}
+\newcommand{\ord}{{\operatorname{ord}}}
+\newcommand{\vol}{{\operatorname{vol}}}
+\newcommand{\lcm}{{\operatorname{lcm}}}
+
+\newcommand{\conj}{{\operatorname{conj}}}
+\newcommand{\disc}{{\operatorname{disc}}}
+\newcommand{\stab}{{\operatorname{stab}}}
+\newcommand{\kdim}{{\operatorname{kdim}}}
+\newcommand{\diag}{{\operatorname{diag}}}
+
+\newcommand{\trdeg}{\operatorname{trdeg}}
+\newcommand{\coker}{{\operatorname{coker}}}
+\newcommand{\codim}{{\operatorname{codim}}}
+
+\newcommand{\Ann}{{\operatorname{Ann}}}
+\newcommand{\Aut}{{\operatorname{Aut}}}
+\newcommand{\Der}{{\operatorname{Der}}}
+\newcommand{\Div}{{\operatorname{Div}}}
+\newcommand{\Emb}{{\operatorname{Emb}}}
+\newcommand{\End}{{\operatorname{End}}}
+\newcommand{\Ext}{{\operatorname{Ext}}}
+\newcommand{\Gal}{{\operatorname{Gal}}}
+\newcommand{\Hom}{{\operatorname{Hom}}}
+\newcommand{\Ind}{{\operatorname{Ind}}}
+\newcommand{\Inn}{{\operatorname{Inn}}}
+\newcommand{\Int}{{\operatorname{int}}}
+\newcommand{\Irr}{{\operatorname{Irr}}}
+\newcommand{\Jac}{{\operatorname{Jac}}}
+\newcommand{\Mor}[1]{\operatorname{Mor}(\textbf{#1})}
+\newcommand{\Nil}{{\operatorname{Nil}}}
+\newcommand{\Obj}{{\operatorname{Obj}}}
+\newcommand{\Out}{{\operatorname{Out}}}
+\newcommand{\Pic}{{\operatorname{Pic}\,}}
+\newcommand{\Rep}{{\operatorname{Rep}}}
+\newcommand{\Res}{{\operatorname{Res}}}
+\newcommand{\Spl}{{\operatorname{Spl}}}
+\newcommand{\Syl}{{\operatorname{Syl}}}
+\newcommand{\Sym}{{\operatorname{Sym}}}
+\newcommand{\Tor}{{\operatorname{Tor}}}
+
+\newcommand{\Char}{{\operatorname{char}}}
+\newcommand{\Frac}{{\operatorname{Frac}}}
+\newcommand{\Frob}{{\operatorname{Frob}}}
+\newcommand{\Proj}{{\operatorname{Proj}\,}}
+\newcommand{\RMod}{{}_R\operatorname{Mod}}
+\newcommand{\SExt}{{\mathcal{E}\emph{xt}}}
+\newcommand{\SHom}{{\emph{Hom}}}
+\newcommand{\Span}{{\operatorname{span}}}
+\newcommand{\Spec}{{\operatorname{Spec}\,}}
+\newcommand{\Supp}{{\operatorname{Supp}}}
+\newcommand{\Tens}[1]{#1\otimes --}
+\newcommand{\fHom}[1]{\operatorname{Hom}(#1, --)}
+
+\newcommand{\mSpec}{{\operatorname{mSpec}}}
+\newcommand{\cofHom}[1]{\operatorname{Hom}(--, #1)}
+
+
+% connectors
+% \renewcommand{\mid}{\big|}
+\newcommand{\sse}{\subseteq}
+\newcommand{\subg}{\leqslant}
+\newcommand{\supg}{\geqslant}
+\newcommand{\ssne}{\subsetneq}
+\newcommand{\isosubg}{\lesssim}
+\newcommand{\nsse}{\not\subseteq}
+\newcommand{\nsubg}{\trianglelefteq}
+\newcommand{\nsupg}{\trianglerighteq}
+\newcommand{\csubg}{\blacktriangleleft}
+\renewcommand{\mid}{\big|}
+
+
+% Arrows
+\newcommand{\rw}{\rightarrow}
+\newcommand{\Rw}{\Rightarrow}
+\newcommand{\lw}{\leftarrow}
+\newcommand{\Lw}{\Leftarrow}
+\newcommand{\lrw}{\leftrightarrow}
+\newcommand{\LRw}{\Leftrightarrow}
+\newcommand{\acton}{\curvearrowright}
+\newcommand{\actson}{\curvearrowright}
+\newcommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+
+% arrows for commutative diagram: create four new angled double-struck arrows
+\newcommand\myrot[1]{\mathrel{\rotatebox[origin=c]{#1}{$\Rightarrow$}}}
+\newcommand\NEarrow{\myrot{45}}
+\newcommand\NWarrow{\myrot{135}}
+\newcommand\SWarrow{\myrot{-135}}
+\newcommand\SEarrow{\myrot{-45}}
+
+
+%shorthands
+\newcommand{\oln}[1]{{\overline{#1}}}
+\renewcommand{\bf}[1]{\textbf{#1}}
+\newcommand{\qn}{\quad\newline}
+
+
+% limits
+\newcommand{\Lim}{{\varprojlim}}
+\newcommand{\coLim}{{\varinjlim}}
+\newcommand{\Dlim}{\lim\limits_{\longrightarrow}}
+\newcommand{\coDlim}{\lim\limits_{\longleftarrow}}
+
+
+%for saturated ideals in the localization section (I don't like these, I think I'll delete)
+\newcommand{\LIm}{{}^e }
+\newcommand{\LPre}{{}^c }
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    Custom Commands                       ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+% swap varphi and phi
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
+\newcommand{\placeholder}{\_\_\_\_\_}
+
+\newcommand{\set}[2]{\left\{#1 \ \middle|\ #2\right\}}
+
+%mod should not have the crazy amount of space to its right!
+\renewcommand{\mod}{\,\operatorname{mod}\,}
+
+% dcups
+\newcommand{\dcup}{\sqcup}
+\newcommand{\Dcup}{\coprod}
+% \newcommand{\Dcup}{\bigsqcup}
+
+\newcommand{\nbot}{\mathrel{\rlap{$\bot$}\mkern2mu/}}
+
+%a nice large circle
+\newcommand{\tikzcircle}[2][red,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+%somehow not a default command
+\def\rddots{\mathstrut^{.^{.^{.}}}}
+
+%% new delimiter
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                     environments                         ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+
+%remember the option: breakable
+
+% create tcolor boxes
+\newtcbtheorem[number within=section]{thm}{Theorem}%
+{
+colback=green!5,
+colframe=green!35!black,
+fonttitle=\bfseries,
+label type=theorem
+}{th}
+
+\newtcbtheorem[number within=section, use counter from=thm]{lem}{Lemma}%
+{
+colback=blue!5,
+colframe=black!35!black,
+fonttitle=\bfseries,
+label type=lemma
+}{lm}
+\newtcbtheorem[number within=section, use counter from=thm]{prop}{Proposition}%
+{
+colback=white!5,
+colframe=white!35!black,
+fonttitle=\bfseries,
+label type=proposition
+}{pr}
+\newtcbtheorem[number within=section, use counter from=thm]{cor}{Corollary}%
+{colback=blue!5,
+colframe=blue!35!black,
+fonttitle=\bfseries,
+label type=corollary
+}{co}
+\newtcbtheorem[number within=section, use counter from=thm]{axiom}{Axiom}%
+{colback=black!5,
+colframe=yellow!35!black,
+fonttitle=\bfseries,
+label type=axiom
+}{ax}
+\newtcbtheorem[number within=section, use counter from=thm]{defn}{Definition}%
+{colback=red!5,
+colframe=red!35!black,
+fonttitle=\bfseries,
+label type=definition
+}{df}
+
+
+% for <s-cr> to create \item[$\LRw$] instead of \item
+\newenvironment{equivEnumerate}
+ {\begin{enumerate}
+	}{
+\end{enumerate}}
+
+
+
+%Custom enviroments
+ \newenvironment{note}
+ {\begin{tcolorbox}[enhanced, sharp corners, colback=white , borderline={0.2pt}{0pt}{black}]
+   \begin{quote}\textbf{Note}:
+   }{
+   \end{quote}\end{tcolorbox}}
+
+ \newenvironment{intuition}
+ {\begin{quote}\textbf{Intuition}:
+   }{
+   \end{quote}}
+
+\newtcbtheorem[number within=section, use counter from=thm]{titledBox}{}{%
+  enhanced,
+  sharp corners,
+  colback=white,
+  colframe=black,
+  borderline={0.2pt}{0pt}{black},
+  left=2mm,
+  right=2mm,
+  top=2mm,
+  bottom=2mm,
+  title style={opacity=1},
+  attach title to upper,
+  before upper={\textbf{\tcbtitletext}\quad},
+  coltitle=black,
+  fonttitle=\bfseries,
+  separator sign={\quad}
+}{box}
+
+
+%better example and proof environments
+\def\exampletext{Example} % If English
+\colorlet{colexam}{red!55!black} % Global example color
+
+
+\newtcbtheorem[number within=section, use counter from=thm]{example}{Example}{% \newtcolorbox[use counter=testexample]{testexamplebox}{%
+% Example Frame Start
+empty,% Empty previously set parameters
+title={\exampletext \thetcbcounter #1},% use \thetcbcounter to access the testexample counter text
+% Attaching a box requires an overlay
+attach boxed title to top left,
+   % Ensures proper line breaking in longer titles
+   minipage boxed title,
+% (boxed title style requires an overlay)
+boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+coltitle=colexam,fonttitle=\bfseries,
+before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=3mm,right=0mm,top=2pt,breakable,pad at break=0mm,
+   before upper=\csname @totalleftmargin\endcsname0pt, % Use instead of parbox=true. This ensures parskip is inherited by box.
+% Handles box when it exists on one page only
+overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: first page
+overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: middle page
+overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+% Handles multipage box: last page
+overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); }%
+}{ex}
+
+
+
+\def\prooftext{Proof} % If English
+\NewDocumentEnvironment{Proof}{ O{} }
+{
+    \colorlet{colexam}{black!55!black} % Global example color
+    \newtcolorbox[number within=section]{testproofbox}{%
+        empty,% Empty previously set parameters
+        title={\emph{\prooftext} \thetcbcounter: #1},
+        attach boxed title to top left,
+        minipage boxed title,
+        boxed title style={empty,size=minimal,toprule=0pt,top=4pt,left=3mm,overlay={}},
+        coltitle=colexam,
+        fonttitle=\bfseries,
+        before=\par\medskip\noindent,
+        parbox=false,
+        boxsep=0pt,
+        left=3mm,
+        right=0mm,
+        top=2pt,
+        breakable,
+        pad at break=0mm,
+        before upper=\csname @totalleftmargin\endcsname0pt,
+        % Removed height constraints
+        % Added flexible width
+        width=\dimexpr\textwidth-3mm\relax,
+        % Modified overlays
+        overlay unbroken={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay first={\draw[colexam,line width=.5pt] ([xshift=-0pt]title.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay middle={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },
+        overlay last={\draw[colexam,line width=.5pt] ([xshift=-0pt]frame.north west) -- ([xshift=-0pt]frame.south west); },%
+    }
+    \begin{testproofbox}
+}
+{\end{testproofbox}\endlist}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                    for Dynkin diagrams                   ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\def\row#1/#2!{#1_{\IfStrEq{#2}{}{n}{#2}} & \dynkin{#1}{#2}\\}
+\newcommand{\tble}[1]{
+   \renewcommand*\do[1]{\row##1!}
+   \[
+      \begin{array}{ll}\docsvlist{#1}\end{array}
+   \]
+}
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         links                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\definecolor{LinkColour}{HTML}{A64A3B} % favourite
+% \definecolor{LinkColour}{HTML}{8C3D32} % 2nd place
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=magenta,
+  linkcolor=LinkColour,
+  urlcolor=blue,
+}
+
+
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                          misc                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+
+\stackMath %to be able to stack text in math mode
+\makeindex
+
+%import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.svg,
+\begin{document}
+\maketitle
+Banach spaces provide a robust framework for measuring the magnitude of elements, allowing us to quantify
+convergence and bound operations via the triangle and Minkowski inequalities. However, a fundamental
+deficiency in general Banach spaces is the lack of a linear measurement theory to quantify \emph{similarity}.
+While we can measure the total size of a sum $\|f+g\|$, we often lack the granular information required to
+isolate the contribution of $f$ from $g$. For instance, determining how much a vector projects onto a specific
+basis element is straightforward in Euclidean space but algebraically obstructed in general norms.
+
+To make this deficiency precise, consider how the inner product arises in Euclidean geometry. Define the
+\emph{energy} of a vector as $E(x) = \frac{1}{2}\|x\|_2^2$. Then the directional derivative of this energy
+at $x$ in the direction of a perturbation $y$ is:
+\[
+	\frac{d}{dt} E(x + ty) \Big|_{t=0}
+		= \frac{d}{dt} \frac{1}{2} \langle x+ty, x+ty \rangle \Big|_{t=0}
+		= \langle x, y \rangle
+\]
+Thus, the inner product $\langle x, y \rangle$ is not just an algebraic artifact; it physically represents
+the \emph{sensitivity} of the energy of $x$ to a perturbation by $y$. In particular, the energy satisfies the
+clean decomposition:
+\[
+	E(x + y) = E(x) + E(y) + \langle x, y \rangle
+\]
+The interaction term $\langle x, y \rangle$ is \emph{bilinear}---it decomposes the interference between two
+vectors according to the simple rules of superposition. In general Banach spaces, however, such a clean, linear
+decomposition of the interaction is impossible due to the non-flat geometry of the unit ball.
+
+The natural question, then, is: \emph{what replaces the inner product in $L^p$?} The correct generalization is
+to replace the quadratic energy with the \emph{$p$-energy}:
+\[
+	F(f) = \frac{1}{p}\|f\|_p^p = \frac{1}{p}\int |f|^p
+\]
+and ask: how does $F(f)$ change if we perturb $f$ by a function $g$? To answer this, we must compute the
+gradient $\nabla F$, which requires first understanding the natural duality of $L^p$ spaces.
+
+\medskip\noindent\textbf{The Duality Map.}\quad
+What does it mean to go in the ``same direction'' in a function space? (For simplicity we work throughout with
+$L^p$ spaces for $1 < p < \infty$.\footnote{The reasoning can extend to nuclear Fr\'echet spaces, which admit
+descriptions as projective limits of Hilbert spaces. For general metric spaces, a different approach is needed
+via CAT($k$) geometry; see~\cite{millerGEOMETRYMEASURECATk} for details.}) Rigorously, we are asking for the
+functional $\phi_f$ of unit norm that \emph{maximizes} the evaluation at $f$. We can interpret this $\phi_f$
+as the \emph{optimal filter} or sensor for $f$---it captures the full ``energy'' of $f$ without
+loss ($\phi_f(f) = \|f\|_p$ and $\|\phi_f\|_p = 1$).
+
+By~\cref{th:descriptionDualLp} (and the equality condition of H\"older's inequality), this functional
+corresponds to $g \in L^q$ such that:
+\[
+	g(x) = |f(x)|^{p-1}\sgn(f(x))
+\]
+Note that $g \in L^q$ since:
+\[
+	|g|^q = |f|^{q(p-1)} = |f|^{qp - q} \overset{!}{=}|f|^p
+\]
+where $\overset{!}{=}$ holds since $1/p + 1/q = 1$ iff $p+q = pq$ iff $p = q(p-1)$. Hence as $f \in L^p$:
+\[
+	\int |g|^q = \int |f|^p < \infty
+\]
+Thus, we have a map $f \mapsto \phi_f$. We define the \emph{duality map}:
+\[
+	J_p: L^p \to L^q, \qquad f \mapsto \phi_f
+\]
+As $(L^q)^* \cong L^p$, we can equivalently view this as a map $J_p: L^p \to (L^p)^*$.
+
+\medskip\noindent\textbf{The Central Geometric Fact.}\quad
+The duality map $J_p$ is not an algebraic accident---it is the \emph{geometric normal} to the level sets of
+the $p$-energy. To see this, consider the function:
+\[
+F(x) = \frac{1}{p} \|x\|_p^p = \frac{1}{p} \sum |x_i|^p
+\]
+(where the $\ell^p$ norm is used for visualization, but the logic holds for integrals).
+From multivariable calculus, the unit sphere is the level set $F(x) = \frac{1}{p}$, and the gradient
+$\nabla F(x)$ is the vector strictly perpendicular (normal) to the level set at point $x$.
+Computing the gradient (the Fr\'echet derivative):
+\[
+\frac{\partial}{\partial x_i} \left( \frac{1}{p} |x_i|^p \right) = |x_i|^{p-1} \text{sgn}(x_i)
+\]
+So, the gradient vector is:
+\[
+\nabla F(x) = \left( |x_1|^{p-1}\text{sgn}(x_1), \dots, |x_n|^{p-1}\text{sgn}(x_n) \right)
+\]
+This is exactly our duality map:
+\[
+	\boxed{\nabla F(x) = J_p(x)}
+\]
+This identification is the key to the entire theory. It tells us that the optimal functional for
+$f$---the element of $(L^p)^*$ that best ``measures'' $f$---is precisely the gradient of the energy at $f$:
+the direction of steepest increase in $p$-energy. The duality map is a \emph{geometric} object, not merely an
+algebraic one.
+
+\medskip\noindent\textbf{The $p$-Pairing and Its Interpretation.}\quad
+With the gradient in hand, we can now answer our original question: how does the $p$-energy $F(f)$ change under
+a perturbation by $g$? The first-order variation is\footnote{The $dF$ here can be thought of as the
+G\^ateaux derivative, commonly defined for functions between locally convex topological vector spaces.}:
+\[
+d F(f; g) = \langle \nabla F(f), g \rangle_{\text{dual}} = \int \nabla F(f) \cdot g
+\]
+Substituting $\nabla F = J_p(f)$, this defines a natural pairing:
+\[
+	\langle f,g \rangle_p := \int J_p(f) \cdot g
+\]
+Note that it is important to pass through $J_p(f)$ since $\int fg$ need not be finite in general. However, by
+H\"older's inequality:
+\[
+	\int |J_p(f) \cdot g| < \infty
+\]
+This pairing has a precise geometric interpretation. The gradient $J_p(f)$ is a cotangent vector---a 1-form
+$dF|_f \in T_f^* L^p$---and the perturbation $g$ is a tangent vector $g \in T_f L^p$. Thus the pairing is the
+evaluation of a 1-form on a tangent vector:
+\[
+	\langle f, g \rangle_p = dF|_f(g) \;\in\; T_f^* L^p \times T_f L^p \to \R
+\]
+This canonical evaluation pairing between the tangent and cotangent spaces exists in \emph{every} geometric
+setting without any choice of metric. What $J_p$ adds is the ability to \emph{produce} a specific cotangent
+vector from a tangent vector, turning the pairing from a bilinear form on $T_f L^p \times T_f^* L^p$ into a
+(generally nonlinear) form on $T_f L^p \times T_f L^p$---that is, internalizing the measurement within the
+space itself.
+
+\medskip\noindent\textbf{The Infinitesimal Meaning of $V^*$.}\quad
+We are now in a position to make a precise statement about the geometric content of the dual space. In a bare
+vector space without additional structure, the dual $V^*$ is merely an algebraic object---a collection of
+linear maps with no geometric significance beyond probing linearly. However, in $L^p$ equipped with its norm,
+the identity $J_p = \nabla F$ reveals that \emph{every element of $(L^p)^*$ arises as the gradient of the
+energy functional}---a differential $dF|_f$. This endows $(L^p)^*$ with genuine infinitesimal meaning: its
+elements are not just linear maps, but \emph{cotangent vectors} that encode the first-order sensitivity of the
+geometry.
+
+Crucially, cotangent vectors are a different species of infinitesimal object than tangent vectors. A tangent
+vector $g \in T_f L^p \cong L^p$ represents an \emph{infinitesimal direction of motion}---it answers ``which
+way?''. A cotangent vector $\phi \in T_f^* L^p \cong L^q$ represents an \emph{infinitesimal
+measurement}---it answers ``how fast is this quantity changing?''. These are related by the evaluation pairing
+$\phi(g) = dF|_f(g)$, but they transform in opposite ways: tangent vectors push forward under maps, while
+cotangent vectors pull back. The duality map $J_p: T_f L^p \to T_f^* L^p$ provides a (nonlinear)
+identification between these two types of infinitesimal data, allowing us to transfer the directional
+interpretation onto the dual space. However, this transfer \emph{depends essentially on the norm
+geometry}---it is canonical only for $p = 2$.
+
+Geometrically, if we view the identity map $f \mapsto f$ as the radial vector
+field (a \emph{section} of the tangent bundle $TL^p$), then the duality map $J_p$ transforms this into a
+covector field (a \emph{section} of the cotangent bundle $T^*L^p$). In the language of Riemannian geometry,
+this transformation is the \emph{musical isomorphism} $\flat$ (flat), which maps a vector field $X$ to a
+1-form $X^\flat$ by lowering indices via the metric tensor. The four corollaries that follow are all
+consequences of this single geometric fact.
+
+\medskip\noindent\textbf{Corollary 1: Nonlinearity of the Musical Isomorphism.}\quad
+The duality map is \emph{not} linear:
+\[
+	J_p(2f) = |2f|^{p-1}\sgn(2f) = 2^{p-1}|f|^{p-1}\sgn(f) = 2^{p-1}J_p(f)
+\]
+This is only linear in the special case of $p =2$, since:
+\[
+	J_2(nf) = |nf|^{2-1}\sgn(nf) = n J_2(f)
+\]
+This distinction is profound. In a general Banach space ($p \neq 2$), the musical isomorphism is
+\emph{nonlinear}: the operation of lowering an index depends on the magnitude of the vector itself, meaning
+the ``metric'' changes as we move through the space. However, when $p=2$, this map is linear. This implies a
+linear bundle isomorphism $TL^2 \cong T^*L^2$, effectively trivializing the distinction between vectors and
+covectors. Only in $L^2$ is the musical isomorphism a linear operator, meaning the ``force'' required to
+correct an error is linearly proportional to the error itself.
+
+\medskip\noindent\textbf{Corollary 2: Non-Symmetry of the Pairing.}\quad
+The pairing $\langle f, g \rangle_p$ is \emph{not} symmetric for $p \neq 2$. This is an immediate consequence
+of the nonlinearity of $J_p$: the 1-form $dF|_f$ evaluated on $g$ has no reason to equal the 1-form $dF|_g$
+evaluated on $f$, since the gradient depends nonlinearly on its base point. If however $p = 2$, then
+$J_p(x)$ maps identically to itself and we recover the symmetric form $\int fg$. This asymmetry is
+the first signal that the geometry of $L^p$ is \emph{not flat} for $p \ne 2$.
+
+\medskip\noindent\textbf{Corollary 3: Failure of Rotational Invariance.}\quad
+This lack of symmetry in the pairing $\langle f,g \rangle_p$ is directly linked to the fact that $L^2$ is the
+unique $L^p$ space that is \emph{rotationally invariant}. Geometrically, rotational invariance means that the
+properties of a vector depend only on its length, not on its alignment with the coordinate axes.
+Mathematically, this requires that the duality map commutes with rotations. If $R$ is a rotation operator
+(an isometry), we expect the ``normal vector'' of the rotated point to be the rotated ``normal
+vector'' of the original point:
+\[
+	J_p(Rf) \overset{?}{=} R(J_p(f))
+\]
+In $L^2$, since $J_2$ is linear (essentially the identity), this holds trivially: $J_2(Rf) = Rf = R(J_2(f))$.
+However, for $p \ne 2$, the map $f \mapsto |f|^{p-1}\sgn(f)$ applies a non-linear distortion component-wise.
+Rotating the vector mixes the components, and applying the power law \emph{after} mixing is not the same as
+applying it \emph{before}.
+
+To see this concretely, consider $\ell^3$ ($p=3$) in $\R^2$ and let $f = (1, 0)$. If we first compute the functional and then rotate by $\pi/4$ ($45^\circ$), we get:
+\[
+	R(J_3(f)) = R(1^2, 0^2) = R(1, 0) = \left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right)
+\]
+However, if we rotate the vector first, the components become $(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}})$.
+Applying the duality map $J_3$ (squaring components) yields:
+\[
+	J_3(Rf) = J_3\left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right) = \left( \frac{1}{2}, \frac{1}{2} \right)
+\]
+Since $(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}) \ne (\frac{1}{2}, \frac{1}{2})$, we have $J_p(Rf) \ne
+R(J_p(f))$. This confirms that for $p \ne 2$, the geometry is \emph{anisotropic}: the shape of the unit ball looks different depending on the angle from which you view it.
+
+\medskip\noindent\textbf{Corollary 4: Birkhoff-James Orthogonality.}\quad
+With this understanding of the position-dependent metric, we can clarify the notion of orthogonality.
+In Euclidean geometry, orthogonality is symmetric ($x \perp y \iff y \perp x$) and additive. In
+general Banach spaces, without a global bilinear form, we must rely on \emph{Birkhoff-James orthogonality}: we say $x \perp y$ if moving in the direction of $y$ does not decrease the length of $x$ ($\|x + \lambda y\| \ge \|x\|$). Geometrically, this means the line passing through $x$ in the direction of $y$ is tangent to the unit sphere at $x$.
+
+Analytically, utilizing the duality map $J_p$, this condition is equivalent to requiring that the tangent
+vector $y$ be annihilated by the cotangent vector generated by $x$:
+\[
+	\langle J_p(x), y \rangle = 0
+\]
+This is precisely the statement that $y$ lies in the kernel of the 1-form $dF|_x$---a natural geometric
+condition. However, it reveals the fundamental asymmetry in non-Hilbert geometry. In $L^2$, because $J_2$ is linear, the condition is symmetric. However, in $L^p$ ($p \ne 2$), the non-linearity of $J_p$ breaks reciprocity. The set of vectors orthogonal to $x$ (kernel of $J_p(x)$) does not align symmetrically with the set of vectors orthogonal to $y$. Consequently, it is common to have $x \perp y$ but $y \not\perp x$. This lack of symmetry illustrates why Hilbert spaces are the unique setting where Euclidean geometric intuition remains valid.
+
+\medskip\noindent\textbf{The Riemannian Perspective.}\quad
+The corollaries above all concern the first derivative of the energy (the gradient $J_p$). The full geometry of
+the space, however, is determined by how this gradient \emph{changes}---the second derivative,
+which acts as the metric tensor. In this framework, the metric tensor $g_{ij}(x)$ at a point $x$ dictates how
+to measure the length of tangent vectors. In our context, this metric is generated by the Hessian of the
+energy function $F(x) = \frac{1}{p}\|x\|_p^p$. For $L^2$, this Hessian is proportional to the identity
+operator everywhere; the metric is \emph{constant} (flat). However, for $L^p$ ($p \ne 2$), the second
+derivative depends on position $x$, specifically scaling as $|x|^{p-2}$. This implies that the ``metric''
+changes as we move around the space.
+
+It is worth noting why the theory breaks down at the boundary cases. For $L^1$, the unit ball is a diamond
+with corners; at these corners, the gradient is not unique (it is a set-valued subgradient). For $L^\infty$,
+the unit ball has flat faces; on these faces, the gradient is non-unique or vanishes in certain directions.
+This lack of smoothness ($L^1$) or rotundity ($L^\infty$) prevents a well-defined duality map, leaving $L^p$
+($1<p<\infty$) as the sweet spot for smooth geometry.
+
+\medskip\noindent\textbf{Topological vs.\ Geometric Structure.}\quad
+To visualize the practical consequences of this non-flat geometry, it is helpful to consider the ``shape'' of
+the unit ball in infinite dimensions. In finite dimensions, all norms are equivalent, meaning the unit ball of
+one norm can always be fit inside a scaled unit ball of another.
+In infinite dimensions, this equivalence breaks. The curvature of the norm dictates how ``energy'' is allowed to
+concentrate without bound. The $L^\infty$ unit ball acts like a strict box, while the $L^1$ unit ball allows for infinitely long thin spikes.
+
+Ideally, we would like to know if these distortions are topological or ``merely'' geometric. This is answered by the \emph{Mazur Map} $M_{p,q}: L^p(B) \to L^q(B)$ where $B$ is the unit ball. The map:
+\[
+M_{p,q}(f) = \text{sgn}(f) \cdot |f|^{p/q}
+\]
+shows that all $L^p(B)$ spaces are \emph{uniformly homeomorphic} to each other (not just homeomorphic
+as~\cref{th:andersonKadec} shows). This means that we can smoothly deform the ``spikes'' of $L^1$ into the
+``sphere'' of $L^2$. However, while the Mazur map preserves the topology, it destroys the linear structure
+(additivity). The Hilbert space $L^2$ is the unique fixed point where this topological structure aligns
+perfectly with the linear algebraic structure (where the Mazur map would be the identity).
+
+This geometric disparity explains why convergence depends on the norm. Convergence $f_n \to 0$ is not about
+movement, but about entering arbitrarily small $\epsilon$-balls. Consider the sequence $f_n(x) = x^n$ on
+$[0,1]$. In the $L^1$ geometry, this sequence travels down one of the ``spikes'' of the unit ball: the functions get
+thinner and thinner, their area shrinking to zero despite their height
+remaining constant. In the $L^\infty$ geometry, however, these functions are trapped on the surface of the unit
+sphere; they cannot enter the $\epsilon$-ball because the $L^\infty$ ``box'' does not extend down
+the ``spikes'' of concentration.
+
+\medskip\noindent\textbf{Consequences for Hilbert Spaces.}\quad
+The unique geometry of Hilbert spaces---specifically self-duality, isotropy, and the inner product---unlocks
+powerful results unavailable in general Banach spaces. The preceding analysis explains \emph{why}: in $L^2$,
+the duality map $J_2$ is the identity, making the musical isomorphism linear, the pairing symmetric, and the
+geometry flat. The following are key consequences we will explore:
+
+\begin{enumerate}
+    \item \emph{The Projection Theorem (Best Approximation):}
+    In general Banach spaces, finding the element in a subspace $M$ closest to a point $x$ is difficult (the
+    closest point might not be unique, e.g., the flat edge of $L^1$). In Hilbert spaces, the strict convexity and ``roundness'' of the unit ball guarantee that for any closed subspace $M$, there exists a \emph{unique} element $P_M x$ minimizing the distance $\|x - m\|$. Furthermore, the error vector $x - P_M x$ is orthogonal to the subspace.
+
+    \item \emph{The Riesz Representation Theorem (Self-Duality):}
+    The duality map $J: H \to H^*$ is linear and bijective. This means we can completely identify linear functionals with vectors. Every continuous linear functional $\phi$ acts exactly like an inner product: $\phi(x) = \langle x, y \rangle$ for a unique $y$. This collapses the study of $H^*$ to the study of $H$.
+
+	\item \emph{Orthonormal Bases and Fourier Series:} In $L^p$, we may have a Schauder basis\footnote{A sequence $\{b_n\}$ where every $v \in V$ has a unique expansion $v = \sum \alpha_nb_n$.}, but determining the coefficients is non-trivial. In Hilbert spaces, orthogonality allows us to decouple coefficients. This is key for the Fourier transform, where any element is reconstructed by projection: $x = \sum \langle x, e_n \rangle e_n$. Additionally, the \emph{Parseval Identity} allows us to measure size by summing squared coefficients: $\|x\|^2 = \sum |\langle x, e_n \rangle|^2$.
+
+    \item \emph{Existence of Adjoints:}
+    In Banach spaces, the adjoint of $T: X \to Y$ maps $Y^* \to X^*$. Because Hilbert spaces are self-dual, we can pull this operator back to the original space. Thus, for every bounded operator $T$ on a Hilbert space, there is a unique adjoint $T^*$ on the \emph{same space} satisfying $\langle Tx, y \rangle = \langle x, T^* y \rangle$. This is foundational for spectral theory.
+\end{enumerate}
+
+In summary, while Banach spaces provide the necessary topological framework (completeness), Hilbert spaces add
+the rigid geometric structure required to generalize linear algebra to infinite dimensions. The duality map
+$J_p$, understood as the gradient of the $p$-energy, reveals the precise mechanism: it is the \emph{cotangent
+structure} of the space---the infinitesimal measurement theory---that determines the geometry. The canonical
+evaluation pairing between tangent and cotangent vectors is the universal source of ``derivative-like''
+phenomena; $J_p$ is the geometric data that internalizes this pairing within the space itself. In $L^2$ alone,
+this internalization is linear, making vectors and covectors---directions and measurements---two aspects of a
+single object.
+
+% \newpage
+% \printbibliography
+
+\end{document}

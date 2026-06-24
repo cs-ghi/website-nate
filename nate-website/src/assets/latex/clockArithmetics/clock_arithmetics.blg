@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'clock_arithmetics.blg'
+[52] biber-darwin:340> INFO - === Mon Jun 16, 2025, 17:50:27
+[64] Biber.pm:419> INFO - Reading 'clock_arithmetics.bcf'
+[121] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
+[133] Biber.pm:4419> INFO - Processing section 0
+[141] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[142] bibtex.pm:1713> INFO - LaTeX decoding ...
+[145] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[161] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[161] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[161] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[161] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[167] bbl.pm:660> INFO - Writing 'clock_arithmetics.bbl' with encoding 'UTF-8'
+[168] bbl.pm:763> INFO - Output to clock_arithmetics.bbl

@@ -1,5 +1,7 @@
 // import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { PdfViewerModule } from 'ng2-pdf-viewer'; // Import the module
+
 // import { Observable } from 'rxjs';
 //import { environment } from 'src/environments/environment';
 // import { Contact } from './interfaces/contact.interface';
@@ -18,7 +20,7 @@ export class AppComponent {
   // contactData: Contact;
   // title = 'nate';
   // menuFlag$: Observable<boolean> = this.appStateService.menuObs();
-  
+
   // constructor
   constructor(){}
   //   private appStateService: AppStateService,

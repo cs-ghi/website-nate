@@ -1,0 +1,38 @@
+<div class="section-programming">
+    <div class="container">
+        <div class="page-heading"><h2>Programming</h2>
+            <p>Software Development Projects</p>
+            <mat-divider class="divider"></mat-divider>
+        </div>
+            <div class=row class="programming-info">
+                <h3 class="mb-20">Overview</h3>
+                <p>
+                  These are mainly projects centered around my vim setup that include my
+                  dotfiles and a few quality of life plugins that I wrote. My future
+                  projcets will be hosted on github: <a href="https://github.com/Chiarandini"><strong><b>https://github.com/Chiarandini</b></strong></a>
+
+                    <br><br>
+                    Note:
+                      <li>Some projects are still in development and may not have public repositories yet.</li>
+                    </p>
+
+                    <!-- <p class="disclaimer-click"> <br><br> Please click on the
+                    headings below to view the projects.</p> -->
+            </div>
+
+            <div class="row" class="programming-info" style="padding-bottom: 4em;"> </div>
+            <div class="programming-info" *ngFor="let program of programs">
+                <div class="row flexx">
+                        <div class="col-sm-3 program-link" (click)="openLink(program)">
+                            <h4 [innerHtml]="program?.name"></h4>
+                        </div>
+                    <div class="col-sm-9" >
+                        <p [innerHtml]="program?.desc"></p>
+                    </div>
+                </div>
+                <mat-divider class="divider-table"></mat-divider>
+            </div>
+        <div style="padding-bottom: 7em;"></div>
+
+    </div>
+</div>

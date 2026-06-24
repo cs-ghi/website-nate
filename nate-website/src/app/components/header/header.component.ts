@@ -2,8 +2,13 @@ import { Component, OnInit} from '@angular/core';
 
 // navbar menu, add here for more menu items
 export const menuItems = [
+  { name: 'books', url: '/books'},
   { name: 'notes', url: '/notes'},
   { name: 'blog', url: '/blog'},
+  { name: 'programming', url: '/programming'},
+  { name: 'dictionary', url: '/dictionary'},
+  { name: 'judo', url: '/judo'},
+  // { name: 'Beatsaber', url: 'https://beatleader.com/u/304451'},
   { name: 'contact', url: '/contact'},
   { name: 'about', url: '/about'},
   { name: 'cv', url: '/cv', link:'./assets/pdfs/nathanaelChwS_cv.pdf'},

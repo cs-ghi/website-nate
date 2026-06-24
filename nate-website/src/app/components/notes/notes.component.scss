@@ -3,7 +3,7 @@
 @import 'src/sass/grid';
 
 @media (max-width:500px){
-    .notes-info h3, h4  {  
+    .notes-info h3, h4  {
       text-align:center;
     }
 }
@@ -26,6 +26,19 @@
     transition: 0.4s;
     // display: inline-block;
     height:100%;
+}
+
+.note-link {
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+        background-color: #404145;
+
+        h4 {
+            color: #cbc9c8e7;
+        }
+    }
 }
 
 .col-sm-3:hover{

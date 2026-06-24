@@ -10,17 +10,18 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+      "skipLibCheck": true,  // <--- ADD THIS LINE
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es5",
-    "module": "ES2022",
+    "target": "es2022",
+    "module": "es2022",
     "useDefineForClassFields": false,
     "lib": [
-      "ES2022",
+      "es2022",
       "dom"
     ]
   },

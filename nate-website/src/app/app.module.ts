@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+ import { CommonModule } from '@angular/common';
 import { ContactComponent } from './components/contact/contact.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,10 +26,20 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 
+import { BooksComponent } from './components/books/books.component';
 import { NotesComponent } from './components/notes/notes.component';
+import { PdfViewerComponent } from './components/books/pdf-viewer.component';
+import { HtmlBookViewerComponent } from './components/books/html-book-viewer.component';
 import { MiscellaneousComponent} from './components/miscellaneous/miscellaneous.component';
+import { ProgrammingComponent } from './components/programming/programming.component';
+import { TutoringComponent } from './components/tutoring/tutoring.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { ClickOutsideDirective } from './clickOutside';
+import { DictionaryComponent } from './components/dictionary/dictionary.component';
+import { DictionaryService } from './services/dictionary.service';
+import { JudoComponent } from './components/judo/judo.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { AudioService } from './services/audio.service';
 // import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 
@@ -37,21 +50,33 @@ import { ClickOutsideDirective } from './clickOutside';
     FooterComponent,
     AboutComponent,
     BlogComponent,
+    BooksComponent,
+    NotesComponent,
+    PdfViewerComponent,
+    HtmlBookViewerComponent,
     // ResumeComponent,
     ContactComponent,
     NotFoundComponent,
     // LoadingComponent,
     // ShimmerComponent,
-    NotesComponent,
     MiscellaneousComponent,
+    ProgrammingComponent,
+    TutoringComponent,
     ContactFormComponent,
-    [AppComponent, ClickOutsideDirective],
+    AppComponent,
+    ClickOutsideDirective,
+    DictionaryComponent,
+    JudoComponent,
+    SafeUrlPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,   
+    RouterModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    PdfViewerModule,
+    CommonModule,
     HttpClientModule,
     MatDividerModule,
     MatFormFieldModule,
@@ -63,8 +88,11 @@ import { ClickOutsideDirective } from './clickOutside';
     MatIconModule,
     // FontAwesomeModule,
   ],
-  providers: [],
+  providers: [
+    DictionaryService,
+    AudioService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
  }

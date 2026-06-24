@@ -8,20 +8,20 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-  
+
     <mat-form-field color="accent"  >
       <mat-label  class="title">Name</mat-label>
       <input matInput [formControl]="name" required class="text">
       <mat-error *ngIf="name.invalid">Please enter your name</mat-error>
     </mat-form-field>
-  
+
     <mat-form-field color="accent">
       <mat-label class="title">Email</mat-label>
       <input matInput [formControl]="email" placeholder="email@example.com" required class="text">
       <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
     </mat-form-field>
-  
-  
+
+
     <mat-form-field color="accent">
       <mat-label class="title">Message</mat-label>
       <textarea matInput [formControl]="message" maxlength="256" placeholder="I'm interested in..." required class="text"></textarea>
@@ -29,8 +29,8 @@
       <mat-error *ngIf="message.invalid">Please enter a message</mat-error>
     </mat-form-field>
     <button [disabled]="isLoading"  class="submit" type="submit">Submit</button>
-    
-    <div [class.spinner-box]="isLoading" class="spinner-box"> 
+
+    <div [class.spinner-box]="isLoading" class="spinner-box">
       <div [class.dot-stretching]="isLoading" class="dot-stretching"> </div>
     </div>
     <input [formControl]="honeypot" class="hidden" type="text" />

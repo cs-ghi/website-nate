@@ -13,6 +13,7 @@ exports.socialItemsArray = [];
 // navbar menu
 exports.menuItems = [
     { name: 'About', url: '/About', icon: 'fas  fa-home' },
+    { name: 'Books', url: '/Books', icon: 'fas fa-envelope' },
     { name: 'Notes', url: '/Notes', icon: 'fas fa-envelope' },
     { name: 'Contact', url: '/Contact', icon: 'fas fa-envelope' },
     { name: 'CV', url: '/CV', icon: 'fas fa-user', link: './assets/pdfs/grad_cv.pdf' },
@@ -22,7 +23,7 @@ var HeaderComponent = /** @class */ (function () {
     // constructor
     function HeaderComponent(appStateService) {
         this.appStateService = appStateService;
-        // public isClosed = false;  
+        // public isClosed = false;
         // public closeComponent = false;
         // public clickScreen= false;
         // @HostListener('click')
@@ -39,7 +40,7 @@ var HeaderComponent = /** @class */ (function () {
         // console.log("clickScreen: "+ this.clickScreen);
         // console.log("closeComponent: " + this.closeComponent);
         // console.log("clickHeader: " + this.clickHeader);
-        // } 
+        // }
         this.menu = exports.menuItems;
         this.socialItems = exports.socialItemsArray;
     }
@@ -53,7 +54,7 @@ var HeaderComponent = /** @class */ (function () {
         get: function () {
             return this._contactData;
         },
-        // social items menu 
+        // social items menu
         // @ViewChild('menubutton', { static: true }) navside;
         // menuFlag$: boolean = true;
         set: function (contact) {
@@ -86,7 +87,7 @@ var HeaderComponent = /** @class */ (function () {
             templateUrl: './header.component.html',
             styleUrls: ['./header.component.scss']
         })
-        // define class <3 
+        // define class <3
     ], HeaderComponent);
     return HeaderComponent;
 }());

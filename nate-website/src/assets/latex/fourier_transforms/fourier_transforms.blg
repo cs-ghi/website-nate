@@ -1,0 +1,19 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'fourier_transforms.blg'
+[47] biber-darwin:340> INFO - === Sun Feb 22, 2026, 23:58:26
+[66] Biber.pm:419> INFO - Reading 'fourier_transforms.bcf'
+[120] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[131] Biber.pm:4419> INFO - Processing section 0
+[138] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[139] bibtex.pm:1713> INFO - LaTeX decoding ...
+[143] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[177] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[177] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[177] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[177] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[183] bbl.pm:660> INFO - Writing 'fourier_transforms.bbl' with encoding 'UTF-8'
+[185] bbl.pm:763> INFO - Output to fourier_transforms.bbl
+[187] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[187] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[187] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[187] Biber.pm:133> INFO - WARNINGS: 3

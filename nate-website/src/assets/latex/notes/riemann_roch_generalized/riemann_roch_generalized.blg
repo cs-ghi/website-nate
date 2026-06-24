@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'riemann_roch_generalized.blg'
+[54] biber-darwin:340> INFO - === Thu Aug 21, 2025, 19:22:24
+[68] Biber.pm:419> INFO - Reading 'riemann_roch_generalized.bcf'
+[130] Biber.pm:979> INFO - Found 6 citekeys in bib section 0
+[144] Biber.pm:4419> INFO - Processing section 0
+[152] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[153] bibtex.pm:1713> INFO - LaTeX decoding ...
+[161] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[209] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[209] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[209] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[209] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[220] bbl.pm:660> INFO - Writing 'riemann_roch_generalized.bbl' with encoding 'UTF-8'
+[222] bbl.pm:763> INFO - Output to riemann_roch_generalized.bbl
+[222] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[222] Biber.pm:133> INFO - WARNINGS: 1

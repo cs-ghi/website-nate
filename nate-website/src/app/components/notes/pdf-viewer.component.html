@@ -1,0 +1,46 @@
+<div class="pdf-viewer-container">
+  <div class="pdf-header">
+    <div class="header-actions">
+      <h2 class="document-title">{{ noteName }}</h2>
+      <div class="zoom-controls">
+        <button class="zoom-button" (click)="zoomOut()" [disabled]="currentZoom <= 0.25">
+          <span>-</span>
+        </button>
+        <span class="zoom-display">{{ (currentZoom * 100).toFixed(0) }}%</span>
+        <button class="zoom-button" (click)="zoomIn()" [disabled]="currentZoom >= 3">
+          <span>+</span>
+        </button>
+      </div>
+      <button class="back-button" (click)="goBack()">
+        <span>←</span> Back to Notes
+      </button>
+    </div>
+  </div>
+
+  <div class="pdf-content">
+    <div *ngIf="isLoading" class="loading-spinner">
+      <p>Loading PDF...</p>
+    </div>
+
+    <div *ngIf="error" class="error-message">
+      <p>{{ error }}</p>
+      <button (click)="goBack()">Return to Notes</button>
+    </div>
+
+    <pdf-viewer
+      *ngIf="pdfSrc && !error"
+      [src]="pdfSrc"
+      [render-text]="true"
+      [original-size]="false"
+      [fit-to-page]="true"
+      [zoom]="currentZoom"
+      [show-all]="true"
+      [autoresize]="true"
+      [external-link-target]="'blank'"
+      [zoom-scale]="'page-width'"
+      (after-load-complete)="onLoadComplete($event)"
+      (error)="onError($event)"
+      class="pdf-display">
+    </pdf-viewer>
+  </div>
+</div>

@@ -1,0 +1,176 @@
+<div class="section-books">
+    <div class="container">
+        <div class="page-heading"><h2>Textbooks</h2>
+            <p>EYNTKA Series</p>
+            <mat-divider class="divider"></mat-divider>
+        </div>
+            <div class=row class="books-info">
+                <h3 class="mb-20">Overview</h3>
+
+                <p>
+                    I found that writing down what I learn as though I'm writing a textbook
+                    has been incredibly helpful in internalizing what I learn, and has
+                    produced these books as a by-product. They have become my foundations
+                    for finding references and interweaving interesting connections I found.
+                    I named my series of books "Everything You Need To Know About" (EYNTKA)
+                    as they contain what I believed was the "core" material for the subject
+                    matter, being limited in material by my time to write down results. I update my books
+                    on a regular basis with new information and fixes.
+                </p>
+                <!-- I wanna eventually split eyntka algebra, once is its first verison the -->
+                <!-- numbering will be stable so that I can have the entire EYTNKA series on -->
+                <!-- a rolling version.  -->
+                <p>Note:</p>
+                <ul>
+                    <li>
+                        None of these books would be considered "first edition"; there is
+                        a lack of exercises and often a lack of figures that I should draw.
+                    </li>
+                    <li>
+                        Unsurprisingly, I learn faster than I can write, so there
+                        are some gaps in the books where I decided I want to include material
+                        but have not had the time to fill it in. This is in line with the
+                        above comment that none of the books should be considered "first
+                        edition".
+                    </li>
+                    <li>
+                        I don't have books on the foundations of modern mathematics or
+                        calculus.
+                        There are many great books that cover the foundational material; three that come to
+                        mind are Brendan W. Sullivan's <a
+                        href="https://www.math.cmu.edu/~jmackey/151_128/bws_book.pdf">Everything
+                        You Always Wanted To Know About Mathematics</a> Shay Fuchs's <a
+                        href="https://www.cambridge.org/highereducation/books/introduction-to-proofs-and-proof-strategies/3E17FC9C3CA060246BF1B5476687AEB0#overview">Introduction
+                        to Proofs and Proof Strategies</a>, and Martin Liebecks <a
+                        href="https://archive.org/details/AConciseIntroductionToPureMathematicsThirdEditionPDFDrive.com/A%20Concise%20Introduction%20to%20Pure%20Mathematics%2C%20Third%20Edition%20%28%20PDFDrive.com%20%29/">a
+                        concise introduction to prue mathematics</a>. For calculus,
+                        there are so many options that it feels like an injustice to
+                        single one out, but if I had to explicitly recommend one, the one that
+                        I used most often when teaching calculus is <a
+                          href="https://www.stewartcalculus.com/">Stewart's calculus</a>. For algebra, I have some notes outlining the necessary material
+                        that can be found <a
+                          href="https://nathanaelsrawley.com/pdf-viewer?src=.%2F.%2Fassets%2Flatex%2Fnotes%2Fpreliminary_chapter%2Fpreliminary_chapter.pdf&name=Preliminary%20Chapter&source=notes">here</a>.
+                    </li>
+                    <li>
+                        As I have control over all of these books, I have the liberty to
+                        cross reference material between them. Due to this, the
+                        organization of the material is chosen to as best as possible fit
+                        a "narrative" that works well between the books. I plan to do
+                        a write-up and a diagram on best reading orders and pre-requisites
+                        between these books.
+                    </li>
+                    <li>
+                        Some of these books have overlapping content as the material is
+                        worth having in both places for completion (ex. elliptic curves
+                        are covered in both EYNTKA Complex Analysis and
+                        Elliptic Curves, fundamental groups are in EYTNKA Topology and
+                        Algebraic Topology, Riemann Roch in Algebraic Geometry and Complex
+                        Geometry, Banach and Hilbert spaces in ETYNKA functional analysis
+                        and Real Analysis, etc.).
+                    </li>
+                    <li>
+                        Disclaimer: Apologies for any typos in the books! Feel free to
+                        send me any errata (see contacts.
+                    </li>
+                </ul>
+
+
+                    <!-- <p class="disclaimer-click"> <br><br> Please click on the
+                    headings below to download the books.</p> -->
+            </div>
+
+            <div class="row" class="books-info" style="padding-bottom: 4em;"> </div>
+
+            <div class="book-search">
+                <mat-icon class="search-icon">search</mat-icon>
+                <input
+                    type="text"
+                    class="book-search-input"
+                    [(ngModel)]="searchQuery"
+                    placeholder="Search books..."
+                    autocomplete="off"
+                />
+                <mat-icon *ngIf="searchQuery" class="clear-icon" (click)="searchQuery = ''">close</mat-icon>
+            </div>
+
+            <p *ngIf="searchQuery && !filteredBooks.length" class="no-results">
+                No books match "{{ searchQuery }}".
+            </p>
+
+            <div *ngFor="let book of filteredBooks">
+                <div class="books-info">
+                    <div class="row flexx">
+                        <div class="col-sm-3 book-link-row" [class.book-link]="!book.children?.length">
+                            <span
+                                *ngIf="book.children?.length"
+                                class="expand-chevron"
+                                [class.expanded]="shouldShowChildren(book)"
+                                (click)="toggleExpand(book.name)">
+                            </span>
+                            <h4 class="book-link" (click)="handleBookClick(book)" [innerHtml]="book?.name"></h4>
+                        </div>
+                        <div class="col-sm-9">
+                            <p [innerHtml]="book?.desc"></p>
+                        </div>
+                    </div>
+                    <mat-divider class="divider-table"></mat-divider>
+                </div>
+
+                <div *ngIf="book.children?.length"
+                     class="children-wrapper"
+                     [class.children-open]="shouldShowChildren(book)">
+                    <div class="children-body">
+                        <div class="books-info child-book" *ngFor="let child of book.children">
+                            <div class="row flexx">
+                                <div class="col-sm-3 book-link" (click)="handleBookClick(child)">
+                                    <h4 [innerHtml]="child?.name"></h4>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p [innerHtml]="child?.desc"></p>
+                                </div>
+                            </div>
+                            <mat-divider class="divider-table"></mat-divider>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Admin: raw PDF listing (visible when authenticated) -->
+        <div *ngIf="isAuthenticated" class="raw-pdfs-section">
+            <mat-divider class="divider"></mat-divider>
+            <h3>Raw PDFs
+                <span *ngIf="isLoadingPdfs" class="loading-indicator"> loading...</span>
+            </h3>
+            <div class="raw-pdfs-grid">
+                <div *ngFor="let pdf of filteredRawPdfs" class="raw-pdf-item" (click)="openRawPdf(pdf)" title="{{ pdf.name }}">
+                    <mat-icon>picture_as_pdf</mat-icon>
+                    <span>{{ pdf.name }}</span>
+                </div>
+                <p *ngIf="searchQuery && !filteredRawPdfs.length && !isLoadingPdfs" class="no-results">
+                    No raw PDFs match "{{ searchQuery }}".
+                </p>
+            </div>
+        </div>
+
+        <div style="padding-bottom: 7em;"></div>
+
+        <!-- Password form overlay -->
+        <div *ngIf="showPasswordForm" class="password-overlay">
+            <input
+                type="password"
+                [(ngModel)]="passwordInput"
+                (keydown)="onPasswordKeydown($event)"
+                placeholder="password"
+                class="password-input"
+                autofocus
+            />
+            <button class="password-submit" (click)="submitPassword()">→</button>
+            <span *ngIf="authError" class="auth-error">incorrect</span>
+        </div>
+
+        <!-- Lock button -->
+        <div class="lock-button" (click)="toggleLock()" [title]="isAuthenticated ? 'lock' : 'unlock'">
+            <mat-icon>{{ isAuthenticated ? 'lock_open' : 'lock' }}</mat-icon>
+        </div>
+
+    </div>
+</div>

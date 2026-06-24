@@ -1,0 +1,7 @@
+# Fdb version 4
+["pdflatex"] 1754323597 "test.tex" "test.pdf" "test" 1754323597 2
+  (generated)
+  "test.aux"
+  "test.log"
+  "test.pdf"
+  (rewritten before read)

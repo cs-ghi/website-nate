@@ -1,0 +1,83 @@
+<div class="pdf-viewer-container">
+  <div class="pdf-header">
+    <div class="header-actions">
+      <!-- Left: Title -->
+      <h2 class="document-title">{{ bookName }}</h2>
+
+      <!-- Center: Grouped Controls (Zoom left, Contents right) -->
+      <div class="center-controls">
+        <div class="zoom-controls">
+          <button class="zoom-button" (click)="zoomOut()" [disabled]="currentZoom <= 0.25">
+            <span>-</span>
+          </button>
+          <span class="zoom-display">{{ (currentZoom * 100).toFixed(0) }}%</span>
+          <button class="zoom-button" (click)="zoomIn()" [disabled]="currentZoom >= 3">
+            <span>+</span>
+          </button>
+        </div>
+
+        <button class="outline-toggle" (click)="toggleOutline()" *ngIf="hasOutline"
+                title="Toggle Table of Contents (Ctrl+Shift+T)">
+          <span>☰</span> Contents
+        </button>
+      </div>
+
+      <!-- Right: Back Button -->
+      <button class="back-button" (click)="goBack()">
+        <span>←</span> {{ backButtonText }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Rest of your existing HTML remains the same -->
+  <div class="pdf-content">
+    <div *ngIf="isLoading" class="loading-spinner">
+      <p>Loading PDF...</p>
+    </div>
+
+    <div *ngIf="error" class="error-message">
+      <p>{{ error }}</p>
+      <button (click)="goBack()">{{ returnText }}</button>
+    </div>
+
+    <div *ngIf="pdfSrc && !error" class="pdf-layout">
+      <!-- Outline sidebar -->
+      <div class="pdf-outline" [class.visible]="showOutline && hasOutline">
+        <div class="outline-header">
+          <h3>Table of Contents</h3>
+          <div class="outline-controls">
+            <small class="keyboard-hint">Ctrl+Shift+T</small>
+            <button class="close-outline" (click)="toggleOutline()">×</button>
+          </div>
+        </div>
+        <div class="outline-content">
+          <div *ngFor="let item of pdfOutline" class="outline-item">
+            <a (click)="goToPage(item.dest, item.pageNumber)" [style.padding-left]="(item.level * 15) + 'px'">
+              {{ item.title }}
+              <span *ngIf="item.pageNumber" class="page-number">(p. {{ item.pageNumber }})</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PDF viewer -->
+      <div class="pdf-viewer-wrapper">
+        <pdf-viewer
+          *ngIf="pdfSrc && !error"
+          [src]="pdfSrc"
+          [render-text]="true"
+          [original-size]="false"
+          [fit-to-page]="true"
+          [zoom]="currentZoom"
+          [show-all]="true"
+          [autoresize]="true"
+          [external-link-target]="'blank'"
+          [zoom-scale]="'page-width'"
+          (after-load-complete)="onLoadComplete($event)"
+          (error)="onError($event)"
+          class="pdf-display">
+        </pdf-viewer>
+      </div>
+    </div>
+  </div>
+</div>

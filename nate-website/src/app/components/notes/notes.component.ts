@@ -1,76 +1,46 @@
-import { NotExpr } from '@angular/compiler';
+// import { NotExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Note, Notes } from 'src/app/interfaces/notes.model';
 
 
 export const notesArray: Note[]= [
   {
-    name: 'Abstract Algebra',
-    desc: 'Covers "all" undergraduate algebra: Groups, Rings, Modules, Fields (including Galois Theory), Commutative algebra, Classical Algebraic Geometry, Algebraic Number Theory, and Representation of finite groups, and Homological algebra with an extra chapter on spectral sequences. Special topics include Quiver Theory and Category theory.',
-    link: '././assets/pdfs/notes/EYNTKA_Algebra.pdf'
+    name: "Hirzebruch-Riemann-Roch Theorem",
+    desc: "Riemann-Roch Theorem is a fundamental result in finding what meromorphic function exist on a Riemann surface that satisfy the conditions of a divisor D. The Hirzebruch-Riemann-Roch generalizes this to finding sections of vector bundles over projective varieites under the right conditions. This paper goes over the proof of HRR, outline a proof for Grothendeick-Riemann Roch, and concludes with some references to the most recent generalization results in the literature",
+    link: "././assets/latex/notes/HRR/HRR.pdf"
   },
   {
-    name: 'Class Field Theory',
-    desc: 'Local Fields, Places, Analytic Number Theory, and Class Field Theory using Ray class groups and the Idele group. Culminates with the Artin Reciprocity and Chebotarev Density Theorem. ',
-    link: '././assets/pdfs/notes/EYNTKA_class_field_theory.pdf'
+    name: "Galois Cohomology",
+    desc: "These are my current work in progress notes on Galois Cohomology which aim to be inspired by Neukirch and Kumar Murty. They are rapidly changing are mostly here for my reference \"on the go\"",
+    link: "././assets/pdfs/notes/EYNTKA_galois_cohomology.pdf"
   },
   {
-    name: 'Algebraic Geometry',
-    desc: 'With an assumption of clasical algebraic geometry being covered (up to book 1 of Shafarevich\' Basic Algebraic Geometry and Michael Atiyah\'s Commutative Algebra), this book will hold my Modern Algebraic Geometry Knowledge. The first part is dedicated to the basics: sheaf theory, schemes and their properties, cohomology of quasicoherent sheaves, and partical appliations to curves and modules. Further parts shall focus on more specialized topics',
-    link: '././assets/pdfs/notes/EYNTKA_algGeo.pdf'
+    name: "Toric Varieties",
+    desc: "a few properties of Toric varieties. Very rough work, I hope to fill these out more soon. Toric varietie sare great as a large example of very simple varieties/schemes that are dual to lattices.",
+    link: "././assets/pdfs/notes/EYNTKA_toric_geometry.pdf"
   },
   {
-    name: 'Differential Geometry',
-    desc: 'Various properties of Topological and Smooth Manifolds, smooth maps, tangent maps and bundles, Rank-Nullity Theorem and consequences, Sard\'s Theorem and Transversality, Vector Bundles, Differential Forms and integration on Manifolds, Riemann Manifolds. Preliminaires include inverse and implicit function theorem and Partition of Unity',
-    link: '././assets/pdfs/notes/EYNTKA_differential_geometry.pdf'
+    name: "Preliminary Chapter",
+    desc: "An extract from EYNTKA algebra that is further developed to serve as a general set of notes for mathematical knowledge. Does not include information about calculus or linear algebra.",
+    link: "././assets/latex/notes/preliminary_chapter/preliminary_chapter.pdf"
   },
   {
-    name: 'Algebraic Topology',
-    desc: 'Homotopy, homotopy equivalences,  cell-complexes. Fundamental groups, covering spaces, van-kampen\'s theorem, Deck Transformations, interesting consequences. Homology, Delta and singular complexes, relative homology, snake lemma and Mayer-Vietoris, Cellular Homology, Euler-Characteristic and applications. Cohomology, cup and cap product, Poincare Duality. Homotopy Theory and Spectral Sequences coming soon!',
-    link: '././assets/pdfs/notes/EYNTKA_algebraic_topology.pdf'
+    name: 'Translating Serre\'s Paper on Simple Algebras',
+    desc: 'This is my translation and embellishment of Serre\'s "Applications algébriques de la cohomologie des groupes. II : théorie des algèbres simples". It is fascinating how number theory can be so beautifully generalised to representation theory. One can see why Langlands proposed his research program by going through these results!',
+    link: '././assets/pdfs/blogs/serre_paper-Theory_of_Simple_Algebras.pdf'
   },
   {
-    name: 'Real Analysis',
-    desc: 'Abstract and Lebesgue Measure, Measurable and Integrable functions, Signed Measures, Radon-Nikodyn Theorem and FTC, Banach and Hilbert Spaces, Topological Vector Spaces, Lebegue Space, Fourier Analysis, Distribution Theory, and Measure on Locally Compact Topological Groups. ',
-    link: '././assets/pdfs/notes/EYNTKA_real_analysis.pdf'
+    name: "A little  Hodge Theory",
+    desc: "These are my current work in progress notes on Hodge Theory I'll update as I have time. They are rapidly changing are mostly here for my reference \"on the go\"",
+    link: "././assets/pdfs/notes/EYNTKA_hodge.pdf"
   },
   {
-    name: 'Complex Analysis',
-    desc: 'Complex numbers, functions, and Mobius transformations. Complex Differentiation, power series, analytic functions. Complex integration, Meromorphic functions, Residue theorem, and Argument Principle. Holomorphic Function spaces, Montel and Marty\'s Theorem, Riemann Mapping Theorem. Factorization of Holomorphic Functions and Riemann-zeta function. Elliptic functions and Weiestrass p-function. Riemann surfaces and Harmonic Functions. Higher-dimensional complex differentiation.',
-    link: '././assets/pdfs/notes/EYNTKA_complex_analysis.pdf'
-  },
-  {
-    name: 'Functional Analysis',
-    desc: 'Banach Spaces, Hahn-Banach Extension Theorem, Hilbert Spaces, Normal and Self-Adjoint Operators, Positive Operators, Unitary Operators, Diagonalizability, Compact Operators and Fredholm Operators, Index, and Spectral Theory. Gelfand Duality coming soon!',
-    link: '././assets/pdfs/notes/EYNTKA_functional_analysis.pdf'
-  },
-  {
-    name: 'Logic',
-    desc: 'First Order Language and Propositional Language, Deduction from Inference heavy and Axiom heavy approach, Soundness and Completeness, Compactness, Computability, Turing Machines, Godel\'s Incompleteness Theorem. ',
-    link: '././assets/pdfs/notes/EYNTKA_logic.pdf'
-  },
-  {
-    name: 'Topology',
-    desc: 'Definition and Property of Topologies, Continuity, Seperation and Countability Axioms, Subspace/Product/Quotient Topology, Weak Topology, Metric Spaces, Connectedness and Compactness, Urysohn Lemma and Consequences, Fundamental Group, Topological Group. Dimension Theory coming soon!',
-    link: '././assets/pdfs/notes/EYNTKA_topology.pdf'
-  },
-  {
-    name: 'K-Theory',
-    desc: 'Accumulation of K-theory notes, currently only covering K_0 group and a strong focus on the algebraic interpretation with some references to Scheme Theory.',
-    link: '././assets/pdfs/notes/EYNTKA_K-Theory.pdf'
-  },
-  {
-    name: 'Probability',
-    desc: 'Motivation and Definitions, Distributions and Expected Value, Linearity of Expectations, Variance and Correlation, Law of Large Numbers, Cliques in Erdos Reyni Graphs, Exponential Inequalities, Gaussian Distribution. Markov Chains coming soon!',
-    link: '././assets/pdfs/notes/EYNTKA_probability.pdf'
-  },
-  {
-    name: 'PDEs',
-    desc: 'Notes focusing on solving wave equations in increasing degrees of complexity. Existence and uniqueness of solutions to linear and non-linear wave equations, Litttle-Paley Theory, Distribution Theory, Klainerman-Sobelev Inequality. Future goal of adding Maxell-Klein-Gordon equations and Strichartz type estimates.',
-    link: '././assets/pdfs/notes/EYNTKA_PDEs.pdf'
+    name: 'Pontryagin Duality',
+    desc: 'The existence and applicability Fourier transform is a fascinating piece of mathematics. Pushing the limits of where it may be applied then becomes an interesting question, which lead me to explore Pontryagin duality. This paper is a quick summary that builds up Pontryagin duality and gives some applications of it',
+    link: '././assets/pdfs/blogs/PontryaginDuality.pdf'
   },
 ];
-
 
 @Component({
   selector: 'app-notes',
@@ -78,11 +48,21 @@ export const notesArray: Note[]= [
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-  notes=notesArray;
+  notes = notesArray;
+  selectedNote: Note | null = null;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  viewPdf(note: Note) {
+    this.router.navigate(['/pdf-viewer'], {
+      queryParams: {
+        src: note.link,
+        name: note.name,
+        source: 'notes'
+      }
+    });
+  }
 }

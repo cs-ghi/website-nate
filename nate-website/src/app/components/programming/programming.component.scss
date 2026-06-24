@@ -1,0 +1,61 @@
+@import 'src/sass/variables';
+@import 'src/sass/mixins';
+@import 'src/sass/grid';
+
+@media (max-width:500px){
+    .programming-info h3, h4  {
+      text-align:center;
+    }
+}
+
+.programming-info h3 {
+    color: $bg-secondary;
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: 600; }
+
+.programming-info h4 {
+    color: $bg-secondary;
+    letter-spacing: 0.7px;
+    font-size: 23px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.col-sm-3{
+    transition: 0.4s;
+    // display: inline-block;
+    height:100%;
+}
+
+.program-link {
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+        background-color: #404145;
+
+        h4 {
+            color: #cbc9c8e7;
+        }
+    }
+}
+
+.col-sm-3:hover{
+    height:100%;
+    background-color: #404145;
+}
+
+.divider{
+    // border-top-color: #46423f;
+    margin-bottom: 70px;
+    margin-top:20px;
+    border-top-width: 1.3px;
+}
+
+.divider-table{
+    // border-top-color:#4b4b4a;
+    margin-bottom: 40px;
+    margin-top:40px;
+    border-top-width: 1.3px;
+}

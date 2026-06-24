@@ -1,0 +1,18 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is '2nd.blg'
+[50] biber-darwin:340> INFO - === Wed Nov 26, 2025, 03:21:28
+[63] Biber.pm:419> INFO - Reading '2nd.bcf'
+[116] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[127] Biber.pm:4419> INFO - Processing section 0
+[135] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[135] bibtex.pm:1713> INFO - LaTeX decoding ...
+[140] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[192] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[192] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[192] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[192] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[198] bbl.pm:660> INFO - Writing '2nd.bbl' with encoding 'UTF-8'
+[200] bbl.pm:763> INFO - Output to 2nd.bbl
+[200] Biber.pm:131> WARN - book entry 'bushnellLocalLanglandsConjecture2006' (bibliography.bib): Invalid format '2006-00-00 2006' of date field 'date' - ignoring
+[200] Biber.pm:131> WARN - legacy year field 'NA' in entry 'chwojko-srawleyPontryaginDuality' is not an integer - this will probably not sort properly.
+[200] Biber.pm:133> INFO - WARNINGS: 2

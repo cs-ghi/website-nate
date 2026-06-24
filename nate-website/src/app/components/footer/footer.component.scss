@@ -20,3 +20,16 @@
   font-size: 12px;
   padding-bottom:1em;
 }
+
+// Mobile styles
+@media (max-width: 768px) {
+  .footer-divider {
+    margin-top: 0.5em;
+    padding-bottom: 0.1em;
+  }
+
+  .footer p {
+    font-size: 10px;
+    padding-bottom: 0.2em;
+  }
+}

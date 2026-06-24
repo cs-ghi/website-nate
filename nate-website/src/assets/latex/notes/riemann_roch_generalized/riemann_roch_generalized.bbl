@@ -1,0 +1,199 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{NateKTheory}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Everything You Need to know about K-theory}
+      \field{volume}{1}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_K-Theory.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_K-Theory.pdf
+      \endverb
+    \endentry
+    \entry{NateAlgGeo}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With an assumption of classical algebraic geometry being covered (up to book 1 of Shafarevich' Basic Algebraic Geometry and Michael Atiyah's Commutative Algebra), this book will hold my Modern Algebraic Geometry Knowledge. The first part is dedicated to the basics: sheaf theory, schemes and their properties, cohomology of quasicoherent sheaves, and partial applications to curves and modules. Further parts shall focus on more specialized topics}
+      \field{title}{Everything You Need To Know About Algebraic Geometry}
+      \field{volumes}{1}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
+      \endverb
+    \endentry
+    \entry{a.griffithsIntroductionAlgebraicCurves}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3af9d163e7683fd184fac8482e37744b}{%
+           family={Griffiths},
+           familyi={G\bibinitperiod},
+           given={Phillip\bibnamedelima A.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Mathematical Society}%
+      }
+      \strng{namehash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{fullhash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{bibnamehash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{authorbibnamehash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{authornamehash}{3af9d163e7683fd184fac8482e37744b}
+      \strng{authorfullhash}{3af9d163e7683fd184fac8482e37744b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Mathematical Monographs}
+      \field{title}{Introduction to Algebraic Curves}
+      \field{volume}{78}
+    \endentry
+    \entry{hirzebruchTopologicalMethodsAlgebraic1995}{book}{}
+      \name{author}{1}{}{%
+        {{hash=56712abe839de5971ea62127a156c577}{%
+           family={Hirzebruch},
+           familyi={H\bibinitperiod},
+           given={Friedrich},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{56712abe839de5971ea62127a156c577}
+      \strng{fullhash}{56712abe839de5971ea62127a156c577}
+      \strng{bibnamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authorbibnamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authornamehash}{56712abe839de5971ea62127a156c577}
+      \strng{authorfullhash}{56712abe839de5971ea62127a156c577}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Topological Methods in Algebraic Geometry}
+      \field{year}{1995}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
+      \endverb
+      \verb{url}
+      \verb https://link-springer-com.myaccess.library.utoronto.ca/book/10.1007/978-3-642-62018-8
+      \endverb
+    \endentry
+    \entry{gallierComplexAlgebraicGeometry2011}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4cf59b50463b475dc0aac665915d2ac1}{%
+           family={Gallier},
+           familyi={G\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0566424ec48b1de4e22c36decce2f4b4}{%
+           family={Shatz},
+           familyi={S\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{fullhash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{bibnamehash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{authorbibnamehash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{authornamehash}{180697101a4f8670ddf20e9b4c177f5a}
+      \strng{authorfullhash}{180697101a4f8670ddf20e9b4c177f5a}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Complex Algebraic Geometry}
+      \field{volume}{1}
+      \field{year}{2011}
+      \field{dateera}{ce}
+    \endentry
+    \entry{hartshorneAlgebraicGeometry2013}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ee65baaab88f9233fbad3d51c399ee25}{%
+           family={Hartshorne},
+           familyi={H\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{fullhash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{bibnamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authorbibnamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authornamehash}{ee65baaab88f9233fbad3d51c399ee25}
+      \strng{authorfullhash}{ee65baaab88f9233fbad3d51c399ee25}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Algebraic geometry}
+      \field{volume}{52}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://books.google.com/books?hl=en&lr=&id=7z4mBQAAQBAJ&oi=fnd&pg=PR13&dq=info:XErvue4ovgwJ:scholar.google.com&ots=OR51pvoipT&sig=NcjWQsiJwE9XL79fBWQTMMub5WM
+      \endverb
+      \verb{url}
+      \verb https://books.google.com/books?hl=en&lr=&id=7z4mBQAAQBAJ&oi=fnd&pg=PR13&dq=info:XErvue4ovgwJ:scholar.google.com&ots=OR51pvoipT&sig=NcjWQsiJwE9XL79fBWQTMMub5WM
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

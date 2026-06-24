@@ -1,6 +1,25 @@
-\documentclass[oneside]{article}
+\documentclass{article}
+%  ╔══════════════════════════════════════════════════════════╗
+%  ║                         Title                            ║
+%  ╚══════════════════════════════════════════════════════════╝
+%NOTE: I want \title,\author to be near top, and this \renewcommand{\maketitle} fails if these are above it.
+\usepackage[utf8]{inputenc}         % Used to compile any UTF-8 Character (and supports Unicode)
+\usepackage{titling}
 
-\title{Why study Complex analysis?}
+\renewcommand{\maketitle}{
+    \quad
+    \vspace{1em}
+  \begin{center}
+      \LARGE\bfseries \thetitle \par
+      \vspace{0.6em}
+      \large
+  \end{center}
+    \vspace{1em}
+}
+
+\title{Why study complex analysis?}
+\author{Nathanael Chwojko-Srawley}
+\date{\today}
 
 %  ╔══════════════════════════════════════════════════════════╗
 %  ║                         packages                         ║
@@ -77,21 +96,33 @@
 %  ╚══════════════════════════════════════════════════════════╝
 
 \pagestyle{fancy}
+
 \setlength\headheight{20pt}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
 \fancyfoot[C,CO]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
 \fancyfoot[R,RO]{\thepage}{}
 
-%chapter header format
-\titleformat{\chapter}[display]{\bfseries\Huge\itshape}{\thechapter}{0.5ex}
-{
-    \rule{\textwidth}{1pt}
-    \vspace{1ex}
-    \centering
+% Create a new page style for the first page
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear header and footer
+  \fancyhead[L]{\theauthor}
+  \fancyhead[R]{\today} % Date in the top-right
+  \fancyfoot[C]{\textcolor{gray}{Nathanael Chwojko-Srawley}}
+  \fancyfoot[R]{\thepage}
 }
-[
-\vspace{-0.5ex}
-\rule{\textwidth}{0.3pt}
-]
+
+% Apply the first page style conditionally
+\AtBeginDocument{\thispagestyle{firstpage}}
+
+
+\newcommand{\chapter}[1]{%
+  \clearpage
+  \vspace*{30pt} % Space before the chapter title
+  {\normalfont\huge\bfseries #1\par} % Chapter title formatting
+  \vspace{20pt} % Space after the chapter title
+}
 
 
 %  ╔══════════════════════════════════════════════════════════╗
@@ -340,11 +371,11 @@
    }{
    \end{quote}\end{tcolorbox}}
 
-\def\exampletext{Example} % If English
+\def\exampletext{Exercise} % If English
 \colorlet{colexam}{red!55!black} % Global example color
 
 
-\newtcbtheorem[auto counter, number within=section]{example}{Example}{%
+\newtcbtheorem[auto counter, number within=section]{example}{Exercise}{%
     empty,% Empty previously set parameters
     title={\exampletext \thetcbcounter},% use \thetcbcounter to access the counter
     attach boxed title to top left,
@@ -431,12 +462,13 @@
 %import options: all, bibliography, book-formatting, booksSetting, customEnvironments, dynkin, hw-formatting, language-setup, newcommands, packages, preamble, proofs, settings, tcolorbox, test.avg,
 \begin{document}
 
+\maketitle
 
 ``What is your intuition on complex analysis?'' It is a question I asked many times, often receiving answers
 depending on the domain of mathematics the person seem to enjoy the most: ``It's about solving complicated
 integrals'', ``It is a special case of harmonic analysis'', ``it is useful for analytic number theory'', ``it
 is the study of Riemann surfaces''. None of these answer felt satisfactory to me: many answers felt like it
-deferred the responsibility for its purpose to another field of mathematics. Though each of these has given me
+deferred the responsibility for its purpose to another question in mathematics. Though each of these has given me
 some motivation for its study, these explanations did not feel like they gave a good reason for why complex
 analysis produces such rigid, one may even sometimes say magical, results. This requirement that the
 intuitions should explain the ``beauty'' of complex analysis has kept me wobbly on my footing for complex
@@ -448,7 +480,7 @@ me. This article will expand the following sentence
 \begin{center}
   \addtolength{\leftskip}{2cm}  % Adjust left margin
 \addtolength{\rightskip}{2cm} % Adjust right margin
-  Complex analysis is the completion of polynomials with the tools of real analysis applied to it.
+  Complex analysis is the right completion of polynomials to apply the tools of analysis.
 \end{center}
 
 \begin{titledBox}{Level of Math Knowledge}
@@ -480,25 +512,28 @@ in many contexts in mathematics:
  \end{enumerate}
 
 
-Let us focus on the special case where there is only one variable. Any polynomial $p(z)$ is naturally studied
-when over the complex numbers $\C$: every polynomial over $\C$ breaks down
-into linear terms:
+As we start in complex analysis with single-dimensional complex-differentiable functions,let us focus on the
+special case where there is only one variable. Any polynomial $p(z)$ is naturally studied when over the
+complex numbers $\C$: every polynomial over $\C$ breaks down into linear terms:
 \[
   p(z) = c(z-a_1)(z-a_2)\cdots (z-a_n)
 \]
 Thus, the information about $p(z)$ is encoded in the multi-set $\{c, a_1, ..., a_n\}$\footnote{We may want to
 recover this set by taking $p(z) = 0$, but there is a complication here where if $a_i = a_j$ for some $i,j$.
 Then the zero set ``forgets'' this information; for this the notion of \emph{schemes} more naturally keeps
-track of multiplicity information} where $c$ is some constant multiple. Thus, the complex numbers are the
-natural domain to study polynomials.
+track of multiplicity information} where $c$ is some constant multiple. Characterizing a polynomial via its
+roots is done naturally by extending the real to the complex numbers.
+
 
 It is thus productive to use all the tools of mathematics in understanding the properties of polynomials. We
-may continue the study of polynomials over $\C$\footnote{Or more algebraically, over an algebraically closed
+may continue the study of (single-variable) polynomials over $\C$\footnote{Or more algebraically, over an algebraically closed
 field $\oln{k}$ of characteristic $0$} in a purely algebraic direction and go towards results such as
 \emph{galois theory} and \emph{number theory}. We may also treat them geometrically, leading to \emph{algebraic
 geometry} and \emph{scheme theory}. From an analysis perspective, we may treat polynomials as a family of
-functions and ask multiple analytic questions. This approach will require a bit more care due to the
-``infinite'' nature of analysis as compared to the ``finite'' nature of polynomials.
+functions and ask multiple analytic questions (what functionals can we put on them, what type of space do they
+form, what are the compact sets of functions). This approach will require a bit more care due to the
+``infinite'' nature of analysis as compared to the ``finite'' nature of polynomials. This is where complex
+analysis comes to bridge the gap.
 
 
 \section{From Polynomials to Complex Analysis}
@@ -556,13 +591,21 @@ our usual real-analysis tools:
      Functions that are locally a convergent power series are called \emph{analytic}.
 \end{enumerate}
 
-These two conditions give enough functions for the collection to be closed under uniform convergence, namely
-if $f_n$ is a sequence of analytic functions and  $f_n \to f$ uniformally (on compact sets), then $f$ shall
-still be analytic by Weiestrass Convergence Theorem. This family of functions on an open subset
-$U \sse \C$ is called the \emph{Holomorphic functions}, and we shall denote it as $\CH(U)$. The family
-$\CH(U)$ forms a complete metric space\footnote{Even stronger, it forms a Fr\'echet space, which ought to be
-  thought as spaces that are not nice enough to define a single norm, but nice enough to replace the norm by a
-sequence of compatible semi-norms}, giving us a natural space in which we may ask analytic questions!
+These two conditions give enough functions for the collection to be closed under uniform convergence on
+compact sets (the extra ``on compact sets'' condition is to insure that it is ``locally'' uniformally
+continuous\footnote{Technically, being locally uniformally continuous and being uniformally continuous are two
+different types of convergence, however they coincide on the space of holomorphic functions}, namely if $f_n$
+is a sequence of analytic functions and  $f_n \to f$ uniformally (on compact sets), then $f$ shall still be
+analytic by Weiestrass Convergence Theorem. Given a connected open subset $U \sse \C$, we can take all the
+polynomials on $U$, and take the all possible uniformally-convergent-on-compact-subset Cauchy-sequences with
+the added condition that the resulting function converges on $U$; the collection of all these limits can be
+called the \emph{Holomorphic functions}, and we shall denote it as $\CH(U)$. The family $\CH(U)$ forms a
+complete metric space\footnote{Even stronger, it forms a Fr\'echet space, which ought to be thought as spaces
+  that are not nice enough to define a single norm, but nice enough to replace the norm by a sequence of
+compatible semi-norms}, giving us a natural space in which we may ask analytic questions!
+
+Naturally, in complex analysis holomorphic functions are defined as complex-differentiable functions $f: U \to
+\C$. What was outlined above is how this collection can be represented by appropriate sequences of polynomials.
 
 The first thing we should do is to see which properties of polynomials extend to properties of holomorphic
 functions. As it turns out, we have done a good job finding a proper embedding for our polynomials and they
@@ -572,20 +615,29 @@ share many similar properties:
     same applies to holomorphic functions
   \item If a holomorphic function $f$ is bounded by a polynomial in growth (i.e. $|f(z)| \le |p(z)|$), then
     $f$ is a polynomial. This mirrors how a polynomial cannot be bounded by another polynomial unless it is of
-    lower order or equal to it.
+    lower order or equal to it (recall in first year calculus/analysis where $\lim_{x \to \infty}
+    \frac{p(x)}{q(x)}$ was determined by looking at the degree of $p(x)$ and $q(x)$).
   % \item Polynomials on $\C$ are a subset of  rational polynomials on $\mathbb{P}_\C^1$, and many results become
   %      simpler when working with rational polynomials. Similarly, Holomorphic
   %      functions are a subset of meromorphic on $\CP^1$ and mirror many of the same properties of rational
   %      polynomials.
-  \item A polynomial is determined by its roots up to a constant multiple. By \emph{Weierstrass factorization
+  \item on $\C$, a polynomial is determined by its roots up to a constant multiple. By \emph{Weierstrass factorization
     theorem}, every holomorphic decomposes into an infinite product of the form:
     \[
       f(z) = z^me^{g(z)}\prod_k^{\infty} \left[\left(1 - \frac{z}{a_k}\right)e^{p(z)}\right]
     \]
     where $g(z)$ is a polynomial.
-  \item Though a holomorphic functions can decomposed as above, it is not determined by its roots (for example, $e^z$ has no
-    roots). The next best result is  \emph{Cauchy's integral formula} which allows us to ``extract''
-    information from holomorphic functions about the value at points.
+
+    In fact, every holomorphic function is determined by its roots up to a multiple of $e^{g(z)}$ where $g(z)$
+    is a holomorphic function on $\C$. Note how $e^{g(z)}$ has no roots and yet is a non-constant polynomial.
+    The reader should show that if $f(z)$ is an entire holomorphic function that is nowhere zero, then there
+    exists a $g(z)$ such that $f(z) = e^{g(z)}$. Thus, $e^{g(z)}$ can be thought of as the ``additional
+    constants'' (similarly to how when characterizing a polynomial, we need its roots and an additioanl
+    constant $c$: $p(z) = c(z-a_1)\cdots(z-a_n)$).
+
+  % \item Though a holomorphic functions can decomposed as above, it is not determined by its roots (for example, $e^z$ has no
+  %   roots). The next best result is  \emph{Cauchy's integral formula} which allows us to ``extract''
+  %   information from holomorphic functions about the value at points.
   % \item Using the above result, any entire \emph{meromorphic function} (a holomorphic function with singularities,
   %   the simplest such examples is $1/z$) must be the quotient of two entire holomorphic functions. In
   %   particular
@@ -595,7 +647,10 @@ share many similar properties:
       are real differentiable function and $fg = 0$, then it is very much not the case that we can conclude
       that $f = 0$ or $g = 0$. This reflects how holomorphic functions do indeed ``naturally'' extend
       the polynomials and the algebraic structures they form!
-  \item The polynomial automorphisms of $\C$ are linear, and the holomorphic automorphisms of $\C$ are also
+
+      From an algebraic point of view, holomorphic functions can be the analytification of \emph{function
+      fields}.
+  \item The polynomial-automorphisms of $\C$ are linear, and the holomorphic-automorphisms of $\C$ are also
     linear. Hence, extending to holomorphic functions does not add additional automorphisms of $\C$.
   \item The open subsets of the Zariski topology are usually \emph{dense} where its compliment is of
     codimension $\le 1$. In the case of $1$ dimension, only a finite set of points is outside any
@@ -616,13 +671,14 @@ study of polynomials. This is indeed the case in multiple ways, but let us highl
 \[
   \zeta(s) = \sum_k^\infty \frac{1}{s^k}
 \]
-Through it, we can find many important results about the polynomials that govern the properties of primes.
-Unfortunately, going into details would require going over the connection between polynomials and primes,
-a topic better left for another blog, (or to get the full details
+Through it, we can find many important results about the polynomials that govern the properties of primes. In
+fact, one can go so far to say that a large part of the development of modern number theory was the attempt to
+find the Riemann-zeta function within the more algebraic domain of number theory (see the \emph{Weil
+Conjecture} for more detail). Unfortunately, going into details would require going over the connection
+between polynomials and primes, a topic better left for another blog, (or to get the full details
 see~\cite[chapter~3]{nathanaelchwojko-srawleyEverythingYouNeed} for my exposition on this topic). More
-generally number theory, through the use of analytic number theory and elliptic functions, has produced some
-incredible results in the theory of polynomials from the theory of complex analysis.
-
+generally, number theory (through the use of analytic number theory and elliptic functions) has produced some
+incredible results in the theory of polynomials with the help of complex analysis.
 
 
 \section{From Complex Analysis to Other Fields}
@@ -642,8 +698,6 @@ interesting snippets that should demonstrate how powerful a tool complex analysi
 
 
 \subsection{To Geometry}
-
-
 
 The approach via differentiation naturally shows that such functions have a
 natural \emph{geometric} structure. Namely, we may define \emph{holomorphic forms} $f(z)dz$. Then any first
@@ -673,6 +727,11 @@ is in fact the study of Compact Riemann surfaces of genus $1$, i.e. the study of
 heavily exploited in the modern theory of algebraic geometry and would be further explored in a class on
 algebraic curves or complex geometry.
 
+\begin{example}{Rational Maps and Biholomorphism}{ritionalMapAndBiholo}
+  The reader familiar with birational maps may recall they need only be defined on an open dense set. Prove
+  that if $f: C \to C'$ is a map between Riemann surfaces that is surjective and is injective on a dense open
+  subset, then $f$ is a biholomorphism.
+\end{example}
 % Let us tie this with how complex analysis is usually
 
 \subsection{To Harmonic Analysis}
@@ -723,12 +782,13 @@ functions and their rather extreme rigidity as compared to real smooth functions
 rigidity of polynomials and the closeness between polynomials and holomorphic functions. This article
 scratches the surface of this connection, for example no time has been spent elucidating the connection
 between elliptic curves and harmonic functions\footnote{Fourier analysis makes some very interesting
-appearances!}, and almost no time has been spent elucidating the bridges
-algebra and geometry its connection to complex analysis\footnote{The connection to Riemann surfaces shows a
-  small part of this connection, showing how a crude invariant of curves is their genus number, however the
-Riemann-Roch theorem had no time to make an appearance!}. The reader interested in seeing the details of these
-ideas expanded upon can checkout the multitude of textbook on complex analysis, or you can
-checkout~\cite{NateComplexAnalysis} to see my exposition on the topics.
+appearances!}, and almost no time has been spent elucidating the bridges between algebra and geometry and its
+connection to complex analysis (which is where higher-dimensional complex analysis naturally shows up in
+scheme theory)\footnote{The connection to Riemann surfaces shows a small part of this connection, showing how
+  a crude invariant of curves is their genus number, however the Riemann-Roch theorem had no time to make an
+appearance!}. The reader interested in seeing the details of these ideas expanded upon can checkout the
+multitude of textbook on complex analysis, or you can checkout~\cite{NateComplexAnalysis} and\cite{NateAlgGeo}
+to see my exposition on the topics.
 
 
 

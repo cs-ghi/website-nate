@@ -1,0 +1,395 @@
+@import 'src/sass/variables';
+@import 'src/sass/mixins';
+@import 'src/sass/grid';
+
+@media (max-width:500px){
+    .books-info h3, h4  {
+      text-align:center;
+    }
+
+    .child-book {
+      padding-left: 20px;
+    }
+
+    .expand-chevron {
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid $bg-secondary;
+    }
+}
+
+.books-info { // Added this wrapper for better nesting and organization
+    h3 {
+        color: $bg-secondary;
+        font-size: 26px;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    h4 {
+        color: $bg-secondary;
+        letter-spacing: 0.7px;
+        font-size: 23px;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    /* --- NEW STYLES FOR LISTS AND PARAGRAPHS --- */
+    p {
+        color: $bg-secondary; // Assumes $bg-secondary is your primary text color
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 1em;
+
+        // Specifically targets the "Note:" text to make it stand out
+        & + ul {
+            margin-top: 0;
+        }
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 25px; // Indent list items
+        margin: 1em 0;
+    }
+
+    li {
+        color: $bg-secondary; // Match text color
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 0.8em; // Spacing between list items
+
+        // Ensures links inside list items are styled correctly
+        a {
+            transition: 0.4s;
+            text-decoration: underline;
+            color: rgb(87 107 127)
+            // The hover effect will be inherited from the general 'a:hover' rule below
+        }
+        a:hover{
+          cursor: pointer;
+          color: rgb(97 137 157) !important;
+        }
+    }
+    /* --- END OF NEW STYLES --- */
+}
+
+
+.book-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 50px;
+    padding: 8px 14px;
+    border: 1px solid #4a4a4a;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: border-color 0.3s ease;
+
+    &:focus-within {
+        border-color: $bg-secondary;
+    }
+
+    .search-icon,
+    .clear-icon {
+        color: $bg-secondary;
+        opacity: 0.5;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    .clear-icon {
+        cursor: pointer;
+        &:hover { opacity: 1; }
+    }
+
+    .book-search-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: $bg-secondary;
+        font-size: 17px;
+        letter-spacing: 0.5px;
+
+        &::placeholder {
+            color: $bg-secondary;
+            opacity: 0.4;
+        }
+    }
+}
+
+.no-results {
+    color: $bg-secondary;
+    opacity: 0.6;
+    font-size: 16px;
+    font-style: italic;
+    padding: 10px 0 40px;
+}
+
+.col-sm-3{
+    transition: 0.4s;
+    // display: inline-block;
+    height:100%;
+}
+
+.book-link {
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+        background-color: #404145;
+
+        h4 {
+            color: #cbc9c8e7;
+        }
+    }
+}
+
+.col-sm-3:hover{
+    height:100%;
+    background-color: #404145;
+}
+
+.divider{
+    // border-top-color: #46423f;
+    margin-bottom: 70px;
+    margin-top:20px;
+    border-top-width: 1.3px;
+}
+
+.divider-table{
+    // border-top-color:#4b4b4a;
+    margin-bottom: 40px;
+    margin-top:40px;
+    border-top-width: 1.3px;
+}
+
+    // .disclaimer-click{
+    //     display:inline-block !important;
+    // }
+
+    // .books-info a:hover{
+    //     background-color: transparent !important;
+    // }
+
+    // .col-sm-9{
+    //     background-color: red !important;
+    // }
+
+    // .flexx{
+    //     flex-direction: column;
+    // }
+
+// .disclaimer-click{
+//     display: none;
+// }
+
+// .books-info a{
+//     color: $bg-secondary;
+//     transition: 0.4s;
+//     text-decoration: none;
+//     height:100%;
+// }
+
+// .row{
+//     // flex-direction: row;
+//     display: table;
+// }
+// .cols{
+//     display: table-cell;
+// }
+
+// .col-sm-9:hover{
+//     background-color: #404145 !important;
+// }
+
+// .books-info h4:hover{
+//         background-color: #404145;
+//         transition:.2s;
+//     }
+
+// .books-info a:hover > * {
+    // color: #cbc9c8e7;
+// }
+
+// .books-info a:hover{
+//     background-color: #404145;
+// }
+
+.book-link-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.expand-chevron {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid $bg-secondary;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.2s;
+    flex-shrink: 0;
+    opacity: 0.5;
+    position: relative;
+    top: 10px;
+    margin-right: 4px;
+
+    &.expanded {
+        transform: rotate(90deg);
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.children-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+    overflow: hidden;
+
+    &.children-open {
+        grid-template-rows: 1fr;
+    }
+}
+
+.children-body {
+    min-height: 0;
+}
+
+.child-book {
+    padding-left: 30px;
+
+    h4 {
+        font-size: 20px;
+    }
+
+    .divider-table {
+        margin-bottom: 25px;
+        margin-top: 25px;
+    }
+}
+
+.lock-button {
+    position: relative;
+    float: right;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    color: $bg-secondary;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.password-overlay {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 1001;
+    background: #2a2a2a;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #444;
+
+    .password-input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #666;
+        color: $bg-secondary;
+        font-size: 14px;
+        outline: none;
+        width: 120px;
+        padding: 2px 4px;
+
+        &::placeholder {
+            color: #666;
+        }
+    }
+
+    .password-submit {
+        background: none;
+        border: none;
+        color: $bg-secondary;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 0 2px;
+        opacity: 0.7;
+
+        &:hover { opacity: 1; }
+    }
+
+    .auth-error {
+        color: #c0392b;
+        font-size: 12px;
+    }
+}
+
+.raw-pdfs-section {
+    margin-top: 2em;
+
+    h3 {
+        color: $bg-secondary;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 1em;
+    }
+
+    .loading-indicator {
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.6;
+    }
+}
+
+.raw-pdfs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 2em;
+}
+
+.raw-pdf-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    color: $bg-secondary;
+    font-size: 14px;
+    font-family: monospace;
+
+    mat-icon {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        opacity: 0.6;
+        flex-shrink: 0;
+    }
+
+    &:hover {
+        background-color: #404145;
+    }
+}

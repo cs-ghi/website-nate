@@ -1,0 +1,39 @@
+\contentsline {chapter}{\numberline {1}Motivation: Riemann Roch Problem}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Riemann Roch Problem}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Motivating the Generalization}{13}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}How do Vector Bundles enter the Picture}{14}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Motivating Euler Characteristic}{16}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Motivating Characteristic Theory}{18}{subsection.1.2.3}%
+\contentsline {chapter}{\numberline {2}Necessary Vector Bundle Theory}{22}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Definitions and key Results}{24}{section.2.1}%
+\contentsline {section}{\numberline {2.2}The Splitting Principle}{26}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Chern and Pontryagin Classes}{27}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Chern Character and K-Theory}{29}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Cohomology of Varieties -- new Euler Characteristics}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dolbeault Cohomology}{34}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Geometric-Algebraic Bridge: K\"ahler Manifold}{41}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Euler Characteristic and Generalization}{45}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Euler Characteristic on Intersections}{48}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Virtual $\chi _y$-characteristic}{52}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Arithmetic}{53}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Relating Euler Characteristic to Chern Numbers}{58}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}*Vanishing Theorems}{62}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Todd Class}{63}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Algebraic Build-up: Multiplicative sequences}{65}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Generating Function}{71}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Todd Class}{73}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Virtual Todd Genus}{76}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}T-characteristic -- combining Algebraic and Geometric information}{78}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Todd Genus Invariant Under Splitting}{82}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Reduction via Cobordism}{86}{chapter.5}%
+\contentsline {section}{\numberline {5.1}(Oriented) Cobordism Ring}{86}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Intersection Form: Spin Index and Hirzebruch Signature Theorem}{93}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Index and Splitting Principle}{96}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Virtual index To Intersection Theory Objects}{97}{subsection.5.3.1}%
+\contentsline {chapter}{\numberline {6}Riemann Roch Theorems}{100}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Classical Riemann Roch Proofs}{100}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Hirzebruch-Riemann-Roch Theorem}{106}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Index, $T_y$-characteristic, $\chi _y$-characteristic}{106}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Hirzebruch Riemann Roch}{110}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}*Grothendieck Riemann Roch}{113}{section.6.3}%
+\contentsline {section}{\numberline {6.4}** Current Generalization Results}{118}{section.6.4}%

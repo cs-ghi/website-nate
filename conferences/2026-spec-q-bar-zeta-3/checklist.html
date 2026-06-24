@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Checklist — Spec Q-bar(\Zeta(3))</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1b1b1f;
+    --muted: #5e5e66;
+    --accent: #2c6cf5;
+    --done: #6e6e72;
+    --blocked: #b15a00;
+    --line: #e6e4dc;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15151a;
+      --fg: #e8e8eb;
+      --muted: #9c9ca5;
+      --accent: #6ea1ff;
+      --done: #6f6f78;
+      --blocked: #e09040;
+      --line: #2a2a31;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 1rem;
+    background: var(--bg); color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5; font-size: 17px;
+  }
+  header { max-width: 760px; margin: 0 auto 1rem; }
+  main { max-width: 760px; margin: 0 auto; }
+  h1 { margin: 0 0 .25rem; font-size: 1.5rem; }
+  .meta { color: var(--muted); font-size: .95rem; margin-bottom: .5rem; }
+  .meta a { color: var(--accent); }
+  .progress {
+    height: 6px; background: var(--line); border-radius: 3px; overflow: hidden;
+    margin: .75rem 0 1rem;
+  }
+  .progress > div {
+    height: 100%; background: var(--accent); width: 0%;
+    transition: width .25s ease;
+  }
+  h2 {
+    font-size: 1.1rem; margin: 1.5rem 0 .5rem;
+    padding-bottom: .25rem; border-bottom: 1px solid var(--line);
+  }
+  ul.checklist { list-style: none; padding: 0; margin: 0; }
+  li.item {
+    padding: .5rem 0; border-bottom: 1px solid var(--line);
+  }
+  li.item:last-child { border-bottom: none; }
+  label {
+    display: flex; align-items: flex-start; gap: .6rem;
+    cursor: pointer; user-select: none;
+  }
+  input[type="checkbox"] {
+    width: 22px; height: 22px; margin-top: 2px;
+    flex-shrink: 0; cursor: pointer;
+  }
+  .title { font-weight: 500; }
+  .due {
+    color: var(--muted); font-size: .9rem; margin-left: .5rem;
+  }
+  .blocked {
+    color: var(--blocked); font-size: .85rem; margin-left: .25rem;
+    font-weight: 600;
+  }
+  .detail {
+    color: var(--muted); font-size: .9rem; margin: .25rem 0 0 calc(22px + .6rem);
+  }
+  .detail a { color: var(--accent); }
+  li.done .title, li.done .detail {
+    text-decoration: line-through; color: var(--done);
+  }
+  .footer {
+    margin-top: 2rem; padding-top: 1rem;
+    color: var(--muted); font-size: .85rem;
+    border-top: 1px solid var(--line);
+  }
+  .footer code {
+    background: var(--line); padding: .1rem .35rem; border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Checklist — Spec Q-bar(\Zeta(3))</h1>
+  <p class="meta">
+    2026-06-22 – 2026-06-25<br />
+    Toronto, Ontario (Canada)
+    <br /><a href="http://www.fields.utoronto.ca/activities/25-26/specbarqzeta3" target="_blank" rel="noopener">Conference site</a>
+  </p>
+  <div class="progress"><div id="bar"></div></div>
+  <p class="meta" id="progressText">0 / 0 done</p>
+</header>
+<main>
+<section><h2>Funding applications</h2>
+<ul class="checklist">
+<li class="item"><label><input type="checkbox" data-key="funding-1" /><span class="title">Apply for SGS Conference Grant</span> <span class="due">due 2026-05-23</span></label><p class="detail">Eligibility: Full-time graduate student presenting own research at a conference. Priority to students within program length. Max 3 grants per PhD.. CRITICAL: international travel (incl. USA) requires Safety Abroad registration BEFORE departure, or the grant is voided. Payment must be claimed within 30 days of the conference. &middot; <a href="https://www.sgs.utoronto.ca/awards/sgs-conference-grant/" target="_blank" rel="noopener">link</a></p></li>
+</ul></section>
+<section><h2>Documents to draft</h2>
+<ul class="checklist">
+<li class="item"><label><input type="checkbox" data-key="document-2" /><span class="title">Draft: Talk / poster abstract</span></label><p class="detail">A short technical abstract for the talk or poster you&#x27;d give at the conference. ~150–250 words, audience: working AG/NT researchers.</p></li>
+<li class="item"><label><input type="checkbox" data-key="document-3" /><span class="title">Draft: One-paragraph academic bio</span></label><p class="detail">Reusable third-person bio for application forms and conference programs.</p></li>
+<li class="item"><label><input type="checkbox" data-key="document-4" /><span class="title">Draft: Statement of relevance to your research (sgs-conference-grant)</span></label><p class="detail">SGS asks: why is this conference relevant to your research, and what will you gain from attending?</p></li>
+<li class="item"><label><input type="checkbox" data-key="document-5" /><span class="title">Draft: Budget breakdown (sgs-conference-grant)</span></label><p class="detail">SGS requires an itemised budget for the trip.</p></li>
+<li class="item"><label><input type="checkbox" data-key="document-6" /><span class="title">Draft: Description of presentation (sgs-conference-grant)</span></label><p class="detail">SGS requires confirmation that you are presenting. If you&#x27;re not yet accepted, describe what you intend to submit.</p></li>
+</ul></section>
+<section><h2>Travel logistics</h2>
+<ul class="checklist">
+<li class="item"><label><input type="checkbox" data-key="logistics-7" /><span class="title">Book flights and accommodation</span> <span class="due">due 2026-05-11</span></label><p class="detail">Recommended ~6–10 weeks ahead for international, ~4 weeks for domestic. Save receipts.</p></li>
+<li class="item"><label><input type="checkbox" data-key="logistics-8" /><span class="title">Add to personal calendar + set OOO</span> <span class="due">due 2026-06-08</span></label><p class="detail">Block your calendar with start/end dates and time-zone.</p></li>
+</ul></section>
+<section><h2>Post-trip housekeeping</h2>
+<ul class="checklist">
+<li class="item"><label><input type="checkbox" data-key="post-9" /><span class="title">File SGS reimbursement claim</span> <span class="due">due 2026-07-20</span></label><p class="detail">Submit receipts via SGS within 30 days of the event. &middot; <a href="https://www.sgs.utoronto.ca/awards/sgs-conference-grant/" target="_blank" rel="noopener">link</a></p></li>
+<li class="item"><label><input type="checkbox" data-key="post-10" /><span class="title">Write trip notes / follow-ups</span> <span class="due">due 2026-07-09</span></label><p class="detail">Capture key talks, people met, follow-up reading. Many funders require a brief trip report.</p></li>
+</ul></section>
+<p class="footer">
+  Your check-state is stored in this device's localStorage under key
+  <code>cp:2026-spec-q-bar-zeta-3</code>. State does not sync to the CLI or to other devices.
+  When the website grows SSR, this will switch to a real shared store.
+</p>
+</main>
+<script>
+(function () {
+  var SLUG = "2026-spec-q-bar-zeta-3";
+  var KEY = "cp:" + SLUG;
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { state = {}; }
+  function save() { localStorage.setItem(KEY, JSON.stringify(state)); }
+  function refreshProgress() {
+    var boxes = document.querySelectorAll('input[type=checkbox][data-key]');
+    var total = boxes.length;
+    var done = 0;
+    boxes.forEach(function (b) { if (b.checked) done++; });
+    var pct = total === 0 ? 0 : Math.round(100 * done / total);
+    document.getElementById('bar').style.width = pct + '%';
+    document.getElementById('progressText').textContent = done + ' / ' + total + ' done (' + pct + '%)';
+  }
+  document.querySelectorAll('input[type=checkbox][data-key]').forEach(function (box) {
+    var k = box.getAttribute('data-key');
+    box.checked = !!state[k];
+    var li = box.closest('li.item');
+    if (box.checked && li) li.classList.add('done');
+    box.addEventListener('change', function () {
+      state[k] = box.checked;
+      save();
+      if (li) li.classList.toggle('done', box.checked);
+      refreshProgress();
+    });
+  });
+  refreshProgress();
+})();
+</script>
+</body>
+</html>

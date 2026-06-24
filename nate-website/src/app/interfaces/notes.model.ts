@@ -1,5 +1,5 @@
 export interface Notes{
-  notes: Note[];
+  bookss: Note[];
 }
 
 export interface Note {

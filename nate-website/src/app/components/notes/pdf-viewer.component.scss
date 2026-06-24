@@ -1,0 +1,302 @@
+.pdf-viewer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.pdf-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.25rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.back-button, .download-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+ white-space: nowrap;
+ flex-shrink: 0;
+ min-width: fit-content;
+ max-width: 200px;
+
+  &:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+}
+
+.back-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+ white-space: nowrap;
+ flex-shrink: 0;
+ min-width: fit-content;
+ max-width: 200px;
+
+  &:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.zoom-button {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #007bff;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover:not(:disabled) {
+    border-color: #ccc;
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  &:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.zoom-display {
+  font-size: 0.9rem;
+  color: #333;
+  min-width: 3rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.document-title {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.pdf-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  min-height: 0;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #d32f2f;
+  text-align: center;
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+.pdf-display {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  min-height: calc(100vh - 100px);
+}
+
+
+// Mobile styles - hide header on mobile devices
+@media (max-width: 768px) {
+  .pdf-header {
+    display: none;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    gap: 0.125rem;
+    align-items: stretch;
+  }
+
+  .document-title {
+    font-size: 0.9rem;
+    text-align: center;
+    order: -1;
+    margin: 0.125rem 0;
+  }
+
+  .back-button {
+    justify-content: center;
+    padding: 0.375rem;
+    font-size: 0.8rem;
+  }
+
+  .zoom-controls {
+    justify-content: center;
+    padding: 0.125rem 0;
+  }
+
+  .zoom-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .zoom-display {
+    font-size: 0.75rem;
+    min-width: 2.5rem;
+  }
+
+  .pdf-content {
+    height: 100vh; // Full height since header is hidden
+  }
+
+  .pdf-display {
+    min-height: 100vh; // Full height since header is hidden on mobile
+  }
+}
+
+// Mobile styles - hide header on mobile devices
+@media (max-width: 768px) {
+  .pdf-header {
+    display: none !important;
+  }
+
+  .pdf-content {
+    height: 100vh !important;
+  }
+
+  .pdf-display {
+    min-height: 100vh !important;
+  }
+
+  // Hide PDF viewer's internal toolbar/header
+  ::ng-deep .ng2-pdf-viewer-container .toolbar {
+    display: none !important;
+  }
+
+  ::ng-deep .ng2-pdf-viewer-container .pdfViewer {
+    top: 0 !important;
+  }
+
+  // Hide PDF.js default toolbar
+  ::ng-deep .ng2-pdf-viewer-container #toolbarContainer {
+    display: none !important;
+  }
+
+  // Adjust PDF viewer container
+  ::ng-deep .ng2-pdf-viewer-container #viewerContainer {
+    top: 0 !important;
+  }
+
+  // Hide any PDF viewer headers
+  ::ng-deep pdf-viewer .toolbar,
+  ::ng-deep pdf-viewer .ng2-pdf-viewer-container .toolbar,
+  ::ng-deep pdf-viewer #toolbarContainer {
+    display: none !important;
+  }
+}
+
+// Dark theme support
+@media (prefers-color-scheme: dark) {
+  .pdf-viewer-container {
+    background-color: #1a1a1a;
+  }
+
+  .pdf-header {
+    background-color: #2d2d2d;
+    border-bottom-color: #444;
+  }
+
+  .document-title {
+    color: #fff;
+  }
+
+  .back-button, .zoom-button {
+    background-color: #2d2d2d;
+    color: #fff;
+    border-color: #444;
+
+    &:hover {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+  }
+
+  .zoom-display {
+    color: #fff;
+  }
+}

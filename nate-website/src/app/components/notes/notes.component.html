@@ -1,30 +1,29 @@
 <div class="section-notes">
     <div class="container">
-        <div class="page-heading"><h2>Textbooks</h2>
-            <p>EYNTKA Series</p>
+        <div class="page-heading"><h2>Notes</h2>
+            <p>Articles, Papers, Translations</p>
             <mat-divider class="divider"></mat-divider>
         </div>
             <div class=row class="notes-info">
                 <h3 class="mb-20">Overview</h3>
                 <p>
-                    Each document has everything I've learnt in a subject matter, from courses, textbooks and personal results, that I had
-                    time to put down. They include some of my personal discoveries in the form of exercises or remarks, and many of my
-                    intuitions. Hence, I named my series of documents "Everything You need To Know About" (EYNTKA). I update my notes on a
-                    regular basis with new information and fixes.
+                    Thes papers are exposition on topics that fit better in a small
+                    document rather than within a textbook.
 
                     <!-- <li> All notes are linked in PDF format (tex file not included).</li> -->
                     <li>Disclaimer: Apologies for any typos in the notes! Feel free to send me any corrections.</li>
                     </p>
 
-                    <!-- <p class="disclaimer-click"> <br><br> Please click on the headings below to download the notes.</p> -->
+                    <!-- <p class="disclaimer-click"> <br><br> Please click on the
+                    headings below to download the notes.</p> -->
             </div>
 
             <div class="row" class="notes-info" style="padding-bottom: 4em;"> </div>
             <div class="notes-info" *ngFor="let note of notes">
                 <div class="row flexx">
-                        <a class="col-sm-3" [href]="note?.link">
+                        <div class="col-sm-3 note-link" (click)="viewPdf(note)">
                             <h4 [innerHtml]="note?.name"></h4>
-                        </a>
+                        </div>
                     <div class="col-sm-9" >
                         <p [innerHtml]="note?.desc"></p>
                     </div>

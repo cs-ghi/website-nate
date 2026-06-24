@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'differences_between_schemes_and_manifolds.blg'
+[50] biber-darwin:340> INFO - === Sun Nov 23, 2025, 18:58:45
+[63] Biber.pm:419> INFO - Reading 'differences_between_schemes_and_manifolds.bcf'
+[119] Biber.pm:979> INFO - Found 5 citekeys in bib section 0
+[133] Biber.pm:4419> INFO - Processing section 0
+[141] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[144] bibtex.pm:1713> INFO - LaTeX decoding ...
+[150] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[203] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[203] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[203] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[203] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[211] bbl.pm:660> INFO - Writing 'differences_between_schemes_and_manifolds.bbl' with encoding 'UTF-8'
+[213] bbl.pm:763> INFO - Output to differences_between_schemes_and_manifolds.bbl
+[213] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[213] Biber.pm:133> INFO - WARNINGS: 1

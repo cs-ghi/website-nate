@@ -1,0 +1,180 @@
+<div class="dictionary-container">
+  <div class="search-section">
+    <h1>Trilingual Dictionary</h1>
+    <p class="description"
+       *ngIf="!result || (japaneseOutputs.length === 0 && chineseOutputs.length === 0)"
+       @fadeInOut>
+      Search for words in English, Japanese (Hiragana, Katakana, or Kanji), or Chinese
+      (Simplified or Traditional) to see translations and definitions across all three
+      languages. This dictionary features audio pronunciation, contextual
+      example sentences with translations, and proficiency level indicators (JLPT for
+      Japanese, HSK for Chinese). I created this resource as I couldn't find a good enough
+      dictionary that gives both japanese and chinese definitions while also alowing to
+      search in each language. Code can be found at
+      <a href="https://github.com/Chiarandini/trilingual-dict">this link</a>.
+    </p>
+    <div class="search-bar">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (keypress)="onKeyPress($event)"
+        placeholder="Search in English, Japanese, or Chinese..."
+        [disabled]="loading"
+        class="search-input"
+      />
+      <button (click)="search()" [disabled]="loading || !searchQuery.trim()" class="search-button">
+        Search
+      </button>
+      <button
+        *ngIf="result"
+        (click)="clearSearch()"
+        class="clear-button"
+        title="Clear search"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div *ngIf="loading" class="loading">
+      Loading...
+    </div>
+
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+  </div>
+
+  <div class="results-section" *ngIf="result && !loading" @slideIn>
+    <div class="results-grid">
+      <!-- Japanese Results Column -->
+      <div class="results-column" *ngIf="japaneseOutputs.length > 0">
+        <div class="column-header">
+          <h2>Japanese</h2>
+          <span class="result-count">({{ japaneseOutputs.length }} result<ng-container *ngIf="japaneseOutputs.length > 1">s</ng-container>)</span>
+        </div>
+
+        <div
+          class="result-card"
+          *ngFor="let output of getVisibleOutputs(japaneseOutputs, showAllJapanese); let i = index"
+          (click)="copyToClipboard(output.headword, 'ja-' + i)"
+          [class.copied]="isCopied('ja-' + i)"
+          title="Click to copy headword"
+        >
+          <div class="card-header">
+            <span class="result-number">{{ i + 1 }}.</span>
+            <div class="header-buttons">
+              <button
+                *ngIf="output.audio"
+                (click)="playAudio(output); $event.stopPropagation()"
+                class="audio-button"
+                title="Play audio"
+              >
+              </button>
+            </div>
+          </div>
+
+          <div class="headword">
+            {{ output.headword }}
+            <span class="reading" *ngIf="output.reading">
+              ({{ output.reading }})
+            </span>
+          </div>
+
+          <div class="definition">
+            {{ output.definition }}
+          </div>
+
+          <span class="copy-indicator" *ngIf="isCopied('ja-' + i)">✓ Copied!</span>
+
+          <div class="metadata" *ngIf="getMetadata(output).length > 0">
+            <span *ngFor="let item of getMetadata(output)" class="meta-item">
+              {{ item }}
+            </span>
+          </div>
+
+          <div class="examples" *ngIf="output.examples && output.examples.length > 0">
+            <div *ngFor="let example of output.examples.slice(0, 1)" class="example">
+              <div class="example-source">{{ example.source_text }}</div>
+              <div class="example-translation">{{ example.english_text }}</div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          *ngIf="getRemainingCount(japaneseOutputs, showAllJapanese) > 0"
+          (click)="showAllJapanese = true"
+          class="show-more-button"
+        >
+          Show {{ getRemainingCount(japaneseOutputs, showAllJapanese) }} more
+        </button>
+      </div>
+
+      <!-- Chinese Results Column -->
+      <div class="results-column" *ngIf="chineseOutputs.length > 0">
+        <div class="column-header">
+          <h2>Chinese</h2>
+          <span class="result-count">({{ chineseOutputs.length }} result<ng-container *ngIf="chineseOutputs.length > 1">s</ng-container>)</span>
+        </div>
+
+        <div
+          class="result-card"
+          *ngFor="let output of getVisibleOutputs(chineseOutputs, showAllChinese); let i = index"
+          (click)="copyToClipboard(output.headword, 'zh-' + i)"
+          [class.copied]="isCopied('zh-' + i)"
+          title="Click to copy headword"
+        >
+          <div class="card-header">
+            <span class="result-number">{{ i + 1 }}.</span>
+            <div class="header-buttons">
+              <button
+                *ngIf="output.audio"
+                (click)="playAudio(output); $event.stopPropagation()"
+                class="audio-button"
+                title="Play audio"
+              >
+              </button>
+            </div>
+          </div>
+
+          <div class="headword">
+            {{ output.headword }}
+            <span class="reading" *ngIf="output.reading">
+              ({{ output.reading }})
+            </span>
+          </div>
+
+          <div class="definition">
+            {{ output.definition }}
+          </div>
+
+          <span class="copy-indicator" *ngIf="isCopied('zh-' + i)">✓ Copied!</span>
+
+          <div class="metadata" *ngIf="getMetadata(output).length > 0">
+            <span *ngFor="let item of getMetadata(output)" class="meta-item">
+              {{ item }}
+            </span>
+          </div>
+
+          <div class="examples" *ngIf="output.examples && output.examples.length > 0">
+            <div *ngFor="let example of output.examples.slice(0, 1)" class="example">
+              <div class="example-source">{{ example.source_text }}</div>
+              <div class="example-translation">{{ example.english_text }}</div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          *ngIf="getRemainingCount(chineseOutputs, showAllChinese) > 0"
+          (click)="showAllChinese = true"
+          class="show-more-button"
+        >
+          Show {{ getRemainingCount(chineseOutputs, showAllChinese) }} more
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="japaneseOutputs.length === 0 && chineseOutputs.length === 0" class="no-results">
+      No results found for "{{ searchQuery }}"
+    </div>
+  </div>
+</div>

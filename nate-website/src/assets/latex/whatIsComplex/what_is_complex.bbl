@@ -19,7 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{nathanaelchwojko-srawleyEverythingYouNeed}{book}{}
+    \entry{NateAlgGeo}{book}{}
       \name{author}{1}{}{%
         {{hash=17e33e23808fa6250bed45d881448509}{%
            family={Chwojko-Srawley},
@@ -35,13 +35,41 @@
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
       \field{extraname}{1}
       \field{labelalpha}{ChwNA}
-      \field{sortinit}{Q}
-      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{extraalpha}{1}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Everything You Need To Know About Class Field Theory}
+      \field{title}{Everything You Need To Know About Algebraic Geometry}
       \field{year}{NA}
+      \verb{urlraw}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
+      \endverb
+      \verb{url}
+      \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_algGeo.pdf
+      \endverb
+    \endentry
+    \entry{nathanaelchwojko-srawleyEverythingYouNeed}{book}{}
+      \name{author}{1}{}{%
+        {{hash=17e33e23808fa6250bed45d881448509}{%
+           family={Chwojko-Srawley},
+           familyi={C\bibinithyphendelim S\bibinitperiod},
+           given={Nathanael},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{17e33e23808fa6250bed45d881448509}
+      \strng{fullhash}{17e33e23808fa6250bed45d881448509}
+      \strng{bibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
+      \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
+      \field{extraname}{2}
+      \field{labelalpha}{Chw}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Everything You Need To Know About Class Field Theory}
       \verb{urlraw}
       \verb https://nathanaelsrawley.com/assets/pdfs/notes/EYNTKA_class_field_theory.pdf
       \endverb
@@ -63,7 +91,7 @@
       \strng{authorbibnamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authornamehash}{17e33e23808fa6250bed45d881448509}
       \strng{authorfullhash}{17e33e23808fa6250bed45d881448509}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{labelalpha}{ChwNA}
       \field{sortinit}{X}
       \field{sortinithash}{1965c258adceecf23ce3d67b05113442}

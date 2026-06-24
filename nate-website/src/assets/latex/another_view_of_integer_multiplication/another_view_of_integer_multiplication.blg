@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'another_view_of_integer_multiplication.blg'
+[49] biber-darwin:340> INFO - === Tue Oct 21, 2025, 15:16:17
+[60] Biber.pm:419> INFO - Reading 'another_view_of_integer_multiplication.bcf'
+[112] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[124] bbl.pm:660> INFO - Writing 'another_view_of_integer_multiplication.bbl' with encoding 'UTF-8'
+[124] bbl.pm:763> INFO - Output to another_view_of_integer_multiplication.bbl
+[124] Biber.pm:131> WARN - The file 'another_view_of_integer_multiplication.bcf' does not contain any citations!
+[124] Biber.pm:133> INFO - WARNINGS: 1
