@@ -25,7 +25,7 @@
       "id": "NateAlgebra",
       "title": "Algebra",
       "dir": "algebra",
-      "description": "The Algebra mega-book — the single compiled volume threading core algebra, commutative algebra, classical algebraic geometry, algebraic number theory, representation theory, homological algebra, and category theory.",
+      "description": "The Algebra mega-book, the single compiled volume threading core algebra, commutative algebra, classical algebraic geometry, algebraic number theory, representation theory, homological algebra, and category theory.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": []
@@ -46,7 +46,7 @@
       "id": "NateAlgKTheory",
       "title": "Algebraic K-Theory",
       "dir": "algebraic-k-theory",
-      "description": "projective modules, K_0, K_1 (Whitehead group), K_2 (Steinberg group, Matsumoto's theorem), and Quillen's higher K-theory (BGL^+, Q-construction). Split from `NateKTheory` 2026-06-27; in progress.",
+      "description": "projective modules, K_0, K_1 (Whitehead group), K_2 (Steinberg group, Matsumoto's theorem), and Quillen's higher K-theory (BGL^+, Q-construction).",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -92,7 +92,7 @@
       "id": "NateCalculus",
       "title": "Calculus",
       "dir": null,
-      "description": "Multivariable calculus done carefully — vector fields, paths, line/surface integrals, the inverse and implicit function theorems, and Stokes' theorem in 2–3 dimensions. The computational/geometric bridge from elementary analysis to differential geometry.",
+      "description": "Multivariable calculus done carefully, vector fields, paths, line/surface integrals, the inverse and implicit function theorems, and Stokes' theorem in 2–3 dimensions. The computational/geometric bridge from elementary analysis to differential geometry.",
       "status": "planned",
       "webPublished": false,
       "clusters": [
@@ -182,7 +182,7 @@
       "id": "NateCStarAlgebras",
       "title": "C*-Algebras and K-Theory",
       "dir": "cstar-algebras",
-      "description": "C*-algebras, Gelfand–Naimark duality, states and the GNS construction, representations, and the K-theory of C*-algebras (K_0/K_1, six-term exact sequence, Bott, the Toeplitz index map). Prereq `NateFuncAnalysis`. Promoted from `NateKTheory` 2026-06-27; foundations chapters in progress.",
+      "description": "C*-algebras, Gelfand–Naimark duality, states and the GNS construction, representations, and the K-theory of C*-algebras (K_0/K_1, six-term exact sequence, Bott, the Toeplitz index map).",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -272,7 +272,7 @@
       "id": "NateHodgeResearch",
       "title": "Hodge Research",
       "dir": "integral-hodge-conjecture",
-      "description": "frontier/research-facing companion to `NateHodgeTheory`: Saito's mixed Hodge modules, perverse sheaves, the decomposition theorem, and the integral Hodge conjecture. (Renamed from `NateHodge` 2026-04-29; legacy `NateHodge` citations remain valid as a synonym during the transition.)",
+      "description": "frontier/research-facing companion to Hodge Theory: Saito's mixed Hodge modules, perverse sheaves, the decomposition theorem, and the integral Hodge conjecture.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -284,7 +284,7 @@
       "id": "NateHodgeTheory",
       "title": "Hodge Theory",
       "dir": "hodge-theory",
-      "description": "compact Kähler geometry, Hodge decomposition, polarized Hodge structures, Lefschetz theorems, variations of Hodge structure, period maps and Mumford--Tate domains, mixed Hodge structures, algebraic cycles. (Bootstrapped 2026-04-29; in progress.)",
+      "description": "compact Kähler geometry, Hodge decomposition, polarized Hodge structures, Lefschetz theorems, variations of Hodge structure, period maps and Mumford–Tate domains, mixed Hodge structures, algebraic cycles.",
       "status": "planned",
       "webPublished": false,
       "clusters": [
@@ -308,7 +308,7 @@
       "id": "NateKTheory",
       "title": "Vector Bundles and K-Theory",
       "dir": "vector-bundles-and-k-theory",
-      "description": "vector bundles, classifying spaces BO/BU, topological K^0/K^1, Bott periodicity, and characteristic classes (Stiefel–Whitney, Chern, Euler, Pontryagin). Purely topological. (Algebraic K-theory split off to `NateAlgKTheory`, and operator/C* K-theory to `NateCStarAlgebras`, on 2026-06-27.)",
+      "description": "vector bundles, classifying spaces BO/BU, topological K^0/K^1, Bott periodicity, and characteristic classes (Stiefel–Whitney, Chern, Euler, Pontryagin). Purely topological.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -403,7 +403,7 @@
       "id": "NatePrelim",
       "title": "Preliminaries",
       "dir": "preliminary-chapter",
-      "description": "series-wide foundation: logic, naive set theory, proof techniques, relations and orders, functions, cardinality, elementary number theory, first exposure to categories. Bootstrapped 2026-05-31 from the legacy algebra-monolith preliminary chapter; in progress.",
+      "description": "series-wide foundation: logic, naive set theory, proof techniques, relations and orders, functions, cardinality, elementary number theory, first exposure to categories.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
@@ -422,7 +422,7 @@
       "id": "NateRealAnalysis",
       "title": "Real Analysis",
       "dir": "Real-Analysis",
-      "description": "The Analysis mega-book — the compiled real-analysis volume threading measure theory, functional analysis, and harmonic analysis.",
+      "description": "The Analysis mega-book, the compiled real-analysis volume threading measure theory, functional analysis, and harmonic analysis.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -2328,7 +2328,7 @@
         "NateCFT"
       ],
       "color": "#e09f3e",
-      "description": "Toward the local Langlands correspondence for GL₂ — representation theory and class field theory up through smooth representations and the GL₂ case."
+      "description": "Toward the local Langlands correspondence for GL₂, representation theory and class field theory up through smooth representations and the GL₂ case."
     },
     {
       "id": "arithmetic-geometry",
@@ -2343,7 +2343,7 @@
         "NateCFT"
       ],
       "color": "#6a9a52",
-      "description": "The arithmetic of varieties — elliptic curves, abelian varieties, and Shimura varieties over number fields, resting on algebraic and arithmetic foundations."
+      "description": "The arithmetic of varieties, elliptic curves, abelian varieties, and Shimura varieties over number fields, resting on algebraic and arithmetic foundations."
     },
     {
       "id": "hodge",
@@ -2371,7 +2371,7 @@
         "NateHomologicalAlg"
       ],
       "color": "#5aa6a0",
-      "description": "The three flavours of K-theory — topological, algebraic, and operator (C*) — and their shared homotopical/homological foundations."
+      "description": "The three flavours of K-theory, topological, algebraic, and operator (C*), and their shared homotopical/homological foundations."
     },
     {
       "id": "analysis-pde",
@@ -2388,7 +2388,7 @@
         "NateCalculus"
       ],
       "color": "#9a7bc8",
-      "description": "The analysis ladder — from elementary analysis through measure theory and functional analysis to ODE and PDE."
+      "description": "The analysis ladder, from elementary analysis through measure theory and functional analysis to ODE and PDE."
     }
   ]
 }
