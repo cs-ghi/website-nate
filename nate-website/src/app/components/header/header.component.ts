@@ -3,6 +3,7 @@ import { Component, OnInit} from '@angular/core';
 // navbar menu, add here for more menu items
 export const menuItems = [
   { name: 'books', url: '/books'},
+  { name: 'series map', url: '/series-map'},
   { name: 'notes', url: '/notes'},
   { name: 'blog', url: '/blog'},
   { name: 'programming', url: '/programming'},

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EYNTKA — Series Map</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='4' fill='%233b6ea5'/></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-vOC9RPXg.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B8sejG0w.css">
+  </head>
+  <body>
+    <div id="app">
+      <header id="toolbar">
+        <div class="brand">
+          <span class="brand-mark">EYNTKA</span>
+          <span class="brand-sub">Series Map</span>
+        </div>
+
+        <div class="search">
+          <input id="search-input" type="search" placeholder="Search books…" autocomplete="off" />
+        </div>
+
+        <div class="controls" id="controls">
+          <div class="control-group" role="group" aria-label="Edge types">
+            <button class="toggle is-on" data-toggle="prereq" title="Prerequisite edges">
+              <span class="swatch sw-prereq"></span>Prereq
+            </button>
+            <button class="toggle is-on" data-toggle="coreq" title="Co-requisite edges">
+              <span class="swatch sw-coreq"></span>Co-req
+            </button>
+            <button class="toggle" data-toggle="reference" title="Reference / see-also edges">
+              <span class="swatch sw-ref"></span>References
+            </button>
+          </div>
+          <div class="control-group" role="group" aria-label="Visibility">
+            <button class="toggle is-on" data-toggle="planned" title="Show planned / WIP books">
+              Planned
+            </button>
+            <button class="toggle is-on" data-toggle="megabooks" title="Group mega-books">
+              Mega-books
+            </button>
+          </div>
+          <div class="control-group" role="group" aria-label="Tracks">
+            <select id="track-select" class="select" title="Highlight a research track">
+              <option value="">Tracks…</option>
+            </select>
+          </div>
+          <div class="control-group" role="group" aria-label="View">
+            <button class="btn" data-action="fit" title="Fit graph to screen">Fit</button>
+            <button class="btn" data-action="reset" title="Clear selection / filters">Reset</button>
+            <button class="btn" id="theme-btn" data-action="theme" title="Toggle light / dark / auto theme">◐ Auto</button>
+          </div>
+        </div>
+      </header>
+
+      <main id="stage">
+        <div id="cy"></div>
+
+        <div id="track-caption" class="panel" hidden></div>
+
+        <div id="tier-axis" aria-hidden="true">
+          <span class="tier-top">research ↑</span>
+          <span class="tier-bottom">↓ foundations</span>
+        </div>
+
+        <section id="legend" class="panel">
+          <button class="legend-toggle" id="legend-toggle" aria-expanded="true">Legend</button>
+          <div class="legend-body" id="legend-body"><!-- filled by ui.ts --></div>
+        </section>
+
+        <aside id="drawer" class="panel" aria-hidden="true">
+          <button id="drawer-close" class="drawer-close" aria-label="Close">×</button>
+          <div id="drawer-body"><!-- filled by ui.ts --></div>
+        </aside>
+      </main>
+
+      <footer id="status-bar">
+        <span id="status-counts"></span>
+        <span id="status-hint" class="hint">Click a book for details · click an edge to see why it exists</span>
+      </footer>
+    </div>
+
+  </body>
+</html>

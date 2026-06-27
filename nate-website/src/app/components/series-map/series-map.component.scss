@@ -1,0 +1,23 @@
+// Fill the viewport below the fixed header (75px is the site's header clearance,
+// matching .page-heading). The graph viewer is an app-like, full-bleed tool.
+.series-map-shell {
+  position: fixed;
+  top: 75px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f7f6f3;
+}
+
+.series-map-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .series-map-shell {
+    top: 60px;
+  }
+}

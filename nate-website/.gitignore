@@ -48,3 +48,6 @@ Thumbs.db
 
 # Per-component compiled output
 src/app/components/**/dist/
+
+# LaTeX build artifacts (should never be committed)
+*.synctex.gz

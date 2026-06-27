@@ -13,12 +13,14 @@ import { ProgrammingComponent } from './components/programming/programming.compo
 import { TutoringComponent } from './components/tutoring/tutoring.component';
 import { DictionaryComponent } from './components/dictionary/dictionary.component';
 import { JudoComponent } from './components/judo/judo.component';
+import { SeriesMapComponent } from './components/series-map/series-map.component';
 
 const routes: Routes = [
   {path: '', component: BooksComponent} ,
   {path: 'about', component : AboutComponent},
   {path: 'tutoring', component : TutoringComponent},
   {path: 'books', component: BooksComponent},
+  {path: 'series-map', component: SeriesMapComponent},
   {path: 'notes', component: NotesComponent},
   {path: 'pdf-viewer', component: PdfViewerComponent },
   {path: 'html-viewer', component: HtmlBookViewerComponent },

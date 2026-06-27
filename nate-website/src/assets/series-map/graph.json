@@ -1,0 +1,2394 @@
+{
+  "meta": {
+    "generated": "2026-06-27",
+    "bookCount": 41,
+    "edgeCount": 216,
+    "clashCounts": {
+      "error": 0,
+      "warn": 0,
+      "info": 65
+    }
+  },
+  "nodes": [
+    {
+      "id": "NateAbelianVarieties",
+      "title": "Abelian Varieties",
+      "dir": "abelian-varieties",
+      "description": "complex tori, polarizations, theta functions, isogenies, the dual abelian variety, and abelian varieties over general fields.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "arithmetic-geometry"
+      ]
+    },
+    {
+      "id": "NateAlgebra",
+      "title": "Algebra",
+      "dir": "algebra",
+      "description": "The Algebra mega-book, the single compiled volume threading core algebra, commutative algebra, classical algebraic geometry, algebraic number theory, representation theory, homological algebra, and category theory.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateAlgGeo",
+      "title": "Algebraic Geometry",
+      "dir": "algebraic-geometry",
+      "description": "scheme theory, sheaf cohomology, curves, surfaces.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "arithmetic-geometry",
+        "hodge"
+      ]
+    },
+    {
+      "id": "NateAlgKTheory",
+      "title": "Algebraic K-Theory",
+      "dir": "algebraic-k-theory",
+      "description": "projective modules, K_0, K_1 (Whitehead group), K_2 (Steinberg group, Matsumoto's theorem), and Quillen's higher K-theory (BGL^+, Q-construction).",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "k-theory"
+      ],
+      "lastUpdated": "2026-06-27"
+    },
+    {
+      "id": "NateAlgNumberTheory",
+      "title": "Algebraic Number Theory",
+      "dir": "algebraic-number-theory",
+      "description": "rings of integers, ideals, integral bases, norms, traces, splitting of primes, ideal class group, Dirichlet's unit theorem, Kronecker-Weber theorem.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateAlgebra",
+        "arithmetic-geometry"
+      ]
+    },
+    {
+      "id": "NateAlgTop",
+      "title": "Algebraic Topology",
+      "dir": "algebraic-topology",
+      "description": "fundamental group, covering spaces, singular homology, CW complexes, cohomology rings, Poincaré duality.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "k-theory"
+      ],
+      "lastUpdated": "2026-06-26"
+    },
+    {
+      "id": "NateAnalyticNumTheory",
+      "title": "Analytic Number Theory",
+      "dir": "analytic-number-theory",
+      "description": "",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [],
+      "lastUpdated": "2026-05-01"
+    },
+    {
+      "id": "NateCalculus",
+      "title": "Calculus",
+      "dir": null,
+      "description": "Multivariable calculus done carefully, vector fields, paths, line/surface integrals, the inverse and implicit function theorems, and Stokes' theorem in 2–3 dimensions. The computational/geometric bridge from elementary analysis to differential geometry.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": [
+        "analysis-pde"
+      ]
+    },
+    {
+      "id": "NateCategoryTheory",
+      "title": "Category Theory",
+      "dir": "category-theory",
+      "description": "categories, functors, natural transformations, (co)limits, adjunctions, the Yoneda lemma, monads, abelian categories. Compiled into the *Algebra* mega-book.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateAlgebra"
+      ]
+    },
+    {
+      "id": "NateCFT",
+      "title": "Class Field Theory",
+      "dir": "class-field-theory",
+      "description": "local fields, places, ray class groups, idele group, Hasse principle.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "langlands",
+        "arithmetic-geometry"
+      ]
+    },
+    {
+      "id": "NateClassicalAlgGeo",
+      "title": "Classical Algebraic Geometry",
+      "dir": "classical-algebraic-geometry",
+      "description": "algebraic sets, varieties, normalization, dimension, blow-ups.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateAlgebra"
+      ]
+    },
+    {
+      "id": "NateCommAlg",
+      "title": "Commutative Algebra",
+      "dir": "commutative-algebra",
+      "description": "integral extensions, localization, completion, Hilbert's basis theorem.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateAlgebra"
+      ]
+    },
+    {
+      "id": "NateComplexAnalysis",
+      "title": "Complex Analysis",
+      "dir": "complex-analysis",
+      "description": "Cauchy–Riemann, analytic continuation, residue theorem, elliptic functions, Riemann surfaces.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "hodge"
+      ]
+    },
+    {
+      "id": "NateCoreAlgebra",
+      "title": "Core Algebra",
+      "dir": "core-algebra",
+      "description": "groups, rings, modules, fields.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateAlgebra"
+      ]
+    },
+    {
+      "id": "NateCoreRepTheory",
+      "title": "Core Representation Theory",
+      "dir": "core-representation-theory",
+      "description": "Maschke's theorem, Schur's lemma, Wedderburn-Artin theorem, character theory, induced representations, Frobenius reciprocity, quiver theory.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateAlgebra",
+        "langlands"
+      ]
+    },
+    {
+      "id": "NateCStarAlgebras",
+      "title": "C*-Algebras and K-Theory",
+      "dir": "cstar-algebras",
+      "description": "C*-algebras, Gelfand–Naimark duality, states and the GNS construction, representations, and the K-theory of C*-algebras (K_0/K_1, six-term exact sequence, Bott, the Toeplitz index map).",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "k-theory"
+      ],
+      "lastUpdated": "2026-06-27"
+    },
+    {
+      "id": "NateDiffGeo",
+      "title": "Differential Geometry",
+      "dir": "differential-geometry",
+      "description": "smooth manifolds, de Rham cohomology, connections.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "hodge"
+      ]
+    },
+    {
+      "id": "NateElemAnalysis",
+      "title": "Elementary Analysis",
+      "dir": "elementary-analysis",
+      "description": "real numbers, sequences, series, calculus basics.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "analysis-pde"
+      ]
+    },
+    {
+      "id": "NateEllipticCurves",
+      "title": "Elliptic Curves",
+      "dir": "elliptic-curves",
+      "description": "Weierstrass equations, group law, isogenies, Weil pairing, Mordell–Weil theorem, Hasse's theorem, Galois representations, CM theory, modular forms, modularity, BSD conjecture.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "arithmetic-geometry"
+      ]
+    },
+    {
+      "id": "NateFuncAnalysis",
+      "title": "Functional Analysis",
+      "dir": "functional-analysis",
+      "description": "Banach spaces, Hilbert spaces, Hahn–Banach theorem, open mapping theorem, spectral theory of bounded operators.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateRealAnalysis",
+        "analysis-pde"
+      ]
+    },
+    {
+      "id": "NateGaloisCohom",
+      "title": "Group and Galois Cohomology",
+      "dir": "galois-cohomology",
+      "description": "profinite groups, continuous cohomology, Tate duality, Brauer groups, local and global duality theorems.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateGeoRepTheory",
+      "title": "Algebraic Groups and Representations",
+      "dir": "geometric-representation-theory",
+      "description": "linear algebraic groups, root systems, Dynkin classification, highest-weight theory, Weyl character formula, Borel–Weil–Bott.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "langlands"
+      ]
+    },
+    {
+      "id": "NateHarmonicAnalysis",
+      "title": "Harmonic Analysis",
+      "dir": "harmonic-analysis",
+      "description": "Fourier transform, convolution, distribution theory, Sobolev spaces, topological groups, Haar measure, Pontryagin duality.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateRealAnalysis",
+        "langlands",
+        "analysis-pde"
+      ]
+    },
+    {
+      "id": "NateHodgeResearch",
+      "title": "Hodge Research",
+      "dir": "integral-hodge-conjecture",
+      "description": "frontier/research-facing companion to Hodge Theory: Saito's mixed Hodge modules, perverse sheaves, the decomposition theorem, and the integral Hodge conjecture.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "hodge"
+      ],
+      "lastUpdated": "2026-04-29"
+    },
+    {
+      "id": "NateHodgeTheory",
+      "title": "Hodge Theory",
+      "dir": "hodge-theory",
+      "description": "compact Kähler geometry, Hodge decomposition, polarized Hodge structures, Lefschetz theorems, variations of Hodge structure, period maps and Mumford–Tate domains, mixed Hodge structures, algebraic cycles.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": [
+        "hodge"
+      ],
+      "lastUpdated": "2026-04-29"
+    },
+    {
+      "id": "NateHomologicalAlg",
+      "title": "Homological Algebra",
+      "dir": "homological-algebra",
+      "description": "abelian/triangulated categories, derived functors, spectral sequences.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateAlgebra",
+        "k-theory"
+      ]
+    },
+    {
+      "id": "NateKTheory",
+      "title": "Vector Bundles and K-Theory",
+      "dir": "vector-bundles-and-k-theory",
+      "description": "vector bundles, classifying spaces BO/BU, topological K^0/K^1, Bott periodicity, and characteristic classes (Stiefel–Whitney, Chern, Euler, Pontryagin). Purely topological.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "k-theory"
+      ],
+      "lastUpdated": "2026-06-27"
+    },
+    {
+      "id": "NateLanglandsGL2",
+      "title": "Local Langlands for GL₂(F)",
+      "dir": "p-adic-representation",
+      "description": "smooth representations of locally profinite groups, Hecke algebras, principal series, supercuspidal representations, local L-functions, epsilon-factors, Weil groups, Deligne representations.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "langlands"
+      ]
+    },
+    {
+      "id": "NateLieGroups",
+      "title": "Lie Groups",
+      "dir": null,
+      "description": "",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateLocalFieldTheory",
+      "title": "Local Field Theory",
+      "dir": "local-field-theory",
+      "description": "",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateLocalLanglands",
+      "title": "Local Langlands",
+      "dir": null,
+      "description": "smooth representations of locally profinite groups, GL2 structure, principal series, supercuspidal representations. Evolving toward the local Langlands correspondence.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": [
+        "langlands"
+      ]
+    },
+    {
+      "id": "NateLogic",
+      "title": "Logic",
+      "dir": "logic",
+      "description": "first-order language, propositional language, soundness, completeness, compactness, computability, Turing machines, Gödel's incompleteness theorem.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateMeasureTheory",
+      "title": "Measure Theory",
+      "dir": "measure-theory",
+      "description": "sigma-algebras, outer measure, Borel/Lebesgue measures, product measure, signed and complex measures, Lebesgue-Radon-Nikodym theorem.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "NateRealAnalysis",
+        "analysis-pde"
+      ]
+    },
+    {
+      "id": "NateODE",
+      "title": "Ordinary Differential Equations (ODE)",
+      "dir": "ODE",
+      "description": "Picard-Lindelöf theorem, linear systems, matrix exponentials, Lyapunov stability, boundary value problems, Sturm-Liouville theory, Green's functions.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "analysis-pde"
+      ]
+    },
+    {
+      "id": "NatePDE",
+      "title": "Partial Differential Equations",
+      "dir": "PDE",
+      "description": "Sobolev spaces, elliptic boundary value problems, heat equation, wave equation, maximum principles.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "analysis-pde"
+      ]
+    },
+    {
+      "id": "NatePrelim",
+      "title": "Preliminaries",
+      "dir": "preliminary-chapter",
+      "description": "series-wide foundation: logic, naive set theory, proof techniques, relations and orders, functions, cardinality, elementary number theory, first exposure to categories.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [],
+      "lastUpdated": "2026-05-31"
+    },
+    {
+      "id": "NateProbability",
+      "title": "Probability",
+      "dir": "Probability",
+      "description": "distributions, expected value, variance, law of large numbers, Erdős-Rényi graphs, exponential inequalities, Gaussian distribution.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateRealAnalysis",
+      "title": "Real Analysis",
+      "dir": "Real-Analysis",
+      "description": "The Analysis mega-book, the compiled real-analysis volume threading measure theory, functional analysis, and harmonic analysis.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "analysis-pde"
+      ]
+    },
+    {
+      "id": "NateShimuraVarieties",
+      "title": "Shimura Varieties",
+      "dir": "shimura-varieties",
+      "description": "Hermitian symmetric domains, Shimura data, canonical models, and the bridge to automorphic forms.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "arithmetic-geometry"
+      ]
+    },
+    {
+      "id": "NateTopology",
+      "title": "Topology",
+      "dir": "topology",
+      "description": "separation axioms, product/quotient topology, metric spaces, connectedness, compactness, Urysohn lemma, fundamental group, topological groups.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateToricGeometry",
+      "title": "Toric Geometry",
+      "dir": "toric-geometry",
+      "description": "cones and fans, toric varieties, the orbit–cone correspondence, toric divisors, and the dictionary with polytopes.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateComplexAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateEllipticCurves",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex",
+        "algebra/introduction.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateComplexAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateDiffGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateLogic",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NatePDE",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateAlgTop",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateClassicalAlgGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateComplexAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateDiffGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateHodgeResearch",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateHomologicalAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateAlgTop",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateCStarAlgebras",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateHomologicalAlg",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgNumberTheory",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-number-theory/EYNTKA-algebraic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgNumberTheory",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-number-theory/EYNTKA-algebraic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgNumberTheory",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateAlgNumberTheory",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateAlgNumberTheory",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-number-theory/EYNTKA-algebraic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateHomologicalAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateTopology",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateAnalyticNumTheory",
+      "target": "NateAlgNumberTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
+      "target": "NateComplexAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
+      "target": "NateLocalFieldTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCalculus",
+      "target": "NateElemAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCategoryTheory",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCategoryTheory",
+      "target": "NatePrelim",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateAlgNumberTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateGaloisCohom",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateLocalFieldTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateClassicalAlgGeo",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
+      ]
+    },
+    {
+      "source": "NateClassicalAlgGeo",
+      "target": "NateAlgTop",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
+      ]
+    },
+    {
+      "source": "NateClassicalAlgGeo",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateClassicalAlgGeo",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateClassicalAlgGeo",
+      "target": "NateDiffGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
+      ]
+    },
+    {
+      "source": "NateClassicalAlgGeo",
+      "target": "NateGeoRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
+      ]
+    },
+    {
+      "source": "NateCommAlg",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "commutative-algebra/EYNTKA-commutative-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCommAlg",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "commutative-algebra/EYNTKA-commutative-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCommAlg",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "commutative-algebra/EYNTKA-commutative-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCommAlg",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCommAlg",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "commutative-algebra/EYNTKA-commutative-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCommAlg",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "commutative-algebra/EYNTKA-commutative-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCommAlg",
+      "target": "NateLogic",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "commutative-algebra/EYNTKA-commutative-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateDiffGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateElemAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateDiffGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NatePrelim",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCoreRepTheory",
+      "target": "NateGeoRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
+      "target": "NateLocalLanglands",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCStarAlgebras",
+      "target": "NateAlgKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
+      ]
+    },
+    {
+      "source": "NateCStarAlgebras",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
+      ]
+    },
+    {
+      "source": "NateCStarAlgebras",
+      "target": "NateFuncAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
+      ]
+    },
+    {
+      "source": "NateCStarAlgebras",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
+      ]
+    },
+    {
+      "source": "NateCStarAlgebras",
+      "target": "NateMeasureTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
+      ]
+    },
+    {
+      "source": "NateDiffGeo",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "differential-geometry/EYNTKA_Differential_Geometry.tex"
+      ]
+    },
+    {
+      "source": "NateDiffGeo",
+      "target": "NateCalculus",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateDiffGeo",
+      "target": "NateTopology",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateElemAnalysis",
+      "target": "NatePrelim",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateAlgNumberTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateComplexAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateGaloisCohom",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateGeoRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateEllipticCurves",
+      "target": "NateLanglandsGL2",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elliptic-curves/EYNTKA-elliptic-curves.tex"
+      ]
+    },
+    {
+      "source": "NateFuncAnalysis",
+      "target": "NateMeasureTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateFuncAnalysis",
+      "target": "NateTopology",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateAlgNumberTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateAlgTop",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex",
+        "galois-cohomology/EYNTKA_galois_cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateCoreRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex",
+        "galois-cohomology/EYNTKA_galois_cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateHomologicalAlg",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateLocalFieldTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
+      ]
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
+      ]
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
+      ]
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateCoreRepTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateDiffGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
+      ]
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateGaloisCohom",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
+      ]
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateLieGroups",
+      "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateLocalLanglands",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NateFuncAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NateGeoRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NateLocalLanglands",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NateMeasureTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NatePDE",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeResearch",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "integral-hodge-conjecture/hodge_paper_notes.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeResearch",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "integral-hodge-conjecture/hodge_paper_notes.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeResearch",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "integral-hodge-conjecture/hodge_paper_notes.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeResearch",
+      "target": "NateComplexAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "integral-hodge-conjecture/EYNTKA_hodge.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeResearch",
+      "target": "NateDiffGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "integral-hodge-conjecture/EYNTKA_hodge.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeResearch",
+      "target": "NateHodgeTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHodgeResearch",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "integral-hodge-conjecture/EYNTKA_hodge.tex",
+        "integral-hodge-conjecture/hodge_paper_notes.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeTheory",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeTheory",
+      "target": "NateComplexAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeTheory",
+      "target": "NateDiffGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeTheory",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeTheory",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateAlgTop",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateCategoryTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateGaloisCohom",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateKTheory",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
+      ]
+    },
+    {
+      "source": "NateKTheory",
+      "target": "NateAlgKTheory",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
+      ]
+    },
+    {
+      "source": "NateKTheory",
+      "target": "NateAlgTop",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
+      ]
+    },
+    {
+      "source": "NateKTheory",
+      "target": "NateCStarAlgebras",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
+      ]
+    },
+    {
+      "source": "NateKTheory",
+      "target": "NateDiffGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
+      ]
+    },
+    {
+      "source": "NateKTheory",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateAlgNumberTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateCFT",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateCoreRepTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateFuncAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateGaloisCohom",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateLocalFieldTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateDiffGeo",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateAlgNumberTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalLanglands",
+      "target": "NateCFT",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLocalLanglands",
+      "target": "NateCoreRepTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLocalLanglands",
+      "target": "NateGeoRepTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLocalLanglands",
+      "target": "NateHarmonicAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLocalLanglands",
+      "target": "NateLanglandsGL2",
+      "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLocalLanglands",
+      "target": "NateLocalFieldTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLogic",
+      "target": "NatePrelim",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateMeasureTheory",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "measure-theory/EYNTKA-measure-theory.tex"
+      ]
+    },
+    {
+      "source": "NateMeasureTheory",
+      "target": "NateElemAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateMeasureTheory",
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "measure-theory/EYNTKA-measure-theory.tex"
+      ]
+    },
+    {
+      "source": "NateODE",
+      "target": "NateCalculus",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateODE",
+      "target": "NateElemAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NatePDE",
+      "target": "NateCalculus",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NatePDE",
+      "target": "NateFuncAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NatePDE",
+      "target": "NateODE",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NatePrelim",
+      "target": "NateLogic",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "preliminary-chapter/legacy/preliminary-chapter-legacy.tex",
+        "preliminary-chapter/preliminary-chapter.tex"
+      ]
+    },
+    {
+      "source": "NateProbability",
+      "target": "NateMeasureTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateRealAnalysis",
+      "target": "NateElemAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateShimuraVarieties",
+      "target": "NateAbelianVarieties",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateShimuraVarieties",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "shimura-varieties/EYNTKA-Shimura_Varieties.tex"
+      ]
+    },
+    {
+      "source": "NateShimuraVarieties",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateShimuraVarieties",
+      "target": "NateCFT",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateShimuraVarieties",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "shimura-varieties/EYNTKA-Shimura_Varieties.tex"
+      ]
+    },
+    {
+      "source": "NateShimuraVarieties",
+      "target": "NateEllipticCurves",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateShimuraVarieties",
+      "target": "NateGeoRepTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateTopology",
+      "target": "NateElemAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateTopology",
+      "target": "NatePrelim",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateToricGeometry",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "toric-geometry/EYNTKA_toric_geometry.tex"
+      ]
+    },
+    {
+      "source": "NateToricGeometry",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateToricGeometry",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    }
+  ],
+  "clusters": [
+    {
+      "id": "NateRealAnalysis",
+      "label": "Analysis (mega-book)",
+      "kind": "megabook",
+      "book": "NateRealAnalysis",
+      "members": [
+        "NateFuncAnalysis",
+        "NateHarmonicAnalysis",
+        "NateMeasureTheory"
+      ],
+      "color": "#4fa3d1"
+    },
+    {
+      "id": "NateAlgebra",
+      "label": "Algebra (mega-book)",
+      "kind": "megabook",
+      "book": "NateAlgebra",
+      "members": [
+        "NateAlgNumberTheory",
+        "NateCategoryTheory",
+        "NateClassicalAlgGeo",
+        "NateCommAlg",
+        "NateCoreAlgebra",
+        "NateCoreRepTheory",
+        "NateHomologicalAlg"
+      ],
+      "color": "#b07cc6"
+    },
+    {
+      "id": "langlands",
+      "label": "Langlands programme",
+      "kind": "track",
+      "members": [
+        "NateCoreRepTheory",
+        "NateGeoRepTheory",
+        "NateLocalLanglands",
+        "NateLanglandsGL2",
+        "NateHarmonicAnalysis",
+        "NateCFT"
+      ],
+      "color": "#e09f3e",
+      "description": "Toward the local Langlands correspondence for GL₂, representation theory and class field theory up through smooth representations and the GL₂ case."
+    },
+    {
+      "id": "arithmetic-geometry",
+      "label": "Arithmetic geometry",
+      "kind": "track",
+      "members": [
+        "NateEllipticCurves",
+        "NateAbelianVarieties",
+        "NateShimuraVarieties",
+        "NateAlgGeo",
+        "NateAlgNumberTheory",
+        "NateCFT"
+      ],
+      "color": "#6a9a52",
+      "description": "The arithmetic of varieties, elliptic curves, abelian varieties, and Shimura varieties over number fields, resting on algebraic and arithmetic foundations."
+    },
+    {
+      "id": "hodge",
+      "label": "Hodge theory & cycles",
+      "kind": "track",
+      "members": [
+        "NateHodgeTheory",
+        "NateHodgeResearch",
+        "NateComplexAnalysis",
+        "NateDiffGeo",
+        "NateAlgGeo"
+      ],
+      "color": "#c2698d",
+      "description": "Complex and Kähler geometry toward Hodge theory, algebraic cycles, and the (integral) Hodge conjecture."
+    },
+    {
+      "id": "k-theory",
+      "label": "K-theory",
+      "kind": "track",
+      "members": [
+        "NateKTheory",
+        "NateAlgKTheory",
+        "NateCStarAlgebras",
+        "NateAlgTop",
+        "NateHomologicalAlg"
+      ],
+      "color": "#5aa6a0",
+      "description": "The three flavours of K-theory, topological, algebraic, and operator (C*), and their shared homotopical/homological foundations."
+    },
+    {
+      "id": "analysis-pde",
+      "label": "Analysis → PDE",
+      "kind": "track",
+      "members": [
+        "NateElemAnalysis",
+        "NateMeasureTheory",
+        "NateRealAnalysis",
+        "NateFuncAnalysis",
+        "NateHarmonicAnalysis",
+        "NateODE",
+        "NatePDE",
+        "NateCalculus"
+      ],
+      "color": "#9a7bc8",
+      "description": "The analysis ladder, from elementary analysis through measure theory and functional analysis to ODE and PDE."
+    }
+  ]
+}
