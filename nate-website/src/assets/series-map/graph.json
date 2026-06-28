@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-06-28",
     "bookCount": 41,
-    "edgeCount": 217,
+    "edgeCount": 213,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 64
+      "info": 60
     }
   },
   "nodes": [
@@ -776,8 +776,8 @@
     {
       "source": "NateAlgGeo",
       "target": "NateDiffGeo",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
@@ -1013,7 +1013,7 @@
     {
       "source": "NateAnalyticNumTheory",
       "target": "NateAlgNumberTheory",
-      "type": "prereq",
+      "type": "coreq",
       "provenance": "both",
       "citedIn": [
         "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
@@ -1065,13 +1065,6 @@
     {
       "source": "NateCategoryTheory",
       "target": "NateCoreAlgebra",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateCategoryTheory",
-      "target": "NatePrelim",
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
@@ -1150,8 +1143,8 @@
     {
       "source": "NateClassicalAlgGeo",
       "target": "NateDiffGeo",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
       ]
@@ -1270,13 +1263,6 @@
       "citedIn": [
         "complex-analysis/EYNTKA_complex_analysis.tex"
       ]
-    },
-    {
-      "source": "NateComplexAnalysis",
-      "target": "NateElemAnalysis",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateComplexAnalysis",
@@ -1559,8 +1545,8 @@
     {
       "source": "NateEllipticCurves",
       "target": "NateCoreAlgebra",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "elliptic-curves/EYNTKA-elliptic-curves.tex"
       ]
@@ -1970,13 +1956,6 @@
     },
     {
       "source": "NateHomologicalAlg",
-      "target": "NateCategoryTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateHomologicalAlg",
       "target": "NateCFT",
       "type": "reference",
       "provenance": "auto",
@@ -2189,8 +2168,8 @@
     {
       "source": "NateLocalFieldTheory",
       "target": "NateCommAlg",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "local-field-theory/EYNTKA-local-field-theory.tex"
       ]
@@ -2402,13 +2381,6 @@
     {
       "source": "NateTopology",
       "target": "NateElemAnalysis",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateTopology",
-      "target": "NatePrelim",
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
