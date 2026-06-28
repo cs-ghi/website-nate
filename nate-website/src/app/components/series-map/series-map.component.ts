@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
  * Cytoscape app) in an iframe. The built viewer is synced into
  * assets/series-map/ by `npm run sync:web` in the textbooks repo's
  * .eyntka/series-map/ project. Angular stays fully decoupled from the
- * viewer's dependencies — it only points an iframe at the static bundle.
+ * viewer's dependencies, it only points an iframe at the static bundle.
  */
 @Component({
   selector: 'app-series-map',

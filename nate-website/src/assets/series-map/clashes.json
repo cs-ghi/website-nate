@@ -8,15 +8,6 @@
     ]
   },
   {
-    "kind": "unknown-codename",
-    "severity": "error",
-    "message": "\\cite{NateTop} resolves to no known book. Fix the citation or add an alias/registry entry.",
-    "refs": [
-      "NateTop",
-      "algebraic-topology/EYNTKA-algebraic-topology.tex"
-    ]
-  },
-  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateLocalLanglands' is planned (cited/registered but has no folder yet).",
@@ -35,7 +26,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay coreq (NateLocalLanglands -> NateLanglandsGL2) is manual — no backing \\cite found.",
+    "message": "Overlay coreq (NateLocalLanglands -> NateLanglandsGL2) is manual, no backing \\cite found.",
     "refs": [
       "NateLocalLanglands",
       "NateLanglandsGL2"
@@ -44,7 +35,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay coreq (NateGeoRepTheory -> NateLieGroups) is manual — no backing \\cite found.",
+    "message": "Overlay coreq (NateGeoRepTheory -> NateLieGroups) is manual, no backing \\cite found.",
     "refs": [
       "NateGeoRepTheory",
       "NateLieGroups"
@@ -53,7 +44,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCoreAlgebra -> NatePrelim) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCoreAlgebra -> NatePrelim) is manual, no backing \\cite found.",
     "refs": [
       "NateCoreAlgebra",
       "NatePrelim"
@@ -62,7 +53,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateElemAnalysis -> NatePrelim) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateElemAnalysis -> NatePrelim) is manual, no backing \\cite found.",
     "refs": [
       "NateElemAnalysis",
       "NatePrelim"
@@ -71,7 +62,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLogic -> NatePrelim) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLogic -> NatePrelim) is manual, no backing \\cite found.",
     "refs": [
       "NateLogic",
       "NatePrelim"
@@ -80,7 +71,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateTopology -> NatePrelim) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateTopology -> NatePrelim) is manual, no backing \\cite found.",
     "refs": [
       "NateTopology",
       "NatePrelim"
@@ -89,7 +80,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCategoryTheory -> NatePrelim) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCategoryTheory -> NatePrelim) is manual, no backing \\cite found.",
     "refs": [
       "NateCategoryTheory",
       "NatePrelim"
@@ -98,7 +89,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateTopology -> NateElemAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateTopology -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateTopology",
       "NateElemAnalysis"
@@ -107,7 +98,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCalculus -> NateElemAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCalculus -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateCalculus",
       "NateElemAnalysis"
@@ -116,7 +107,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateMeasureTheory -> NateElemAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateMeasureTheory -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateMeasureTheory",
       "NateElemAnalysis"
@@ -125,7 +116,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateComplexAnalysis -> NateElemAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateComplexAnalysis -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateComplexAnalysis",
       "NateElemAnalysis"
@@ -134,7 +125,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateRealAnalysis -> NateElemAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateRealAnalysis -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateRealAnalysis",
       "NateElemAnalysis"
@@ -143,7 +134,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateFuncAnalysis -> NateMeasureTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateFuncAnalysis -> NateMeasureTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateFuncAnalysis",
       "NateMeasureTheory"
@@ -152,7 +143,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateFuncAnalysis -> NateTopology) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateFuncAnalysis -> NateTopology) is manual, no backing \\cite found.",
     "refs": [
       "NateFuncAnalysis",
       "NateTopology"
@@ -161,7 +152,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHarmonicAnalysis -> NateFuncAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateHarmonicAnalysis -> NateFuncAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateHarmonicAnalysis",
       "NateFuncAnalysis"
@@ -170,7 +161,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHarmonicAnalysis -> NateMeasureTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateHarmonicAnalysis -> NateMeasureTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateHarmonicAnalysis",
       "NateMeasureTheory"
@@ -179,7 +170,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateODE -> NateElemAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateODE -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateODE",
       "NateElemAnalysis"
@@ -188,7 +179,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateODE -> NateCalculus) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateODE -> NateCalculus) is manual, no backing \\cite found.",
     "refs": [
       "NateODE",
       "NateCalculus"
@@ -197,7 +188,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateProbability -> NateMeasureTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateProbability -> NateMeasureTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateProbability",
       "NateMeasureTheory"
@@ -206,7 +197,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NatePDE -> NateFuncAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NatePDE -> NateFuncAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NatePDE",
       "NateFuncAnalysis"
@@ -215,7 +206,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NatePDE -> NateODE) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NatePDE -> NateODE) is manual, no backing \\cite found.",
     "refs": [
       "NatePDE",
       "NateODE"
@@ -224,7 +215,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NatePDE -> NateCalculus) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NatePDE -> NateCalculus) is manual, no backing \\cite found.",
     "refs": [
       "NatePDE",
       "NateCalculus"
@@ -233,16 +224,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAlgTop -> NateTopology) is manual — no backing \\cite found.",
-    "refs": [
-      "NateAlgTop",
-      "NateTopology"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateDiffGeo -> NateTopology) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateDiffGeo -> NateTopology) is manual, no backing \\cite found.",
     "refs": [
       "NateDiffGeo",
       "NateTopology"
@@ -251,7 +233,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateDiffGeo -> NateCalculus) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateDiffGeo -> NateCalculus) is manual, no backing \\cite found.",
     "refs": [
       "NateDiffGeo",
       "NateCalculus"
@@ -260,7 +242,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateGeoRepTheory -> NateCoreRepTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateGeoRepTheory -> NateCoreRepTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateGeoRepTheory",
       "NateCoreRepTheory"
@@ -269,7 +251,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCommAlg -> NateCoreAlgebra) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCommAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateCommAlg",
       "NateCoreAlgebra"
@@ -278,7 +260,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCoreRepTheory -> NateCoreAlgebra) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCoreRepTheory -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateCoreRepTheory",
       "NateCoreAlgebra"
@@ -287,7 +269,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCategoryTheory -> NateCoreAlgebra) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCategoryTheory -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateCategoryTheory",
       "NateCoreAlgebra"
@@ -296,7 +278,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHomologicalAlg -> NateCoreAlgebra) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateHomologicalAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateHomologicalAlg",
       "NateCoreAlgebra"
@@ -305,7 +287,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHomologicalAlg -> NateCategoryTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateHomologicalAlg -> NateCategoryTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateHomologicalAlg",
       "NateCategoryTheory"
@@ -314,7 +296,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateClassicalAlgGeo -> NateCoreAlgebra) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateClassicalAlgGeo -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateClassicalAlgGeo",
       "NateCoreAlgebra"
@@ -323,7 +305,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateClassicalAlgGeo -> NateCommAlg) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateClassicalAlgGeo -> NateCommAlg) is manual, no backing \\cite found.",
     "refs": [
       "NateClassicalAlgGeo",
       "NateCommAlg"
@@ -332,7 +314,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAlgNumberTheory -> NateCoreAlgebra) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateAlgNumberTheory -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateAlgNumberTheory",
       "NateCoreAlgebra"
@@ -341,7 +323,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAlgNumberTheory -> NateCommAlg) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateAlgNumberTheory -> NateCommAlg) is manual, no backing \\cite found.",
     "refs": [
       "NateAlgNumberTheory",
       "NateCommAlg"
@@ -350,7 +332,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAlgGeo -> NateCommAlg) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateAlgGeo -> NateCommAlg) is manual, no backing \\cite found.",
     "refs": [
       "NateAlgGeo",
       "NateCommAlg"
@@ -359,7 +341,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAlgGeo -> NateHomologicalAlg) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateAlgGeo -> NateHomologicalAlg) is manual, no backing \\cite found.",
     "refs": [
       "NateAlgGeo",
       "NateHomologicalAlg"
@@ -368,7 +350,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLocalFieldTheory -> NateAlgNumberTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLocalFieldTheory -> NateAlgNumberTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLocalFieldTheory",
       "NateAlgNumberTheory"
@@ -377,7 +359,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCFT -> NateAlgNumberTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCFT -> NateAlgNumberTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateCFT",
       "NateAlgNumberTheory"
@@ -386,7 +368,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCFT -> NateLocalFieldTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCFT -> NateLocalFieldTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateCFT",
       "NateLocalFieldTheory"
@@ -395,7 +377,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCFT -> NateGaloisCohom) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateCFT -> NateGaloisCohom) is manual, no backing \\cite found.",
     "refs": [
       "NateCFT",
       "NateGaloisCohom"
@@ -404,7 +386,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHodgeResearch -> NateHodgeTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateHodgeResearch -> NateHodgeTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateHodgeResearch",
       "NateHodgeTheory"
@@ -413,7 +395,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateToricGeometry -> NateAlgGeo) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateToricGeometry -> NateAlgGeo) is manual, no backing \\cite found.",
     "refs": [
       "NateToricGeometry",
       "NateAlgGeo"
@@ -422,7 +404,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateToricGeometry -> NateCommAlg) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateToricGeometry -> NateCommAlg) is manual, no backing \\cite found.",
     "refs": [
       "NateToricGeometry",
       "NateCommAlg"
@@ -431,7 +413,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAbelianVarieties -> NateEllipticCurves) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateAbelianVarieties -> NateEllipticCurves) is manual, no backing \\cite found.",
     "refs": [
       "NateAbelianVarieties",
       "NateEllipticCurves"
@@ -440,7 +422,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAbelianVarieties -> NateAlgGeo) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateAbelianVarieties -> NateAlgGeo) is manual, no backing \\cite found.",
     "refs": [
       "NateAbelianVarieties",
       "NateAlgGeo"
@@ -449,7 +431,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAbelianVarieties -> NateComplexAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateAbelianVarieties -> NateComplexAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateAbelianVarieties",
       "NateComplexAnalysis"
@@ -458,7 +440,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateAbelianVarieties) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateShimuraVarieties -> NateAbelianVarieties) is manual, no backing \\cite found.",
     "refs": [
       "NateShimuraVarieties",
       "NateAbelianVarieties"
@@ -467,7 +449,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateEllipticCurves) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateShimuraVarieties -> NateEllipticCurves) is manual, no backing \\cite found.",
     "refs": [
       "NateShimuraVarieties",
       "NateEllipticCurves"
@@ -476,7 +458,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateAlgGeo) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateShimuraVarieties -> NateAlgGeo) is manual, no backing \\cite found.",
     "refs": [
       "NateShimuraVarieties",
       "NateAlgGeo"
@@ -485,7 +467,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateGeoRepTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateShimuraVarieties -> NateGeoRepTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateShimuraVarieties",
       "NateGeoRepTheory"
@@ -494,7 +476,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateCFT) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateShimuraVarieties -> NateCFT) is manual, no backing \\cite found.",
     "refs": [
       "NateShimuraVarieties",
       "NateCFT"
@@ -503,7 +485,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLieGroups -> NateDiffGeo) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLieGroups -> NateDiffGeo) is manual, no backing \\cite found.",
     "refs": [
       "NateLieGroups",
       "NateDiffGeo"
@@ -512,7 +494,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLieGroups -> NateCoreAlgebra) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLieGroups -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateLieGroups",
       "NateCoreAlgebra"
@@ -521,7 +503,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateCoreRepTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLocalLanglands -> NateCoreRepTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLocalLanglands",
       "NateCoreRepTheory"
@@ -530,7 +512,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateGeoRepTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLocalLanglands -> NateGeoRepTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLocalLanglands",
       "NateGeoRepTheory"
@@ -539,7 +521,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateLocalFieldTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLocalLanglands -> NateLocalFieldTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLocalLanglands",
       "NateLocalFieldTheory"
@@ -548,7 +530,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateHarmonicAnalysis) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLocalLanglands -> NateHarmonicAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateLocalLanglands",
       "NateHarmonicAnalysis"
@@ -557,7 +539,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLanglandsGL2 -> NateLocalFieldTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLanglandsGL2 -> NateLocalFieldTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLanglandsGL2",
       "NateLocalFieldTheory"
@@ -566,7 +548,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLanglandsGL2 -> NateCoreRepTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLanglandsGL2 -> NateCoreRepTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLanglandsGL2",
       "NateCoreRepTheory"
@@ -575,7 +557,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLanglandsGL2 -> NateAlgNumberTheory) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLanglandsGL2 -> NateAlgNumberTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLanglandsGL2",
       "NateAlgNumberTheory"
@@ -584,7 +566,7 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateCFT) is manual — no backing \\cite found.",
+    "message": "Overlay prereq (NateLocalLanglands -> NateCFT) is manual, no backing \\cite found.",
     "refs": [
       "NateLocalLanglands",
       "NateCFT"

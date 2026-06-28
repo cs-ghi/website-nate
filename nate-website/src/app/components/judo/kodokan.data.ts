@@ -14,7 +14,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori pivots deeply into uke, loading them across the back, then rotates to throw them forward over the shoulder.',
     key_points: [
-      'Pivot so both feet land inside uke\'s feet — hip must be below uke\'s centre of gravity',
+      'Pivot so both feet land inside uke\'s feet, hip must be below uke\'s centre of gravity',
       'Pull sharply with the sleeve hand to break uke\'s balance before entry',
       'Bend knees on entry, then extend them to lift and propel uke forward',
     ]
@@ -26,7 +26,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'A single-arm variation of seoi-nage where tori traps uke\'s elbow under the armpit and throws forward.',
     key_points: [
-      'Tuck uke\'s arm deep into your armpit — elbow should be locked against your body',
+      'Tuck uke\'s arm deep into your armpit, elbow should be locked against your body',
       'Your free arm controls uke\'s collar or lapel to guide the throw',
       'The driving rotation comes from the hips and knees, not the arms alone',
     ]
@@ -38,7 +38,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Similar to seoi-nage but tori drops to both knees during execution, sacrificing height for a lower and tighter throw.',
     key_points: [
-      'Drop to both knees simultaneously — do not step through like seoi-nage',
+      'Drop to both knees simultaneously, do not step through like seoi-nage',
       'Keep uke\'s arm locked against your body throughout the drop',
       'Drive elbows downward as you rotate to pull uke over your back',
     ]
@@ -51,7 +51,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     description: 'Tori pivots and extends their leg across uke\'s path as a blocking bar, using body rotation to throw uke forward over it.',
     key_points: [
       'Leg placement: straight across uke\'s front shin, not behind the knee',
-      'Pull strongly with both hands while rotating your whole body — the leg is a barrier, not a reap',
+      'Pull strongly with both hands while rotating your whole body, the leg is a barrier, not a reap',
       'Finish with head and chest pointing toward where uke will land',
     ]
   },
@@ -60,7 +60,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     category: 'tachi-waza', sub_category: 'Te-waza',
     youtube_id: 'cnHRhSy8yi4',
     is_kata: false, is_theory: false,
-    description: 'Tori lifts uke across both shoulders and rotates to throw them — the original "fireman\'s carry" of judo.',
+    description: 'Tori lifts uke across both shoulders and rotates to throw them, the original "fireman\'s carry" of judo.',
   },
   {
     title_en: 'Scooping Throw', title_romaji: 'Sukui-nage', title_kanji: '掬投',
@@ -148,7 +148,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'One of judo\'s oldest throws: tori inserts their hip under uke and rotates to float them over in a circular arc.',
     key_points: [
-      'Hip insertion should be to uke\'s side — contact is at the hip, not the stomach',
+      'Hip insertion should be to uke\'s side, contact is at the hip, not the stomach',
       'Pull uke forward and upward with both hands before rotating',
       'Keep uke close to your body throughout the throw',
     ]
@@ -160,7 +160,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'The classic hip throw: tori wraps an arm around uke\'s waist, inserts the hip beneath their centre of gravity, and rotates.',
     key_points: [
-      'Arm wraps around uke\'s back at waist height — pull them tight against your side',
+      'Arm wraps around uke\'s back at waist height, pull them tight against your side',
       'Hip must go fully across in front of uke\'s hips before rotating',
       'Bend your knees on entry to ensure your hip is lower than uke\'s',
     ]
@@ -197,7 +197,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori enters with a hip pivot then sweeps their extended leg through uke\'s thigh while rotating the torso.',
     key_points: [
-      'Enter like o-goshi — full hip contact before the sweep',
+      'Enter like o-goshi, full hip contact before the sweep',
       'The sweeping leg is straight and rigid, acting as a scythe through uke\'s legs',
       'Rotate both arms downward as the leg sweeps through',
     ]
@@ -216,7 +216,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori springs their bent leg into uke\'s thigh while rotating, using the spring to propel uke forward.',
     key_points: [
-      'Entry is similar to o-goshi — hip across in front of uke',
+      'Entry is similar to o-goshi, hip across in front of uke',
       'Bend the contact leg and drive the knee forward into uke\'s thigh for the spring',
       'Spring and rotation happen simultaneously',
     ]
@@ -244,8 +244,8 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori sweeps uke\'s advancing foot at the precise moment it lifts from the mat, before weight is transferred.',
     key_points: [
-      'Timing is everything — sweep at the peak of uke\'s step, before their foot lands',
-      'The sweep is flat along the mat, not a kick — contact at the ankle',
+      'Timing is everything, sweep at the peak of uke\'s step, before their foot lands',
+      'The sweep is flat along the mat, not a kick, contact at the ankle',
       'Hands pull uke\'s upper body in the direction of the sweep',
     ]
   },
@@ -257,7 +257,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     description: 'Tori places their foot against uke\'s knee and uses it as a wheel to rotate uke forward.',
     key_points: [
       'Place the sole of your foot on the side of uke\'s knee, not behind it',
-      'Hands create the rotation — the leg is a pivot point, not the driving force',
+      'Hands create the rotation, the leg is a pivot point, not the driving force',
     ]
   },
   {
@@ -274,9 +274,9 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori reaps uke\'s support leg from the outside while driving them backward off-balance.',
     key_points: [
-      'Break kuzushi backward-right before entry — chest must be against uke\'s chest',
+      'Break kuzushi backward-right before entry, chest must be against uke\'s chest',
       'The reaping leg swings from the hip, using the back of the thigh to sweep through',
-      'Lean forward and commit — do not lean back as you reap',
+      'Lean forward and commit, do not lean back as you reap',
     ]
   },
   {
@@ -286,7 +286,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori steps through and reaps uke\'s support leg from the inside, driving them diagonally backward.',
     key_points: [
-      'Step between uke\'s feet first, then reap — do not try to reap from outside',
+      'Step between uke\'s feet first, then reap, do not try to reap from outside',
       'Reap with the inner edge of your heel, driving through behind the ankle',
       'Push with both hands into uke\'s upper body as you reap',
     ]
@@ -305,7 +305,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'A short inner ankle reap applied from very close range, using the sole of the foot to hook the inner ankle.',
     key_points: [
-      'Works best when uke steps forward — intercept as the foot lands',
+      'Works best when uke steps forward, intercept as the foot lands',
       'Use the sole of your foot to reap along the floor, not a kick',
     ]
   },
@@ -314,9 +314,9 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     category: 'tachi-waza', sub_category: 'Ashi-waza',
     youtube_id: 'nw1ZdRjrdRI',
     is_kata: false, is_theory: false,
-    description: 'As uke steps sideways, tori sweeps both feet simultaneously — the trailing foot catches the lead foot mid-step.',
+    description: 'As uke steps sideways, tori sweeps both feet simultaneously, the trailing foot catches the lead foot mid-step.',
     key_points: [
-      'Sweep both feet, not just one — contact first the lead foot to redirect the trailing one',
+      'Sweep both feet, not just one, contact first the lead foot to redirect the trailing one',
       'The timing is when uke\'s feet are closest together during lateral movement',
     ]
   },
@@ -328,7 +328,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     description: 'Tori pivots and sweeps their leg upward between uke\'s legs, catching the inner thigh to throw uke forward.',
     key_points: [
       'Pivot on the support foot to face away from uke',
-      'Sweep the attacking leg straight up through the middle — not a lateral sweep',
+      'Sweep the attacking leg straight up through the middle, not a lateral sweep',
       'Upper body pulls forward and down to complete the rotation',
     ]
   },
@@ -426,7 +426,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     description: 'Tori falls backward, places one foot in uke\'s abdomen, and uses leg extension combined with pulling to launch uke overhead.',
     key_points: [
       'Place the ball of your foot in uke\'s lower abdomen, not the knee or hip',
-      'Fall straight back — do not roll to the side',
+      'Fall straight back, do not roll to the side',
       'Pull uke forward and down with both hands as you extend your leg',
     ]
   },
@@ -539,21 +539,21 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     category: 'tachi-waza', sub_category: 'Yoko-sutemi-waza',
     youtube_id: 'DGDv2oMwmas',
     is_kata: false, is_theory: false,
-    description: 'Adds a rolling falling action to o-soto-gari — tori winds uke\'s arm and falls with the reap.',
+    description: 'Adds a rolling falling action to o-soto-gari, tori winds uke\'s arm and falls with the reap.',
   },
   {
     title_en: 'Inner Thigh Wraparound', title_romaji: 'Uchi-mata-makikomi', title_kanji: '内股巻込',
     category: 'tachi-waza', sub_category: 'Yoko-sutemi-waza',
     youtube_id: 'jZXENTLpJCI',
     is_kata: false, is_theory: false,
-    description: 'Adds a rolling falling action to uchi-mata — tori winds uke\'s arm over as the thigh sweep lifts.',
+    description: 'Adds a rolling falling action to uchi-mata, tori winds uke\'s arm over as the thigh sweep lifts.',
   },
   {
     title_en: 'Sweeping Wraparound', title_romaji: 'Harai-makikomi', title_kanji: '払巻込',
     category: 'tachi-waza', sub_category: 'Yoko-sutemi-waza',
     youtube_id: 'VBaHzKaCXss',
     is_kata: false, is_theory: false,
-    description: 'Adds a rolling falling action to harai-goshi — tori winds uke\'s arm during the sweeping hip rotation.',
+    description: 'Adds a rolling falling action to harai-goshi, tori winds uke\'s arm during the sweeping hip rotation.',
   },
   {
     title_en: 'Minor Inner Wraparound', title_romaji: 'Ko-uchi-makikomi', title_kanji: '小内巻込',
@@ -567,7 +567,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     category: 'tachi-waza', sub_category: 'Yoko-sutemi-waza',
     youtube_id: 'OR-HGHnarYc',
     is_kata: false, is_theory: false,
-    description: 'Tori scissors both legs around uke\'s body — one in front, one behind — and falls sideways to throw. Prohibited in competition due to knee injury risk.',
+    description: 'Tori scissors both legs around uke\'s body, one in front, one behind, and falls sideways to throw. Prohibited in competition due to knee injury risk.',
   },
   {
     title_en: 'One-Leg Entanglement', title_romaji: 'Kawazu-gake', title_kanji: '河津掛',
@@ -589,7 +589,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'The foundational hold-down: tori sits beside uke, controlling the head with one arm and the arm with the other, legs spread for stability.',
     key_points: [
-      'Sit tight into uke\'s side — no gap between your hip and their body',
+      'Sit tight into uke\'s side, no gap between your hip and their body',
       'Control the head by wrapping the arm around it, pulling it into your side',
       'Trap uke\'s arm under your armpit and keep your elbow low to prevent escape',
       'Spread your legs wide and low to the mat for a stable base',
@@ -616,7 +616,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori pins uke\'s arm against the side of their own head, applying a simultaneous hold-down and choking threat.',
     key_points: [
-      'Trap uke\'s arm over their own head — your shoulder presses into their cheek',
+      'Trap uke\'s arm over their own head, your shoulder presses into their cheek',
       'Clasp your hands together to lock the position',
       'Keep chest-to-chest contact and drive weight through your shoulder',
     ]
@@ -628,7 +628,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori lies chest-to-chest over uke\'s head, gripping the belt with both hands, controlling all four corners of uke\'s upper body.',
     key_points: [
-      'Lie fully on uke with head aligned to their sternum — not arching over',
+      'Lie fully on uke with head aligned to their sternum, not arching over',
       'Grip both sides of the belt deep, elbows on the mat for stability',
       'Spread your legs wide behind you, knees off the mat',
     ]
@@ -648,7 +648,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     description: 'Tori lies perpendicular across uke\'s torso, one arm through the legs, one through the neck, controlling four corners from the side.',
     key_points: [
       'One arm goes under the near leg and grips the belt; the other under the neck',
-      'Chest and stomach apply weight — keep hips low to the mat',
+      'Chest and stomach apply weight, keep hips low to the mat',
       'Squeeze uke\'s body between your chest and arms',
     ]
   },
@@ -686,9 +686,9 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Both hands grip the collar with thumbs inside, crossing to apply bilateral pressure on the carotid arteries.',
     key_points: [
-      'Thumbs must be inside the collar — fingers pointing toward you',
+      'Thumbs must be inside the collar, fingers pointing toward you',
       'Wrists rotate inward as elbows drive down and out',
-      'Effective only from a position where arms can extend — typically kesa-gatame or mount',
+      'Effective only from a position where arms can extend, typically kesa-gatame or mount',
     ]
   },
   {
@@ -712,7 +712,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'A rear naked choke: tori\'s forearm wraps around uke\'s throat from behind, the other hand locks behind the head.',
     key_points: [
-      'Apply from behind uke — arm goes under the chin and across the throat',
+      'Apply from behind uke, arm goes under the chin and across the throat',
       'The choking arm\'s bicep and forearm squeeze simultaneously',
       'Other hand presses uke\'s head forward to tighten the choke',
     ]
@@ -766,7 +766,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'Tori forms a triangle with their legs around uke\'s neck and one arm, applying pressure on the carotid arteries.',
     key_points: [
-      'One of uke\'s arms must be inside the triangle — the other outside',
+      'One of uke\'s arms must be inside the triangle, the other outside',
       'Leg position: one knee over the other ankle, forming a locked triangle',
       'Pull uke\'s head down and squeeze knees together to tighten',
     ]
@@ -789,7 +789,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     key_points: [
       'Bend uke\'s arm at 90° and grip the wrist; other hand reaches under to grip your own wrist',
       'Rotate uke\'s arm outward to apply shoulder and elbow pressure',
-      'Keep uke\'s arm pinned close to the mat — do not let it rise',
+      'Keep uke\'s arm pinned close to the mat, do not let it rise',
     ]
   },
   {
@@ -799,7 +799,7 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'The most common competition arm-bar: tori hyperextends uke\'s elbow across the hip while legs press on the shoulder and body.',
     key_points: [
-      'Uke\'s arm runs across your hips — thumb pointing up for maximum effect',
+      'Uke\'s arm runs across your hips, thumb pointing up for maximum effect',
       'Both legs squeeze tightly together against uke\'s shoulder and torso',
       'Raise hips upward while pulling uke\'s wrist down toward your chest',
     ]
@@ -883,8 +883,8 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: true,
     description: 'The two guiding maxims Kano established for judo: Seiryoku-Zenyo (maximum efficiency, minimum effort) and Jita-Kyoei (mutual welfare and benefit).',
     key_points: [
-      'Seiryoku-Zenyo (精力善用): use energy most efficiently — yield to overcome, use uke\'s force against them',
-      'Jita-Kyoei (自他共栄): by helping others you help yourself — judo as a tool for social improvement',
+      'Seiryoku-Zenyo (精力善用): use energy most efficiently, yield to overcome, use uke\'s force against them',
+      'Jita-Kyoei (自他共栄): by helping others you help yourself, judo as a tool for social improvement',
       'Kano intended judo not just as a fighting method but as a way of life and education',
       'These principles distinguish judo from sport-only martial arts',
     ]
@@ -895,8 +895,8 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: true,
     description: 'Rei-gi encompasses the formal customs of judo practice: bowing, respect for the mat, for the opponent, and for the art.',
     key_points: [
-      'Ritsu-rei (立礼): standing bow — used when entering/leaving the dojo and before randori or kata',
-      'Za-rei (座礼): kneeling bow — used in formal ceremonies',
+      'Ritsu-rei (立礼): standing bow, used when entering/leaving the dojo and before randori or kata',
+      'Za-rei (座礼): kneeling bow, used in formal ceremonies',
       'Bow to the dojo (joseki) on entering and leaving',
       'Bow before and after every practice, match, or kata',
       'Footwear must never be worn on the tatami',
@@ -921,10 +921,10 @@ export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: true,
     description: 'Judo competition is governed by IJF rules: matches are won by ippon (instant victory), or by accumulating waza-ari scores, or by penalty against the opponent.',
     key_points: [
-      'Ippon (一本): full point — immediate win. Scored by: throw with force, speed, and landing uke on their back; osaekomi held for 20 seconds; successful shime-waza or kansetsu-waza (tap or verbal submission)',
-      'Waza-ari (技あり): half point — two waza-ari equal an ippon. Scored by throws that are partial in force or landing',
-      'Shido (指導): minor penalty — three shidos equal a hansoku-make loss for the opponent',
-      'Hansoku-make (反則負け): disqualification — immediate loss. For serious rule violations',
+      'Ippon (一本): full point, immediate win. Scored by: throw with force, speed, and landing uke on their back; osaekomi held for 20 seconds; successful shime-waza or kansetsu-waza (tap or verbal submission)',
+      'Waza-ari (技あり): half point, two waza-ari equal an ippon. Scored by throws that are partial in force or landing',
+      'Shido (指導): minor penalty, three shidos equal a hansoku-make loss for the opponent',
+      'Hansoku-make (反則負け): disqualification, immediate loss. For serious rule violations',
       'Match time: 4 minutes (senior); golden score (sudden death) if tied after regulation',
     ]
   },

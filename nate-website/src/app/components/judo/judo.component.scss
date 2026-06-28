@@ -292,7 +292,7 @@ $belt-colors: (
   }
 }
 
-// ── mat-select wrapper — the outer div owns all chrome ────────────
+// ── mat-select wrapper, the outer div owns all chrome ────────────
 // mat-select itself is unstyled; the wrapper provides border/bg so
 // the box renders consistently in both open and closed states.
 .ctrl-select-wrap {
@@ -1271,7 +1271,7 @@ $belt-colors: (
     position: relative;
 
     &::before {
-      content: '—';
+      content: ', ';
       position: absolute;
       left: 0;
       color: #555;

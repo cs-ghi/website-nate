@@ -124,7 +124,7 @@ export const booksArray: Book[]= [
   },
   {
     name: "Langlands for GL2(F)",
-    desc: "A complete guide to the Local Langlands Correspondence for GL_2(F) for odd prime. Begins with the foundational theory of smooth representations of locally profinite groups and Hecke algebras. Classifies the Principal Series and Supercuspidal representations, constructing the latter explicitly via compact induction, Admissible Pairs, and Fundamental Strata. Covers the arithmetic invariants—Local L-functions and epsilon-factors via Tate's thesis and Godement-Jacquet theory, culminating in the Converse Theorem. Concludes by refining the Galois side into Weil Groups and Deligne Representations to establish the Local Langlands Correspondence for GL_2(F).",
+    desc: "A complete guide to the Local Langlands Correspondence for GL_2(F) for odd prime. Begins with the foundational theory of smooth representations of locally profinite groups and Hecke algebras. Classifies the Principal Series and Supercuspidal representations, constructing the latter explicitly via compact induction, Admissible Pairs, and Fundamental Strata. Covers the arithmetic invariants, Local L-functions and epsilon-factors via Tate's thesis and Godement-Jacquet theory, culminating in the Converse Theorem. Concludes by refining the Galois side into Weil Groups and Deligne Representations to establish the Local Langlands Correspondence for GL_2(F).",
     link: "././assets/pdfs/books/EYNTKA_p-adic_rep.pdf",
     type: 'pdf'
   },
@@ -144,19 +144,25 @@ export const booksArray: Book[]= [
   {
     name: 'Differential Geometry',
     desc: 'Various properties of Topological and Smooth Manifolds, smooth maps, tangent maps and bundles, Rank-Nullity Theorem and consequences, Sard\'s Theorem and Transversality, Vector Bundles, Differential Forms and integration on Manifolds, Riemannian Manifolds. Preliminaires include inverse and implicit function theorem and Partition of Unity',
-    link: '././assets/pdfs/books/EYNTKA_differential_geometry.pdf',
+    link: '././assets/pdfs/books/EYNTKA_Differential_Geometry.pdf',
     type: 'pdf'
   },
   {
     name: 'Algebraic Topology',
     desc: 'Homotopy, homotopy equivalences,  cell-complexes. Fundamental groups, covering spaces, van-kampen\'s theorem, Deck Transformations, interesting consequences. Homology, Delta and singular complexes, relative homology, snake lemma and Mayer-Vietoris, Cellular Homology, Euler-Characteristic and applications. Cohomology, cup and cap product, Poincare Duality. Homotopy Theory and Spectral Sequences coming soon!',
-    link: '././assets/pdfs/books/EYNTKA_algebraic_topology.pdf',
+    link: '././assets/pdfs/books/EYNTKA-algebraic-topology.pdf',
     type: 'pdf'
   },
   {
     name: 'Vector Bundles and K-Theory',
-    desc: 'Starting with the theory of vector bundles and working up to characteristic classes. Then move onto Projective Modules, and K-group: K0 group and basic properties, K1 group and Bott Periodicity a,d K2 group with computed examples. Introduction to Higher K Theory. Interesting aplication to Algebraic Geometry and Number Theory',
+    desc: 'The topological side: vector bundles, classifying spaces BO and BU, topological K^0 and K^1, Bott periodicity, and characteristic classes (Stiefel-Whitney, Chern, Euler, Pontryagin).',
     link: '././assets/pdfs/books/EYNTKA_Vector_bundles_and_K-theory.pdf',
+    type: 'pdf'
+  },
+  {
+    name: 'Algebraic K-Theory',
+    desc: 'The algebraic side: projective modules and K_0 (the Grothendieck group, its relation to Pic, Morita invariance), K_1 (the Whitehead group and determinants), K_2 (the Steinberg group and Matsumoto\'s theorem), and an introduction to Quillen\'s higher K-theory via the plus- and Q-constructions.',
+    link: '././assets/pdfs/books/EYNTKA-algebraic-k-theory.pdf',
     type: 'pdf'
   },
   {
@@ -174,7 +180,7 @@ export const booksArray: Book[]= [
       {
         name: 'Functional Analysis',
         desc: 'Begins with Metric Function Spaces, Baire Category Theory, and equicontinuity. Covers the core structures of Functional Analysis: Banach and Fréchet Spaces (including Dual Spaces and Weak Topologies) and Hilbert Spaces (including Compact Operators and Trace). Includes Spectral Theory for Banach Algebras and the Continuous Functional Calculus. Extensive treatment of Lebesgue Spaces and interpolation theorems (Riesz-Thorin), concluding with Radon Measures and the dual theory of continuous functions.',
-        link: '././assets/pdfs/books/EYNTKA_functional-analysis.pdf',
+        link: '././assets/pdfs/books/EYNTKA-functional-analysis.pdf',
         type: 'pdf'
       },
       {

@@ -12,13 +12,13 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     belt_requirement: 'yellow', category: 'tachi-waza', sub_category: 'Koshi-waza',
     youtube_id: 'yhu1mfy2vJ4',
     is_kata: false, is_theory: false,
-    description: 'The classic hip throw — one of judo\'s most fundamental techniques. Tori inserts their hip under uke\'s centre of gravity and rotates to throw.',
+    description: 'The classic hip throw, one of judo\'s most fundamental techniques. Tori inserts their hip under uke\'s centre of gravity and rotates to throw.',
     key_points: [
       'Wrap your arm around uke\'s waist (or grip the belt) to pull them close',
       'Step in deep so your hip is directly in front of uke\'s hips',
       'Bend your knees slightly to get under uke\'s centre',
       'Pull uke onto your back and rotate/straighten your legs to throw',
-      'Keep uke close throughout — space between bodies kills the throw'
+      'Keep uke close throughout, space between bodies kills the throw'
     ]
   },
   {
@@ -31,7 +31,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
       'Break uke\'s balance (kuzushi) diagonally backward to their right',
       'Drive chest-to-chest as your reaping leg sweeps their supporting leg',
       'Keep your head up and back straight throughout the throw',
-      'The reaping motion uses the back of your leg — swing through, don\'t tap',
+      'The reaping motion uses the back of your leg, swing through, don\'t tap',
       'Commit fully: lean into uke as you reap to complete the throw'
     ]
   },
@@ -43,7 +43,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     description: 'A one-arm variation of Seoi Nage where tori hooks a single arm under uke\'s sleeve-side arm. Extremely common in competition.',
     key_points: [
       'Grip the sleeve with your right hand and drive that elbow straight up into uke\'s armpit',
-      'Your elbow traps uke\'s arm across your shoulder — not your hand',
+      'Your elbow traps uke\'s arm across your shoulder, not your hand',
       'Drop low with bent knees; your back must be lower than uke\'s hips',
       'Pull the collar hand down and forward as you lift and rotate',
       'The entry (tsugi-ashi or ayumi-ashi footwork) must be fast'
@@ -58,7 +58,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     key_points: [
       'Break uke\'s balance directly backward',
       'Hook the heel of your foot against the inside of uke\'s heel',
-      'Scoop the leg forward — the reap is a scooping motion, not a kick',
+      'Scoop the leg forward, the reap is a scooping motion, not a kick',
       'Lean in over uke as you reap to maintain pressure',
       'Works well in combination with Ouchi Gari'
     ]
@@ -70,10 +70,10 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     is_kata: false, is_theory: false,
     description: 'A timing-based foot sweep that catches uke\'s advancing foot at the moment their weight transfers onto it.',
     key_points: [
-      'Timing is everything — sweep as uke\'s foot contacts the mat and weight shifts',
+      'Timing is everything, sweep as uke\'s foot contacts the mat and weight shifts',
       'Sweep with the sole of your foot across the mat, not upward',
       'Simultaneously pull in the sweep direction with your sleeve hand',
-      'Small movement, no wind-up — the sweep should be quick and flat',
+      'Small movement, no wind-up, the sweep should be quick and flat',
       'Works best when moving with uke\'s rhythm rather than forcing it'
     ]
   },
@@ -85,7 +85,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     description: 'A major leg reap from the inside, stepping deep between uke\'s legs to sweep the supporting leg backward.',
     key_points: [
       'Step forward and between uke\'s legs with your reaping leg',
-      'Break balance to uke\'s rear — pull/push the upper body backward',
+      'Break balance to uke\'s rear, pull/push the upper body backward',
       'Your reaping leg hooks behind uke\'s knee or thigh',
       'The motion is a large back-and-up swing, like a pendulum',
       'Effective when uke\'s weight is on the back leg'
@@ -99,7 +99,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     description: 'A two-foot sweep catching both of uke\'s feet as they step laterally. Requires excellent timing with uke\'s movement.',
     key_points: [
       'Best applied while both players are moving laterally (ayumi-ashi)',
-      'Sweep as uke\'s feet come close together — the moment between steps',
+      'Sweep as uke\'s feet come close together, the moment between steps',
       'The sweeping foot moves flat along the mat to catch both feet',
       'Pull in the direction of uke\'s movement to enhance off-balance',
       'Timing over power: a gentle sweep at the right moment beats a strong one late'
@@ -115,9 +115,9 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     description: 'The most fundamental groundwork pin. Tori sits alongside uke, controlling the head under their arm and gripping the sleeve.',
     key_points: [
       'Sit diagonally beside uke, hips on the mat for a low centre of gravity',
-      'Trap uke\'s head tightly under your arm — elbow points toward uke\'s feet',
+      'Trap uke\'s head tightly under your arm, elbow points toward uke\'s feet',
       'Hold uke\'s near arm at the sleeve with your other hand, hugging it to your body',
-      'Keep your legs spread wide apart for base — right leg forward, left back',
+      'Keep your legs spread wide apart for base, right leg forward, left back',
       'Squeeze with your arm and lean weight into uke to prevent escape'
     ]
   },
@@ -131,7 +131,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
       'Lie across uke at a perpendicular angle, similar to side control',
       'Drive uke\'s arm up against their own neck using your head',
       'Press your own head down on uke\'s arm to trap it against the carotid',
-      'This simultaneously pins and chokes — even a pure pin scores',
+      'This simultaneously pins and chokes, even a pure pin scores',
       'Clasp hands together under uke\'s shoulder to lock the position'
     ]
   },
@@ -160,7 +160,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
       'Pass one arm under uke\'s neck and grip the far collar or shoulder',
       'Pass the other arm between uke\'s legs and grip the belt or trouser',
       'Spread your legs wide for base and keep your chest heavy on uke',
-      'Hips stay low — lifting your hips makes it easier for uke to escape'
+      'Hips stay low, lifting your hips makes it easier for uke to escape'
     ]
   },
   {
@@ -189,7 +189,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
       'Applied from behind uke, both hands grip the collar',
       'One hand enters palm-up deep into the far collar',
       'The other hand crosses over and grips uke\'s near collar palm-down',
-      'Pull the elbows apart and outward — the crossing collars compress the neck',
+      'Pull the elbows apart and outward, the crossing collars compress the neck',
       'Keep uke\'s back against your chest to prevent them rolling out'
     ]
   },
@@ -202,7 +202,7 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     key_points: [
       'Applied from behind uke; take the back position first',
       'Forearm of one arm slides across the throat (carotid choke) or windpipe',
-      'Clasp hands together — palm of applying hand grips the bicep of the support arm',
+      'Clasp hands together, palm of applying hand grips the bicep of the support arm',
       'Support hand pushes uke\'s head forward into the choke',
       'Squeeze with the arm and use body weight leaning back to tighten'
     ]
@@ -232,9 +232,9 @@ export const UOFT_TECHNIQUES: JudoTechnique[] = [
     key_points: [
       'Trap uke\'s arm between your thighs, thumb-side of uke\'s arm pointing up',
       'Grip uke\'s wrist with both hands and control their arm against your chest',
-      'Raise your hips upward while pulling the wrist down — this hyperextends the elbow',
+      'Raise your hips upward while pulling the wrist down, this hyperextends the elbow',
       'Knees should be together to prevent uke from pulling the arm out',
-      'Apply pressure gradually — the lock comes on quickly'
+      'Apply pressure gradually, the lock comes on quickly'
     ]
   },
   {
