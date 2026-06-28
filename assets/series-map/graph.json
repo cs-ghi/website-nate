@@ -28,7 +28,11 @@
       "description": "The Algebra mega-book, the single compiled volume threading core algebra, commutative algebra, classical algebraic geometry, algebraic number theory, representation theory, homological algebra, and category theory.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": []
+      "clusters": [],
+      "links": {
+        "pdf": "algebra/EYNTKA-Algebra.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Algebra.pdf&name=Algebra&source=books"
+      }
     },
     {
       "id": "NateAlgGeo",
@@ -40,7 +44,11 @@
       "clusters": [
         "arithmetic-geometry",
         "hodge"
-      ]
+      ],
+      "links": {
+        "pdf": "algebraic-geometry/EYNTKA_algGeo.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_algGeo.pdf&name=Algebraic%20Geometry&source=books"
+      }
     },
     {
       "id": "NateAlgKTheory",
@@ -52,6 +60,10 @@
       "clusters": [
         "k-theory"
       ],
+      "links": {
+        "pdf": "algebraic-k-theory/EYNTKA-algebraic-k-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-k-theory.pdf&name=Algebraic%20K-Theory&source=books"
+      },
       "lastUpdated": "2026-06-27"
     },
     {
@@ -64,7 +76,11 @@
       "clusters": [
         "NateAlgebra",
         "arithmetic-geometry"
-      ]
+      ],
+      "links": {
+        "pdf": "algebraic-number-theory/EYNTKA-algebraic-number-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-number-theory.pdf&name=Algebraic%20Number%20Theory&source=books"
+      }
     },
     {
       "id": "NateAlgTop",
@@ -76,6 +92,10 @@
       "clusters": [
         "k-theory"
       ],
+      "links": {
+        "pdf": "algebraic-topology/EYNTKA-algebraic-topology.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
+      },
       "lastUpdated": "2026-06-26"
     },
     {
@@ -86,6 +106,10 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [],
+      "links": {
+        "pdf": "analytic-number-theory/EYNTKA-analytic-number-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-analytic-number-theory.pdf&name=Analytic%20Number%20Theory&source=books"
+      },
       "lastUpdated": "2026-05-01"
     },
     {
@@ -108,7 +132,10 @@
       "webPublished": false,
       "clusters": [
         "NateAlgebra"
-      ]
+      ],
+      "links": {
+        "pdf": "category-theory/EYNTKA-category-theory.pdf"
+      }
     },
     {
       "id": "NateCFT",
@@ -120,7 +147,11 @@
       "clusters": [
         "langlands",
         "arithmetic-geometry"
-      ]
+      ],
+      "links": {
+        "pdf": "class-field-theory/EYNTKA-class-field-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-class-field-theory.pdf&name=Class%20Field%20Theory&source=books"
+      }
     },
     {
       "id": "NateClassicalAlgGeo",
@@ -131,7 +162,11 @@
       "webPublished": true,
       "clusters": [
         "NateAlgebra"
-      ]
+      ],
+      "links": {
+        "pdf": "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-classical-algebraic-geometry.pdf&name=Classical%20Algebraic%20Geometry&source=books"
+      }
     },
     {
       "id": "NateCommAlg",
@@ -142,7 +177,11 @@
       "webPublished": true,
       "clusters": [
         "NateAlgebra"
-      ]
+      ],
+      "links": {
+        "pdf": "commutative-algebra/EYNTKA-commutative-algebra.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-commutative-algebra.pdf&name=Commutative%20Algebra&source=books"
+      }
     },
     {
       "id": "NateComplexAnalysis",
@@ -153,7 +192,11 @@
       "webPublished": true,
       "clusters": [
         "hodge"
-      ]
+      ],
+      "links": {
+        "pdf": "complex-analysis/EYNTKA_complex_analysis.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_complex_analysis.pdf&name=Complex%20Analysis&source=books"
+      }
     },
     {
       "id": "NateCoreAlgebra",
@@ -164,7 +207,11 @@
       "webPublished": true,
       "clusters": [
         "NateAlgebra"
-      ]
+      ],
+      "links": {
+        "pdf": "core-algebra/EYNTKA-core-algebra.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-algebra.pdf&name=Core%20Algebra&source=books"
+      }
     },
     {
       "id": "NateCoreRepTheory",
@@ -176,7 +223,11 @@
       "clusters": [
         "NateAlgebra",
         "langlands"
-      ]
+      ],
+      "links": {
+        "pdf": "core-representation-theory/EYNTKA-core-representation-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-representation-theory.pdf&name=Core%20Representation%20Theory&source=books"
+      }
     },
     {
       "id": "NateCStarAlgebras",
@@ -188,6 +239,9 @@
       "clusters": [
         "k-theory"
       ],
+      "links": {
+        "pdf": "cstar-algebras/EYNTKA-cstar-algebras.pdf"
+      },
       "lastUpdated": "2026-06-27"
     },
     {
@@ -199,7 +253,11 @@
       "webPublished": true,
       "clusters": [
         "hodge"
-      ]
+      ],
+      "links": {
+        "pdf": "differential-geometry/EYNTKA_Differential_Geometry.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Differential_Geometry.pdf&name=Differential%20Geometry&source=books"
+      }
     },
     {
       "id": "NateElemAnalysis",
@@ -210,7 +268,11 @@
       "webPublished": true,
       "clusters": [
         "analysis-pde"
-      ]
+      ],
+      "links": {
+        "pdf": "elementary-analysis/elementary_analysis.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2Felementary_analysis.pdf&name=Elementary%20Analysis&source=books"
+      }
     },
     {
       "id": "NateEllipticCurves",
@@ -221,7 +283,11 @@
       "webPublished": true,
       "clusters": [
         "arithmetic-geometry"
-      ]
+      ],
+      "links": {
+        "pdf": "elliptic-curves/EYNTKA-elliptic-curves.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
+      }
     },
     {
       "id": "NateFuncAnalysis",
@@ -233,7 +299,11 @@
       "clusters": [
         "NateRealAnalysis",
         "analysis-pde"
-      ]
+      ],
+      "links": {
+        "pdf": "functional-analysis/EYNTKA-functional-analysis.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-functional-analysis.pdf&name=Functional%20Analysis&source=books"
+      }
     },
     {
       "id": "NateGaloisCohom",
@@ -242,7 +312,10 @@
       "description": "profinite groups, continuous cohomology, Tate duality, Brauer groups, local and global duality theorems.",
       "status": "in-progress",
       "webPublished": false,
-      "clusters": []
+      "clusters": [],
+      "links": {
+        "pdf": "galois-cohomology/EYNTKA_galois_cohomology.pdf"
+      }
     },
     {
       "id": "NateGeoRepTheory",
@@ -253,7 +326,11 @@
       "webPublished": true,
       "clusters": [
         "langlands"
-      ]
+      ],
+      "links": {
+        "pdf": "geometric-representation-theory/EYNTKA-geo-rep-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-geo-rep-theory.pdf&name=Algebraic%20Groups%20and%20Representations&source=books"
+      }
     },
     {
       "id": "NateHarmonicAnalysis",
@@ -266,7 +343,11 @@
         "NateRealAnalysis",
         "langlands",
         "analysis-pde"
-      ]
+      ],
+      "links": {
+        "pdf": "harmonic-analysis/EYNTKA-harmonic-analysis.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-harmonic-analysis.pdf&name=Harmonic%20Analysis&source=books"
+      }
     },
     {
       "id": "NateHodgeResearch",
@@ -278,6 +359,9 @@
       "clusters": [
         "hodge"
       ],
+      "links": {
+        "pdf": "integral-hodge-conjecture/hodge_paper_notes.pdf"
+      },
       "lastUpdated": "2026-04-29"
     },
     {
@@ -290,6 +374,9 @@
       "clusters": [
         "hodge"
       ],
+      "links": {
+        "pdf": "hodge-theory/EYNTKA-hodge-theory.pdf"
+      },
       "lastUpdated": "2026-04-29"
     },
     {
@@ -302,7 +389,11 @@
       "clusters": [
         "NateAlgebra",
         "k-theory"
-      ]
+      ],
+      "links": {
+        "pdf": "homological-algebra/EYNTKA-homological-algebra.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-homological-algebra.pdf&name=Homological%20Algebra&source=books"
+      }
     },
     {
       "id": "NateKTheory",
@@ -314,6 +405,10 @@
       "clusters": [
         "k-theory"
       ],
+      "links": {
+        "pdf": "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Vector_bundles_and_K-theory.pdf&name=Vector%20Bundles%20and%20K-Theory&source=books"
+      },
       "lastUpdated": "2026-06-27"
     },
     {
@@ -325,7 +420,11 @@
       "webPublished": true,
       "clusters": [
         "langlands"
-      ]
+      ],
+      "links": {
+        "pdf": "p-adic-representation/EYNTKA_p-adic_rep.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_p-adic_rep.pdf&name=Local%20Langlands%20for%20GL%E2%82%82(F)&source=books"
+      }
     },
     {
       "id": "NateLieGroups",
@@ -343,7 +442,11 @@
       "description": "",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": []
+      "clusters": [],
+      "links": {
+        "pdf": "local-field-theory/EYNTKA-local-field-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-local-field-theory.pdf&name=Local%20Field%20Theory&source=books"
+      }
     },
     {
       "id": "NateLocalLanglands",
@@ -363,7 +466,11 @@
       "description": "first-order language, propositional language, soundness, completeness, compactness, computability, Turing machines, Gödel's incompleteness theorem.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": []
+      "clusters": [],
+      "links": {
+        "pdf": "logic/EYNTKA_MAT309.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_logic.pdf&name=Logic&source=books"
+      }
     },
     {
       "id": "NateMeasureTheory",
@@ -375,7 +482,11 @@
       "clusters": [
         "NateRealAnalysis",
         "analysis-pde"
-      ]
+      ],
+      "links": {
+        "pdf": "measure-theory/EYNTKA-measure-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-measure-theory.pdf&name=Measure%20Theory&source=books"
+      }
     },
     {
       "id": "NateODE",
@@ -386,7 +497,11 @@
       "webPublished": true,
       "clusters": [
         "analysis-pde"
-      ]
+      ],
+      "links": {
+        "pdf": "ODE/EYNTKA_ODE.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Flatex%2FODE%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
+      }
     },
     {
       "id": "NatePDE",
@@ -397,7 +512,11 @@
       "webPublished": true,
       "clusters": [
         "analysis-pde"
-      ]
+      ],
+      "links": {
+        "pdf": "PDE/EYNTKA_PDE.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Flatex%2FPDE%2FEYNTKA_PDE.pdf&name=Partial%20Differential%20Equations&source=books"
+      }
     },
     {
       "id": "NatePrelim",
@@ -407,6 +526,9 @@
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
+      "links": {
+        "pdf": "preliminary-chapter/preliminary-chapter.pdf"
+      },
       "lastUpdated": "2026-05-31"
     },
     {
@@ -416,7 +538,11 @@
       "description": "distributions, expected value, variance, law of large numbers, Erdős-Rényi graphs, exponential inequalities, Gaussian distribution.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": []
+      "clusters": [],
+      "links": {
+        "pdf": "Probability/EYNTKA-Probability.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
+      }
     },
     {
       "id": "NateRealAnalysis",
@@ -427,7 +553,11 @@
       "webPublished": true,
       "clusters": [
         "analysis-pde"
-      ]
+      ],
+      "links": {
+        "pdf": "Real-Analysis/EYNTKA-real-analysis.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-real-analysis.pdf&name=Real%20Analysis&source=books"
+      }
     },
     {
       "id": "NateShimuraVarieties",
@@ -438,7 +568,10 @@
       "webPublished": false,
       "clusters": [
         "arithmetic-geometry"
-      ]
+      ],
+      "links": {
+        "pdf": "shimura-varieties/EYNTKA-Shimura_Varieties.pdf"
+      }
     },
     {
       "id": "NateTopology",
@@ -447,7 +580,11 @@
       "description": "separation axioms, product/quotient topology, metric spaces, connectedness, compactness, Urysohn lemma, fundamental group, topological groups.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": []
+      "clusters": [],
+      "links": {
+        "pdf": "topology/EYNTKA_topology.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_topology.pdf&name=Topology&source=books"
+      }
     },
     {
       "id": "NateToricGeometry",
@@ -456,7 +593,10 @@
       "description": "cones and fans, toric varieties, the orbit–cone correspondence, toric divisors, and the dictionary with polytopes.",
       "status": "in-progress",
       "webPublished": false,
-      "clusters": []
+      "clusters": [],
+      "links": {
+        "pdf": "toric-geometry/EYNTKA_toric_geometry.pdf"
+      }
     }
   ],
   "edges": [
