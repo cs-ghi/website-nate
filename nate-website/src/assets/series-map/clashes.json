@@ -8,6 +8,15 @@
     ]
   },
   {
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateTop} resolves to no known book. Fix the citation or add an alias/registry entry.",
+    "refs": [
+      "NateTop",
+      "algebraic-topology/EYNTKA-algebraic-topology.tex"
+    ]
+  },
+  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateLocalLanglands' is planned (cited/registered but has no folder yet).",

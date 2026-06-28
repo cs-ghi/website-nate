@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated": "2026-06-27",
+    "generated": "2026-06-28",
     "bookCount": 41,
-    "edgeCount": 216,
+    "edgeCount": 217,
     "clashCounts": {
-      "error": 0,
+      "error": 1,
       "warn": 0,
       "info": 65
     }
@@ -828,6 +828,15 @@
     {
       "source": "NateAlgTop",
       "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateGaloisCohom",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
