@@ -4,9 +4,9 @@
     "bookCount": 41,
     "edgeCount": 217,
     "clashCounts": {
-      "error": 1,
+      "error": 0,
       "warn": 0,
-      "info": 65
+      "info": 64
     }
   },
   "nodes": [
@@ -27,7 +27,7 @@
       "dir": "algebra",
       "description": "The Algebra mega-book, the single compiled volume threading core algebra, commutative algebra, classical algebraic geometry, algebraic number theory, representation theory, homological algebra, and category theory.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": []
     },
     {
@@ -36,7 +36,7 @@
       "dir": "algebraic-geometry",
       "description": "scheme theory, sheaf cohomology, curves, surfaces.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "arithmetic-geometry",
         "hodge"
@@ -48,7 +48,7 @@
       "dir": "algebraic-k-theory",
       "description": "projective modules, K_0, K_1 (Whitehead group), K_2 (Steinberg group, Matsumoto's theorem), and Quillen's higher K-theory (BGL^+, Q-construction).",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "k-theory"
       ],
@@ -60,7 +60,7 @@
       "dir": "algebraic-number-theory",
       "description": "rings of integers, ideals, integral bases, norms, traces, splitting of primes, ideal class group, Dirichlet's unit theorem, Kronecker-Weber theorem.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateAlgebra",
         "arithmetic-geometry"
@@ -72,7 +72,7 @@
       "dir": "algebraic-topology",
       "description": "fundamental group, covering spaces, singular homology, CW complexes, cohomology rings, Poincaré duality.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "k-theory"
       ],
@@ -84,7 +84,7 @@
       "dir": "analytic-number-theory",
       "description": "",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [],
       "lastUpdated": "2026-05-01"
     },
@@ -116,7 +116,7 @@
       "dir": "class-field-theory",
       "description": "local fields, places, ray class groups, idele group, Hasse principle.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "langlands",
         "arithmetic-geometry"
@@ -128,7 +128,7 @@
       "dir": "classical-algebraic-geometry",
       "description": "algebraic sets, varieties, normalization, dimension, blow-ups.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateAlgebra"
       ]
@@ -139,7 +139,7 @@
       "dir": "commutative-algebra",
       "description": "integral extensions, localization, completion, Hilbert's basis theorem.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateAlgebra"
       ]
@@ -150,7 +150,7 @@
       "dir": "complex-analysis",
       "description": "Cauchy–Riemann, analytic continuation, residue theorem, elliptic functions, Riemann surfaces.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "hodge"
       ]
@@ -161,7 +161,7 @@
       "dir": "core-algebra",
       "description": "groups, rings, modules, fields.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateAlgebra"
       ]
@@ -172,7 +172,7 @@
       "dir": "core-representation-theory",
       "description": "Maschke's theorem, Schur's lemma, Wedderburn-Artin theorem, character theory, induced representations, Frobenius reciprocity, quiver theory.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateAlgebra",
         "langlands"
@@ -196,7 +196,7 @@
       "dir": "differential-geometry",
       "description": "smooth manifolds, de Rham cohomology, connections.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "hodge"
       ]
@@ -207,7 +207,7 @@
       "dir": "elementary-analysis",
       "description": "real numbers, sequences, series, calculus basics.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "analysis-pde"
       ]
@@ -218,7 +218,7 @@
       "dir": "elliptic-curves",
       "description": "Weierstrass equations, group law, isogenies, Weil pairing, Mordell–Weil theorem, Hasse's theorem, Galois representations, CM theory, modular forms, modularity, BSD conjecture.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "arithmetic-geometry"
       ]
@@ -229,7 +229,7 @@
       "dir": "functional-analysis",
       "description": "Banach spaces, Hilbert spaces, Hahn–Banach theorem, open mapping theorem, spectral theory of bounded operators.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateRealAnalysis",
         "analysis-pde"
@@ -250,7 +250,7 @@
       "dir": "geometric-representation-theory",
       "description": "linear algebraic groups, root systems, Dynkin classification, highest-weight theory, Weyl character formula, Borel–Weil–Bott.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "langlands"
       ]
@@ -261,7 +261,7 @@
       "dir": "harmonic-analysis",
       "description": "Fourier transform, convolution, distribution theory, Sobolev spaces, topological groups, Haar measure, Pontryagin duality.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateRealAnalysis",
         "langlands",
@@ -298,7 +298,7 @@
       "dir": "homological-algebra",
       "description": "abelian/triangulated categories, derived functors, spectral sequences.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateAlgebra",
         "k-theory"
@@ -310,7 +310,7 @@
       "dir": "vector-bundles-and-k-theory",
       "description": "vector bundles, classifying spaces BO/BU, topological K^0/K^1, Bott periodicity, and characteristic classes (Stiefel–Whitney, Chern, Euler, Pontryagin). Purely topological.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "k-theory"
       ],
@@ -322,7 +322,7 @@
       "dir": "p-adic-representation",
       "description": "smooth representations of locally profinite groups, Hecke algebras, principal series, supercuspidal representations, local L-functions, epsilon-factors, Weil groups, Deligne representations.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "langlands"
       ]
@@ -342,7 +342,7 @@
       "dir": "local-field-theory",
       "description": "",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": []
     },
     {
@@ -362,7 +362,7 @@
       "dir": "logic",
       "description": "first-order language, propositional language, soundness, completeness, compactness, computability, Turing machines, Gödel's incompleteness theorem.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": []
     },
     {
@@ -371,7 +371,7 @@
       "dir": "measure-theory",
       "description": "sigma-algebras, outer measure, Borel/Lebesgue measures, product measure, signed and complex measures, Lebesgue-Radon-Nikodym theorem.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateRealAnalysis",
         "analysis-pde"
@@ -383,7 +383,7 @@
       "dir": "ODE",
       "description": "Picard-Lindelöf theorem, linear systems, matrix exponentials, Lyapunov stability, boundary value problems, Sturm-Liouville theory, Green's functions.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "analysis-pde"
       ]
@@ -394,7 +394,7 @@
       "dir": "PDE",
       "description": "Sobolev spaces, elliptic boundary value problems, heat equation, wave equation, maximum principles.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "analysis-pde"
       ]
@@ -415,7 +415,7 @@
       "dir": "Probability",
       "description": "distributions, expected value, variance, law of large numbers, Erdős-Rényi graphs, exponential inequalities, Gaussian distribution.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": []
     },
     {
@@ -424,7 +424,7 @@
       "dir": "Real-Analysis",
       "description": "The Analysis mega-book, the compiled real-analysis volume threading measure theory, functional analysis, and harmonic analysis.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "analysis-pde"
       ]
@@ -446,7 +446,7 @@
       "dir": "topology",
       "description": "separation axioms, product/quotient topology, metric spaces, connectedness, compactness, Urysohn lemma, fundamental group, topological groups.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": []
     },
     {
@@ -865,8 +865,10 @@
       "source": "NateAlgTop",
       "target": "NateTopology",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
     },
     {
       "source": "NateAnalyticNumTheory",
