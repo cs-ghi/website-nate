@@ -71,24 +71,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateTopology -> NatePrelim) is manual, no backing \\cite found.",
-    "refs": [
-      "NateTopology",
-      "NatePrelim"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCategoryTheory -> NatePrelim) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCategoryTheory",
-      "NatePrelim"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateTopology -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateTopology",
@@ -110,15 +92,6 @@
     "message": "Overlay prereq (NateMeasureTheory -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateMeasureTheory",
-      "NateElemAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateComplexAnalysis -> NateElemAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateComplexAnalysis",
       "NateElemAnalysis"
     ]
   },
@@ -282,15 +255,6 @@
     "refs": [
       "NateHomologicalAlg",
       "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHomologicalAlg -> NateCategoryTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHomologicalAlg",
-      "NateCategoryTheory"
     ]
   },
   {
