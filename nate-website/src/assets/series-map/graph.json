@@ -1127,8 +1127,8 @@
     {
       "source": "NateClassicalAlgGeo",
       "target": "NateAlgTop",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
       ]
