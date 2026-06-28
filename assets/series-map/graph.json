@@ -356,9 +356,7 @@
       "description": "frontier/research-facing companion to Hodge Theory: Saito's mixed Hodge modules, perverse sheaves, the decomposition theorem, and the integral Hodge conjecture.",
       "status": "in-progress",
       "webPublished": false,
-      "clusters": [
-        "hodge"
-      ],
+      "clusters": [],
       "links": {
         "pdf": "integral-hodge-conjecture/hodge_paper_notes.pdf"
       },
@@ -767,8 +765,8 @@
     {
       "source": "NateAlgGeo",
       "target": "NateComplexAnalysis",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
@@ -1248,6 +1246,13 @@
     },
     {
       "source": "NateComplexAnalysis",
+      "target": "NateCalculus",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateComplexAnalysis",
       "target": "NateCFT",
       "type": "reference",
       "provenance": "auto",
@@ -1258,8 +1263,8 @@
     {
       "source": "NateComplexAnalysis",
       "target": "NateDiffGeo",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "complex-analysis/EYNTKA_complex_analysis.tex"
       ]
@@ -1832,8 +1837,8 @@
     {
       "source": "NateHodgeResearch",
       "target": "NateAlgGeo",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "integral-hodge-conjecture/hodge_paper_notes.tex"
       ]
@@ -1859,8 +1864,8 @@
     {
       "source": "NateHodgeResearch",
       "target": "NateComplexAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "integral-hodge-conjecture/EYNTKA_hodge.tex"
       ]
@@ -1868,18 +1873,11 @@
     {
       "source": "NateHodgeResearch",
       "target": "NateDiffGeo",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "integral-hodge-conjecture/EYNTKA_hodge.tex"
       ]
-    },
-    {
-      "source": "NateHodgeResearch",
-      "target": "NateHodgeTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateHodgeResearch",
@@ -2474,7 +2472,6 @@
       "kind": "track",
       "members": [
         "NateHodgeTheory",
-        "NateHodgeResearch",
         "NateComplexAnalysis",
         "NateDiffGeo",
         "NateAlgGeo"

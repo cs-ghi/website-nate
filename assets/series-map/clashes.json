@@ -350,15 +350,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHodgeResearch -> NateHodgeTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHodgeResearch",
-      "NateHodgeTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateToricGeometry -> NateAlgGeo) is manual, no backing \\cite found.",
     "refs": [
       "NateToricGeometry",
@@ -534,6 +525,15 @@
     "refs": [
       "NateLocalLanglands",
       "NateCFT"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateComplexAnalysis -> NateCalculus) is manual, no backing \\cite found.",
+    "refs": [
+      "NateComplexAnalysis",
+      "NateCalculus"
     ]
   }
 ]
