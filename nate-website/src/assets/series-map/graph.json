@@ -78,7 +78,6 @@
         "arithmetic-geometry"
       ],
       "links": {
-        "pdf": "algebraic-number-theory/EYNTKA-algebraic-number-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-number-theory.pdf&name=Algebraic%20Number%20Theory&source=books"
       }
     },
@@ -132,10 +131,7 @@
       "webPublished": false,
       "clusters": [
         "NateAlgebra"
-      ],
-      "links": {
-        "pdf": "category-theory/EYNTKA-category-theory.pdf"
-      }
+      ]
     },
     {
       "id": "NateCFT",
@@ -164,7 +160,6 @@
         "NateAlgebra"
       ],
       "links": {
-        "pdf": "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-classical-algebraic-geometry.pdf&name=Classical%20Algebraic%20Geometry&source=books"
       }
     },
@@ -179,7 +174,6 @@
         "NateAlgebra"
       ],
       "links": {
-        "pdf": "commutative-algebra/EYNTKA-commutative-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-commutative-algebra.pdf&name=Commutative%20Algebra&source=books"
       }
     },
@@ -225,7 +219,6 @@
         "langlands"
       ],
       "links": {
-        "pdf": "core-representation-theory/EYNTKA-core-representation-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-representation-theory.pdf&name=Core%20Representation%20Theory&source=books"
       }
     },
@@ -525,7 +518,7 @@
       "webPublished": false,
       "clusters": [],
       "links": {
-        "pdf": "preliminary-chapter/preliminary-chapter.pdf"
+        "pdf": "preliminary-chapter/EYNTKA-preliminary-chapter.pdf"
       },
       "lastUpdated": "2026-05-31"
     },

@@ -14,5 +14,9 @@ import { Component } from '@angular/core';
 })
 export class SeriesMapComponent {
   // ?mode=site applies the embedded styling (stronger WIP treatment, etc.).
-  readonly src = 'assets/series-map/index.html?mode=site';
+  // The ?v= token is a per-load cache-bust: the viewer's index.html is a fixed
+  // URL that GitHub Pages caches, so without this a stale index.html keeps
+  // pointing at an old (pre-fix) hashed bundle after a redeploy. The viewer
+  // forwards this token onto its graph.json fetch too, so data can't be stale.
+  readonly src = `assets/series-map/index.html?mode=site&v=${Date.now()}`;
 }
