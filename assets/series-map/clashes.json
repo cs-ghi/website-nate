@@ -562,5 +562,32 @@
       "NateAlgTop",
       "NateDiffGeo"
     ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAnalyticNumTheory -> NateLocalFieldTheory is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAnalyticNumTheory",
+      "NateLocalFieldTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAnalyticNumTheory -> NateCFT is cited in 18 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAnalyticNumTheory",
+      "NateCFT"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAnalyticNumTheory -> NateCoreRepTheory is cited in 9 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAnalyticNumTheory",
+      "NateCoreRepTheory"
+    ]
   }
 ]

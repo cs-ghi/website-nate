@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-06-30",
     "bookCount": 41,
-    "edgeCount": 217,
+    "edgeCount": 218,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 63
+      "info": 66
     }
   },
   "nodes": [
@@ -109,7 +109,7 @@
         "pdf": "analytic-number-theory/EYNTKA-analytic-number-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-analytic-number-theory.pdf&name=Analytic%20Number%20Theory&source=books"
       },
-      "lastUpdated": "2026-06-29"
+      "lastUpdated": "2026-06-30"
     },
     {
       "id": "NateCalculus",
@@ -1037,7 +1037,21 @@
       "citedIn": [
         "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
         "analytic-number-theory/drafts/ch08-section01-draft.tex",
-        "analytic-number-theory/drafts/ch08-section05-dz5FE.tex"
+        "analytic-number-theory/drafts/ch08-section05-dz5FE.tex",
+        "analytic-number-theory/drafts/ch09-section01-hl1RayClass.tex",
+        "analytic-number-theory/drafts/ch09-section02-hl2HeckeL.tex",
+        "analytic-number-theory/drafts/ch10-section01-al1Frobenius.tex",
+        "analytic-number-theory/drafts/ch10-section02-al2ArtinL.tex",
+        "analytic-number-theory/drafts/ch10-section04-al4Chebotarev.tex",
+        "analytic-number-theory/drafts/ch10-section05-al5Applications.tex",
+        "analytic-number-theory/drafts/ch9-10/al1.tex",
+        "analytic-number-theory/drafts/ch9-10/al2.tex",
+        "analytic-number-theory/drafts/ch9-10/al4.tex",
+        "analytic-number-theory/drafts/ch9-10/al5.tex",
+        "analytic-number-theory/drafts/ch9-10/hl1.tex",
+        "analytic-number-theory/drafts/ch9-10/hl2.tex",
+        "analytic-number-theory/drafts/ch9-10/hl4.tex",
+        "analytic-number-theory/drafts/ch9-10/hl5.tex"
       ]
     },
     {
@@ -1047,7 +1061,23 @@
       "provenance": "auto",
       "citedIn": [
         "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
-        "analytic-number-theory/drafts/ch08-section05-dz5FE.tex"
+        "analytic-number-theory/drafts/ch08-section05-dz5FE.tex",
+        "analytic-number-theory/drafts/ch09-section01-hl1RayClass.tex",
+        "analytic-number-theory/drafts/ch09-section03-hl3.tex",
+        "analytic-number-theory/drafts/ch10-section01-al1Frobenius.tex",
+        "analytic-number-theory/drafts/ch10-section02-al2ArtinL.tex",
+        "analytic-number-theory/drafts/ch10-section03-al3Continuation.tex",
+        "analytic-number-theory/drafts/ch10-section04-al4Chebotarev.tex",
+        "analytic-number-theory/drafts/ch10-section05-al5Applications.tex",
+        "analytic-number-theory/drafts/ch9-10/al1.tex",
+        "analytic-number-theory/drafts/ch9-10/al2.tex",
+        "analytic-number-theory/drafts/ch9-10/al3.tex",
+        "analytic-number-theory/drafts/ch9-10/al4.tex",
+        "analytic-number-theory/drafts/ch9-10/al5.tex",
+        "analytic-number-theory/drafts/ch9-10/hl1.tex",
+        "analytic-number-theory/drafts/ch9-10/hl3.tex",
+        "analytic-number-theory/drafts/ch9-10/hl4.tex",
+        "analytic-number-theory/drafts/ch9-10/hl5.tex"
       ]
     },
     {
@@ -1071,6 +1101,23 @@
     },
     {
       "source": "NateAnalyticNumTheory",
+      "target": "NateCoreRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
+        "analytic-number-theory/drafts/ch10-section01-al1Frobenius.tex",
+        "analytic-number-theory/drafts/ch10-section02-al2ArtinL.tex",
+        "analytic-number-theory/drafts/ch10-section03-al3Continuation.tex",
+        "analytic-number-theory/drafts/ch10-section04-al4Chebotarev.tex",
+        "analytic-number-theory/drafts/ch9-10/al1.tex",
+        "analytic-number-theory/drafts/ch9-10/al2.tex",
+        "analytic-number-theory/drafts/ch9-10/al3.tex",
+        "analytic-number-theory/drafts/ch9-10/al4.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
       "target": "NateHarmonicAnalysis",
       "type": "reference",
       "provenance": "auto",
@@ -1084,7 +1131,13 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
+        "analytic-number-theory/drafts/ch09-section01-hl1RayClass.tex",
+        "analytic-number-theory/drafts/ch09-section03-hl3.tex",
+        "analytic-number-theory/drafts/ch10-section01-al1Frobenius.tex",
+        "analytic-number-theory/drafts/ch9-10/al1.tex",
+        "analytic-number-theory/drafts/ch9-10/hl1.tex",
+        "analytic-number-theory/drafts/ch9-10/hl3.tex"
       ]
     },
     {
