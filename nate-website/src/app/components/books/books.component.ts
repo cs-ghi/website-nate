@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Book } from 'src/app/interfaces/books.model';
@@ -244,9 +244,29 @@ export const booksArray: Book[]= [
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent implements OnInit {
+  @ViewChild('searchInput') searchInput?: ElementRef<HTMLInputElement>;
+
   books = booksArray;
   expandedBooks = new Set<string>();
   searchQuery = '';
+
+  // Keyboard navigation: the currently highlighted entry (rendered only while
+  // the search box is focused) and whether the box has focus.
+  filteredBooks: Book[] = this.books;
+  highlightedItem?: Book;
+  searchFocused = false;
+
+  // Press "/" anywhere on the page to jump to the search box (unless already
+  // typing in a field).
+  @HostListener('document:keydown', ['$event'])
+  onKeydown(event: KeyboardEvent): void {
+    if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey) return;
+    const el = event.target as HTMLElement | null;
+    const tag = el?.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || el?.isContentEditable) return;
+    event.preventDefault();
+    this.searchInput?.nativeElement.focus();
+  }
 
   isAuthenticated = false;
   showPasswordForm = false;
@@ -258,34 +278,89 @@ export class BooksComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.onSearchChange();
     this.isAuthenticated = sessionStorage.getItem(AUTH_KEY) === 'true';
     if (this.isAuthenticated) {
       this.loadRawPdfs();
     }
   }
 
-  // Visible books filtered by the search query, ranked by relevance. A book is
+  // Recompute the visible books from the query, ranked by relevance. A book is
   // kept if its own title/description matches, or if any of its children match
-  // (in which case only the matching children are shown).
-  get filteredBooks(): Book[] {
+  // (in which case only the matching children are shown). Memoized into a field
+  // (rather than a getter) so object identity stays stable for the keyboard
+  // highlight comparison. Called on every query change.
+  onSearchChange(): void {
     const q = this.searchQuery.trim();
-    if (!q) return this.books;
+    if (!q) {
+      this.filteredBooks = this.books;
+    } else {
+      const scored: { book: Book; score: number }[] = [];
+      for (const book of this.books) {
+        const selfScore = entryScore(q, book.name, book.desc);
+        const matchingChildren = (book.children ?? [])
+          .filter(c => entryScore(q, c.name, c.desc) > 0);
+        const bestChild = matchingChildren
+          .reduce((m, c) => Math.max(m, entryScore(q, c.name, c.desc)), 0);
 
-    const scored: { book: Book; score: number }[] = [];
-    for (const book of this.books) {
-      const selfScore = entryScore(q, book.name, book.desc);
-      const matchingChildren = (book.children ?? [])
-        .filter(c => entryScore(q, c.name, c.desc) > 0);
-      const bestChild = matchingChildren
-        .reduce((m, c) => Math.max(m, entryScore(q, c.name, c.desc)), 0);
+        if (selfScore > 0) {
+          scored.push({ book, score: Math.max(selfScore, bestChild) });
+        } else if (matchingChildren.length) {
+          scored.push({ book: { ...book, children: matchingChildren }, score: bestChild });
+        }
+      }
+      this.filteredBooks = scored.sort((a, b) => b.score - a.score).map(s => s.book);
+    }
+    // Reset the highlight to the top result.
+    this.highlightedItem = this.navItems[0];
+  }
 
-      if (selfScore > 0) {
-        scored.push({ book, score: Math.max(selfScore, bestChild) });
-      } else if (matchingChildren.length) {
-        scored.push({ book: { ...book, children: matchingChildren }, score: bestChild });
+  // Flat list of keyboard-navigable entries, in display order: each visible book
+  // followed by its visible children.
+  get navItems(): Book[] {
+    const items: Book[] = [];
+    for (const book of this.filteredBooks) {
+      items.push(book);
+      if (this.shouldShowChildren(book)) {
+        for (const child of book.children ?? []) items.push(child);
       }
     }
-    return scored.sort((a, b) => b.score - a.score).map(s => s.book);
+    return items;
+  }
+
+  onSearchFocus(): void {
+    this.searchFocused = true;
+    if (!this.highlightedItem) this.highlightedItem = this.navItems[0];
+  }
+
+  // Arrow keys move the highlight; Enter opens the highlighted (or top) entry.
+  onSearchKeydown(event: KeyboardEvent): void {
+    const items = this.navItems;
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      this.moveHighlight(1, items);
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      this.moveHighlight(-1, items);
+    } else if (event.key === 'Enter') {
+      event.preventDefault();
+      const target = this.highlightedItem ?? items[0];
+      if (target) this.handleBookClick(target);
+    }
+  }
+
+  private moveHighlight(delta: number, items: Book[]): void {
+    if (!items.length) return;
+    const cur = this.highlightedItem ? items.indexOf(this.highlightedItem) : -1;
+    const next = Math.min(items.length - 1, Math.max(0, cur + delta));
+    this.highlightedItem = items[next];
+    setTimeout(() =>
+      document.querySelector('.nav-highlighted')?.scrollIntoView({ block: 'nearest' }));
+  }
+
+  clearSearch(): void {
+    this.searchQuery = '';
+    this.onSearchChange();
   }
 
   // Hidden (admin) raw PDFs filtered by the same query, ranked by relevance.

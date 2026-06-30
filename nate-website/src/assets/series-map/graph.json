@@ -1035,7 +1035,9 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
+        "analytic-number-theory/drafts/ch08-section01-draft.tex",
+        "analytic-number-theory/drafts/ch08-section05-dz5FE.tex"
       ]
     },
     {
@@ -1044,7 +1046,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
+        "analytic-number-theory/drafts/ch08-section05-dz5FE.tex"
       ]
     },
     {
@@ -1053,7 +1056,8 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
+        "analytic-number-theory/drafts/ch08-section01-draft.tex"
       ]
     },
     {

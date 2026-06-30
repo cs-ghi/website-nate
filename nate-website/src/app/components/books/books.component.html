@@ -84,13 +84,18 @@
             <div class="book-search">
                 <mat-icon class="search-icon">search</mat-icon>
                 <input
+                    #searchInput
                     type="text"
                     class="book-search-input"
                     [(ngModel)]="searchQuery"
-                    placeholder="Search books..."
+                    (ngModelChange)="onSearchChange()"
+                    (focus)="onSearchFocus()"
+                    (blur)="searchFocused = false"
+                    (keydown)="onSearchKeydown($event)"
+                    placeholder="Search books...  ( / to focus · ↑ ↓ then ⏎ )"
                     autocomplete="off"
                 />
-                <mat-icon *ngIf="searchQuery" class="clear-icon" (click)="searchQuery = ''">close</mat-icon>
+                <mat-icon *ngIf="searchQuery" class="clear-icon" (click)="clearSearch()">close</mat-icon>
             </div>
 
             <p *ngIf="searchQuery && !filteredBooks.length" class="no-results">
@@ -98,7 +103,7 @@
             </p>
 
             <div *ngFor="let book of filteredBooks">
-                <div class="books-info">
+                <div class="books-info" [class.nav-highlighted]="searchFocused && book === highlightedItem">
                     <div class="row flexx">
                         <div class="col-sm-3 book-link-row" [class.book-link]="!book.children?.length">
                             <span
@@ -120,7 +125,8 @@
                      class="children-wrapper"
                      [class.children-open]="shouldShowChildren(book)">
                     <div class="children-body">
-                        <div class="books-info child-book" *ngFor="let child of book.children">
+                        <div class="books-info child-book" *ngFor="let child of book.children"
+                             [class.nav-highlighted]="searchFocused && child === highlightedItem">
                             <div class="row flexx">
                                 <div class="col-sm-3 book-link" (click)="handleBookClick(child)">
                                     <h4 [innerHtml]="child?.name"></h4>
