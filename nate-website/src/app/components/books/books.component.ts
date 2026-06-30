@@ -136,17 +136,9 @@ export const booksArray: Book[]= [
   },
   {
     name: 'Analytic Number Theory',
-    desc: 'A from-scratch development of analytic number theory. Current contents (Preliminary plus Chapters 1-5): elementary number theory review; arithmetic functions and summation techniques; Dirichlet series, Euler products, the Mellin transform, and Perron\'s formula; elementary prime distribution (Chebyshev\'s estimates, Mertens\' theorems, Bertrand\'s postulate); the Riemann zeta function (meromorphic continuation, the simple pole at s=1, and non-vanishing on Re(s)=1); and a complete proof of the Prime Number Theorem via Newman\'s Tauberian theorem, together with the de la Vallee Poussin zero-free region and error term. Forthcoming: the functional equation, Dirichlet/Hecke/Artin L-functions, the analytic class number formula, the Chebotarev density theorem, character and exponential sums, and sieve methods.',
+    desc: 'A from-scratch development of analytic number theory. Current contents (Preliminary plus Chapters 1-7): elementary number theory review; arithmetic functions and summation techniques; Dirichlet series, Euler products, the Mellin transform, and Perron\'s formula; elementary prime distribution (Chebyshev\'s estimates, Mertens\' theorems, Bertrand\'s postulate); the Riemann zeta function (meromorphic continuation, the pole at s=1, non-vanishing on Re(s)=1); a complete proof of the Prime Number Theorem via Newman\'s Tauberian theorem, with the de la Vallee Poussin zero-free region and error term; the functional equation and the completed zeta function, the trivial zeros and special values, and the critical strip and Riemann Hypothesis; and Dirichlet characters and L-functions, with Gauss sums and the functional equation, the non-vanishing of L(1,chi), and Dirichlet\'s theorem on primes in arithmetic progressions (density 1/phi(m)). Forthcoming: the Dedekind zeta function and the analytic class number formula, Hecke and Artin L-functions, the Chebotarev density theorem, character and exponential sums, and sieve methods.',
     link: '././assets/pdfs/books/EYNTKA-analytic-number-theory.pdf',
-    type: 'pdf',
-    children: [
-      {
-        name: 'Analytic Number Theory (old draft)',
-        desc: 'Superseded earlier draft of the analytic number theory book, kept for reference. The current version above is the up-to-date build.',
-        link: '././assets/pdfs/books/EYNTKA-analytic-number-theory-old.pdf',
-        type: 'pdf'
-      }
-    ]
+    type: 'pdf'
   },
 
   {
