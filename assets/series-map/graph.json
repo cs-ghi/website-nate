@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-06-29",
+    "generated": "2026-06-30",
     "bookCount": 41,
-    "edgeCount": 213,
+    "edgeCount": 217,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 60
+      "info": 63
     }
   },
   "nodes": [
@@ -109,7 +109,7 @@
         "pdf": "analytic-number-theory/EYNTKA-analytic-number-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-analytic-number-theory.pdf&name=Analytic%20Number%20Theory&source=books"
       },
-      "lastUpdated": "2026-05-01"
+      "lastUpdated": "2026-06-29"
     },
     {
       "id": "NateCalculus",
@@ -967,10 +967,31 @@
     },
     {
       "source": "NateAlgTop",
+      "target": "NateCategoryTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateDiffGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/.wip/CC1.tex",
+        "algebraic-topology/.wip/CC2.tex",
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
       "target": "NateGaloisCohom",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "algebraic-topology/.wip/LC.tex",
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
@@ -980,6 +1001,11 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "algebraic-topology/.wip/BR.tex",
+        "algebraic-topology/.wip/LC.tex",
+        "algebraic-topology/.wip/P06.tex",
+        "algebraic-topology/.wip/P11.tex",
+        "algebraic-topology/.wip/P12.tex",
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
@@ -989,6 +1015,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "algebraic-topology/.wip/CC1.tex",
+        "algebraic-topology/.wip/CC2.tex",
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
@@ -1025,7 +1053,10 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
+        "analytic-number-theory/drafts/ch5/ch5s3.tex",
+        "analytic-number-theory/drafts/ch5/ch5s4.tex",
+        "analytic-number-theory/drafts/ch5/ch5s5.tex"
       ]
     },
     {
@@ -1039,11 +1070,30 @@
     },
     {
       "source": "NateAnalyticNumTheory",
+      "target": "NateHarmonicAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
       "target": "NateLocalFieldTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
         "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
+        "analytic-number-theory/drafts/ch5/ch5s3.tex"
       ]
     },
     {

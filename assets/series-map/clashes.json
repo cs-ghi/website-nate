@@ -535,5 +535,32 @@
       "NateComplexAnalysis",
       "NateCalculus"
     ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgTop -> NateHomologicalAlg is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgTop",
+      "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgTop -> NateKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgTop",
+      "NateKTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgTop -> NateDiffGeo is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgTop",
+      "NateDiffGeo"
+    ]
   }
 ]
