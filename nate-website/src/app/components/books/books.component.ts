@@ -136,7 +136,7 @@ export const booksArray: Book[]= [
   },
   {
     name: 'Analytic Number Theory',
-    desc: 'A from-scratch development of analytic number theory. Current contents (Preliminary plus Chapters 1-10): elementary number theory review; arithmetic functions and summation techniques; Dirichlet series, Euler products, the Mellin transform, and Perron\'s formula; elementary prime distribution (Chebyshev\'s estimates, Mertens\' theorems, Bertrand\'s postulate); the Riemann zeta function (meromorphic continuation, the pole at s=1, non-vanishing on Re(s)=1); a complete proof of the Prime Number Theorem via Newman\'s Tauberian theorem, with the de la Vallee Poussin zero-free region and error term; the functional equation and the completed zeta function, the trivial zeros and special values, and the critical strip and Riemann Hypothesis; Dirichlet characters and L-functions, with Gauss sums and the functional equation, the non-vanishing of L(1,chi), and Dirichlet\'s theorem on primes in arithmetic progressions (density 1/phi(m)); and the Dedekind zeta function of a number field, with the geometry-of-numbers ideal count, the analytic class number formula (relating the residue at s=1 to the class number, regulator, discriminant, and units), the factorization of zeta_K into Dirichlet L-functions with a second, algebraic proof that L(1,chi) is nonzero, and Hecke\'s functional equation with the conductor-discriminant formula; Hecke L-functions of ray class characters, with their Euler products, completed L-functions, functional equations, and non-vanishing at s=1 (giving the equidistribution of prime ideals among ray classes); and Artin L-functions of Galois representations, with the Artin formalism, meromorphic continuation via Brauer induction, and a complete proof of the Chebotarev density theorem (the non-abelian generalization of Dirichlet\'s theorem). Forthcoming: character and exponential sums, and sieve methods.',
+    desc: 'Elementary number theory review; arithmetic functions and summation techniques; Dirichlet series, Euler products, the Mellin transform, and Perron\'s formula; elementary prime distribution (Chebyshev\'s estimates, Mertens\' theorems, Bertrand\'s postulate); the Riemann zeta function (meromorphic continuation, the pole at s=1, non-vanishing on Re(s)=1); Prime Number Theorem; the functional equation, the trivial zeros and special values, and the critical strip and Riemann Hypothesis; Dirichlet characters and L-functions, with Gauss sums and the functional equation, the non-vanishing of L(1,chi), and Dirichlet\'s theorem on primes in arithmetic progressions; the Dedekind zeta function of a number fiel, and Hecke\'s functional equation, Hecke L-functions of ray class characters; Artin L-functions of Galois representations, with the Artin formalism, meromorphic continuation via Brauer induction, Chebotarev density theorem.',
     link: '././assets/pdfs/books/EYNTKA-analytic-number-theory.pdf',
     type: 'pdf'
   },
@@ -164,6 +164,13 @@ export const booksArray: Book[]= [
     desc: 'The algebraic side: projective modules and K_0 (the Grothendieck group, its relation to Pic, Morita invariance), K_1 (the Whitehead group and determinants), K_2 (the Steinberg group and Matsumoto\'s theorem), and an introduction to Quillen\'s higher K-theory via the plus- and Q-constructions.',
     link: '././assets/pdfs/books/EYNTKA-algebraic-k-theory.pdf',
     type: 'pdf'
+  },
+  {
+    name: 'C* Albegra and K-Theory',
+    desc: 'Basic C* algebra and their K-theory (in particular the 6-term exact sequence and Bott periodicity is proven)',
+    link: '././assets/pdfs/books/EYNTKA-cstar-algebras.pdf',
+    type: 'pdf'
+
   },
   {
     name: 'Real Analysis',
