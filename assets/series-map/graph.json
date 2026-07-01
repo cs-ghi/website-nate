@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-06-30",
+    "generated": "2026-07-01",
     "bookCount": 41,
     "edgeCount": 218,
     "clashCounts": {
@@ -1043,15 +1043,7 @@
         "analytic-number-theory/drafts/ch10-section01-al1Frobenius.tex",
         "analytic-number-theory/drafts/ch10-section02-al2ArtinL.tex",
         "analytic-number-theory/drafts/ch10-section04-al4Chebotarev.tex",
-        "analytic-number-theory/drafts/ch10-section05-al5Applications.tex",
-        "analytic-number-theory/drafts/ch9-10/al1.tex",
-        "analytic-number-theory/drafts/ch9-10/al2.tex",
-        "analytic-number-theory/drafts/ch9-10/al4.tex",
-        "analytic-number-theory/drafts/ch9-10/al5.tex",
-        "analytic-number-theory/drafts/ch9-10/hl1.tex",
-        "analytic-number-theory/drafts/ch9-10/hl2.tex",
-        "analytic-number-theory/drafts/ch9-10/hl4.tex",
-        "analytic-number-theory/drafts/ch9-10/hl5.tex"
+        "analytic-number-theory/drafts/ch10-section05-al5Applications.tex"
       ]
     },
     {
@@ -1068,16 +1060,7 @@
         "analytic-number-theory/drafts/ch10-section02-al2ArtinL.tex",
         "analytic-number-theory/drafts/ch10-section03-al3Continuation.tex",
         "analytic-number-theory/drafts/ch10-section04-al4Chebotarev.tex",
-        "analytic-number-theory/drafts/ch10-section05-al5Applications.tex",
-        "analytic-number-theory/drafts/ch9-10/al1.tex",
-        "analytic-number-theory/drafts/ch9-10/al2.tex",
-        "analytic-number-theory/drafts/ch9-10/al3.tex",
-        "analytic-number-theory/drafts/ch9-10/al4.tex",
-        "analytic-number-theory/drafts/ch9-10/al5.tex",
-        "analytic-number-theory/drafts/ch9-10/hl1.tex",
-        "analytic-number-theory/drafts/ch9-10/hl3.tex",
-        "analytic-number-theory/drafts/ch9-10/hl4.tex",
-        "analytic-number-theory/drafts/ch9-10/hl5.tex"
+        "analytic-number-theory/drafts/ch10-section05-al5Applications.tex"
       ]
     },
     {
@@ -1109,11 +1092,7 @@
         "analytic-number-theory/drafts/ch10-section01-al1Frobenius.tex",
         "analytic-number-theory/drafts/ch10-section02-al2ArtinL.tex",
         "analytic-number-theory/drafts/ch10-section03-al3Continuation.tex",
-        "analytic-number-theory/drafts/ch10-section04-al4Chebotarev.tex",
-        "analytic-number-theory/drafts/ch9-10/al1.tex",
-        "analytic-number-theory/drafts/ch9-10/al2.tex",
-        "analytic-number-theory/drafts/ch9-10/al3.tex",
-        "analytic-number-theory/drafts/ch9-10/al4.tex"
+        "analytic-number-theory/drafts/ch10-section04-al4Chebotarev.tex"
       ]
     },
     {
@@ -1134,10 +1113,7 @@
         "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
         "analytic-number-theory/drafts/ch09-section01-hl1RayClass.tex",
         "analytic-number-theory/drafts/ch09-section03-hl3.tex",
-        "analytic-number-theory/drafts/ch10-section01-al1Frobenius.tex",
-        "analytic-number-theory/drafts/ch9-10/al1.tex",
-        "analytic-number-theory/drafts/ch9-10/hl1.tex",
-        "analytic-number-theory/drafts/ch9-10/hl3.tex"
+        "analytic-number-theory/drafts/ch10-section01-al1Frobenius.tex"
       ]
     },
     {
