@@ -71,10 +71,10 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateTopology -> NateElemAnalysis) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateTopology -> NateCalculus) is manual, no backing \\cite found.",
     "refs": [
       "NateTopology",
-      "NateElemAnalysis"
+      "NateCalculus"
     ]
   },
   {
@@ -591,12 +591,12 @@
     ]
   },
   {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateRiemannianGeometry -> NateDiffGeo is cited in 13 files but is still a 'reference'; consider promoting to prereq.",
+    "kind": "unsupported-edge",
+    "severity": "warn",
+    "message": "Cluster 'hodge' lists unknown member 'NateRiemannianGeometry NateAlgGeo'.",
     "refs": [
-      "NateRiemannianGeometry",
-      "NateDiffGeo"
+      "hodge",
+      "NateRiemannianGeometry NateAlgGeo"
     ]
   }
 ]
