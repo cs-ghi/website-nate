@@ -5,8 +5,8 @@
     "edgeCount": 222,
     "clashCounts": {
       "error": 0,
-      "warn": 0,
-      "info": 67
+      "warn": 1,
+      "info": 66
     }
   },
   "nodes": [
@@ -42,8 +42,7 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "arithmetic-geometry",
-        "hodge"
+        "arithmetic-geometry"
       ],
       "links": {
         "pdf": "algebraic-geometry/EYNTKA_algGeo.pdf",
@@ -556,10 +555,11 @@
       "dir": "riemannian-geometry",
       "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Geometry, Real Analysis, Partial Differential Equations. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [],
       "links": {
-        "pdf": "riemannian-geometry/EYNTKA-riemannian-geometry.pdf"
+        "pdf": "riemannian-geometry/EYNTKA-riemannian-geometry.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-riemannian-geometry.pdf&name=Riemannian%20Geometry&source=books"
       },
       "lastUpdated": "2026-07-01"
     },
@@ -2429,8 +2429,8 @@
     {
       "source": "NateRiemannianGeometry",
       "target": "NateDiffGeo",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "riemannian-geometry/chapters/ch01-s01.tex",
         "riemannian-geometry/chapters/ch01-s02.tex",
@@ -2511,7 +2511,7 @@
     },
     {
       "source": "NateTopology",
-      "target": "NateElemAnalysis",
+      "target": "NateCalculus",
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
@@ -2606,8 +2606,7 @@
       "members": [
         "NateHodgeTheory",
         "NateComplexAnalysis",
-        "NateDiffGeo",
-        "NateAlgGeo"
+        "NateDiffGeo"
       ],
       "color": "#c2698d",
       "description": "Complex and Kähler geometry toward Hodge theory, algebraic cycles, and the (integral) Hodge conjecture."
