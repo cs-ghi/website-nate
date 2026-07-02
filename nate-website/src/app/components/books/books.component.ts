@@ -148,6 +148,12 @@ export const booksArray: Book[]= [
     type: 'pdf'
   },
   {
+    name: 'Riemann Geometry',
+    desc: 'Riemann and Pseudo-Riemann metric, Levi-Cavita Connections, Geodescis, the curvature tensor, Jacobian Fields, Comparison Theorems',
+    link: '././assets/pdfs/books/EYNTKA-riemannian-geometry.pdf',
+    type: 'pdf'
+  },
+  {
     name: 'Algebraic Topology',
     desc: 'Homotopy, homotopy equivalences,  cell-complexes. Fundamental groups, covering spaces, van-kampen\'s theorem, Deck Transformations, interesting consequences. Homology, Delta and singular complexes, relative homology, snake lemma and Mayer-Vietoris, Cellular Homology, Euler-Characteristic and applications. Cohomology, cup and cap product, Poincare Duality. Homotopy Theory and Spectral Sequences coming soon!',
     link: '././assets/pdfs/books/EYNTKA-algebraic-topology.pdf',
