@@ -589,5 +589,14 @@
       "NateAnalyticNumTheory",
       "NateCoreRepTheory"
     ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NateDiffGeo is cited in 13 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateDiffGeo"
+    ]
   }
 ]

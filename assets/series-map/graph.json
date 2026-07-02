@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-01",
-    "bookCount": 41,
-    "edgeCount": 218,
+    "generated": "2026-07-02",
+    "bookCount": 42,
+    "edgeCount": 222,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 66
+      "info": 67
     }
   },
   "nodes": [
@@ -551,6 +551,19 @@
       }
     },
     {
+      "id": "NateRiemannianGeometry",
+      "title": "Riemannian Geometry",
+      "dir": "riemannian-geometry",
+      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Geometry, Real Analysis, Partial Differential Equations. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [],
+      "links": {
+        "pdf": "riemannian-geometry/EYNTKA-riemannian-geometry.pdf"
+      },
+      "lastUpdated": "2026-07-01"
+    },
+    {
       "id": "NateShimuraVarieties",
       "title": "Shimura Varieties",
       "dir": "shimura-varieties",
@@ -793,7 +806,7 @@
     },
     {
       "source": "NateAlgGeo",
-      "target": "NateHodgeResearch",
+      "target": "NateHodgeTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2394,6 +2407,54 @@
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch06-s04.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateComplexAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch01-s03.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateDiffGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch01-s01.tex",
+        "riemannian-geometry/chapters/ch01-s02.tex",
+        "riemannian-geometry/chapters/ch01-s03.tex",
+        "riemannian-geometry/chapters/ch01-s04.tex",
+        "riemannian-geometry/chapters/ch01-s05.tex",
+        "riemannian-geometry/chapters/ch01-s06.tex",
+        "riemannian-geometry/chapters/ch02-s01.tex",
+        "riemannian-geometry/chapters/ch02-s03.tex",
+        "riemannian-geometry/chapters/ch03-s01.tex",
+        "riemannian-geometry/chapters/ch04-s01.tex",
+        "riemannian-geometry/chapters/ch04-s05.tex",
+        "riemannian-geometry/chapters/ch04-s06.tex",
+        "riemannian-geometry/chapters/ch06-s03.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch01-s04.tex"
+      ]
     },
     {
       "source": "NateShimuraVarieties",
