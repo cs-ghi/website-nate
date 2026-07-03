@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-02",
-    "bookCount": 42,
-    "edgeCount": 222,
+    "generated": "2026-07-03",
+    "bookCount": 44,
+    "edgeCount": 224,
     "clashCounts": {
       "error": 0,
-      "warn": 1,
-      "info": 66
+      "warn": 0,
+      "info": 70
     }
   },
   "nodes": [
@@ -42,7 +42,8 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "arithmetic-geometry"
+        "arithmetic-geometry",
+        "hodge"
       ],
       "links": {
         "pdf": "algebraic-geometry/EYNTKA_algGeo.pdf",
@@ -204,6 +205,21 @@
       "links": {
         "pdf": "core-algebra/EYNTKA-core-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-algebra.pdf&name=Core%20Algebra&source=books"
+      }
+    },
+    {
+      "id": "NateCoreProbability",
+      "title": "Core Probability",
+      "dir": "core-probability",
+      "description": "the measure-free treatment (measure theory built inline, not assumed): distributions, expected value, variance, law of large numbers, Erdős-Rényi graphs, exponential/concentration inequalities, Gaussian distribution, finite Markov chains. The accessible entry point; the measure-theoretic flagship is *Probability*.",
+      "status": "in-progress",
+      "webPublished": true,
+      "clusters": [
+        "analysis-pde"
+      ],
+      "links": {
+        "pdf": "core-probability/EYNTKA-core-probability.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Core%20Probability&source=books"
       }
     },
     {
@@ -426,6 +442,15 @@
       "clusters": []
     },
     {
+      "id": "NateLinAlg",
+      "title": "Linear Algebra",
+      "dir": null,
+      "description": "standard linear algebra, from eigenvalues to JCF/RCF, to symmetric bilinear forms.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
       "id": "NateLocalFieldTheory",
       "title": "Local Field Theory",
       "dir": "local-field-theory",
@@ -524,15 +549,13 @@
     {
       "id": "NateProbability",
       "title": "Probability",
-      "dir": "Probability",
-      "description": "distributions, expected value, variance, law of large numbers, Erdős-Rényi graphs, exponential inequalities, Gaussian distribution.",
-      "status": "in-progress",
-      "webPublished": true,
-      "clusters": [],
-      "links": {
-        "pdf": "Probability/EYNTKA-Probability.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
-      }
+      "dir": null,
+      "description": "The measure-theoretic flagship (prereq measure theory): probability spaces as measure spaces, random variables and independence, modes of convergence, laws of large numbers, characteristic functions and the central limit theorem, conditional expectation via Radon–Nikodym, and discrete-time martingales. Ends before continuous-time processes.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": [
+        "analysis-pde"
+      ]
     },
     {
       "id": "NateRealAnalysis",
@@ -556,7 +579,9 @@
       "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Geometry, Real Analysis, Partial Differential Equations. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": [],
+      "clusters": [
+        "hodge"
+      ],
       "links": {
         "pdf": "riemannian-geometry/EYNTKA-riemannian-geometry.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-riemannian-geometry.pdf&name=Riemannian%20Geometry&source=books"
@@ -1428,7 +1453,7 @@
     },
     {
       "source": "NateCoreAlgebra",
-      "target": "NatePrelim",
+      "target": "NateLinAlg",
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
@@ -1441,6 +1466,13 @@
       "citedIn": [
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
+    },
+    {
+      "source": "NateCoreProbability",
+      "target": "NateElemAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateCoreRepTheory",
@@ -2224,6 +2256,13 @@
       "citedIn": []
     },
     {
+      "source": "NateLinAlg",
+      "target": "NatePrelim",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
       "source": "NateLocalFieldTheory",
       "target": "NateAlgebra",
       "type": "reference",
@@ -2606,7 +2645,9 @@
       "members": [
         "NateHodgeTheory",
         "NateComplexAnalysis",
-        "NateDiffGeo"
+        "NateDiffGeo",
+        "NateRiemannianGeometry",
+        "NateAlgGeo"
       ],
       "color": "#c2698d",
       "description": "Complex and Kähler geometry toward Hodge theory, algebraic cycles, and the (integral) Hodge conjecture."
@@ -2637,7 +2678,9 @@
         "NateHarmonicAnalysis",
         "NateODE",
         "NatePDE",
-        "NateCalculus"
+        "NateCalculus",
+        "NateProbability",
+        "NateCoreProbability"
       ],
       "color": "#9a7bc8",
       "description": "The analysis ladder, from elementary analysis through measure theory and functional analysis to ODE and PDE."

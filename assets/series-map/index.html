@@ -13,8 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="./assets/index-ByrV0Hby.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-D5QqkJNh.css">
+    <script type="module" crossorigin src="./assets/index-CmLuYZPR.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CHuExO_z.css">
   </head>
   <body>
     <div id="app">
@@ -27,6 +27,16 @@
         <div class="search">
           <input id="search-input" type="search" placeholder="Search books…" autocomplete="off" />
         </div>
+
+        <button
+          class="btn toolbar-more"
+          id="controls-toggle"
+          aria-expanded="false"
+          aria-controls="controls"
+          title="Filters &amp; controls"
+        >
+          <span class="more-icon" aria-hidden="true">≡</span> Filters
+        </button>
 
         <div class="controls" id="controls">
           <div class="control-group" role="group" aria-label="Edge types">
@@ -46,6 +56,18 @@
             </button>
             <button class="toggle is-on" data-toggle="megabooks" title="Group mega-books">
               Mega-books
+            </button>
+          </div>
+          <div class="control-group" role="group" aria-label="Highlight mode">
+            <select id="highlight-mode" class="select" title="What clicking a book highlights">
+              <option value="neighbors">Neighbours</option>
+              <option value="prereqs">Prerequisites</option>
+              <option value="unlocks">Unlocks</option>
+              <option value="roadmap">Roadmap</option>
+              <option value="ready">Ready next</option>
+            </select>
+            <button class="toggle" data-toggle="deep" title="Follow the full prerequisite chain, not just immediate neighbours">
+              Deep
             </button>
           </div>
           <div class="control-group" role="group" aria-label="Tracks">
