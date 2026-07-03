@@ -18,9 +18,25 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateProbability' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateProbability"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateCalculus' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateCalculus"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateLinAlg' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateLinAlg"
     ]
   },
   {
@@ -44,10 +60,19 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCoreAlgebra -> NatePrelim) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateLinAlg -> NatePrelim) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinAlg",
+      "NatePrelim"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCoreAlgebra -> NateLinAlg) is manual, no backing \\cite found.",
     "refs": [
       "NateCoreAlgebra",
-      "NatePrelim"
+      "NateLinAlg"
     ]
   },
   {
@@ -165,6 +190,15 @@
     "refs": [
       "NateProbability",
       "NateMeasureTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCoreProbability -> NateElemAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCoreProbability",
+      "NateElemAnalysis"
     ]
   },
   {
@@ -588,15 +622,6 @@
     "refs": [
       "NateAnalyticNumTheory",
       "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "warn",
-    "message": "Cluster 'hodge' lists unknown member 'NateRiemannianGeometry NateAlgGeo'.",
-    "refs": [
-      "hodge",
-      "NateRiemannianGeometry NateAlgGeo"
     ]
   }
 ]
