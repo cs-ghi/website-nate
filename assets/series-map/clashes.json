@@ -2,14 +2,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateLieGroups' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateLieGroups"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NateLocalLanglands' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateLocalLanglands"
@@ -46,15 +38,6 @@
     "refs": [
       "NateLocalLanglands",
       "NateLanglandsGL2"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay coreq (NateGeoRepTheory -> NateLieGroups) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeoRepTheory",
-      "NateLieGroups"
     ]
   },
   {
@@ -447,15 +430,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateAlgGeo) is manual, no backing \\cite found.",
-    "refs": [
-      "NateShimuraVarieties",
-      "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateShimuraVarieties -> NateGeoRepTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateShimuraVarieties",
@@ -469,15 +443,6 @@
     "refs": [
       "NateShimuraVarieties",
       "NateCFT"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLieGroups -> NateDiffGeo) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLieGroups",
-      "NateDiffGeo"
     ]
   },
   {
@@ -609,19 +574,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAnalyticNumTheory -> NateCFT is cited in 9 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAnalyticNumTheory -> NateCoreRepTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAnalyticNumTheory",
-      "NateCFT"
+      "NateCoreRepTheory"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAnalyticNumTheory -> NateCoreRepTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAnalyticNumTheory -> NateCFT is cited in 9 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAnalyticNumTheory",
-      "NateCoreRepTheory"
+      "NateCFT"
     ]
   }
 ]

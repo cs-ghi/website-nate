@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-03",
+    "generated": "2026-07-07",
     "bookCount": 44,
-    "edgeCount": 224,
+    "edgeCount": 223,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 70
+      "info": 66
     }
   },
   "nodes": [
@@ -109,7 +109,7 @@
         "pdf": "analytic-number-theory/EYNTKA-analytic-number-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-analytic-number-theory.pdf&name=Analytic%20Number%20Theory&source=books"
       },
-      "lastUpdated": "2026-06-30"
+      "lastUpdated": "2026-07-06"
     },
     {
       "id": "NateCalculus",
@@ -435,11 +435,15 @@
     {
       "id": "NateLieGroups",
       "title": "Lie Groups",
-      "dir": null,
-      "description": "",
-      "status": "planned",
+      "dir": "lie-groups",
+      "description": "the analytic / differential-geometric half of Lie theory, complementary to the algebraic-groups treatment in Algebraic Groups and Representations. Four Parts: (I) Lie groups and their Lie algebras, matrix groups and the classical groups, the exponential map, left-invariant vector fields, the closed-subgroup theorem, the Lie group–Lie algebra correspondence, BCH, homogeneous spaces and covering groups; (II) structure of Lie algebras, solvable/nilpotent (Engel, Lie), the Cartan criteria, Weyl complete reducibility, Levi, the root space decomposition, root systems, and the Cartan–Killing classification; (III) compact Lie groups and their representations, invariant integration, the Peter–Weyl theorem, maximal tori and the Weyl integration formula, the Weyl character and dimension formulas; (IV) real forms and symmetric spaces, complexification, the Cartan decomposition, the Iwasawa decomposition KAN, and Riemannian symmetric spaces bridging to Riemannian Geometry. Running example SU(2). Prereqs Differential Geometry, Core Algebra, Core Representation Theory, Topology, Real Analysis/Functional Analysis; cites Harmonic Analysis for Haar measure.",
+      "status": "in-progress",
       "webPublished": false,
-      "clusters": []
+      "clusters": [],
+      "links": {
+        "pdf": "lie-groups/EYNTKA-lie-groups.pdf"
+      },
+      "lastUpdated": "2026-07-03"
     },
     {
       "id": "NateLinAlg",
@@ -1887,13 +1891,6 @@
     },
     {
       "source": "NateGeoRepTheory",
-      "target": "NateLieGroups",
-      "type": "coreq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateGeoRepTheory",
       "target": "NateLocalLanglands",
       "type": "reference",
       "provenance": "auto",
@@ -2252,8 +2249,20 @@
       "source": "NateLieGroups",
       "target": "NateDiffGeo",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "lie-groups/chapters/ch01-s01.tex",
+        "lie-groups/chapters/ch01-s02.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateGeoRepTheory",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "lie-groups/chapters/ch01-open.tex"
+      ]
     },
     {
       "source": "NateLinAlg",
@@ -2510,13 +2519,6 @@
       "citedIn": [
         "shimura-varieties/EYNTKA-Shimura_Varieties.tex"
       ]
-    },
-    {
-      "source": "NateShimuraVarieties",
-      "target": "NateAlgGeo",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateShimuraVarieties",
