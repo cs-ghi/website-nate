@@ -1,0 +1,535 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{array}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\DeclareMathOperator{\Sq}{Sq}
+\DeclareMathOperator{\CH}{CH}
+\DeclareMathOperator{\Hdg}{Hdg}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\KU}{\mathrm{KU}}
+\newcommand{\ptt}{\mathrm{pt}}
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\gr}{\operatorname{gr}}
+
+\title{Spectral Sequences in Practice, and the\\ Atiyah--Hirzebruch Torsion Counterexample\\ to the Integral Hodge Conjecture}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+%======================================================================
+\section{Conventions on spectral sequences}
+%======================================================================
+
+A (cohomological, first--quadrant) spectral sequence is a sequence of bigraded
+abelian groups $\{E_r^{p,q}\}$ together with differentials
+\[
+  d_r \colon E_r^{p,q}\to E_r^{p+r,\,q-r+1}, \qquad d_r\circ d_r=0,
+\]
+such that $E_{r+1}^{p,q}=\ker d_r/\operatorname{im} d_r$ at $(p,q)$. We say it
+\emph{converges} to a graded group $H^\bullet$, written $E_2^{p,q}\Rightarrow
+H^{p+q}$, if $H^n$ carries a finite decreasing filtration
+$H^n=F^0\supseteq F^1\supseteq\cdots\supseteq F^{n}\supseteq F^{n+1}=0$ with
+\[
+  E_\infty^{p,q}\cong F^p H^{p+q}/F^{p+1}H^{p+q}.
+\]
+Three separate pieces of information are always at play, and it is worth naming
+them because \emph{each} is a distinct step in a computation:
+
+\begin{enumerate}
+\item[(D)] \textbf{Differentials.} One must determine the maps $d_r$. Often they
+are forced by knowing the abutment (as in Part~I), or identified with a known
+cohomology operation (as in Part~II).
+\item[(M)] \textbf{Multiplicativity.} In good cases the $E_r$ are bigraded rings,
+$d_r$ is a derivation
+$d_r(xy)=d_r(x)\,y+(-1)^{|x|}x\,d_r(y)$ (with $|x|=p+q$), and the filtration on
+$H^\bullet$ is multiplicative. This propagates a single differential across the
+whole page.
+\item[(E)] \textbf{The extension problem.} Even after computing $E_\infty$, one
+only knows the \emph{associated graded} $\gr H^n=\bigoplus_p E_\infty^{p,n-p}$.
+Recovering $H^n$ requires solving extensions
+$0\to F^{p+1}\to F^{p}\to E_\infty^{p,n-p}\to 0$, which can be nonsplit.
+\end{enumerate}
+
+Parts~I and~III(the $\RP^{2n}$ example) are chosen precisely so that you meet all
+three phenomena.
+
+%======================================================================
+\section{A fully worked example: the Serre SS of a path--loop fibration}
+%======================================================================
+
+\subsection{The setup}
+
+Fix $n\ge 2$ and let $PS^n=\{\gamma\colon[0,1]\to S^n : \gamma(0)=x_0\}$ be the
+space of based paths, with the fibration
+\[
+  \Omega S^n \hookrightarrow PS^n \xrightarrow{\ \mathrm{ev}_1\ } S^n,
+  \qquad \mathrm{ev}_1(\gamma)=\gamma(1),
+\]
+whose fibre is the based loop space $\Omega S^n$. The total space $PS^n$ is
+\emph{contractible} (contract each path to the constant path), so
+\begin{equation}\label{eq:contractible}
+  H^m(PS^n;\Z)=\begin{cases}\Z,& m=0,\\ 0,&m>0.\end{cases}
+\end{equation}
+Since $S^n$ is simply connected for $n\ge 2$, the local system on the base is
+trivial and the cohomology Serre spectral sequence reads
+\[
+  E_2^{p,q}=H^p\!\big(S^n;\,H^q(\Omega S^n;\Z)\big)
+  \;\Longrightarrow\; H^{p+q}(PS^n;\Z).
+\]
+Write $A^q:=H^q(\Omega S^n;\Z)$; this is what we want to compute. Because
+$H^p(S^n;\Z)=\Z$ for $p\in\{0,n\}$ and $0$ otherwise, \emph{only two columns are
+nonzero}:
+\[
+  E_2^{0,q}=A^q,\qquad E_2^{n,q}=A^q,\qquad E_2^{p,q}=0 \text{ for } p\neq 0,n.
+\]
+
+\subsection{Which differentials can be nonzero?}
+
+A differential $d_r\colon E_r^{p,q}\to E_r^{p+r,q-r+1}$ can be nonzero only if
+both columns $p$ and $p+r$ are nonzero, i.e.\ only if $\{p,p+r\}=\{0,n\}$. Hence
+\emph{the only possibly nonzero differential is $d_n$}, and
+\[
+  E_2=E_3=\cdots=E_n,\qquad E_{n+1}=E_\infty .
+\]
+The single relevant family of maps is the \emph{transgression}
+\[
+  d_n\colon E_n^{0,q}=A^{q}\;\to\;E_n^{n,q-n+1}=A^{q-n+1}.
+\]
+
+\subsection{Convergence forces $d_n$ to be an isomorphism}
+
+By \eqref{eq:contractible} the abutment is trivial except in total degree $0$, so
+$E_\infty^{p,q}=0$ unless $(p,q)=(0,0)$. Since $E_{n+1}=E_\infty$, the only
+group that may survive is $E_\infty^{0,0}=\Z$.
+
+\smallskip\noindent\textbf{Low degrees.} For $0<q<n-1$ the group $E_n^{0,q}=A^q$
+receives no differential (its potential source $E_n^{n,q-n+1}$ sits in negative
+fibre degree) and maps nowhere nontrivially; hence it survives to $E_\infty$ and
+must vanish:
+\[
+  A^q=0\qquad(1\le q\le n-2).
+\]
+
+\smallskip\noindent\textbf{Transgression.} In degree $q=n-1$ the class
+$s\in H^n(S^n)=E_n^{n,0}$ must die. The only differential that can kill it is
+\[
+  d_n\colon E_n^{0,n-1}=A^{n-1}\xrightarrow{\ \cong\ }E_n^{n,0}=\Z\langle s\rangle .
+\]
+For $E_\infty^{n,0}=0$ this map must be surjective; for $E_\infty^{0,n-1}=0$ it
+must be injective. Therefore $A^{n-1}=\Z$, generated by a class $a$ with
+\begin{equation}\label{eq:transgress}
+  d_n(a)=s .
+\end{equation}
+
+\smallskip\noindent\textbf{Bootstrapping.} More generally, for every $q$ the map
+$d_n\colon A^{q}\to A^{q-n+1}$ must be an isomorphism whenever both are off the
+corner (source in column $0$, target in column $n$, and neither is
+$E_\infty^{0,0}$). Feeding in $A^0=\Z$, $A^{q}=0$ for $1\le q\le n-2$, and
+iterating $A^{q}\cong A^{q-(n-1)}$ gives:
+\begin{equation}\label{eq:additive}
+  H^{q}(\Omega S^n;\Z)=
+  \begin{cases}\Z,& q\equiv 0\pmod{n-1},\ q\ge 0,\\[2pt] 0,&\text{otherwise.}\end{cases}
+\end{equation}
+Denote the generator of $H^{k(n-1)}$ by $a_k$, with $a_0=1$ and $a_1=a$.
+
+\subsection{A concrete page: $n=3$}
+
+For $S^3$ the fibre cohomology lives in even degrees $0,2,4,6,\dots$, and the
+$E_2=E_3$ page has just the two columns $p=0,3$:
+\[
+\renewcommand{\arraystretch}{1.35}
+\begin{array}{c|cccc}
+ q=6 & \Z\langle a_3\rangle & 0 & 0 & \Z\langle s\,a_3\rangle \\
+ q=4 & \Z\langle a_2\rangle & 0 & 0 & \Z\langle s\,a_2\rangle \\
+ q=2 & \Z\langle a_1\rangle & 0 & 0 & \Z\langle s\,a_1\rangle \\
+ q=0 & \Z\langle 1\rangle   & 0 & 0 & \Z\langle s\rangle \\ \hline
+     & p=0 & 1 & 2 & p=3
+\end{array}
+\]
+The differential $d_3$ points three columns to the right and two rows down,
+$d_3\colon E_3^{0,2k}\to E_3^{3,2k-2}$, i.e.
+\[
+  a_k\;\longmapsto\; (\text{integer})\cdot s\,a_{k-1}.
+\]
+Convergence (everything off the corner must die) forces each such $d_3$ to be an
+\emph{isomorphism} $\Z\xrightarrow{\cong}\Z$; after fixing signs we may take
+\begin{equation}\label{eq:d3loop}
+  d_3(a_k)=s\,a_{k-1}\qquad(k\ge 1).
+\end{equation}
+
+\subsection{Multiplicativity and the integral extension problem}
+
+So far \eqref{eq:additive} is purely additive. Now use that the Serre spectral
+sequence is \emph{multiplicative}: $E_2^{\bullet,\bullet}=H^*(S^n)\otimes
+H^*(\Omega S^n)$ as bigraded rings, and $d_n$ is a derivation. Take $n=3$, so
+$a=a_1$ has even total degree and there are no Koszul signs. From
+\eqref{eq:d3loop} and the Leibniz rule,
+\[
+  d_3(a_1^2)=d_3(a_1)\,a_1+a_1\,d_3(a_1)=s\,a_1+a_1\,s=2\,s\,a_1 .
+\]
+But $a_1^2\in H^4(\Omega S^3)=\Z\langle a_2\rangle$, say $a_1^2=\lambda a_2$, and
+by \eqref{eq:d3loop} $d_3(a_2)=s\,a_1$. Hence
+\[
+  2\,s\,a_1=d_3(a_1^2)=\lambda\,d_3(a_2)=\lambda\,s\,a_1
+  \quad\Longrightarrow\quad \boxed{\,a_1^2=2\,a_2\,}.
+\]
+This is the crux: the ring is \emph{not} polynomial. Iterating (induction with
+$a_1a_{k-1}=k\,a_k$, obtained the same way) gives
+\[
+  a_1^{\,k}=k!\;a_k .
+\]
+
+\begin{theorem}\label{thm:loop}
+For $n$ odd, $H^*(\Omega S^n;\Z)$ is the \emph{divided power algebra}
+$\Gamma_\Z[a]$ on one generator $a$ of degree $n-1$: it is free of rank one in
+each degree $k(n-1)$ on a class $\gamma_k$, with $\gamma_1=a$,
+$a^{k}=k!\,\gamma_k$, and $\gamma_i\gamma_j=\binom{i+j}{i}\gamma_{i+j}$. In
+particular it is \emph{not} a polynomial ring over $\Z$. \qed
+\end{theorem}
+
+\begin{remark}
+Every technique you need downstream appeared here:
+\textbf{(D)} differentials forced by the abutment via \eqref{eq:contractible};
+\textbf{transgression} \eqref{eq:transgress};
+\textbf{(M)} a single differential propagated by the Leibniz rule;
+\textbf{(E)} an extension/divided‑power subtlety visible only integrally
+($a_1^2=2a_2$). Reducing mod a prime $p$ would hide this: $H^*(\Omega S^3;\F_p)$
+\emph{is} polynomial. The moral --- ``torsion and integral structure hide in the
+multiplicative/extension data'' --- is exactly what powers Part~IV.
+\end{remark}
+
+%======================================================================
+\section{The Atiyah--Hirzebruch spectral sequence}
+%======================================================================
+
+\subsection{Definition}
+
+Let $E^\bullet$ be a generalized (multiplicative) cohomology theory and $X$ a
+finite CW complex, filtered by skeleta $X^{(p)}$. The exact couple of the
+filtration produces the \emph{Atiyah--Hirzebruch spectral sequence} (AHSS)
+\begin{equation}\label{eq:AHSS}
+  E_2^{p,q}=H^p\!\big(X;\,E^q(\ptt)\big)\;\Longrightarrow\; E^{p+q}(X),
+\end{equation}
+converging to the filtration $F^pE^n(X)=\ker\!\big(E^n(X)\to E^n(X^{(p-1)})\big)$.
+Here $E^q(\ptt)$ are the coefficient groups. When $E=H(-;A)$ is ordinary
+cohomology this collapses at $E_2$; the content is entirely in \emph{generalized}
+theories.
+
+\subsection{Complex $K$--theory}
+
+For $E=\KU$ (complex topological $K$--theory) Bott periodicity gives
+\[
+  \KU^q(\ptt)=\begin{cases}\Z,& q\ \text{even},\\ 0,& q\ \text{odd},\end{cases}
+\]
+with the Bott class $\beta_{\mathrm{Bott}}\in\KU^{-2}(\ptt)$ a unit. Hence
+\begin{equation}\label{eq:E2K}
+  E_2^{p,q}=\begin{cases}H^p(X;\Z),& q\ \text{even},\\ 0,& q\ \text{odd},\end{cases}
+  \qquad\Longrightarrow\qquad \KU^{p+q}(X).
+\end{equation}
+The nonzero groups occupy the even rows; the whole picture is $2$--periodic in
+$q$. Two immediate consequences:
+\begin{itemize}
+\item all \emph{even} differentials vanish, $d_{2k}=0$, because they map between
+an even and an odd row (one of which is zero);
+\item rationally the sequence degenerates, $E_2\otimes\Q\cong E_\infty\otimes\Q$,
+so $\KU^0(X)\otimes\Q\cong\bigoplus_k H^{2k}(X;\Q)$ (the Chern character). All
+higher differentials are therefore \emph{torsion} operations.
+\end{itemize}
+
+%======================================================================
+\section{The first differential: $d_3=\widetilde{\Sq}^3$}
+%======================================================================
+
+\begin{theorem}[Atiyah--Hirzebruch]\label{thm:d3}
+In the AHSS for $\KU$ the first potentially nonzero differential is
+$d_3\colon E_3^{p,q}\to E_3^{p+3,q-2}$, and under \eqref{eq:E2K} it is the
+\emph{integral Steenrod operation}
+\[
+  d_3=\widetilde{\Sq}^3\;=\;\beta\circ \Sq^2\circ \rho
+  \;\colon\; H^{p}(X;\Z)\to H^{p+3}(X;\Z),
+\]
+where $\rho\colon H^*(-;\Z)\to H^*(-;\F_2)$ is reduction mod $2$, $\Sq^2$ is the
+Steenrod square, and $\beta\colon H^*(-;\F_2)\to H^{*+1}(-;\Z)$ is the integral
+Bockstein of $0\to\Z\xrightarrow{2}\Z\to\F_2\to 0$. In particular
+$\widetilde{\Sq}^3$ takes values in $2$--torsion.
+\end{theorem}
+
+\begin{remark}
+Because $\rho\beta=\Sq^1$, the mod $2$ reduction of $\widetilde{\Sq}^3$ is the
+genuine Steenrod square $\Sq^3=\Sq^1\Sq^2$. This is the fact we compute with in
+Part~IV. Higher differentials $d_5,d_7,\dots$ exist and are secondary/tertiary
+operations, but the counterexample only needs $d_3$.
+\end{remark}
+
+%======================================================================
+\section{A second AHSS worked example: $\widetilde{\KU}{}^0(\RP^{2n})=\Z/2^n$}
+%======================================================================
+
+This example isolates the \emph{extension problem} in the AHSS (here every
+differential vanishes, yet the answer is a nonsplit extension).
+
+The integral cohomology of $X=\RP^{2n}$ is
+\[
+  H^{p}(\RP^{2n};\Z)=
+  \begin{cases}\Z,& p=0,\\ \Z/2,& p=2,4,\dots,2n,\\ 0,& p\ \text{odd}.\end{cases}
+\]
+Plugging into \eqref{eq:E2K}, the $E_2$--page (row $q=0$; all other rows are a
+$2$--periodic copy) has nonzero entries only in \emph{even} columns:
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{c|ccccccc}
+ q=0 & \Z & 0 & \Z/2 & 0 & \Z/2 & \cdots & \Z/2\\ \hline
+     & p=0 & 1 & 2 & 3 & 4 & \cdots & 2n
+\end{array}
+\]
+Now run the checklist:
+\begin{itemize}
+\item \textbf{(D) Differentials.} $d_3\colon H^p\to H^{p+3}$ maps an even column
+to an odd column, and $H^{\mathrm{odd}}(\RP^{2n})=0$. Hence $d_3=0$, and for the
+same parity reason \emph{all} $d_r$ vanish. The sequence collapses:
+$E_2=E_\infty$. (Note $\widetilde{\Sq}^3$ is identically $0$ here --- this space
+is \emph{not} a counterexample; contrast Part~IV.)
+\item \textbf{(E) Extensions.} The associated graded of
+$\widetilde{\KU}{}^0(\RP^{2n})$ is $\bigoplus_{i=1}^{n}E_\infty^{2i,-2i}
+=(\Z/2)^{\oplus n}$, of order $2^n$. But the filtration is nonsplit: writing
+$\eta=\lambda_\C-1$ for the reduced class of the complexified tautological line
+bundle, one has $\eta^{\,n+1}=0$ while $\eta$ has additive order $2^n$, so
+\[
+  \widetilde{\KU}{}^0(\RP^{2n})\;\cong\;\Z/2^n .
+\]
+The successive quotients $F^{2i}/F^{2i+2}=\Z/2$ assemble by \emph{nontrivial}
+extensions $\Z/2^{i-1}\rightarrowtail \Z/2^{i}\twoheadrightarrow \Z/2$.
+\end{itemize}
+This is the same phenomenon as $a_1^2=2a_2$ in Part~I: $E_\infty$ knows the
+graded pieces, not the group.
+
+%======================================================================
+\section{The obstruction: algebraic classes are permanent cycles}
+%======================================================================
+
+\subsection{Cycle classes lift to $K$--theory}
+
+Let $X$ be a smooth complex projective variety and $Z\subset X$ a closed analytic
+subset of complex codimension $k$. The coherent sheaf $\O_Z$ defines a class in
+$K^0$ supported on $Z$; concretely a locally free resolution of $\O_Z$ gives a
+class in $\KU^0(X)$ lying in the topological filtration step $F^{2k}$. Under the
+Chern character / Grothendieck--Riemann--Roch this recovers the cycle class up to
+a universal factor:
+\begin{equation}\label{eq:GRR}
+  c_k(\O_Z)=(-1)^{k-1}(k-1)!\,[Z]\in H^{2k}(X;\Z).
+\end{equation}
+The point is representability: $[Z]$ is (a rational multiple of) the image in
+$\gr^{2k}\KU^0(X)=E_\infty^{2k,-2k}$ of an honest element of $\KU^0(X)$.
+
+\begin{theorem}[Atiyah--Hirzebruch criterion]\label{thm:criterion}
+For $Z\subset X$ closed analytic of codimension $k$, the cycle class
+$[Z]\in H^{2k}(X;\Z)$ is a \emph{permanent cycle} in the AHSS for $\KU$: it lies
+in the kernel of every differential $d_r$, $r\ge 2$. In particular
+\[
+  \widetilde{\Sq}^3\,[Z]=d_3[Z]=0 .
+\]
+More generally, all odd--degree Steenrod operations vanish on the classes of
+algebraic cycles (in $H^*(X;\Z)$ and in $H^*(X;\Z/p)$).
+\end{theorem}
+
+\begin{proof}[Idea]
+An element of $F^{2k}\KU^0(X)$ surviving to $E_\infty^{2k,-2k}$ is by definition
+in $\ker d_r$ for all $r$. Since $[Z]$ (up to the invertible‑on‑the‑relevant‑page
+factor $(k-1)!$, which does not affect the vanishing statement $2$‑locally in the
+range needed) is the image of $[\O_Z]\in F^{2k}\KU^0(X)$, it is a permanent
+cycle. The extension to all odd Steenrod operations and to $\Z/p$ coefficients is
+Totaro's refinement via complex cobordism $MU$.
+\end{proof}
+
+\begin{corollary}[The contrapositive we exploit]\label{cor:test}
+If $\alpha\in H^{2k}(X;\Z)$ satisfies $\widetilde{\Sq}^3\alpha\neq 0$, then
+$\alpha$ is \emph{not} in the image of the cycle class map
+$\CH^k(X)\to H^{2k}(X;\Z)$; i.e.\ $\alpha$ is not algebraic. \qed
+\end{corollary}
+
+%======================================================================
+\section{The counterexample}
+%======================================================================
+
+\subsection{Statement}
+
+\begin{definition}
+For $X$ smooth projective$/\C$, the group of \emph{integral Hodge classes} in
+degree $2k$ is
+\[
+  \Hdg^{2k}(X,\Z)=\big\{\alpha\in H^{2k}(X;\Z):\ \alpha_\C\in H^{k,k}(X)\big\},
+  \qquad \alpha_\C=\text{image in }H^{2k}(X;\C).
+\]
+The \emph{Integral Hodge Conjecture} (IHC) asserts that the cycle class map
+$\CH^k(X)\to \Hdg^{2k}(X,\Z)$ is surjective.
+\end{definition}
+
+\begin{theorem}[Atiyah--Hirzebruch, 1962]\label{thm:AH}
+The IHC is false for $k\ge 2$. Explicitly, there is a smooth complex projective
+variety $X$ of dimension $7$ carrying a $2$--torsion class
+$\alpha\in H^4(X;\Z)$ which is an integral Hodge class but is not the class of any
+algebraic cycle.
+\end{theorem}
+
+The proof has three independent ingredients: (i) torsion classes are automatically
+Hodge; (ii) a construction of a projective $X$ realizing a chosen piece of group
+cohomology; (iii) an explicit torsion class $\alpha$ with
+$\widetilde{\Sq}^3\alpha\neq 0$, defeated by Corollary~\ref{cor:test}.
+
+\subsection{Torsion classes are Hodge}
+
+\begin{lemma}\label{lem:torsionHodge}
+Any torsion class $\alpha\in H^{2k}(X;\Z)_{\mathrm{tors}}$ lies in
+$\Hdg^{2k}(X,\Z)$.
+\end{lemma}
+
+\begin{proof}
+The map $H^{2k}(X;\Z)\to H^{2k}(X;\C)$ kills torsion, since $H^{2k}(X;\C)$ is a
+$\C$--vector space. Thus $\alpha_\C=0$, which lies in $H^{k,k}(X)$ trivially.
+\end{proof}
+
+So to break the IHC it suffices to produce a \emph{non‑algebraic torsion class} of
+even degree.
+
+\subsection{Realizing group cohomology projectively (Godeaux--Serre)}
+
+\begin{theorem}[Serre's construction; Atiyah--Hirzebruch Prop.~6.6]\label{thm:GS}
+Let $G$ be a finite group and $N\in\mathbb N$. Choose a faithful complex
+representation $G\hookrightarrow GL(V)$; then $G$ acts freely on the complement of
+a closed subvariety of high codimension in a large sum $V^{\oplus m}$, and
+intersecting with generic hypersurfaces (Lefschetz) yields a smooth projective
+variety $X$ with a free $G$--action such that the classifying map
+$X/G\to BG$ induces isomorphisms
+\[
+  H^i(BG;\Z)\xrightarrow{\ \cong\ }H^i(X/G;\Z)\qquad(0\le i\le N).
+\]
+In fact $X/G\to BG\times BS^1$ is $r$--connected with $r=\dim_\C(X/G)$.
+\end{theorem}
+
+Thus any torsion class in $H^{\le N}(BG;\Z)$ transports to a smooth projective
+variety, together with all Steenrod operations, provided $\dim_\C X\ge N$. For our
+class $\alpha\in H^4$ with $\widetilde{\Sq}^3\alpha\in H^7$, we need $N\ge 7$,
+hence $\dim_\C X=7$ --- this is where the ``dimension $7$'' comes from.
+
+\subsection{The explicit torsion class on $B(\Z/2)^3$}
+
+Take $G=(\Z/2)^3$. With $\F_2$--coefficients,
+\[
+  H^*\!\big((\Z/2)^3;\F_2\big)=\F_2[x_1,x_2,x_3],\qquad |x_i|=1 .
+\]
+Let $w=x_1x_2x_3\in H^3$, and let $\alpha=\beta(w)\in H^4\big((\Z/2)^3;\Z\big)$ be
+its integral Bockstein; $\alpha$ is $2$--torsion, and $\rho(\alpha)=\Sq^1 w$. We
+show $\widetilde{\Sq}^3\alpha\neq 0$ by computing its mod $2$ reduction.
+
+\smallskip\noindent\textbf{Reduction to $\Sq$'s.} Using $\rho\beta=\Sq^1$ and
+Theorem~\ref{thm:d3},
+\[
+  \rho\big(\widetilde{\Sq}^3\alpha\big)
+  =\rho\,\beta\,\Sq^2\rho\,\beta(w)
+  =\Sq^1\Sq^2\Sq^1(w).
+\]
+
+\smallskip\noindent\textbf{Adem relations.} From $\Sq^1\Sq^2=\Sq^3$ and
+$\Sq^3\Sq^1=\Sq^2\Sq^2$ (equivalently $\Sq^2\Sq^2=\Sq^3\Sq^1$),
+\[
+  \Sq^1\Sq^2\Sq^1=\Sq^3\Sq^1=\Sq^2\Sq^2 .
+\]
+So it suffices to show $\Sq^2\Sq^2(w)\neq 0$.
+
+\smallskip\noindent\textbf{The computation.} With the total square
+$\Sq(x_i)=x_i+x_i^2$ and the Cartan formula, the degree‑$5$ part of $\Sq(w)$ is
+\[
+  \Sq^2(x_1x_2x_3)=x_1^2x_2^2x_3+x_1^2x_2x_3^2+x_1x_2^2x_3^2 .
+\]
+Applying $\Sq^2$ once more (using $\Sq(x_i^2)=x_i^2+x_i^4$) to each monomial and
+adding mod $2$:
+\[
+\begin{aligned}
+\Sq^2(x_1^2x_2^2x_3)&=x_1^4x_2^2x_3+x_1^2x_2^4x_3+x_1^2x_2^2x_3^2,\\
+\Sq^2(x_1^2x_2x_3^2)&=x_1^4x_2x_3^2+x_1^2x_2^2x_3^2+x_1^2x_2x_3^4,\\
+\Sq^2(x_1x_2^2x_3^2)&=x_1^2x_2^2x_3^2+x_1x_2^4x_3^2+x_1x_2^2x_3^4 .
+\end{aligned}
+\]
+The three copies of $x_1^2x_2^2x_3^2$ add to a single copy (mod $2$), so
+\[
+  \boxed{\;\Sq^2\Sq^2(x_1x_2x_3)=x_1^2x_2^2x_3^2
+  +\!\!\sum_{\text{$6$ perms of }(4,2,1)}\!\! x_1^{a}x_2^{b}x_3^{c}\;}
+\]
+\[
+=x_1^2x_2^2x_3^2
++x_1^4x_2^2x_3+x_1^4x_2x_3^2+x_1^2x_2^4x_3+x_1x_2^4x_3^2+x_1^2x_2x_3^4+x_1x_2^2x_3^4 .
+\]
+These monomials are distinct and nonzero in the polynomial ring, so
+$\Sq^2\Sq^2(w)\neq 0$. Consequently
+\[
+  \rho\big(\widetilde{\Sq}^3\alpha\big)=\Sq^1\Sq^2\Sq^1(w)=\Sq^2\Sq^2(w)\neq 0,
+  \qquad\text{hence}\qquad \widetilde{\Sq}^3\alpha\neq 0 .
+\]
+
+\subsection{Conclusion}
+
+\begin{proof}[Proof of Theorem~\ref{thm:AH}]
+By Theorem~\ref{thm:GS} with $G=(\Z/2)^3$ and $N=7$, take a smooth projective
+$7$--fold $X$ with $H^i(X;\Z)\cong H^i(B(\Z/2)^3;\Z)$ compatibly with Steenrod
+operations for $i\le 7$. Let $\alpha\in H^4(X;\Z)$ be the image of
+$\beta(x_1x_2x_3)$. Then:
+\begin{itemize}
+\item $\alpha$ is $2$--torsion, hence $\alpha\in\Hdg^4(X,\Z)$ by
+Lemma~\ref{lem:torsionHodge};
+\item $\widetilde{\Sq}^3\alpha\neq 0$ by the computation above (transported from
+$B(\Z/2)^3$);
+\item therefore $\alpha$ is not algebraic, by Corollary~\ref{cor:test}.
+\end{itemize}
+So $\alpha$ is an integral Hodge class that is not a $\Z$--combination of
+algebraic cycle classes: the IHC fails in codimension $2$.
+\end{proof}
+
+\begin{remark}[What ``core spectral sequence'' really means here]
+The spectral sequence at the heart of the argument is the AHSS
+\eqref{eq:E2K} for $\KU$. It enters not through a long page‑by‑page computation
+but through one structural fact --- Theorem~\ref{thm:criterion}: \emph{algebraic
+classes are permanent cycles}. The obstruction is then localized in the single
+differential $d_3=\widetilde{\Sq}^3$. In this sense the counterexample is a
+one‑differential phenomenon, in contrast to the multi‑page bookkeeping of Part~I.
+Totaro (1997) later refined the whole story by replacing $\KU$ with complex
+cobordism $MU$, factoring the cycle map through $(MU^*(X)\otimes_{MU^*}\Z)^{2k}$
+and producing sharper (higher‑differential) obstructions.
+\end{remark}
+
+%======================================================================
+\begin{thebibliography}{9}
+\bibitem{AH62} M.~F.~Atiyah and F.~Hirzebruch,
+\emph{Analytic cycles on complex manifolds}, Topology \textbf{1} (1962), 25--45.
+\bibitem{Tot97} B.~Totaro,
+\emph{Torsion algebraic cycles and complex cobordism},
+J.\ Amer.\ Math.\ Soc.\ \textbf{10} (1997), 467--493.
+\bibitem{Voisin} C.~Voisin,
+\emph{On the homotopy types of compact K\"ahler and complex projective manifolds}
+and \emph{Some aspects of the Hodge conjecture}; see also her notes on torsion
+cohomology classes and algebraic cycles.
+\bibitem{McCleary} J.~McCleary,
+\emph{A User's Guide to Spectral Sequences}, 2nd ed., Cambridge, 2001.
+\bibitem{Hatcher} A.~Hatcher,
+\emph{Spectral Sequences in Algebraic Topology} (online notes).
+\end{thebibliography}
+
+\end{document}

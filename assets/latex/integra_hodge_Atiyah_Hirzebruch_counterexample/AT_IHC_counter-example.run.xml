@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>another_view_of_integer_multiplication.bcf</file>
+      <file>AT_IHC_counter-example.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>another_view_of_integer_multiplication.bbl</file>
+      <file>AT_IHC_counter-example.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -65,19 +65,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>another_view_of_integer_multiplication</infile>
+      <infile>AT_IHC_counter-example</infile>
     </cmdline>
     <input>
-      <file>another_view_of_integer_multiplication.bcf</file>
+      <file>AT_IHC_counter-example.bcf</file>
     </input>
     <output>
-      <file>another_view_of_integer_multiplication.bbl</file>
+      <file>AT_IHC_counter-example.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>another_view_of_integer_multiplication.bbl</file>
+      <file>AT_IHC_counter-example.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>another_view_of_integer_multiplication.bcf</file>
+      <file>AT_IHC_counter-example.bcf</file>
     </requires>
     <requires type="editable">
       <file>bibliography.bib</file>

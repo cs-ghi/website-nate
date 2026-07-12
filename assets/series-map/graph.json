@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated": "2026-07-07",
+    "generated": "2026-07-12",
     "bookCount": 44,
-    "edgeCount": 223,
+    "edgeCount": 225,
     "clashCounts": {
-      "error": 0,
+      "error": 1,
       "warn": 0,
       "info": 66
     }
@@ -234,8 +234,10 @@
         "langlands"
       ],
       "links": {
+        "pdf": "core-representation-theory/EYNTKA-core-representation-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-representation-theory.pdf&name=Core%20Representation%20Theory&source=books"
-      }
+      },
+      "lastUpdated": "2026-07-07"
     },
     {
       "id": "NateCStarAlgebras",
@@ -1066,10 +1068,8 @@
       "source": "NateAlgTop",
       "target": "NateTopology",
       "type": "prereq",
-      "provenance": "both",
-      "citedIn": [
-        "algebraic-topology/EYNTKA-algebraic-topology.tex"
-      ]
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateAnalyticNumTheory",
@@ -1489,6 +1489,16 @@
     },
     {
       "source": "NateCoreRepTheory",
+      "target": "NateAlgKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex",
+        "core-representation-theory/drafts/ch4-bound-quiver-algebras.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
       "target": "NateCFT",
       "type": "reference",
       "provenance": "auto",
@@ -1498,10 +1508,24 @@
     },
     {
       "source": "NateCoreRepTheory",
+      "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex",
+        "core-representation-theory/drafts/ch2-s1-radical.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
       "target": "NateCoreAlgebra",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex",
+        "core-representation-theory/drafts/ch2-s3-projective-covers.tex",
+        "core-representation-theory/drafts/ch4-bound-quiver-algebras.tex"
+      ]
     },
     {
       "source": "NateCoreRepTheory",

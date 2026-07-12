@@ -1,8 +1,8 @@
-This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.5.18)  9 JUL 2026 10:00
+This is LuaHBTeX, Version 1.16.0 (TeX Live 2023)  (format=lualatex 2023.5.18)  9 JUL 2026 15:28
  restricted system commands enabled.
  file:line:error style messages enabled.
-**another_view_of_integer_multiplication.tex
-(./another_view_of_integer_multiplication.tex
+**AT_IHC_counter-example.tex
+(./AT_IHC_counter-example.tex
 LaTeX2e <2022-11-01> patch level 1
 Lua module: luaotfload 2022-10-03 3.23 Lua based OpenType font support
 Lua module: lualibs 2022-10-04 2.75 ConTeXt Lua standard libraries.
@@ -50,14 +50,6 @@ luaotfload | db : Font names database loaded from /Users/nathanaelchwojko-srawke
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen139
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
-
-
-Package inputenc Warning: inputenc package ignored with utf8 based engines.
-
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip50
@@ -74,7 +66,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
+\@emptytoks=\toks16
 \ex@=\dimen140
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -112,21 +104,21 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \dotsspace@=\muskip16
 \c@parentequation=\count198
 \dspbrk@lvl=\count199
-\tag@help=\toks19
+\tag@help=\toks17
 \row@=\count266
 \column@=\count267
 \maxfields@=\count268
-\andhelp@=\toks20
+\andhelp@=\toks18
 \eqnshift@=\dimen143
 \alignsep@=\dimen144
 \tagshift@=\dimen145
 \tagwidth@=\dimen146
 \totwidth@=\dimen147
 \lineht@=\dimen148
-\@envbody=\toks21
+\@envbody=\toks19
 \multlinegap=\skip54
 \multlinetaggap=\skip55
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/stackengine/stackengine.sty
@@ -171,7 +163,7 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen151
 \ar@mcellbox=\box59
 \extrarowheight=\dimen152
-\NC@list=\toks23
+\NC@list=\toks21
 \extratabsurround=\skip63
 \backup@length=\skip64
 \ar@cellbox=\box60
@@ -184,7 +176,7 @@ Package color Info: Driver file: luatex.def on input line 149.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/luatex.def
 File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-\everycr=\toks24
+\everycr=\toks22
 \minrowclearance=\skip65
 \rownum=\count277
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/scalerel/scalerel.sty
@@ -193,7 +185,7 @@ Package: scalerel 2016/12/29 v1.8 Routines for constrained scaling and stretchin
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks25
+\KV@toks@=\toks23
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
@@ -239,7 +231,7 @@ Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks26
+\pdftexcmds@toks=\toks24
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
@@ -254,7 +246,7 @@ Package: euscript 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/commutative-diagrams/commutative-diagrams.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks27
+\pgfutil@everybye=\toks25
 \pgfutil@tempdima=\dimen155
 \pgfutil@tempdimb=\dimen156
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -266,10 +258,10 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks28
-\pgfkeys@temptoks=\toks29
+\pgfkeys@pathtoks=\toks26
+\pgfkeys@temptoks=\toks27
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
-\pgfkeys@tmptoks=\toks30
+\pgfkeys@tmptoks=\toks28
 ))
 \pgf@x=\dimen157
 \pgf@y=\dimen158
@@ -287,9 +279,9 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \c@pgf@countb=\count279
 \c@pgf@countc=\count280
 \c@pgf@countd=\count281
-\t@pgf@toka=\toks31
-\t@pgf@tokb=\toks32
-\t@pgf@tokc=\toks33
+\t@pgf@toka=\toks29
+\t@pgf@tokb=\toks30
+\t@pgf@tokc=\toks31
 \pgf@sys@id@count=\count282
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
@@ -329,9 +321,9 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 \pgfmath@dimen=\dimen167
 \pgfmath@count=\count285
 \pgfmath@box=\box62
-\pgfmath@toks=\toks34
-\pgfmath@stack@operand=\toks35
-\pgfmath@stack@operation=\toks36
+\pgfmath@toks=\toks32
+\pgfmath@stack@operand=\toks33
+\pgfmath@stack@operation=\toks34
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count286
 )) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
@@ -415,8 +407,8 @@ Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen194
 \pgffor@skip=\dimen195
-\pgffor@stack=\toks37
-\pgffor@toks=\toks38
+\pgffor@stack=\toks35
+\pgffor@toks=\toks36
 )) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
@@ -454,40 +446,40 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 Package: commutative-diagrams 2020/06/11 1.0.1 CoDi: Commutative Diagrams for TeX
  (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.diorthono.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.ramma.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.bapto.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.ektropi.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.koinos.code.tex
 \kDEscapecharCounter=\count299
-\kDOptTok=\toks39
-\kDGrpTok=\toks40
-\kDTmpTok=\toks41
+\kDOptTok=\toks37
+\kDGrpTok=\toks38
+\kDTmpTok=\toks39
 \kDDumpFile=\write4
 )
-\kDEktropiDefaultToksBackup=\toks42
+\kDEktropiDefaultToksBackup=\toks40
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.katharizo.code.tex
-\kDKatharizoStringified=\toks43
-\kDKatharizoSanitized=\toks44
+\kDKatharizoStringified=\toks41
+\kDKatharizoSanitized=\toks42
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.ozos.code.tex) (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.mitra.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-\kDMitraTmpTok=\toks45
-\kDMitraMatOutTok=\toks46
-\kDMitraRowOptTok=\toks47
-\kDMitraColOptTok=\toks48
-\kDMitraCelOptTok=\toks49
-\kDMitraCelCntTok=\toks50
+\kDMitraTmpTok=\toks43
+\kDMitraMatOutTok=\toks44
+\kDMitraRowOptTok=\toks45
+\kDMitraColOptTok=\toks46
+\kDMitraCelOptTok=\toks47
+\kDMitraCelCntTok=\toks48
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.velos.code.tex
-\kDVelosTemp=\toks51
-\kDVelosGlobalLabelOptions=\toks52
-\kDVelosGlobalEdgeOptions=\toks53
-\kDVelosSource=\toks54
-\kDVelosCurFstSrc=\toks55
-\kDVelosPrvFstSrc=\toks56
-\kDVelosEdge=\toks57
-\kDVelosTarget=\toks58
-\kDVelosCurLstTar=\toks59
-\kDVelosPrvLstTar=\toks60
-\kDVelosDerefSrc=\toks61
-\kDVelosDerefTar=\toks62
+\kDVelosTemp=\toks49
+\kDVelosGlobalLabelOptions=\toks50
+\kDVelosGlobalEdgeOptions=\toks51
+\kDVelosSource=\toks52
+\kDVelosCurFstSrc=\toks53
+\kDVelosPrvFstSrc=\toks54
+\kDVelosEdge=\toks55
+\kDVelosTarget=\toks56
+\kDVelosCurLstTar=\toks57
+\kDVelosPrvLstTar=\toks58
+\kDVelosDerefSrc=\toks59
+\kDVelosDerefTar=\toks60
 )
-\kDRammaOptTok=\toks63
-\kDRammaTmpTok=\toks64
+\kDRammaOptTok=\toks61
+\kDRammaTmpTok=\toks62
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/commutative-diagrams/tikzlibrarycommutative-diagrams.mandyas.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
@@ -521,21 +513,21 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip75
 \enit@outerparindent=\dimen269
-\enit@toks=\toks65
+\enit@toks=\toks63
 \enit@inbox=\box73
 \enit@count@id=\count301
 \enitdp@description=\count302
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks66
-\thm@bodyfont=\toks67
-\thm@headfont=\toks68
-\thm@notefont=\toks69
-\thm@headpunct=\toks70
+\thm@style=\toks64
+\thm@bodyfont=\toks65
+\thm@headfont=\toks66
+\thm@notefont=\toks67
+\thm@headpunct=\toks68
 \thm@preskip=\skip76
 \thm@postskip=\skip77
 \thm@headsep=\skip78
-\dth@everypar=\toks71
+\dth@everypar=\toks69
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/dsfont.sty
@@ -548,9 +540,9 @@ LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count303
-\float@exts=\toks72
+\float@exts=\toks70
 \float@box=\box74
-\@float@everytoks=\toks73
+\@float@everytoks=\toks71
 \@floatcapt=\box75
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
@@ -676,15 +668,15 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LT@rows=\count318
 \c@LT@tables=\count319
 \c@LT@chunks=\count320
-\LT@p@ftn=\toks74
+\LT@p@ftn=\toks72
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
-\MT@toks=\toks75
+\MT@toks=\toks73
 \MT@tempbox=\box81
 \MT@count=\count321
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
 LaTeX Info: Redefining \leftprotrusion on input line 1060.
-\MT@prot@toks=\toks76
+\MT@prot@toks=\toks74
 LaTeX Info: Redefining \rightprotrusion on input line 1078.
 LaTeX Info: Redefining \textls on input line 1368.
 \MT@outer@kern=\dimen279
@@ -705,8 +697,8 @@ File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
 Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
  (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks77
-\verbatim@line=\toks78
+\every@verbatim=\toks75
+\verbatim@line=\toks76
 \verbatim@in@stream=\read3
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
@@ -769,7 +761,7 @@ Library (tcolorbox): 'tcblistings.code.tex' version '6.0.1'
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count331
 \lst@gtempboxa=\box94
-\lst@token=\toks79
+\lst@token=\toks77
 \lst@length=\count332
 \lst@currlwidth=\dimen283
 \lst@column=\count333
@@ -816,17 +808,17 @@ Library (tcolorbox): 'tcbposter.code.tex' version '6.0.1'
 \WF@size=\dimen288
 \c@WF@wrappedlines=\count340
 \WF@box=\box96
-\WF@everypar=\toks80
+\WF@everypar=\toks78
 Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/thmtools.sty
 Package: thmtools 2023/02/17 v0.75
-\thmt@toks=\toks81
+\thmt@toks=\toks79
 \c@thmt@dummyctr=\count341
  (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/thm-patch.sty
 Package: thm-patch 2023/02/17 v0.75
  (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/parseargs.sty
 Package: parseargs 2023/02/17 v0.75
-\@parsespec=\toks82
+\@parsespec=\toks80
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/thm-kv.sty
 Package: thm-kv 2023/02/17 v0.75
 Package thm-kv Info: Theorem names will be uppercased on input line 42.
@@ -841,7 +833,7 @@ Package: thm-listof 2023/02/17 v0.75
 Package: thm-restate 2023/02/17 v0.75
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/thm-amsthm.sty
 Package: thm-amsthm 2023/02/17 v0.75
-\thmt@style@headstyle=\toks83
+\thmt@style@headstyle=\toks81
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
  (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty
@@ -881,7 +873,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen294
 \Gm@layouthoffset=\dimen295
 \Gm@layoutvoffset=\dimen296
-\Gm@dimlist=\toks84
+\Gm@dimlist=\toks82
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip85
@@ -900,7 +892,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \aftertitleunit=\skip95
 \ttl@plus=\dimen297
 \ttl@minus=\dimen298
-\ttl@toksa=\toks85
+\ttl@toksa=\toks83
 \titlewidth=\dimen299
 \titlewidthlast=\dimen300
 \titlewidthfirst=\dimen301
@@ -921,8 +913,8 @@ File: l3backend-luatex.def 2023-01-16 L3 backend support: PDF output (LuaTeX)
 Package: xparse 2023-02-02 L3 Experimental document command parser
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/pgfopts/pgfopts.sty
 Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-\pgfopts@list@add@a@toks=\toks86
-\pgfopts@list@add@b@toks=\toks87
+\pgfopts@list@add@a@toks=\toks84
+\pgfopts@list@add@b@toks=\toks85
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
@@ -1021,10 +1013,10 @@ File: ppluatex.def 2022/12/19 v0.5x Pdfpages driver for LuaTeX (AM)
 )
 \pdfpages@includegraphics@status=\count413
 \AM@pagebox=\box104
-\AM@global@opts=\toks88
+\AM@global@opts=\toks86
 \AM@pagecnt=\count414
-\AM@toc@title=\toks89
-\AM@lof@heading=\toks90
+\AM@toc@title=\toks87
+\AM@lof@heading=\toks88
 \c@AM@survey=\count415
 \AM@templatesizebox=\box105
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/transparent/transparent.sty
@@ -1039,7 +1031,7 @@ Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@qlevel=\count419
 \csq@maxlvl=\count420
 \csq@tshold=\count421
-\csq@ltx@everypar=\toks91
+\csq@ltx@everypar=\toks89
  (/usr/local/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
 )
@@ -1271,41 +1263,63 @@ Package biblatex Info: ... and expl3
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 ))
 \c@tcb@cnt@thm=\count548
-Package hyperref Info: Option `colorlinks' set `true' on input line 623.
+Package hyperref Info: Option `colorlinks' set `true' on input line 633.
 \@indexfile=\write6
 
-\openout6 = another_view_of_integer_multiplication.idx
+\openout6 = AT_IHC_counter-example.idx
 
-Writing index file another_view_of_integer_multiplication.idx
+Writing index file AT_IHC_counter-example.idx
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-(./another_view_of_integer_multiplication.aux)
-\openout1 = another_view_of_integer_multiplication.aux
+(./AT_IHC_counter-example.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 634.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 634.
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+
+LaTeX Warning: Label `[' multiply defined.
+
+)
+\openout1 = AT_IHC_counter-example.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 644.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 644.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 634.
-LaTeX Font Info:    ... okay on input line 634.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 644.
+LaTeX Font Info:    ... okay on input line 644.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count549
@@ -1313,32 +1327,32 @@ LaTeX Font Info:    ... okay on input line 634.
 \scratchbox=\box106
 \nofMPsegments=\count550
 \nofMParguments=\count551
-\everyMPshowfont=\toks92
+\everyMPshowfont=\toks90
 \MPscratchCnt=\count552
 \MPscratchDim=\dimen316
 \MPnumerator=\count553
 \makeMPintoPDFobject=\count554
-\everyMPtoPDFconversion=\toks93
+\everyMPtoPDFconversion=\toks91
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 634.
-LaTeX Info: Redefining \microtypecontext on input line 634.
-Package microtype Info: Applying patch `item' on input line 634.
-Package microtype Info: Applying patch `toc' on input line 634.
-Package microtype Info: Applying patch `eqnum' on input line 634.
-Package microtype Info: Applying patch `footnote' on input line 634.
-Package microtype Info: Applying patch `verbatim' on input line 634.
+Package hyperref Info: Link coloring ON on input line 644.
+LaTeX Info: Redefining \microtypecontext on input line 644.
+Package microtype Info: Applying patch `item' on input line 644.
+Package microtype Info: Applying patch `toc' on input line 644.
+Package microtype Info: Applying patch `eqnum' on input line 644.
+Package microtype Info: Applying patch `footnote' on input line 644.
+Package microtype Info: Applying patch `verbatim' on input line 644.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 634.
+LaTeX Info: Redefining \showhyphens on input line 644.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
@@ -1400,56 +1414,404 @@ Package biblatex Info: LuaTeX detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 
-\openout5 = another_view_of_integer_multiplication.bcf
+\openout5 = AT_IHC_counter-example.bcf
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'another_view_of_integer_multiplication.bbl' found.
- (./another_view_of_integer_multiplication.bbl)
-Package biblatex Info: Reference section=0 on input line 634.
-Package biblatex Info: Reference segment=0 on input line 634.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+Package biblatex Info: ... file 'AT_IHC_counter-example.bbl' not found.
+
+No file AT_IHC_counter-example.bbl.
+Package biblatex Info: Reference section=0 on input line 644.
+Package biblatex Info: Reference segment=0 on input line 644.
+(./AT_IHC_counter-example.toc (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 639.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 639.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 639.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 639.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 3.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-) [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+))
+\tf@toc=\write7
 
-] [2] [3] (./another_view_of_integer_multiplication.aux)
-Package logreq Info: Writing requests to 'another_view_of_integer_multiplication.run.xml'.
+\openout7 = AT_IHC_counter-example.toc
+ [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-\openout1 = another_view_of_integer_multiplication.run.xml
+] [2]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 728.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 728.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 728.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 764.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 764.
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 847.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 847.
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\setbox' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hbox' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textstyle' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Umathcharnumdef' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\std@minus' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Umathcodenum' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\-' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\-' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.22198pt
+(hyperref)                removed on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathaccent' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Umathcharnumdef' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\std@minus' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Umathcodenum' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\-' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\-' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathcode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.22198pt
+(hyperref)                removed on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 869.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 869.
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'tcb@cnt@thm.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'tcb@cnt@thm.2'
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\setbox' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hbox' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\textstyle' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathaccent' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 894.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 894.
+
+[5]
+Overfull \hbox (0.78325pt too wide) in paragraph at lines 916--921
+[]\TU/lmr/bx/n/10 (D) Dif-fer-en-tials. $\OML/cmm/m/it/10 d[] [] [] H[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 H[]$ \TU/lmr/m/n/10 maps an even col-umn to an odd col-umn, and $\OML/cmm/m/it/10 H[]\OT1/cmr/m/n/10 ([][]) =
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 939.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 939.
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'tcb@cnt@thm.1'
+[6]
+warning  (pdf backend): ignoring duplicate destination with the name 'tcb@cnt@thm.2'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'tcb@cnt@thm.1'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'tcb@cnt@thm.2'
+
+LaTeX Warning: Reference `co:test' on page 7 undefined on input line 1035.
+
+[7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1072.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1072.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1072.
+
+
+LaTeX Warning: Reference `th:d3' on page 8 undefined on input line 1083.
+
+[8]
+
+LaTeX Warning: Reference `th:AH' on page 9 undefined on input line 1129.
+
+
+LaTeX Warning: Reference `th:GS' on page 9 undefined on input line 1130.
+
+
+LaTeX Warning: Reference `lm:torsionHodge' on page 9 undefined on input line 1136.
+
+
+LaTeX Warning: Reference `co:test' on page 9 undefined on input line 1139.
+
+
+LaTeX Warning: Reference `th:criterion' on page 9 undefined on input line 1148.
+
+[9] [10] (./AT_IHC_counter-example.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package logreq Info: Writing requests to 'AT_IHC_counter-example.run.xml'.
+
+\openout1 = AT_IHC_counter-example.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 47413 strings out of 478285
+ 47471 strings out of 478285
  125081,1977958 words of node,token memory allocated
- 1514 words of node memory still in use:
-   32 hlist, 2 vlist, 14 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 3 glyph, 88 attribute, 81 glue_spec, 88 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 1:2,2:1625,3:683,4:170,5:706,6:72,7:10851,8:22,9:637,10:13,11:873
- 65630 multiletter control sequences out of 65536+600000
- 66 fonts using 4572983 bytes
- 99i,15n,109p,1034b,1164s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on another_view_of_integer_multiplication.pdf (3 pages, 102595 bytes).
+ 1738 words of node memory still in use:
+   31 hlist, 2 vlist, 14 rule, 1 local_par, 4 glue, 4 kern, 1 penalty, 3 glyph, 148 attribute, 81 glue_spec, 148 attribute_list, 2 write, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 1:2,2:1468,3:767,4:238,5:578,6:116,7:7593,8:51,9:955,10:10,11:395
+ 65653 multiletter control sequences out of 65536+600000
+ 83 fonts using 5665039 bytes
+ 99i,15n,109p,1155b,1563s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmromanslant10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on AT_IHC_counter-example.pdf (10 pages, 256913 bytes).
 
-PDF statistics: 151 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 131072)
- 264 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 342 PDF objects out of 1000 (max. 8388607)
+ 265 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 131072)
+ 416 words of extra memory for PDF output out of 10000 (max. 100000000)
 
