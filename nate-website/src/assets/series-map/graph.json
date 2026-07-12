@@ -489,7 +489,7 @@
       "webPublished": true,
       "clusters": [],
       "links": {
-        "pdf": "logic/EYNTKA_MAT309.pdf",
+        "pdf": "logic/EYNTKA_logic.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_logic.pdf&name=Logic&source=books"
       }
     },
@@ -521,7 +521,7 @@
       ],
       "links": {
         "pdf": "ODE/EYNTKA_ODE.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Flatex%2FODE%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
       }
     },
     {
@@ -536,7 +536,7 @@
       ],
       "links": {
         "pdf": "PDE/EYNTKA_PDE.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Flatex%2FPDE%2FEYNTKA_PDE.pdf&name=Partial%20Differential%20Equations&source=books"
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_PDE.pdf&name=Partial%20Differential%20Equations&source=books"
       }
     },
     {

@@ -233,14 +233,14 @@ export const booksArray: Book[]= [
   {
     name: 'Partial Differential Equations (PDE)',
     desc: 'books focusing on solving wave equations in increasing degrees of complexity. Existence and uniqueness of solutions to linear and non-linear wave equations, Litttle-Paley Theory, Distribution Theory, Klainerman-Sobelev Inequality. Future goal of adding Maxell-Klein-Gordon equations and Strichartz type estimates.',
-    link: '././assets/latex/PDE/EYNTKA_PDE.pdf',
+    link: '././assets/pdfs/books/EYNTKA_PDE.pdf',
     type: 'pdf'
   },
 
   {
     name: 'Ordinary Differential Equations (ODE)',
     desc: 'Existence and Uniqueness Theorems (Picard-Lindelöf), Scalar and Linear Second-Order Equations, Linear Systems via Matrix Exponentials and Jordan Forms, Qualitative Theory and Stability (Lyapunov, Poincaré-Bendixson), Boundary Value Problems, Sturm-Liouville Theory and Green\'s Functions, Series Solutions and Special Functions (Bessel, Legendre).',
-    link: '././assets/latex/ODE/EYNTKA_ODE.pdf',
+    link: '././assets/pdfs/books/EYNTKA_ODE.pdf',
     type: 'pdf'
   },
   {
