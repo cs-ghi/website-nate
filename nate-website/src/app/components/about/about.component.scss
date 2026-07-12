@@ -10,19 +10,50 @@
 
 // about section header
 .about-info h3 {
-  color: $bg-secondary;
-  font-size: 26px;
+  color: #f2ece5;          // brightest of all: top of the hierarchy, above the sub-titles
+  font-size: 28px;
   letter-spacing: 1px;
-  font-weight: 600; }
+  font-weight: 700; }
 
 // about section description
 .about-info p {
   color: #bab0b0;
   // padding: 1em 0;
   margin-bottom: 25px;
-  line-height: 27px; 
+  line-height: 27px;
   // text-justify: distribute;
   // background-color: greenyellow;
+}
+
+// about section sub-title: sits tight against the paragraph that follows it
+.about-info .sub-title {
+  color: #ece5dd;          // brighter than the body text so titles read as headings instead of receding
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 44px;        // clear breathing room above each section
+  margin-bottom: 0;        // still hugs the paragraph directly below
+}
+
+.about-info .sub-title + p {
+  margin-top: 0;
+}
+
+// professional "at a glance" strip: a skimmable summary for professional visitors
+.about-info .at-a-glance {
+  border-left: 3px solid $bg-secondary;
+  padding-left: 18px;
+  margin-bottom: 30px;
+}
+
+.about-info .at-a-glance p {
+  margin-bottom: 8px;
+}
+
+.about-info .at-a-glance .quick-links {
+  margin-bottom: 0;
+  font-size: 15px;
+  letter-spacing: 0.3px;
 }
 
   // .section-about .about-info p strong {
@@ -61,7 +92,11 @@
 }
 .about-info a{
   transition: 0.4s;
-  color:#c4b9b9; 
+  color: #9fb4c4;                                 // muted blue: subtle link cue against the warm palette
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(159, 180, 196, 0.4); // muted underline: visible, not loud
 }
 a:hover{
   cursor: pointer;
