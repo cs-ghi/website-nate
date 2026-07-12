@@ -41,13 +41,13 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>another_view_of_integer_multiplication.bcf</file>
+      <file>geometry_of_primes.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>another_view_of_integer_multiplication.bbl</file>
+      <file>geometry_of_primes.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -61,23 +61,23 @@
       <file>english.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
+  <external package="biblatex" priority="5" active="1">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>another_view_of_integer_multiplication</infile>
+      <infile>geometry_of_primes</infile>
     </cmdline>
     <input>
-      <file>another_view_of_integer_multiplication.bcf</file>
+      <file>geometry_of_primes.bcf</file>
     </input>
     <output>
-      <file>another_view_of_integer_multiplication.bbl</file>
+      <file>geometry_of_primes.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>another_view_of_integer_multiplication.bbl</file>
+      <file>geometry_of_primes.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>another_view_of_integer_multiplication.bcf</file>
+      <file>geometry_of_primes.bcf</file>
     </requires>
     <requires type="editable">
       <file>bibliography.bib</file>

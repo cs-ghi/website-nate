@@ -1,5 +1,14 @@
 [
   {
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateTop} resolves to no known book. Fix the citation or add an alias/registry entry.",
+    "refs": [
+      "NateTop",
+      "algebraic-topology/EYNTKA-algebraic-topology.tex"
+    ]
+  },
+  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateLocalLanglands' is planned (cited/registered but has no folder yet).",
@@ -214,6 +223,15 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateAlgTop -> NateTopology) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgTop",
+      "NateTopology"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateDiffGeo -> NateTopology) is manual, no backing \\cite found.",
     "refs": [
       "NateDiffGeo",
@@ -244,15 +262,6 @@
     "message": "Overlay prereq (NateCommAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateCommAlg",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCoreRepTheory -> NateCoreAlgebra) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCoreRepTheory",
       "NateCoreAlgebra"
     ]
   },

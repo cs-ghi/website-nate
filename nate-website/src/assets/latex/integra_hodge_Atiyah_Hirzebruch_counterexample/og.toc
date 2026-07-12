@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Conventions on spectral sequences}{1}{section.1}%
+\contentsline {section}{\numberline {2}A fully worked example: the Serre SS of a path--loop fibration}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The setup}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Which differentials can be nonzero?}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Convergence forces $d_n$ to be an isomorphism}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}A concrete page: $n=3$}{3}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Multiplicativity and the integral extension problem}{4}{subsection.2.5}%
+\contentsline {section}{\numberline {3}The Atiyah--Hirzebruch spectral sequence}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Definition}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Complex $K$--theory}{4}{subsection.3.2}%
+\contentsline {section}{\numberline {4}The first differential: $d_3=\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \Sq $}\mathaccent "0365{\Sq }^3$}{5}{section.4}%
+\contentsline {section}{\numberline {5}A second AHSS worked example: $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \mathrm {KU}$}\mathaccent "0365{\mathrm {KU}}{}^0(\mathbb {RP}^{2n})=\mathbb {Z}/2^n$}{5}{section.5}%
+\contentsline {section}{\numberline {6}The obstruction: algebraic classes are permanent cycles}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Cycle classes lift to $K$--theory}{6}{subsection.6.1}%
+\contentsline {section}{\numberline {7}The counterexample}{6}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Statement}{6}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Torsion classes are Hodge}{7}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Realizing group cohomology projectively (Godeaux--Serre)}{7}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}The explicit torsion class on $B(\mathbb {Z}/2)^3$}{7}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Conclusion}{8}{subsection.7.5}%
