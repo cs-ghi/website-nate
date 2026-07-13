@@ -597,5 +597,14 @@
       "NateAnalyticNumTheory",
       "NateCFT"
     ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NateAlgTop is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateAlgTop"
+    ]
   }
 ]
