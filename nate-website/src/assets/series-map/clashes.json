@@ -528,6 +528,24 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
+    "message": "NateAbelianVarieties -> NateHomologicalAlg is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateCoreAlgebra is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateCoreAlgebra"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
     "message": "NateAlgTop -> NateHomologicalAlg is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgTop",

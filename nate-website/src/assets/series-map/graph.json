@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-07-13",
     "bookCount": 45,
-    "edgeCount": 236,
+    "edgeCount": 237,
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 72
+      "info": 74
     }
   },
   "nodes": [
@@ -674,7 +674,9 @@
         "abelian-varieties/drafts/scratch/ch01-s03.tex",
         "abelian-varieties/drafts/scratch/ch01-s04.tex",
         "abelian-varieties/drafts/scratch/ch02-s01.tex",
-        "abelian-varieties/drafts/scratch/ch02-s02.tex"
+        "abelian-varieties/drafts/scratch/ch02-s02.tex",
+        "abelian-varieties/drafts/scratch/ch04-s04.tex",
+        "abelian-varieties/drafts/scratch/ch04-s05.tex"
       ]
     },
     {
@@ -683,6 +685,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch02-s04.tex",
         "abelian-varieties/drafts/scratch/ch03-s02.tex"
       ]
@@ -702,7 +705,10 @@
         "abelian-varieties/drafts/scratch/ch02-s04.tex",
         "abelian-varieties/drafts/scratch/ch03-s01.tex",
         "abelian-varieties/drafts/scratch/ch03-s03.tex",
-        "abelian-varieties/drafts/scratch/ch03-s04.tex"
+        "abelian-varieties/drafts/scratch/ch03-s04.tex",
+        "abelian-varieties/drafts/scratch/ch04-s01.tex",
+        "abelian-varieties/drafts/scratch/ch04-s04.tex",
+        "abelian-varieties/drafts/scratch/ch05-s02.tex"
       ]
     },
     {
@@ -722,6 +728,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch02-s01.tex",
         "abelian-varieties/drafts/scratch/ch02-s02.tex"
       ]
@@ -2374,7 +2381,21 @@
       "provenance": "both",
       "citedIn": [
         "lie-groups/chapters/ch01-s05.tex",
-        "lie-groups/chapters/ch03-s04.tex"
+        "lie-groups/chapters/ch03-s04.tex",
+        "lie-groups/chapters/ch05-s01.tex",
+        "lie-groups/chapters/ch06-s02.tex",
+        "lie-groups/chapters/ch06-s05.tex",
+        "lie-groups/chapters/ch07-s01.tex",
+        "lie-groups/chapters/ch07-s02.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateCoreRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "lie-groups/chapters/ch06-s04.tex"
       ]
     },
     {
@@ -2407,7 +2428,10 @@
       "citedIn": [
         "lie-groups/chapters/ch01-open.tex",
         "lie-groups/chapters/ch03-s04.tex",
-        "lie-groups/chapters/ch03-s05.tex"
+        "lie-groups/chapters/ch03-s05.tex",
+        "lie-groups/chapters/ch07-s01.tex",
+        "lie-groups/chapters/ch07-s04.tex",
+        "lie-groups/chapters/ch08-open.tex"
       ]
     },
     {
