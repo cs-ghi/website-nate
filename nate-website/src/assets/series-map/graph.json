@@ -6,7 +6,7 @@
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 67
+      "info": 68
     }
   },
   "nodes": [
@@ -14,12 +14,16 @@
       "id": "NateAbelianVarieties",
       "title": "Abelian Varieties",
       "dir": "abelian-varieties",
-      "description": "complex tori, polarizations, theta functions, isogenies, the dual abelian variety, and abelian varieties over general fields.",
+      "description": "complex tori, polarizations, theta functions, isogenies, the dual abelian variety, and abelian varieties over general fields. Two Parts: (I) complex-analytic, complex tori, the Appell–Humbert theorem, the Riemann relations, theta functions, the dual torus and isogenies, endomorphism algebras and CM; (II) algebraic over arbitrary fields (full scheme-theoretic), rigidity, the theorem of the cube, Tate modules, the dual abelian variety and the Weil pairing, the Rosati involution and Albert's classification, Jacobians, and abelian varieties over finite fields (Frobenius, Weil conjectures, Honda–Tate). Prereqs Algebraic Geometry, Complex Analysis, Commutative Algebra, Homological Algebra; strongly recommended Elliptic Curves (the g=1 model). Keystone of the arithmetic-geometry tower, between Elliptic Curves and Shimura Varieties.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
         "arithmetic-geometry"
-      ]
+      ],
+      "links": {
+        "pdf": "abelian-varieties/EYNTKA-abelian-varieties.pdf"
+      },
+      "lastUpdated": "2026-07-13"
     },
     {
       "id": "NateAlgebra",
@@ -2271,7 +2275,8 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "lie-groups/chapters/ch01-s05.tex"
+        "lie-groups/chapters/ch01-s05.tex",
+        "lie-groups/chapters/ch03-s04.tex"
       ]
     },
     {
@@ -2287,7 +2292,10 @@
         "lie-groups/chapters/ch02-s03.tex",
         "lie-groups/chapters/ch02-s04.tex",
         "lie-groups/chapters/ch02-s05.tex",
-        "lie-groups/chapters/ch03-open.tex"
+        "lie-groups/chapters/ch03-open.tex",
+        "lie-groups/chapters/ch03-s01.tex",
+        "lie-groups/chapters/ch03-s02.tex",
+        "lie-groups/chapters/ch03-s03.tex"
       ]
     },
     {
@@ -2296,7 +2304,9 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "lie-groups/chapters/ch01-open.tex"
+        "lie-groups/chapters/ch01-open.tex",
+        "lie-groups/chapters/ch03-s04.tex",
+        "lie-groups/chapters/ch03-s05.tex"
       ]
     },
     {
@@ -2305,7 +2315,9 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "lie-groups/chapters/ch01-s05.tex"
+        "lie-groups/chapters/ch01-s05.tex",
+        "lie-groups/chapters/ch03-s03.tex",
+        "lie-groups/chapters/ch03-s04.tex"
       ]
     },
     {
