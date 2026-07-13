@@ -11,14 +11,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateProbability' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateProbability"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NateCalculus' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateCalculus"
@@ -30,6 +22,30 @@
     "message": "'NateLinAlg' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateLinAlg"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateGeometricAnalysis' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateGeometricAnalysis"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateGR' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateGR"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateProbability' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateProbability"
     ]
   },
   {
@@ -377,28 +393,10 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAbelianVarieties -> NateEllipticCurves) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateEllipticCurves"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateAbelianVarieties -> NateAlgGeo) is manual, no backing \\cite found.",
     "refs": [
       "NateAbelianVarieties",
       "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAbelianVarieties -> NateComplexAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateComplexAnalysis"
     ]
   },
   {
@@ -492,6 +490,42 @@
     ]
   },
   {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateGR -> NateRiemannianGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateGR",
+      "NateRiemannianGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateGeometricAnalysis -> NateRiemannianGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateGeometricAnalysis",
+      "NateRiemannianGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateGeometricAnalysis -> NatePDE) is manual, no backing \\cite found.",
+    "refs": [
+      "NateGeometricAnalysis",
+      "NatePDE"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateHodgeTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateHodgeTheory"
+    ]
+  },
+  {
     "kind": "heavy-reference",
     "severity": "info",
     "message": "NateAlgTop -> NateHomologicalAlg is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
@@ -543,6 +577,15 @@
     "refs": [
       "NateAnalyticNumTheory",
       "NateCFT"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLieGroups -> NateTopology is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLieGroups",
+      "NateTopology"
     ]
   },
   {

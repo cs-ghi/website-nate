@@ -1,12 +1,12 @@
 {
   "meta": {
     "generated": "2026-07-13",
-    "bookCount": 43,
-    "edgeCount": 228,
+    "bookCount": 45,
+    "edgeCount": 236,
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 67
+      "info": 72
     }
   },
   "nodes": [
@@ -14,12 +14,16 @@
       "id": "NateAbelianVarieties",
       "title": "Abelian Varieties",
       "dir": "abelian-varieties",
-      "description": "complex tori, polarizations, theta functions, isogenies, the dual abelian variety, and abelian varieties over general fields.",
+      "description": "complex tori, polarizations, theta functions, isogenies, the dual abelian variety, and abelian varieties over general fields. Two Parts: (I) complex-analytic, complex tori, the Appell–Humbert theorem, the Riemann relations, theta functions, the dual torus and isogenies, endomorphism algebras and CM; (II) algebraic over arbitrary fields (full scheme-theoretic), rigidity, the theorem of the cube, Tate modules, the dual abelian variety and the Weil pairing, the Rosati involution and Albert's classification, Jacobians, and abelian varieties over finite fields (Frobenius, Weil conjectures, Honda–Tate). Prereqs Algebraic Geometry, Complex Analysis, Commutative Algebra, Homological Algebra; strongly recommended Elliptic Curves (the g=1 model). Keystone of the arithmetic-geometry tower, between Elliptic Curves and Shimura Varieties.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
         "arithmetic-geometry"
-      ]
+      ],
+      "links": {
+        "pdf": "abelian-varieties/EYNTKA-abelian-varieties.pdf"
+      },
+      "lastUpdated": "2026-07-13"
     },
     {
       "id": "NateAlgebra",
@@ -328,6 +332,15 @@
       }
     },
     {
+      "id": "NateGeometricAnalysis",
+      "title": "Geometric Analysis",
+      "dir": null,
+      "description": "Ricci flow, minimal surfaces, spectral geometry, variational methods. Named explicitly in Riemannian Geometry Ch. 14 as a projected companion volume.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
       "id": "NateGeoRepTheory",
       "title": "Algebraic Groups and Representations",
       "dir": "geometric-representation-theory",
@@ -341,6 +354,15 @@
         "pdf": "geometric-representation-theory/EYNTKA-geo-rep-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-geo-rep-theory.pdf&name=Algebraic%20Groups%20and%20Representations&source=books"
       }
+    },
+    {
+      "id": "NateGR",
+      "title": "General Relativity",
+      "dir": null,
+      "description": "Pseudo-Riemannian geometry, the Einstein equations, causality, singularity theorems. Named explicitly in Riemannian Geometry Ch. 14 as a projected companion volume.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": []
     },
     {
       "id": "NateHarmonicAnalysis",
@@ -633,17 +655,76 @@
     },
     {
       "source": "NateAbelianVarieties",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch01-s03.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
       "target": "NateComplexAnalysis",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch01-s01.tex",
+        "abelian-varieties/drafts/scratch/ch01-s03.tex",
+        "abelian-varieties/drafts/scratch/ch01-s04.tex",
+        "abelian-varieties/drafts/scratch/ch02-s01.tex",
+        "abelian-varieties/drafts/scratch/ch02-s02.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/drafts/scratch/ch02-s04.tex",
+        "abelian-varieties/drafts/scratch/ch03-s02.tex"
+      ]
     },
     {
       "source": "NateAbelianVarieties",
       "target": "NateEllipticCurves",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch01-s01.tex",
+        "abelian-varieties/drafts/scratch/ch01-s03.tex",
+        "abelian-varieties/drafts/scratch/ch01-s04.tex",
+        "abelian-varieties/drafts/scratch/ch02-s01.tex",
+        "abelian-varieties/drafts/scratch/ch02-s03.tex",
+        "abelian-varieties/drafts/scratch/ch02-s04.tex",
+        "abelian-varieties/drafts/scratch/ch03-s01.tex",
+        "abelian-varieties/drafts/scratch/ch03-s03.tex",
+        "abelian-varieties/drafts/scratch/ch03-s04.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateHodgeTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch01-s03.tex",
+        "abelian-varieties/drafts/scratch/ch02-s02.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateHomologicalAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/drafts/scratch/ch02-s01.tex",
+        "abelian-varieties/drafts/scratch/ch02-s02.tex"
+      ]
     },
     {
       "source": "NateAlgebra",
@@ -1851,6 +1932,20 @@
       ]
     },
     {
+      "source": "NateGeometricAnalysis",
+      "target": "NatePDE",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateGeometricAnalysis",
+      "target": "NateRiemannianGeometry",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
       "source": "NateGeoRepTheory",
       "target": "NateAlgebra",
       "type": "reference",
@@ -1910,6 +2005,13 @@
       "citedIn": [
         "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
       ]
+    },
+    {
+      "source": "NateGR",
+      "target": "NateRiemannianGeometry",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateHarmonicAnalysis",
@@ -2271,7 +2373,8 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "lie-groups/chapters/ch01-s05.tex"
+        "lie-groups/chapters/ch01-s05.tex",
+        "lie-groups/chapters/ch03-s04.tex"
       ]
     },
     {
@@ -2287,7 +2390,13 @@
         "lie-groups/chapters/ch02-s03.tex",
         "lie-groups/chapters/ch02-s04.tex",
         "lie-groups/chapters/ch02-s05.tex",
-        "lie-groups/chapters/ch03-open.tex"
+        "lie-groups/chapters/ch03-open.tex",
+        "lie-groups/chapters/ch03-s01.tex",
+        "lie-groups/chapters/ch03-s02.tex",
+        "lie-groups/chapters/ch03-s03.tex",
+        "lie-groups/chapters/ch04-s01.tex",
+        "lie-groups/chapters/ch04-s02.tex",
+        "lie-groups/chapters/ch04-s05.tex"
       ]
     },
     {
@@ -2296,7 +2405,18 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "lie-groups/chapters/ch01-open.tex"
+        "lie-groups/chapters/ch01-open.tex",
+        "lie-groups/chapters/ch03-s04.tex",
+        "lie-groups/chapters/ch03-s05.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateHarmonicAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "lie-groups/chapters/ch04-s05.tex"
       ]
     },
     {
@@ -2305,7 +2425,12 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "lie-groups/chapters/ch01-s05.tex"
+        "lie-groups/chapters/ch01-s05.tex",
+        "lie-groups/chapters/ch03-s03.tex",
+        "lie-groups/chapters/ch03-s04.tex",
+        "lie-groups/chapters/ch04-s01.tex",
+        "lie-groups/chapters/ch04-s04.tex",
+        "lie-groups/chapters/ch04-s05.tex"
       ]
     },
     {
