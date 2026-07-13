@@ -442,6 +442,9 @@
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
+      "links": {
+        "pdf": "lie-groups/EYNTKA-lie-groups.pdf"
+      },
       "lastUpdated": "2026-07-03"
     },
     {
