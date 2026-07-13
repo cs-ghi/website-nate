@@ -11,14 +11,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateLocalLanglands' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateLocalLanglands"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NateProbability' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateProbability"
@@ -38,15 +30,6 @@
     "message": "'NateLinAlg' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateLinAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay coreq (NateLocalLanglands -> NateLanglandsGL2) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLocalLanglands",
-      "NateLanglandsGL2"
     ]
   },
   {
@@ -457,51 +440,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLieGroups -> NateCoreAlgebra) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLieGroups",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateCoreRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLocalLanglands",
-      "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateGeoRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLocalLanglands",
-      "NateGeoRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateLocalFieldTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLocalLanglands",
-      "NateLocalFieldTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateHarmonicAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLocalLanglands",
-      "NateHarmonicAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateLanglandsGL2 -> NateLocalFieldTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLanglandsGL2",
@@ -529,10 +467,19 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLocalLanglands -> NateCFT) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateLanglandsGL2 -> NateGeoRepTheory) is manual, no backing \\cite found.",
     "refs": [
-      "NateLocalLanglands",
-      "NateCFT"
+      "NateLanglandsGL2",
+      "NateGeoRepTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLanglandsGL2 -> NateHarmonicAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLanglandsGL2",
+      "NateHarmonicAnalysis"
     ]
   },
   {
@@ -601,7 +548,16 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateRiemannianGeometry -> NateAlgTop is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateRiemannianGeometry -> NateComplexAnalysis is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateComplexAnalysis"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NateAlgTop is cited in 14 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateRiemannianGeometry",
       "NateAlgTop"
@@ -610,10 +566,46 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateRiemannianGeometry -> NateLieGroups is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateRiemannianGeometry -> NateAlgGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateAlgGeo"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NateLieGroups is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateRiemannianGeometry",
       "NateLieGroups"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NateKTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateKTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NatePDE is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NatePDE"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NateHodgeTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateHodgeTheory"
     ]
   }
 ]
