@@ -1,12 +1,12 @@
 {
   "meta": {
     "generated": "2026-07-13",
-    "bookCount": 44,
-    "edgeCount": 227,
+    "bookCount": 43,
+    "edgeCount": 228,
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 68
+      "info": 67
     }
   },
   "nodes": [
@@ -442,9 +442,6 @@
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
-      "links": {
-        "pdf": "lie-groups/EYNTKA-lie-groups.pdf"
-      },
       "lastUpdated": "2026-07-03"
     },
     {
@@ -468,17 +465,6 @@
         "pdf": "local-field-theory/EYNTKA-local-field-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-local-field-theory.pdf&name=Local%20Field%20Theory&source=books"
       }
-    },
-    {
-      "id": "NateLocalLanglands",
-      "title": "Local Langlands",
-      "dir": null,
-      "description": "smooth representations of locally profinite groups, GL2 structure, principal series, supercuspidal representations. Evolving toward the local Langlands correspondence.",
-      "status": "planned",
-      "webPublished": false,
-      "clusters": [
-        "langlands"
-      ]
     },
     {
       "id": "NateLogic",
@@ -589,6 +575,7 @@
         "hodge"
       ],
       "links": {
+        "pdf": "riemannian-geometry/EYNTKA-riemannian-geometry.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-riemannian-geometry.pdf&name=Riemannian%20Geometry&source=books"
       },
       "lastUpdated": "2026-07-12"
@@ -597,7 +584,7 @@
       "id": "NateShimuraVarieties",
       "title": "Shimura Varieties",
       "dir": "shimura-varieties",
-      "description": "Hermitian symmetric domains, Shimura data, canonical models, and the bridge to automorphic forms.",
+      "description": "Hermitian symmetric domains, Shimura data, canonical models, and the bridge to automorphic forms. (Stub: ~570 lines, early draft.)",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -624,7 +611,7 @@
       "id": "NateToricGeometry",
       "title": "Toric Geometry",
       "dir": "toric-geometry",
-      "description": "cones and fans, toric varieties, the orbit–cone correspondence, toric divisors, and the dictionary with polytopes.",
+      "description": "cones and fans, toric varieties, the orbit–cone correspondence, toric divisors, and the dictionary with polytopes. (Stub: ~640 lines, early draft.)",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
@@ -1537,7 +1524,7 @@
     },
     {
       "source": "NateCoreRepTheory",
-      "target": "NateLieGroups",
+      "target": "NateLanglandsGL2",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1546,7 +1533,7 @@
     },
     {
       "source": "NateCoreRepTheory",
-      "target": "NateLocalLanglands",
+      "target": "NateLieGroups",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1914,7 +1901,7 @@
     },
     {
       "source": "NateGeoRepTheory",
-      "target": "NateLocalLanglands",
+      "target": "NateLanglandsGL2",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1948,7 +1935,7 @@
     },
     {
       "source": "NateHarmonicAnalysis",
-      "target": "NateLocalLanglands",
+      "target": "NateLanglandsGL2",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2247,6 +2234,20 @@
     },
     {
       "source": "NateLanglandsGL2",
+      "target": "NateGeoRepTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateHarmonicAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLanglandsGL2",
       "target": "NateLocalFieldTheory",
       "type": "prereq",
       "provenance": "manual",
@@ -2265,8 +2266,10 @@
       "source": "NateLieGroups",
       "target": "NateCoreAlgebra",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "lie-groups/chapters/ch01-s05.tex"
+      ]
     },
     {
       "source": "NateLieGroups",
@@ -2275,7 +2278,13 @@
       "provenance": "both",
       "citedIn": [
         "lie-groups/chapters/ch01-s01.tex",
-        "lie-groups/chapters/ch01-s02.tex"
+        "lie-groups/chapters/ch01-s02.tex",
+        "lie-groups/chapters/ch01-s03.tex",
+        "lie-groups/chapters/ch02-s02.tex",
+        "lie-groups/chapters/ch02-s03.tex",
+        "lie-groups/chapters/ch02-s04.tex",
+        "lie-groups/chapters/ch02-s05.tex",
+        "lie-groups/chapters/ch03-open.tex"
       ]
     },
     {
@@ -2285,6 +2294,15 @@
       "provenance": "both",
       "citedIn": [
         "lie-groups/chapters/ch01-open.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "lie-groups/chapters/ch01-s05.tex"
       ]
     },
     {
@@ -2345,48 +2363,6 @@
       "citedIn": [
         "local-field-theory/EYNTKA-local-field-theory.tex"
       ]
-    },
-    {
-      "source": "NateLocalLanglands",
-      "target": "NateCFT",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLocalLanglands",
-      "target": "NateCoreRepTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLocalLanglands",
-      "target": "NateGeoRepTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLocalLanglands",
-      "target": "NateHarmonicAnalysis",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLocalLanglands",
-      "target": "NateLanglandsGL2",
-      "type": "coreq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLocalLanglands",
-      "target": "NateLocalFieldTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateLogic",
@@ -2485,7 +2461,11 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch07-s05.tex"
+        "riemannian-geometry/chapters/ch07-s05.tex",
+        "riemannian-geometry/chapters/ch10-s03.tex",
+        "riemannian-geometry/chapters/ch10-s04.tex",
+        "riemannian-geometry/chapters/ch11-s02.tex",
+        "riemannian-geometry/chapters/ch11-s04.tex"
       ]
     },
     {
@@ -2498,7 +2478,16 @@
         "riemannian-geometry/chapters/ch07-s05.tex",
         "riemannian-geometry/chapters/ch08-s01.tex",
         "riemannian-geometry/chapters/ch08-s02.tex",
-        "riemannian-geometry/chapters/ch08-s03.tex"
+        "riemannian-geometry/chapters/ch08-s03.tex",
+        "riemannian-geometry/chapters/ch10-s03.tex",
+        "riemannian-geometry/chapters/ch10-s04.tex",
+        "riemannian-geometry/chapters/ch11-s01.tex",
+        "riemannian-geometry/chapters/ch11-s02.tex",
+        "riemannian-geometry/chapters/ch11-s03.tex",
+        "riemannian-geometry/chapters/ch11-s04.tex",
+        "riemannian-geometry/chapters/ch12-s04.tex",
+        "riemannian-geometry/chapters/ch12-s05.tex",
+        "riemannian-geometry/chapters/ch13-s02.tex"
       ]
     },
     {
@@ -2508,7 +2497,9 @@
       "provenance": "auto",
       "citedIn": [
         "riemannian-geometry/chapters/ch01-s03.tex",
-        "riemannian-geometry/chapters/ch08-s01.tex"
+        "riemannian-geometry/chapters/ch08-s01.tex",
+        "riemannian-geometry/chapters/ch10-s03.tex",
+        "riemannian-geometry/chapters/ch10-s04.tex"
       ]
     },
     {
@@ -2534,7 +2525,53 @@
         "riemannian-geometry/chapters/ch07-s05.tex",
         "riemannian-geometry/chapters/ch08-s01.tex",
         "riemannian-geometry/chapters/ch09-s02.tex",
-        "riemannian-geometry/chapters/ch09-s03.tex"
+        "riemannian-geometry/chapters/ch09-s03.tex",
+        "riemannian-geometry/chapters/ch10-s01.tex",
+        "riemannian-geometry/chapters/ch10-s02.tex",
+        "riemannian-geometry/chapters/ch10-s03.tex",
+        "riemannian-geometry/chapters/ch10-s04.tex",
+        "riemannian-geometry/chapters/ch11-s01.tex",
+        "riemannian-geometry/chapters/ch11-s02.tex",
+        "riemannian-geometry/chapters/ch11-s03.tex",
+        "riemannian-geometry/chapters/ch11-s04.tex",
+        "riemannian-geometry/chapters/ch12-s01.tex",
+        "riemannian-geometry/chapters/ch12-s03.tex",
+        "riemannian-geometry/chapters/ch12-s04.tex",
+        "riemannian-geometry/chapters/ch13-s02.tex",
+        "riemannian-geometry/frontmatter/introduction.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch12-s05.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateHodgeTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch13-open.tex",
+        "riemannian-geometry/chapters/ch13-s03.tex",
+        "riemannian-geometry/chapters/ch14-whatnext.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch11-s01.tex",
+        "riemannian-geometry/chapters/ch11-s02.tex",
+        "riemannian-geometry/chapters/ch11-s03.tex",
+        "riemannian-geometry/chapters/ch13-s03.tex",
+        "riemannian-geometry/chapters/ch14-whatnext.tex"
       ]
     },
     {
@@ -2545,7 +2582,20 @@
       "citedIn": [
         "riemannian-geometry/chapters/ch09-s01.tex",
         "riemannian-geometry/chapters/ch09-s02.tex",
-        "riemannian-geometry/chapters/ch09-s04.tex"
+        "riemannian-geometry/chapters/ch09-s04.tex",
+        "riemannian-geometry/chapters/ch14-whatnext.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NatePDE",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch12-open.tex",
+        "riemannian-geometry/chapters/ch12-s03.tex",
+        "riemannian-geometry/chapters/ch12-s04.tex",
+        "riemannian-geometry/chapters/ch12-s05.tex"
       ]
     },
     {
@@ -2554,7 +2604,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch01-s04.tex"
+        "riemannian-geometry/chapters/ch01-s04.tex",
+        "riemannian-geometry/chapters/ch12-s03.tex"
       ]
     },
     {
@@ -2670,7 +2721,6 @@
       "members": [
         "NateCoreRepTheory",
         "NateGeoRepTheory",
-        "NateLocalLanglands",
         "NateLanglandsGL2",
         "NateHarmonicAnalysis",
         "NateCFT"
