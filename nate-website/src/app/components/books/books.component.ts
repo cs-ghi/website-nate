@@ -160,6 +160,13 @@ export const booksArray: Book[]= [
     type: 'pdf'
   },
   {
+    name: 'Lie Groups',
+    desc: 'Lie groups and Lie algberas, their classification (Cartan matrices, root systems, Dynkin daigrams), and their applications in representation theory',
+    link: '././assets/pdfs/books/EYNTKA-lie-groups.pdf',
+    type: 'pdf'
+  },
+  {
+  {
     name: 'Vector Bundles and K-Theory',
     desc: 'The topological side: vector bundles, classifying spaces BO and BU, topological K^0 and K^1, Bott periodicity, and characteristic classes (Stiefel-Whitney, Chern, Euler, Pontryagin).',
     link: '././assets/pdfs/books/EYNTKA_Vector_bundles_and_K-theory.pdf',
