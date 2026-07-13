@@ -606,5 +606,14 @@
       "NateRiemannianGeometry",
       "NateAlgTop"
     ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NateLieGroups is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateLieGroups"
+    ]
   }
 ]

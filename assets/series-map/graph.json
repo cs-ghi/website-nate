@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-07-13",
     "bookCount": 44,
-    "edgeCount": 226,
+    "edgeCount": 227,
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 67
+      "info": 68
     }
   },
   "nodes": [
@@ -589,7 +589,6 @@
         "hodge"
       ],
       "links": {
-        "pdf": "riemannian-geometry/EYNTKA-riemannian-geometry.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-riemannian-geometry.pdf&name=Riemannian%20Geometry&source=books"
       },
       "lastUpdated": "2026-07-12"
@@ -2533,7 +2532,20 @@
         "riemannian-geometry/chapters/ch06-s03.tex",
         "riemannian-geometry/chapters/ch07-s01.tex",
         "riemannian-geometry/chapters/ch07-s05.tex",
-        "riemannian-geometry/chapters/ch08-s01.tex"
+        "riemannian-geometry/chapters/ch08-s01.tex",
+        "riemannian-geometry/chapters/ch09-s02.tex",
+        "riemannian-geometry/chapters/ch09-s03.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch09-s01.tex",
+        "riemannian-geometry/chapters/ch09-s02.tex",
+        "riemannian-geometry/chapters/ch09-s04.tex"
       ]
     },
     {
