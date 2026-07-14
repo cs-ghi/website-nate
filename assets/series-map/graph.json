@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-07-14",
     "bookCount": 48,
-    "edgeCount": 235,
+    "edgeCount": 236,
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 79
+      "info": 81
     }
   },
   "nodes": [
@@ -250,12 +250,13 @@
       "dir": "cstar-algebras",
       "description": "C*-algebras, Gelfand–Naimark duality, states and the GNS construction, representations, and the K-theory of C*-algebras (K_0/K_1, six-term exact sequence, Bott, the Toeplitz index map).",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "k-theory"
       ],
       "links": {
-        "pdf": "cstar-algebras/EYNTKA-cstar-algebras.pdf"
+        "pdf": "cstar-algebras/EYNTKA-cstar-algebras.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-cstar-algebras.pdf&name=C*-Algebras%20and%20K-Theory&source=books"
       },
       "lastUpdated": "2026-06-27"
     },
@@ -430,7 +431,7 @@
       "id": "NateIntersectionTheory",
       "title": "Intersection Theory",
       "dir": null,
-      "description": "*Intersection Theory*, algebraic cycles, rational equivalence and Chow groups, proper pushforward / flat pullback, Chern classes via Segre classes and the splitting principle, deformation to the normal cone, the intersection product and the Chow ring A*(X), Grothendieck–Riemann–Roch. Spine: Fulton, adapted; prereqs cited to Part I.",
+      "description": "*Intersection Theory*, algebraic cycles, rational equivalence and Chow groups, proper pushforward / flat pullback, Chern classes via Segre classes and the splitting principle, deformation to the normal cone, the intersection product and the Chow ring A*(X), cycle class maps and adequate equivalence relations, Grothendieck–Riemann–Roch, and enumerative geometry (Grassmannian Chow ring, Schubert calculus, degeneracy loci). Spine: Fulton, adapted; prereqs cited to Part I.",
       "status": "planned",
       "webPublished": false,
       "clusters": []
@@ -472,10 +473,11 @@
       "dir": "lie-groups",
       "description": "the analytic / differential-geometric half of Lie theory, complementary to the algebraic-groups treatment in Algebraic Groups and Representations. Four Parts: (I) Lie groups and their Lie algebras, matrix groups and the classical groups, the exponential map, left-invariant vector fields, the closed-subgroup theorem, the Lie group–Lie algebra correspondence, BCH, homogeneous spaces and covering groups; (II) structure of Lie algebras, solvable/nilpotent (Engel, Lie), the Cartan criteria, Weyl complete reducibility, Levi, the root space decomposition, root systems, and the Cartan–Killing classification; (III) compact Lie groups and their representations, invariant integration, the Peter–Weyl theorem, maximal tori and the Weyl integration formula, the Weyl character and dimension formulas; (IV) real forms and symmetric spaces, complexification, the Cartan decomposition, the Iwasawa decomposition KAN, and Riemannian symmetric spaces bridging to Riemannian Geometry. Running example SU(2). Prereqs Differential Geometry, Core Algebra, Core Representation Theory, Topology, Real Analysis/Functional Analysis; cites Harmonic Analysis for Haar measure.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [],
       "links": {
-        "pdf": "lie-groups/EYNTKA-lie-groups.pdf"
+        "pdf": "lie-groups/EYNTKA-lie-groups.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-lie-groups.pdf&name=Lie%20Groups&source=books"
       },
       "lastUpdated": "2026-07-03"
     },
@@ -2527,13 +2529,25 @@
     },
     {
       "source": "NateModuliStacks",
+      "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex",
+        "moduli-stacks/drafts/scratch/ch04-s01.tex",
+        "moduli-stacks/drafts/scratch/ch04-s04.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
       "target": "NateEllipticCurves",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
         "moduli-stacks/drafts/scratch/ch01-s03.tex",
-        "moduli-stacks/drafts/scratch/ch01-s04.tex"
+        "moduli-stacks/drafts/scratch/ch01-s04.tex",
+        "moduli-stacks/drafts/scratch/ch04-s04.tex"
       ]
     },
     {
@@ -2554,7 +2568,8 @@
       "provenance": "auto",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/scratch/ch02-s04.tex"
+        "moduli-stacks/drafts/scratch/ch02-s04.tex",
+        "moduli-stacks/drafts/scratch/ch04-s04.tex"
       ]
     },
     {
