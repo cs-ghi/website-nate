@@ -625,7 +625,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateModuliStacks -> NateEllipticCurves is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateModuliStacks -> NateEllipticCurves is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateModuliStacks",
       "NateEllipticCurves"
@@ -643,10 +643,28 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
+    "message": "NateModuliStacks -> NateHomologicalAlg is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateModuliStacks",
+      "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
     "message": "NateModuliStacks -> NateGeoRepTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateModuliStacks",
       "NateGeoRepTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateModuliStacks -> NateCommAlg is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateModuliStacks",
+      "NateCommAlg"
     ]
   },
   {
