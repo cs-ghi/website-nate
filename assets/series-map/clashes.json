@@ -634,10 +634,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateModuliStacks -> NateModernAlgGeo is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateModuliStacks -> NateModernAlgGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateModuliStacks",
       "NateModernAlgGeo"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateModuliStacks -> NateGeoRepTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateModuliStacks",
+      "NateGeoRepTheory"
     ]
   },
   {
