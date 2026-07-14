@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-13",
-    "bookCount": 45,
-    "edgeCount": 237,
+    "generated": "2026-07-14",
+    "bookCount": 48,
+    "edgeCount": 234,
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 74
+      "info": 78
     }
   },
   "nodes": [
@@ -42,7 +42,7 @@
       "id": "NateAlgGeo",
       "title": "Algebraic Geometry",
       "dir": "algebraic-geometry",
-      "description": "scheme theory, sheaf cohomology, curves, surfaces.",
+      "description": "**megabook**; one physical source (EYNTKA_algGeo.tex) compiling three separately-citable sub-books under a container codename. Legacy citeNateAlgGeo remain valid (they cite the scheme-theory material now in Part I); prefer the precise sub-codename going forward. The sub-books",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -52,7 +52,8 @@
       "links": {
         "pdf": "algebraic-geometry/EYNTKA_algGeo.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_algGeo.pdf&name=Algebraic%20Geometry&source=books"
-      }
+      },
+      "lastUpdated": "2026-07-13"
     },
     {
       "id": "NateAlgKTheory",
@@ -304,6 +305,19 @@
       }
     },
     {
+      "id": "NateEtaleCohomology",
+      "title": "Étale Cohomology",
+      "dir": "etale-cohomology",
+      "description": "the étale site and étale cohomology of schemes: étale/Henselian foundations, sheaves and cohomology, the cohomological Brauer group Br(X)=H^2_ét(X,G_m) (Azumaya, Gabber), proper/smooth base change and the comparison theorem, purity and Poincaré duality, ell-adic cohomology and the Weil conjectures (Deligne stated). The series' bridge from scheme theory to arithmetic geometry, and the upstream home of the geometric Brauer group. Prereqs Modern Algebraic Geometry, Commutative Algebra, Homological Algebra, Group and Galois Cohomology; **co-requisite Moduli, Deformation Theory, and Stacks** (cites its descent/sites + gerbe interpretation of H^2; supplies back the cohomological Brauer group). Feeds Moduli, Deformation Theory, and Stacks, Hodge Theory (cycle class map / comparison), Abelian Varieties.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": [],
+      "links": {
+        "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
+      },
+      "lastUpdated": "2026-07-14"
+    },
+    {
       "id": "NateFuncAnalysis",
       "title": "Functional Analysis",
       "dir": "functional-analysis",
@@ -382,19 +396,6 @@
       }
     },
     {
-      "id": "NateHodgeResearch",
-      "title": "Hodge Research",
-      "dir": "integral-hodge-conjecture",
-      "description": "frontier/research-facing companion to Hodge Theory: Saito's mixed Hodge modules, perverse sheaves, the decomposition theorem, and the integral Hodge conjecture.",
-      "status": "in-progress",
-      "webPublished": false,
-      "clusters": [],
-      "links": {
-        "pdf": "integral-hodge-conjecture/hodge_paper_notes.pdf"
-      },
-      "lastUpdated": "2026-04-29"
-    },
-    {
       "id": "NateHodgeTheory",
       "title": "Hodge Theory",
       "dir": "hodge-theory",
@@ -424,6 +425,15 @@
         "pdf": "homological-algebra/EYNTKA-homological-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-homological-algebra.pdf&name=Homological%20Algebra&source=books"
       }
+    },
+    {
+      "id": "NateIntersectionTheory",
+      "title": "Intersection Theory",
+      "dir": null,
+      "description": "*Intersection Theory*, algebraic cycles, rational equivalence and Chow groups, proper pushforward / flat pullback, Chern classes via Segre classes and the splitting principle, deformation to the normal cone, the intersection product and the Chow ring A*(X), Grothendieck–Riemann–Roch. Spine: Fulton, adapted; prereqs cited to Part I.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": []
     },
     {
       "id": "NateKTheory",
@@ -519,6 +529,28 @@
         "pdf": "measure-theory/EYNTKA-measure-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-measure-theory.pdf&name=Measure%20Theory&source=books"
       }
+    },
+    {
+      "id": "NateModernAlgGeo",
+      "title": "Modern Algebraic Geometry",
+      "dir": null,
+      "description": "*Modern Algebraic Geometry*, scheme theory, sheaves of modules, sheaf cohomology, curves and surfaces. Essentially complete (Part I ch. 1–5 are source-book voice anchors).",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateModuliStacks",
+      "title": "Moduli, Deformation Theory, and Stacks",
+      "dir": "moduli-stacks",
+      "description": "*Moduli, Deformation Theory, and Stacks*, representable moduli functors, deformation/obstruction theory, algebraic stacks, M_g. See its own Series Context entry below. The megabook.tex physically retains a bare Part III part heading pending a later reconciliation pass.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [],
+      "links": {
+        "pdf": "moduli-stacks/EYNTKA-moduli-stacks.pdf"
+      },
+      "lastUpdated": "2026-07-13"
     },
     {
       "id": "NateODE",
@@ -857,7 +889,8 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/ch-II1-s05.tex"
       ]
     },
     {
@@ -866,7 +899,8 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/ch-II1-s05.tex"
       ]
     },
     {
@@ -1852,8 +1886,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "galois-cohomology/EYNTKA-galois-cohomology.tex",
-        "galois-cohomology/EYNTKA_galois_cohomology.tex"
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
       ]
     },
     {
@@ -1898,8 +1931,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "galois-cohomology/EYNTKA-galois-cohomology.tex",
-        "galois-cohomology/EYNTKA_galois_cohomology.tex"
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
       ]
     },
     {
@@ -2068,61 +2100,6 @@
       "provenance": "auto",
       "citedIn": [
         "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
-      ]
-    },
-    {
-      "source": "NateHodgeResearch",
-      "target": "NateAlgGeo",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "integral-hodge-conjecture/hodge_paper_notes.tex"
-      ]
-    },
-    {
-      "source": "NateHodgeResearch",
-      "target": "NateAlgTop",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "integral-hodge-conjecture/hodge_paper_notes.tex"
-      ]
-    },
-    {
-      "source": "NateHodgeResearch",
-      "target": "NateClassicalAlgGeo",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "integral-hodge-conjecture/hodge_paper_notes.tex"
-      ]
-    },
-    {
-      "source": "NateHodgeResearch",
-      "target": "NateComplexAnalysis",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "integral-hodge-conjecture/EYNTKA_hodge.tex"
-      ]
-    },
-    {
-      "source": "NateHodgeResearch",
-      "target": "NateDiffGeo",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "integral-hodge-conjecture/EYNTKA_hodge.tex"
-      ]
-    },
-    {
-      "source": "NateHodgeResearch",
-      "target": "NateKTheory",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "integral-hodge-conjecture/EYNTKA_hodge.tex",
-        "integral-hodge-conjecture/hodge_paper_notes.tex"
       ]
     },
     {
@@ -2546,6 +2523,38 @@
       "provenance": "auto",
       "citedIn": [
         "measure-theory/EYNTKA-measure-theory.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex",
+        "moduli-stacks/drafts/scratch/ch01-s03.tex",
+        "moduli-stacks/drafts/scratch/ch01-s04.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateHomologicalAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/drafts/scratch/ch02-s04.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateModernAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/drafts/scratch/ch02-s01.tex",
+        "moduli-stacks/drafts/scratch/ch02-s02.tex",
+        "moduli-stacks/drafts/scratch/ch02-s03.tex",
+        "moduli-stacks/drafts/scratch/ch02-s05.tex"
       ]
     },
     {

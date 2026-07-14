@@ -11,6 +11,22 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateModernAlgGeo' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateModernAlgGeo"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateIntersectionTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateIntersectionTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateCalculus' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateCalculus"
@@ -604,6 +620,24 @@
     "refs": [
       "NateLieGroups",
       "NateTopology"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateModuliStacks -> NateEllipticCurves is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateModuliStacks",
+      "NateEllipticCurves"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateModuliStacks -> NateModernAlgGeo is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateModuliStacks",
+      "NateModernAlgGeo"
     ]
   },
   {
