@@ -111,6 +111,12 @@ export const booksArray: Book[]= [
     type: 'pdf'
   },
   {
+    name: 'Abelian Varieties',
+    desc: 'Book in progress covering currently complex tori and their cohomology/algebraicity, line bundles and Appell-Humbert Theorem, Polarization, and Riemann-Roch on Abelian varieties. ',
+    link: '././assets/pdfs/books/EYNTKA-abelian-varieties.pdf',
+    type: 'pdf'
+  },
+  {
     name: 'Geometric Representation Theory',
     desc: 'Begins with the foundational theory of linear algebraic groups, exploring them through the lens of Hopf algebras, comodules, and group actions (orbits and homogeneous spaces). Progresses to the local structure via Lie algebras, covering the Adjoint representation, Cartier\'s Theorem, quotient maps, and the intrinsic Jordan decomposition. Continues with the structure theory of solvable and reductive groups, including Borel subgroups, and culminates in the complete classification of split reductive groups using root systems, Weyl groups, and Root Data (Dynkin diagrams). Concludes with the algebraic representation theory of these groups; this part is still a work in progress.',
     link: '././assets/pdfs/books/EYNTKA-geo-rep-theory.pdf',
