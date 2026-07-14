@@ -16,12 +16,13 @@
       "dir": "abelian-varieties",
       "description": "complex tori, polarizations, theta functions, isogenies, the dual abelian variety, and abelian varieties over general fields. Two Parts: (I) complex-analytic, complex tori, the Appell–Humbert theorem, the Riemann relations, theta functions, the dual torus and isogenies, endomorphism algebras and CM; (II) algebraic over arbitrary fields (full scheme-theoretic), rigidity, the theorem of the cube, Tate modules, the dual abelian variety and the Weil pairing, the Rosati involution and Albert's classification, Jacobians, and abelian varieties over finite fields (Frobenius, Weil conjectures, Honda–Tate). Prereqs Algebraic Geometry, Complex Analysis, Commutative Algebra, Homological Algebra; strongly recommended Elliptic Curves (the g=1 model). Keystone of the arithmetic-geometry tower, between Elliptic Curves and Shimura Varieties.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "arithmetic-geometry"
       ],
       "links": {
-        "pdf": "abelian-varieties/EYNTKA-abelian-varieties.pdf"
+        "pdf": "abelian-varieties/EYNTKA-abelian-varieties.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-abelian-varieties.pdf&name=Abelian%20Varieties&source=books"
       },
       "lastUpdated": "2026-07-13"
     },
