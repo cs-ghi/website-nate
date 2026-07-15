@@ -670,19 +670,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateModuliStacks -> NateEllipticCurves is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateModuliStacks -> NateModernAlgGeo is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateModuliStacks",
-      "NateEllipticCurves"
+      "NateModernAlgGeo"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateModuliStacks -> NateModernAlgGeo is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateModuliStacks -> NateEllipticCurves is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateModuliStacks",
-      "NateModernAlgGeo"
+      "NateEllipticCurves"
     ]
   },
   {
