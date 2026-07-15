@@ -105,6 +105,12 @@ export const booksArray: Book[]= [
     type: 'pdf'
   },
   {
+    name: 'Moduli, Deformation Theory, and Stacks',
+    desc: 'formulate moduli problems as functors of points, builds the construction toolkit: fine and coarse moduli spaces, the Hilbert and Quot schemes, and Geometric Invariant Theory. Develops deformation theory: first-order deformations as cohomology (H^1 of the tangent sheaf, sections of the normal sheaf, Ext groups), obstructions, the naive cotangent complex, and Schlessinger\'s criteria. Define stacks that represent moduli problems with automorphisms: descent and Grothendieck topologies, fibered categories and stacks, algebraic spaces and Deligne-Mumford/Artin stacks with Artin\'s representability criteria, and gerbes with twisted sheaves and the Brauer group. An applications to the moduli of curves.',
+    link: '././assets/pdfs/books/EYNTKA-moduli-stacks.pdf',
+    type: 'pdf'
+  },
+  {
     name: 'Elliptic Curves',
     desc: 'Covering the basics of elliptic curves with strong influences from Silverman: Their geometry, the formal group (as well as its relation to K-theory), The Weil Conjecture and Endomorhpism group over finite fields. Solutions over local fields and over the complex numbers is included, as well as results about the Weierstrass p-function. Mordel-Weil Theorem, and integral solutions.',
     link: '././assets/pdfs/books/EYNTKA-elliptic-curves.pdf',

@@ -546,12 +546,13 @@
       "id": "NateModuliStacks",
       "title": "Moduli, Deformation Theory, and Stacks",
       "dir": "moduli-stacks",
-      "description": "*Moduli, Deformation Theory, and Stacks*, representable moduli functors, deformation/obstruction theory, algebraic stacks, M_g. See its own Series Context entry below. The megabook.tex physically retains a bare Part III part heading pending a later reconciliation pass.",
+      "description": "Moduli theory in three movements: functor-of-points representability and the construction toolkit (Hilbert/Quot schemes, geometric invariant theory); deformation theory (first-order deformations as cohomology, obstructions, the naive cotangent complex, Schlessinger's criteria); and the stacks that represent moduli problems with automorphisms (descent and sites, fibered categories, algebraic/Deligne-Mumford/Artin stacks, Artin's representability criteria, gerbes and the Brauer group). Closes with an application to the moduli of curves. Spun out from the Algebraic Geometry mega-book's Part III.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [],
       "links": {
-        "pdf": "moduli-stacks/EYNTKA-moduli-stacks.pdf"
+        "pdf": "moduli-stacks/EYNTKA-moduli-stacks.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-moduli-stacks.pdf&name=Moduli%2C%20Deformation%20Theory%2C%20and%20Stacks&source=books"
       },
       "lastUpdated": "2026-07-13"
     },
