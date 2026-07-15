@@ -533,6 +533,51 @@
     ]
   },
   {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateModuliStacks -> NateAlgGeo) is manual, no backing \\cite found.",
+    "refs": [
+      "NateModuliStacks",
+      "NateAlgGeo"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEtaleCohomology -> NateAlgGeo) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NateAlgGeo"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEtaleCohomology -> NateCommAlg) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NateCommAlg"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEtaleCohomology -> NateHomologicalAlg) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEtaleCohomology -> NateGaloisCohom) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NateGaloisCohom"
+    ]
+  },
+  {
     "kind": "heavy-reference",
     "severity": "info",
     "message": "NateAbelianVarieties -> NateHodgeTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
@@ -625,7 +670,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateModuliStacks -> NateEllipticCurves is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateModuliStacks -> NateEllipticCurves is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateModuliStacks",
       "NateEllipticCurves"
@@ -634,37 +679,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateModuliStacks -> NateModernAlgGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateModuliStacks -> NateModernAlgGeo is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateModuliStacks",
       "NateModernAlgGeo"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateModuliStacks -> NateHomologicalAlg is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateModuliStacks",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateModuliStacks -> NateGeoRepTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateModuliStacks",
-      "NateGeoRepTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateModuliStacks -> NateCommAlg is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateModuliStacks",
-      "NateCommAlg"
     ]
   },
   {

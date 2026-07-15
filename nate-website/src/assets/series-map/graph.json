@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-14",
+    "generated": "2026-07-15",
     "bookCount": 48,
-    "edgeCount": 236,
+    "edgeCount": 245,
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 81
+      "info": 83
     }
   },
   "nodes": [
@@ -344,7 +344,7 @@
       "webPublished": false,
       "clusters": [],
       "links": {
-        "pdf": "galois-cohomology/EYNTKA_galois_cohomology.pdf"
+        "pdf": "galois-cohomology/EYNTKA-galois-cohomology.pdf"
       }
     },
     {
@@ -903,7 +903,8 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/ch-II1-s05.tex"
+        "algebraic-geometry/drafts/scratch/ch-II1-s05.tex",
+        "algebraic-geometry/drafts/scratch/ch-II2-s03.tex"
       ]
     },
     {
@@ -1852,6 +1853,34 @@
       ]
     },
     {
+      "source": "NateEtaleCohomology",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateGaloisCohom",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateHomologicalAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
       "source": "NateFuncAnalysis",
       "target": "NateMeasureTheory",
       "type": "prereq",
@@ -2530,13 +2559,39 @@
     },
     {
       "source": "NateModuliStacks",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateCategoryTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex",
+        "moduli-stacks/drafts/scratch/ch06-s01.tex",
+        "moduli-stacks/drafts/scratch/ch06-s02.tex",
+        "moduli-stacks/drafts/scratch/ch07-s01.tex",
+        "moduli-stacks/drafts/scratch/ch07-s04.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
       "target": "NateCommAlg",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
         "moduli-stacks/drafts/scratch/ch04-s01.tex",
-        "moduli-stacks/drafts/scratch/ch04-s04.tex"
+        "moduli-stacks/drafts/scratch/ch04-s04.tex",
+        "moduli-stacks/drafts/scratch/ch05-s03.tex",
+        "moduli-stacks/drafts/scratch/ch06-s02.tex",
+        "moduli-stacks/drafts/scratch/ch06-s03.tex",
+        "moduli-stacks/drafts/scratch/ch06-s04.tex",
+        "moduli-stacks/drafts/scratch/ch07-s02.tex",
+        "moduli-stacks/drafts/scratch/ch08-s04.tex"
       ]
     },
     {
@@ -2548,14 +2603,40 @@
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
         "moduli-stacks/drafts/scratch/ch01-s03.tex",
         "moduli-stacks/drafts/scratch/ch01-s04.tex",
-        "moduli-stacks/drafts/scratch/ch04-s04.tex"
+        "moduli-stacks/drafts/scratch/ch04-s04.tex",
+        "moduli-stacks/drafts/scratch/ch10-s03.tex",
+        "moduli-stacks/drafts/scratch/ch10-s04.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateEtaleCohomology",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex",
+        "moduli-stacks/drafts/scratch/ch09-s02.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateGaloisCohom",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex",
+        "moduli-stacks/drafts/scratch/ch06-s03.tex",
+        "moduli-stacks/drafts/scratch/ch06-s04.tex",
+        "moduli-stacks/drafts/scratch/ch06-s05.tex",
+        "moduli-stacks/drafts/scratch/ch09-s02.tex",
+        "moduli-stacks/drafts/scratch/ch09-s03.tex"
       ]
     },
     {
       "source": "NateModuliStacks",
       "target": "NateGeoRepTheory",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
         "moduli-stacks/drafts/scratch/ch03-open.tex",
@@ -2565,12 +2646,24 @@
     {
       "source": "NateModuliStacks",
       "target": "NateHomologicalAlg",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
         "moduli-stacks/drafts/scratch/ch02-s04.tex",
-        "moduli-stacks/drafts/scratch/ch04-s04.tex"
+        "moduli-stacks/drafts/scratch/ch04-s04.tex",
+        "moduli-stacks/drafts/scratch/ch05-s02.tex",
+        "moduli-stacks/drafts/scratch/ch06-s05.tex",
+        "moduli-stacks/drafts/scratch/ch09-s01.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateIntersectionTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
@@ -2583,7 +2676,9 @@
         "moduli-stacks/drafts/scratch/ch02-s01.tex",
         "moduli-stacks/drafts/scratch/ch02-s02.tex",
         "moduli-stacks/drafts/scratch/ch02-s03.tex",
-        "moduli-stacks/drafts/scratch/ch02-s05.tex"
+        "moduli-stacks/drafts/scratch/ch02-s05.tex",
+        "moduli-stacks/drafts/scratch/ch08-s04.tex",
+        "moduli-stacks/drafts/scratch/ch10-s04.tex"
       ]
     },
     {
