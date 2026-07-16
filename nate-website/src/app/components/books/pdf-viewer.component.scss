@@ -441,6 +441,36 @@
   }
 }
 
+// Short viewports (e.g. a phone rotated to landscape, which is wider than the
+// 768px mobile breakpoint so the full header shows): keep the header thin so
+// the PDF keeps the scarce vertical space.
+@media (max-height: 600px) {
+  .pdf-header {
+    padding: 0.1rem 0.5rem;
+  }
+
+  .document-title {
+    font-size: 1rem;
+  }
+
+  .zoom-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .zoom-display {
+    font-size: 0.8rem;
+    min-width: 2.5rem;
+  }
+
+  .back-button,
+  .outline-toggle {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
 // Dark theme support
 @media (prefers-color-scheme: dark) {
   .pdf-viewer-container {
