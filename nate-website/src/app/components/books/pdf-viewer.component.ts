@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -7,8 +7,15 @@ import { Location } from '@angular/common';
   templateUrl: './pdf-viewer.component.html',
   styleUrls: ['./pdf-viewer.component.scss']
 })
-export class PdfViewerComponent implements OnInit, AfterViewInit {
+export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('pdfViewer', { static: false }) pdfViewer!: ElementRef;
+
+  // Rotation handling: track the page at the top of the viewport so we can
+  // restore it after ng2-pdf-viewer re-renders at the new width.
+  private currentTopPage: number = 1;
+  private scrollRaf: number | null = null;
+  private resizeTimer: any = null;
+  private resizeAnchorPage: number | null = null;
 
   pdfSrc: string = '';
   bookName: string = '';
@@ -68,8 +75,66 @@ export class PdfViewerComponent implements OnInit, AfterViewInit {
     });
   }
 
+  // Rotating the phone (or resizing) makes ng2-pdf-viewer re-render every page
+  // at a new width, so the old pixel scroll offset lands on a different page.
+  // Re-anchor to the page that was at the top before the reflow.
+  @HostListener('window:resize')
+  @HostListener('window:orientationchange')
+  onViewportChange(): void {
+    if (this.resizeAnchorPage === null) {
+      this.resizeAnchorPage = this.currentTopPage;
+    }
+    if (this.resizeTimer) {
+      clearTimeout(this.resizeTimer);
+    }
+    this.resizeTimer = setTimeout(() => {
+      const page = this.resizeAnchorPage ?? this.currentTopPage;
+      this.resizeAnchorPage = null;
+      this.resizeTimer = null;
+      this.scrollToPage(page);
+    }, 300);
+  }
+
   ngAfterViewInit(): void {
     this.focusPdfViewer();
+    // Scroll events from the PDF's inner container don't bubble to window, so
+    // listen in the capture phase to catch whichever element actually scrolls.
+    document.addEventListener('scroll', this.onScrollCapture, true);
+  }
+
+  ngOnDestroy(): void {
+    document.removeEventListener('scroll', this.onScrollCapture, true);
+    if (this.resizeTimer) {
+      clearTimeout(this.resizeTimer);
+    }
+    if (this.scrollRaf !== null) {
+      cancelAnimationFrame(this.scrollRaf);
+    }
+  }
+
+  private onScrollCapture = (): void => {
+    if (this.scrollRaf !== null) {
+      return;
+    }
+    this.scrollRaf = requestAnimationFrame(() => {
+      this.scrollRaf = null;
+      this.currentTopPage = this.detectTopPage();
+    });
+  };
+
+  private detectTopPage(): number {
+    const pages = document.querySelectorAll('.ng2-pdf-viewer-container .page');
+    if (pages.length === 0) {
+      return this.currentTopPage;
+    }
+    const container = document.querySelector('.ng2-pdf-viewer-container');
+    const refTop = container ? container.getBoundingClientRect().top : 0;
+    for (let i = 0; i < pages.length; i++) {
+      if (pages[i].getBoundingClientRect().bottom > refTop + 2) {
+        return i + 1;
+      }
+    }
+    return pages.length;
   }
 
   async onLoadComplete(pdf: any): Promise<void> {

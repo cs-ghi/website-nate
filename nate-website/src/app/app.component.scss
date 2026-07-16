@@ -31,5 +31,11 @@
   pointer-events: auto;
   min-height: 100vh;
 }
+// Reader routes are full-screen: match the dynamic viewport so the viewer
+// fills the screen exactly with no trailing scroll gap.
+.reader-mode .pages-stack{
+  min-height: 100vh;
+  min-height: 100dvh;
+}
 .footer{
     position: relative;}

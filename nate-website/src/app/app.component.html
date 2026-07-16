@@ -1,7 +1,7 @@
 <app-header class="header-position"></app-header>
-  <div class="rest">
+  <div class="rest" [class.reader-mode]="isReaderRoute">
     <div class="pages-stack">
         <router-outlet></router-outlet>
     </div>
-  <app-footer class="footer"></app-footer>
+  <app-footer class="footer" *ngIf="!isReaderRoute"></app-footer>
 </div>

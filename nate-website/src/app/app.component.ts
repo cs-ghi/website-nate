@@ -1,5 +1,7 @@
 // import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { PdfViewerModule } from 'ng2-pdf-viewer'; // Import the module
 
 // import { Observable } from 'rxjs';
@@ -17,12 +19,21 @@ import { PdfViewerModule } from 'ng2-pdf-viewer'; // Import the module
 
 export class AppComponent {
 
+  // Full-screen reading routes hide the global header/footer chrome.
+  isReaderRoute = false;
+
   // contactData: Contact;
   // title = 'nate';
   // menuFlag$: Observable<boolean> = this.appStateService.menuObs();
 
   // constructor
-  constructor(){}
+  constructor(private router: Router) {
+    this.router.events
+      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        this.isReaderRoute = event.urlAfterRedirects.split('?')[0] === '/pdf-viewer';
+      });
+  }
   //   private appStateService: AppStateService,
   //   private http: HttpClient
   // ) {
