@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-16",
-    "bookCount": 48,
-    "edgeCount": 249,
+    "generated": "2026-07-17",
+    "bookCount": 49,
+    "edgeCount": 258,
     "clashCounts": {
       "error": 1,
       "warn": 0,
-      "info": 83
+      "info": 80
     }
   },
   "nodes": [
@@ -103,7 +103,7 @@
         "pdf": "algebraic-topology/EYNTKA-algebraic-topology.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
       },
-      "lastUpdated": "2026-06-26"
+      "lastUpdated": "2026-07-17"
     },
     {
       "id": "NateAnalyticNumTheory",
@@ -418,7 +418,7 @@
       "title": "Hodge Theory",
       "dir": "hodge-theory",
       "description": "compact Kähler geometry, Hodge decomposition, polarized Hodge structures, Lefschetz theorems, variations of Hodge structure, period maps and Mumford–Tate domains, mixed Hodge structures, algebraic cycles.",
-      "status": "planned",
+      "status": "in-progress",
       "webPublished": false,
       "clusters": [
         "hodge"
@@ -426,7 +426,7 @@
       "links": {
         "pdf": "hodge-theory/EYNTKA-hodge-theory.pdf"
       },
-      "lastUpdated": "2026-04-29"
+      "lastUpdated": "2026-07-17"
     },
     {
       "id": "NateHomologicalAlg",
@@ -650,6 +650,19 @@
       "lastUpdated": "2026-07-16"
     },
     {
+      "id": "NateRealAut",
+      "title": "Is $(\\mathbb{R},+)$ an Automorphism Group?",
+      "dir": "real-automorphism-group",
+      "description": "a leaf research monograph compiling a reduction theory for the question \"does there exist a group G with Aut(G)cong(R,+)?\" (open). Reduces any witness to an infinite class-2 Miller group with a faithful odd-prime Prüfer action of unbounded cyclotomic level, kills every single-tower and multi-prime configuration, and reduces the sole survivor (the repeated-tower S1 sector) to a module-theoretic burial question. Three Parts: (I) *The Reduction*, abelian/locally-cyclic kills, the class-2 reduction, the Miller-group reframing; (II) *The Prüfer Regime*, the trichotomy collapse to a single cyclotomic regime, target-agnosticism, the torsion program, the odd-prime theorem via the [u]-idempotent and the Amoroso–Dvornicich height bound; (III) *The Survivor Map and the S1 Frontier*, the shear catastrophe and bigstar-theorems, the q-adic normal form, and the reduction to the burial lemma (WDL), closing with the realization target and open problems. Full-research-narrative posture (failed attempts and repairs are marked-and-included). Prereqs Core Algebra, Homological Algebra, Algebraic Number Theory; soft-cites Group and Galois Cohomology, Commutative Algebra. Compiles the Research-OS project IsRealAutRepble (D1–D60).",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [],
+      "links": {
+        "pdf": "real-automorphism-group/EYNTKA-real-automorphism-group.pdf"
+      },
+      "lastUpdated": "2026-07-17"
+    },
+    {
       "id": "NateRiemannianGeometry",
       "title": "Riemannian Geometry",
       "dir": "riemannian-geometry",
@@ -669,16 +682,16 @@
       "id": "NateShimuraVarieties",
       "title": "Shimura Varieties",
       "dir": "shimura-varieties",
-      "description": "Hermitian symmetric domains, Shimura data, canonical models, and the bridge to automorphic forms. (Stub: ~570 lines, early draft.)",
+      "description": "the arithmetic-geometry capstone above Abelian Varieties and the geometric gateway to the Langlands program, following Deligne's axiomatic Hodge-theoretic route (Milne/Deligne). Four Parts, twelve chapters: (I) *from modular curves to symmetric domains*, the modular curve as prototype, Hermitian symmetric domains and their three faces, and Hodge structures as representations of the Deligne torus S=Res_C/RG_m; (II) *Shimura data and Shimura varieties*, the axioms SV1-SV3 on a pair (G,X), the reflex field, the double-coset variety G(Q)backslash Xtimes G(A_f)/K with its component structure and Hecke action, and Baily-Borel algebraicity; (III) *canonical models and PEL moduli*, CM/special points and the reciprocity law, existence and uniqueness of canonical models over the reflex field, the Siegel variety A_g and PEL-type moduli of abelian varieties; (IV) *toward automorphic forms and Langlands*, automorphic vector bundles and forms, and the cohomology of Shimura varieties carrying Galois representations (Eichler-Shimura prototype, Langlands-Kottwitz survey). Running examples: the modular curve (GL_2) and the Siegel variety (GSp_2g). Prereqs Abelian Varieties (CM, Albert, Tate modules), Elliptic Curves, Algebraic Groups and Representations, Class Field Theory; coreq Hodge Theory (Mumford-Tate/period domains). The legacy Serre-preliminaries stub (central simple algebras / Brauer group) was archived at bootstrap and cited out to Group and Galois Cohomology/Core Algebra.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
         "arithmetic-geometry"
       ],
       "links": {
-        "pdf": "shimura-varieties/EYNTKA-Shimura_Varieties.pdf"
+        "pdf": "shimura-varieties/EYNTKA-shimura-varieties.pdf"
       },
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-17"
     },
     {
       "id": "NateTopology",
@@ -698,14 +711,14 @@
       "id": "NateToricGeometry",
       "title": "Toric Geometry",
       "dir": "toric-geometry",
-      "description": "cones and fans, toric varieties, the orbit–cone correspondence, toric divisors, and the dictionary with polytopes. (Stub: ~640 lines, early draft.)",
+      "description": "the combinatoricsleftrightarrowgeometry dictionary: tori and character lattices; affine toric varieties (the four constructions and their equivalence); rational polyhedral cones, Gordan's lemma, and normal affine toric varieties; projective toric varieties and lattice polytopes; fans and abstract toric varieties; completeness, properness, and toric morphisms; the orbit–cone correspondence; toric Weil/Cartier divisors and the class group; the Cox homogeneous-coordinate construction (toric varieties as torus quotients); ample/nef cones and line bundles; sheaf cohomology of toric varieties and toric Riemann–Roch (lattice-point counting); toric resolution of singularities; capstone on reflexive polytopes, Fano toric varieties, and Batyrev mirror symmetry. **Two-register bridge:** the combinatorial spine (Parts I–IV) is developed over k=bar k (default C) and requires only *Classical Algebraic Geometry* + *Commutative Algebra*; scheme-theoretic material is threaded as marked \"Scheme upgrade\" asides, and the cohomology Part escalates to *Algebraic Geometry* as a recommended co-requisite. The book is thus both a gateway example-bed reachable before schemes and a payoff of scheme theory, the series' canonical toric example-bed.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
       "links": {
         "pdf": "toric-geometry/EYNTKA_toric_geometry.pdf"
       },
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-17"
     }
   ],
   "edges": [
@@ -2219,6 +2232,13 @@
     },
     {
       "source": "NateHodgeTheory",
+      "target": "NateAlgTop",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHodgeTheory",
       "target": "NateComplexAnalysis",
       "type": "prereq",
       "provenance": "both",
@@ -2246,12 +2266,26 @@
     },
     {
       "source": "NateHodgeTheory",
+      "target": "NateHomologicalAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHodgeTheory",
       "target": "NateKTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
         "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
+    },
+    {
+      "source": "NateHodgeTheory",
+      "target": "NateRiemannianGeometry",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateHomologicalAlg",
@@ -2514,7 +2548,9 @@
         "lie-groups/chapters/ch03-s05.tex",
         "lie-groups/chapters/ch07-s01.tex",
         "lie-groups/chapters/ch07-s04.tex",
-        "lie-groups/chapters/ch08-open.tex"
+        "lie-groups/chapters/ch08-open.tex",
+        "lie-groups/chapters/ch08-s04.tex",
+        "lie-groups/chapters/ch08-s05.tex"
       ]
     },
     {
@@ -2815,6 +2851,51 @@
       "citedIn": []
     },
     {
+      "source": "NateRealAut",
+      "target": "NateAlgNumberTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
+      ]
+    },
+    {
+      "source": "NateRealAut",
+      "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
+      ]
+    },
+    {
+      "source": "NateRealAut",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
+      ]
+    },
+    {
+      "source": "NateRealAut",
+      "target": "NateGaloisCohom",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
+      ]
+    },
+    {
+      "source": "NateRealAut",
+      "target": "NateHomologicalAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
+      ]
+    },
+    {
       "source": "NateRiemannianGeometry",
       "target": "NateAlgGeo",
       "type": "reference",
@@ -2971,47 +3052,46 @@
       "source": "NateShimuraVarieties",
       "target": "NateAbelianVarieties",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateShimuraVarieties",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
+      "provenance": "both",
       "citedIn": [
-        "shimura-varieties/EYNTKA-Shimura_Varieties.tex"
+        "shimura-varieties/EYNTKA-shimura-varieties.tex"
       ]
     },
     {
       "source": "NateShimuraVarieties",
       "target": "NateCFT",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateShimuraVarieties",
-      "target": "NateClassicalAlgGeo",
-      "type": "reference",
-      "provenance": "auto",
+      "provenance": "both",
       "citedIn": [
-        "shimura-varieties/EYNTKA-Shimura_Varieties.tex"
+        "shimura-varieties/EYNTKA-shimura-varieties.tex"
       ]
     },
     {
       "source": "NateShimuraVarieties",
       "target": "NateEllipticCurves",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "shimura-varieties/EYNTKA-shimura-varieties.tex"
+      ]
     },
     {
       "source": "NateShimuraVarieties",
       "target": "NateGeoRepTheory",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "shimura-varieties/EYNTKA-shimura-varieties.tex"
+      ]
+    },
+    {
+      "source": "NateShimuraVarieties",
+      "target": "NateHodgeTheory",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "shimura-varieties/EYNTKA-shimura-varieties.tex"
+      ]
     },
     {
       "source": "NateTopology",
@@ -3022,7 +3102,37 @@
     },
     {
       "source": "NateToricGeometry",
-      "target": "NateAlgebra",
+      "target": "NateAlgGeo",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "toric-geometry/EYNTKA_toric_geometry.tex"
+      ]
+    },
+    {
+      "source": "NateToricGeometry",
+      "target": "NateClassicalAlgGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "toric-geometry/EYNTKA_toric_geometry.tex",
+        "toric-geometry/drafts/scratch/ch01-s01.tex"
+      ]
+    },
+    {
+      "source": "NateToricGeometry",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "toric-geometry/EYNTKA_toric_geometry.tex",
+        "toric-geometry/drafts/scratch/ch01-s01.tex",
+        "toric-geometry/drafts/scratch/ch01-s02.tex"
+      ]
+    },
+    {
+      "source": "NateToricGeometry",
+      "target": "NateHodgeTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3031,17 +3141,12 @@
     },
     {
       "source": "NateToricGeometry",
-      "target": "NateAlgGeo",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateToricGeometry",
-      "target": "NateCommAlg",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "target": "NateModuliStacks",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "toric-geometry/EYNTKA_toric_geometry.tex"
+      ]
     }
   ],
   "clusters": [
