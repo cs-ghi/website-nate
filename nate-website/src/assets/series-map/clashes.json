@@ -391,19 +391,28 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateToricGeometry -> NateAlgGeo) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateHodgeTheory -> NateAlgTop) is manual, no backing \\cite found.",
     "refs": [
-      "NateToricGeometry",
-      "NateAlgGeo"
+      "NateHodgeTheory",
+      "NateAlgTop"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateToricGeometry -> NateCommAlg) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateHodgeTheory -> NateHomologicalAlg) is manual, no backing \\cite found.",
     "refs": [
-      "NateToricGeometry",
-      "NateCommAlg"
+      "NateHodgeTheory",
+      "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHodgeTheory -> NateRiemannianGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHodgeTheory",
+      "NateRiemannianGeometry"
     ]
   },
   {
@@ -413,42 +422,6 @@
     "refs": [
       "NateAbelianVarieties",
       "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateAbelianVarieties) is manual, no backing \\cite found.",
-    "refs": [
-      "NateShimuraVarieties",
-      "NateAbelianVarieties"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateEllipticCurves) is manual, no backing \\cite found.",
-    "refs": [
-      "NateShimuraVarieties",
-      "NateEllipticCurves"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateGeoRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateShimuraVarieties",
-      "NateGeoRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateShimuraVarieties -> NateCFT) is manual, no backing \\cite found.",
-    "refs": [
-      "NateShimuraVarieties",
-      "NateCFT"
     ]
   },
   {
