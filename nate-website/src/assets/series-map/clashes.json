@@ -9,6 +9,15 @@
     ]
   },
   {
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateEllipticCurve} resolves to no known book. Fix the citation or add an alias/registry entry.",
+    "refs": [
+      "NateEllipticCurve",
+      "class-field-theory/EYNTKA-class-field-theory.tex"
+    ]
+  },
+  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateModernAlgGeo' is planned (cited/registered but has no folder yet).",
@@ -22,6 +31,14 @@
     "message": "'NateIntersectionTheory' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateIntersectionTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateRealAut' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateRealAut"
     ]
   },
   {
@@ -59,9 +76,9 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateProbability' is planned (cited/registered but has no folder yet).",
+    "message": "'NateGroupCohomology' is planned (cited/registered but has no folder yet).",
     "refs": [
-      "NateProbability"
+      "NateGroupCohomology"
     ]
   },
   {
@@ -188,15 +205,6 @@
     "refs": [
       "NateODE",
       "NateCalculus"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateProbability -> NateMeasureTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateProbability",
-      "NateMeasureTheory"
     ]
   },
   {
@@ -350,69 +358,6 @@
     "refs": [
       "NateAlgGeo",
       "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLocalFieldTheory -> NateAlgNumberTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLocalFieldTheory",
-      "NateAlgNumberTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCFT -> NateAlgNumberTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCFT",
-      "NateAlgNumberTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCFT -> NateLocalFieldTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCFT",
-      "NateLocalFieldTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCFT -> NateGaloisCohom) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCFT",
-      "NateGaloisCohom"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHodgeTheory -> NateAlgTop) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHodgeTheory",
-      "NateAlgTop"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHodgeTheory -> NateHomologicalAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHodgeTheory",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHodgeTheory -> NateRiemannianGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHodgeTheory",
-      "NateRiemannianGeometry"
     ]
   },
   {
@@ -656,6 +601,15 @@
     "refs": [
       "NateModuliStacks",
       "NateEllipticCurves"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateProbability -> NateAnalyticNumTheory is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateProbability",
+      "NateAnalyticNumTheory"
     ]
   },
   {

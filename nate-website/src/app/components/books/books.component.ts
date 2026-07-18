@@ -244,8 +244,14 @@ export const booksArray: Book[]= [
   },
   {
     name: 'Probability',
-    desc: 'Motivation and Definitions, Distributions and Expected Value, Linearity of Expectations, Variance and Correlation, Law of Large Numbers, Cliques in Erdos Reyni Graphs, Exponential Inequalities, Gaussian Distribution. Markov Chains coming soon!',
+    desc: 'Measure-theoretic probability built on measure theory: Probability Spaces and the Borel-Cantelli Lemmas, Random Variables and Independence, Expectation and its Inequalities, Laws of Large Numbers (including Hardy-Ramanujan), Weak Convergence and Characteristic Functions, the Central Limit Theorem (including Erdos-Kac), the Law of the Iterated Logarithm, Conditional Expectation, and Discrete-Time Martingales.',
     link: '././assets/pdfs/books/EYNTKA-Probability.pdf',
+    type: 'pdf'
+  },
+  {
+    name: 'Core Probability',
+    desc: 'Motivation and Definitions, Distributions and Expected Value, Linearity of Expectations, Variance and Correlation, Law of Large Numbers, Cliques in Erdos Reyni Graphs, Exponential Inequalities, Gaussian Distribution. Markov Chains coming soon!',
+    link: '././assets/pdfs/books/EYNTKA-core-probability.pdf',
     type: 'pdf'
   },
   {
