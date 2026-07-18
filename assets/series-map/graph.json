@@ -1,12 +1,12 @@
 {
   "meta": {
     "generated": "2026-07-18",
-    "bookCount": 50,
-    "edgeCount": 261,
+    "bookCount": 51,
+    "edgeCount": 262,
     "clashCounts": {
       "error": 2,
-      "warn": 0,
-      "info": 74
+      "warn": 1,
+      "info": 75
     }
   },
   "nodes": [
@@ -707,6 +707,18 @@
         "pdf": "shimura-varieties/EYNTKA-shimura-varieties.pdf"
       },
       "lastUpdated": "2026-07-17"
+    },
+    {
+      "id": "NateStatistics",
+      "title": "Mathematical Statistics",
+      "dir": "statistics",
+      "description": "Mathematical statistics on a measure-theoretic-probability base (prereq Probability): statistical models and the decision-theoretic frame, sufficiency and exponential families, point estimation (Cramér–Rao, UMVU, MLE, Bayes), hypothesis testing and confidence sets (Neyman–Pearson, likelihood ratio, duality), large-sample theory (consistency, asymptotic normality, Wilks), and the Gaussian linear model. The statistics/ML arm of the probability tower.",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "analysis-pde"
+      ],
+      "lastUpdated": "2026-07-18"
     },
     {
       "id": "NateTopology",
@@ -3190,6 +3202,13 @@
       ]
     },
     {
+      "source": "NateStatistics",
+      "target": "NateProbability",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
       "source": "NateTopology",
       "target": "NateCalculus",
       "type": "prereq",
@@ -3345,7 +3364,8 @@
         "NatePDE",
         "NateCalculus",
         "NateProbability",
-        "NateCoreProbability"
+        "NateCoreProbability",
+        "NateStatistics"
       ],
       "color": "#9a7bc8",
       "description": "The analysis ladder, from elementary analysis through measure theory and functional analysis to ODE and PDE."

@@ -1,5 +1,13 @@
 [
   {
+    "kind": "unmapped-dir",
+    "severity": "warn",
+    "message": "Directory '_archive' has no codename (add it to overlay.yaml 'dirs:').",
+    "refs": [
+      "_archive"
+    ]
+  },
+  {
     "kind": "unknown-codename",
     "severity": "error",
     "message": "\\cite{NateTop} resolves to no known book. Fix the citation or add an alias/registry entry.",
@@ -205,6 +213,15 @@
     "refs": [
       "NateODE",
       "NateCalculus"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateStatistics -> NateProbability) is manual, no backing \\cite found.",
+    "refs": [
+      "NateStatistics",
+      "NateProbability"
     ]
   },
   {
