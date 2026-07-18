@@ -152,10 +152,6 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.hasOutline = true;
         this.pdfOutline = await this.flattenOutline(outline);
 
-        if (window.innerWidth > 768) {
-          this.showOutline = true;
-        }
-
         console.log('PDF outline extracted:', this.pdfOutline);
         console.log('Use Ctrl+Shift+T to toggle table of contents');
       }
