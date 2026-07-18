@@ -129,6 +129,12 @@ export const booksArray: Book[]= [
     type: 'pdf'
   },
   {
+    name: 'Group and Galois Cohomology',
+    desc: 'Cohomology of discrete, finite, and profinite groups and its arithmetic incarnation. Profinite groups; group cohomology via derived functors and the bar resolution, low-degree interpretations and group extensions, Tate cohomology and cup products for finite groups. Cohomological dimension, pro-p groups and the Golod-Shafarevich inequality, and the Brauer group. Galois cohomology of local and global fields: local and global Tate duality, the Poitou-Tate sequence and Euler-Poincaré characteristics, class formations, and the cohomological reciprocity isomorphism C_K/N_{L/K}C_L ≅ Gal(L/K)^ab. Concludes with descent, non-abelian cohomology, and Selmer and Shafarevich-Tate groups.',
+    link: '././assets/pdfs/books/EYNTKA-galois-cohomology.pdf',
+    type: 'pdf'
+  },
+  {
     name: 'Class Field Theory',
     desc: 'These books are a continuation of the algebraic number theory chapter presented in EYTNKA Algebra. The book continues where it left off in local field teory and presents Class Field Theory using Ray class groups before continuing onto the more modern perspective using the Idele group. As a motivation for local fields and elliptic curves, these books also include a demonstration of the Hasse Principle in showing that a rational solution for a degree 2 polynomial P(x,y) exists iff it exists at each localization.',
     link: '././assets/pdfs/books/EYNTKA-class-field-theory.pdf',

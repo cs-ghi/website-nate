@@ -2,7 +2,7 @@
   "meta": {
     "generated": "2026-07-18",
     "bookCount": 51,
-    "edgeCount": 262,
+    "edgeCount": 263,
     "clashCounts": {
       "error": 2,
       "warn": 1,
@@ -3206,10 +3206,27 @@
     },
     {
       "source": "NateStatistics",
+      "target": "NateMeasureTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "statistics/EYNTKA-statistics.tex",
+        "statistics/drafts/scratch/ch01-s01.tex",
+        "statistics/drafts/scratch/ch01-s04.tex"
+      ]
+    },
+    {
+      "source": "NateStatistics",
       "target": "NateProbability",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "statistics/EYNTKA-statistics.tex",
+        "statistics/drafts/scratch/ch01-s01.tex",
+        "statistics/drafts/scratch/ch01-s02.tex",
+        "statistics/drafts/scratch/ch01-s03.tex",
+        "statistics/drafts/scratch/ch01-s04.tex"
+      ]
     },
     {
       "source": "NateTopology",

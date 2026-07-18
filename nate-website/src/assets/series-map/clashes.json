@@ -218,15 +218,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateStatistics -> NateProbability) is manual, no backing \\cite found.",
-    "refs": [
-      "NateStatistics",
-      "NateProbability"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateCoreProbability -> NateElemAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateCoreProbability",
@@ -690,6 +681,15 @@
     "refs": [
       "NateRiemannianGeometry",
       "NateHodgeTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateStatistics -> NateMeasureTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateStatistics",
+      "NateMeasureTheory"
     ]
   }
 ]
