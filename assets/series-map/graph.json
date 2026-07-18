@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-17",
-    "bookCount": 49,
-    "edgeCount": 258,
+    "generated": "2026-07-18",
+    "bookCount": 50,
+    "edgeCount": 261,
     "clashCounts": {
-      "error": 1,
+      "error": 2,
       "warn": 0,
-      "info": 80
+      "info": 74
     }
   },
   "nodes": [
@@ -85,6 +85,7 @@
         "arithmetic-geometry"
       ],
       "links": {
+        "pdf": "algebraic-number-theory/EYNTKA-algebraic-number-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-number-theory.pdf&name=Algebraic%20Number%20Theory&source=books"
       },
       "lastUpdated": "2026-07-16"
@@ -140,6 +141,9 @@
       "clusters": [
         "NateAlgebra"
       ],
+      "links": {
+        "pdf": "category-theory/EYNTKA-category-theory.pdf"
+      },
       "lastUpdated": "2026-07-16"
     },
     {
@@ -157,7 +161,7 @@
         "pdf": "class-field-theory/EYNTKA-class-field-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-class-field-theory.pdf&name=Class%20Field%20Theory&source=books"
       },
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-17"
     },
     {
       "id": "NateClassicalAlgGeo",
@@ -170,6 +174,7 @@
         "NateAlgebra"
       ],
       "links": {
+        "pdf": "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-classical-algebraic-geometry.pdf&name=Classical%20Algebraic%20Geometry&source=books"
       },
       "lastUpdated": "2026-07-16"
@@ -185,6 +190,7 @@
         "NateAlgebra"
       ],
       "links": {
+        "pdf": "commutative-algebra/EYNTKA-commutative-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-commutative-algebra.pdf&name=Commutative%20Algebra&source=books"
       },
       "lastUpdated": "2026-07-16"
@@ -352,7 +358,7 @@
       "id": "NateGaloisCohom",
       "title": "Group and Galois Cohomology",
       "dir": "galois-cohomology",
-      "description": "profinite groups, continuous cohomology, Tate duality, Brauer groups, local and global duality theorems.",
+      "description": "the series' cohomological source-book, in three arcs: **group cohomology** (discrete + finite: derived functors, the bar resolution, low-degree interpretations and extensions, homology and coinvariants, Tate cohomology and cup products), **structure theory** (cohomological dimension, pro-p groups and Golod–Shafarevich, the Brauer group), and **Galois cohomology of fields** (the profinite refinement, local and global Tate duality, the Poitou–Tate sequence, class formations and reciprocity, descent and non-abelian cohomology, Selmer/Ш). Feeds Class Field Theory, Elliptic Curves, Local Langlands for GL₂(F), Moduli, Deformation Theory, and Stacks, Étale Cohomology.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
@@ -391,6 +397,15 @@
       "title": "General Relativity",
       "dir": null,
       "description": "Pseudo-Riemannian geometry, the Einstein equations, causality, singularity theorems. Named explicitly in Riemannian Geometry Ch. 14 as a projected companion volume.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": []
+    },
+    {
+      "id": "NateGroupCohomology",
+      "title": "Group Cohomology",
+      "dir": null,
+      "description": "",
       "status": "planned",
       "webPublished": false,
       "clusters": []
@@ -521,7 +536,7 @@
         "pdf": "local-field-theory/EYNTKA-local-field-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-local-field-theory.pdf&name=Local%20Field%20Theory&source=books"
       },
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-17"
     },
     {
       "id": "NateLogic",
@@ -625,13 +640,17 @@
     {
       "id": "NateProbability",
       "title": "Probability",
-      "dir": null,
+      "dir": "probability",
       "description": "The measure-theoretic flagship (prereq measure theory): probability spaces as measure spaces, random variables and independence, modes of convergence, laws of large numbers, characteristic functions and the central limit theorem, conditional expectation via Radon–Nikodym, and discrete-time martingales. Ends before continuous-time processes.",
-      "status": "planned",
+      "status": "in-progress",
       "webPublished": false,
       "clusters": [
         "analysis-pde"
-      ]
+      ],
+      "links": {
+        "pdf": "probability/EYNTKA-probability.pdf"
+      },
+      "lastUpdated": "2026-07-17"
     },
     {
       "id": "NateRealAnalysis",
@@ -652,15 +671,11 @@
     {
       "id": "NateRealAut",
       "title": "Is $(\\mathbb{R},+)$ an Automorphism Group?",
-      "dir": "real-automorphism-group",
+      "dir": null,
       "description": "a leaf research monograph compiling a reduction theory for the question \"does there exist a group G with Aut(G)cong(R,+)?\" (open). Reduces any witness to an infinite class-2 Miller group with a faithful odd-prime Prüfer action of unbounded cyclotomic level, kills every single-tower and multi-prime configuration, and reduces the sole survivor (the repeated-tower S1 sector) to a module-theoretic burial question. Three Parts: (I) *The Reduction*, abelian/locally-cyclic kills, the class-2 reduction, the Miller-group reframing; (II) *The Prüfer Regime*, the trichotomy collapse to a single cyclotomic regime, target-agnosticism, the torsion program, the odd-prime theorem via the [u]-idempotent and the Amoroso–Dvornicich height bound; (III) *The Survivor Map and the S1 Frontier*, the shear catastrophe and bigstar-theorems, the q-adic normal form, and the reduction to the burial lemma (WDL), closing with the realization target and open problems. Full-research-narrative posture (failed attempts and repairs are marked-and-included). Prereqs Core Algebra, Homological Algebra, Algebraic Number Theory; soft-cites Group and Galois Cohomology, Commutative Algebra. Compiles the Research-OS project IsRealAutRepble (D1–D60).",
-      "status": "in-progress",
+      "status": "planned",
       "webPublished": false,
-      "clusters": [],
-      "links": {
-        "pdf": "real-automorphism-group/EYNTKA-real-automorphism-group.pdf"
-      },
-      "lastUpdated": "2026-07-17"
+      "clusters": []
     },
     {
       "id": "NateRiemannianGeometry",
@@ -1350,8 +1365,19 @@
       "source": "NateCFT",
       "target": "NateAlgNumberTheory",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateAnalyticNumTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
     },
     {
       "source": "NateCFT",
@@ -1366,15 +1392,37 @@
       "source": "NateCFT",
       "target": "NateGaloisCohom",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateLanglandsGL2",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
     },
     {
       "source": "NateCFT",
       "target": "NateLocalFieldTheory",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateShimuraVarieties",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
     },
     {
       "source": "NateClassicalAlgGeo",
@@ -2227,15 +2275,22 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex",
+        "hodge-theory/drafts/scratch/ch02-open.tex",
+        "hodge-theory/drafts/scratch/ch02-s01.tex",
+        "hodge-theory/drafts/scratch/ch02-s03.tex",
+        "hodge-theory/drafts/scratch/ch02-s04.tex"
       ]
     },
     {
       "source": "NateHodgeTheory",
       "target": "NateAlgTop",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex",
+        "hodge-theory/drafts/scratch/ch02-s04.tex"
+      ]
     },
     {
       "source": "NateHodgeTheory",
@@ -2243,7 +2298,10 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex",
+        "hodge-theory/drafts/scratch/ch02-s01.tex",
+        "hodge-theory/drafts/scratch/ch02-s02.tex",
+        "hodge-theory/drafts/scratch/ch02-s04.tex"
       ]
     },
     {
@@ -2252,7 +2310,8 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex",
+        "hodge-theory/drafts/scratch/ch02-s01.tex"
       ]
     },
     {
@@ -2268,8 +2327,11 @@
       "source": "NateHodgeTheory",
       "target": "NateHomologicalAlg",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex",
+        "hodge-theory/drafts/scratch/ch02-s04.tex"
+      ]
     },
     {
       "source": "NateHodgeTheory",
@@ -2284,8 +2346,12 @@
       "source": "NateHodgeTheory",
       "target": "NateRiemannianGeometry",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex",
+        "hodge-theory/drafts/scratch/ch03-s02.tex",
+        "hodge-theory/drafts/scratch/ch03-s03.tex"
+      ]
     },
     {
       "source": "NateHomologicalAlg",
@@ -2605,8 +2671,19 @@
       "source": "NateLocalFieldTheory",
       "target": "NateAlgNumberTheory",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
     },
     {
       "source": "NateLocalFieldTheory",
@@ -2619,7 +2696,34 @@
     },
     {
       "source": "NateLocalFieldTheory",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalFieldTheory",
       "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateGaloisCohom",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "local-field-theory/EYNTKA-local-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateLocalFieldTheory",
+      "target": "NateLanglandsGL2",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2838,10 +2942,47 @@
     },
     {
       "source": "NateProbability",
+      "target": "NateAnalyticNumTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "probability/EYNTKA-probability.tex",
+        "probability/drafts/scratch/ch05-s04.tex",
+        "probability/drafts/scratch/ch07-s05.tex",
+        "probability/drafts/whatnext.tex"
+      ]
+    },
+    {
+      "source": "NateProbability",
       "target": "NateMeasureTheory",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "probability/EYNTKA-probability.tex",
+        "probability/drafts/frontmatter.tex",
+        "probability/drafts/scratch/ch01-open.tex",
+        "probability/drafts/scratch/ch01-s01.tex",
+        "probability/drafts/scratch/ch01-s03.tex",
+        "probability/drafts/scratch/ch02-s01.tex",
+        "probability/drafts/scratch/ch02-s03.tex",
+        "probability/drafts/scratch/ch03-open.tex",
+        "probability/drafts/scratch/ch03-s01.tex",
+        "probability/drafts/scratch/ch03-s02.tex",
+        "probability/drafts/scratch/ch03-s03.tex",
+        "probability/drafts/scratch/ch03-s04.tex",
+        "probability/drafts/scratch/ch05-s02.tex",
+        "probability/drafts/scratch/ch06-s01.tex",
+        "probability/drafts/scratch/ch06-s03.tex",
+        "probability/drafts/scratch/ch06-s04.tex",
+        "probability/drafts/scratch/ch07-s05.tex",
+        "probability/drafts/scratch/ch09-s01.tex",
+        "probability/drafts/scratch/ch09-s02.tex",
+        "probability/drafts/scratch/ch09-s04.tex",
+        "probability/drafts/scratch/ch10-s02.tex",
+        "probability/drafts/scratch/ch10-s03.tex",
+        "probability/drafts/scratch/ch10-s04.tex",
+        "probability/drafts/scratch/ch10-s05.tex"
+      ]
     },
     {
       "source": "NateRealAnalysis",
@@ -2849,51 +2990,6 @@
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
-    },
-    {
-      "source": "NateRealAut",
-      "target": "NateAlgNumberTheory",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
-      ]
-    },
-    {
-      "source": "NateRealAut",
-      "target": "NateCommAlg",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
-      ]
-    },
-    {
-      "source": "NateRealAut",
-      "target": "NateCoreAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
-      ]
-    },
-    {
-      "source": "NateRealAut",
-      "target": "NateGaloisCohom",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
-      ]
-    },
-    {
-      "source": "NateRealAut",
-      "target": "NateHomologicalAlg",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "real-automorphism-group/EYNTKA-real-automorphism-group.tex"
-      ]
     },
     {
       "source": "NateRiemannianGeometry",

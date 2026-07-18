@@ -13,8 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="./assets/index-b1WdjwWe.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-P6DcAMU_.css">
+    <script type="module" crossorigin src="./assets/index-CfHdIgQu.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bd891O6g.css">
   </head>
   <body>
     <div id="app">
@@ -78,8 +78,8 @@
           </div>
           <div class="control-group" role="group" aria-label="View">
             <button class="btn" data-action="fit" title="Fit graph to screen">Fit</button>
-            <button class="btn" data-action="reset" title="Clear selection / filters">Reset</button>
             <button class="btn" id="theme-btn" data-action="theme" title="Toggle light / dark / auto theme">◐ Auto</button>
+            <button class="btn btn-help" data-action="help" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts">?</button>
           </div>
         </div>
       </header>
@@ -99,7 +99,7 @@
           <div class="legend-body" id="legend-body"><!-- filled by ui.ts --></div>
         </section>
 
-        <aside id="drawer" class="panel" aria-hidden="true">
+        <aside id="drawer" class="panel" aria-hidden="true" tabindex="-1">
           <button id="drawer-close" class="drawer-close" aria-label="Close">×</button>
           <div id="drawer-body"><!-- filled by ui.ts --></div>
         </aside>
@@ -109,6 +109,20 @@
         <span id="status-counts"></span>
         <span id="status-hint" class="hint">Click a book for details · click an edge to see why it exists</span>
       </footer>
+
+      <div id="shortcuts" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="shortcuts-title">
+        <div class="overlay-card panel">
+          <button id="shortcuts-close" class="drawer-close" aria-label="Close">×</button>
+          <h2 class="ov-title" id="shortcuts-title">Keyboard shortcuts</h2>
+          <dl class="kbd-list">
+            <div><dt><kbd>/</kbd> <span class="kbd-or">or</span> <kbd>⌘</kbd><kbd>K</kbd></dt><dd>Focus search</dd></div>
+            <div><dt><kbd>↵</kbd></dt><dd>Open the top search result</dd></div>
+            <div><dt><kbd>Esc</kbd></dt><dd>Close / clear selection</dd></div>
+            <div><dt><kbd>?</kbd></dt><dd>Toggle this help</dd></div>
+          </dl>
+          <p class="ov-foot">Click a book for details · click an edge to see why it exists.</p>
+        </div>
+      </div>
     </div>
 
   </body>
