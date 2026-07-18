@@ -1,12 +1,12 @@
 {
   "meta": {
     "generated": "2026-07-18",
-    "bookCount": 51,
-    "edgeCount": 263,
+    "bookCount": 52,
+    "edgeCount": 269,
     "clashCounts": {
       "error": 2,
       "warn": 1,
-      "info": 75
+      "info": 77
     }
   },
   "nodes": [
@@ -135,7 +135,7 @@
       "id": "NateCategoryTheory",
       "title": "Category Theory",
       "dir": "category-theory",
-      "description": "categories, functors, natural transformations, (co)limits, adjunctions, the Yoneda lemma, monads, abelian categories. Compiled into the *Algebra* mega-book.",
+      "description": "the working categorical language (strict 1-category theory), in eight chapters: categories/functors/natural transformations, the Yoneda lemma and representability, universal properties with limits and colimits, adjunctions (including the adjoint functor theorems), monads and their algebras, **Kan extensions** as the core-theory capstone (\"all concepts are Kan extensions\"), then a structured-categories coda, **monoidal categories** (Mac Lane coherence, symmetric/closed) and **enriched and (strict) 2-categories**, that ends by pointing across the coherence seam to the weak/homotopical sequel Higher Category Theory. Standing cast of example categories in place of one running example; arc credited to Riehl's *Category Theory in Context*. **Abelian categories are deliberately ceded to Homological Algebra**. A subfiles sub-book compiled into the *Algebra* mega-book (the \"Category Theory\" Part) that also compiles standalone with the full EYNTKA skeleton, guarded via ifstandalonesubfile.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -144,7 +144,7 @@
       "links": {
         "pdf": "category-theory/EYNTKA-category-theory.pdf"
       },
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-18"
     },
     {
       "id": "NateCFT",
@@ -239,7 +239,7 @@
       ],
       "links": {
         "pdf": "core-probability/EYNTKA-core-probability.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Core%20Probability&source=books"
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-probability.pdf&name=Core%20Probability&source=books"
       },
       "lastUpdated": "2026-07-16"
     },
@@ -427,6 +427,19 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-harmonic-analysis.pdf&name=Harmonic%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16"
+    },
+    {
+      "id": "NateHigherCategoryTheory",
+      "title": "Higher Category Theory",
+      "dir": "higher-category-theory",
+      "description": "The weak / homotopy-coherent / higher-dimensional sequel to Category Theory: simplicial sets and nerves, model categories (Quillen), quasi-categories / ∞-categories (Lurie–Riehl), homotopy (co)limits, stable ∞-categories and the bridge to derived/triangulated categories, and a survey of ∞-toposes.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": [],
+      "links": {
+        "pdf": "higher-category-theory/EYNTKA-higher-category-theory.pdf"
+      },
+      "lastUpdated": "2026-07-18"
     },
     {
       "id": "NateHodgeTheory",
@@ -643,12 +656,13 @@
       "dir": "probability",
       "description": "The measure-theoretic flagship (prereq measure theory): probability spaces as measure spaces, random variables and independence, modes of convergence, laws of large numbers, characteristic functions and the central limit theorem, conditional expectation via Radon–Nikodym, and discrete-time martingales. Ends before continuous-time processes.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "analysis-pde"
       ],
       "links": {
-        "pdf": "probability/EYNTKA-probability.pdf"
+        "pdf": "probability/EYNTKA-probability.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-probability.pdf&name=Probability&source=books"
       },
       "lastUpdated": "2026-07-18"
     },
@@ -1362,10 +1376,50 @@
     },
     {
       "source": "NateCategoryTheory",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "category-theory/EYNTKA-category-theory.tex",
+        "category-theory/drafts/scratch/ch01-s04.tex"
+      ]
+    },
+    {
+      "source": "NateCategoryTheory",
       "target": "NateCoreAlgebra",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "category-theory/EYNTKA-category-theory.tex",
+        "category-theory/drafts/scratch/ch01-s01.tex",
+        "category-theory/drafts/scratch/ch01-s02.tex",
+        "category-theory/drafts/scratch/ch01-s04.tex",
+        "category-theory/drafts/scratch/ch01-s05.tex",
+        "category-theory/drafts/scratch/ch02-s01.tex",
+        "category-theory/drafts/scratch/ch03-s01.tex",
+        "category-theory/drafts/scratch/ch03-s03.tex",
+        "category-theory/drafts/scratch/ch03-s04.tex",
+        "category-theory/drafts/scratch/ch04-s01.tex",
+        "category-theory/drafts/scratch/ch04-s02.tex"
+      ]
+    },
+    {
+      "source": "NateCategoryTheory",
+      "target": "NateHigherCategoryTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "category-theory/EYNTKA-category-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCategoryTheory",
+      "target": "NateModuliStacks",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "category-theory/EYNTKA-category-theory.tex"
+      ]
     },
     {
       "source": "NateCFT",
@@ -2283,6 +2337,27 @@
       "citedIn": [
         "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
       ]
+    },
+    {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateAlgTop",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateCategoryTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateHomologicalAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateHodgeTheory",
@@ -3212,7 +3287,9 @@
       "citedIn": [
         "statistics/EYNTKA-statistics.tex",
         "statistics/drafts/scratch/ch01-s01.tex",
-        "statistics/drafts/scratch/ch01-s04.tex"
+        "statistics/drafts/scratch/ch01-s04.tex",
+        "statistics/drafts/scratch/ch02-s01.tex",
+        "statistics/drafts/scratch/ch02-s04.tex"
       ]
     },
     {
@@ -3225,7 +3302,9 @@
         "statistics/drafts/scratch/ch01-s01.tex",
         "statistics/drafts/scratch/ch01-s02.tex",
         "statistics/drafts/scratch/ch01-s03.tex",
-        "statistics/drafts/scratch/ch01-s04.tex"
+        "statistics/drafts/scratch/ch01-s04.tex",
+        "statistics/drafts/scratch/ch02-s01.tex",
+        "statistics/drafts/scratch/ch02-s04.tex"
       ]
     },
     {

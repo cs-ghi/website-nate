@@ -299,15 +299,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCategoryTheory -> NateCoreAlgebra) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCategoryTheory",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateHomologicalAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateHomologicalAlg",
@@ -366,6 +357,33 @@
     "refs": [
       "NateAlgGeo",
       "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHigherCategoryTheory -> NateCategoryTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHigherCategoryTheory",
+      "NateCategoryTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHigherCategoryTheory -> NateHomologicalAlg) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHigherCategoryTheory",
+      "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHigherCategoryTheory -> NateAlgTop) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHigherCategoryTheory",
+      "NateAlgTop"
     ]
   },
   {
@@ -686,7 +704,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateStatistics -> NateMeasureTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateStatistics -> NateMeasureTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateStatistics",
       "NateMeasureTheory"
