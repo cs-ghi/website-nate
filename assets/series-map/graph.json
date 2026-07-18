@@ -718,6 +718,9 @@
       "clusters": [
         "analysis-pde"
       ],
+      "links": {
+        "pdf": "statistics/EYNTKA-statistics.pdf"
+      },
       "lastUpdated": "2026-07-18"
     },
     {
