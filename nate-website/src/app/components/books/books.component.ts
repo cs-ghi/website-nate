@@ -98,8 +98,7 @@ export const booksArray: Book[]= [
       },
       {
         name: 'Category Theory',
-        desc: 'The categorical language of modern mathematics, developed for use rather than recital. Begins with categories, functors, and natural transformations, then the Yoneda Lemma and the functor of points. Covers universal properties, limits and colimits; adjunctions and the adjoint functor theorems (GAFT/SAFT); monads with their Eilenberg-Moore and Kleisli algebras and Beck monadicity; and Kan extensions (via ends, coends, and density) as the capstone of the core theory. Concludes with the strict structured categories: monoidal categories and Mac Lane\'s coherence theorem, then enriched and 2-categories as the bridge across the coherence seam to higher category theory. A standalone-capable sub-book of the Algebra mega-book.',
-        link: '././assets/pdfs/books/EYNTKA-category-theory.pdf',
+        desc: 'Categories, functors, and natural transformations. Yoneda\'s Lemma and the functor of points. Universal properties, limits and colimits, adjunctions and the adjoint functor theorems (GAFT/SAFT). Monads with their Eilenberg-Moore and Kleisli algebras and Beck monadicity. Kan extensions via ends, coends, and density. Monoidal categories and Mac Lane\'s coherence theorem, and enriched and 2-categories ', link: '././assets/pdfs/books/EYNTKA-category-theory.pdf',
         type: 'pdf'
       },
     ]
