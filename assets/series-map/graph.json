@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-07-18",
+    "generated": "2026-07-19",
     "bookCount": 52,
-    "edgeCount": 269,
+    "edgeCount": 270,
     "clashCounts": {
       "error": 2,
       "warn": 1,
@@ -137,12 +137,13 @@
       "dir": "category-theory",
       "description": "the working categorical language (strict 1-category theory), in eight chapters: categories/functors/natural transformations, the Yoneda lemma and representability, universal properties with limits and colimits, adjunctions (including the adjoint functor theorems), monads and their algebras, **Kan extensions** as the core-theory capstone (\"all concepts are Kan extensions\"), then a structured-categories coda, **monoidal categories** (Mac Lane coherence, symmetric/closed) and **enriched and (strict) 2-categories**, that ends by pointing across the coherence seam to the weak/homotopical sequel Higher Category Theory. Standing cast of example categories in place of one running example; arc credited to Riehl's *Category Theory in Context*. **Abelian categories are deliberately ceded to Homological Algebra**. A subfiles sub-book compiled into the *Algebra* mega-book (the \"Category Theory\" Part) that also compiles standalone with the full EYNTKA skeleton, guarded via ifstandalonesubfile.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "NateAlgebra"
       ],
       "links": {
-        "pdf": "category-theory/EYNTKA-category-theory.pdf"
+        "pdf": "category-theory/EYNTKA-category-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-category-theory.pdf&name=Category%20Theory&source=books"
       },
       "lastUpdated": "2026-07-18"
     },
@@ -1403,7 +1404,12 @@
         "category-theory/drafts/scratch/ch04-s02.tex",
         "category-theory/drafts/scratch/ch05-s01.tex",
         "category-theory/drafts/scratch/ch05-s02.tex",
-        "category-theory/drafts/scratch/ch05-s04.tex"
+        "category-theory/drafts/scratch/ch05-s04.tex",
+        "category-theory/drafts/scratch/ch07-s01.tex",
+        "category-theory/drafts/scratch/ch07-s02.tex",
+        "category-theory/drafts/scratch/ch07-s04.tex",
+        "category-theory/drafts/scratch/ch08-s01.tex",
+        "category-theory/drafts/scratch/ch08-s04.tex"
       ]
     },
     {
@@ -1412,7 +1418,18 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "category-theory/EYNTKA-category-theory.tex"
+        "category-theory/EYNTKA-category-theory.tex",
+        "category-theory/drafts/scratch/ch08-s04.tex"
+      ]
+    },
+    {
+      "source": "NateCategoryTheory",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "category-theory/EYNTKA-category-theory.tex",
+        "category-theory/drafts/scratch/ch07-s04.tex"
       ]
     },
     {
