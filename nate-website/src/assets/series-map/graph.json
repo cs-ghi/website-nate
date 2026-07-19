@@ -424,7 +424,6 @@
         "analysis-pde"
       ],
       "links": {
-        "pdf": "harmonic-analysis/EYNTKA-harmonic-analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-harmonic-analysis.pdf&name=Harmonic%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16"
@@ -578,7 +577,6 @@
         "analysis-pde"
       ],
       "links": {
-        "pdf": "measure-theory/EYNTKA-measure-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-measure-theory.pdf&name=Measure%20Theory&source=books"
       },
       "lastUpdated": "2026-07-16"
