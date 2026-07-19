@@ -1,5 +1,5 @@
 <div class="pdf-viewer-container">
-  <div class="pdf-header">
+  <div class="pdf-header" *ngIf="headerVisible">
     <div class="header-actions">
       <h2 class="document-title">{{ noteName }}</h2>
       <div class="zoom-controls">
@@ -14,8 +14,17 @@
       <button class="back-button" (click)="goBack()">
         <span>←</span> Back to Notes
       </button>
+
+      <!-- Far right: Close bar (reopen via the floating button) -->
+      <button class="close-header" (click)="hideHeader()"
+              title="Hide this bar for more screen space"
+              aria-label="Hide top bar">×</button>
     </div>
   </div>
+
+  <!-- Floating reopen button, shown only while the bar is hidden -->
+  <button *ngIf="!headerVisible" class="reader-reopen" (click)="showHeader()"
+          title="Show the toolbar" aria-label="Show toolbar">☰</button>
 
   <div class="pdf-content">
     <div *ngIf="isLoading" class="loading-spinner">

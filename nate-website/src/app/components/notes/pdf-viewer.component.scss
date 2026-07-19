@@ -1,3 +1,5 @@
+@import 'src/sass/reader-toolbar';
+
 .pdf-viewer-container {
   display: flex;
   flex-direction: column;
@@ -179,12 +181,9 @@
 }
 
 
-// Mobile styles - hide header on mobile devices
+// Mobile styles - the toolbar shows here too now (closable via ×); its
+// presence is driven by the *ngIf, so the flex layout sizes the PDF area.
 @media (max-width: 768px) {
-  .pdf-header {
-    display: none;
-  }
-
   .header-actions {
     flex-direction: column;
     gap: 0.125rem;
@@ -220,29 +219,10 @@
     min-width: 2.5rem;
   }
 
-  .pdf-content {
-    height: 100vh; // Full height since header is hidden
-  }
-
-  .pdf-display {
-    min-height: 100vh; // Full height since header is hidden on mobile
-  }
 }
 
-// Mobile styles - hide header on mobile devices
+// Mobile: hide the PDF.js internal toolbars/headers.
 @media (max-width: 768px) {
-  .pdf-header {
-    display: none !important;
-  }
-
-  .pdf-content {
-    height: 100vh !important;
-  }
-
-  .pdf-display {
-    min-height: 100vh !important;
-  }
-
   // Hide PDF viewer's internal toolbar/header
   ::ng-deep .ng2-pdf-viewer-container .toolbar {
     display: none !important;

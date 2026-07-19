@@ -16,6 +16,11 @@ export class PdfViewerComponent implements OnInit, AfterViewInit {
   error: string = '';
   currentZoom: number = 1;
 
+  // Whether the top bar is shown. Starts hidden on mobile (≤768px, matching the
+  // stylesheet breakpoint) to keep the reader full-screen; open on wider
+  // screens. Toggled by the × and the floating reopen button — no refresh.
+  headerVisible: boolean = window.innerWidth > 768;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -66,6 +71,14 @@ export class PdfViewerComponent implements OnInit, AfterViewInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  hideHeader(): void {
+    this.headerVisible = false;
+  }
+
+  showHeader(): void {
+    this.headerVisible = true;
   }
 
   zoomIn(): void {

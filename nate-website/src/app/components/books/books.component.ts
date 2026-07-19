@@ -141,7 +141,7 @@ export const booksArray: Book[]= [
   },
   {
     name: 'Class Field Theory',
-    desc: 'These books are a continuation of the algebraic number theory chapter presented in EYTNKA Algebra. The book continues where it left off in local field teory and presents Class Field Theory using Ray class groups before continuing onto the more modern perspective using the Idele group. As a motivation for local fields and elliptic curves, these books also include a demonstration of the Hasse Principle in showing that a rational solution for a degree 2 polynomial P(x,y) exists iff it exists at each localization.',
+    desc: 'Local field theory. Class field theory via ray class groups, then the modern idele-theoretic perspective. The Hasse principle for degree-2 forms: a rational solution to P(x,y) exists iff one exists at every localization.',
     link: '././assets/pdfs/books/EYNTKA-class-field-theory.pdf',
     type: 'pdf'
   },
@@ -172,7 +172,7 @@ export const booksArray: Book[]= [
   },
   {
     name: 'Riemann Geometry',
-    desc: 'Riemann and Pseudo-Riemann metric, Levi-Cavita Connections, Geodescis, the curvature tensor, Jacobian Fields, Comparison Theorems',
+    desc: 'Riemannian and pseudo-Riemannian metrics, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor. Jacobi fields and conjugate points, completeness and comparison theorems. Submanifold geometry, and curvature and topology. Homogeneous and symmetric spaces. Connections and curvature on vector bundles, Chern-Weil theory. The Hodge-de Rham theorem and the Bochner technique.',
     link: '././assets/pdfs/books/EYNTKA-riemannian-geometry.pdf',
     type: 'pdf'
   },
@@ -184,7 +184,7 @@ export const booksArray: Book[]= [
   },
   {
     name: 'Lie Groups',
-    desc: 'Lie groups and Lie algberas, their classification (Cartan matrices, root systems, Dynkin daigrams), and their applications in representation theory',
+    desc: 'Matrix Lie groups and the classical groups. Lie groups as manifolds and their Lie algebras, and the Lie group-Lie algebra correspondence. Homogeneous spaces, actions, and covering groups. Structure theory of Lie algebras: nilpotent and solvable, semisimple and the Cartan criteria, Cartan subalgebras and the root space decomposition, culminating in root systems and the classification (Cartan matrices, Dynkin diagrams). Compact groups, the Peter-Weyl theorem, and the Weyl character formula coming soon.',
     link: '././assets/pdfs/books/EYNTKA-lie-groups.pdf',
     type: 'pdf'
   },

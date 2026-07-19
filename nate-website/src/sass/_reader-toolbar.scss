@@ -1,0 +1,81 @@
+// Shared controls for the full-screen PDF readers (books + notes viewers).
+// Both viewers @import this so the close/reopen affordances stay in sync.
+
+// Close button that lives at the right end of the reader toolbar. Hides the
+// whole bar; a floating .reader-reopen button brings it back (no refresh).
+.close-header {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &:hover {
+    background-color: #d32f2f;
+    border-color: #d32f2f;
+    color: #fff;
+  }
+}
+
+// Floating button, shown only while the toolbar is hidden, that restores it.
+// Deliberately small and low-opacity so it barely intrudes on the page.
+.reader-reopen {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1100;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  color: #333;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.7;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    background-color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .close-header {
+    background-color: #2d2d2d;
+    color: #ccc;
+    border-color: #444;
+
+    &:hover {
+      background-color: #d32f2f;
+      border-color: #d32f2f;
+      color: #fff;
+    }
+  }
+
+  .reader-reopen {
+    background-color: rgba(45, 45, 45, 0.85);
+    color: #eee;
+    border-color: #444;
+
+    &:hover {
+      background-color: #2d2d2d;
+    }
+  }
+}

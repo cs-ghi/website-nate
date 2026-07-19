@@ -31,6 +31,11 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   pdfOutline: any[] = [];
   private pdfDocument: any;
 
+  // Whether the top bar is shown. Starts hidden on mobile (≤768px, matching the
+  // stylesheet breakpoint) to keep the reader full-screen; open on wider
+  // screens. Toggled by the × and the floating reopen button — no refresh.
+  headerVisible: boolean = window.innerWidth > 768;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -205,6 +210,14 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   // Outline methods
   toggleOutline(): void {
     this.showOutline = !this.showOutline;
+  }
+
+  hideHeader(): void {
+    this.headerVisible = false;
+  }
+
+  showHeader(): void {
+    this.headerVisible = true;
   }
 
   private async flattenOutline(outline: any[], level: number = 0): Promise<any[]> {

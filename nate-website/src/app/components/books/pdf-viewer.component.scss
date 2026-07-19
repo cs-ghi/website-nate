@@ -1,3 +1,5 @@
+@import 'src/sass/reader-toolbar';
+
 .pdf-viewer-container {
   display: flex;
   flex-direction: column;
@@ -328,12 +330,9 @@
   min-height: calc(100dvh - 100px);
 }
 
-// Mobile styles - hide header on mobile devices
+// Mobile styles - the toolbar shows here too now (closable via ×); its
+// presence is driven by the *ngIf, so the flex layout sizes the PDF area.
 @media (max-width: 768px) {
-  .pdf-header {
-    display: none !important;
-  }
-
   .header-actions {
     flex-direction: column;
     gap: 0.125rem;
@@ -369,16 +368,6 @@
     min-width: 2.5rem;
   }
 
-  .pdf-content {
-    height: 100vh !important;
-    height: 100dvh !important;
-  }
-
-  .pdf-display {
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
-  }
-
   // Mobile outline styles
   .pdf-outline {
     position: fixed;
@@ -402,15 +391,8 @@
   }
 
   .outline-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    border-radius: 8px;
-    padding: 0.5rem;
+    justify-content: center;
+    padding: 0.375rem 0.6rem;
     font-size: 0.8rem;
   }
 

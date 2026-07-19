@@ -1,4 +1,4 @@
-<app-header class="header-position"></app-header>
+<app-header class="header-position" *ngIf="!isReaderRoute"></app-header>
   <div class="rest" [class.reader-mode]="isReaderRoute">
     <div class="pages-stack">
         <router-outlet></router-outlet>
