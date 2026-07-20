@@ -1,0 +1,50 @@
+<div class="cp-backdrop" *ngIf="isOpen" (click)="close()">
+  <div class="cp-panel" (click)="$event.stopPropagation()">
+    <div class="cp-search">
+      <span class="cp-search-icon">⌕</span>
+      <input #input type="text" class="cp-input" [(ngModel)]="query"
+             (ngModelChange)="onQueryChange()"
+             placeholder="Search all books — definitions, theorems, lemmas…"
+             autocomplete="off" spellcheck="false" />
+      <kbd class="cp-esc">esc</kbd>
+    </div>
+
+    <div class="cp-results" *ngIf="query">
+      <div *ngIf="loading" class="cp-empty">Loading index…</div>
+      <div *ngIf="!loading && results.length === 0" class="cp-empty">
+        No results for “{{ query }}”.
+      </div>
+
+      <div *ngFor="let e of results; let i = index; trackBy: trackByKey"
+           class="cp-result" [class.highlighted]="i === highlighted"
+           role="option" (mouseenter)="highlighted = i" (click)="openEntry(e)">
+        <span class="cp-badge" [attr.data-type]="e.type">{{ typeAbbr(e.type) }}</span>
+        <span class="cp-title">{{ e.titlePlain || '(untitled)' }}</span>
+        <span class="cp-meta">
+          <span class="cp-book">{{ nameFor(e) }}</span>
+          <span class="cp-num">{{ e.number }}<span *ngIf="e.page"> · p.{{ e.page }}</span></span>
+        </span>
+        <button type="button" class="cp-copy" [class.copied]="copiedKey === keyFor(e)"
+                (click)="copyLink(e, $event)"
+                title="Copy a shareable link to this result">
+          {{ copiedKey === keyFor(e) ? '✓ Copied' : '🔗 Copy link' }}
+        </button>
+      </div>
+    </div>
+
+    <div class="cp-footer" *ngIf="query && results.length">
+      <span><kbd>↑</kbd><kbd>↓</kbd> move</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>⇧</kbd><kbd>↵</kbd> copy link</span>
+      <span><kbd>esc</kbd> close</span>
+    </div>
+    <div class="cp-hint" *ngIf="!query">
+      <p class="cp-hint-lead">Find any definition, theorem, or lemma across the whole series.</p>
+      <div class="cp-legend">
+        <span><kbd>↵</kbd> jump to page</span>
+        <span><kbd>⇧</kbd><kbd>↵</kbd> copy link</span>
+        <span><kbd>{{ modKey }}</kbd><kbd>K</kbd> reopen</span>
+      </div>
+    </div>
+  </div>
+</div>

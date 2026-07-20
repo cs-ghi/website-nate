@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Book } from 'src/app/interfaces/books.model';
+import { fuzzyScore } from 'src/app/utils/fuzzy-score';
+import { CommandPaletteService } from 'src/app/services/command-palette.service';
 
 // ─── Admin password setup ────────────────────────────────────────────────────
 // To set your password, run this in a browser console and paste the result below:
@@ -19,31 +21,6 @@ async function sha256(str: string): Promise<string> {
 }
 
 // ─── Fuzzy search ────────────────────────────────────────────────────────────
-// Subsequence matcher over a (short) title: rewards contiguous runs and matches
-// at word boundaries. Returns 0 when the query is not a subsequence of target.
-function fuzzyScore(query: string, target: string): number {
-  const q = query.toLowerCase();
-  const t = target.toLowerCase();
-  if (!q) return 1;
-
-  const idx = t.indexOf(q);
-  if (idx !== -1) {
-    const boundary = idx === 0 || t[idx - 1] === ' ';
-    return 1000 - idx + (boundary ? 200 : 0);
-  }
-
-  let qi = 0, score = 0, lastMatch = -2;
-  for (let ti = 0; ti < t.length && qi < q.length; ti++) {
-    if (t[ti] === q[qi]) {
-      score += lastMatch === ti - 1 ? 5 : 1;
-      if (ti === 0 || t[ti - 1] === ' ') score += 3;
-      lastMatch = ti;
-      qi++;
-    }
-  }
-  return qi === q.length ? score : 0;
-}
-
 // Score a book entry: fuzzy on the title (primary), substring on the description.
 function entryScore(query: string, name: string, desc: unknown): number {
   const nameScore = fuzzyScore(query, name);
@@ -323,7 +300,19 @@ export class BooksComponent implements OnInit {
   isLoadingPdfs = false;
   rawPdfs: Book[] = [];
 
-  constructor(private router: Router, private http: HttpClient) { }
+  // ⌘ on Mac, Ctrl elsewhere — shown in the "search inside all books" hint.
+  readonly modKey = /Mac|iPhone|iPad/.test(navigator.platform) ? '⌘' : 'Ctrl';
+
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private paletteService: CommandPaletteService,
+  ) { }
+
+  // Open the global result palette. Doubles as the mobile entry point (tap).
+  openResultSearch(): void {
+    this.paletteService.open();
+  }
 
   ngOnInit(): void {
     this.onSearchChange();

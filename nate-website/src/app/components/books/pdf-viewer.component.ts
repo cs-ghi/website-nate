@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { BookIndexService } from '../../services/book-index.service';
 
 @Component({
   selector: 'app-pdf-viewer',
@@ -31,6 +32,23 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   pdfOutline: any[] = [];
   private pdfDocument: any;
 
+  // Deep-link target from the URL: a stable result label (?loc=df:topSp) and/or
+  // an explicit page (?page=8). `loc` wins — it's resolved against the shipped
+  // index to the page in the *current* build, so shared links survive edits.
+  private pendingLoc: string = '';
+  private pendingPage: number | null = null;
+
+  // Render mode. `showAll` = continuous scroll (renders every page) is great for
+  // normal books but murders huge ones (the Algebra monolith is 1676 pages), so
+  // books over LARGE_PDF pages render one page at a time with pagination. The
+  // mode is chosen from the shipped page count *before* the PDF renders; a manual
+  // toggle lets the reader override.
+  showAll: boolean = true;
+  page: number = 1;
+  totalPages: number = 0;
+  userChoseMode: boolean = false;
+  private readonly LARGE_PDF = 500;
+
   // Whether the top bar is shown. Starts hidden on mobile (≤768px, matching the
   // stylesheet breakpoint) to keep the reader full-screen; open on wider
   // screens. Toggled by the × and the floating reopen button — no refresh.
@@ -39,7 +57,8 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private bookIndex: BookIndexService
   ) {
     this.setInitialZoom();
   }
@@ -55,14 +74,30 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.toggleOutline();
         console.log('Table of contents toggled via keyboard shortcut');
       }
+      return;
+    }
+
+    // In single-page mode, ←/→ (and PageUp/PageDown) flip pages — unless the
+    // user is typing in a field (e.g. the page-number input).
+    if (!this.showAll && !event.metaKey && !event.ctrlKey && !event.altKey) {
+      const el = event.target as HTMLElement | null;
+      if (el?.tagName === 'INPUT' || el?.tagName === 'TEXTAREA') return;
+      if (event.key === 'ArrowRight' || event.key === 'PageDown') {
+        event.preventDefault(); this.nextPage();
+      } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+        event.preventDefault(); this.prevPage();
+      }
     }
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.pdfSrc = params['src'] || '';
+    this.route.queryParams.subscribe(async params => {
+      const newSrc = params['src'] || '';
+      const srcChanged = newSrc !== this.pdfSrc;
       this.bookName = params['name'] || 'PDF Document';
-      
+      this.pendingLoc = params['loc'] || '';
+      this.pendingPage = params['page'] ? parseInt(params['page'], 10) : null;
+
       // Determine back button text based on the source or referrer
       const source = params['source'] || this.detectSourceFromUrl();
       if (source === 'notes') {
@@ -73,11 +108,70 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.returnText = 'Return to Books';
       }
 
-      if (!this.pdfSrc) {
+      if (!newSrc) {
+        this.pdfSrc = '';
         this.error = 'No PDF source provided';
         this.isLoading = false;
+      } else if (srcChanged) {
+        // New book: pick the render mode from its page count *before* binding
+        // src, so a huge book never tries to render every page at once.
+        this.page = 1;
+        this.totalPages = 0;
+        this.userChoseMode = false;
+        this.isLoading = true;
+        await this.bookIndex.load();
+        const count = this.bookIndex.pageCount(newSrc.split('/').pop() || '');
+        this.showAll = count <= this.LARGE_PDF;   // continuous unless very large
+        this.pdfSrc = newSrc;                     // bind src → render in that mode
+      } else if (this.pdfDocument) {
+        // Same PDF already loaded (e.g. jumping to another result in the same
+        // book from the palette): ng2-pdf-viewer won't reload, so navigate now.
+        this.scrollToDeepLink();
       }
     });
+  }
+
+  // Resolve the URL's deep-link target to a physical page and scroll there. A
+  // `loc` (stable label) is looked up in the shipped index to get the book's
+  // *printed* page number, which is then mapped to the physical PDF page via the
+  // document's own page labels — correct whether or not the book resets page
+  // numbering. Falls back to an explicit ?page.
+  private async scrollToDeepLink(): Promise<void> {
+    let page = this.pendingPage;
+    if (this.pendingLoc && this.pdfDocument) {
+      const base = this.pdfSrc.split('/').pop() || '';
+      await this.bookIndex.load();
+      const entry = this.bookIndex.lookup(base, this.pendingLoc);
+      if (entry && entry.page != null) {
+        page = await this.printedToPhysical(entry.page);
+      }
+    }
+    if (!page) return;
+    if (this.showAll) {
+      // Continuous mode: pages render asynchronously — give them a beat, scroll.
+      setTimeout(() => this.scrollToPage(page as number), 400);
+    } else {
+      // Single-page mode: navigate ng2-pdf-viewer straight to the page.
+      this.page = page;
+    }
+  }
+
+  // Map a printed page number to a 1-based physical page using the PDF's page
+  // labels. Books with front matter print a number that differs from the
+  // physical page; the last physical page carrying that label is the main-matter
+  // one. If the PDF has no page labels, printed == physical.
+  private async printedToPhysical(printed: number): Promise<number> {
+    try {
+      const labels: string[] | null = await this.pdfDocument.getPageLabels();
+      if (labels) {
+        const want = String(printed);
+        const idx = labels.lastIndexOf(want);
+        if (idx >= 0) return idx + 1;
+      }
+    } catch (error) {
+      console.warn('Could not read page labels:', error);
+    }
+    return printed;
   }
 
   // Rotating the phone (or resizing) makes ng2-pdf-viewer re-render every page
@@ -145,7 +239,16 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   async onLoadComplete(pdf: any): Promise<void> {
     this.isLoading = false;
     this.pdfDocument = pdf;
+    this.totalPages = pdf.numPages || 0;
     console.log('PDF loaded successfully', pdf);
+
+    // Fallback: if the shipped page count was missing (e.g. a stale cached index)
+    // and this turns out to be a big book the reader hasn't set a mode for, drop
+    // to single-page mode now that we know the real page count.
+    if (!this.userChoseMode && this.showAll && this.totalPages > this.LARGE_PDF) {
+      this.showAll = false;
+      this.page = this.currentTopPage || 1;
+    }
 
     setTimeout(() => {
       this.focusPdfViewer();
@@ -163,6 +266,9 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     } catch (error) {
       console.log('No outline available or error extracting outline:', error);
     }
+
+    // Honor a ?loc / ?page deep link once the document is ready.
+    this.scrollToDeepLink();
   }
 
   onError(error: any): void {
@@ -205,6 +311,40 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   private setInitialZoom(): void {
     const isDesktop = window.innerWidth >= 1024;
     this.currentZoom = isDesktop ? 0.5 : 1;
+  }
+
+  // ── Pagination (always visible, works in both modes) ───────────────────────
+  // The page shown in the toolbar: the tracked top-of-viewport page in continuous
+  // mode, or the rendered page in single-page mode.
+  get currentPage(): number {
+    return this.showAll ? this.currentTopPage : this.page;
+  }
+
+  goToPageNum(n: number): void {
+    if (isNaN(n)) return;
+    const clamped = Math.min(this.totalPages || n, Math.max(1, n));
+    if (this.showAll) {
+      this.currentTopPage = clamped;
+      this.scrollToPage(clamped);
+    } else {
+      this.page = clamped;
+    }
+  }
+  nextPage(): void { this.goToPageNum(this.currentPage + 1); }
+  prevPage(): void { this.goToPageNum(this.currentPage - 1); }
+  onPageInput(value: string): void { this.goToPageNum(parseInt(value, 10)); }
+
+  // Flip between continuous scroll and one-page-at-a-time, keeping your place.
+  toggleRenderMode(): void {
+    this.userChoseMode = true;
+    if (this.showAll) {
+      this.page = this.currentTopPage || this.page || 1;
+      this.showAll = false;
+    } else {
+      const target = this.page;
+      this.showAll = true;
+      setTimeout(() => this.scrollToPage(target), 400);
+    }
   }
 
   // Outline methods

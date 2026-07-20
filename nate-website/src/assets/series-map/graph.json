@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-07-19",
+    "generated": "2026-07-20",
     "bookCount": 52,
     "edgeCount": 270,
     "clashCounts": {
@@ -424,6 +424,7 @@
         "analysis-pde"
       ],
       "links": {
+        "pdf": "harmonic-analysis/EYNTKA-harmonic-analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-harmonic-analysis.pdf&name=Harmonic%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16"
@@ -661,7 +662,7 @@
       ],
       "links": {
         "pdf": "probability/EYNTKA-probability.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-probability.pdf&name=Probability&source=books"
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
       },
       "lastUpdated": "2026-07-18"
     },

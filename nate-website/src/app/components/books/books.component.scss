@@ -79,7 +79,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 50px;
+    margin-bottom: 14px;   // small gap: the "search inside" pill tucks in below
     padding: 8px 14px;
     border: 1px solid #4a4a4a;
     border-radius: 6px;
@@ -397,5 +397,66 @@
 
     &:hover {
         background-color: #404145;
+    }
+}
+
+// "Search inside every book" hint under the book-title search. Also the mobile
+// entry point to the global command palette.
+.result-search-hint {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: fit-content;
+    max-width: 100%;
+    // Compact pill tucked just under the search box (left-aligned to it); the
+    // large separation before the book list lives here, below the pill.
+    margin: 0 0 50px;
+    padding: 7px 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed #4a4a4a;
+    border-radius: 999px;
+    color: $bg-secondary;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: border-color 0.25s, background-color 0.25s;
+
+    span { opacity: 0.8; }
+    strong { font-weight: 600; opacity: 1; }
+
+    mat-icon {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+        opacity: 0.7;
+        flex-shrink: 0;
+    }
+
+    .hint-keys {
+        flex: 0 0 auto;          // don't grow; keep ⌘ + K together on the right
+        display: inline-flex;
+        gap: 3px;
+        opacity: 1;
+    }
+
+    kbd {
+        font-family: monospace;
+        font-size: 10.5px;
+        line-height: 1;
+        min-width: 11px;
+        text-align: center;
+        border: 1px solid #4a4a4a;
+        border-bottom-width: 2px;
+        border-radius: 4px;
+        padding: 3px 5px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    &:hover {
+        border-color: $bg-secondary;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 600px) {
+        .hint-keys { display: none; }   // no physical keyboard; tap the hint instead
     }
 }

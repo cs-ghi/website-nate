@@ -98,6 +98,13 @@
                 <mat-icon *ngIf="searchQuery" class="clear-icon" (click)="clearSearch()">close</mat-icon>
             </div>
 
+            <button class="result-search-hint" (click)="openResultSearch()"
+                    title="Search across every book for a specific definition or theorem">
+                <mat-icon>search</mat-icon>
+                <span>Search <strong>inside</strong> every book</span>
+                <span class="hint-keys"><kbd>{{ modKey }}</kbd><kbd>K</kbd></span>
+            </button>
+
             <p *ngIf="searchQuery && !filteredBooks.length" class="no-results">
                 No books match "{{ searchQuery }}".
             </p>

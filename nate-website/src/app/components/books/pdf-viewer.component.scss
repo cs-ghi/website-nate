@@ -140,6 +140,67 @@
   font-weight: 500;
 }
 
+// Single-page mode: prev / page-input / next, styled like the zoom controls.
+.page-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+.page-button {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #007bff;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover:not(:disabled) { background-color: #007bff; color: #fff; }
+  &:disabled { color: #ccc; cursor: not-allowed; }
+}
+.page-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+.page-input {
+  width: 3rem;
+  padding: 0.25rem 0.35rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+.page-total { color: #666; }
+
+.mode-toggle {
+  background: #fff;
+  border: 1px solid #007bff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #007bff;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover { background-color: #007bff; color: #fff; }
+}
+
 .document-title {
   margin: 0;
   color: #333;
@@ -524,6 +585,41 @@
       background: rgba(45, 45, 45, 0.95);
       color: #fff;
       border-color: #444;
+    }
+  }
+}
+
+// Match the reader toolbar to the site palette (warm taupe on charcoal) in dark
+// mode. The page navigator + mode toggle otherwise inherit the light blue/white
+// styles, and the existing buttons hover an off-theme blue.
+@media (prefers-color-scheme: dark) {
+  .page-button, .mode-toggle {
+    background-color: #2d2d2d;
+    color: #d9d2cd;
+    border-color: #4a4a4a;
+
+    &:hover:not(:disabled) {
+      background-color: #a49b96;   // $bg-secondary
+      border-color: #a49b96;
+      color: #2a2b30;
+    }
+    &:disabled { color: #666; border-color: #3a3a3a; }
+  }
+
+  .page-input {
+    background-color: #1a1a1a;
+    color: #d9d2cd;
+    border-color: #4a4a4a;
+    &:focus { outline: none; border-color: #a49b96; }
+  }
+  .page-total { color: #8f8880; }
+
+  // De-blue the existing buttons' hover to the site accent.
+  .back-button, .zoom-button, .outline-toggle {
+    &:hover:not(:disabled) {
+      background-color: #a49b96;
+      border-color: #a49b96;
+      color: #2a2b30;
     }
   }
 }

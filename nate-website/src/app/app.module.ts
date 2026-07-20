@@ -39,6 +39,7 @@ import { DictionaryComponent } from './components/dictionary/dictionary.componen
 import { DictionaryService } from './services/dictionary.service';
 import { JudoComponent } from './components/judo/judo.component';
 import { SeriesMapComponent } from './components/series-map/series-map.component';
+import { CommandPaletteComponent } from './components/command-palette/command-palette.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { AudioService } from './services/audio.service';
 // import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -69,6 +70,7 @@ import { AudioService } from './services/audio.service';
     DictionaryComponent,
     JudoComponent,
     SeriesMapComponent,
+    CommandPaletteComponent,
     SafeUrlPipe,
   ],
   imports: [

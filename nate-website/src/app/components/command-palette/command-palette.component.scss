@@ -1,0 +1,191 @@
+@import 'src/sass/variables';
+
+// Palette matches the site: charcoal card, warm-taupe ($bg-secondary) text.
+$cp-panel: #2b2c31;
+$cp-border: #4a4a4a;
+$cp-muted: rgba($bg-secondary, 0.62);
+$cp-highlight: rgba($bg-secondary, 0.12);
+
+.cp-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 12vh 16px 16px;
+}
+
+.cp-panel {
+  width: min(660px, 100%);
+  max-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  background: $cp-panel;
+  border: 1px solid $cp-border;
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+  font-family: $font, 'Helvetica Neue', sans-serif;
+}
+
+.cp-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 15px;
+  border-bottom: 1px solid $cp-border;
+}
+.cp-search-icon { font-size: 20px; color: $bg-secondary; opacity: 0.8; }
+.cp-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: $bg-secondary;
+  background: transparent;
+  &::placeholder { color: $cp-muted; }
+}
+.cp-esc {
+  font-size: 11px;
+  color: $cp-muted;
+  border: 1px solid $cp-border;
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+
+.cp-results {
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.cp-empty {
+  padding: 22px 16px;
+  color: $cp-muted;
+  text-align: center;
+  font-size: 14px;
+}
+
+.cp-result {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 9px 11px;
+  border-radius: 7px;
+  cursor: pointer;
+  color: $bg-secondary;
+
+  &.highlighted { background: $cp-highlight; }
+  // Reveal the copy button on the active row only, to keep rows clean.
+  .cp-copy { visibility: hidden; }
+  &.highlighted .cp-copy, &:hover .cp-copy, .cp-copy.copied { visibility: visible; }
+}
+
+.cp-badge {
+  flex: 0 0 auto;
+  min-width: 44px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 7px;
+  border-radius: 6px;
+  color: #fff;
+  background: #6b7280;
+
+  &[data-type='definition'] { background: #c0504d; }
+  &[data-type='theorem']    { background: #4e9a68; }
+  &[data-type='lemma']      { background: #4478b0; }
+  &[data-type='proposition']{ background: #8a8f9a; }
+  &[data-type='corollary']  { background: #5a8fca; }
+  &[data-type='example']    { background: #a67bbd; }
+  &[data-type='axiom']      { background: #c6a23a; }
+  &[data-type='conjecture'] { background: #c6a23a; }
+}
+
+.cp-title {
+  flex: 1 1 auto;
+  font-size: 15px;
+  color: #d9d2cd;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cp-meta {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  max-width: 34%;
+}
+.cp-book {
+  font-size: 12px;
+  color: $bg-secondary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.cp-num { font-size: 11px; color: $cp-muted; }
+
+.cp-copy {
+  flex: 0 0 auto;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 4px 9px;
+  border-radius: 6px;
+  border: 1px solid $cp-border;
+  background: rgba(255, 255, 255, 0.04);
+  color: $bg-secondary;
+  cursor: pointer;
+  &:hover { background: rgba($bg-secondary, 0.16); }
+  &.copied { color: #7fd39a; border-color: #7fd39a; }
+}
+
+.cp-footer, .cp-hint {
+  border-top: 1px solid $cp-border;
+  padding: 11px 15px;
+  color: $cp-muted;
+  font-size: 12px;
+}
+.cp-footer { display: flex; gap: 18px; flex-wrap: wrap; }
+.cp-footer span { white-space: nowrap; }
+
+.cp-hint-lead {
+  margin: 0 0 9px;
+  color: $bg-secondary;
+  opacity: 0.85;
+  font-size: 13px;
+}
+.cp-legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.cp-legend span { white-space: nowrap; }
+
+kbd {
+  font-family: $font, monospace;
+  font-size: 11px;
+  border: 1px solid $cp-border;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 1px 5px;
+  margin: 0 1px;
+  color: $bg-secondary;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 600px) {
+  .cp-backdrop { padding: 7vh 8px 8px; }
+  .cp-meta { max-width: 30%; }
+  .cp-title { font-size: 14px; }
+  // On touch there's no hover/highlight row; always show the copy button.
+  .cp-result .cp-copy { visibility: visible; }
+  .cp-footer { display: none; }
+}
