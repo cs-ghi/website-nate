@@ -12,7 +12,9 @@ import { CommandPaletteService } from 'src/app/services/command-palette.service'
 const PASSWORD_HASH = 'c1e7dc8e9098153d7ad6d7c49fe9fa65e58977524473fc97df2950d4252df653';
 // ─────────────────────────────────────────────────────────────────────────────
 
-const GITHUB_PDF_API = 'https://api.github.com/repos/Chiarandini/website-nate/contents/assets/pdfs/books?ref=gh-pages';
+// Static list of book PDFs, generated at build time by scripts/gen-pdf-manifest.js.
+// Same-origin, so there is no hardcoded repo owner and no GitHub API rate limit.
+const PDF_MANIFEST = 'assets/pdfs/books/manifest.json';
 const AUTH_KEY = 'books_admin_auth';
 
 async function sha256(str: string): Promise<string> {
@@ -455,15 +457,15 @@ export class BooksComponent implements OnInit {
 
   loadRawPdfs() {
     this.isLoadingPdfs = true;
-    this.http.get<any[]>(GITHUB_PDF_API).subscribe({
-      next: (files) => {
-        this.rawPdfs = files
-          .filter(f => f.type === 'file' && f.name.toLowerCase().endsWith('.pdf'))
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map(f => ({
-            name: f.name,
+    this.http.get<string[]>(PDF_MANIFEST).subscribe({
+      next: (names) => {
+        this.rawPdfs = names
+          .filter(n => n.toLowerCase().endsWith('.pdf'))
+          .sort((a, b) => a.localeCompare(b))
+          .map(n => ({
+            name: n,
             desc: '',
-            link: `././assets/pdfs/books/${f.name}`,
+            link: `././assets/pdfs/books/${n}`,
             type: 'pdf' as const
           }));
         this.isLoadingPdfs = false;
