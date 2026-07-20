@@ -12,7 +12,7 @@ import { CommandPaletteService } from 'src/app/services/command-palette.service'
 const PASSWORD_HASH = 'c1e7dc8e9098153d7ad6d7c49fe9fa65e58977524473fc97df2950d4252df653';
 // ─────────────────────────────────────────────────────────────────────────────
 
-const GITHUB_PDF_API = 'https://api.github.com/repos/cs-ghi/website-nate/contents/assets/pdfs/books?ref=gh-pages';
+const GITHUB_PDF_API = 'https://api.github.com/repos/Chiarandini/website-nate/contents/assets/pdfs/books?ref=gh-pages';
 const AUTH_KEY = 'books_admin_auth';
 
 async function sha256(str: string): Promise<string> {
