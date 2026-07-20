@@ -8,24 +8,6 @@
     ]
   },
   {
-    "kind": "unknown-codename",
-    "severity": "error",
-    "message": "\\cite{NateTop} resolves to no known book. Fix the citation or add an alias/registry entry.",
-    "refs": [
-      "NateTop",
-      "algebraic-topology/EYNTKA-algebraic-topology.tex"
-    ]
-  },
-  {
-    "kind": "unknown-codename",
-    "severity": "error",
-    "message": "\\cite{NateEllipticCurve} resolves to no known book. Fix the citation or add an alias/registry entry.",
-    "refs": [
-      "NateEllipticCurve",
-      "class-field-theory/EYNTKA-class-field-theory.tex"
-    ]
-  },
-  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateModernAlgGeo' is planned (cited/registered but has no folder yet).",
@@ -92,19 +74,28 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLinAlg -> NatePrelim) is manual, no backing \\cite found.",
+    "message": "Overlay coreq (NateLinAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateLinAlg",
-      "NatePrelim"
+      "NateCoreAlgebra"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCoreAlgebra -> NateLinAlg) is manual, no backing \\cite found.",
+    "message": "Overlay coreq (NateLinAlg -> NateCoreRepTheory) is manual, no backing \\cite found.",
     "refs": [
-      "NateCoreAlgebra",
-      "NateLinAlg"
+      "NateLinAlg",
+      "NateCoreRepTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLinAlg -> NatePrelim) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinAlg",
+      "NatePrelim"
     ]
   },
   {
@@ -200,15 +191,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateODE -> NateElemAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateODE",
-      "NateElemAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateODE -> NateCalculus) is manual, no backing \\cite found.",
     "refs": [
       "NateODE",
@@ -227,37 +209,28 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NatePDE -> NateFuncAnalysis) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateNonlinearWave -> NateFuncAnalysis) is manual, no backing \\cite found.",
     "refs": [
-      "NatePDE",
+      "NateNonlinearWave",
       "NateFuncAnalysis"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NatePDE -> NateODE) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateNonlinearWave -> NateODE) is manual, no backing \\cite found.",
     "refs": [
-      "NatePDE",
+      "NateNonlinearWave",
       "NateODE"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NatePDE -> NateCalculus) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateNonlinearWave -> NateCalculus) is manual, no backing \\cite found.",
     "refs": [
-      "NatePDE",
+      "NateNonlinearWave",
       "NateCalculus"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgTop -> NateTopology) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgTop",
-      "NateTopology"
     ]
   },
   {
@@ -461,6 +434,15 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateGR -> NateNonlinearWave) is manual, no backing \\cite found.",
+    "refs": [
+      "NateGR",
+      "NateNonlinearWave"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateGeometricAnalysis -> NateRiemannianGeometry) is manual, no backing \\cite found.",
     "refs": [
       "NateGeometricAnalysis",
@@ -470,10 +452,10 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateGeometricAnalysis -> NatePDE) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateGeometricAnalysis -> NateNonlinearWave) is manual, no backing \\cite found.",
     "refs": [
       "NateGeometricAnalysis",
-      "NatePDE"
+      "NateNonlinearWave"
     ]
   },
   {
@@ -686,10 +668,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateRiemannianGeometry -> NatePDE is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateRiemannianGeometry -> NateNonlinearWave is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateRiemannianGeometry",
-      "NatePDE"
+      "NateNonlinearWave"
     ]
   },
   {
