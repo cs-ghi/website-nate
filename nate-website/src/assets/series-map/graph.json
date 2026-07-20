@@ -1,10 +1,10 @@
 {
   "meta": {
     "generated": "2026-07-20",
-    "bookCount": 52,
-    "edgeCount": 270,
+    "bookCount": 53,
+    "edgeCount": 273,
     "clashCounts": {
-      "error": 2,
+      "error": 0,
       "warn": 1,
       "info": 77
     }
@@ -533,10 +533,23 @@
       "id": "NateLinAlg",
       "title": "Linear Algebra",
       "dir": null,
-      "description": "standard linear algebra, from eigenvalues to JCF/RCF, to symmetric bilinear forms.",
+      "description": "The concrete / computational first-and-second course in linear algebra over R and C: linear systems and Gaussian elimination, matrices and determinants, vector spaces and linear maps concretely, eigenvalues and diagonalization, inner-product spaces, and symmetric/Hermitian forms. The pedagogical on-ramp to the abstract, module-theoretic treatment Core Algebra develops from scratch (Ch 14-16, spectral theorem included); recommended background for the abstract-algebra and Lie/representation-theory tracks, a hard prerequisite of neither.",
       "status": "planned",
       "webPublished": false,
       "clusters": []
+    },
+    {
+      "id": "NateLinearPDE",
+      "title": "Linear Elliptic and Parabolic Equations",
+      "dir": "linear-pde",
+      "description": "the graduate linear-PDE spine: weak formulations and Lax–Milgram, existence by variational methods, the two regularity theories (Schauder and L^p), maximum principles, Green's functions, spectral theory of elliptic operators, and the heat equation with semigroups; elliptic systems on domains. Cites the analysis foundations for Sobolev/distributions/singular integrals (does not re-derive them). Prereqs Functional Analysis, Measure Theory, Harmonic Analysis, Calculus.",
+      "status": "planned",
+      "webPublished": false,
+      "clusters": [],
+      "links": {
+        "pdf": "linear-pde/EYNTKA-linear-pde.pdf"
+      },
+      "lastUpdated": "2026-07-20"
     },
     {
       "id": "NateLocalFieldTheory",
@@ -578,6 +591,7 @@
         "analysis-pde"
       ],
       "links": {
+        "pdf": "measure-theory/EYNTKA-measure-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-measure-theory.pdf&name=Measure%20Theory&source=books"
       },
       "lastUpdated": "2026-07-16"
@@ -606,6 +620,22 @@
       "lastUpdated": "2026-07-13"
     },
     {
+      "id": "NateNonlinearWave",
+      "title": "Nonlinear Wave and Dispersive Equations",
+      "dir": "PDE",
+      "description": "linear wave (d'Alembert, energy method) as the foundation, then nonlinear wave equations (Klainerman–Sobolev, null conditions, global existence) and dispersive methods (Littlewood–Paley, Strichartz). The analytic engine of general relativity (the Einstein equations are a nonlinear wave system). The linear elliptic/parabolic core moved to Linear Elliptic and Parabolic Equations. Prereqs Functional Analysis, Ordinary Differential Equations (ODE), Calculus, Harmonic Analysis.",
+      "status": "in-progress",
+      "webPublished": true,
+      "clusters": [
+        "analysis-pde"
+      ],
+      "links": {
+        "pdf": "PDE/EYNTKA_PDE.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_PDE.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20Equations&source=books"
+      },
+      "lastUpdated": "2026-07-20"
+    },
+    {
       "id": "NateODE",
       "title": "Ordinary Differential Equations (ODE)",
       "dir": "ODE",
@@ -618,22 +648,6 @@
       "links": {
         "pdf": "ODE/EYNTKA_ODE.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
-      },
-      "lastUpdated": "2026-07-16"
-    },
-    {
-      "id": "NatePDE",
-      "title": "Partial Differential Equations",
-      "dir": "PDE",
-      "description": "Sobolev spaces, elliptic boundary value problems, heat equation, wave equation, maximum principles.",
-      "status": "in-progress",
-      "webPublished": true,
-      "clusters": [
-        "analysis-pde"
-      ],
-      "links": {
-        "pdf": "PDE/EYNTKA_PDE.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_PDE.pdf&name=Partial%20Differential%20Equations&source=books"
       },
       "lastUpdated": "2026-07-16"
     },
@@ -695,7 +709,7 @@
       "id": "NateRiemannianGeometry",
       "title": "Riemannian Geometry",
       "dir": "riemannian-geometry",
-      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Geometry, Real Analysis, Partial Differential Equations. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
+      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Geometry, Real Analysis, Nonlinear Wave and Dispersive Equations. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -946,7 +960,7 @@
     },
     {
       "source": "NateAlgebra",
-      "target": "NatePDE",
+      "target": "NateNonlinearWave",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1268,8 +1282,10 @@
       "source": "NateAlgTop",
       "target": "NateTopology",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
     },
     {
       "source": "NateAnalyticNumTheory",
@@ -1470,6 +1486,15 @@
     {
       "source": "NateCFT",
       "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCFT",
+      "target": "NateEllipticCurves",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1746,13 +1771,6 @@
       "citedIn": [
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
-    },
-    {
-      "source": "NateCoreAlgebra",
-      "target": "NateLinAlg",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateCoreAlgebra",
@@ -2227,7 +2245,7 @@
     },
     {
       "source": "NateGeometricAnalysis",
-      "target": "NatePDE",
+      "target": "NateNonlinearWave",
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
@@ -2302,6 +2320,13 @@
     },
     {
       "source": "NateGR",
+      "target": "NateNonlinearWave",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateGR",
       "target": "NateRiemannianGeometry",
       "type": "prereq",
       "provenance": "manual",
@@ -2350,7 +2375,7 @@
     },
     {
       "source": "NateHarmonicAnalysis",
-      "target": "NatePDE",
+      "target": "NateNonlinearWave",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2753,6 +2778,20 @@
     },
     {
       "source": "NateLinAlg",
+      "target": "NateCoreAlgebra",
+      "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateCoreRepTheory",
+      "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLinAlg",
       "target": "NatePrelim",
       "type": "prereq",
       "provenance": "manual",
@@ -3005,6 +3044,27 @@
       ]
     },
     {
+      "source": "NateNonlinearWave",
+      "target": "NateCalculus",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateNonlinearWave",
+      "target": "NateFuncAnalysis",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateNonlinearWave",
+      "target": "NateODE",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
       "source": "NateODE",
       "target": "NateCalculus",
       "type": "prereq",
@@ -3015,29 +3075,10 @@
       "source": "NateODE",
       "target": "NateElemAnalysis",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NatePDE",
-      "target": "NateCalculus",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NatePDE",
-      "target": "NateFuncAnalysis",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NatePDE",
-      "target": "NateODE",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "ODE/EYNTKA_ODE.tex"
+      ]
     },
     {
       "source": "NatePrelim",
@@ -3233,7 +3274,7 @@
     },
     {
       "source": "NateRiemannianGeometry",
-      "target": "NatePDE",
+      "target": "NateNonlinearWave",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3479,7 +3520,7 @@
         "NateFuncAnalysis",
         "NateHarmonicAnalysis",
         "NateODE",
-        "NatePDE",
+        "NateNonlinearWave",
         "NateCalculus",
         "NateProbability",
         "NateCoreProbability",
