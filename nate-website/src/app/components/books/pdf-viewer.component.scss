@@ -173,13 +173,23 @@
   color: #333;
 }
 .page-input {
-  width: 3rem;
-  padding: 0.25rem 0.35rem;
+  width: 3.75rem;   // fits 4 digits (books run to ~1676 pages)
+  padding: 0.25rem 0.4rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   text-align: center;
   font-size: 0.9rem;
   color: #333;
+
+  // Drop the number-spinner arrows: they appear on hover/focus, eat width, and
+  // clip the digits. Page nav is via the ‹ › buttons and typing.
+  appearance: textfield;
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 .page-total { color: #666; }
 
