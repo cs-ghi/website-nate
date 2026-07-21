@@ -548,15 +548,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAbelianVarieties -> NateAlgGeo) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateLanglandsGL2 -> NateLocalFieldTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLanglandsGL2",

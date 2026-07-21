@@ -6,7 +6,7 @@
     "clashCounts": {
       "error": 1,
       "warn": 2,
-      "info": 156
+      "info": 155
     }
   },
   "nodes": [
@@ -704,8 +704,14 @@
       "source": "NateAbelianVarieties",
       "target": "NateAlgGeo",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "abelian-varieties/drafts/scratch/ch07-open.tex",
+        "abelian-varieties/drafts/scratch/ch07-s01.tex",
+        "abelian-varieties/drafts/scratch/ch07-s02.tex",
+        "abelian-varieties/drafts/scratch/ch07-s03.tex",
+        "abelian-varieties/drafts/scratch/ch07-s04.tex"
+      ]
     },
     {
       "source": "NateAbelianVarieties",
@@ -796,7 +802,11 @@
         "abelian-varieties/drafts/scratch/ch04-s04.tex",
         "abelian-varieties/drafts/scratch/ch05-s02.tex",
         "abelian-varieties/drafts/scratch/ch06-s01.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex"
+        "abelian-varieties/drafts/scratch/ch06-s04.tex",
+        "abelian-varieties/drafts/scratch/ch07-s01.tex",
+        "abelian-varieties/drafts/scratch/ch07-s02.tex",
+        "abelian-varieties/drafts/scratch/ch07-s03.tex",
+        "abelian-varieties/drafts/scratch/ch07-s04.tex"
       ]
     },
     {
@@ -2638,8 +2648,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateCoreRepTheory",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -2656,8 +2666,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateFuncAnalysis",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -2674,8 +2684,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateHarmonicAnalysis",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -2692,8 +2702,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateRealAnalysis",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -2719,8 +2729,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateTopology",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
