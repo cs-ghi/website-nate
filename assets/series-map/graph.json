@@ -2,10 +2,10 @@
   "meta": {
     "generated": "2026-07-21",
     "bookCount": 45,
-    "edgeCount": 266,
+    "edgeCount": 273,
     "clashCounts": {
-      "error": 0,
-      "warn": 1,
+      "error": 1,
+      "warn": 2,
       "info": 156
     }
   },
@@ -453,18 +453,18 @@
     {
       "id": "NateLanglandsGL2",
       "title": "Local Langlands for GL₂(F)",
-      "dir": "p-adic-representation",
-      "description": "smooth representations of locally profinite groups, Hecke algebras, principal series, supercuspidal representations, local L-functions, epsilon-factors, Weil groups, Deligne representations.",
+      "dir": "langlands-gl2",
+      "description": "smooth representations of locally profinite groups, Hecke algebras, principal series, supercuspidal representations, local L-functions, epsilon-factors, Weil groups, Deligne representations.; near-complete.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
         "langlands"
       ],
       "links": {
-        "pdf": "p-adic-representation/EYNTKA_p-adic_rep.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_p-adic_rep.pdf&name=Local%20Langlands%20for%20GL%E2%82%82(F)&source=books"
+        "pdf": "langlands-gl2/EYNTKA-langlands-gl2.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-langlands-gl2.pdf&name=Local%20Langlands%20for%20GL%E2%82%82(F)&source=books"
       },
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-21"
     },
     {
       "id": "NateLieGroups",
@@ -478,7 +478,7 @@
         "pdf": "lie-groups/EYNTKA-lie-groups.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-lie-groups.pdf&name=Lie%20Groups&source=books"
       },
-      "lastUpdated": "2026-07-03"
+      "lastUpdated": "2026-07-21"
     },
     {
       "id": "NateLinAlg",
@@ -559,8 +559,8 @@
         "analysis-pde"
       ],
       "links": {
-        "pdf": "PDE/EYNTKA_PDE.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_PDE.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20Equations&source=books"
+        "pdf": "PDE/EYNTKA-nonlinear-wave.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20Equations&source=books"
       },
       "lastUpdated": "2026-07-20"
     },
@@ -709,12 +709,32 @@
     },
     {
       "source": "NateAbelianVarieties",
+      "target": "NateAlgNumberTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch06-s04.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
       "target": "NateAlgTop",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch01-s03.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch06-s04.tex"
       ]
     },
     {
@@ -741,7 +761,19 @@
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch02-s04.tex",
-        "abelian-varieties/drafts/scratch/ch03-s02.tex"
+        "abelian-varieties/drafts/scratch/ch03-s02.tex",
+        "abelian-varieties/drafts/scratch/ch06-s04.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateCoreRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch06-s01.tex",
+        "abelian-varieties/drafts/scratch/ch06-s03.tex"
       ]
     },
     {
@@ -762,7 +794,9 @@
         "abelian-varieties/drafts/scratch/ch03-s04.tex",
         "abelian-varieties/drafts/scratch/ch04-s01.tex",
         "abelian-varieties/drafts/scratch/ch04-s04.tex",
-        "abelian-varieties/drafts/scratch/ch05-s02.tex"
+        "abelian-varieties/drafts/scratch/ch05-s02.tex",
+        "abelian-varieties/drafts/scratch/ch06-s01.tex",
+        "abelian-varieties/drafts/scratch/ch06-s04.tex"
       ]
     },
     {
@@ -785,6 +819,17 @@
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch02-s01.tex",
         "abelian-varieties/drafts/scratch/ch02-s02.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateShimuraVarieties",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch06-open.tex",
+        "abelian-varieties/drafts/scratch/ch06-s04.tex"
       ]
     },
     {
@@ -872,15 +917,6 @@
     {
       "source": "NateAlgebra",
       "target": "NateLogic",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateNonlinearWave",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1803,11 +1839,32 @@
     },
     {
       "source": "NateCStarAlgebras",
+      "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "cstar-algebras/EYNTKA-cstar-algebras.tex",
+        "cstar-algebras/drafts/scratch/ch03-s04.tex"
+      ]
+    },
+    {
+      "source": "NateCStarAlgebras",
       "target": "NateFuncAnalysis",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "cstar-algebras/EYNTKA-cstar-algebras.tex"
+        "cstar-algebras/EYNTKA-cstar-algebras.tex",
+        "cstar-algebras/drafts/scratch/ch01-open.tex",
+        "cstar-algebras/drafts/scratch/ch01-s01.tex",
+        "cstar-algebras/drafts/scratch/ch01-s02.tex",
+        "cstar-algebras/drafts/scratch/ch02-s02.tex",
+        "cstar-algebras/drafts/scratch/ch03-s01.tex",
+        "cstar-algebras/drafts/scratch/ch04-s01.tex",
+        "cstar-algebras/drafts/scratch/ch04-s02.tex",
+        "cstar-algebras/drafts/scratch/ch04-s03.tex",
+        "cstar-algebras/drafts/scratch/ch04-s04.tex",
+        "cstar-algebras/drafts/scratch/ch05-s02.tex",
+        "cstar-algebras/drafts/scratch/ch05-s03.tex"
       ]
     },
     {
@@ -1816,7 +1873,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "cstar-algebras/EYNTKA-cstar-algebras.tex"
+        "cstar-algebras/EYNTKA-cstar-algebras.tex",
+        "cstar-algebras/drafts/scratch/ch03-s04.tex"
       ]
     },
     {
@@ -1825,7 +1883,22 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "cstar-algebras/EYNTKA-cstar-algebras.tex"
+        "cstar-algebras/EYNTKA-cstar-algebras.tex",
+        "cstar-algebras/drafts/scratch/ch04-s01.tex",
+        "cstar-algebras/drafts/scratch/ch04-s02.tex"
+      ]
+    },
+    {
+      "source": "NateCStarAlgebras",
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "cstar-algebras/EYNTKA-cstar-algebras.tex",
+        "cstar-algebras/drafts/scratch/ch02-s02.tex",
+        "cstar-algebras/drafts/scratch/ch03-s01.tex",
+        "cstar-algebras/drafts/scratch/ch03-s02.tex",
+        "cstar-algebras/drafts/scratch/ch03-s03.tex"
       ]
     },
     {
@@ -2020,11 +2093,11 @@
     },
     {
       "source": "NateFuncAnalysis",
-      "target": "NateCStarAlgebras",
+      "target": "NateComplexAnalysis",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "functional-analysis/drafts/scratch/spectral-s4.tex"
+        "functional-analysis/EYNTKA-functional-analysis.tex"
       ]
     },
     {
@@ -2252,12 +2325,13 @@
       "citedIn": []
     },
     {
-      "source": "NateHarmonicAnalysis",
-      "target": "NateNonlinearWave",
+      "source": "NateHodgeTheory",
+      "target": "NateAbelianVarieties",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex",
+        "hodge-theory/drafts/scratch/ch04-s04.tex"
       ]
     },
     {
@@ -2270,7 +2344,8 @@
         "hodge-theory/drafts/scratch/ch02-open.tex",
         "hodge-theory/drafts/scratch/ch02-s01.tex",
         "hodge-theory/drafts/scratch/ch02-s03.tex",
-        "hodge-theory/drafts/scratch/ch02-s04.tex"
+        "hodge-theory/drafts/scratch/ch02-s04.tex",
+        "hodge-theory/drafts/scratch/ch04-s03.tex"
       ]
     },
     {
@@ -2341,7 +2416,10 @@
       "citedIn": [
         "hodge-theory/EYNTKA-hodge-theory.tex",
         "hodge-theory/drafts/scratch/ch03-s02.tex",
-        "hodge-theory/drafts/scratch/ch03-s03.tex"
+        "hodge-theory/drafts/scratch/ch03-s03.tex",
+        "hodge-theory/drafts/scratch/ch04-open.tex",
+        "hodge-theory/drafts/scratch/ch04-s01.tex",
+        "hodge-theory/drafts/scratch/ch04-s02.tex"
       ]
     },
     {
@@ -2465,7 +2543,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
     },
     {
@@ -2481,7 +2559,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
     },
     {
@@ -2490,7 +2568,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
     },
     {
@@ -2506,7 +2584,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
     },
     {
@@ -2515,7 +2593,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
     },
     {
@@ -2545,7 +2623,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "p-adic-representation/EYNTKA_p-adic_rep.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
     },
     {
@@ -2554,13 +2632,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "lie-groups/chapters/ch01-s05.tex",
-        "lie-groups/chapters/ch03-s04.tex",
-        "lie-groups/chapters/ch05-s01.tex",
-        "lie-groups/chapters/ch06-s02.tex",
-        "lie-groups/chapters/ch06-s05.tex",
-        "lie-groups/chapters/ch07-s01.tex",
-        "lie-groups/chapters/ch07-s02.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2569,12 +2641,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "lie-groups/chapters/ch06-s04.tex",
-        "lie-groups/chapters/ch09-s02.tex",
-        "lie-groups/chapters/ch09-s03.tex",
-        "lie-groups/chapters/ch10-s02.tex",
-        "lie-groups/chapters/ch10-s04.tex",
-        "lie-groups/chapters/ch10-s05.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2583,20 +2650,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "lie-groups/chapters/ch01-s01.tex",
-        "lie-groups/chapters/ch01-s02.tex",
-        "lie-groups/chapters/ch01-s03.tex",
-        "lie-groups/chapters/ch02-s02.tex",
-        "lie-groups/chapters/ch02-s03.tex",
-        "lie-groups/chapters/ch02-s04.tex",
-        "lie-groups/chapters/ch02-s05.tex",
-        "lie-groups/chapters/ch03-open.tex",
-        "lie-groups/chapters/ch03-s01.tex",
-        "lie-groups/chapters/ch03-s02.tex",
-        "lie-groups/chapters/ch03-s03.tex",
-        "lie-groups/chapters/ch04-s01.tex",
-        "lie-groups/chapters/ch04-s02.tex",
-        "lie-groups/chapters/ch04-s05.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2605,9 +2659,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "lie-groups/chapters/ch09-s01.tex",
-        "lie-groups/chapters/ch10-open.tex",
-        "lie-groups/chapters/ch10-s03.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2616,15 +2668,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "lie-groups/chapters/ch01-open.tex",
-        "lie-groups/chapters/ch03-s04.tex",
-        "lie-groups/chapters/ch03-s05.tex",
-        "lie-groups/chapters/ch07-s01.tex",
-        "lie-groups/chapters/ch07-s04.tex",
-        "lie-groups/chapters/ch08-open.tex",
-        "lie-groups/chapters/ch08-s04.tex",
-        "lie-groups/chapters/ch08-s05.tex",
-        "lie-groups/chapters/ch12-open.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2633,10 +2677,16 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "lie-groups/chapters/ch04-s05.tex",
-        "lie-groups/chapters/ch09-open.tex",
-        "lie-groups/chapters/ch09-s02.tex",
-        "lie-groups/chapters/ch10-s05.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateLanglandsGL2",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2645,8 +2695,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "lie-groups/chapters/ch09-s02.tex",
-        "lie-groups/chapters/ch10-s03.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2655,8 +2704,16 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "lie-groups/chapters/ch09-s01.tex",
-        "lie-groups/chapters/ch09-s04.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateShimuraVarieties",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2665,12 +2722,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "lie-groups/chapters/ch01-s05.tex",
-        "lie-groups/chapters/ch03-s03.tex",
-        "lie-groups/chapters/ch03-s04.tex",
-        "lie-groups/chapters/ch04-s01.tex",
-        "lie-groups/chapters/ch04-s04.tex",
-        "lie-groups/chapters/ch04-s05.tex"
+        "lie-groups/EYNTKA-lie-groups.tex"
       ]
     },
     {
@@ -2927,8 +2979,19 @@
       "source": "NateNonlinearWave",
       "target": "NateFuncAnalysis",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "PDE/EYNTKA-nonlinear-wave.tex"
+      ]
+    },
+    {
+      "source": "NateNonlinearWave",
+      "target": "NateHarmonicAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "PDE/EYNTKA-nonlinear-wave.tex"
+      ]
     },
     {
       "source": "NateNonlinearWave",
@@ -3143,18 +3206,6 @@
         "riemannian-geometry/chapters/ch09-s02.tex",
         "riemannian-geometry/chapters/ch09-s04.tex",
         "riemannian-geometry/chapters/ch14-whatnext.tex"
-      ]
-    },
-    {
-      "source": "NateRiemannianGeometry",
-      "target": "NateNonlinearWave",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "riemannian-geometry/chapters/ch12-open.tex",
-        "riemannian-geometry/chapters/ch12-s03.tex",
-        "riemannian-geometry/chapters/ch12-s04.tex",
-        "riemannian-geometry/chapters/ch12-s05.tex"
       ]
     },
     {
