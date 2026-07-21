@@ -6,7 +6,7 @@
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 170
+      "info": 173
     }
   },
   "nodes": [
@@ -3207,7 +3207,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "measure-theory/EYNTKA-measure-theory.tex"
+        "measure-theory/EYNTKA-measure-theory.tex",
+        "measure-theory/drafts/scratch/ch04-s01.tex"
       ]
     },
     {
