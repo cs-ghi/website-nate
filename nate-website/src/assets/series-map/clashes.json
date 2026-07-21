@@ -18,6 +18,25 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateRealReductiveGroups' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateRealReductiveGroups"
+    ]
+  },
+  {
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateMicrolocalAnalysis} resolves to no known book. Fix the citation or add an alias/registry entry.",
+    "refs": [
+      "NateMicrolocalAnalysis",
+      "linear-pde/EYNTKA-linear-pde.tex",
+      "linear-pde/drafts/scratch/ch5-s3.tex",
+      "riemannian-geometry/chapters/ch12-open.tex"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateIntersectionTheory' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateIntersectionTheory"
@@ -77,14 +96,6 @@
     "message": "'NateUnitaryRepTheory' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateUnitaryRepTheory"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateRealReductiveGroups' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateRealReductiveGroups"
     ]
   },
   {
@@ -357,15 +368,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateNonlinearWave -> NateFuncAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateNonlinearWave",
-      "NateFuncAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateNonlinearWave -> NateODE) is manual, no backing \\cite found.",
     "refs": [
       "NateNonlinearWave",
@@ -379,6 +381,42 @@
     "refs": [
       "NateNonlinearWave",
       "NateCalculus"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLinearPDE -> NateCalculus) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinearPDE",
+      "NateCalculus"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateNonlinearWave -> NateLinearPDE) is manual, no backing \\cite found.",
+    "refs": [
+      "NateNonlinearWave",
+      "NateLinearPDE"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateGeometricAnalysis -> NateLinearPDE) is manual, no backing \\cite found.",
+    "refs": [
+      "NateGeometricAnalysis",
+      "NateLinearPDE"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "warn",
+    "message": "Overlay prereq (NateMicrolocalAnalysis -> NateLinearPDE) references an unknown book.",
+    "refs": [
+      "NateMicrolocalAnalysis",
+      "NateLinearPDE"
     ]
   },
   {
@@ -1185,10 +1223,28 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateCoreAlgebra is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAbelianVarieties -> NateCoreAlgebra is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateCoreAlgebra"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateShimuraVarieties is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateShimuraVarieties"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateCoreRepTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateCoreRepTheory"
     ]
   },
   {
@@ -1248,46 +1304,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateCStarAlgebras -> NateTopology is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateEtaleCohomology",
-      "NateModernAlgGeo"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLieGroups -> NateTopology is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLieGroups",
+      "NateCStarAlgebras",
       "NateTopology"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateLieGroups -> NateHarmonicAnalysis is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateLieGroups",
-      "NateHarmonicAnalysis"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLieGroups -> NateCoreRepTheory is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLieGroups",
-      "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLieGroups -> NateFuncAnalysis is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLieGroups",
-      "NateFuncAnalysis"
+      "NateEtaleCohomology",
+      "NateModernAlgGeo"
     ]
   },
   {
@@ -1360,15 +1389,6 @@
     "refs": [
       "NateRiemannianGeometry",
       "NateKTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateRiemannianGeometry -> NateNonlinearWave is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateRiemannianGeometry",
-      "NateNonlinearWave"
     ]
   },
   {

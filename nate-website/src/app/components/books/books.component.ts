@@ -127,7 +127,7 @@ export const booksArray: Book[]= [
   {
     name: "Langlands for GL2(F)",
     desc: "A complete guide to the Local Langlands Correspondence for GL_2(F) for odd prime. Begins with the foundational theory of smooth representations of locally profinite groups and Hecke algebras. Classifies the Principal Series and Supercuspidal representations, constructing the latter explicitly via compact induction, Admissible Pairs, and Fundamental Strata. Covers the arithmetic invariants, Local L-functions and epsilon-factors via Tate's thesis and Godement-Jacquet theory, culminating in the Converse Theorem. Concludes by refining the Galois side into Weil Groups and Deligne Representations to establish the Local Langlands Correspondence for GL_2(F).",
-    link: "././assets/pdfs/books/EYNTKA_p-adic_rep.pdf",
+    link: "././assets/pdfs/books/EYNTKA-langlands-gl2.pdf",
     type: 'pdf'
   },
   {
@@ -245,9 +245,15 @@ export const booksArray: Book[]= [
     type: 'pdf'
   },
   {
-    name: 'Partial Differential Equations (PDE)',
-    desc: 'books focusing on solving wave equations in increasing degrees of complexity. Existence and uniqueness of solutions to linear and non-linear wave equations, Litttle-Paley Theory, Distribution Theory, Klainerman-Sobelev Inequality. Future goal of adding Maxell-Klein-Gordon equations and Strichartz type estimates.',
-    link: '././assets/pdfs/books/EYNTKA_PDE.pdf',
+    name: 'Nonlinear Wave and Dispersive Equations',
+    desc: 'Linear and nonlinear wave equations in increasing complexity; the wave equation and its weak/distributional solutions; existence and uniqueness for linear and nonlinear wave equations; Littlewood-Paley theory; the Klainerman-Sobolev inequality and global existence for nonlinear wave equations; well-posedness and dispersive (Strichartz) estimates. Maxwell-Klein-Gordon equations coming soon.',
+    link: '././assets/pdfs/books/EYNTKA-nonlinear-wave.pdf',
+    type: 'pdf'
+  },
+  {
+    name: 'Linear Elliptic and Parabolic Equations',
+    desc: 'Second-order linear elliptic and parabolic PDE. Weak formulations and the Lax-Milgram theorem; the Sobolev setup for boundary-value problems; existence by variational methods and the Fredholm alternative; Schauder and L^p (Calderon-Zygmund) regularity; spectral theory of elliptic operators (Rayleigh quotient, Courant-Fischer min-max, Weyl\'s law). Maximum principles, Green\'s functions, and the parabolic theory (heat equation, semigroups) coming soon.',
+    link: '././assets/pdfs/books/EYNTKA-linear-pde.pdf',
     type: 'pdf'
   },
 
