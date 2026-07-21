@@ -1,12 +1,12 @@
 {
   "meta": {
     "generated": "2026-07-21",
-    "bookCount": 45,
-    "edgeCount": 273,
+    "bookCount": 47,
+    "edgeCount": 293,
     "clashCounts": {
-      "error": 1,
-      "warn": 2,
-      "info": 155
+      "error": 0,
+      "warn": 0,
+      "info": 170
     }
   },
   "nodes": [
@@ -400,7 +400,7 @@
         "pdf": "harmonic-analysis/EYNTKA-harmonic-analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-harmonic-analysis.pdf&name=Harmonic%20Analysis&source=books"
       },
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-21"
     },
     {
       "id": "NateHodgeTheory",
@@ -490,6 +490,20 @@
       "clusters": []
     },
     {
+      "id": "NateLinearPDE",
+      "title": "Linear Elliptic and Parabolic PDE",
+      "dir": "linear-pde",
+      "description": "the graduate linear-PDE spine: weak formulations and Lax–Milgram, existence by variational methods, the two regularity theories (Schauder and L^p), maximum principles, Green's functions, spectral theory of elliptic operators, and the heat equation with semigroups; elliptic systems on domains. Cites the analysis foundations for Sobolev/distributions/singular integrals (does not re-derive them). Prereqs Functional Analysis, Measure Theory, Harmonic Analysis, Calculus.",
+      "status": "in-progress",
+      "webPublished": true,
+      "clusters": [],
+      "links": {
+        "pdf": "linear-pde/EYNTKA-linear-pde.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-pde.pdf&name=Linear%20Elliptic%20and%20Parabolic%20PDE&source=books"
+      },
+      "lastUpdated": "2026-07-21"
+    },
+    {
       "id": "NateLocalFieldTheory",
       "title": "Local Field Theory",
       "dir": "local-field-theory",
@@ -535,6 +549,19 @@
       "lastUpdated": "2026-07-16"
     },
     {
+      "id": "NateMicrolocalAnalysis",
+      "title": "Microlocal Analysis",
+      "dir": "microlocal-analysis",
+      "description": "",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [],
+      "links": {
+        "pdf": "microlocal-analysis/EYNTKA-microlocal-analysis.pdf"
+      },
+      "lastUpdated": "2026-07-21"
+    },
+    {
       "id": "NateModuliStacks",
       "title": "Moduli, Deformation Theory, and Stacks",
       "dir": "moduli-stacks",
@@ -550,17 +577,17 @@
     },
     {
       "id": "NateNonlinearWave",
-      "title": "Nonlinear Wave and Dispersive Equations",
-      "dir": "PDE",
-      "description": "linear wave (d'Alembert, energy method) as the foundation, then nonlinear wave equations (Klainerman–Sobolev, null conditions, global existence) and dispersive methods (Littlewood–Paley, Strichartz). The analytic engine of general relativity (the Einstein equations are a nonlinear wave system). The linear elliptic/parabolic core moved to Linear Elliptic and Parabolic Equations. Prereqs Functional Analysis, Ordinary Differential Equations (ODE), Calculus, Harmonic Analysis.",
+      "title": "Nonlinear Wave and Dispersive PDE",
+      "dir": "nonlinear-wave-pde",
+      "description": "linear wave (d'Alembert, energy method) as the foundation, then nonlinear wave equations (Klainerman–Sobolev, null conditions, global existence) and dispersive methods (Littlewood–Paley, Strichartz). The analytic engine of general relativity (the Einstein equations are a nonlinear wave system). The linear elliptic/parabolic core moved to Linear Elliptic and Parabolic PDE. Prereqs Functional Analysis, Ordinary Differential Equations (ODE), Calculus, Harmonic Analysis.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
         "analysis-pde"
       ],
       "links": {
-        "pdf": "PDE/EYNTKA-nonlinear-wave.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20Equations&source=books"
+        "pdf": "nonlinear-wave-pde/EYNTKA-nonlinear-wave.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20PDE&source=books"
       },
       "lastUpdated": "2026-07-20"
     },
@@ -629,7 +656,7 @@
       "id": "NateRiemannianGeometry",
       "title": "Riemannian Geometry",
       "dir": "riemannian-geometry",
-      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Geometry, Real Analysis, Nonlinear Wave and Dispersive Equations. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
+      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Geometry, Real Analysis, Linear Elliptic and Parabolic PDE. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -706,11 +733,55 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch07-open.tex",
         "abelian-varieties/drafts/scratch/ch07-s01.tex",
         "abelian-varieties/drafts/scratch/ch07-s02.tex",
         "abelian-varieties/drafts/scratch/ch07-s03.tex",
-        "abelian-varieties/drafts/scratch/ch07-s04.tex"
+        "abelian-varieties/drafts/scratch/ch07-s04.tex",
+        "abelian-varieties/drafts/scratch/ch08-s01.tex",
+        "abelian-varieties/drafts/scratch/ch08-s03.tex",
+        "abelian-varieties/drafts/scratch/ch08-s04.tex",
+        "abelian-varieties/drafts/scratch/ch09-s01.tex",
+        "abelian-varieties/drafts/scratch/ch09-s04.tex",
+        "abelian-varieties/drafts/scratch/ch10-s01.tex",
+        "abelian-varieties/drafts/scratch/ch10-s02.tex",
+        "abelian-varieties/drafts/scratch/ch10-s04.tex",
+        "abelian-varieties/drafts/scratch/ch10-s05.tex",
+        "abelian-varieties/drafts/scratch/ch11-s01.tex",
+        "abelian-varieties/drafts/scratch/ch11-s03.tex",
+        "abelian-varieties/drafts/scratch/ch11-s04.tex",
+        "abelian-varieties/drafts/scratch/ch12-s01.tex",
+        "abelian-varieties/drafts/scratch/ch12-s02.tex",
+        "abelian-varieties/drafts/scratch/ch12-s03.tex",
+        "abelian-varieties/drafts/scratch/ch12-s04.tex",
+        "abelian-varieties/drafts/scratch/ch13-s01.tex",
+        "abelian-varieties/drafts/scratch/ch13-s02.tex",
+        "abelian-varieties/drafts/scratch/ch13-s05.tex",
+        "abelian-varieties/drafts/scratch/ex/groupPicard.tex",
+        "abelian-varieties/drafts/scratch/sec/abelJacobi.tex",
+        "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
+        "abelian-varieties/drafts/scratch/sec/dualConstruction.tex",
+        "abelian-varieties/drafts/scratch/sec/finiteGroupSchemesP.tex",
+        "abelian-varieties/drafts/scratch/sec/frobeniusCharPoly.tex",
+        "abelian-varieties/drafts/scratch/sec/groupPicard.tex",
+        "abelian-varieties/drafts/scratch/sec/groupVarieties.tex",
+        "abelian-varieties/drafts/scratch/sec/isogeniesDegree.tex",
+        "abelian-varieties/drafts/scratch/sec/multByN.tex",
+        "abelian-varieties/drafts/scratch/sec/neronSeveriAmpleness.tex",
+        "abelian-varieties/drafts/scratch/sec/ordinarySupersingularFF.tex",
+        "abelian-varieties/drafts/scratch/sec/phiLKL.tex",
+        "abelian-varieties/drafts/scratch/sec/picardVariety.tex",
+        "abelian-varieties/drafts/scratch/sec/poincareBiduality.tex",
+        "abelian-varieties/drafts/scratch/sec/poincareReducibilityAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/projectivity.tex",
+        "abelian-varieties/drafts/scratch/sec/rigidity.tex",
+        "abelian-varieties/drafts/scratch/sec/rosatiAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/theoremCube.tex",
+        "abelian-varieties/drafts/scratch/sec/thetaDivisorJacobian.tex",
+        "abelian-varieties/drafts/scratch/sec/torelli.tex",
+        "abelian-varieties/drafts/scratch/sec/weilPairingAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/weilRH.tex"
       ]
     },
     {
@@ -720,7 +791,8 @@
       "provenance": "auto",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex"
+        "abelian-varieties/drafts/scratch/ch06-s04.tex",
+        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex"
       ]
     },
     {
@@ -730,7 +802,8 @@
       "provenance": "auto",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch01-s03.tex"
+        "abelian-varieties/drafts/scratch/ch01-s03.tex",
+        "abelian-varieties/drafts/scratch/sec/torusCohomology.tex"
       ]
     },
     {
@@ -740,7 +813,24 @@
       "provenance": "auto",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex"
+        "abelian-varieties/drafts/scratch/ch06-s04.tex",
+        "abelian-varieties/drafts/scratch/ch13-s04.tex",
+        "abelian-varieties/drafts/scratch/ch14-open.tex",
+        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex",
+        "abelian-varieties/drafts/scratch/sec/hondaTate.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch09-s01.tex",
+        "abelian-varieties/drafts/scratch/ch09-s04.tex",
+        "abelian-varieties/drafts/scratch/sec/finiteGroupSchemesP.tex",
+        "abelian-varieties/drafts/scratch/sec/isogeniesDegree.tex"
       ]
     },
     {
@@ -756,7 +846,17 @@
         "abelian-varieties/drafts/scratch/ch02-s01.tex",
         "abelian-varieties/drafts/scratch/ch02-s02.tex",
         "abelian-varieties/drafts/scratch/ch04-s04.tex",
-        "abelian-varieties/drafts/scratch/ch04-s05.tex"
+        "abelian-varieties/drafts/scratch/ch04-s05.tex",
+        "abelian-varieties/drafts/scratch/ch11-s04.tex",
+        "abelian-varieties/drafts/scratch/ex/complexTori.tex",
+        "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
+        "abelian-varieties/drafts/scratch/sec/appellHumbert.tex",
+        "abelian-varieties/drafts/scratch/sec/complexTori.tex",
+        "abelian-varieties/drafts/scratch/sec/lefschetzEmbedding.tex",
+        "abelian-varieties/drafts/scratch/sec/picardExponential.tex",
+        "abelian-varieties/drafts/scratch/sec/thetaDivisor.tex",
+        "abelian-varieties/drafts/scratch/sec/torusAlgebraicity.tex",
+        "abelian-varieties/drafts/scratch/sec/torusCohomology.tex"
       ]
     },
     {
@@ -768,7 +868,14 @@
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch02-s04.tex",
         "abelian-varieties/drafts/scratch/ch03-s02.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex"
+        "abelian-varieties/drafts/scratch/ch06-s04.tex",
+        "abelian-varieties/drafts/scratch/ch11-s02.tex",
+        "abelian-varieties/drafts/scratch/ch13-s05.tex",
+        "abelian-varieties/drafts/scratch/sec/abelianVarietyDef.tex",
+        "abelian-varieties/drafts/scratch/sec/albertAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex",
+        "abelian-varieties/drafts/scratch/sec/ordinarySupersingularFF.tex",
+        "abelian-varieties/drafts/scratch/sec/thetaSections.tex"
       ]
     },
     {
@@ -779,7 +886,9 @@
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch06-s01.tex",
-        "abelian-varieties/drafts/scratch/ch06-s03.tex"
+        "abelian-varieties/drafts/scratch/ch06-s03.tex",
+        "abelian-varieties/drafts/scratch/sec/albertClassification.tex",
+        "abelian-varieties/drafts/scratch/sec/endomorphismAlgebra.tex"
       ]
     },
     {
@@ -806,7 +915,105 @@
         "abelian-varieties/drafts/scratch/ch07-s01.tex",
         "abelian-varieties/drafts/scratch/ch07-s02.tex",
         "abelian-varieties/drafts/scratch/ch07-s03.tex",
-        "abelian-varieties/drafts/scratch/ch07-s04.tex"
+        "abelian-varieties/drafts/scratch/ch07-s04.tex",
+        "abelian-varieties/drafts/scratch/ch08-s01.tex",
+        "abelian-varieties/drafts/scratch/ch08-s02.tex",
+        "abelian-varieties/drafts/scratch/ch08-s03.tex",
+        "abelian-varieties/drafts/scratch/ch08-s04.tex",
+        "abelian-varieties/drafts/scratch/ch09-s01.tex",
+        "abelian-varieties/drafts/scratch/ch09-s02.tex",
+        "abelian-varieties/drafts/scratch/ch09-s03.tex",
+        "abelian-varieties/drafts/scratch/ch09-s04.tex",
+        "abelian-varieties/drafts/scratch/ch10-s01.tex",
+        "abelian-varieties/drafts/scratch/ch10-s02.tex",
+        "abelian-varieties/drafts/scratch/ch10-s03.tex",
+        "abelian-varieties/drafts/scratch/ch10-s04.tex",
+        "abelian-varieties/drafts/scratch/ch10-s05.tex",
+        "abelian-varieties/drafts/scratch/ch11-s01.tex",
+        "abelian-varieties/drafts/scratch/ch11-s02.tex",
+        "abelian-varieties/drafts/scratch/ch11-s03.tex",
+        "abelian-varieties/drafts/scratch/ch11-s04.tex",
+        "abelian-varieties/drafts/scratch/ch12-open.tex",
+        "abelian-varieties/drafts/scratch/ch12-s01.tex",
+        "abelian-varieties/drafts/scratch/ch12-s02.tex",
+        "abelian-varieties/drafts/scratch/ch12-s05.tex",
+        "abelian-varieties/drafts/scratch/ch13-open.tex",
+        "abelian-varieties/drafts/scratch/ch13-s01.tex",
+        "abelian-varieties/drafts/scratch/ch13-s02.tex",
+        "abelian-varieties/drafts/scratch/ch13-s03.tex",
+        "abelian-varieties/drafts/scratch/ch13-s04.tex",
+        "abelian-varieties/drafts/scratch/ch13-s05.tex",
+        "abelian-varieties/drafts/scratch/ch14-open.tex",
+        "abelian-varieties/drafts/scratch/sec/abelJacobi.tex",
+        "abelian-varieties/drafts/scratch/sec/albertAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
+        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex",
+        "abelian-varieties/drafts/scratch/sec/complexTori.tex",
+        "abelian-varieties/drafts/scratch/sec/dualConstruction.tex",
+        "abelian-varieties/drafts/scratch/sec/ellAdicRep.tex",
+        "abelian-varieties/drafts/scratch/sec/endomorphismAlgebra.tex",
+        "abelian-varieties/drafts/scratch/sec/finiteGroupSchemesP.tex",
+        "abelian-varieties/drafts/scratch/sec/frobeniusCharPoly.tex",
+        "abelian-varieties/drafts/scratch/sec/groupPicard.tex",
+        "abelian-varieties/drafts/scratch/sec/groupVarieties.tex",
+        "abelian-varieties/drafts/scratch/sec/hondaTate.tex",
+        "abelian-varieties/drafts/scratch/sec/isogenies.tex",
+        "abelian-varieties/drafts/scratch/sec/isogeniesDegree.tex",
+        "abelian-varieties/drafts/scratch/sec/jacobianGenus1.tex",
+        "abelian-varieties/drafts/scratch/sec/lefschetzEmbedding.tex",
+        "abelian-varieties/drafts/scratch/sec/multByN.tex",
+        "abelian-varieties/drafts/scratch/sec/neronSeveri.tex",
+        "abelian-varieties/drafts/scratch/sec/neronSeveriAmpleness.tex",
+        "abelian-varieties/drafts/scratch/sec/ordinarySupersingularFF.tex",
+        "abelian-varieties/drafts/scratch/sec/phiLKL.tex",
+        "abelian-varieties/drafts/scratch/sec/picardExponential.tex",
+        "abelian-varieties/drafts/scratch/sec/picardVariety.tex",
+        "abelian-varieties/drafts/scratch/sec/poincareBiduality.tex",
+        "abelian-varieties/drafts/scratch/sec/poincareReducibilityAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/polarizationAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/projectivity.tex",
+        "abelian-varieties/drafts/scratch/sec/riemannRelations.tex",
+        "abelian-varieties/drafts/scratch/sec/riemannRoch.tex",
+        "abelian-varieties/drafts/scratch/sec/rigidity.tex",
+        "abelian-varieties/drafts/scratch/sec/rosatiAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/siegelModuli.tex",
+        "abelian-varieties/drafts/scratch/sec/tateIsogeny.tex",
+        "abelian-varieties/drafts/scratch/sec/theoremCube.tex",
+        "abelian-varieties/drafts/scratch/sec/theoremSquare.tex",
+        "abelian-varieties/drafts/scratch/sec/thetaGroup.tex",
+        "abelian-varieties/drafts/scratch/sec/thetaSections.tex",
+        "abelian-varieties/drafts/scratch/sec/torsionTate.tex",
+        "abelian-varieties/drafts/scratch/sec/torusAlgebraicity.tex",
+        "abelian-varieties/drafts/scratch/sec/torusCohomology.tex",
+        "abelian-varieties/drafts/scratch/sec/weilPairingAlgebraic.tex",
+        "abelian-varieties/drafts/scratch/sec/weilRH.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateEtaleCohomology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch14-open.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateGaloisCohom",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch09-s02.tex",
+        "abelian-varieties/drafts/scratch/ch09-s03.tex",
+        "abelian-varieties/drafts/scratch/ch10-s04.tex",
+        "abelian-varieties/drafts/scratch/ch13-s03.tex",
+        "abelian-varieties/drafts/scratch/sec/ellAdicRep.tex",
+        "abelian-varieties/drafts/scratch/sec/tateIsogeny.tex",
+        "abelian-varieties/drafts/scratch/sec/torsionTate.tex",
+        "abelian-varieties/drafts/scratch/sec/weilPairingAlgebraic.tex"
       ]
     },
     {
@@ -817,7 +1024,11 @@
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch01-s03.tex",
-        "abelian-varieties/drafts/scratch/ch02-s02.tex"
+        "abelian-varieties/drafts/scratch/ch02-s02.tex",
+        "abelian-varieties/drafts/scratch/ch11-s04.tex",
+        "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
+        "abelian-varieties/drafts/scratch/sec/appellHumbert.tex",
+        "abelian-varieties/drafts/scratch/sec/torusCohomology.tex"
       ]
     },
     {
@@ -828,7 +1039,29 @@
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch02-s01.tex",
-        "abelian-varieties/drafts/scratch/ch02-s02.tex"
+        "abelian-varieties/drafts/scratch/ch02-s02.tex",
+        "abelian-varieties/drafts/scratch/sec/appellHumbert.tex",
+        "abelian-varieties/drafts/scratch/sec/picardExponential.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateLocalFieldTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch14-open.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateModuliStacks",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/ch14-open.tex"
       ]
     },
     {
@@ -839,7 +1072,9 @@
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch06-open.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex"
+        "abelian-varieties/drafts/scratch/ch06-s04.tex",
+        "abelian-varieties/drafts/scratch/ch14-open.tex",
+        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex"
       ]
     },
     {
@@ -918,6 +1153,15 @@
     {
       "source": "NateAlgebra",
       "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebra/appendix.tex"
+      ]
+    },
+    {
+      "source": "NateAlgebra",
+      "target": "NateLinearPDE",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2112,6 +2356,25 @@
     },
     {
       "source": "NateFuncAnalysis",
+      "target": "NateElemAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateFuncAnalysis",
+      "target": "NateLinearPDE",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex",
+        "functional-analysis/drafts/scratch/unbounded-s5.tex"
+      ]
+    },
+    {
+      "source": "NateFuncAnalysis",
       "target": "NateMeasureTheory",
       "type": "prereq",
       "provenance": "manual",
@@ -2121,8 +2384,10 @@
       "source": "NateFuncAnalysis",
       "target": "NateTopology",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex"
+      ]
     },
     {
       "source": "NateGaloisCohom",
@@ -2321,6 +2586,15 @@
     {
       "source": "NateHarmonicAnalysis",
       "target": "NateLanglandsGL2",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NateLinearPDE",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2757,6 +3031,64 @@
       "citedIn": []
     },
     {
+      "source": "NateLinearPDE",
+      "target": "NateCalculus",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateLinearPDE",
+      "target": "NateFuncAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "linear-pde/EYNTKA-linear-pde.tex",
+        "linear-pde/drafts/scratch/ch1-s1.tex",
+        "linear-pde/drafts/scratch/ch1-s2.tex",
+        "linear-pde/drafts/scratch/ch1-s3.tex",
+        "linear-pde/drafts/scratch/ch2-s1.tex",
+        "linear-pde/drafts/scratch/ch2-s2.tex",
+        "linear-pde/drafts/scratch/ch3-s1.tex",
+        "linear-pde/drafts/scratch/ch3-s2.tex",
+        "linear-pde/drafts/scratch/ch3-s3.tex",
+        "linear-pde/drafts/scratch/ch5-s2.tex",
+        "linear-pde/drafts/scratch/ch5-s3.tex",
+        "linear-pde/drafts/scratch/ch8-s1.tex"
+      ]
+    },
+    {
+      "source": "NateLinearPDE",
+      "target": "NateHarmonicAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "linear-pde/EYNTKA-linear-pde.tex",
+        "linear-pde/drafts/scratch/ch2-s1.tex",
+        "linear-pde/drafts/scratch/ch5-s1.tex"
+      ]
+    },
+    {
+      "source": "NateLinearPDE",
+      "target": "NateMeasureTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "linear-pde/EYNTKA-linear-pde.tex",
+        "linear-pde/drafts/scratch/ch2-s1.tex"
+      ]
+    },
+    {
+      "source": "NateLinearPDE",
+      "target": "NateMicrolocalAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-pde/EYNTKA-linear-pde.tex",
+        "linear-pde/drafts/scratch/ch5-s3.tex"
+      ]
+    },
+    {
       "source": "NateLocalFieldTheory",
       "target": "NateAlgebra",
       "type": "reference",
@@ -2879,6 +3211,62 @@
       ]
     },
     {
+      "source": "NateMicrolocalAnalysis",
+      "target": "NateDiffGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
+        "microlocal-analysis/drafts/scratch/ch1-s3.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s1.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s2.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s3.tex"
+      ]
+    },
+    {
+      "source": "NateMicrolocalAnalysis",
+      "target": "NateFuncAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
+        "microlocal-analysis/drafts/scratch/ch1-s1.tex",
+        "microlocal-analysis/drafts/scratch/ch1-s2.tex",
+        "microlocal-analysis/drafts/scratch/ch2-s1.tex",
+        "microlocal-analysis/drafts/scratch/ch2-s3.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s3.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s4.tex"
+      ]
+    },
+    {
+      "source": "NateMicrolocalAnalysis",
+      "target": "NateHarmonicAnalysis",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
+        "microlocal-analysis/drafts/scratch/ch1-s2.tex",
+        "microlocal-analysis/drafts/scratch/ch1-s3.tex",
+        "microlocal-analysis/drafts/scratch/ch2-s1.tex",
+        "microlocal-analysis/drafts/scratch/ch2-s2.tex",
+        "microlocal-analysis/drafts/scratch/ch2-s3.tex",
+        "microlocal-analysis/drafts/scratch/ch3-s2.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s2.tex"
+      ]
+    },
+    {
+      "source": "NateMicrolocalAnalysis",
+      "target": "NateLinearPDE",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
+        "microlocal-analysis/drafts/opening-ch3.tex",
+        "microlocal-analysis/drafts/scratch/ch3-s1.tex",
+        "microlocal-analysis/drafts/scratch/ch3-s3.tex"
+      ]
+    },
+    {
       "source": "NateModuliStacks",
       "target": "NateAlgGeo",
       "type": "prereq",
@@ -2991,7 +3379,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "PDE/EYNTKA-nonlinear-wave.tex"
+        "nonlinear-wave-pde/EYNTKA-nonlinear-wave.tex"
       ]
     },
     {
@@ -3000,8 +3388,15 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "PDE/EYNTKA-nonlinear-wave.tex"
+        "nonlinear-wave-pde/EYNTKA-nonlinear-wave.tex"
       ]
+    },
+    {
+      "source": "NateNonlinearWave",
+      "target": "NateLinearPDE",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateNonlinearWave",
@@ -3216,6 +3611,18 @@
         "riemannian-geometry/chapters/ch09-s02.tex",
         "riemannian-geometry/chapters/ch09-s04.tex",
         "riemannian-geometry/chapters/ch14-whatnext.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateMicrolocalAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/chapters/ch12-open.tex",
+        "riemannian-geometry/chapters/ch12-s03.tex",
+        "riemannian-geometry/chapters/ch12-s04.tex",
+        "riemannian-geometry/chapters/ch12-s05.tex"
       ]
     },
     {
