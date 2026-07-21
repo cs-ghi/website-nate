@@ -245,13 +245,13 @@ export const booksArray: Book[]= [
     type: 'pdf'
   },
   {
-    name: 'Nonlinear Wave and Dispersive Equations',
+    name: 'Nonlinear Wave and Dispersive PDE',
     desc: 'Linear and nonlinear wave equations in increasing complexity; the wave equation and its weak/distributional solutions; existence and uniqueness for linear and nonlinear wave equations; Littlewood-Paley theory; the Klainerman-Sobolev inequality and global existence for nonlinear wave equations; well-posedness and dispersive (Strichartz) estimates. Maxwell-Klein-Gordon equations coming soon.',
     link: '././assets/pdfs/books/EYNTKA-nonlinear-wave.pdf',
     type: 'pdf'
   },
   {
-    name: 'Linear Elliptic and Parabolic Equations',
+    name: 'Linear Elliptic and Parabolic PDE',
     desc: 'Second-order linear elliptic and parabolic PDE. Weak formulations and the Lax-Milgram theorem; the Sobolev setup for boundary-value problems; existence by variational methods and the Fredholm alternative; Schauder and L^p (Calderon-Zygmund) regularity; spectral theory of elliptic operators (Rayleigh quotient, Courant-Fischer min-max, Weyl\'s law). Maximum principles, Green\'s functions, and the parabolic theory (heat equation, semigroups) coming soon.',
     link: '././assets/pdfs/books/EYNTKA-linear-pde.pdf',
     type: 'pdf'

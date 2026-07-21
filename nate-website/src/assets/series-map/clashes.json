@@ -1,13 +1,5 @@
 [
   {
-    "kind": "unmapped-dir",
-    "severity": "warn",
-    "message": "Directory '_archive' has no codename (add it to overlay.yaml 'dirs:').",
-    "refs": [
-      "_archive"
-    ]
-  },
-  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateModernAlgGeo' is planned (cited/registered but has no folder yet).",
@@ -21,17 +13,6 @@
     "message": "'NateRealReductiveGroups' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateRealReductiveGroups"
-    ]
-  },
-  {
-    "kind": "unknown-codename",
-    "severity": "error",
-    "message": "\\cite{NateMicrolocalAnalysis} resolves to no known book. Fix the citation or add an alias/registry entry.",
-    "refs": [
-      "NateMicrolocalAnalysis",
-      "linear-pde/EYNTKA-linear-pde.tex",
-      "linear-pde/drafts/scratch/ch5-s3.tex",
-      "riemannian-geometry/chapters/ch12-open.tex"
     ]
   },
   {
@@ -85,25 +66,9 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateGroupCohomology' is planned (cited/registered but has no folder yet).",
+    "message": "'NateSpinGeometry' is planned (cited/registered but has no folder yet).",
     "refs": [
-      "NateGroupCohomology"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateUnitaryRepTheory' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateUnitaryRepTheory"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NatePadicGroups' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NatePadicGroups"
+      "NateSpinGeometry"
     ]
   },
   {
@@ -112,6 +77,94 @@
     "message": "'NateAutomorphicForms' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateAutomorphicForms"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateStochasticCalculus' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateStochasticCalculus"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateErgodicTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateErgodicTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateManifoldAnalysis' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateManifoldAnalysis"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateSeveralComplexVariables' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateSeveralComplexVariables"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateGaugeTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateGaugeTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateSymplecticGeometry' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateSymplecticGeometry"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateCalcVariations' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateCalcVariations"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateDynamicalSystems' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateDynamicalSystems"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateGroupCohomology' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateGroupCohomology"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateModularRepTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateModularRepTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NatePadicGroups' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NatePadicGroups"
     ]
   },
   {
@@ -323,15 +376,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateFuncAnalysis -> NateTopology) is manual, no backing \\cite found.",
-    "refs": [
-      "NateFuncAnalysis",
-      "NateTopology"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateHarmonicAnalysis -> NateFuncAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateHarmonicAnalysis",
@@ -407,15 +451,6 @@
     "message": "Overlay prereq (NateGeometricAnalysis -> NateLinearPDE) is manual, no backing \\cite found.",
     "refs": [
       "NateGeometricAnalysis",
-      "NateLinearPDE"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "warn",
-    "message": "Overlay prereq (NateMicrolocalAnalysis -> NateLinearPDE) references an unknown book.",
-    "refs": [
-      "NateMicrolocalAnalysis",
       "NateLinearPDE"
     ]
   },
@@ -1196,7 +1231,16 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateHodgeTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAbelianVarieties -> NateAlgTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateAlgTop"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateHodgeTheory is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateHodgeTheory"
@@ -1205,7 +1249,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateHomologicalAlg is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAbelianVarieties -> NateHomologicalAlg is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateHomologicalAlg"
@@ -1214,7 +1258,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateCoreAlgebra is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAbelianVarieties -> NateCoreAlgebra is cited in 11 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateCoreAlgebra"
@@ -1223,7 +1267,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateShimuraVarieties is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAbelianVarieties -> NateShimuraVarieties is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateShimuraVarieties"
@@ -1232,10 +1276,46 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateCoreRepTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAbelianVarieties -> NateCoreRepTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateCoreRepTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateAlgNumberTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateAlgNumberTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateCFT is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateCFT"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateCommAlg is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateCommAlg"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateGaloisCohom is cited in 9 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateGaloisCohom"
     ]
   },
   {
@@ -1313,6 +1393,15 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
+    "message": "NateMicrolocalAnalysis -> NateDiffGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateMicrolocalAnalysis",
+      "NateDiffGeo"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
     "message": "NateModuliStacks -> NateModernAlgGeo is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateModuliStacks",
@@ -1380,6 +1469,15 @@
     "refs": [
       "NateRiemannianGeometry",
       "NateKTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateRiemannianGeometry -> NateMicrolocalAnalysis is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateMicrolocalAnalysis"
     ]
   },
   {
