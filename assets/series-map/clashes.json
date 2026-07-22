@@ -322,946 +322,586 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLinAlg -> NatePrelim) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NatePrelim -> NateLinAlg) is manual, no backing \\cite found.",
     "refs": [
-      "NateLinAlg",
-      "NatePrelim"
+      "NatePrelim",
+      "NateLinAlg"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateElemAnalysis -> NatePrelim) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NatePrelim -> NateElemAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePrelim",
+      "NateElemAnalysis"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePrelim -> NateLogic) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePrelim",
+      "NateLogic"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePrelim -> NateCombinatorics) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePrelim",
+      "NateCombinatorics"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateElemAnalysis -> NateCalculus) is manual, no backing \\cite found.",
     "refs": [
       "NateElemAnalysis",
-      "NatePrelim"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLogic -> NatePrelim) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLogic",
-      "NatePrelim"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCombinatorics -> NatePrelim) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCombinatorics",
-      "NatePrelim"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateTopology -> NateCalculus) is manual, no backing \\cite found.",
-    "refs": [
-      "NateTopology",
       "NateCalculus"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCalculus -> NateElemAnalysis) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateElemAnalysis -> NateMeasureTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateElemAnalysis",
+      "NateMeasureTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateElemAnalysis -> NateRealAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NateElemAnalysis",
+      "NateRealAnalysis"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateElemAnalysis -> NateCoreProbability) is manual, no backing \\cite found.",
+    "refs": [
+      "NateElemAnalysis",
+      "NateCoreProbability"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCalculus -> NateTopology) is manual, no backing \\cite found.",
     "refs": [
       "NateCalculus",
-      "NateElemAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateMeasureTheory -> NateElemAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateMeasureTheory",
-      "NateElemAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateRealAnalysis -> NateElemAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateRealAnalysis",
-      "NateElemAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateFuncAnalysis -> NateMeasureTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateFuncAnalysis",
-      "NateMeasureTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHarmonicAnalysis -> NateFuncAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHarmonicAnalysis",
-      "NateFuncAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHarmonicAnalysis -> NateMeasureTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHarmonicAnalysis",
-      "NateMeasureTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateODE -> NateCalculus) is manual, no backing \\cite found.",
-    "refs": [
-      "NateODE",
-      "NateCalculus"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCoreProbability -> NateElemAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCoreProbability",
-      "NateElemAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateNonlinearWave -> NateODE) is manual, no backing \\cite found.",
-    "refs": [
-      "NateNonlinearWave",
-      "NateODE"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateNonlinearWave -> NateCalculus) is manual, no backing \\cite found.",
-    "refs": [
-      "NateNonlinearWave",
-      "NateCalculus"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLinearPDE -> NateCalculus) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLinearPDE",
-      "NateCalculus"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateNonlinearWave -> NateLinearPDE) is manual, no backing \\cite found.",
-    "refs": [
-      "NateNonlinearWave",
-      "NateLinearPDE"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeometricAnalysis -> NateLinearPDE) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeometricAnalysis",
-      "NateLinearPDE"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateDiffGeo -> NateTopology) is manual, no backing \\cite found.",
-    "refs": [
-      "NateDiffGeo",
       "NateTopology"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateDiffGeo -> NateCalculus) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateCalculus -> NateComplexAnalysis) is manual, no backing \\cite found.",
     "refs": [
-      "NateDiffGeo",
-      "NateCalculus"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeoRepTheory -> NateCoreRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeoRepTheory",
-      "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCommAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCommAlg",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHomologicalAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHomologicalAlg",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateClassicalAlgGeo -> NateCoreAlgebra) is manual, no backing \\cite found.",
-    "refs": [
-      "NateClassicalAlgGeo",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateClassicalAlgGeo -> NateCommAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateClassicalAlgGeo",
-      "NateCommAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgNumberTheory -> NateCoreAlgebra) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgNumberTheory",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgNumberTheory -> NateCommAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgNumberTheory",
-      "NateCommAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgGeo -> NateCommAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgGeo",
-      "NateCommAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgGeo -> NateHomologicalAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgGeo",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHigherCategoryTheory -> NateCategoryTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHigherCategoryTheory",
-      "NateCategoryTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHigherCategoryTheory -> NateHomologicalAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHigherCategoryTheory",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHigherCategoryTheory -> NateAlgTop) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHigherCategoryTheory",
-      "NateAlgTop"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLanglandsGL2 -> NateLocalFieldTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLanglandsGL2",
-      "NateLocalFieldTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLanglandsGL2 -> NateCoreRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLanglandsGL2",
-      "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLanglandsGL2 -> NateAlgNumberTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLanglandsGL2",
-      "NateAlgNumberTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLanglandsGL2 -> NateGeoRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLanglandsGL2",
-      "NateGeoRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLanglandsGL2 -> NateHarmonicAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLanglandsGL2",
-      "NateHarmonicAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateComplexAnalysis -> NateCalculus) is manual, no backing \\cite found.",
-    "refs": [
-      "NateComplexAnalysis",
-      "NateCalculus"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGR -> NateRiemannianGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGR",
-      "NateRiemannianGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGR -> NateNonlinearWave) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGR",
-      "NateNonlinearWave"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeometricAnalysis -> NateRiemannianGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeometricAnalysis",
-      "NateRiemannianGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeometricAnalysis -> NateNonlinearWave) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeometricAnalysis",
-      "NateNonlinearWave"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateModuliStacks -> NateAlgGeo) is manual, no backing \\cite found.",
-    "refs": [
-      "NateModuliStacks",
-      "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateEtaleCohomology -> NateAlgGeo) is manual, no backing \\cite found.",
-    "refs": [
-      "NateEtaleCohomology",
-      "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateEtaleCohomology -> NateCommAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateEtaleCohomology",
-      "NateCommAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateEtaleCohomology -> NateHomologicalAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateEtaleCohomology",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateUnitaryRepTheory -> NateFuncAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateUnitaryRepTheory",
-      "NateFuncAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateUnitaryRepTheory -> NateMeasureTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateUnitaryRepTheory",
-      "NateMeasureTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateUnitaryRepTheory -> NateHarmonicAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateUnitaryRepTheory",
-      "NateHarmonicAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateUnitaryRepTheory -> NateTopology) is manual, no backing \\cite found.",
-    "refs": [
-      "NateUnitaryRepTheory",
-      "NateTopology"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateUnitaryRepTheory -> NateCStarAlgebras) is manual, no backing \\cite found.",
-    "refs": [
-      "NateUnitaryRepTheory",
-      "NateCStarAlgebras"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateRealReductiveGroups -> NateUnitaryRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateRealReductiveGroups",
-      "NateUnitaryRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateRealReductiveGroups -> NateLieGroups) is manual, no backing \\cite found.",
-    "refs": [
-      "NateRealReductiveGroups",
-      "NateLieGroups"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateRealReductiveGroups -> NateFuncAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateRealReductiveGroups",
-      "NateFuncAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateRealReductiveGroups -> NateHarmonicAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateRealReductiveGroups",
-      "NateHarmonicAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicGroups -> NateLanglandsGL2) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicGroups",
-      "NateLanglandsGL2"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicGroups -> NateGeoRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicGroups",
-      "NateGeoRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicGroups -> NateLocalFieldTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicGroups",
-      "NateLocalFieldTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicGroups -> NateUnitaryRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicGroups",
-      "NateUnitaryRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicForms -> NateRealReductiveGroups) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicForms",
-      "NateRealReductiveGroups"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicForms -> NatePadicGroups) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicForms",
-      "NatePadicGroups"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicForms -> NateUnitaryRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicForms",
-      "NateUnitaryRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicForms -> NateCFT) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicForms",
-      "NateCFT"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicForms -> NateHarmonicAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicForms",
-      "NateHarmonicAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateTraceFormula -> NateAutomorphicForms) is manual, no backing \\cite found.",
-    "refs": [
-      "NateTraceFormula",
-      "NateAutomorphicForms"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateTraceFormula -> NatePadicGroups) is manual, no backing \\cite found.",
-    "refs": [
-      "NateTraceFormula",
-      "NatePadicGroups"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateTraceFormula -> NateRealReductiveGroups) is manual, no backing \\cite found.",
-    "refs": [
-      "NateTraceFormula",
-      "NateRealReductiveGroups"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateTraceFormula -> NateGaloisCohom) is manual, no backing \\cite found.",
-    "refs": [
-      "NateTraceFormula",
-      "NateGaloisCohom"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicHodge -> NateGaloisCohom) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicHodge",
-      "NateGaloisCohom"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicHodge -> NateLocalFieldTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicHodge",
-      "NateLocalFieldTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicHodge -> NateCommAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicHodge",
-      "NateCommAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicHodge -> NateHomologicalAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicHodge",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateModularForms -> NateComplexAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateModularForms",
+      "NateCalculus",
       "NateComplexAnalysis"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateModularForms -> NateEtaleCohomology) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateCalculus -> NateODE) is manual, no backing \\cite found.",
     "refs": [
-      "NateModularForms",
-      "NateEtaleCohomology"
+      "NateCalculus",
+      "NateODE"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateModularForms -> NateAlgNumberTheory) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateMeasureTheory -> NateFuncAnalysis) is manual, no backing \\cite found.",
     "refs": [
-      "NateModularForms",
-      "NateAlgNumberTheory"
+      "NateMeasureTheory",
+      "NateFuncAnalysis"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateModularityLifting -> NateGaloisCohom) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateLinearPDE -> NateNonlinearWave) is manual, no backing \\cite found.",
     "refs": [
-      "NateModularityLifting",
-      "NateGaloisCohom"
+      "NateLinearPDE",
+      "NateNonlinearWave"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateModularityLifting -> NatePadicHodge) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateODE -> NateNonlinearWave) is manual, no backing \\cite found.",
     "refs": [
-      "NateModularityLifting",
-      "NatePadicHodge"
+      "NateODE",
+      "NateNonlinearWave"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateModularityLifting -> NateEllipticCurves) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateTopology -> NateDiffGeo) is manual, no backing \\cite found.",
     "refs": [
-      "NateModularityLifting",
-      "NateEllipticCurves"
+      "NateTopology",
+      "NateDiffGeo"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateModularityLifting -> NateModularForms) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateCoreRepTheory -> NateGeoRepTheory) is manual, no backing \\cite found.",
     "refs": [
-      "NateModularityLifting",
-      "NateModularForms"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicGaloisReps -> NateShimuraVarieties) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicGaloisReps",
-      "NateShimuraVarieties"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicGaloisReps -> NateEtaleCohomology) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicGaloisReps",
-      "NateEtaleCohomology"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicGaloisReps -> NateTraceFormula) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicGaloisReps",
-      "NateTraceFormula"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicGaloisReps -> NatePerfectoidGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicGaloisReps",
-      "NatePerfectoidGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAutomorphicGaloisReps -> NateModularityLifting) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAutomorphicGaloisReps",
-      "NateModularityLifting"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePerfectoidGeometry -> NateCommAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePerfectoidGeometry",
-      "NateCommAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePerfectoidGeometry -> NateAlgGeo) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePerfectoidGeometry",
-      "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePerfectoidGeometry -> NateLocalFieldTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePerfectoidGeometry",
-      "NateLocalFieldTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePerfectoidGeometry -> NatePadicHodge) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePerfectoidGeometry",
-      "NatePadicHodge"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePerfectoidGeometry -> NateEtaleCohomology) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePerfectoidGeometry",
-      "NateEtaleCohomology"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicLanglands -> NatePadicHodge) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicLanglands",
-      "NatePadicHodge"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicLanglands -> NatePadicGroups) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicLanglands",
-      "NatePadicGroups"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePadicLanglands -> NateModularForms) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicLanglands",
-      "NateModularForms"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeometrizedLanglands -> NatePerfectoidGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeometrizedLanglands",
-      "NatePerfectoidGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeometrizedLanglands -> NatePadicGroups) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeometrizedLanglands",
-      "NatePadicGroups"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeometrizedLanglands -> NatePadicLanglands) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeometrizedLanglands",
-      "NatePadicLanglands"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeometrizedLanglands -> NateGeometricLanglands) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeometrizedLanglands",
-      "NateGeometricLanglands"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePerverseSheaves -> NateEtaleCohomology) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePerverseSheaves",
-      "NateEtaleCohomology"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePerverseSheaves -> NateHomologicalAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePerverseSheaves",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePerverseSheaves -> NateAlgGeo) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePerverseSheaves",
-      "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateGeometricLanglands -> NateGeoRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeometricLanglands",
+      "NateCoreRepTheory",
       "NateGeoRepTheory"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateGeometricLanglands -> NateModuliStacks) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateCoreAlgebra -> NateCommAlg) is manual, no backing \\cite found.",
     "refs": [
-      "NateGeometricLanglands",
-      "NateModuliStacks"
+      "NateCoreAlgebra",
+      "NateCommAlg"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateGeometricLanglands -> NateHigherCategoryTheory) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateCoreAlgebra -> NateHomologicalAlg) is manual, no backing \\cite found.",
     "refs": [
-      "NateGeometricLanglands",
+      "NateCoreAlgebra",
+      "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCommAlg -> NateClassicalAlgGeo) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCommAlg",
+      "NateClassicalAlgGeo"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCommAlg -> NateAlgNumberTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCommAlg",
+      "NateAlgNumberTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHomologicalAlg -> NateAlgGeo) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHomologicalAlg",
+      "NateAlgGeo"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCategoryTheory -> NateHigherCategoryTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCategoryTheory",
       "NateHigherCategoryTheory"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateGeometricLanglands -> NateEtaleCohomology) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateHomologicalAlg -> NateHigherCategoryTheory) is manual, no backing \\cite found.",
     "refs": [
-      "NateGeometricLanglands",
+      "NateHomologicalAlg",
+      "NateHigherCategoryTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgTop -> NateHigherCategoryTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgTop",
+      "NateHigherCategoryTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateGeoRepTheory -> NateLanglandsGL2) is manual, no backing \\cite found.",
+    "refs": [
+      "NateGeoRepTheory",
+      "NateLanglandsGL2"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHarmonicAnalysis -> NateLanglandsGL2) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHarmonicAnalysis",
+      "NateLanglandsGL2"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateRiemannianGeometry -> NateGR) is manual, no backing \\cite found.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateGR"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateNonlinearWave -> NateGR) is manual, no backing \\cite found.",
+    "refs": [
+      "NateNonlinearWave",
+      "NateGR"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateRiemannianGeometry -> NateGeometricAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateGeometricAnalysis"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateNonlinearWave -> NateGeometricAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NateNonlinearWave",
+      "NateGeometricAnalysis"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgGeo -> NateModuliStacks) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgGeo",
+      "NateModuliStacks"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgGeo -> NateEtaleCohomology) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgGeo",
       "NateEtaleCohomology"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateGeometricLanglands -> NatePerverseSheaves) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateHarmonicAnalysis -> NateUnitaryRepTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHarmonicAnalysis",
+      "NateUnitaryRepTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCStarAlgebras -> NateUnitaryRepTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCStarAlgebras",
+      "NateUnitaryRepTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateUnitaryRepTheory -> NateRealReductiveGroups) is manual, no backing \\cite found.",
+    "refs": [
+      "NateUnitaryRepTheory",
+      "NateRealReductiveGroups"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLieGroups -> NateRealReductiveGroups) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLieGroups",
+      "NateRealReductiveGroups"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLanglandsGL2 -> NatePadicGroups) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLanglandsGL2",
+      "NatePadicGroups"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateUnitaryRepTheory -> NatePadicGroups) is manual, no backing \\cite found.",
+    "refs": [
+      "NateUnitaryRepTheory",
+      "NatePadicGroups"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateRealReductiveGroups -> NateAutomorphicForms) is manual, no backing \\cite found.",
+    "refs": [
+      "NateRealReductiveGroups",
+      "NateAutomorphicForms"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePadicGroups -> NateAutomorphicForms) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePadicGroups",
+      "NateAutomorphicForms"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAutomorphicForms -> NateTraceFormula) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAutomorphicForms",
+      "NateTraceFormula"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateGaloisCohom -> NatePadicHodge) is manual, no backing \\cite found.",
+    "refs": [
+      "NateGaloisCohom",
+      "NatePadicHodge"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLocalFieldTheory -> NatePadicHodge) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLocalFieldTheory",
+      "NatePadicHodge"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateComplexAnalysis -> NateModularForms) is manual, no backing \\cite found.",
+    "refs": [
+      "NateComplexAnalysis",
+      "NateModularForms"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEtaleCohomology -> NateModularForms) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NateModularForms"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgNumberTheory -> NateModularForms) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgNumberTheory",
+      "NateModularForms"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePadicHodge -> NateModularityLifting) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePadicHodge",
+      "NateModularityLifting"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEllipticCurves -> NateModularityLifting) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEllipticCurves",
+      "NateModularityLifting"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateModularForms -> NateModularityLifting) is manual, no backing \\cite found.",
+    "refs": [
+      "NateModularForms",
+      "NateModularityLifting"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateShimuraVarieties -> NateAutomorphicGaloisReps) is manual, no backing \\cite found.",
+    "refs": [
+      "NateShimuraVarieties",
+      "NateAutomorphicGaloisReps"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateTraceFormula -> NateAutomorphicGaloisReps) is manual, no backing \\cite found.",
+    "refs": [
+      "NateTraceFormula",
+      "NateAutomorphicGaloisReps"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePerfectoidGeometry -> NateAutomorphicGaloisReps) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePerfectoidGeometry",
+      "NateAutomorphicGaloisReps"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateModularityLifting -> NateAutomorphicGaloisReps) is manual, no backing \\cite found.",
+    "refs": [
+      "NateModularityLifting",
+      "NateAutomorphicGaloisReps"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePadicHodge -> NatePerfectoidGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePadicHodge",
+      "NatePerfectoidGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEtaleCohomology -> NatePerfectoidGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NatePerfectoidGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePadicHodge -> NatePadicLanglands) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePadicHodge",
+      "NatePadicLanglands"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePadicGroups -> NatePadicLanglands) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePadicGroups",
+      "NatePadicLanglands"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateModularForms -> NatePadicLanglands) is manual, no backing \\cite found.",
+    "refs": [
+      "NateModularForms",
+      "NatePadicLanglands"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePerfectoidGeometry -> NateGeometrizedLanglands) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePerfectoidGeometry",
+      "NateGeometrizedLanglands"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePadicLanglands -> NateGeometrizedLanglands) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePadicLanglands",
+      "NateGeometrizedLanglands"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateGeometricLanglands -> NateGeometrizedLanglands) is manual, no backing \\cite found.",
     "refs": [
       "NateGeometricLanglands",
+      "NateGeometrizedLanglands"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEtaleCohomology -> NatePerverseSheaves) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEtaleCohomology",
       "NatePerverseSheaves"
     ]
   },
   {
-    "kind": "heavy-reference",
+    "kind": "unsupported-edge",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateAlgTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "Overlay prereq (NateModuliStacks -> NateGeometricLanglands) is manual, no backing \\cite found.",
     "refs": [
-      "NateAbelianVarieties",
-      "NateAlgTop"
+      "NateModuliStacks",
+      "NateGeometricLanglands"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHigherCategoryTheory -> NateGeometricLanglands) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHigherCategoryTheory",
+      "NateGeometricLanglands"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePerverseSheaves -> NateGeometricLanglands) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePerverseSheaves",
+      "NateGeometricLanglands"
     ]
   },
   {
@@ -1271,24 +911,6 @@
     "refs": [
       "NateAbelianVarieties",
       "NateHodgeTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAbelianVarieties -> NateHomologicalAlg is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAbelianVarieties -> NateCoreAlgebra is cited in 11 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateCoreAlgebra"
     ]
   },
   {
@@ -1312,46 +934,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateAlgNumberTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateAlgNumberTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateAbelianVarieties -> NateCFT is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateCFT"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAbelianVarieties -> NateCommAlg is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateCommAlg"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAbelianVarieties -> NateGaloisCohom is cited in 9 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateGaloisCohom"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgTop -> NateHomologicalAlg is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgTop",
-      "NateHomologicalAlg"
     ]
   },
   {
@@ -1402,19 +988,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateCStarAlgebras -> NateTopology is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateCStarAlgebras",
-      "NateTopology"
+      "NateEtaleCohomology",
+      "NateModernAlgGeo"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateMeasureTheory -> NateTopology is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateEtaleCohomology",
-      "NateModernAlgGeo"
+      "NateMeasureTheory",
+      "NateTopology"
     ]
   },
   {
@@ -1514,15 +1100,6 @@
     "refs": [
       "NateRiemannianGeometry",
       "NateHodgeTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateStatistics -> NateMeasureTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateStatistics",
-      "NateMeasureTheory"
     ]
   }
 ]

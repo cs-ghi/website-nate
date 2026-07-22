@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-21",
+    "generated": "2026-07-22",
     "bookCount": 47,
-    "edgeCount": 293,
+    "edgeCount": 282,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 173
+      "info": 126
     }
   },
   "nodes": [
@@ -30,7 +30,7 @@
       "id": "NateAlgebra",
       "title": "Algebra",
       "dir": "algebra",
-      "description": "The Algebra mega-book, the single compiled volume threading core algebra, commutative algebra, classical algebraic geometry, algebraic number theory, representation theory, homological algebra, and category theory.",
+      "description": "The single compiled volume threading core algebra, commutative algebra, classical algebraic geometry, algebraic number theory, representation theory, homological algebra, and category theory.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [],
@@ -124,7 +124,7 @@
       "id": "NateCalculus",
       "title": "Calculus",
       "dir": null,
-      "description": "Multivariable calculus done carefully, vector fields, paths, line/surface integrals, the inverse and implicit function theorems, and Stokes' theorem in 2–3 dimensions. The computational/geometric bridge from elementary analysis to differential geometry.",
+      "description": "Multivariable calculus done carefully: vector fields, paths, line and surface integrals, the inverse and implicit function theorems, and Stokes' theorem in 2-3 dimensions.",
       "status": "planned",
       "webPublished": false,
       "clusters": [
@@ -314,7 +314,7 @@
       "title": "Elliptic Curves",
       "dir": "elliptic-curves",
       "description": "Weierstrass equations, group law, isogenies, Weil pairing, Mordell–Weil theorem, Hasse's theorem, Galois representations, CM theory, modular forms, modularity, BSD conjecture.",
-      "status": "complete",
+      "status": "in-progress",
       "webPublished": true,
       "clusters": [
         "arithmetic-geometry"
@@ -323,7 +323,7 @@
         "pdf": "elliptic-curves/EYNTKA-elliptic-curves.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
       },
-      "lastUpdated": "2026-07-16"
+      "lastUpdated": "2026-07-22"
     },
     {
       "id": "NateEtaleCohomology",
@@ -484,7 +484,7 @@
       "id": "NateLinAlg",
       "title": "Linear Algebra",
       "dir": null,
-      "description": "The concrete / computational first-and-second course in linear algebra over R and C: linear systems and Gaussian elimination, matrices and determinants, vector spaces and linear maps concretely, eigenvalues and diagonalization, inner-product spaces, and symmetric/Hermitian forms. The pedagogical on-ramp to the abstract, module-theoretic treatment Core Algebra develops from scratch (Ch 14-16, spectral theorem included); recommended background for the abstract-algebra and Lie/representation-theory tracks, a hard prerequisite of neither.",
+      "description": "The concrete, computational first course in linear algebra over R and C: linear systems and Gaussian elimination, matrices and determinants, vector spaces and linear maps, eigenvalues and diagonalization, inner-product spaces, and symmetric/Hermitian forms.",
       "status": "planned",
       "webPublished": false,
       "clusters": []
@@ -565,7 +565,7 @@
       "id": "NateModuliStacks",
       "title": "Moduli, Deformation Theory, and Stacks",
       "dir": "moduli-stacks",
-      "description": "Moduli theory in three movements: functor-of-points representability and the construction toolkit (Hilbert/Quot schemes, geometric invariant theory); deformation theory (first-order deformations as cohomology, obstructions, the naive cotangent complex, Schlessinger's criteria); and the stacks that represent moduli problems with automorphisms (descent and sites, fibered categories, algebraic/Deligne-Mumford/Artin stacks, Artin's representability criteria, gerbes and the Brauer group). Closes with an application to the moduli of curves. Spun out from the Algebraic Geometry mega-book's Part III.",
+      "description": "Moduli theory in three movements: representability and the construction toolkit (Hilbert/Quot schemes, geometric invariant theory); deformation theory (first-order deformations, obstructions, the cotangent complex, Schlessinger's criteria); and algebraic stacks (descent and sites, fibered categories, Deligne-Mumford and Artin stacks, gerbes and the Brauer group). Closes with the moduli of curves.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [],
@@ -624,7 +624,7 @@
       "id": "NateProbability",
       "title": "Probability",
       "dir": "probability",
-      "description": "The measure-theoretic flagship (prereq measure theory): probability spaces as measure spaces, random variables and independence, modes of convergence, laws of large numbers, characteristic functions and the central limit theorem, conditional expectation via Radon–Nikodym, and discrete-time martingales. Ends before continuous-time processes.",
+      "description": "Measure-theoretic probability: probability spaces, random variables and independence, modes of convergence, laws of large numbers, characteristic functions and the central limit theorem, conditional expectation via Radon–Nikodym, and discrete-time martingales. Ends before continuous-time processes.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -640,7 +640,7 @@
       "id": "NateRealAnalysis",
       "title": "Real Analysis",
       "dir": "Real-Analysis",
-      "description": "The Analysis mega-book, the compiled real-analysis volume threading measure theory, functional analysis, and harmonic analysis.",
+      "description": "The single compiled volume threading measure theory, functional analysis, and harmonic analysis.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -687,7 +687,7 @@
       "id": "NateStatistics",
       "title": "Mathematical Statistics",
       "dir": "statistics",
-      "description": "Mathematical statistics on a measure-theoretic-probability base (prereq Probability): statistical models and the decision-theoretic frame, sufficiency and exponential families, point estimation (Cramér–Rao, UMVU, MLE, Bayes), hypothesis testing and confidence sets (Neyman–Pearson, likelihood ratio, duality), large-sample theory (consistency, asymptotic normality, Wilks), and the Gaussian linear model. The statistics/ML arm of the probability tower.",
+      "description": "Mathematical statistics on a measure-theoretic base: statistical models and the decision-theoretic frame, sufficiency and exponential families, point estimation (Cramér–Rao, UMVU, MLE, Bayes), hypothesis testing and confidence sets (Neyman–Pearson, likelihood ratio, duality), large-sample theory, and the Gaussian linear model.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -730,8 +730,8 @@
     {
       "source": "NateAbelianVarieties",
       "target": "NateAlgGeo",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch07-open.tex",
@@ -836,8 +836,8 @@
     {
       "source": "NateAbelianVarieties",
       "target": "NateComplexAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch01-s01.tex",
@@ -1218,16 +1218,9 @@
     },
     {
       "source": "NateAlgGeo",
-      "target": "NateCommAlg",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateAlgGeo",
       "target": "NateComplexAnalysis",
-      "type": "coreq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
@@ -1350,8 +1343,8 @@
     {
       "source": "NateAlgKTheory",
       "target": "NateCoreAlgebra",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
       ]
@@ -1377,8 +1370,8 @@
     {
       "source": "NateAlgKTheory",
       "target": "NateKTheory",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
       ]
@@ -1404,13 +1397,6 @@
     {
       "source": "NateAlgNumberTheory",
       "target": "NateCommAlg",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateAlgNumberTheory",
-      "target": "NateCoreAlgebra",
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
@@ -1466,8 +1452,8 @@
     {
       "source": "NateAlgTop",
       "target": "NateHomologicalAlg",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "algebraic-topology/.wip/BR.tex",
         "algebraic-topology/.wip/LC.tex",
@@ -1668,8 +1654,8 @@
     {
       "source": "NateCFT",
       "target": "NateAlgNumberTheory",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "class-field-theory/EYNTKA-class-field-theory.tex"
       ]
@@ -1758,13 +1744,6 @@
     {
       "source": "NateClassicalAlgGeo",
       "target": "NateCommAlg",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateClassicalAlgGeo",
-      "target": "NateCoreAlgebra",
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
@@ -1860,8 +1839,8 @@
     {
       "source": "NateComplexAnalysis",
       "target": "NateAlgGeo",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "complex-analysis/EYNTKA_complex_analysis.tex"
       ]
@@ -1974,6 +1953,13 @@
     },
     {
       "source": "NateCoreAlgebra",
+      "target": "NateLinAlg",
+      "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCoreAlgebra",
       "target": "NateRealAnalysis",
       "type": "reference",
       "provenance": "auto",
@@ -2066,6 +2052,13 @@
     },
     {
       "source": "NateCoreRepTheory",
+      "target": "NateLinAlg",
+      "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCoreRepTheory",
       "target": "NateRealAnalysis",
       "type": "reference",
       "provenance": "auto",
@@ -2124,8 +2117,8 @@
     {
       "source": "NateCStarAlgebras",
       "target": "NateKTheory",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "cstar-algebras/EYNTKA-cstar-algebras.tex",
         "cstar-algebras/drafts/scratch/ch03-s04.tex"
@@ -2134,8 +2127,8 @@
     {
       "source": "NateCStarAlgebras",
       "target": "NateMeasureTheory",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "cstar-algebras/EYNTKA-cstar-algebras.tex",
         "cstar-algebras/drafts/scratch/ch04-s01.tex",
@@ -2163,13 +2156,6 @@
       "citedIn": [
         "differential-geometry/EYNTKA_Differential_Geometry.tex"
       ]
-    },
-    {
-      "source": "NateDiffGeo",
-      "target": "NateCalculus",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateDiffGeo",
@@ -2303,13 +2289,6 @@
     },
     {
       "source": "NateEtaleCohomology",
-      "target": "NateCommAlg",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateEtaleCohomology",
       "target": "NateEllipticCurves",
       "type": "reference",
       "provenance": "auto",
@@ -2327,13 +2306,6 @@
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/scratch/ch02-s03.tex"
       ]
-    },
-    {
-      "source": "NateEtaleCohomology",
-      "target": "NateHomologicalAlg",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateEtaleCohomology",
@@ -2437,8 +2409,8 @@
     {
       "source": "NateGaloisCohom",
       "target": "NateCoreAlgebra",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "galois-cohomology/EYNTKA-galois-cohomology.tex"
       ]
@@ -2571,8 +2543,10 @@
       "source": "NateHarmonicAnalysis",
       "target": "NateFuncAnalysis",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
     },
     {
       "source": "NateHarmonicAnalysis",
@@ -2603,10 +2577,12 @@
     },
     {
       "source": "NateHarmonicAnalysis",
-      "target": "NateMeasureTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
     },
     {
       "source": "NateHodgeTheory",
@@ -2635,8 +2611,8 @@
     {
       "source": "NateHodgeTheory",
       "target": "NateAlgTop",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "hodge-theory/EYNTKA-hodge-theory.tex",
         "hodge-theory/drafts/scratch/ch02-s04.tex"
@@ -2657,8 +2633,8 @@
     {
       "source": "NateHodgeTheory",
       "target": "NateDiffGeo",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "hodge-theory/EYNTKA-hodge-theory.tex",
         "hodge-theory/drafts/scratch/ch02-s01.tex"
@@ -2676,8 +2652,8 @@
     {
       "source": "NateHodgeTheory",
       "target": "NateHomologicalAlg",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "hodge-theory/EYNTKA-hodge-theory.tex",
         "hodge-theory/drafts/scratch/ch02-s04.tex"
@@ -2718,8 +2694,8 @@
     {
       "source": "NateHomologicalAlg",
       "target": "NateAlgTop",
-      "type": "coreq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
@@ -2779,8 +2755,8 @@
     {
       "source": "NateKTheory",
       "target": "NateAlgKTheory",
-      "type": "coreq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
       ]
@@ -2797,8 +2773,8 @@
     {
       "source": "NateKTheory",
       "target": "NateCStarAlgebras",
-      "type": "coreq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
       ]
@@ -2832,13 +2808,6 @@
     },
     {
       "source": "NateLanglandsGL2",
-      "target": "NateAlgNumberTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLanglandsGL2",
       "target": "NateCFT",
       "type": "prereq",
       "provenance": "both",
@@ -2857,16 +2826,9 @@
     },
     {
       "source": "NateLanglandsGL2",
-      "target": "NateCoreRepTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLanglandsGL2",
       "target": "NateFuncAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
@@ -2874,8 +2836,8 @@
     {
       "source": "NateLanglandsGL2",
       "target": "NateGaloisCohom",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
@@ -2896,13 +2858,6 @@
     },
     {
       "source": "NateLanglandsGL2",
-      "target": "NateLocalFieldTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLanglandsGL2",
       "target": "NateRealAnalysis",
       "type": "reference",
       "provenance": "auto",
@@ -2913,8 +2868,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateCoreAlgebra",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -3003,25 +2958,11 @@
     {
       "source": "NateLieGroups",
       "target": "NateTopology",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
-    },
-    {
-      "source": "NateLinAlg",
-      "target": "NateCoreAlgebra",
-      "type": "coreq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLinAlg",
-      "target": "NateCoreRepTheory",
-      "type": "coreq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateLinAlg",
@@ -3032,16 +2973,9 @@
     },
     {
       "source": "NateLinearPDE",
-      "target": "NateCalculus",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateLinearPDE",
       "target": "NateFuncAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "linear-pde/EYNTKA-linear-pde.tex",
         "linear-pde/drafts/scratch/ch1-s1.tex",
@@ -3071,8 +3005,8 @@
     {
       "source": "NateLinearPDE",
       "target": "NateMeasureTheory",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "linear-pde/EYNTKA-linear-pde.tex",
         "linear-pde/drafts/scratch/ch2-s1.tex"
@@ -3208,7 +3142,10 @@
       "provenance": "auto",
       "citedIn": [
         "measure-theory/EYNTKA-measure-theory.tex",
-        "measure-theory/drafts/scratch/ch04-s01.tex"
+        "measure-theory/drafts/scratch/ch04-s01.tex",
+        "measure-theory/drafts/scratch/ch06-open.tex",
+        "measure-theory/drafts/scratch/ch06-s01.tex",
+        "measure-theory/drafts/scratch/ch06-s02.tex"
       ]
     },
     {
@@ -3227,8 +3164,8 @@
     {
       "source": "NateMicrolocalAnalysis",
       "target": "NateFuncAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
         "microlocal-analysis/drafts/scratch/ch1-s1.tex",
@@ -3242,8 +3179,8 @@
     {
       "source": "NateMicrolocalAnalysis",
       "target": "NateHarmonicAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
         "microlocal-analysis/drafts/scratch/ch1-s2.tex",
@@ -3290,8 +3227,8 @@
     {
       "source": "NateModuliStacks",
       "target": "NateCommAlg",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
         "moduli-stacks/drafts/scratch/ch04-s01.tex",
@@ -3356,8 +3293,8 @@
     {
       "source": "NateModuliStacks",
       "target": "NateHomologicalAlg",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
         "moduli-stacks/drafts/scratch/ch02-s04.tex",
@@ -3369,16 +3306,9 @@
     },
     {
       "source": "NateNonlinearWave",
-      "target": "NateCalculus",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateNonlinearWave",
       "target": "NateFuncAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "nonlinear-wave-pde/EYNTKA-nonlinear-wave.tex"
       ]
@@ -3386,8 +3316,8 @@
     {
       "source": "NateNonlinearWave",
       "target": "NateHarmonicAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "nonlinear-wave-pde/EYNTKA-nonlinear-wave.tex"
       ]
@@ -3416,8 +3346,8 @@
     {
       "source": "NateODE",
       "target": "NateElemAnalysis",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "ODE/EYNTKA_ODE.tex"
       ]
@@ -3657,8 +3587,8 @@
     {
       "source": "NateShimuraVarieties",
       "target": "NateEllipticCurves",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "shimura-varieties/EYNTKA-shimura-varieties.tex"
       ]
@@ -3738,8 +3668,8 @@
     {
       "source": "NateToricGeometry",
       "target": "NateCommAlg",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "toric-geometry/EYNTKA_toric_geometry.tex",
         "toric-geometry/drafts/scratch/ch01-s01.tex",
