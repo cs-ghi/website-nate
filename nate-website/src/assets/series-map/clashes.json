@@ -610,15 +610,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHarmonicAnalysis -> NateUnitaryRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHarmonicAnalysis",
-      "NateUnitaryRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateUnitaryRepTheory -> NateRealReductiveGroups) is manual, no backing \\cite found.",
     "refs": [
       "NateUnitaryRepTheory",
