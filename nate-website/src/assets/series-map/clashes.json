@@ -619,15 +619,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCStarAlgebras -> NateUnitaryRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCStarAlgebras",
-      "NateUnitaryRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateUnitaryRepTheory -> NateRealReductiveGroups) is manual, no backing \\cite found.",
     "refs": [
       "NateUnitaryRepTheory",
