@@ -13,8 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="./assets/index-CfHdIgQu.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Bd891O6g.css">
+    <script type="module" crossorigin src="./assets/index-GJQpMKE-.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CFWvDJB9.css">
   </head>
   <body>
     <div id="app">
@@ -58,6 +58,9 @@
             <button class="toggle is-on" data-toggle="megabooks" title="Group mega-books">
               Mega-books
             </button>
+            <button class="toggle is-on" data-toggle="tiers" title="Tier bands (off = compact bottom-up layout)">
+              Tiers
+            </button>
           </div>
           <div class="control-group" role="group" aria-label="Highlight mode">
             <select id="highlight-mode" class="select" title="What clicking a book highlights">
@@ -89,11 +92,6 @@
 
         <div id="track-caption" class="panel" hidden></div>
 
-        <div id="tier-axis" aria-hidden="true">
-          <span class="tier-top">research ↑</span>
-          <span class="tier-bottom">↓ foundations</span>
-        </div>
-
         <section id="legend" class="panel">
           <button class="legend-toggle" id="legend-toggle" aria-expanded="true">Legend</button>
           <div class="legend-body" id="legend-body"><!-- filled by ui.ts --></div>
@@ -113,13 +111,14 @@
       <div id="shortcuts" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="shortcuts-title">
         <div class="overlay-card panel">
           <button id="shortcuts-close" class="drawer-close" aria-label="Close">×</button>
-          <h2 class="ov-title" id="shortcuts-title">Keyboard shortcuts</h2>
+          <h2 class="ov-title" id="shortcuts-title">Help</h2>
           <dl class="kbd-list">
             <div><dt><kbd>/</kbd> <span class="kbd-or">or</span> <kbd>⌘</kbd><kbd>K</kbd></dt><dd>Focus search</dd></div>
             <div><dt><kbd>↵</kbd></dt><dd>Open the top search result</dd></div>
             <div><dt><kbd>Esc</kbd></dt><dd>Close / clear selection</dd></div>
             <div><dt><kbd>?</kbd></dt><dd>Toggle this help</dd></div>
           </dl>
+          <div id="help-tiers"><!-- filled by main.ts from graph meta --></div>
           <p class="ov-foot">Click a book for details · click an edge to see why it exists.</p>
         </div>
       </div>
