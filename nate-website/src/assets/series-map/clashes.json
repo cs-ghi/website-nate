@@ -1,5 +1,13 @@
 [
   {
+    "kind": "unmapped-dir",
+    "severity": "warn",
+    "message": "Directory 'linear-algebra' has no codename (add it to overlay.yaml 'dirs:').",
+    "refs": [
+      "linear-algebra"
+    ]
+  },
+  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateModernAlgGeo' is planned (cited/registered but has no folder yet).",
@@ -389,6 +397,15 @@
     "refs": [
       "NateElemAnalysis",
       "NateCoreProbability"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLinAlg -> NateFuncAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinAlg",
+      "NateFuncAnalysis"
     ]
   },
   {

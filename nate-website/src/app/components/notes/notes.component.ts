@@ -8,7 +8,7 @@ export const notesArray: Note[]= [
   {
     name: "Hirzebruch-Riemann-Roch Theorem",
     desc: "Riemann-Roch Theorem is a fundamental result in finding what meromorphic function exist on a Riemann surface that satisfy the conditions of a divisor D. The Hirzebruch-Riemann-Roch generalizes this to finding sections of vector bundles over projective varieites under the right conditions. This paper goes over the proof of HRR, outline a proof for Grothendeick-Riemann Roch, and concludes with some references to the most recent generalization results in the literature",
-    link: "././assets/latex/notes/HRR/HRR.pdf"
+    link: "././assets/pdfs/notes/HRR.pdf"
   },
   {
     name: "Galois Cohomology",
@@ -23,7 +23,7 @@ export const notesArray: Note[]= [
   {
     name: "Preliminary Chapter",
     desc: "An extract from EYNTKA algebra that is further developed to serve as a general set of notes for mathematical knowledge. Does not include information about calculus or linear algebra.",
-    link: "././assets/latex/notes/preliminary_chapter/preliminary_chapter.pdf"
+    link: "././assets/pdfs/notes/preliminary_chapter.pdf"
   },
   {
     name: 'Translating Serre\'s Paper on Simple Algebras',

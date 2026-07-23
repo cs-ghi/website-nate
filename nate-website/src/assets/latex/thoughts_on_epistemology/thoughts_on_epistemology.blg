@@ -1,9 +1,0 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[0] Config.pm:310> INFO - Logfile is 'thoughts_on_epistemology.blg'
-[51] biber-darwin:340> INFO - === Thu Aug 21, 2025, 10:54:45
-[66] Biber.pm:419> INFO - Reading 'thoughts_on_epistemology.bcf'
-[120] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
-[132] bbl.pm:660> INFO - Writing 'thoughts_on_epistemology.bbl' with encoding 'UTF-8'
-[132] bbl.pm:763> INFO - Output to thoughts_on_epistemology.bbl
-[132] Biber.pm:131> WARN - The file 'thoughts_on_epistemology.bcf' does not contain any citations!
-[132] Biber.pm:133> INFO - WARNINGS: 1

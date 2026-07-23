@@ -1,9 +1,0 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[0] Config.pm:310> INFO - Logfile is 'automorphism_representalbe_by_reals_main.blg'
-[48] biber-darwin:340> INFO - === Sat Dec 20, 2025, 16:20:37
-[60] Biber.pm:419> INFO - Reading 'automorphism_representalbe_by_reals_main.bcf'
-[113] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
-[124] bbl.pm:660> INFO - Writing 'automorphism_representalbe_by_reals_main.bbl' with encoding 'UTF-8'
-[124] bbl.pm:763> INFO - Output to automorphism_representalbe_by_reals_main.bbl
-[124] Biber.pm:131> WARN - The file 'automorphism_representalbe_by_reals_main.bcf' does not contain any citations!
-[124] Biber.pm:133> INFO - WARNINGS: 1
