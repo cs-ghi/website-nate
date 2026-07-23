@@ -1,9 +1,0 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[0] Config.pm:310> INFO - Logfile is 'field_with_one_element.blg'
-[51] biber-darwin:340> INFO - === Sun Jul 13, 2025, 23:10:45
-[63] Biber.pm:419> INFO - Reading 'field_with_one_element.bcf'
-[119] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
-[131] bbl.pm:660> INFO - Writing 'field_with_one_element.bbl' with encoding 'UTF-8'
-[131] bbl.pm:763> INFO - Output to field_with_one_element.bbl
-[131] Biber.pm:131> WARN - The file 'field_with_one_element.bcf' does not contain any citations!
-[131] Biber.pm:133> INFO - WARNINGS: 1

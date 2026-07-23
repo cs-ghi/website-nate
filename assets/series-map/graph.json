@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-22",
+    "generated": "2026-07-23",
     "bookCount": 47,
-    "edgeCount": 284,
+    "edgeCount": 285,
     "clashCounts": {
       "error": 0,
-      "warn": 0,
-      "info": 124
+      "warn": 1,
+      "info": 125
     },
     "tiers": [
       {
@@ -570,7 +570,7 @@
       "status": "planned",
       "webPublished": false,
       "clusters": [],
-      "xAffinity": 0,
+      "xAffinity": 0.5,
       "tier": 0
     },
     {
@@ -2450,6 +2450,13 @@
       "citedIn": [
         "functional-analysis/EYNTKA-functional-analysis.tex"
       ]
+    },
+    {
+      "source": "NateFuncAnalysis",
+      "target": "NateLinAlg",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateFuncAnalysis",

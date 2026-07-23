@@ -1,9 +1,0 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[1] Config.pm:310> INFO - Logfile is 'intuition_behind_complex_numbers.blg'
-[87] biber-darwin:340> INFO - === Wed Feb 25, 2026, 19:36:17
-[104] Biber.pm:419> INFO - Reading 'intuition_behind_complex_numbers.bcf'
-[179] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
-[210] bbl.pm:660> INFO - Writing 'intuition_behind_complex_numbers.bbl' with encoding 'UTF-8'
-[210] bbl.pm:763> INFO - Output to intuition_behind_complex_numbers.bbl
-[210] Biber.pm:131> WARN - The file 'intuition_behind_complex_numbers.bcf' does not contain any citations!
-[210] Biber.pm:133> INFO - WARNINGS: 1
