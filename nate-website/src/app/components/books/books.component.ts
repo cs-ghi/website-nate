@@ -144,9 +144,9 @@ export const booksArray: Book[]= [
   },
 
   {
-    name: 'Differential Geometry',
-    desc: 'Various properties of Topological and Smooth Manifolds, smooth maps, tangent maps and bundles, Rank-Nullity Theorem and consequences, Sard\'s Theorem and Transversality, Vector Bundles, Differential Forms and integration on Manifolds, Riemannian Manifolds. Preliminaires include inverse and implicit function theorem and Partition of Unity',
-    link: '././assets/pdfs/books/EYNTKA_Differential_Geometry.pdf',
+    name: 'Differential Topology',
+    desc: 'Topological and smooth manifolds, smooth maps, tangent and cotangent bundles; the rank theorem, immersions, submersions, embeddings; Sard\'s theorem, Whitney embedding, intersection theory; vector fields and flows; vector bundles, tensors, differential forms, integration and Stokes\' theorem. Distributions and the Frobenius theorem, degree theory, the Poincare-Hopf theorem, Morse theory, cobordism, and de Rham cohomology coming soon.',
+    link: '././assets/pdfs/books/EYNTKA-differential-topology.pdf',
     type: 'pdf'
   },
   {
