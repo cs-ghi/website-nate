@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-07-23",
+    "generated": "2026-07-24",
     "bookCount": 47,
-    "edgeCount": 285,
+    "edgeCount": 287,
     "clashCounts": {
       "error": 0,
       "warn": 1,
@@ -334,20 +334,20 @@
       "tier": 3
     },
     {
-      "id": "NateDiffGeo",
-      "title": "Differential Geometry",
-      "dir": "differential-geometry",
-      "description": "smooth manifolds, de Rham cohomology, connections.",
+      "id": "NateDiffTop",
+      "title": "Differential Topology",
+      "dir": "differential-topology",
+      "description": "the smooth-manifold substrate and its topological payoffs: smooth manifolds and maps, transversality and intersection theory, Sard's and Whitney's theorems, vector fields and flows, bundles, differential forms and integration, and de Rham cohomology. The genuinely metric/curvature material lives downstream in Riemannian Geometry; Lie theory in Lie Groups.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
         "hodge"
       ],
       "links": {
-        "pdf": "differential-geometry/EYNTKA_Differential_Geometry.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Differential_Geometry.pdf&name=Differential%20Geometry&source=books"
+        "pdf": "differential-topology/EYNTKA-differential-topology.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-differential-topology.pdf&name=Differential%20Topology&source=books"
       },
-      "lastUpdated": "2026-07-16",
+      "lastUpdated": "2026-07-23",
       "xAffinity": 0,
       "tier": 2
     },
@@ -550,7 +550,7 @@
       "id": "NateLieGroups",
       "title": "Lie Groups",
       "dir": "lie-groups",
-      "description": "the analytic / differential-geometric half of Lie theory, complementary to the algebraic-groups treatment in Algebraic Groups and Representations. Four Parts: (I) Lie groups and their Lie algebras, matrix groups and the classical groups, the exponential map, left-invariant vector fields, the closed-subgroup theorem, the Lie group–Lie algebra correspondence, BCH, homogeneous spaces and covering groups; (II) structure of Lie algebras, solvable/nilpotent (Engel, Lie), the Cartan criteria, Weyl complete reducibility, Levi, the root space decomposition, root systems, and the Cartan–Killing classification; (III) compact Lie groups and their representations, invariant integration, the Peter–Weyl theorem, maximal tori and the Weyl integration formula, the Weyl character and dimension formulas; (IV) real forms and symmetric spaces, complexification, the Cartan decomposition, the Iwasawa decomposition KAN, and Riemannian symmetric spaces bridging to Riemannian Geometry. Running example SU(2). Prereqs Differential Geometry, Core Algebra, Core Representation Theory, Topology, Real Analysis/Functional Analysis; cites Harmonic Analysis for Haar measure.",
+      "description": "the analytic / differential-geometric half of Lie theory, complementary to the algebraic-groups treatment in Algebraic Groups and Representations. Four Parts: (I) Lie groups and their Lie algebras, matrix groups and the classical groups, the exponential map, left-invariant vector fields, the closed-subgroup theorem, the Lie group–Lie algebra correspondence, BCH, homogeneous spaces and covering groups; (II) structure of Lie algebras, solvable/nilpotent (Engel, Lie), the Cartan criteria, Weyl complete reducibility, Levi, the root space decomposition, root systems, and the Cartan–Killing classification; (III) compact Lie groups and their representations, invariant integration, the Peter–Weyl theorem, maximal tori and the Weyl integration formula, the Weyl character and dimension formulas; (IV) real forms and symmetric spaces, complexification, the Cartan decomposition, the Iwasawa decomposition KAN, and Riemannian symmetric spaces bridging to Riemannian Geometry. Running example SU(2). Prereqs Differential Topology, Core Algebra, Core Representation Theory, Topology, Real Analysis/Functional Analysis; cites Harmonic Analysis for Haar measure.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [],
@@ -762,7 +762,7 @@
       "id": "NateRiemannianGeometry",
       "title": "Riemannian Geometry",
       "dir": "riemannian-geometry",
-      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Geometry, Real Analysis, Linear Elliptic and Parabolic PDE. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
+      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Topology, Real Analysis, Linear Elliptic and Parabolic PDE. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -1232,7 +1232,7 @@
     },
     {
       "source": "NateAlgebra",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1343,7 +1343,7 @@
     },
     {
       "source": "NateAlgGeo",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
@@ -1546,7 +1546,7 @@
     },
     {
       "source": "NateAlgTop",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1866,7 +1866,7 @@
     },
     {
       "source": "NateClassicalAlgGeo",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1988,7 +1988,7 @@
     },
     {
       "source": "NateComplexAnalysis",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
@@ -2023,6 +2023,15 @@
       ]
     },
     {
+      "source": "NateComplexAnalysis",
+      "target": "NateRiemannianGeometry",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
       "source": "NateCoreAlgebra",
       "target": "NateAlgGeo",
       "type": "reference",
@@ -2042,7 +2051,7 @@
     },
     {
       "source": "NateCoreAlgebra",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2265,16 +2274,25 @@
       ]
     },
     {
-      "source": "NateDiffGeo",
+      "source": "NateDiffTop",
       "target": "NateAlgGeo",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "differential-geometry/EYNTKA_Differential_Geometry.tex"
+        "differential-topology/EYNTKA-differential-topology.tex"
       ]
     },
     {
-      "source": "NateDiffGeo",
+      "source": "NateDiffTop",
+      "target": "NateRiemannianGeometry",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "differential-topology/EYNTKA-differential-topology.tex"
+      ]
+    },
+    {
+      "source": "NateDiffTop",
       "target": "NateTopology",
       "type": "prereq",
       "provenance": "manual",
@@ -2628,7 +2646,7 @@
     },
     {
       "source": "NateGeoRepTheory",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
@@ -2764,7 +2782,7 @@
     },
     {
       "source": "NateHodgeTheory",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2913,7 +2931,7 @@
     },
     {
       "source": "NateKTheory",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
@@ -3017,7 +3035,7 @@
     },
     {
       "source": "NateLieGroups",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
@@ -3291,7 +3309,7 @@
     },
     {
       "source": "NateMicrolocalAnalysis",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3603,7 +3621,7 @@
     },
     {
       "source": "NateRiemannianGeometry",
-      "target": "NateDiffGeo",
+      "target": "NateDiffTop",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
@@ -3901,7 +3919,7 @@
       "members": [
         "NateHodgeTheory",
         "NateComplexAnalysis",
-        "NateDiffGeo",
+        "NateDiffTop",
         "NateRiemannianGeometry",
         "NateAlgGeo"
       ],

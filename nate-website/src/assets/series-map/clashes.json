@@ -465,10 +465,10 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateTopology -> NateDiffGeo) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateTopology -> NateDiffTop) is manual, no backing \\cite found.",
     "refs": [
       "NateTopology",
-      "NateDiffGeo"
+      "NateDiffTop"
     ]
   },
   {
@@ -951,10 +951,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgTop -> NateDiffGeo is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgTop -> NateDiffTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgTop",
-      "NateDiffGeo"
+      "NateDiffTop"
     ]
   },
   {
@@ -1005,10 +1005,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateMicrolocalAnalysis -> NateDiffGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateMicrolocalAnalysis -> NateDiffTop is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateMicrolocalAnalysis",
-      "NateDiffGeo"
+      "NateDiffTop"
     ]
   },
   {
