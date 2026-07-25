@@ -75,6 +75,49 @@
 }
 
 
+// Overview "Notes & caveats" — collapsible, collapsed by default. Reuses the
+// rotating .expand-chevron and the grid-rows animation from the book children.
+.notes-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    user-select: none;
+    color: $bg-secondary;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 4px 0;
+    margin: 0.5em 0 0.2em;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 1; }
+
+    .expand-chevron {
+        position: static;   // override the top:10px tuned for the book-title rows
+        margin-right: 0;
+        opacity: 0.7;
+    }
+
+    &:hover .expand-chevron { opacity: 1; }
+}
+
+.notes-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+    overflow: hidden;
+
+    &.notes-open {
+        grid-template-rows: 1fr;
+    }
+}
+
+.notes-body {
+    min-height: 0;
+}
+
 .book-search {
     display: flex;
     align-items: center;

@@ -1,0 +1,81 @@
+<div class="section-programming" *ngIf="program as p">
+    <div class="container detail">
+
+        <a class="back-link" (click)="back()">
+            <mat-icon>arrow_back</mat-icon> <span>Programming</span>
+        </a>
+
+        <!-- hero -->
+        <header class="detail-hero">
+            <h2 class="detail-name">{{ p.name }}</h2>
+            <p class="detail-tagline">{{ p.tagline }}</p>
+
+            <div class="detail-badges">
+                <span class="badge" [ngClass]="'status-' + p.status">{{ statusLabel[p.status] }}</span>
+                <span class="badge" *ngIf="p.language">{{ p.language }}</span>
+                <span class="badge" *ngIf="p.ecosystem">{{ p.ecosystem }}</span>
+            </div>
+
+            <div class="detail-links">
+                <a *ngIf="p.repo" [href]="p.repo" target="_blank" class="btn primary">
+                    <i class="fa fa-github"></i> Repository
+                </a>
+                <a *ngIf="p.docsUrl" [href]="p.docsUrl" target="_blank" class="btn">Docs</a>
+                <a *ngIf="p.demoUrl" [href]="p.demoUrl" target="_blank" class="btn">Live demo</a>
+                <span *ngIf="!p.repo" class="soon">Public repository coming soon</span>
+            </div>
+        </header>
+
+        <mat-divider class="divider"></mat-divider>
+
+        <!-- lead visual -->
+        <figure class="hero-media" *ngIf="p.hero as h">
+            <img *ngIf="h.type !== 'video'" [src]="h.src" [alt]="h.alt || p.name" />
+            <video *ngIf="h.type === 'video'" [poster]="h.poster || ''" controls muted loop>
+                <source [src]="h.src" />
+            </video>
+            <figcaption *ngIf="h.caption">{{ h.caption }}</figcaption>
+        </figure>
+
+        <!-- about -->
+        <section class="detail-block">
+            <h3>About</h3>
+            <p class="body">{{ p.desc }}</p>
+        </section>
+
+        <!-- install -->
+        <section class="detail-block" *ngIf="p.install as install">
+            <h3>Install</h3>
+            <div class="code-wrap">
+                <button class="copy-btn" (click)="copyInstall()">
+                    {{ copied ? 'copied' : 'copy' }}
+                </button>
+                <pre [attr.data-lang]="installLang"><code>{{ install }}</code></pre>
+            </div>
+        </section>
+
+        <!-- features -->
+        <section class="detail-block" *ngIf="p.features?.length">
+            <h3>Features</h3>
+            <ul class="feature-list">
+                <li *ngFor="let f of p.features">{{ f }}</li>
+            </ul>
+        </section>
+
+        <!-- media gallery -->
+        <section class="detail-block" *ngIf="p.media?.length">
+            <h3>Screenshots</h3>
+            <div class="media-grid">
+                <figure *ngFor="let m of p.media">
+                    <img *ngIf="m.type !== 'video'" [src]="m.src" [alt]="m.alt || p.name" />
+                    <video *ngIf="m.type === 'video'" [poster]="m.poster || ''" controls muted loop>
+                        <source [src]="m.src" />
+                    </video>
+                    <figcaption *ngIf="m.caption">{{ m.caption }}</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <div style="padding-bottom: 7em;"></div>
+    </div>
+</div>

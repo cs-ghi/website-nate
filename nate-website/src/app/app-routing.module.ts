@@ -10,6 +10,7 @@ import { PdfViewerComponent } from './components/books/pdf-viewer.component';
 import { HtmlBookViewerComponent } from './components/books/html-book-viewer.component';
 import { MiscellaneousComponent } from './components/miscellaneous/miscellaneous.component';
 import { ProgrammingComponent } from './components/programming/programming.component';
+import { ProgrammingDetailComponent } from './components/programming/programming-detail.component';
 import { TutoringComponent } from './components/tutoring/tutoring.component';
 import { DictionaryComponent } from './components/dictionary/dictionary.component';
 import { JudoComponent } from './components/judo/judo.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'contact', component : ContactComponent},
   {path: 'miscellaneous', component: MiscellaneousComponent},
   {path: 'programming', component: ProgrammingComponent},
+  {path: 'programming/:slug', component: ProgrammingDetailComponent},
   {path: 'dictionary', component: DictionaryComponent},
   {path: 'judo', component: JudoComponent},
   {path: "**", component : NotFoundComponent}

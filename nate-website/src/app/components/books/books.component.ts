@@ -281,6 +281,7 @@ export class BooksComponent implements OnInit {
 
   books = booksArray;
   expandedBooks = new Set<string>();
+  notesExpanded = false;   // Overview "Notes & caveats" block, collapsed by default
   searchQuery = '';
 
   // Keyboard navigation: the currently highlighted entry (rendered only while
@@ -503,6 +504,10 @@ export class BooksComponent implements OnInit {
         name: book.name
       }
     });
+  }
+
+  toggleNotes(): void {
+    this.notesExpanded = !this.notesExpanded;
   }
 
   toggleExpand(bookName: string): void {

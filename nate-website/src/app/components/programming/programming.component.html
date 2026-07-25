@@ -1,38 +1,88 @@
 <div class="section-programming">
     <div class="container">
-        <div class="page-heading"><h2>Programming</h2>
-            <p>Software Development Projects</p>
+        <div class="page-heading">
+            <h2>Programming</h2>
+            <p>Open-source tools &amp; plugins</p>
             <mat-divider class="divider"></mat-divider>
         </div>
-            <div class=row class="programming-info">
-                <h3 class="mb-20">Overview</h3>
-                <p>
-                  These are mainly projects centered around my vim setup that include my
-                  dotfiles and a few quality of life plugins that I wrote. My future
-                  projcets will be hosted on github: <a href="https://github.com/Chiarandini"><strong><b>https://github.com/Chiarandini</b></strong></a>
 
-                    <br><br>
-                    Note:
-                      <li>Some projects are still in development and may not have public repositories yet.</li>
-                    </p>
+        <div class="programming-info intro">
+            <h3 class="mb-20">Overview</h3>
+            <p>
+                Most of these grew out of my own Neovim and mathematics workflow:
+                a Neovim distribution, a handful of quality-of-life plugins and
+                picker extensions, and the tooling that keeps my notes and this
+                site running. Everything lives on GitHub:
+                <a href="https://github.com/Chiarandini"><strong>github.com/Chiarandini</strong></a>.
+            </p>
+            <p class="muted">Click a project for details, install, and (soon) demos.</p>
+        </div>
 
-                    <!-- <p class="disclaimer-click"> <br><br> Please click on the
-                    headings below to view the projects.</p> -->
+        <!-- search + category filter -->
+        <div class="prog-controls">
+            <div class="prog-search">
+                <mat-icon class="search-icon">search</mat-icon>
+                <input
+                    type="text"
+                    class="prog-search-input"
+                    [(ngModel)]="query"
+                    placeholder="Search projects..."
+                    autocomplete="off"
+                />
+                <mat-icon *ngIf="query" class="clear-icon" (click)="clearSearch()">close</mat-icon>
             </div>
 
-            <div class="row" class="programming-info" style="padding-bottom: 4em;"> </div>
-            <div class="programming-info" *ngFor="let program of programs">
-                <div class="row flexx">
-                        <div class="col-sm-3 program-link" (click)="openLink(program)">
-                            <h4 [innerHtml]="program?.name"></h4>
-                        </div>
-                    <div class="col-sm-9" >
-                        <p [innerHtml]="program?.desc"></p>
+            <div class="prog-chips">
+                <button
+                    class="prog-chip"
+                    [class.active]="activeCategory === 'all'"
+                    (click)="setCategory('all')">
+                    All
+                </button>
+                <button
+                    *ngFor="let c of categories"
+                    class="prog-chip"
+                    [class.active]="activeCategory === c.key"
+                    (click)="setCategory(c.key)">
+                    {{ c.label }} <span class="chip-count">{{ countFor(c.key) }}</span>
+                </button>
+            </div>
+        </div>
+
+        <p *ngIf="!hasResults" class="no-results">No projects match "{{ query }}".</p>
+
+        <!-- one section per category -->
+        <section class="prog-group" *ngFor="let group of visibleGroups">
+            <div class="group-heading">
+                <h3>{{ group.meta.label }}</h3>
+                <span class="group-blurb">{{ group.meta.blurb }}</span>
+            </div>
+
+            <div class="prog-grid">
+                <article
+                    class="prog-card"
+                    *ngFor="let p of group.programs; trackBy: trackBySlug"
+                    (click)="openDetail(p)">
+                    <div class="card-top">
+                        <h4 class="card-name">{{ p.name }}</h4>
+                        <a
+                            *ngIf="p.repo"
+                            class="card-repo"
+                            (click)="openRepo(p, $event)"
+                            title="View on GitHub">
+                            <i class="fa fa-github"></i>
+                        </a>
                     </div>
-                </div>
-                <mat-divider class="divider-table"></mat-divider>
+                    <p class="card-tagline">{{ p.tagline }}</p>
+                    <div class="card-badges">
+                        <span class="badge" [ngClass]="'status-' + p.status">{{ p.status }}</span>
+                        <span class="badge lang" *ngIf="p.language">{{ p.language }}</span>
+                        <span class="badge eco" *ngIf="p.ecosystem">{{ p.ecosystem }}</span>
+                    </div>
+                </article>
             </div>
-        <div style="padding-bottom: 7em;"></div>
+        </section>
 
+        <div style="padding-bottom: 7em;"></div>
     </div>
 </div>

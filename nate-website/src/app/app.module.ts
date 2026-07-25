@@ -32,6 +32,7 @@ import { PdfViewerComponent } from './components/books/pdf-viewer.component';
 import { HtmlBookViewerComponent } from './components/books/html-book-viewer.component';
 import { MiscellaneousComponent} from './components/miscellaneous/miscellaneous.component';
 import { ProgrammingComponent } from './components/programming/programming.component';
+import { ProgrammingDetailComponent } from './components/programming/programming-detail.component';
 import { TutoringComponent } from './components/tutoring/tutoring.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { ClickOutsideDirective } from './clickOutside';
@@ -63,6 +64,7 @@ import { AudioService } from './services/audio.service';
     // ShimmerComponent,
     MiscellaneousComponent,
     ProgrammingComponent,
+    ProgrammingDetailComponent,
     TutoringComponent,
     ContactFormComponent,
     AppComponent,

@@ -20,9 +20,15 @@
                 <!-- I wanna eventually split eyntka algebra, once is its first verison the -->
                 <!-- numbering will be stable so that I can have the entire EYTNKA series on -->
                 <!-- a rolling version.  -->
-                <p>Note:</p>
-                <ul>
-                    <li>
+                <div class="notes-toggle" (click)="toggleNotes()">
+                    <span class="expand-chevron" [class.expanded]="notesExpanded"></span>
+                    <span>Notes &amp; caveats</span>
+                </div>
+
+                <div class="notes-wrapper" [class.notes-open]="notesExpanded">
+                  <div class="notes-body">
+                    <ul>
+                        <li>
                         None of these books would be considered "first edition"; there is
                         a lack of exercises and often a lack of figures that I should draw.
                     </li>
@@ -72,7 +78,9 @@
                         Disclaimer: Apologies for any typos in the books! Feel free to
                         send me any errata (see contacts.
                     </li>
-                </ul>
+                    </ul>
+                  </div>
+                </div>
 
 
                     <!-- <p class="disclaimer-click"> <br><br> Please click on the
