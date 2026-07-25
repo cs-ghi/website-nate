@@ -366,6 +366,15 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NatePrelim -> NateCoreAlgebra) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePrelim",
+      "NateCoreAlgebra"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateElemAnalysis -> NateCalculus) is manual, no backing \\cite found.",
     "refs": [
       "NateElemAnalysis",
