@@ -249,7 +249,7 @@ export const programmingArray: Program[] = [
     name: 'snacks-zotero',
     slug: 'snacks-zotero',
     category: 'nvim',
-    status: 'beta',
+    status: 'stable',
     ecosystem: 'Neovim',
     language: 'Lua',
     tagline: 'A snacks.nvim picker for Zotero citations.',
