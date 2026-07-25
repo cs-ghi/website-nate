@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-07-25",
     "bookCount": 47,
-    "edgeCount": 287,
+    "edgeCount": 288,
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 125
+      "info": 126
     },
     "tiers": [
       {
@@ -2080,6 +2080,13 @@
       "source": "NateCoreAlgebra",
       "target": "NateLinAlg",
       "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NatePrelim",
+      "type": "prereq",
       "provenance": "manual",
       "citedIn": []
     },
