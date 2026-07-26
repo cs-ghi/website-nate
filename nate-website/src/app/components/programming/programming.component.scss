@@ -8,8 +8,19 @@ $ink: #bab0b0;
 $ink-strong: #c0b6aa;
 
 .intro {
+    h3 { color: $ink-strong; }
     p { color: $ink; font-size: 15px; line-height: 27px; }
     .muted { color: #8b837e; font-size: 13px; }
+    .footnote-ref { color: $bg-secondary; font-size: 11px; vertical-align: super; line-height: 0; }
+    .footnote {
+        color: #8b837e;
+        font-size: 12px;
+        line-height: 1.5;
+        margin-top: 0.5em;
+        padding-top: 0.6em;
+        border-top: 1px solid #3c3d42;
+        max-width: 640px;
+    }
     a { color: $bg-secondary; text-decoration: underline !important; }
 }
 

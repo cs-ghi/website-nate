@@ -33,7 +33,7 @@
 .mat-mdc-form-field.mat-accent .mdc-text-field__input{
   font-size: 15px;
   }
-  
+
 
 .mat-mdc-text-field-wrapper, .mdc-text-field, .mat-mdc-form-field-focus-overlay{
   background-color: transparent !important;
@@ -159,7 +159,7 @@ html, body {
 }
   .page-heading p {
     font-size: 13px !important;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
     color: $bg-secondary;
   }
   .page-heading h2 {
@@ -177,16 +177,16 @@ html, body {
 
 // misc
 body {
-  
+
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2,h3, h4, h5, h6 {
   font-family: serif !important;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a, a:hover, a:focus {
@@ -195,7 +195,9 @@ a, a:hover, a:focus {
 }
 
 .mb-20 {
-  margin-bottom: 20px !important; }
+  color: #bab0b0;
+  margin-bottom: 20px !important;
+}
 
 .pages-stack p{
   font-size: 15px;
