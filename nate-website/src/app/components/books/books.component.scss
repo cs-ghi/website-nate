@@ -7,10 +7,6 @@
       text-align:center;
     }
 
-    .child-book {
-      padding-left: 20px;
-    }
-
     .expand-chevron {
       border-top: 4px solid transparent;
       border-bottom: 4px solid transparent;
@@ -178,15 +174,109 @@
     padding: 10px 0 40px;
 }
 
+// ── Subject-track filter chips ──────────────────────────────────────────────
+.book-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 44px;
+}
+
+.book-chip {
+    cursor: pointer;
+    padding: 5px 13px;
+    font-size: 13px;
+    color: $bg-secondary;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #45464b;
+    border-radius: 999px;
+    transition: 0.25s;
+
+    .chip-count { opacity: 0.5; margin-left: 3px; font-size: 11px; }
+
+    &:hover { background: #404145; }
+    &.active {
+        background: $bg-secondary;
+        border-color: $bg-secondary;
+        color: #23242a;
+        .chip-count { color: #23242a; opacity: 0.7; }
+    }
+}
+
+// ── Section headings ────────────────────────────────────────────────────────
+.book-section { margin-bottom: 1.5em; }
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 1.4em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #3c3d42;
+
+    h3 {
+        color: $bg-secondary;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+        margin: 0;
+    }
+    .section-count {
+        color: $bg-secondary;
+        opacity: 0.45;
+        font-size: 14px;
+    }
+}
+
+// ── Per-book metadata badges ────────────────────────────────────────────────
+.book-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    background: #2a2b30;
+    color: #a49b96;
+    border: 1px solid #46474d;
+    white-space: nowrap;
+
+    .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+    }
+
+    // status colors — in-progress is today's common case; others are future-proof
+    &.status-in-progress { color: #c8b06e; border-color: #574c30; }
+    &.status-complete,
+    &.status-published   { color: #8fb98f; border-color: #3d5240; }
+    &.status-planned     { color: #8a8a8a; border-color: #4a4a4a; }
+
+    &.tier { color: #9aa0a6; }
+    &.date { color: #857d77; border-color: #3c3d42; background: transparent; }
+}
+
 .col-sm-3{
     transition: 0.4s;
     // display: inline-block;
     height:100%;
 }
 
-.book-link {
+// The whole title + description block opens the book (not just the title).
+.book-click {
     cursor: pointer;
-    transition: 0.4s;
+    transition: background-color 0.25s;
+    border-radius: 4px;
 
     &:hover {
         background-color: #404145;
@@ -195,11 +285,6 @@
             color: #cbc9c8e7;
         }
     }
-}
-
-.col-sm-3:hover{
-    height:100%;
-    background-color: #404145;
 }
 
 .divider{
@@ -268,12 +353,6 @@
 //     background-color: #404145;
 // }
 
-.book-link-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 4px;
-}
-
 .expand-chevron {
     display: inline-block;
     width: 0;
@@ -295,34 +374,6 @@
 
     &:hover {
         opacity: 1;
-    }
-}
-
-.children-wrapper {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease;
-    overflow: hidden;
-
-    &.children-open {
-        grid-template-rows: 1fr;
-    }
-}
-
-.children-body {
-    min-height: 0;
-}
-
-.child-book {
-    padding-left: 30px;
-
-    h4 {
-        font-size: 20px;
-    }
-
-    .divider-table {
-        margin-bottom: 25px;
-        margin-top: 25px;
     }
 }
 

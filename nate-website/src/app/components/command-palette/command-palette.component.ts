@@ -2,7 +2,7 @@ import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookIndexService, ScoredEntry } from '../../services/book-index.service';
 import { CommandPaletteService } from '../../services/command-palette.service';
-import { booksArray } from '../books/books.component';
+import { BookCatalogService } from '../../services/book-catalog.service';
 import { Book } from '../../interfaces/books.model';
 
 // Compact type badges for the result rows.
@@ -37,13 +37,19 @@ export class CommandPaletteComponent {
     private router: Router,
     private index: BookIndexService,
     paletteService: CommandPaletteService,
+    catalog: BookCatalogService,
   ) {
-    const add = (b: Book) => {
-      const base = b.link.toString().split('/').pop();
-      if (base) this.pdfMap.set(base, b);
-      (b.children ?? []).forEach(add);
-    };
-    booksArray.forEach(add);
+    // pdf basename -> Book, over every book in the series-map graph (published or
+    // not) so in-book search hits always resolve a display name and link.
+    catalog.allBooks$.subscribe(books => {
+      this.pdfMap.clear();
+      const add = (b: Book) => {
+        const base = b.link.toString().split('/').pop();
+        if (base) this.pdfMap.set(base, b);
+        (b.children ?? []).forEach(add);
+      };
+      books.forEach(add);
+    });
 
     paletteService.open$.subscribe(() => this.open());
   }

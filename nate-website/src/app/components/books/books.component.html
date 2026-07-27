@@ -17,9 +17,6 @@
                     matter, being limited in material by my time to write down results. I update my books
                     on a regular basis with new information and fixes.
                 </p>
-                <!-- I wanna eventually split eyntka algebra, once is its first verison the -->
-                <!-- numbering will be stable so that I can have the entire EYTNKA series on -->
-                <!-- a rolling version.  -->
                 <div class="notes-toggle" (click)="toggleNotes()">
                     <span class="expand-chevron" [class.expanded]="notesExpanded"></span>
                     <span>Notes &amp; caveats</span>
@@ -88,10 +85,6 @@
                     </ul>
                   </div>
                 </div>
-
-
-                    <!-- <p class="disclaimer-click"> <br><br> Please click on the
-                    headings below to download the books.</p> -->
             </div>
 
             <div class="row" class="books-info" style="padding-bottom: 4em;"> </div>
@@ -120,21 +113,44 @@
                 <span class="hint-keys"><kbd>{{ modKey }}</kbd><kbd>K</kbd></span>
             </button>
 
-            <p *ngIf="searchQuery && !filteredBooks.length" class="no-results">
+            <!-- Subject-track filter chips -->
+            <div class="book-chips">
+                <button class="book-chip" [class.active]="activeSection === 'all'"
+                        (click)="selectSection('all')">All</button>
+                <button *ngFor="let c of sectionChips"
+                        class="book-chip"
+                        [class.active]="activeSection === c.key"
+                        (click)="selectSection(c.key)">
+                    {{ c.label }} <span class="chip-count">{{ countFor(c.key) }}</span>
+                </button>
+            </div>
+
+            <p *ngIf="searchQuery && !filteredSections.length" class="no-results">
                 No books match "{{ searchQuery }}".
             </p>
 
-            <div *ngFor="let book of filteredBooks">
-                <div class="books-info" [class.nav-highlighted]="searchFocused && book === highlightedItem">
-                    <div class="row flexx">
-                        <div class="col-sm-3 book-link-row" [class.book-link]="!book.children?.length">
-                            <span
-                                *ngIf="book.children?.length"
-                                class="expand-chevron"
-                                [class.expanded]="shouldShowChildren(book)"
-                                (click)="toggleExpand(book.name)">
-                            </span>
-                            <h4 class="book-link" (click)="handleBookClick(book)" [innerHtml]="book?.name"></h4>
+            <!-- One section per subject track -->
+            <section class="book-section" *ngFor="let section of filteredSections">
+                <div class="section-heading">
+                    <h3>{{ section.label }}</h3>
+                    <span class="section-count">{{ section.books.length }}</span>
+                </div>
+
+                <div class="books-info book-row" *ngFor="let book of section.books"
+                     [class.nav-highlighted]="searchFocused && book === highlightedItem">
+                    <div class="row flexx book-click" (click)="handleBookClick(book)">
+                        <div class="col-sm-3">
+                            <h4 [innerHtml]="book?.name"></h4>
+                            <div class="book-badges">
+                                <span *ngIf="book.status" class="badge"
+                                      [ngClass]="'status-' + book.status">
+                                    <span class="status-dot"></span>{{ book.status }}
+                                </span>
+                                <span *ngIf="book.tierLabel" class="badge tier">{{ book.tierLabel }}</span>
+                                <span *ngIf="book.lastUpdated" class="badge date">
+                                    Updated {{ book.lastUpdated | date:'MMM d, y' }}
+                                </span>
+                            </div>
                         </div>
                         <div class="col-sm-9">
                             <p [innerHtml]="book?.desc"></p>
@@ -142,26 +158,7 @@
                     </div>
                     <mat-divider class="divider-table"></mat-divider>
                 </div>
-
-                <div *ngIf="book.children?.length"
-                     class="children-wrapper"
-                     [class.children-open]="shouldShowChildren(book)">
-                    <div class="children-body">
-                        <div class="books-info child-book" *ngFor="let child of book.children"
-                             [class.nav-highlighted]="searchFocused && child === highlightedItem">
-                            <div class="row flexx">
-                                <div class="col-sm-3 book-link" (click)="handleBookClick(child)">
-                                    <h4 [innerHtml]="child?.name"></h4>
-                                </div>
-                                <div class="col-sm-9">
-                                    <p [innerHtml]="child?.desc"></p>
-                                </div>
-                            </div>
-                            <mat-divider class="divider-table"></mat-divider>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
         <!-- Admin: raw PDF listing (visible when authenticated) -->
         <div *ngIf="isAuthenticated" class="raw-pdfs-section">
             <mat-divider class="divider"></mat-divider>
