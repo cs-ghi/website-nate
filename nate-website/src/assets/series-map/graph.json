@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-07-26",
+    "generated": "2026-07-27",
     "bookCount": 47,
     "edgeCount": 288,
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 126
+      "info": 119
     },
     "tiers": [
       {
@@ -3585,11 +3585,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch07-s05.tex",
-        "riemannian-geometry/chapters/ch10-s03.tex",
-        "riemannian-geometry/chapters/ch10-s04.tex",
-        "riemannian-geometry/chapters/ch11-s02.tex",
-        "riemannian-geometry/chapters/ch11-s04.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3598,20 +3594,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch06-s04.tex",
-        "riemannian-geometry/chapters/ch07-s05.tex",
-        "riemannian-geometry/chapters/ch08-s01.tex",
-        "riemannian-geometry/chapters/ch08-s02.tex",
-        "riemannian-geometry/chapters/ch08-s03.tex",
-        "riemannian-geometry/chapters/ch10-s03.tex",
-        "riemannian-geometry/chapters/ch10-s04.tex",
-        "riemannian-geometry/chapters/ch11-s01.tex",
-        "riemannian-geometry/chapters/ch11-s02.tex",
-        "riemannian-geometry/chapters/ch11-s03.tex",
-        "riemannian-geometry/chapters/ch11-s04.tex",
-        "riemannian-geometry/chapters/ch12-s04.tex",
-        "riemannian-geometry/chapters/ch12-s05.tex",
-        "riemannian-geometry/chapters/ch13-s02.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3620,10 +3603,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch01-s03.tex",
-        "riemannian-geometry/chapters/ch08-s01.tex",
-        "riemannian-geometry/chapters/ch10-s03.tex",
-        "riemannian-geometry/chapters/ch10-s04.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3632,37 +3612,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "riemannian-geometry/chapters/ch01-s01.tex",
-        "riemannian-geometry/chapters/ch01-s02.tex",
-        "riemannian-geometry/chapters/ch01-s03.tex",
-        "riemannian-geometry/chapters/ch01-s04.tex",
-        "riemannian-geometry/chapters/ch01-s05.tex",
-        "riemannian-geometry/chapters/ch01-s06.tex",
-        "riemannian-geometry/chapters/ch02-s01.tex",
-        "riemannian-geometry/chapters/ch02-s03.tex",
-        "riemannian-geometry/chapters/ch03-s01.tex",
-        "riemannian-geometry/chapters/ch04-s01.tex",
-        "riemannian-geometry/chapters/ch04-s05.tex",
-        "riemannian-geometry/chapters/ch04-s06.tex",
-        "riemannian-geometry/chapters/ch06-s03.tex",
-        "riemannian-geometry/chapters/ch07-s01.tex",
-        "riemannian-geometry/chapters/ch07-s05.tex",
-        "riemannian-geometry/chapters/ch08-s01.tex",
-        "riemannian-geometry/chapters/ch09-s02.tex",
-        "riemannian-geometry/chapters/ch09-s03.tex",
-        "riemannian-geometry/chapters/ch10-s01.tex",
-        "riemannian-geometry/chapters/ch10-s02.tex",
-        "riemannian-geometry/chapters/ch10-s03.tex",
-        "riemannian-geometry/chapters/ch10-s04.tex",
-        "riemannian-geometry/chapters/ch11-s01.tex",
-        "riemannian-geometry/chapters/ch11-s02.tex",
-        "riemannian-geometry/chapters/ch11-s03.tex",
-        "riemannian-geometry/chapters/ch11-s04.tex",
-        "riemannian-geometry/chapters/ch12-s01.tex",
-        "riemannian-geometry/chapters/ch12-s03.tex",
-        "riemannian-geometry/chapters/ch12-s04.tex",
-        "riemannian-geometry/chapters/ch13-s02.tex",
-        "riemannian-geometry/frontmatter/introduction.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3671,7 +3621,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch12-s05.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3680,9 +3630,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch13-open.tex",
-        "riemannian-geometry/chapters/ch13-s03.tex",
-        "riemannian-geometry/chapters/ch14-whatnext.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3691,11 +3639,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch11-s01.tex",
-        "riemannian-geometry/chapters/ch11-s02.tex",
-        "riemannian-geometry/chapters/ch11-s03.tex",
-        "riemannian-geometry/chapters/ch13-s03.tex",
-        "riemannian-geometry/chapters/ch14-whatnext.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3704,10 +3648,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch09-s01.tex",
-        "riemannian-geometry/chapters/ch09-s02.tex",
-        "riemannian-geometry/chapters/ch09-s04.tex",
-        "riemannian-geometry/chapters/ch14-whatnext.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3716,10 +3657,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch12-open.tex",
-        "riemannian-geometry/chapters/ch12-s03.tex",
-        "riemannian-geometry/chapters/ch12-s04.tex",
-        "riemannian-geometry/chapters/ch12-s05.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
@@ -3728,8 +3666,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "riemannian-geometry/chapters/ch01-s04.tex",
-        "riemannian-geometry/chapters/ch12-s03.tex"
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
     },
     {
