@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-08-01",
     "bookCount": 48,
-    "edgeCount": 305,
+    "edgeCount": 307,
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 119
+      "info": 120
     },
     "tiers": [
       {
@@ -1803,15 +1803,6 @@
     },
     {
       "source": "NateCFT",
-      "target": "NateCommAlg",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "class-field-theory/EYNTKA-class-field-theory.tex"
-      ]
-    },
-    {
-      "source": "NateCFT",
       "target": "NateEllipticCurves",
       "type": "reference",
       "provenance": "auto",
@@ -2315,6 +2306,15 @@
     {
       "source": "NateDiffTop",
       "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "differential-topology/EYNTKA-differential-topology.tex"
+      ]
+    },
+    {
+      "source": "NateDiffTop",
+      "target": "NateAlgTop",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2908,6 +2908,13 @@
       "citedIn": [
         "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateCommAlg",
+      "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateHomologicalAlg",
@@ -3920,6 +3927,15 @@
       "target": "NateMetricFunctionSpaces",
       "type": "prereq",
       "provenance": "both",
+      "citedIn": [
+        "topology/EYNTKA_topology.tex"
+      ]
+    },
+    {
+      "source": "NateTopology",
+      "target": "NateRiemannianGeometry",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "topology/EYNTKA_topology.tex"
       ]
