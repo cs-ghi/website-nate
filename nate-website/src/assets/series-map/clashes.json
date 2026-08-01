@@ -250,6 +250,15 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay coreq (NateCommAlg -> NateHomologicalAlg) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCommAlg",
+      "NateHomologicalAlg"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay coreq (NateLinAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateLinAlg",
