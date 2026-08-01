@@ -18,6 +18,14 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NatePadicHodge' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NatePadicHodge"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateRealReductiveGroups' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateRealReductiveGroups"
@@ -178,14 +186,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NatePadicHodge' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NatePadicHodge"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NateModularForms' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateModularForms"
@@ -250,15 +250,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay coreq (NateCommAlg -> NateHomologicalAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCommAlg",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay coreq (NateLinAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
     "refs": [
       "NateLinAlg",
@@ -308,15 +299,6 @@
     "refs": [
       "NatePadicHodge",
       "NateEtaleCohomology"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay coreq (NatePadicHodge -> NateHodgeTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePadicHodge",
-      "NateHodgeTheory"
     ]
   },
   {
@@ -497,15 +479,6 @@
     "refs": [
       "NateCoreRepTheory",
       "NateGeoRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCoreAlgebra -> NateCommAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCoreAlgebra",
-      "NateCommAlg"
     ]
   },
   {
@@ -1006,10 +979,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 10 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateEtaleCohomology",
       "NateModernAlgGeo"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NateModuliStacks"
     ]
   },
   {
