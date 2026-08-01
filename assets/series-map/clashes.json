@@ -42,14 +42,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateCalculus' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateCalculus"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NateLinAlg' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateLinAlg"
@@ -420,10 +412,28 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCalculus -> NateTopology) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateMetricFunctionSpaces -> NateComplexAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NateMetricFunctionSpaces",
+      "NateComplexAnalysis"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCalculus -> NateCalcOnManifolds) is manual, no backing \\cite found.",
     "refs": [
       "NateCalculus",
-      "NateTopology"
+      "NateCalcOnManifolds"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCalcOnManifolds -> NateDiffTop) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCalcOnManifolds",
+      "NateDiffTop"
     ]
   },
   {
@@ -469,15 +479,6 @@
     "refs": [
       "NateODE",
       "NateNonlinearWave"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateTopology -> NateDiffTop) is manual, no backing \\cite found.",
-    "refs": [
-      "NateTopology",
-      "NateDiffTop"
     ]
   },
   {
@@ -1005,15 +1006,6 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateMeasureTheory -> NateTopology is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateMeasureTheory",
-      "NateTopology"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateMicrolocalAnalysis -> NateDiffTop is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateMicrolocalAnalysis",
@@ -1045,6 +1037,15 @@
     "refs": [
       "NateProbability",
       "NateAnalyticNumTheory"
+    ]
+  },
+  {
+    "kind": "tier-unassigned",
+    "severity": "info",
+    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateMetricFunctionSpaces. Add to overlay layout.tiers to curate.",
+    "refs": [
+      "NateCalcOnManifolds",
+      "NateMetricFunctionSpaces"
     ]
   }
 ]
