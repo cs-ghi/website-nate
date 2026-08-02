@@ -511,15 +511,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHomologicalAlg -> NateAlgGeo) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHomologicalAlg",
-      "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateCategoryTheory -> NateHigherCategoryTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateCategoryTheory",
@@ -979,7 +970,25 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 10 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateDiffTop -> NateAlgTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateDiffTop",
+      "NateAlgTop"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateDiffTop -> NateLieGroups is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateDiffTop",
+      "NateLieGroups"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 14 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateEtaleCohomology",
       "NateModernAlgGeo"
@@ -988,7 +997,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateEtaleCohomology",
       "NateModuliStacks"
