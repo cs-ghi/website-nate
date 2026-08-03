@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-08-02",
+    "generated": "2026-08-03",
     "bookCount": 48,
-    "edgeCount": 328,
+    "edgeCount": 329,
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 119
+      "info": 118
     },
     "tiers": [
       {
@@ -647,10 +647,11 @@
       "dir": "metric-function-spaces",
       "description": "Metric spaces and completeness, the Banach contraction principle, compactness (sequential and totally bounded), uniform convergence, and the function-space theorems: Stone-Weierstrass, Arzela-Ascoli, and Baire category.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [],
       "links": {
-        "pdf": "metric-function-spaces/EYNTKA-metric-function-spaces.pdf"
+        "pdf": "metric-function-spaces/EYNTKA-metric-function-spaces.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Analysis%20on%20Metric%20and%20Function%20Spaces&source=books"
       },
       "lastUpdated": "2026-08-01",
       "xAffinity": 0.293,
@@ -1915,8 +1916,10 @@
       "source": "NateClassicalAlgGeo",
       "target": "NateCommAlg",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
+      ]
     },
     {
       "source": "NateClassicalAlgGeo",
@@ -1930,6 +1933,15 @@
     {
       "source": "NateClassicalAlgGeo",
       "target": "NateGeoRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
+      ]
+    },
+    {
+      "source": "NateClassicalAlgGeo",
+      "target": "NateHomologicalAlg",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2441,7 +2453,11 @@
       "citedIn": [
         "differential-topology/EYNTKA-differential-topology.tex",
         "differential-topology/drafts/scratch/ch4-s02.tex",
-        "differential-topology/drafts/scratch/ch4-source-seeds.tex"
+        "differential-topology/drafts/scratch/ch4-source-seeds.tex",
+        "differential-topology/drafts/scratch/ch8-s02.tex",
+        "differential-topology/drafts/scratch/ch8-s04.tex",
+        "differential-topology/drafts/scratch/ch8-s05.tex",
+        "differential-topology/drafts/scratch/ch8-s06.tex"
       ]
     },
     {
@@ -2499,7 +2515,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "differential-topology/EYNTKA-differential-topology.tex"
+        "differential-topology/EYNTKA-differential-topology.tex",
+        "differential-topology/drafts/scratch/ch8-s06.tex"
       ]
     },
     {
