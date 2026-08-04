@@ -10,14 +10,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateModernAlgGeo' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateModernAlgGeo"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NatePadicHodge' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NatePadicHodge"
@@ -29,14 +21,6 @@
     "message": "'NateRealReductiveGroups' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateRealReductiveGroups"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateIntersectionTheory' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateIntersectionTheory"
     ]
   },
   {
@@ -583,24 +567,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAlgGeo -> NateModuliStacks) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgGeo",
-      "NateModuliStacks"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgGeo -> NateEtaleCohomology) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgGeo",
-      "NateEtaleCohomology"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateUnitaryRepTheory -> NateRealReductiveGroups) is manual, no backing \\cite found.",
     "refs": [
       "NateUnitaryRepTheory",
@@ -1006,15 +972,6 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModernAlgGeo is cited in 14 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateEtaleCohomology",
-      "NateModernAlgGeo"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateEtaleCohomology -> NateModuliStacks is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateEtaleCohomology",
@@ -1046,15 +1003,6 @@
     "refs": [
       "NateMicrolocalAnalysis",
       "NateDiffTop"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateModuliStacks -> NateModernAlgGeo is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateModuliStacks",
-      "NateModernAlgGeo"
     ]
   },
   {

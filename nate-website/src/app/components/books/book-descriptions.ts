@@ -59,7 +59,7 @@ const CURATED_BOOKS: Book[] = [
   },
   {
     name: 'Algebraic Geometry',
-    desc: 'With an assumption of clasical algebraic geometry being covered (see "classical algebraic geometry"), this book will hold my Modern Algebraic Geometry Knowledge. The first part is dedicated to the basics: sheaf theory, schemes and their properties, cohomology of quasicoherent sheaves, and partical appliations to curves and modules. Further parts shall focus on more specialized topics',
+    desc: 'Presheaves and sheaves, stalks, sheafification, direct and inverse image. Affine schemes, Spec and the structure sheaf, gluing, the functor of points. Morphisms: separated, proper, finite, flat, smooth; fibre products, Proj. Group schemes and Hopf algebras. Quasi-coherent and coherent sheaves, projective morphisms, divisors and the Picard group, differentials. Sheaf cohomology, Cech, the cohomology of projective space, Serre finiteness and vanishing, Ext and Serre duality. Curves and surfaces: Riemann-Roch, the Hodge index theorem, Noether\'s formula, adjunction, blow-ups, the 27 lines on a cubic surface. Assumes classical algebraic geometry (see "classical algebraic geometry").',
     link: '././assets/pdfs/books/EYNTKA_algGeo.pdf',
     type: 'pdf'
   },
