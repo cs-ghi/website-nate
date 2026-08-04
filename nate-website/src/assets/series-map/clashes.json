@@ -421,15 +421,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCalcOnManifolds -> NateDiffTop) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCalcOnManifolds",
-      "NateDiffTop"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateCalculus -> NateComplexAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateCalculus",
@@ -961,10 +952,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateDiffTop -> NateAlgTop is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateDiffTop -> NateRiemannianGeometry is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateDiffTop",
-      "NateAlgTop"
+      "NateRiemannianGeometry"
     ]
   },
   {
@@ -974,6 +965,33 @@
     "refs": [
       "NateDiffTop",
       "NateLieGroups"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateDiffTop -> NateAlgTop is cited in 21 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateDiffTop",
+      "NateAlgTop"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateDiffTop -> NateMeasureTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateDiffTop",
+      "NateMeasureTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateDiffTop -> NateCoreAlgebra is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateDiffTop",
+      "NateCoreAlgebra"
     ]
   },
   {
@@ -992,6 +1010,24 @@
     "refs": [
       "NateEtaleCohomology",
       "NateModuliStacks"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateHodgeTheory -> NateEllipticCurves is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateHodgeTheory",
+      "NateEllipticCurves"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateHodgeTheory -> NateAbelianVarieties is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateHodgeTheory",
+      "NateAbelianVarieties"
     ]
   },
   {
