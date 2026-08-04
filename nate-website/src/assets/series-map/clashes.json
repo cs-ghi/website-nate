@@ -520,6 +520,15 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateHodgeTheory -> NateModuliStacks) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHodgeTheory",
+      "NateModuliStacks"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateGeoRepTheory -> NateLanglandsGL2) is manual, no backing \\cite found.",
     "refs": [
       "NateGeoRepTheory",
