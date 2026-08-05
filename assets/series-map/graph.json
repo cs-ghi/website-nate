@@ -2,7 +2,7 @@
   "meta": {
     "generated": "2026-08-05",
     "bookCount": 50,
-    "edgeCount": 366,
+    "edgeCount": 367,
     "clashCounts": {
       "error": 0,
       "warn": 0,
@@ -952,7 +952,8 @@
         "abelian-varieties/drafts/scratch/sec/thetaDivisorJacobian.tex",
         "abelian-varieties/drafts/scratch/sec/torelli.tex",
         "abelian-varieties/drafts/scratch/sec/weilPairingAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/weilRH.tex"
+        "abelian-varieties/drafts/scratch/sec/weilRH.tex",
+        "abelian-varieties/drafts/scratch/severi-weil.tex"
       ]
     },
     {
@@ -989,6 +990,15 @@
         "abelian-varieties/drafts/scratch/ch14-open.tex",
         "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex",
         "abelian-varieties/drafts/scratch/sec/hondaTate.tex"
+      ]
+    },
+    {
+      "source": "NateAbelianVarieties",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "abelian-varieties/drafts/scratch/severi-weil.tex"
       ]
     },
     {
