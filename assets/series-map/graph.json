@@ -361,13 +361,12 @@
       "dir": "elementary-analysis",
       "description": "the single-variable spine: construction and completeness of R, sequences and series, limits and continuity, differentiation, and the Riemann integral.",
       "status": "in-progress",
-      "webPublished": true,
+      "webPublished": false,
       "clusters": [
         "analysis-pde"
       ],
       "links": {
-        "pdf": "elementary-analysis/EYNTKA-elementary-analysis.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elementary-analysis.pdf&name=Elementary%20Analysis&source=books"
+        "pdf": "elementary-analysis/EYNTKA-elementary-analysis.pdf"
       },
       "lastUpdated": "2026-07-16",
       "xAffinity": 0.495,
