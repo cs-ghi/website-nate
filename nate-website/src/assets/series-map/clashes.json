@@ -840,6 +840,15 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
+    "message": "NateAlgGeo -> NateAbelianVarieties is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateAbelianVarieties"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
     "message": "NateAlgTop -> NateKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgTop",

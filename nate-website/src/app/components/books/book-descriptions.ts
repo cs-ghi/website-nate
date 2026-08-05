@@ -244,6 +244,12 @@ const CURATED_BOOKS: Book[] = [
     link: '././assets/pdfs/books/elementary_analysis.pdf',
     type: 'pdf'
   },
+  {
+    name: 'Linear Algebra',
+    desc: 'Linear systems, elimination and the LU factorization; vector spaces over the reals and complexes, the four fundamental subspaces, rank-nullity; determinants as signed volume, cofactors, Cramer\'s rule, orientation; eigenvalues, diagonalization, algebraic and geometric multiplicity, the minimal polynomial and Cayley-Hamilton. Coming soon: inner products, orthogonality and QR; least squares and the pseudoinverse; the spectral theorem; quadratic forms and Sylvester\'s law of inertia; complexification and complex structures; Hermitian and symplectic forms; the singular value decomposition; Jordan forms over both fields; conditioning, eigenvalue perturbation, iterative computation, Perron-Frobenius.',
+    link: '././assets/pdfs/books/EYNTKA-linear-algebra.pdf',
+    type: 'pdf'
+  },
 ];
 
 const pdfBasename = (link: unknown): string =>
