@@ -930,9 +930,11 @@
         "abelian-varieties/drafts/scratch/ch13-s01.tex",
         "abelian-varieties/drafts/scratch/ch13-s02.tex",
         "abelian-varieties/drafts/scratch/ch13-s05.tex",
+        "abelian-varieties/drafts/scratch/chevalley-core.tex",
         "abelian-varieties/drafts/scratch/chevalley-sec2.tex",
         "abelian-varieties/drafts/scratch/chevprep-I.tex",
         "abelian-varieties/drafts/scratch/ex/groupPicard.tex",
+        "abelian-varieties/drafts/scratch/proposition-A.tex",
         "abelian-varieties/drafts/scratch/sec/abelJacobi.tex",
         "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
         "abelian-varieties/drafts/scratch/sec/dualConstruction.tex",
@@ -1208,6 +1210,7 @@
       "provenance": "auto",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
+        "abelian-varieties/drafts/scratch/chevalley-core.tex",
         "abelian-varieties/drafts/scratch/chevalley-sec2.tex"
       ]
     },
@@ -1256,7 +1259,8 @@
       "provenance": "both",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch14-open.tex"
+        "abelian-varieties/drafts/scratch/ch14-open.tex",
+        "abelian-varieties/drafts/scratch/chevalley-core.tex"
       ]
     },
     {
