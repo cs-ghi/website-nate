@@ -166,6 +166,9 @@
       "clusters": [
         "analysis-pde"
       ],
+      "links": {
+        "pdf": "calculus/EYNTKA-calculus.pdf"
+      },
       "lastUpdated": "2026-07-30",
       "xAffinity": 0.131,
       "tier": 0
@@ -293,7 +296,7 @@
         "pdf": "core-probability/EYNTKA-core-probability.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-probability.pdf&name=Core%20Probability&source=books"
       },
-      "lastUpdated": "2026-07-16",
+      "lastUpdated": "2026-08-05",
       "xAffinity": 0.495,
       "tier": 1
     },
@@ -998,6 +1001,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/severi-weil.tex"
       ]
     },
