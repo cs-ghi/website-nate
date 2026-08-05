@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-08-05",
     "bookCount": 50,
-    "edgeCount": 363,
+    "edgeCount": 366,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 113
+      "info": 114
     },
     "tiers": [
       {
@@ -585,10 +585,11 @@
       "dir": "linear-algebra",
       "description": "Finite-dimensional linear algebra over R and C: systems and elimination, vector spaces and the four fundamental subspaces, determinants as volume, eigenvalues; then inner products, orthogonality, least squares and the spectral theorem; quadratic forms and Sylvester's law of inertia, the SVD and polar decomposition, generalized eigenspaces and the real Jordan form; closing with conditioning, eigenvalue perturbation, iterative computation, and Perron-Frobenius.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [],
       "links": {
-        "pdf": "linear-algebra/EYNTKA-linear-algebra.pdf"
+        "pdf": "linear-algebra/EYNTKA-linear-algebra.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-algebra.pdf&name=Linear%20Algebra&source=books"
       },
       "lastUpdated": "2026-08-04",
       "xAffinity": 0.429,
@@ -821,6 +822,9 @@
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
+      "links": {
+        "pdf": "several-complex-variables/EYNTKA-several-complex-variables.pdf"
+      },
       "lastUpdated": "2026-08-04",
       "xAffinity": 0.469,
       "tier": 3
@@ -1379,7 +1383,8 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/curve-lemma.tex"
+        "algebraic-geometry/drafts/scratch/curve-lemma.tex",
+        "algebraic-geometry/drafts/scratch/weil-divisor-families.tex"
       ]
     },
     {
@@ -1426,8 +1431,10 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
         "algebraic-geometry/drafts/scratch/ch-II1-s05.tex",
-        "algebraic-geometry/drafts/scratch/ch-II2-s03.tex"
+        "algebraic-geometry/drafts/scratch/ch-II2-s03.tex",
+        "algebraic-geometry/drafts/scratch/weil-divisor-families.tex"
       ]
     },
     {
@@ -1437,6 +1444,7 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
         "algebraic-geometry/drafts/scratch/chevprep-C.tex",
         "algebraic-geometry/drafts/scratch/chevprep-G.tex",
         "algebraic-geometry/drafts/scratch/chevprep-H.tex",
@@ -1459,7 +1467,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex"
       ]
     },
     {
@@ -2306,6 +2315,15 @@
     },
     {
       "source": "NateCoreAlgebra",
+      "target": "NateAbelianVarieties",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
       "target": "NateAlgGeo",
       "type": "reference",
       "provenance": "auto",
@@ -2325,6 +2343,15 @@
     {
       "source": "NateCoreAlgebra",
       "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateClassicalAlgGeo",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3749,7 +3776,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex",
+        "linear-algebra/drafts/scratch/ch04-s01.tex"
       ]
     },
     {
@@ -3782,6 +3810,15 @@
     {
       "source": "NateLinAlg",
       "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateMeasureTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
