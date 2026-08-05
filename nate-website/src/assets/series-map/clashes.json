@@ -1,13 +1,5 @@
 [
   {
-    "kind": "unmapped-dir",
-    "severity": "warn",
-    "message": "Directory 'linear-algebra' has no codename (add it to overlay.yaml 'dirs:').",
-    "refs": [
-      "linear-algebra"
-    ]
-  },
-  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NatePadicHodge' is planned (cited/registered but has no folder yet).",
@@ -29,14 +21,6 @@
     "message": "'NateRealAut' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateRealAut"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateLinAlg' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateLinAlg"
     ]
   },
   {
@@ -93,14 +77,6 @@
     "message": "'NateManifoldAnalysis' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateManifoldAnalysis"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateSeveralComplexVariables' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateSeveralComplexVariables"
     ]
   },
   {
@@ -234,24 +210,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay coreq (NateLinAlg -> NateCoreAlgebra) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLinAlg",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay coreq (NateLinAlg -> NateCoreRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLinAlg",
-      "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay coreq (NateCombinatorics -> NateCoreProbability) is manual, no backing \\cite found.",
     "refs": [
       "NateCombinatorics",
@@ -292,15 +250,6 @@
     "refs": [
       "NatePerverseSheaves",
       "NateHigherCategoryTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NatePrelim -> NateLinAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NatePrelim",
-      "NateLinAlg"
     ]
   },
   {
@@ -382,6 +331,15 @@
     "refs": [
       "NateLinAlg",
       "NateFuncAnalysis"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLinAlg -> NateODE) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinAlg",
+      "NateODE"
     ]
   },
   {
@@ -499,6 +457,24 @@
     "refs": [
       "NateAlgTop",
       "NateHigherCategoryTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateComplexAnalysis -> NateSeveralComplexVariables) is manual, no backing \\cite found.",
+    "refs": [
+      "NateComplexAnalysis",
+      "NateSeveralComplexVariables"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateFuncAnalysis -> NateSeveralComplexVariables) is manual, no backing \\cite found.",
+    "refs": [
+      "NateFuncAnalysis",
+      "NateSeveralComplexVariables"
     ]
   },
   {
@@ -846,28 +822,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateHodgeTheory is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateHodgeTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateAbelianVarieties -> NateShimuraVarieties is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateShimuraVarieties"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAbelianVarieties -> NateCoreRepTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateCoreRepTheory"
     ]
   },
   {
@@ -981,7 +939,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateHodgeTheory -> NateEllipticCurves is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateHodgeTheory -> NateEllipticCurves is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateHodgeTheory",
       "NateEllipticCurves"
