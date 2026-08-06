@@ -1,0 +1,440 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-vdxcvpsm"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>For mathematicians | NoetherVim</title><link rel="canonical" href="https://nathanaelsrawley.com/noethervim/start/mathematicians/"/><link rel="sitemap" href="/noethervim/sitemap-index.xml"/><link rel="shortcut icon" href="/noethervim/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.1.6"/><meta name="generator" content="Starlight v0.41.7"/><meta property="og:title" content="For mathematicians"/><meta property="og:type" content="article"/><meta property="og:url" content="https://nathanaelsrawley.com/noethervim/start/mathematicians/"/><meta property="og:locale" content="en"/><meta property="og:description" content="The math bundles, snippets, citations, and how to extend the LaTeX setup."/><meta property="og:site_name" content="NoetherVim"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="The math bundles, snippets, citations, and how to extend the LaTeX setup."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/noethervim/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/noethervim/_astro/common.B8q7CS_4.css"><style>@layer starlight.components{.card:where(.astro-zts4jgjd){--sl-card-border:var(--sl-color-purple);--sl-card-bg:var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);flex-direction:column;gap:clamp(.5rem,.125rem + 1vw,1rem);padding:clamp(1rem,.125rem + 3vw,2.5rem)}.card:where(.astro-zts4jgjd):nth-child(4n+1){--sl-card-border:var(--sl-color-orange);--sl-card-bg:var(--sl-color-orange-low)}.card:where(.astro-zts4jgjd):nth-child(4n+3){--sl-card-border:var(--sl-color-green);--sl-card-bg:var(--sl-color-green-low)}.card:where(.astro-zts4jgjd):nth-child(4n+4){--sl-card-border:var(--sl-color-red);--sl-card-bg:var(--sl-color-red-low)}.card:where(.astro-zts4jgjd):nth-child(4n+5){--sl-card-border:var(--sl-color-blue);--sl-card-bg:var(--sl-color-blue-low)}.title:where(.astro-zts4jgjd){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);align-items:center;gap:1rem}.card:where(.astro-zts4jgjd) .icon:where(.astro-zts4jgjd){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);border-radius:.25rem;flex-shrink:0;padding:.2em}.card:where(.astro-zts4jgjd) .body:where(.astro-zts4jgjd){font-size:clamp(var(--sl-text-sm), calc(.5rem + 1vw), var(--sl-text-body));margin:0}.card-grid:where(.astro-lmor3ela){grid-template-columns:100%;gap:1rem;display:grid}.card-grid:where(.astro-lmor3ela)>*{margin-top:0!important}@media (width>=50rem){.card-grid:where(.astro-lmor3ela){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-lmor3ela){--stagger-height:5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-lmor3ela)>:nth-child(2n){transform:translateY(var(--stagger-height))}}}
+@layer starlight.components{svg:where(.astro-n5k4ipy7){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em}}
+</style><script type="module" src="/noethervim/_astro/page.Dwipeu-R.js"></script></head><body class="astro-vdxcvpsm"><a class="sl-skip-link astro-vxeigawq" href="#_top">Skip to content</a><div class="page sl-flex astro-gqpr5s5a"><header class="header astro-gqpr5s5a"><div class="header astro-nczgtkxc"><div class="title-wrapper sl-flex astro-nczgtkxc"><a href="/noethervim/" class="site-title sl-flex astro-clw6ags5"><span class="astro-clw6ags5" translate="no">NoetherVim</span></a></div><div class="sl-flex print:hidden astro-nczgtkxc"><site-search class="astro-nczgtkxc astro-r5ar4xm7" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-r5ar4xm7"><svg aria-hidden="true" class="astro-r5ar4xm7 astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-r5ar4xm7" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-r5ar4xm7" style="display: none;"><kbd class="astro-r5ar4xm7">Ctrl</kbd><kbd class="astro-r5ar4xm7">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-r5ar4xm7"><div class="dialog-frame sl-flex astro-r5ar4xm7"><button data-close-modal class="sl-flex md:sl-hidden astro-r5ar4xm7">Cancel</button><div class="search-container astro-r5ar4xm7"><div id="starlight__search" class="astro-r5ar4xm7"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/noethervim/_astro/Search.astro_astro_type_script_index_0_lang.BGymFJIP.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-nczgtkxc"><div class="sl-flex social-icons astro-nczgtkxc"><a href="https://github.com/Chiarandini/NoetherVim" rel="me" class="sl-flex astro-cg55etiy"><span class="sr-only astro-cg55etiy">GitHub</span><svg aria-hidden="true" class="astro-cg55etiy astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-r2p65idu"><span class="sr-only astro-r2p65idu">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-r2p65idu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-r2p65idu"><option value="dark" class="astro-r2p65idu">Dark</option><option value="light" class="astro-r2p65idu">Light</option><option value="auto" selected class="astro-r2p65idu">Auto</option></select><svg aria-hidden="true" class="icon caret astro-r2p65idu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script><script type="module">var e=`starlight-theme`,t=e=>e===`auto`||e===`dark`||e===`light`?e:`auto`,n=()=>t(typeof localStorage<`u`&&localStorage.getItem(e));function r(t){typeof localStorage<`u`&&localStorage.setItem(e,t===`light`||t===`dark`?t:``)}var i=()=>matchMedia(`(prefers-color-scheme: light)`).matches?`light`:`dark`;function a(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e===`auto`?i():e,r(e)}matchMedia(`(prefers-color-scheme: light)`).addEventListener(`change`,()=>{n()===`auto`&&a(`auto`)});var o=class extends HTMLElement{constructor(){super(),a(n()),this.querySelector(`select`)?.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&a(t(e.currentTarget.value))})}};customElements.define(`starlight-theme-select`,o);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-gqpr5s5a" aria-label="Main"><starlight-menu-button class="print:hidden astro-vvx7mffu"><button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-vvx7mffu"><svg aria-hidden="true" class="open-menu astro-vvx7mffu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-vvx7mffu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg></button></starlight-menu-button><script type="module">var e=class extends HTMLElement{btn=this.querySelector(`button`);constructor(){super(),this.btn.addEventListener(`click`,()=>this.toggleExpanded());let e=this.closest(`nav`);e&&e.addEventListener(`keyup`,e=>this.closeOnEscape(e)),matchMedia(`(min-width: 50em)`).addEventListener(`change`,()=>this.setExpanded(!1))}setExpanded(e){this.setAttribute(`aria-expanded`,String(e)),document.body.toggleAttribute(`data-mobile-menu-expanded`,e),document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}toggleExpanded(){this.setExpanded(this.getAttribute(`aria-expanded`)!==`true`)}closeOnEscape(e){e.code===`Escape`&&(this.setExpanded(!1),this.btn.focus())}};customElements.define(`starlight-menu-button`,e);</script><div id="starlight__sidebar" class="sidebar-pane astro-gqpr5s5a"><div class="sidebar-content sl-flex astro-gqpr5s5a"><sl-sidebar-state-persist data-hash="09x52qr" class="astro-f5yvicm7"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-ojxuodky"><li class="astro-ojxuodky"><details open class="astro-ojxuodky"><summary class="astro-ojxuodky"><span class="group-label astro-ojxuodky"><span class="large astro-ojxuodky">Start here</span></span><svg aria-hidden="true" class="caret astro-ojxuodky astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-ojxuodky"><li class="astro-ojxuodky"><a href="/noethervim/" class="astro-ojxuodky"><span class="astro-ojxuodky">Introduction</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/start/install/" class="astro-ojxuodky"><span class="astro-ojxuodky">Installation</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/start/first-session/" class="astro-ojxuodky"><span class="astro-ojxuodky">Your first session</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/start/mathematicians/" aria-current="page" class="astro-ojxuodky"><span class="astro-ojxuodky">For mathematicians</span></a></li></ul></details></li><li class="astro-ojxuodky"><details open class="astro-ojxuodky"><summary class="astro-ojxuodky"><span class="group-label astro-ojxuodky"><span class="large astro-ojxuodky">Guides</span></span><svg aria-hidden="true" class="caret astro-ojxuodky astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-ojxuodky"><li class="astro-ojxuodky"><a href="/noethervim/guides/bundles/" class="astro-ojxuodky"><span class="astro-ojxuodky">Bundles</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/guides/configuration/" class="astro-ojxuodky"><span class="astro-ojxuodky">Configuration</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/guides/keybindings/" class="astro-ojxuodky"><span class="astro-ojxuodky">Keybinding philosophy</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/guides/recipes/" class="astro-ojxuodky"><span class="astro-ojxuodky">Recipes</span></a></li></ul></details></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-b5gddk54"><div class="social-icons astro-b5gddk54"><a href="https://github.com/Chiarandini/NoetherVim" rel="me" class="sl-flex astro-cg55etiy"><span class="sr-only astro-cg55etiy">GitHub</span><svg aria-hidden="true" class="astro-cg55etiy astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-r2p65idu"><span class="sr-only astro-r2p65idu">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-r2p65idu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-r2p65idu"><option value="dark" class="astro-r2p65idu">Dark</option><option value="light" class="astro-r2p65idu">Light</option><option value="auto" selected class="astro-r2p65idu">Auto</option></select><svg aria-hidden="true" class="icon caret astro-r2p65idu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script></div></div></div></div></nav><div class="main-frame astro-gqpr5s5a"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-abfeecmu"><aside class="right-sidebar-container print:hidden astro-abfeecmu"><div class="right-sidebar astro-abfeecmu"><div class="lg:sl-hidden astro-q5mffni3"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-5ulgm6bh"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-5ulgm6bh"><details id="starlight__mobile-toc" class="astro-5ulgm6bh"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-5ulgm6bh"><span class="toggle sl-flex astro-5ulgm6bh">On this page<svg aria-hidden="true" class="caret astro-5ulgm6bh astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-5ulgm6bh"></span></summary><div class="dropdown astro-5ulgm6bh"><ul class="isMobile astro-cxyftcne" style="--depth: 0;"><li style="--depth: 0;" class="astro-cxyftcne"><a href="#_top" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">Overview</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#1-who-this-guide-is-for" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">1. Who this guide is for</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#2-before-you-start-minimal-vim-literacy" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">2. Before you start: minimal Vim literacy</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#3-installation" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">3. Installation</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#4-orientation-your-first-session" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">4. Orientation: your first session</span></a><ul class="isMobile astro-cxyftcne" style="--depth: 1;"><li style="--depth: 1;" class="astro-cxyftcne"><a href="#keybinding-prefixes" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Keybinding prefixes</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#discovery-which-key" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Discovery: which-key</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#the-noethervim-command" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">The :NoetherVim command</span></a></li></ul></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#5-enabling-the-math-bundles" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">5. Enabling the math bundles</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#6-writing-a-latex-paper" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">6. Writing a LaTeX paper</span></a><ul class="isMobile astro-cxyftcne" style="--depth: 1;"><li style="--depth: 1;" class="astro-cxyftcne"><a href="#compile-and-preview" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Compile and preview</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#math-entry-via-snippets" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Math entry via snippets</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#preamble" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Preamble</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#motions-navigating-by-theorem" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Motions: navigating by theorem</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#spell-checking-that-knows-math" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Spell checking that knows math</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#citations" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Citations</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#images" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Images</span></a></li></ul></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#7-notes-references-and-research-workflow" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">7. Notes, references, and research workflow</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#8-extending-noethervim" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">8. Extending NoetherVim</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#9-when-things-break" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">9. When things break</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#10-going-deeper" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">10. Going deeper</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/noethervim/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.BcSo_yiZ.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-q5mffni3"><div class="sl-container astro-q5mffni3"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-cxyftcne" style="--depth: 0;"><li style="--depth: 0;" class="astro-cxyftcne"><a href="#_top" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">Overview</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#1-who-this-guide-is-for" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">1. Who this guide is for</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#2-before-you-start-minimal-vim-literacy" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">2. Before you start: minimal Vim literacy</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#3-installation" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">3. Installation</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#4-orientation-your-first-session" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">4. Orientation: your first session</span></a><ul class="astro-cxyftcne" style="--depth: 1;"><li style="--depth: 1;" class="astro-cxyftcne"><a href="#keybinding-prefixes" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Keybinding prefixes</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#discovery-which-key" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Discovery: which-key</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#the-noethervim-command" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">The :NoetherVim command</span></a></li></ul></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#5-enabling-the-math-bundles" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">5. Enabling the math bundles</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#6-writing-a-latex-paper" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">6. Writing a LaTeX paper</span></a><ul class="astro-cxyftcne" style="--depth: 1;"><li style="--depth: 1;" class="astro-cxyftcne"><a href="#compile-and-preview" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Compile and preview</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#math-entry-via-snippets" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Math entry via snippets</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#preamble" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Preamble</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#motions-navigating-by-theorem" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Motions: navigating by theorem</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#spell-checking-that-knows-math" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Spell checking that knows math</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#citations" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Citations</span></a></li><li style="--depth: 1;" class="astro-cxyftcne"><a href="#images" style="--depth: 1;" class="astro-cxyftcne"><span style="--depth: 1;" class="astro-cxyftcne">Images</span></a></li></ul></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#7-notes-references-and-research-workflow" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">7. Notes, references, and research workflow</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#8-extending-noethervim" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">8. Extending NoetherVim</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#9-when-things-break" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">9. When things break</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#10-going-deeper" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">10. Going deeper</span></a></li></ul></nav></starlight-toc><script type="module" src="/noethervim/_astro/TableOfContents.astro_astro_type_script_index_0_lang.Csloo1VZ.js"></script></div></div></div></aside><div class="main-pane astro-abfeecmu"><main data-pagefind-body class="astro-vdxcvpsm" lang="en" dir="ltr"><div class="sl-banner astro-y5d7njgm" data-pagefind-ignore>NoetherVim is <strong>alpha</strong>. Breaking changes land without deprecation shims. These docs track <code>main</code>.</div><div class="content-panel astro-oil7k7jf"><div class="sl-container astro-oil7k7jf"><h1 id="_top" class="astro-2sm4b3ln">For mathematicians</h1></div></div><div class="content-panel astro-oil7k7jf"><div class="sl-container astro-oil7k7jf"><div class="sl-markdown-content"><!-- Generated by scripts/sync-docs.mjs. Edit the upstream file, not this. -->
+<p>This guide is for mathematicians who have seen Neovim from a distance -
+maybe used it for LaTeX with a minimal <code dir="auto">init.vim</code>, maybe watched a
+colleague fly through a paper in it - and want to make the jump to a
+fully-configured setup without spending a month reading help files.</p>
+<p>This document is not a Vim tutorial and not an argument for switching editors. It is
+targeting people who already want to. The goal is to shorten the path from install to
+a setup where you can actually write a paper, take notes, manage references, etc.</p>
+<p>It builds on <a href="README.md">your first session</a>, which covers the parts that are
+not specific to mathematics: the keybinding prefixes, the commands worth
+running first, and the defaults you can change. Sections 4 and 5 below repeat
+just enough of it to stay self-contained.</p>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="1-who-this-guide-is-for">1. Who this guide is for</h2><a class="sl-anchor-link" href="#1-who-this-guide-is-for"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “1. Who this guide is for”</span></a></div>
+<p>You know, or can tolerate, Vim basics: modes, <code dir="auto">hjkl</code>, <code dir="auto">:w</code>, <code dir="auto">:q</code>,
+<code dir="auto">/search</code>. If <code dir="auto">hjkl</code> means nothing to you, start with section 2 first.</p>
+<p>You write math (papers, notes, thesis chapters, problem sets) in
+LaTeX, Markdown, or some mix of them. You want to get to a
+working setup quickly and iterate from there, rather than read every
+manual before opening a file.</p>
+<p>What you will find below: concrete keymaps, a walkthrough for writing a
+LaTeX paper, pointers to the deeper documentation when you need it.
+What you will not find: a re-derivation of Vim motions,
+a complete reference (can be found at <code dir="auto">:help noethervim</code>), and the
+plugin docs this guide links to.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="2-before-you-start-minimal-vim-literacy">2. Before you start: minimal Vim literacy</h2><a class="sl-anchor-link" href="#2-before-you-start-minimal-vim-literacy"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “2. Before you start: minimal Vim literacy”</span></a></div>
+<p>You do not need to master Vim before using NoetherVim. The distribution
+is usable with surface-level knowledge and actively teaches you more
+through the which-key popup (see section 4).</p>
+<p>That said, three resources are worth keeping open the first week:</p>
+<ul>
+<li><strong><code dir="auto">:Tutor</code></strong>: run inside any Neovim install. About 30 minutes. Teaches
+modes, basic motions, <code dir="auto">dd</code>/<code dir="auto">yy</code>/<code dir="auto">p</code>, search, and writing buffers.
+This is the single best use of your time as a new Vim user.</li>
+<li><strong><a href="https://learnvim.irian.to/">learnvim</a></strong>: a free book on modal
+editing intuition. Skim the first few chapters to internalize why, for example,
+<code dir="auto">ci"</code> is better than selecting and retyping.</li>
+<li><strong><code dir="auto">:help user-manual</code></strong>: the canonical reference. Not for reading cover to cover
+(<a href="https://www.youtube.com/watch?v=rT-fbLFOCy0">roughly nine hours if you try</a>);
+look into it when you want to understand something properly.</li>
+</ul>
+<p>If you hit a specific motion or command you don’t know, <code dir="auto">:help &lt;thing&gt;</code>
+almost always has an answer. Neovim’s help system is one of the most reliable
+pieces of documentation in the entire ecosystem.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="3-installation">3. Installation</h2><a class="sl-anchor-link" href="#3-installation"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “3. Installation”</span></a></div>
+<p>Installation lives in the main README: see
+<a href="../../README.md#installation">Installation</a>. Two things worth
+highlighting for a mathematician coming from another editor:</p>
+<ul>
+<li><strong>Don’t wipe your existing config blindly.</strong> If you already have
+<code dir="auto">~/.config/nvim/</code>, use the <code dir="auto">NVIM_APPNAME=noethervim</code> (or any other name besides
+<code dir="auto">noethervim</code>) pattern from the
+README’s install section. You can run NoetherVim and your old setup
+side by side with no interference.</li>
+<li><strong>Let the first launch finish.</strong> Lazy.nvim bootstraps itself, pulls
+plugins, compiles treesitter parsers, and (if you enable the LaTeX
+bundle) installs the language server through Mason. First launch
+takes a minute or two at most. Subsequent launches are fast (usually &lt;50ms).</li>
+</ul>
+<p>Once <code dir="auto">nvim</code> opens without errors and the dashboard appears, you’re
+ready.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="4-orientation-your-first-session">4. Orientation: your first session</h2><a class="sl-anchor-link" href="#4-orientation-your-first-session"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “4. Orientation: your first session”</span></a></div>
+<p>When Neovim opens with no file, you land on the <strong>Snacks dashboard</strong> - a
+NoetherVim ASCII header with a short menu:</p>
+<div class="expressive-code"><link rel="stylesheet" href="/noethervim/_astro/ec.w36nc.css"><script type="module" src="/noethervim/_astro/ec.0vx5m.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">New File (insert)  [i]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">New File (normal)  [e]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Find File          [f]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Old Files          [o]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Restore Session    [r]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Sessions           [s]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Config             [c]</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">Quit               [q]</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="New File (insert)  [i]New File (normal)  [e]Find File          [f]Old Files          [o]Restore Session    [r]Sessions           [s]Config             [c]Quit               [q]"><div></div></button></div></figure></div>
+<p>Press the letter in brackets. <code dir="auto">f</code> opens the fuzzy file picker in your
+current directory; <code dir="auto">c</code> jumps to your config.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="keybinding-prefixes">Keybinding prefixes</h3><a class="sl-anchor-link" href="#keybinding-prefixes"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Keybinding prefixes”</span></a></div>
+<p>NoetherVim builds on Vim’s own prefix conventions rather than funneling
+everything through one leader. The prefixes you will actually use:</p>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">&lt;Space&gt;</code> (SearchLeader)</td>
+<td>Fuzzy finding: files, grep, buffers, keymaps, help</td>
+</tr>
+<tr>
+<td><code dir="auto">&lt;Leader&gt;</code> (<code dir="auto">\</code> by default)</td>
+<td>Global actions: format, open tools</td>
+</tr>
+<tr>
+<td><code dir="auto">&lt;LocalLeader&gt;</code> (<code dir="auto">,</code> by default)</td>
+<td>Filetype-specific: compile LaTeX, run a script</td>
+</tr>
+<tr>
+<td><code dir="auto">&lt;C-w&gt;</code></td>
+<td>Anything window-related: navigate, resize, split</td>
+</tr>
+<tr>
+<td><code dir="auto">[</code> / <code dir="auto">]</code></td>
+<td>Previous / next: diagnostics, hunks, buffers, theorems</td>
+</tr>
+<tr>
+<td><code dir="auto">[o</code> / <code dir="auto">]o</code></td>
+<td>Toggle options: wrap, spell, relative numbers</td>
+</tr>
+</tbody>
+</table>
+<p><code dir="auto">q</code> closes non-editing windows (help, quickfix, Oil, notify). This is a
+distribution convention - use it instead of <code dir="auto">:q</code> for anything that
+isn’t a file buffer.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="discovery-which-key">Discovery: which-key</h3><a class="sl-anchor-link" href="#discovery-which-key"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Discovery: which-key”</span></a></div>
+<p>Press any prefix and wait for a second. A popup appears listing every
+key that follows, grouped by category. If you forget “how do I jump
+between hunks again?”, press <code dir="auto">[</code> and read. This is the habit that
+replaces memorizing the manual.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="the-noethervim-command">The <code dir="auto">:NoetherVim</code> command</h3><a class="sl-anchor-link" href="#the-noethervim-command"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The :NoetherVim command”</span></a></div>
+<p><code dir="auto">:NoetherVim &lt;tab&gt;</code> autocompletes the subcommands. The ones worth
+knowing day one:</p>
+<ul>
+<li><code dir="auto">:NoetherVim bundles</code>: picker of every bundle with enable/disable
+status. Answers “what else could I turn on?” Press <code dir="auto">&lt;C-y&gt;</code> on a
+bundle to enable it (edits <code dir="auto">init.lua</code> behind a diff prompt), or
+<code dir="auto">&lt;C-x&gt;</code> to disable.</li>
+<li><code dir="auto">:NoetherVim templates</code>: picker of the bundled user-config
+templates (<code dir="auto">options</code>, <code dir="auto">keymaps</code>, <code dir="auto">autocmds</code>, …). Press <code dir="auto">&lt;C-y&gt;</code> to
+stamp one into <code dir="auto">lua/user/</code>, with a diff prompt before any write.</li>
+<li><code dir="auto">:NoetherVim plugins</code>: picker of every installed plugin. Good for
+reading a plugin’s source when <code dir="auto">:help</code> isn’t enough.</li>
+<li><code dir="auto">:NoetherVim files</code>: picker of NoetherVim’s own source files.</li>
+<li><code dir="auto">:NoetherVim user</code>: picker of your <code dir="auto">lua/user/</code> files.</li>
+<li><code dir="auto">:NoetherVim override</code>: from any NoetherVim source file, open the
+matching user override file in a split. Creates it if missing. One of
+the more useful commands for customization.</li>
+</ul>
+<p><code dir="auto">&lt;Space&gt;fk</code> searches all keymaps by description. <code dir="auto">:NoetherVim diff keymaps</code> (or <code dir="auto">&lt;space&gt;ck</code>) shows what you’ve personally changed.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="5-enabling-the-math-bundles">5. Enabling the math bundles</h2><a class="sl-anchor-link" href="#5-enabling-the-math-bundles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “5. Enabling the math bundles”</span></a></div>
+<p>Open <code dir="auto">~/.config/nvim/init.lua</code> (or whichever path you installed to)
+and uncomment the bundles you want. Each one is a single line in the
+<code dir="auto">spec</code> table:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- Core math + writing</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#C5E478;--1:#3B61B0">import</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">noethervim.bundles.languages.latex</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#C5E478;--1:#3B61B0">import</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">noethervim.bundles.languages.latex-zotero</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},  </span><span style="--0:#919F9F;--1:#5F636F">-- needs Zotero running</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#C5E478;--1:#3B61B0">import</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">noethervim.bundles.writing.markdown</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code">
+</div></div><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- Optional, depending on your note-taking habit</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#C5E478;--1:#3B61B0">import</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">noethervim.bundles.writing.obsidian</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#C5E478;--1:#3B61B0">import</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">noethervim.bundles.writing.neorg</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- Core math + writing{ import = &quot;noethervim.bundles.languages.latex&quot; },{ import = &quot;noethervim.bundles.languages.latex-zotero&quot; },  -- needs Zotero running{ import = &quot;noethervim.bundles.writing.markdown&quot; },-- Optional, depending on your note-taking habit{ import = &quot;noethervim.bundles.writing.obsidian&quot; },{ import = &quot;noethervim.bundles.writing.neorg&quot; },"><div></div></button></div></figure></div>
+<p>Save the file, quit, and reopen Neovim. Lazy.nvim picks up the changes
+and installs what’s new on next launch.</p>
+<p>After the install settles, run <code dir="auto">:checkhealth noethervim</code>. It reports on
+required dependencies (TeX distribution, <code dir="auto">latexmk</code>, Zotero translator if
+you enabled zotero, <code dir="auto">uv</code>/Python for image tooling) and tells you exactly
+which command to run if something is missing.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="6-writing-a-latex-paper">6. Writing a LaTeX paper</h2><a class="sl-anchor-link" href="#6-writing-a-latex-paper"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “6. Writing a LaTeX paper”</span></a></div>
+<p>The LaTeX bundle gives you the same level of support as an IDE: live
+compilation, forward/reverse PDF sync, snippet-driven math entry,
+citation picker, theorem navigation, and a 900-entry math spell
+dictionary.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="compile-and-preview">Compile and preview</h3><a class="sl-anchor-link" href="#compile-and-preview"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Compile and preview”</span></a></div>
+<p>VimTeX handles compilation. Open a <code dir="auto">.tex</code> file and:</p>
+<ul>
+<li><code dir="auto">&lt;LocalLeader&gt;ll</code>: start continuous compilation (latexmk watches the
+file and recompiles on save).</li>
+<li><code dir="auto">&lt;LocalLeader&gt;lv</code>: open the PDF in your viewer.</li>
+<li><code dir="auto">&lt;LocalLeader&gt;lc</code>: clean auxiliary files.</li>
+<li><code dir="auto">&lt;LocalLeader&gt;le</code>: show the error/warning log if compilation fails.</li>
+</ul>
+<p>Forward search (jump from <code dir="auto">.tex</code> cursor to PDF location) and reverse
+search (click in the PDF, jump to the source line) need a viewer set
+up per OS. On macOS, <a href="https://skim-app.sourceforge.io/">Skim</a> with
+“Sync” enabled works out of the box. On Linux, Zathura with SyncTeX
+is the common choice. VimTeX’s documentation covers the setup:
+<code dir="auto">:help vimtex-synctex</code>.</p>
+<p>A couple of NoetherVim-specific extras on top of VimTeX:</p>
+<ul>
+<li><code dir="auto">yP</code>: copy the compiled PDF path to the system clipboard (useful
+for drag-and-drop into email or a tracker).</li>
+<li><code dir="auto">&lt;C-w&gt;sp</code>: toggle whether the PDF size shows in the statusline.</li>
+<li><code dir="auto">&lt;LocalLeader&gt;vw</code>: run VimTeX’s word count.</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="math-entry-via-snippets">Math entry via snippets</h3><a class="sl-anchor-link" href="#math-entry-via-snippets"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Math entry via snippets”</span></a></div>
+<p>The bundle ships the <code dir="auto">noethervim-tex</code> plugin, which adds hundreds of
+LuaSnip snippets tuned for mathematical writing. Snippets come in two
+flavors:</p>
+<ul>
+<li><strong>Auto-expanding</strong> (fire the moment the trigger is typed, inside
+math mode only). Examples:
+<ul>
+<li><code dir="auto">ff</code> -&gt; <code dir="auto">\frac{}{}</code> with tab stops on numerator and denominator</li>
+<li><code dir="auto">pp</code> -&gt; <code dir="auto">\partial</code></li>
+<li><code dir="auto">ee</code> -&gt; <code dir="auto">e^{}</code></li>
+<li><code dir="auto">((</code> -&gt; <code dir="auto">\left( \right)</code> pair</li>
+<li><code dir="auto">bb</code> -&gt; <code dir="auto">\bar{}</code></li>
+</ul>
+</li>
+<li><strong>Manual</strong> (type the trigger and press <code dir="auto">&lt;Tab&gt;</code> to expand). Used for
+larger scaffolds so you don’t get surprise expansions:
+<ul>
+<li><code dir="auto">:thm Title</code> -&gt; full theorem environment with label</li>
+<li><code dir="auto">:defn</code>, <code dir="auto">:prop</code>, <code dir="auto">:lem</code>, <code dir="auto">:cor</code>, <code dir="auto">:example</code>, <code dir="auto">:exercise</code>, <code dir="auto">:box</code></li>
+</ul>
+</li>
+</ul>
+<p>A handful of text abbreviations also auto-expand: <code dir="auto">tfae</code> -&gt; “the
+following are equivalent”, <code dir="auto">iff</code> -&gt; “if and only if”, <code dir="auto">wrt</code>, <code dir="auto">wlog</code>,
+<code dir="auto">ftsoc</code>, <code dir="auto">SES</code>, <code dir="auto">fg</code>. These snippets are also aware if you are in math-mode or text-mode
+and will expand accordingly.</p>
+<p>Open <code dir="auto">:NoetherVim plugins</code>, pick <code dir="auto">noethervim-tex</code>, and browse
+<code dir="auto">LuaSnip/tex/</code> for the full snippet catalog. Context detection
+(math zone vs. text zone vs. tikz) means snippets only fire where
+they make sense.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="preamble">Preamble</h3><a class="sl-anchor-link" href="#preamble"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Preamble”</span></a></div>
+<p>At the start of a line in the preamble (above <code dir="auto">\begin{document}</code>),
+type <code dir="auto">@</code> and press <code dir="auto">&lt;Tab&gt;</code> to get a picker of <code dir="auto">.tex</code> files from your
+preamble folder; useful if you maintain shared macros across
+documents. The folder defaults to <code dir="auto">preamble/</code> inside your config
+directory. Point it elsewhere with an <code dir="auto">opts</code> override on the
+<code dir="auto">NoetherVim-Tex</code> spec:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- ~/.config/nvim/lua/user/plugins/noethervim-tex.lua</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">return</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Chiarandini/NoetherVim-Tex</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#C5E478;--1:#3B61B0">opts</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">preamble_folder</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">~/Documents/LaTeX/preamble/</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- ~/.config/nvim/lua/user/plugins/noethervim-tex.luareturn {    { &quot;Chiarandini/NoetherVim-Tex&quot;,      opts = { preamble_folder = &quot;~/Documents/LaTeX/preamble/&quot; },    },}"><div></div></button></div></figure></div>
+<div class="sl-heading-wrapper level-h3"><h3 id="motions-navigating-by-theorem">Motions: navigating by theorem</h3><a class="sl-anchor-link" href="#motions-navigating-by-theorem"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Motions: navigating by theorem”</span></a></div>
+<p>The bundle adds treesitter-powered normal-mode motions for LaTeX
+structure, in the <code dir="auto">[</code> / <code dir="auto">]</code> pairing the rest of the distribution uses:</p>
+<ul>
+<li><code dir="auto">]g</code> / <code dir="auto">[g</code> - next / previous theorem (or any theorem-like env)</li>
+<li><code dir="auto">]p</code> / <code dir="auto">[p</code> - next / previous proof, <code dir="auto">]P</code> / <code dir="auto">[P</code> for its <code dir="auto">\end</code></li>
+<li><code dir="auto">]x</code> / <code dir="auto">[x</code> - next / previous example, <code dir="auto">]X</code> / <code dir="auto">[X</code> for its <code dir="auto">\end</code></li>
+<li><code dir="auto">]c</code> / <code dir="auto">[c</code> - next / previous chapter</li>
+</ul>
+<p>These move the cursor; they are not operator-pending textobjects, so
+<code dir="auto">d]g</code> does not work. For operating on a region, use VimTeX’s own
+textobjects: <code dir="auto">ie</code> / <code dir="auto">ae</code> (inside / around environment) and <code dir="auto">i$</code> / <code dir="auto">a$</code>
+(inline math). <code dir="auto">dae</code> deletes a whole environment and <code dir="auto">ci$</code> replaces the
+contents of <code dir="auto">$...$</code>.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="spell-checking-that-knows-math">Spell checking that knows math</h3><a class="sl-anchor-link" href="#spell-checking-that-knows-math"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Spell checking that knows math”</span></a></div>
+<p>Spell is on in <code dir="auto">.tex</code> files by default. Math regions are excluded
+automatically so that something like <code dir="auto">$\alpha + \beta$</code> will not flag. The distribution
+ships a custom dictionary with mathematical terms (Noetherian,
+cohomology, homomorphism, tensor, manifold, …) so real words don’t
+light up.</p>
+<p>Add your own by pressing <code dir="auto">zg</code> on a word in normal mode to add the word to your local vim
+dictionary, or simply edit <code dir="auto">~/.local/share/nvim/site/spell/en.utf-8.add</code> directly.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="citations">Citations</h3><a class="sl-anchor-link" href="#citations"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Citations”</span></a></div>
+<p>With the <code dir="auto">latex-zotero</code> bundle enabled and Zotero running, press
+<code dir="auto">&lt;LocalLeader&gt;z</code> for a picker over your Zotero library. Pick an entry
+and the correctly-formatted <code dir="auto">\cite{key}</code> lands at the cursor.</p>
+<p>Without Zotero, press <code dir="auto">&lt;C-S-c&gt;</code> in insert mode (while writing
+<code dir="auto">\cite{</code>) for a picker over <code dir="auto">.bib</code> files in the project.</p>
+<p>As you type <code dir="auto">\cite{</code>, completion also kicks in from the current
+bibliography.</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="images">Images</h3><a class="sl-anchor-link" href="#images"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Images”</span></a></div>
+<p>Copy an image to your clipboard (screenshot, paper figure, diagram
+from a colleague) and press <code dir="auto">&lt;LocalLeader&gt;P</code>. A <code dir="auto">figure</code> environment
+is inserted at the cursor with a caption stub, the image saved to a
+nearby directory, and the path wired up.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="7-notes-references-and-research-workflow">7. Notes, references, and research workflow</h2><a class="sl-anchor-link" href="#7-notes-references-and-research-workflow"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “7. Notes, references, and research workflow”</span></a></div>
+<p>Mathematical notes tend to outlive the paper they were taken for, so it
+is worth picking a home for them early. NoetherVim gives you three
+paths; pick the one that matches how you already think.</p>
+<p><strong>Plain Markdown + <code dir="auto">markdown</code> bundle.</strong> The lightest option.
+Render-markdown.nvim concealed formatting in-buffer (headings, bold,
+lists), mdmath.nvim renders <code dir="auto">$...$</code> math inline, and markdown-preview
+gives you a browser preview on <code dir="auto">:MarkdownPreview</code>. Paste images the
+same way as LaTeX: <code dir="auto">&lt;LocalLeader&gt;P</code>. Good if you keep notes as
+individual files in a <code dir="auto">notes/</code> directory.</p>
+<p><strong>Obsidian vault + <code dir="auto">obsidian</code> bundle.</strong> If you already use Obsidian
+for notes, this bundle makes NoetherVim a first-class editor for your
+vault. Set your vault path in <code dir="auto">lua/user/config.lua</code>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">return</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">obsidian_vault</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">~/Documents/MyVault/</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="return { obsidian_vault = &quot;~/Documents/MyVault/&quot; }"><div></div></button></div></figure></div>
+<p>Then <code dir="auto">&lt;Leader&gt;ol</code> follows the link under the cursor, <code dir="auto">&lt;C-s&gt;</code> in
+insert mode opens the quick switcher, and the picker surfaces
+<code dir="auto">&lt;C-n&gt;</code> (new note), <code dir="auto">&lt;C-l&gt;</code> (insert link), <code dir="auto">&lt;C-x&gt;</code> (tag) shortcuts.
+Your Obsidian app and NoetherVim edit the same files.</p>
+<p><strong>Neorg + <code dir="auto">neorg</code> bundle.</strong> A structured <code dir="auto">.norg</code> wiki format, good
+for thesis-style hierarchical notes or long-running research journals.
+Default workspace is <code dir="auto">~/neorg/</code>. Key openers:</p>
+<ul>
+<li><code dir="auto">&lt;Leader&gt;ww</code> - open the wiki index.</li>
+<li><code dir="auto">&lt;Leader&gt;wt</code> / <code dir="auto">&lt;Leader&gt;wv</code> - index in a new tab / vertical split.</li>
+<li><code dir="auto">&lt;LocalLeader&gt;nc</code> - table of contents for the current norg file.</li>
+</ul>
+<p>Neorg has a steeper learning curve than Markdown but pays off if you
+want outlined, exportable, linked notes as a system rather than a
+folder of files.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="8-extending-noethervim">8. Extending NoetherVim</h2><a class="sl-anchor-link" href="#8-extending-noethervim"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “8. Extending NoetherVim”</span></a></div>
+<p>You will eventually want to change something: a keymap, a color, a
+plugin option. NoetherVim’s override system is designed so you never
+fork the distribution or edit its files.</p>
+<p>Your personal configuration lives in <code dir="auto">~/.config/nvim/lua/user/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What you put there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code dir="auto">options.lua</code></td>
+<td><code dir="auto">vim.o.textwidth = 120</code>, <code dir="auto">vim.o.tabstop = 2</code>, and so on</td>
+</tr>
+<tr>
+<td><code dir="auto">keymaps.lua</code></td>
+<td>New keymaps or reassignments of distro ones</td>
+</tr>
+<tr>
+<td><code dir="auto">autocmds.lua</code></td>
+<td>Autocommands (<code dir="auto">BufWritePre</code>, <code dir="auto">FileType</code>, etc.)</td>
+</tr>
+<tr>
+<td><code dir="auto">highlights.lua</code></td>
+<td><code dir="auto">vim.api.nvim_set_hl(...)</code> calls, run after colorscheme</td>
+</tr>
+<tr>
+<td><code dir="auto">plugins/*.lua</code></td>
+<td>New plugin specs or <code dir="auto">opts</code> overrides on distro plugins</td>
+</tr>
+<tr>
+<td><code dir="auto">lsp/&lt;server&gt;.lua</code></td>
+<td>Per-server LSP settings</td>
+</tr>
+<tr>
+<td><code dir="auto">config.lua</code></td>
+<td>Data table: vault paths, preamble folder, feature flags</td>
+</tr>
+</tbody>
+</table>
+<p>For a concrete example, to change the compile key to use <code dir="auto">&lt;LocalLeader&gt;c</code>:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- ~/.config/nvim/lua/user/keymaps.lua</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">vim</span><span style="--0:#D6DEEB;--1:#403F53">.keymap.</span><span style="--0:#C5E478;--1:#3B61B0">set</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">n</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">&lt;LocalLeader&gt;c</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">&lt;Plug&gt;(vimtex-compile)</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#C5E478;--1:#3B61B0">desc</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Compile (custom)</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">})</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- ~/.config/nvim/lua/user/keymaps.luavim.keymap.set(&quot;n&quot;, &quot;<LocalLeader>c&quot;, &quot;<Plug>(vimtex-compile)&quot;,    { desc = &quot;Compile (custom)&quot; })"><div></div></button></div></figure></div>
+<p>From any core NoetherVim file opened via <code dir="auto">:NoetherVim files</code>, press
+<code dir="auto">&lt;Leader&gt;e</code> (the same keymap as <code dir="auto">:NoetherVim override</code>) to open the
+matching user override file in a split. NoetherVim creates it if it
+doesn’t exist and puts you at the right place.</p>
+<p>For the full override system (loading order, how <code dir="auto">opts</code> tables merge,
+how to disable a plugin from a bundle) see <code dir="auto">:help noethervim-user-config</code>.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="9-when-things-break">9. When things break</h2><a class="sl-anchor-link" href="#9-when-things-break"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “9. When things break”</span></a></div>
+<p>Four commands, in order, will diagnose almost any problems:</p>
+<ol>
+<li><strong><code dir="auto">:checkhealth noethervim</code></strong> - reports on every dependency and
+configuration requirement. Run this first. The output tells you
+which external tool is missing or mis-configured.</li>
+<li><strong><code dir="auto">:Lazy</code></strong> - shows plugin state: installed, loaded, failed. Press
+<code dir="auto">L</code> (inside the Lazy UI) for recent install/update log output.</li>
+<li><strong><code dir="auto">:Mason</code></strong> - shows LSP server, formatter, and linter state. If
+LaTeX lint stops working, a reinstall from here fixes it 90% of
+the time.</li>
+<li><strong><code dir="auto">:messages</code></strong> - anything that scrolled past during startup. Error
+messages often appear here and nowhere else.</li>
+</ol>
+<p>If all four come back clean but something is still off, open an issue:
+<a href="https://github.com/Chiarandini/NoetherVim/issues">https://github.com/Chiarandini/NoetherVim/issues</a>. Include
+<code dir="auto">:checkhealth noethervim</code> output and the specific file / keymap / bundle
+that’s misbehaving.</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="10-going-deeper">10. Going deeper</h2><a class="sl-anchor-link" href="#10-going-deeper"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “10. Going deeper”</span></a></div>
+<p>You do not have to read any of the following to use NoetherVim well. These are further
+documentation to improve your knowledge of Neovim:</p>
+<ul>
+<li><strong><code dir="auto">:help user-manual</code></strong> - the Vim user manual, rendered inside your
+editor. The single most reliable reference for modal editing.</li>
+<li><strong><a href="https://neovim.io/doc/user/lua-guide.html">Neovim Lua guide</a></strong> -
+when you want to write your own autocommand, override, or plugin
+spec. Short and well-paced.</li>
+<li><strong><a href="https://github.com/lervag/vimtex">VimTeX documentation</a></strong> - the
+LaTeX workflow has far more depth than this guide covers (custom
+compilers, remote compilation, inverse search tuning,
+language-specific features).</li>
+<li><strong><a href="https://lazy.folke.io/spec">lazy.nvim spec reference</a></strong> - read
+before writing a plugin override so your <code dir="auto">keys</code> / <code dir="auto">event</code> / <code dir="auto">ft</code> /
+<code dir="auto">opts</code> table actually behaves the way you expect.</li>
+<li><strong>Castel, <a href="https://castel.dev/post/lecture-notes-1/">“How I’m able to take notes in mathematics lectures using
+LaTeX and Vim”</a></strong> - the
+post that introduced a generation of mathematicians to snippet-based
+real-time LaTeX. Most of the ideas behind the NoetherVim LaTeX
+bundle trace back here.</li>
+</ul>
+</div><footer class="sl-flex astro-xhxjzfa7"><div class="meta sl-flex astro-xhxjzfa7"></div><div class="pagination-links print:hidden astro-jgq3vlii" dir="ltr"><a href="/noethervim/start/first-session/" rel="prev" class="astro-jgq3vlii"><svg aria-hidden="true" class="astro-jgq3vlii astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-jgq3vlii">Previous<br class="astro-jgq3vlii"><span class="link-title astro-jgq3vlii">Your first session</span></span></a><a href="/noethervim/guides/bundles/" rel="next" class="astro-jgq3vlii"><svg aria-hidden="true" class="astro-jgq3vlii astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-jgq3vlii">Next<br class="astro-jgq3vlii"><span class="link-title astro-jgq3vlii">Bundles</span></span></a></div></footer></div></div></main></div></div></div></div></body></html>
