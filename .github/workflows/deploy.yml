@@ -4,12 +4,19 @@ name: Build & Deploy to GitHub Pages
 # Source is on the `archive` branch; the built site is published to `gh-pages`
 # (served at nathanaelsrawley.com). All heavy work runs on GitHub's runners —
 # only a small source push leaves your machine.
+#
+# The NoetherVim docs site is built here too, and lands at /noethervim/. Its
+# source is NOT in this repo: it lives in Chiarandini/NoetherVim under
+# docs-site/. A `noethervim-docs` repository_dispatch from that repo rebuilds
+# this site when the docs change there.
 on:
   push:
     branches: [archive]
     paths:
       - "nate-website/**"
       - ".github/workflows/deploy.yml"
+  repository_dispatch:
+    types: [noethervim-docs]
   workflow_dispatch: {}
 
 permissions:
@@ -30,7 +37,11 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Set up Node 18
+      # Angular 15 predates Node 20/22 and is not tested on them, so the app
+      # build stays pinned to 18. The docs build below switches to 22, which
+      # Astro 7 requires (engines: node >=22.12.0). Two setup-node calls in
+      # one job is deliberate; do not collapse them.
+      - name: Set up Node 18 (Angular)
         uses: actions/setup-node@v4
         with:
           node-version: "18"
@@ -45,6 +56,33 @@ jobs:
 
       - name: SPA fallback for deep links (/series-map etc.)
         run: cp dist/testing/index.html dist/testing/404.html
+
+      # ── NoetherVim docs ────────────────────────────────────────────────
+      # Built into the same dist directory so a single publish covers both.
+      # This matters: peaceiris replaces the gh-pages contents wholesale, so
+      # publishing the two bundles separately would have the second wipe the
+      # first.
+      - name: Checkout NoetherVim
+        uses: actions/checkout@v4
+        with:
+          repository: Chiarandini/NoetherVim
+          path: noethervim-src
+
+      - name: Set up Node 22 (Astro)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build NoetherVim docs
+        working-directory: noethervim-src/docs-site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Merge docs into the site bundle
+        run: |
+          mkdir -p dist/testing/noethervim
+          cp -R ../noethervim-src/docs-site/dist/. dist/testing/noethervim/
 
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
