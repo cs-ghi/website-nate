@@ -7,16 +7,19 @@ name: Build & Deploy to GitHub Pages
 #
 # The NoetherVim docs site is built here too, and lands at /noethervim/. Its
 # source is NOT in this repo: it lives in Chiarandini/NoetherVim under
-# docs-site/. A `noethervim-docs` repository_dispatch from that repo rebuilds
-# this site when the docs change there.
+# docs-site/. That repo's `docs` workflow calls workflow_dispatch here when
+# the docs change, so `workflow_dispatch` below is load-bearing, not just a
+# manual convenience.
+#
+# It dispatches with an explicit ref rather than using repository_dispatch,
+# because repository_dispatch only runs workflows on a repo's default branch
+# and this file lives on `archive`.
 on:
   push:
     branches: [archive]
     paths:
       - "nate-website/**"
       - ".github/workflows/deploy.yml"
-  repository_dispatch:
-    types: [noethervim-docs]
   workflow_dispatch: {}
 
 permissions:
