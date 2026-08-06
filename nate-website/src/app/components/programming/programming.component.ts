@@ -18,6 +18,7 @@ export const programmingArray: Program[] = [
     tagline: 'A Neovim distribution for mathematics and multilingual writing.',
     desc: 'A custom Neovim distribution built for mathematics and multilingual workflows. Designed around LaTeX editing, structured note-taking, and development across multiple languages, with a curated set of plugins and configurations out of the box. LaTeX, BibTeX, and VimTeX get the same first-class support as LSP and treesitter; everything else you expect (completion, DAP, diagnostics, formatters) is configured and lazy-loaded.',
     repo: 'https://github.com/Chiarandini/NoetherVim',
+    docsUrl: '/noethervim/',
     install:
       'mkdir -p ~/.config/nvim\n' +
       'curl -fLo ~/.config/nvim/init.lua \\\n' +
