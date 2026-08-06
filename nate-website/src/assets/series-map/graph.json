@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-08-05",
+    "generated": "2026-08-06",
     "bookCount": 50,
     "edgeCount": 367,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 114
+      "info": 115
     },
     "tiers": [
       {
@@ -2512,6 +2512,13 @@
     },
     {
       "source": "NateCoreRepTheory",
+      "target": "NateLinAlg",
+      "type": "coreq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateCoreRepTheory",
       "target": "NateRealAnalysis",
       "type": "reference",
       "provenance": "auto",
@@ -3800,15 +3807,6 @@
     {
       "source": "NateLinAlg",
       "target": "NateCoreAlgebra",
-      "type": "coreq",
-      "provenance": "both",
-      "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex"
-      ]
-    },
-    {
-      "source": "NateLinAlg",
-      "target": "NateCoreRepTheory",
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
