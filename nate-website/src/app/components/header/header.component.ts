@@ -7,6 +7,9 @@ export const menuItems = [
   { name: 'notes', url: '/notes'},
   { name: 'blog', url: '/blog'},
   { name: 'programming', url: '/programming'},
+  // Static Astro bundle published alongside the SPA, not an Angular route,
+  // so it needs a plain href. Any entry carrying `link` is rendered that way.
+  { name: 'noethervim', url: '/noethervim', link: '/noethervim/'},
   { name: 'dictionary', url: '/dictionary'},
   { name: 'judo', url: '/judo'},
   // { name: 'Beatsaber', url: 'https://beatleader.com/u/304451'},

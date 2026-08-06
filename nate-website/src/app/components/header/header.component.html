@@ -11,7 +11,7 @@
         
         <div class="nav-all-items" (click)="toggleMenu()" [class.collaspe]="!isMenuOpened" >
           <div class="nav-menu--links" *ngFor="let m of menu">
-            <div *ngIf="m.name==='cv'; else elseBlock">
+            <div *ngIf="m?.link; else elseBlock">
               <a [href]="m?.link" >
                 <span> {{m?.name}} </span>
               </a>
