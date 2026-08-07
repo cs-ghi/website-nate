@@ -3,9 +3,9 @@ import { Book, Books } from 'src/app/interfaces/books.model';
 
 export const blogArray: Book[]= [
 
-    {    name: "Alien's Perspective on Analysis",    desc: "We typically build analysis from the bottom up (N -> Q -> R -> C). But in many ways it is more natural to do (N -> Q -> C), and then try to find how R would naturally appear. This post explores an 'Alien' perspective where the algebraic closure of Q is the natural universe and R a derived substructure found via Galois involutions. This shift in perspective tries to explains why Real Analysis is 'flexible' (allowing bump functions) while Complex Analysis is 'rigid,' and characterizes R as the unique 'Cohesive-Connected Field' among all completions of Q",
-      link: "././assets/pdfs/blogs/alien_perspective_on_analysis.pdf"
-    },
+    // {    name: "Alien's Perspective on Analysis",    desc: "We typically build analysis from the bottom up (N -> Q -> R -> C). But in many ways it is more natural to do (N -> Q -> C), and then try to find how R would naturally appear. This post explores an 'Alien' perspective where the algebraic closure of Q is the natural universe and R a derived substructure found via Galois involutions. This shift in perspective tries to explains why Real Analysis is 'flexible' (allowing bump functions) while Complex Analysis is 'rigid,' and characterizes R as the unique 'Cohesive-Connected Field' among all completions of Q",
+    //   link: "././assets/pdfs/blogs/alien_perspective_on_analysis.pdf"
+    // },
     {
       name: "Intuition on Fourier Analysis",
       desc: "Blurb from my real analysis notes extracted to be a separate blog.",
