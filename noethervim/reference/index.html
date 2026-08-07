@@ -405,6 +405,11 @@ the line numbers itself and why `]on` still turns them off, leaving the
 marker on its own. It costs no text cell, so continuation rows stay lined
 up under the text they continue. 'showbreak' is left empty.
 
+Turning wrap off in a prose buffer swaps the marker column for the code
+layout's edge markers: `›` and `‹` where a line runs past the window, which
+Vim draws only while 'list' is on, so tabs and trailing space become visible
+with them. Prose that scrolls sideways has left the profile's assumption.
+
 A 'statuscolumn' you define in `lua/user/options.lua` is never touched,
 and switches the marker off for that window: &gt;lua
     vim.o.statuscolumn = "%l "
@@ -1446,6 +1451,7 @@ Clickable components: ~
     Modified indicator  Diff unsaved changes against saved version
     Deleted-file flag   Offer to write the buffer back (see below)
     New-file flag       Report that nothing is at that path yet (see below)
+    Scratch flag        Offer to save the buffer under a name
     Directory indicator Explain the cwd mismatch, offer `:lcd` (see below)
     LSP indicator       Open `:LspInfo`
     Git branch/status   Open lazygit in a terminal
@@ -1579,7 +1585,24 @@ Customize statusline colors and extra components in `lua/user/config.lua`: &gt;l
     Available color keys (from `util/palette.lua`): ~
     `mode_n`, `mode_i`, `mode_v`, `mode_c`, `mode_t`, `mode_R`,
     `green`, `blue`, `orange`, `red`, `purple`, `default_gray`,
-    `lazy_updates`, `text_gray`
+    `lazy_updates`, `text_gray`, `profile_writing`, `profile_code`
+
+                                            <a id="noethervim-statusline-themes" class="vimdoc-tag">*noethervim-statusline-themes*</a>
+    Every component asks the palette for a role rather than for a colour,
+    so overriding a key here moves everything that plays that role at once,
+    and the bar keeps working when you change theme.
+
+    Gruvbox is the theme the palette is tuned against, by hand, with each
+    role given a value chosen for it. Under any other colorscheme the roles
+    are derived from standard highlight groups instead: `String` for green,
+    `Function` for blue, `DiagnosticError` for red, and so on. That is a
+    best effort, and on themes that paint those groups unusually the result
+    is legible rather than considered -- gruvbox itself paints `Function`
+    green and `Statement` red, which is why the two filetype-profile roles
+    are their own keys rather than reusing `blue` and `purple`.
+
+    If a role lands badly on the theme you use, override it here; that is
+    what these keys are for.
 
     Example, changing the normal-mode indicator to blue: &gt;lua
     -- lua/user/config.lua
@@ -1900,7 +1923,7 @@ Cmdline-only overrides (insert mode keymaps stay unchanged): &gt;lua
 
 Custom completion sources: ~
 
-NoetherVim ships two custom blink.cmp completion sources.
+NoetherVim ships three custom blink.cmp completion sources.
 
 images ~
     Triggered when the entire line is "." in a .tex file. Lists image
@@ -1910,7 +1933,18 @@ images ~
 todos ~
     Triggered by typing "@" at the start of a line. Inserts a
     language-appropriate comment prefix + keyword (TODO, FIXME, BUG, etc.).
-    Supported filetypes: lua, vim, tex, python, typescript, javascript.</div>
+    Supported filetypes: lua, vim, tex, python, typescript, javascript.
+
+user_config ~
+    Active only in `lua/user/config.lua`. Opening a quote after a field
+    that takes one of a fixed set of strings lists that set:
+
+        `colorscheme`    every scheme installed right now, so it grows when
+                       the ui.colorscheme bundle is enabled
+        `edge_style`     the statusline edge presets
+
+    Both are read at the moment you ask, not from a list kept here, so
+    what you are offered is what the distribution will accept.</div>
 <div class="sl-heading-wrapper level-h2"><h2 id="12-health-check">12. Health check</h2><a class="sl-anchor-link" href="#12-health-check"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “12. Health check”</span></a></div>
 <div class="vimdoc-reference"><a id="noethervim-health" class="vimdoc-tag">*noethervim-health*</a>
 
