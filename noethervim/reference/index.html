@@ -140,7 +140,7 @@ Four commands, in the order worth running them: ~
     SearchLeader+ct   Stamp `lua/user/` config templates. Start with
                     `user/config.example.lua`, which is an annotated list
                     of everything the distribution lets you change about
-                    its own behaviour. See <a href="#noethervim-templates">|noethervim-templates|</a>.
+                    its own behavior. See <a href="#noethervim-templates">|noethervim-templates|</a>.
 
 Both the bundle and template flows show a diff prompt before writing.
 
@@ -244,7 +244,7 @@ comment-leader continuation on &lt;Enter&gt; and o/O across filetypes: &gt;lua
     &#125;)
 Notable non-default choices: ~
 
-  `swapfile` is OFF; `undofile` is ON. NoetherVim favours persistent
+  `swapfile` is OFF; `undofile` is ON. NoetherVim favors persistent
   undo over swap-based crash recovery; in the author's experience,
   swap's "file changed on disk" prompts produced more false positives
   than they prevented lost work. Your mileage may differ; if you
@@ -267,7 +267,7 @@ Notable non-default choices: ~
   "reload regardless of state."
 
   Flip with `vim.o.autowriteall = true` in `user/options.lua` if you
-  prefer the classic "save everything automatically" behaviour.
+  prefer the classic "save everything automatically" behavior.
 
 See `noethervim/options.lua` for all defaults.
 
@@ -345,8 +345,8 @@ settings on top of the globals:
                         `t` to `formatoptions` (auto-wrap at textwidth),
                         and hides list chars. Also binds `&lt;C-l&gt;` in
                         insert mode for spell-fix, and sets a
-                        'statuscolumn' that marks wrapped lines --
-                        see <a href="#noethervim-wrap-marker">|noethervim-wrap-marker|</a>.
+                        'statuscolumn' that marks wrapped lines
+                        (see <a href="#noethervim-wrap-marker">|noethervim-wrap-marker|</a>).
     `noethervim_code`     Matches: every filetype NOT in the writing list,
                         structured-text set (json, jsonc, yaml, toml),
                         or special-buffer set (help, man, lspinfo, query,
@@ -355,7 +355,7 @@ settings on top of the globals:
                         dapui_*). Sets `list` on
                         so trailing whitespace and tabs are visible.
                         `formatoptions` omits `t` globally, so typing past
-                        textwidth in code does NOT auto-break mid-line --
+                        textwidth in code does NOT auto-break mid-line;
                         formatters handle line length instead. When
                         `spell_in_code = true` is set in
                         <a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>, also turns on
@@ -380,8 +380,8 @@ break; see <a href="#noethervim-bundles">|noethervim-bundles|</a>. To stop hard 
 FileType autocmds fire AFTER `ftplugin/*.lua`, so these profiles win
 over same-named ftplugin settings. To extend the lists (e.g. treat
 `vimwiki` as writing, or skip the code profile for a custom filetype),
-set `writing_filetypes` / `non_code_filetypes` in `lua/user/config.lua`
--- see <a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>.
+set `writing_filetypes` / `non_code_filetypes` in `lua/user/config.lua`;
+see <a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>.
 
 Both profiles are applied by a single augroup, `noethervim_profiles`. To
 override the whole profile, clear it and re-create: &gt;lua
@@ -392,12 +392,8 @@ for writing filetypes. Global `list` is OFF; the code profile re-enables
 it for code filetypes. Listchars are styled in `noethervim/options.lua`.
 
                                                   <a id="noethervim-wrap-marker" class="vimdoc-tag">*noethervim-wrap-marker*</a>
-Soft-wrapped lines are marked with `↳` in the number column rather than
-with 'showbreak', which is empty by default. 'showbreak' occupies a text
-cell, so a continuation line would start one column to the right of the
-text it continues -- visible on any line with no leading indent, and not
-fixable through 'breakindentopt', whose `shift` only adjusts the indent
-'breakindent' already applied.
+Soft-wrapped lines are marked with `↳` in the number column. 'showbreak'
+is left empty.
 
 The marker is set by the writing profile and removed again by the code
 profile. Both steps only touch a 'statuscolumn' the distro itself set, so
@@ -407,7 +403,7 @@ To go back to an inline 'showbreak' arrow, set both in
 `lua/user/options.lua`: &gt;lua
     vim.o.showbreak    = "↳"
     vim.o.statuscolumn = "%s%=%l "
-Setting 'statuscolumn' to an empty string does NOT opt out -- empty means
+Setting 'statuscolumn' to an empty string does NOT opt out: empty means
 "nothing set yet", so the writing profile fills it in. Give it a value of
 your own, or clear the `noethervim_profiles` augroup entirely.
 
@@ -494,7 +490,7 @@ Current keys: ~
                                   picked one. Default: `"gruvbox"`, which
                                   the distribution ships and pins. The
                                   dashboard and statusline fallback
-                                  colours are chosen against it, so a
+                                  colors are chosen against it, so a
                                   fresh install looks coherent without
                                   any configuration. Naming a scheme that
                                   is not installed warns on startup and
@@ -750,7 +746,7 @@ by hand. Open `:NoetherVim bundles` (or SearchLeader+cb) and:
     &lt;F1&gt;      List every key the picker binds. Press &lt;F1&gt; or &lt;Esc&gt; to
               dismiss it; &lt;Esc&gt; only closes the picker itself once the
               list is gone. Works in every snacks picker, not just this
-              one -- see <a href="#noethervim-picker-help">|noethervim-picker-help|</a>.
+              one; see <a href="#noethervim-picker-help">|noethervim-picker-help|</a>.
 
 If `init.lua` has been restructured beyond recognition (multi-file
 specs, no detectable `spec = &#123;` block), &lt;C-y&gt; falls back to copying the
@@ -884,10 +880,6 @@ Keymaps live under `&lt;Leader&gt;t`, the sibling of `&lt;Leader&gt;d` for debug
     `&lt;Leader&gt;tw`   toggle watch mode on the current file
     `&lt;Leader&gt;td`   debug the nearest test (needs the `debug` bundle too)
 
-Testing binds no function keys: `debug` owns that tier for stepping. It
-also puts nothing under SearchLeader, which is for pickers only, and
-neotest's surfaces are panels rather than searchable lists.
-
 Adapters: ~
 
 The `test` bundle installs neotest and no adapters. An adapter arrives
@@ -900,9 +892,7 @@ from its language bundle, and only when both bundles are enabled:
     `languages/web-dev`  Jest and Vitest
 
 So `test` on its own gives you the UI and nothing to run: `:Neotest run`
-finds no tests. This is the same arrangement the `debug` bundle uses, for
-the same reason -- an adapter is only useful to someone who already opted
-into the language.
+finds no tests. The `debug` bundle is arranged the same way.
 
 For a language with no bundle, append to `adapters` from `user/plugins/`,
 using the function form of `opts`. An adapter is an object its plugin
@@ -933,12 +923,12 @@ Getting out of a snippet: ~
     `&lt;Leader&gt;u`         Unlink only the snippet you are in
 
 Stopping is not the same as unlinking. Unlinking drops one snippet and
-hands the cursor to its neighbour, but LuaSnip's extmarks stay behind, so
-a buffer can end up with no active snippet and still carry marks that
+hands the cursor to its neighbor; LuaSnip's extmarks stay behind, so the
+buffer can end up with no active snippet but still carry marks that
 highlight text and interfere with later expansions. Stopping unlinks
-everything and clears those marks, which is what to reach for when a
-buffer feels haunted by snippets that are no longer there. Buffer text is
-never touched, and snippets expand normally again afterwards.
+everything and clears those marks. Reach for it when a buffer still
+behaves as though a snippet were active. Buffer text is never touched,
+and snippets expand normally afterwards.
 
                                                        <a id="noethervim-snippets" class="vimdoc-tag">*noethervim-snippets*</a>
 Writing custom snippets: ~
@@ -958,9 +948,8 @@ Entries read as owner and filename, for example:
     ~/.config/nvim    · preamble.lua
     NoetherVim-Tex    · commands.lua
 The filetype was chosen a prompt earlier, so the `LuaSnip/&lt;ft&gt;/` segment
-every entry shares is left out; the owner is the lazy.nvim plugin name, or
-the tree the file came from when it is one of yours. Filenames alone would
-collide, since your `preamble.lua` and a plugin's are both in the list.
+every entry shares is left out. The owner is the lazy.nvim plugin name, or
+the tree the file came from when it is one of yours.
 
 A file owned by a plugin opens with 'readonly' set: a snippet saved there
 is lost on the next |:Lazy| update, and in a `dev` checkout it dirties that
@@ -970,26 +959,16 @@ do mean to edit a plugin you maintain.
 When you have no snippet file of your own for the filetype, the list also
 offers one to create, marked `(new)`: 
     ~/.config/nvim    · rust.lua (new)
-Choosing it writes a skeleton and opens it. The skeleton is not decoration:
-an empty Lua file returns nil, and LuaSnip errors the next time it loads
-that filetype. Without this entry a filetype whose snippets all come from
-plugins is a dead end, because a single candidate is opened directly and
-that candidate is read-only.
+Choosing it writes a skeleton and opens it. Do not empty the file: a Lua
+file that returns nil errors the next time LuaSnip loads that filetype.
 
 Writing the new file registers it immediately, so its snippets work in the
-same session. LuaSnip scans the snippet directory once at startup and its
-own reload-on-write only refreshes files already in that cache, so a
-filetype it has never seen would otherwise stay inert until a restart.
+same session without a restart.
 
 In a buffer with no 'filetype' there is nothing filetype-specific to edit,
-so the prompt can only offer `all` and a warning says so. This is easy to
-hit by accident: Neovim maps `.rs` to `rust`, not `.rust`, so a scratch file
-named `tmp.rust` has no filetype at all and the prompt looks broken rather
-than empty. `:setfiletype` fixes it.
-
-Ownership is taken from lazy.nvim's plugin registry rather than from the
-path, so it stays correct when a config symlinks its `LuaSnip/` directory
-elsewhere, and when a `dev` checkout lives outside `stdpath("data")`.
+so the prompt offers only `all` and warns. Neovim maps `.rs` to `rust`,
+not `.rust`, so a scratch file named `tmp.rust` has no filetype at all;
+`:setfiletype` fixes it.
 
 For LaTeX snippets, `noethervim-tex` exposes helper functions: &gt;lua
     local helper = require("noethervim-tex").luasnip_helper
@@ -1061,11 +1040,10 @@ source definition in the distribution or user config.
                                                    <a id="noethervim-picker-help" class="vimdoc-tag">*noethervim-picker-help*</a>
 Picker key list: ~
 
-Every snacks picker binds `&lt;F1&gt;` to a list of the keys it defines. Snacks
-binds this to `?` as well, but only in normal mode, and pickers open with
-the prompt in insert mode where `?` is just a character in the query.
-`&lt;F1&gt;` is Neovim's help key in both modes (see |&lt;F1&gt;| and |i_&lt;F1&gt;|), so it
-works wherever the cursor is.
+Every snacks picker binds `&lt;F1&gt;` to a list of the keys it defines, in both
+normal and insert mode. Snacks also binds `?`, but only in normal mode;
+since pickers open with the prompt in insert mode, `?` typed there goes
+into the query instead.
 
 Dismiss the list with `&lt;F1&gt;` again or with `&lt;Esc&gt;`. `&lt;Esc&gt;` closes the
 picker itself only once the list is gone, so with the list open it takes
@@ -1183,7 +1161,7 @@ change this, add to `lua/user/plugins/whichkey.lua`: &gt;lua
     return &#123;
       &#123; "folke/which-key.nvim",
         -- Remember that setting `config` would override, not extend,
-        -- the behaviour, and passing `opts= &#123;...&#125;` would override the
+        -- the behavior, and passing `opts= &#123;...&#125;` would override the
         -- default optoins
         opts = function(_, opts)
           vim.o.timeoutlen = 500
@@ -1238,10 +1216,10 @@ Prefixes: ~
                       (stored in stdpath("state")).
                       `[oC`/`]oC` toggle blink.cmp completion on/off
                                                         <a id="noethervim-Z" class="vimdoc-tag">*noethervim-Z*</a>
-    `Z`                 Closing things -- a grid, not a list of initials.
-                      Rows say how much you are willing to lose; columns
-                      say what you are closing.  Vim's own `ZZ` and `ZQ` are
-                      the bottom and top of the first column.
+    `Z`                 Closing things, arranged as a grid. Rows say how
+                      much you are willing to lose; columns say what you
+                      are closing. Vim's own `ZZ` and `ZQ` are the bottom
+                      and top of the first column.
 
                                     this window    everything     this buffer
                       force         `ZQ`  :q!      `ZW`  :qa!     `ZE`  :bd!
@@ -1251,7 +1229,7 @@ Prefixes: ~
                       `ZQ` and `ZZ` are Vim defaults, listed for the shape.
                       `ZW` is the "kill nvim" key; `ZX` is the one that saves
                       every buffer it can before forcing out.
-                      `ZR`(scratch sweep) deletes unnamed scratch buffers.
+                      `ZR` (scratch sweep) deletes unnamed scratch buffers.
 
 Other notable keymaps: ~
 
@@ -1439,18 +1417,15 @@ Clickable components: ~
                                         <a id="noethervim-statusline-deleted" class="vimdoc-tag">*noethervim-statusline-deleted*</a>
 Deleted-file flag: ~
 
-    Deleting a file from under an open buffer leaves the buffer intact,
-    still holding the path and the only surviving copy of the contents.
-    Nothing in stock Neovim says so. A red marker appears in the flag
-    slot, left of the filename, when that happens -- whether the file
-    went through Oil, `rm` in a terminal, or another program.
+    A red marker appears in the flag slot, left of the filename, when the
+    file behind the buffer is deleted, whether through Oil, `rm` in a
+    terminal, or another program. The buffer stays intact and holds the
+    only surviving copy of the contents.
 
     Click it to write the buffer back and recreate the file.
 
-    Detection rides on the `:checktime` that already runs on focus and
-    buffer changes, which reports a vanished file as `v:fcs_reason` of
-    "deleted". A file you have never written is not flagged: Neovim only
-    tracks a modification time for files it has actually read.
+    A file you have never written is not flagged: Neovim only tracks a
+    modification time for files it has actually read.
 
     The flag clears on the next write or re-read.
 
@@ -1460,10 +1435,10 @@ Directory indicator: ~
     A small marker appears left of the filename when the buffer's
     directory is not the window's working directory. Dimmed when the
     file is somewhere under cwd, which is ordinary project navigation;
-    in the warning colour when it is outside cwd entirely.
+    in the warning color when it is outside cwd entirely.
 
-    What it is warning about is relative paths, not saving in general.
-    Neovim's working directory belongs to the window (falling back to
+    The marker is about relative paths, not saving in general. Neovim's
+    working directory belongs to the window (falling back to
     the tab, then the global one), never to the buffer, so: 
 
         :e docs/a.md        cwd stays at the project root
@@ -1796,7 +1771,7 @@ Default keybindings: ~
 Tab key philosophy preset: ~
                                             <a id="noethervim-completion-style" class="vimdoc-tag">*noethervim-completion-style*</a>
 Set `completion_style` in `lua/user/config.lua` to switch the entire Tab
-behaviour without writing any keymap overrides:
+behavior without writing any keymap overrides:
 
     `"snippet"`   (default) Tab is reserved for LuaSnip jumps. Pick from
                 the menu with C-n/C-p and accept with C-y. Snippet
@@ -1874,7 +1849,7 @@ Run `:checkhealth noethervim` to verify your setup. Checks include:
 
 - Required tools: git, rg (ripgrep), fd
 - Optional tools: node, zoxide, lazygit, tree-sitter
-- Terminal: true colour, `&lt;S-CR&gt;` support, Nerd Font (heuristic, see below)
+- Terminal: true color, `&lt;S-CR&gt;` support, Nerd Font (heuristic, see below)
 - LaTeX toolchain (if latex bundle enabled)
 - Template version: warns if your init.lua is outdated
 - Override drift: warns when a file you overrode has changed upstream
@@ -1889,7 +1864,7 @@ About the terminal section: ~
 
 These results are a guess. A terminal cannot be asked what it supports,
 so the check goes by `$TERM` and `$TERM_PROGRAM`, both of which can be
-wrong, especially through a multiplexer. An unrecognised terminal is
+wrong, especially through a multiplexer. An unrecognized terminal is
 reported as unknown rather than broken.
 
 What it is checking for is whether `&lt;S-CR&gt;` arrives as its own key
@@ -1942,7 +1917,7 @@ A: Both are managed by Mason, the same as LSP servers. Use `:Mason`
    installs a debugger on its own, so enabling `debug` alone costs
    nothing but the UI.
 
-   Test adapters pair the same way -- see <a href="#noethervim-test-adapters">|noethervim-test-adapters|</a>.
+   Test adapters pair the same way; see <a href="#noethervim-test-adapters">|noethervim-test-adapters|</a>.
 
 Q: Does NoetherVim format on save?~
 A: No; auto-formatting is deliberately off. Use `&lt;Leader&gt;ff` for
