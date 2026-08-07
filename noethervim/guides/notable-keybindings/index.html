@@ -188,12 +188,13 @@ register:</p>
 over it normally moves the replaced text into the unnamed register, so pasting
 over a second word inserts the word that was just overwritten.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="-opens-the-command-line"><code dir="auto">;</code> opens the command line</h2><a class="sl-anchor-link" href="#-opens-the-command-line"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “; opens the command line”</span></a></div>
-<p><code dir="auto">:</code> and <code dir="auto">;</code> are the same physical key, one shifted and one not. <code dir="auto">;</code> repeats the
-last <code dir="auto">f</code> / <code dir="auto">t</code> motion.</p>
+<p><code dir="auto">:</code> and <code dir="auto">;</code> are the same physical key, and by default <code dir="auto">;</code> repeats the
+last <code dir="auto">f</code> / <code dir="auto">t</code> motion. Consider the following remapping:</p>
 <div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">vim</span><span style="--0:#D6DEEB;--1:#403F53">.keymap.</span><span style="--0:#C5E478;--1:#3B61B0">set</span><span style="--0:#D6DEEB;--1:#403F53">({ </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">n</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">v</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">}, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">;</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">:</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="vim.keymap.set({ &quot;n&quot;, &quot;v&quot; }, &quot;;&quot;, &quot;:&quot;)"><div></div></button></div></figure></div>
 <p>The trade depends on how much you use <code dir="auto">f{char}</code> with <code dir="auto">;</code> to repeat: if you use
 it often, keep <code dir="auto">;</code> and put <code dir="auto">:</code> somewhere else. NoetherVim ships this mapping,
-and <code dir="auto">:help noethervim-semicolon</code> gives the one-line revert.</p>
+since entering the commandline is one of the most common actions and making so making it as
+effortless as possible outweighs the default<code dir="auto">;</code>. <code dir="auto">:help noethervim-semicolon</code> gives the one-line revert.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="the-smaller-ones">The smaller ones</h2><a class="sl-anchor-link" href="#the-smaller-ones"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “The smaller ones”</span></a></div>
 <ul>
 <li><strong><code dir="auto">gC</code></strong>: inverts comments line by line in visual mode. The builtin <code dir="auto">gc</code>
@@ -204,8 +205,11 @@ opposite state.</li>
 <li><strong><code dir="auto">|</code>, <code dir="auto">_</code> and <code dir="auto">+</code></strong>: splits shaped like what they make. <code dir="auto">|</code> splits
 vertically, <code dir="auto">_</code> splits horizontally, <code dir="auto">+</code> opens a tab. They displace “go to
 screen column”, “down N-1 lines to first non-blank” and “down one line to
-first non-blank”. NoetherVim opens a scratch buffer in the new split rather
-than a second view of the current one.</li>
+first non-blank”. All three open an empty scratch buffer rather than a
+second view of the current one, which is what you want when the split is
+for something new; <code dir="auto">&lt;C-w&gt;v</code> and <code dir="auto">&lt;C-w&gt;s</code> still give you the second view.
+Leave the scratch untouched and it disappears with the window; type in it
+and Neovim will not let you abandon it unsaved.</li>
 <li><strong><code dir="auto">-</code></strong>: highlights every instance of the word under the cursor and reports
 how many there are, leaving the cursor where it was. <code dir="auto">*</code> does the highlight
 but moves to the next match.</li>
@@ -237,6 +241,11 @@ the command line itself to the clipboard.</li>
 <li><strong>Select mode</strong>: letters replace the selection instead of running commands,
 <code dir="auto">&lt;Esc&gt;</code> twice returns to normal, and <code dir="auto">&lt;C-a&gt;</code> jumps past the end of what was
 selected. Select mode is where a snippet placeholder leaves you.</li>
+<li><strong>J/K</strong>: This one is probably the most controversial one on this list, but these bindings have
+survived my config from the time they were added a few months into me getting into vim. In normal
+mode, <code dir="auto">J</code> maps to <code dir="auto">j&lt;c-e&gt;</code> and <code dir="auto">K</code> maps to <code dir="auto">k&lt;c-y&gt;</code>. In normal-mode, <code dir="auto">&lt;c-e&gt;</code> and <code dir="auto">&lt;c-y&gt;</code> move the
+buffer down/up while keeping your cursor position the same, so combining with <code dir="auto">j</code> and <code dir="auto">k</code> moves
+both the cursor and the buffer. <code dir="auto">K</code> is by default the hover key when inspecting code: I remapped it to <code dir="auto">L</code> whose default behaviour is to go to the end of the line.</li>
 </ul>
 <div class="sl-heading-wrapper level-h2"><h2 id="everything-else">Everything else</h2><a class="sl-anchor-link" href="#everything-else"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Everything else”</span></a></div>
 <p><code dir="auto">:help noethervim-keymaps</code> is the full list, including the prefix namespaces
