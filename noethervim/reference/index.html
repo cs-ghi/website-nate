@@ -772,6 +772,8 @@ so they remain visible after the notification has disappeared.
 Available bundles (grouped by category): ~
 
     languages/ ~
+    `c-cpp`          clangd for C and C++, plus c/cpp treesitter parsers.
+                     Requires: compile_commands.json for good results.
     `rust`           rustaceanvim: enhanced Rust beyond rust-analyzer.
     `go`             go.nvim: Go test gen, struct tags, interface impl.
     `java`           nvim-jdtls: proper Java LSP (requires special setup).
@@ -784,10 +786,13 @@ Available bundles (grouped by category): ~
 
     tools/ ~
     `debug`          nvim-dap + UI. Language-agnostic: the Neovim Lua
-                     adapter is built in, and Python, Go and JS/TS
-                     adapters come from their own language bundles when
-                     both bundles are enabled.
-    `test`           neotest test runner framework.
+                     adapter is built in, and the Python, Go, JS/TS and
+                     C/C++ adapters come from their own language bundles
+                     when both bundles are enabled.
+    `test`           neotest test runner. Language-agnostic in the same
+                     way: Python, Go, Rust, Java, Jest and Vitest adapters
+                     come from their own language bundles when both
+                     bundles are enabled. See <a href="#noethervim-test-adapters">|noethervim-test-adapters|</a>.
     `repl`           iron.nvim interactive REPL.
     `task-runner`    overseer.nvim + compiler.nvim.
     `database`       vim-dadbod + UI + SQL completion via blink.cmp.
@@ -863,6 +868,51 @@ Each bundle file contains full documentation (plugins, keymaps,
 commands, and requirements) in its header comment. Browse them with
 `:NoetherVim bundles` or SearchLeader+cb.
 
+                                                  <a id="noethervim-test-adapters" class="vimdoc-tag">*noethervim-test-adapters*</a>
+Test bundle: ~
+
+Keymaps live under `&lt;Leader&gt;t`, the sibling of `&lt;Leader&gt;d` for debug: ~
+
+    `&lt;Leader&gt;tt`   run the nearest test
+    `&lt;Leader&gt;tf`   run the current file
+    `&lt;Leader&gt;ta`   run every test under the working directory
+    `&lt;Leader&gt;tl`   re-run the last test
+    `&lt;Leader&gt;tq`   stop the running test
+    `&lt;Leader&gt;ts`   toggle the summary tree
+    `&lt;Leader&gt;to`   show output for the nearest test
+    `&lt;Leader&gt;tO`   toggle the output panel
+    `&lt;Leader&gt;tw`   toggle watch mode on the current file
+    `&lt;Leader&gt;td`   debug the nearest test (needs the `debug` bundle too)
+
+Testing binds no function keys: `debug` owns that tier for stepping. It
+also puts nothing under SearchLeader, which is for pickers only, and
+neotest's surfaces are panels rather than searchable lists.
+
+Adapters: ~
+
+The `test` bundle installs neotest and no adapters. An adapter arrives
+from its language bundle, and only when both bundles are enabled:
+
+    `languages/python`   pytest / unittest, via neotest-python
+    `languages/go`       go test, via neotest-golang
+    `languages/rust`     cargo test, via rustaceanvim's own adapter
+    `languages/java`     JUnit, via neotest-java
+    `languages/web-dev`  Jest and Vitest
+
+So `test` on its own gives you the UI and nothing to run: `:Neotest run`
+finds no tests. This is the same arrangement the `debug` bundle uses, for
+the same reason -- an adapter is only useful to someone who already opted
+into the language.
+
+For a language with no bundle, append to `adapters` from `user/plugins/`,
+using the function form of `opts`. An adapter is an object its plugin
+constructs, so the `require` has to run when neotest loads, not while specs
+are being collected: &gt;lua
+    &#123; "nvim-neotest/neotest",
+      dependencies = &#123; "some/neotest-adapter" &#125;,
+      opts = function(_, opts)
+        table.insert(opts.adapters, require("neotest-adapter")(&#123;&#125;))
+      end &#125;
 Configuring noethervim-tex (latex bundle): ~
 
 The `latex` bundle includes `noethervim-tex`, which provides LaTeX snippets,
@@ -1149,7 +1199,8 @@ Prefixes: ~
                                                         <a id="noethervim-leader" class="vimdoc-tag">*noethervim-leader*</a>
     `&lt;Leader&gt;` (\)      Global actions
                       y/Y/p/P (clipboard)  f(ormat)  h(unk)  d(ebug)
-                      R(EPL)  r(efactor)  m(inimap)  b(ox)  a(i)  z(en)
+                      t(est)  r(un/REPL)  R(efactor)  m(inimap)  b(ox)
+                      a(i)  z(en)
                                                         <a id="noethervim-localleader" class="vimdoc-tag">*noethervim-localleader*</a>
     `&lt;LocalLeader&gt;` (,) Filetype-specific actions
                       LaTeX: vimtex commands, image paste
@@ -1882,8 +1933,11 @@ A: Both are managed by Mason, the same as LSP servers. Use `:Mason`
    For debuggers, enable the `debug` bundle plus the bundle for the
    language you are debugging: `languages.python` brings debugpy,
    `languages.go` brings delve, `languages.web-dev` brings
-   vscode-js-debug. Neither half installs a debugger on its own, so
-   enabling `debug` alone costs nothing but the UI.
+   vscode-js-debug, `languages.c-cpp` brings codelldb. Neither half
+   installs a debugger on its own, so enabling `debug` alone costs
+   nothing but the UI.
+
+   Test adapters pair the same way -- see <a href="#noethervim-test-adapters">|noethervim-test-adapters|</a>.
 
 Q: Does NoetherVim format on save?~
 A: No; auto-formatting is deliberately off. Use `&lt;Leader&gt;ff` for
