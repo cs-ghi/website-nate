@@ -1,0 +1,2008 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-vdxcvpsm"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Reference | NoetherVim</title><link rel="canonical" href="https://nathanaelsrawley.com/noethervim/reference/"/><link rel="sitemap" href="/noethervim/sitemap-index.xml"/><link rel="shortcut icon" href="/noethervim/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v7.1.6"/><meta name="generator" content="Starlight v0.41.7"/><meta property="og:title" content="Reference"/><meta property="og:type" content="article"/><meta property="og:url" content="https://nathanaelsrawley.com/noethervim/reference/"/><meta property="og:locale" content="en"/><meta property="og:description" content="The complete reference manual: configuration, keymap namespaces, commands, bundles, FAQ."/><meta property="og:site_name" content="NoetherVim"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="The complete reference manual: configuration, keymap namespaces, commands, bundles, FAQ."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/noethervim/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/noethervim/_astro/common.BW8jrIrq.css"><style>@layer starlight.components{.card:where(.astro-zts4jgjd){--sl-card-border:var(--sl-color-purple);--sl-card-bg:var(--sl-color-purple-low);border:1px solid var(--sl-color-gray-5);background-color:var(--sl-color-black);flex-direction:column;gap:clamp(.5rem,.125rem + 1vw,1rem);padding:clamp(1rem,.125rem + 3vw,2.5rem)}.card:where(.astro-zts4jgjd):nth-child(4n+1){--sl-card-border:var(--sl-color-orange);--sl-card-bg:var(--sl-color-orange-low)}.card:where(.astro-zts4jgjd):nth-child(4n+3){--sl-card-border:var(--sl-color-green);--sl-card-bg:var(--sl-color-green-low)}.card:where(.astro-zts4jgjd):nth-child(4n+4){--sl-card-border:var(--sl-color-red);--sl-card-bg:var(--sl-color-red-low)}.card:where(.astro-zts4jgjd):nth-child(4n+5){--sl-card-border:var(--sl-color-blue);--sl-card-bg:var(--sl-color-blue-low)}.title:where(.astro-zts4jgjd){font-weight:600;font-size:var(--sl-text-h4);color:var(--sl-color-white);line-height:var(--sl-line-height-headings);align-items:center;gap:1rem}.card:where(.astro-zts4jgjd) .icon:where(.astro-zts4jgjd){border:1px solid var(--sl-card-border);background-color:var(--sl-card-bg);border-radius:.25rem;flex-shrink:0;padding:.2em}.card:where(.astro-zts4jgjd) .body:where(.astro-zts4jgjd){font-size:clamp(var(--sl-text-sm), calc(.5rem + 1vw), var(--sl-text-body));margin:0}.card-grid:where(.astro-lmor3ela){grid-template-columns:100%;gap:1rem;display:grid}.card-grid:where(.astro-lmor3ela)>*{margin-top:0!important}@media (width>=50rem){.card-grid:where(.astro-lmor3ela){grid-template-columns:1fr 1fr;gap:1.5rem}.stagger:where(.astro-lmor3ela){--stagger-height:5rem;padding-bottom:var(--stagger-height)}.stagger:where(.astro-lmor3ela)>:nth-child(2n){transform:translateY(var(--stagger-height))}}}
+@layer starlight.components{svg:where(.astro-n5k4ipy7){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em}}
+</style><script type="module" src="/noethervim/_astro/page.Dwipeu-R.js"></script></head><body class="astro-vdxcvpsm"><a class="sl-skip-link astro-vxeigawq" href="#_top">Skip to content</a><div class="page sl-flex astro-gqpr5s5a"><header class="header astro-gqpr5s5a"><div class="header astro-nczgtkxc"><div class="title-wrapper sl-flex astro-nczgtkxc"><a href="/noethervim/" class="site-title sl-flex astro-clw6ags5"><span class="astro-clw6ags5" translate="no">NoetherVim</span></a></div><div class="sl-flex print:hidden astro-nczgtkxc"><site-search class="astro-nczgtkxc astro-r5ar4xm7" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-r5ar4xm7"><svg aria-hidden="true" class="astro-r5ar4xm7 astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-r5ar4xm7" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-r5ar4xm7" style="display: none;"><kbd class="astro-r5ar4xm7">Ctrl</kbd><kbd class="astro-r5ar4xm7">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-r5ar4xm7"><div class="dialog-frame sl-flex astro-r5ar4xm7"><button data-close-modal class="sl-flex md:sl-hidden astro-r5ar4xm7">Cancel</button><div class="search-container astro-r5ar4xm7"><div id="starlight__search" class="astro-r5ar4xm7"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/noethervim/_astro/Search.astro_astro_type_script_index_0_lang.BGymFJIP.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-nczgtkxc"><div class="sl-flex social-icons astro-nczgtkxc"><a href="https://github.com/Chiarandini/NoetherVim" rel="me" class="sl-flex astro-cg55etiy"><span class="sr-only astro-cg55etiy">GitHub</span><svg aria-hidden="true" class="astro-cg55etiy astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-r2p65idu"><span class="sr-only astro-r2p65idu">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-r2p65idu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-r2p65idu"><option value="dark" class="astro-r2p65idu">Dark</option><option value="light" class="astro-r2p65idu">Light</option><option value="auto" selected class="astro-r2p65idu">Auto</option></select><svg aria-hidden="true" class="icon caret astro-r2p65idu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script><script type="module">var e=`starlight-theme`,t=e=>e===`auto`||e===`dark`||e===`light`?e:`auto`,n=()=>t(typeof localStorage<`u`&&localStorage.getItem(e));function r(t){typeof localStorage<`u`&&localStorage.setItem(e,t===`light`||t===`dark`?t:``)}var i=()=>matchMedia(`(prefers-color-scheme: light)`).matches?`light`:`dark`;function a(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e===`auto`?i():e,r(e)}matchMedia(`(prefers-color-scheme: light)`).addEventListener(`change`,()=>{n()===`auto`&&a(`auto`)});var o=class extends HTMLElement{constructor(){super(),a(n()),this.querySelector(`select`)?.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&a(t(e.currentTarget.value))})}};customElements.define(`starlight-theme-select`,o);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-gqpr5s5a" aria-label="Main"><starlight-menu-button class="print:hidden astro-vvx7mffu"><button aria-expanded="false" aria-label="Menu" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-vvx7mffu"><svg aria-hidden="true" class="open-menu astro-vvx7mffu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-vvx7mffu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg></button></starlight-menu-button><script type="module">var e=class extends HTMLElement{btn=this.querySelector(`button`);constructor(){super(),this.btn.addEventListener(`click`,()=>this.toggleExpanded());let e=this.closest(`nav`);e&&e.addEventListener(`keyup`,e=>this.closeOnEscape(e)),matchMedia(`(min-width: 50em)`).addEventListener(`change`,()=>this.setExpanded(!1))}setExpanded(e){this.setAttribute(`aria-expanded`,String(e)),document.body.toggleAttribute(`data-mobile-menu-expanded`,e),document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}toggleExpanded(){this.setExpanded(this.getAttribute(`aria-expanded`)!==`true`)}closeOnEscape(e){e.code===`Escape`&&(this.setExpanded(!1),this.btn.focus())}};customElements.define(`starlight-menu-button`,e);</script><div id="starlight__sidebar" class="sidebar-pane astro-gqpr5s5a"><div class="sidebar-content sl-flex astro-gqpr5s5a"><sl-sidebar-state-persist data-hash="1xx8wrv" class="astro-f5yvicm7"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-ojxuodky"><li class="astro-ojxuodky"><details open class="astro-ojxuodky"><summary class="astro-ojxuodky"><span class="group-label astro-ojxuodky"><span class="large astro-ojxuodky">Start here</span></span><svg aria-hidden="true" class="caret astro-ojxuodky astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-ojxuodky"><li class="astro-ojxuodky"><a href="/noethervim/" class="astro-ojxuodky"><span class="astro-ojxuodky">Introduction</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/start/install/" class="astro-ojxuodky"><span class="astro-ojxuodky">Installation</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/start/first-session/" class="astro-ojxuodky"><span class="astro-ojxuodky">Your first session</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/start/mathematicians/" class="astro-ojxuodky"><span class="astro-ojxuodky">For mathematicians</span></a></li></ul></details></li><li class="astro-ojxuodky"><details open class="astro-ojxuodky"><summary class="astro-ojxuodky"><span class="group-label astro-ojxuodky"><span class="large astro-ojxuodky">Guides</span></span><svg aria-hidden="true" class="caret astro-ojxuodky astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-ojxuodky"><li class="astro-ojxuodky"><a href="/noethervim/guides/bundles/" class="astro-ojxuodky"><span class="astro-ojxuodky">Bundles</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/guides/configuration/" class="astro-ojxuodky"><span class="astro-ojxuodky">Configuration</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/guides/keybindings/" class="astro-ojxuodky"><span class="astro-ojxuodky">Keybinding philosophy</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/guides/recipes/" class="astro-ojxuodky"><span class="astro-ojxuodky">Recipes</span></a></li><li class="astro-ojxuodky"><a href="/noethervim/guides/managing/" class="astro-ojxuodky"><span class="astro-ojxuodky">Managing your install</span></a></li></ul></details></li><li class="astro-ojxuodky"><details open class="astro-ojxuodky"><summary class="astro-ojxuodky"><span class="group-label astro-ojxuodky"><span class="large astro-ojxuodky">Reference</span></span><svg aria-hidden="true" class="caret astro-ojxuodky astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-ojxuodky"><li class="astro-ojxuodky"><a href="/noethervim/reference/" aria-current="page" class="astro-ojxuodky"><span class="astro-ojxuodky">:help noethervim</span></a></li></ul></details></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-b5gddk54"><div class="social-icons astro-b5gddk54"><a href="https://github.com/Chiarandini/NoetherVim" rel="me" class="sl-flex astro-cg55etiy"><span class="sr-only astro-cg55etiy">GitHub</span><svg aria-hidden="true" class="astro-cg55etiy astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-r2p65idu"><span class="sr-only astro-r2p65idu">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-r2p65idu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-r2p65idu"><option value="dark" class="astro-r2p65idu">Dark</option><option value="light" class="astro-r2p65idu">Light</option><option value="auto" selected class="astro-r2p65idu">Auto</option></select><svg aria-hidden="true" class="icon caret astro-r2p65idu astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script></div></div></div></div></nav><div class="main-frame astro-gqpr5s5a"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-abfeecmu"><aside class="right-sidebar-container print:hidden astro-abfeecmu"><div class="right-sidebar astro-abfeecmu"><div class="lg:sl-hidden astro-q5mffni3"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-5ulgm6bh"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-5ulgm6bh"><details id="starlight__mobile-toc" class="astro-5ulgm6bh"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-5ulgm6bh"><span class="toggle sl-flex astro-5ulgm6bh">On this page<svg aria-hidden="true" class="caret astro-5ulgm6bh astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-5ulgm6bh"></span></summary><div class="dropdown astro-5ulgm6bh"><ul class="isMobile astro-cxyftcne" style="--depth: 0;"><li style="--depth: 0;" class="astro-cxyftcne"><a href="#_top" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">Overview</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#1-introduction" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">1. Introduction</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#2-installation" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">2. Installation</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#3-quickstart" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">3. Quickstart</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#4-user-configuration" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">4. User configuration</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#5-bundles" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">5. Bundles</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#6-inspection" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">6. Inspection</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#7-comparison" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">7. Comparison</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#8-toggling" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">8. Toggling</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#9-keymap-namespaces" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">9. Keymap namespaces</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#10-commands" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">10. Commands</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#11-completion-sources" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">11. Completion sources</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#12-health-check" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">12. Health check</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#13-faq" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">13. FAQ</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/noethervim/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.BcSo_yiZ.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-q5mffni3"><div class="sl-container astro-q5mffni3"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-cxyftcne" style="--depth: 0;"><li style="--depth: 0;" class="astro-cxyftcne"><a href="#_top" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">Overview</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#1-introduction" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">1. Introduction</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#2-installation" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">2. Installation</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#3-quickstart" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">3. Quickstart</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#4-user-configuration" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">4. User configuration</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#5-bundles" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">5. Bundles</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#6-inspection" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">6. Inspection</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#7-comparison" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">7. Comparison</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#8-toggling" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">8. Toggling</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#9-keymap-namespaces" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">9. Keymap namespaces</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#10-commands" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">10. Commands</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#11-completion-sources" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">11. Completion sources</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#12-health-check" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">12. Health check</span></a></li><li style="--depth: 0;" class="astro-cxyftcne"><a href="#13-faq" style="--depth: 0;" class="astro-cxyftcne"><span style="--depth: 0;" class="astro-cxyftcne">13. FAQ</span></a></li></ul></nav></starlight-toc><script type="module" src="/noethervim/_astro/TableOfContents.astro_astro_type_script_index_0_lang.Csloo1VZ.js"></script></div></div></div></aside><div class="main-pane astro-abfeecmu"><main data-pagefind-body class="astro-vdxcvpsm" lang="en" dir="ltr"><div class="sl-banner astro-y5d7njgm" data-pagefind-ignore>NoetherVim is <strong>alpha</strong>. Breaking changes land without deprecation shims. These docs track <code>main</code>.</div><div class="content-panel astro-oil7k7jf"><div class="sl-container astro-oil7k7jf"><h1 id="_top" class="astro-2sm4b3ln">Reference</h1></div></div><div class="content-panel astro-oil7k7jf"><div class="sl-container astro-oil7k7jf"><div class="sl-markdown-content"><aside aria-label="Note" class="starlight-aside starlight-aside--note"><p class="starlight-aside__title" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="starlight-aside__icon"><path d="M12 11a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-1-1Zm.38-3.92a1 1 0 0 0-.76 0 1 1 0 0 0-.33.21 1.15 1.15 0 0 0-.21.33 1 1 0 0 0 .21 1.09c.097.088.209.16.33.21A1 1 0 0 0 13 8a1.05 1.05 0 0 0-.29-.71 1 1 0 0 0-.33-.21ZM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 18a8 8 0 1 1 0-16.001A8 8 0 0 1 12 20Z"/></svg>Note</p><div class="starlight-aside__content"><p>This is <code dir="auto">:help noethervim</code>, published verbatim. Inside a running
+Neovim the in-editor version is faster to search and always matches the
+version you have installed.</p></div></aside><div class="vimdoc-reference"><a id="noethervim.txt" class="vimdoc-tag">*noethervim.txt*</a>    NoetherVim distribution user guide
+
+Author:   Chiarandini
+License:  MIT</div><div class="vimdoc-reference">CONTENTS                                                  <a id="noethervim-contents" class="vimdoc-tag">*noethervim-contents*</a>
+
+    1. Introduction ........................ <a href="#noethervim">|noethervim|</a>
+    2. Installation ........................ <a href="#noethervim-install">|noethervim-install|</a>
+    3. Quickstart .......................... <a href="#noethervim-quickstart">|noethervim-quickstart|</a>
+    4. User configuration .................. <a href="#noethervim-user-config">|noethervim-user-config|</a>
+       4.1 Directory structure ............. <a href="#noethervim-user-dir">|noethervim-user-dir|</a>
+       4.2 Options ......................... <a href="#noethervim-user-options">|noethervim-user-options|</a>
+       4.3 Keymaps ......................... <a href="#noethervim-user-keymaps">|noethervim-user-keymaps|</a>
+       4.4 Autocommands .................... <a href="#noethervim-user-autocmds">|noethervim-user-autocmds|</a>
+       4.5 Highlights ...................... <a href="#noethervim-user-highlights">|noethervim-user-highlights|</a>
+       4.6 Bundle data table ............... <a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>
+       4.7 Plugins ......................... <a href="#noethervim-user-plugins">|noethervim-user-plugins|</a>
+       4.8 LSP servers ..................... <a href="#noethervim-user-lsp">|noethervim-user-lsp|</a>
+       4.9 Imperative overrides ............ <a href="#noethervim-user-overrides">|noethervim-user-overrides|</a>
+    5. Bundles ............................. <a href="#noethervim-bundles">|noethervim-bundles|</a>
+    6. Inspection .......................... <a href="#noethervim-inspect">|noethervim-inspect|</a>
+    7. Comparison .......................... <a href="#noethervim-diff">|noethervim-diff|</a>
+    8. Toggling ............................ <a href="#noethervim-toggle">|noethervim-toggle|</a>
+    9. Keymap namespaces ................... <a href="#noethervim-keymaps">|noethervim-keymaps|</a>
+       9.1 Filetype keymaps ................ <a href="#noethervim-ftplugin">|noethervim-ftplugin|</a>
+       9.2 Statusline ...................... <a href="#noethervim-statusline">|noethervim-statusline|</a>
+   10. Commands ............................ <a href="#noethervim-commands">|noethervim-commands|</a>
+   11. Completion sources .................. <a href="#noethervim-completion">|noethervim-completion|</a>
+   12. Health check ........................ <a href="#noethervim-health">|noethervim-health|</a>
+   13. FAQ ................................. <a href="#noethervim-faq">|noethervim-faq|</a></div>
+<div class="sl-heading-wrapper level-h2"><h2 id="1-introduction">1. Introduction</h2><a class="sl-anchor-link" href="#1-introduction"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “1. Introduction”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim" class="vimdoc-tag">*noethervim*</a> <a id="neothervim" class="vimdoc-tag">*neothervim*</a>
+
+NoetherVim is an opinionated Neovim distribution built on lazy.nvim. It
+ships sensible defaults, 30+ core plugins, and 37 opt-in bundles, with a
+user configuration system that survives upstream updates.
+
+This help file covers in-editor usage and reference. For design rationale,
+system requirements, and installation, see the README in the project root.</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="2-installation">2. Installation</h2><a class="sl-anchor-link" href="#2-installation"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “2. Installation”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-install" class="vimdoc-tag">*noethervim-install*</a> <a id="neothervim-install" class="vimdoc-tag">*neothervim-install*</a>
+
+<a id="noethervim-nvim-appname" class="vimdoc-tag">*noethervim-nvim-appname*</a>
+                                                    <a id="noethervim-uninstall" class="vimdoc-tag">*noethervim-uninstall*</a>
+For initial installation (backup paths, the bootstrap `curl`, NVIM_APPNAME
+side-by-side trials, and uninstall / reset commands), see the README in
+the project root. Once Neovim is running, this help file is the reference.
+
+Updating: ~
+
+Run inside Neovim. This updates the distro and all plugins: &gt;vim
+    :Lazy update</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="3-quickstart">3. Quickstart</h2><a class="sl-anchor-link" href="#3-quickstart"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “3. Quickstart”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-quickstart" class="vimdoc-tag">*noethervim-quickstart*</a>
+
+Four commands, in the order worth running them: ~
+
+    SearchLeader+?    Every active keymap, grouped by namespace. `&lt;CR&gt;` on
+                    a line jumps to where it was defined.
+                    See <a href="#noethervim-guide">|noethervim-guide|</a>.
+    `:checkhealth noethervim`
+                    Confirms your terminal, tools and config are in order.
+                    See <a href="#noethervim-health">|noethervim-health|</a>.
+    SearchLeader+cb   Enable bundles. See <a href="#noethervim-bundle-toggle">|noethervim-bundle-toggle|</a>.
+    SearchLeader+ct   Stamp `lua/user/` config templates. Start with
+                    `user/config.example.lua`, which is an annotated list
+                    of everything the distribution lets you change about
+                    its own behaviour. See <a href="#noethervim-templates">|noethervim-templates|</a>.
+
+Both the bundle and template flows show a diff prompt before writing.
+
+The keymap prefixes are the fastest thing to learn: <a href="#noethervim-keymaps">|noethervim-keymaps|</a>.
+
+A longer walkthrough for a first session, including the prefixes and the
+defaults worth reviewing, lives in `docs/onboarding/first-session.md` in the
+project root; `docs/onboarding/mathematicians.md` continues it for LaTeX
+work.</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="4-user-configuration">4. User configuration</h2><a class="sl-anchor-link" href="#4-user-configuration"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “4. User configuration”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-user-config" class="vimdoc-tag">*noethervim-user-config*</a>
+
+NoetherVim is designed so that the source code is its own documentation.
+Browse core source files with SearchLeader+cnn or `:NoetherVim files`, and
+live-grep them with SearchLeader+cng. All source files open read-only to
+prevent accidental edits. See <a href="#noethervim-inspect">|noethervim-inspect|</a> for the full set of
+navigation commands.
+
+NoetherVim loads user override files automatically after each core module.
+User files live in your config directory's `lua/user/` folder and are
+never touched by upstream updates.
+
+                                                     <a id="noethervim-load-order" class="vimdoc-tag">*noethervim-load-order*</a>
+Loading happens in three stages. ~
+
+Stage 1 collects plugin specs. Nothing runs yet; your `user/plugins/`
+files are merged last, so your `opts` win over both the distro's and any
+bundle's. A bundle sits in between: it can change a core plugin's `opts`,
+and you can change a bundle's.
+
+Stage 2 runs the configuration files, distro first and yours second at
+every step: 
+    noethervim/options.lua   -&gt;  user/options.lua
+    noethervim/lsp/*.lua     -&gt;  user/lsp/*.lua
+    noethervim/keymaps.lua   \
+    noethervim/toggles.lua    &gt;  user/keymaps.lua
+    noethervim/autocmds.lua  -&gt;  user/autocmds.lua
+    noethervim/highlights.lua \
+    colorscheme               &gt;  user/highlights.lua
+    user/overrides/*.lua         (last-resort hooks)
+Stage 3 is deferred until after the screen is drawn: the extra commands,
+and each lazy-loaded plugin whenever its trigger fires.
+
+                                              <a id="noethervim-override-timing" class="vimdoc-tag">*noethervim-override-timing*</a>
+What stage 3 means for overrides: ~
+
+`user/overrides/*.lua` is the last thing in stage 2, not the last thing
+overall. It wins against everything the distribution sets in stage 2, and
+against a plugin's `keys` entries: once you remap one of those, it stays
+remapped whether or not the plugin later loads.
+
+It does NOT win against stage 3, which is mainly a lazy-loaded plugin's
+own `config` function and buffer-local LSP keymaps applied on
+`LspAttach`. Those run later and overwrite you.
+
+For those, override at the layer that runs at the same time: an
+`LspAttach` autocmd for LSP keymaps, or a `config` wrapper in your
+`user/plugins/` spec for a plugin's own bindings.
+
+------------------------------------------------------------------------------
+4.1 DIRECTORY STRUCTURE                                  <a id="noethervim-user-dir" class="vimdoc-tag">*noethervim-user-dir*</a>
+
+    ~/.config/nvim/lua/user/
+    |-- config.lua           Config data table  (<a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>)
+    |-- options.lua          vim.o overrides
+    |-- keymaps.lua          Keymap overrides and additions
+    |-- autocmds.lua         Autocommand additions
+    |-- highlights.lua       Highlight overrides (after colorscheme)
+    |-- lsp/                 LSP server config overrides
+    |   `-- lua_ls.lua       e.g., override lua_ls workspace settings
+    |-- plugins/             Personal plugins and distro opts overrides
+    |   `-- snacks.lua       e.g., override snacks.nvim opts
+    `-- overrides/           Imperative after-hooks (last resort)
+        `-- *.lua
+Template files are provided in the `templates/user/` directory of the
+NoetherVim repo. Copy the ones you need to your `lua/user/` and
+uncomment the relevant lines.
+
+------------------------------------------------------------------------------
+4.2 OPTIONS                                          <a id="noethervim-user-options" class="vimdoc-tag">*noethervim-user-options*</a>
+
+Create `lua/user/options.lua`. It runs after `noethervim/options.lua`,
+so any global value you set overwrites the distro default: &gt;lua
+    -- lua/user/options.lua
+    vim.o.scrolloff = 8         -- default: 4
+    vim.o.autochdir = true      -- default: false
+                                                  <a id="noethervim-option-layers" class="vimdoc-tag">*noethervim-option-layers*</a>
+Note: this holds for "genuinely" global options. Filetype-scoped options set
+by the ftplugin layer (`formatoptions`, `comments`, `commentstring`, and often
+`textwidth`, `tabstop`, `shiftwidth`) are only seeded in `options.lua`; an
+ftplugin runs after it and sets the effective per-buffer value. Neovim's own
+bundled ftplugins do this too, so setting one of these in `user/options.lua`
+does not take effect for filetypes whose ftplugin sets it. To change the
+effective value, use the filetype layer: a `FileType` autocmd in
+`lua/user/autocmds.lua`, or an `after/ftplugin/&lt;ft&gt;.lua`. For example, to stop
+comment-leader continuation on &lt;Enter&gt; and o/O across filetypes: &gt;lua
+    vim.api.nvim_create_autocmd("FileType", &#123;
+      callback = function()
+        vim.opt_local.formatoptions:remove(&#123; "r", "o" &#125;)
+      end,
+    &#125;)
+Notable non-default choices: ~
+
+  `swapfile` is OFF; `undofile` is ON. NoetherVim favours persistent
+  undo over swap-based crash recovery; in the author's experience,
+  swap's "file changed on disk" prompts produced more false positives
+  than they prevented lost work. Your mileage may differ; if you
+  want swap back (e.g. on flaky SSH / VM sessions), set
+  `vim.o.swapfile = true` in `user/options.lua`.
+
+  `autowrite` ON, `autowriteall` OFF, `autoread` ON. Buffer-switch
+  commands (`:next`, `:make`, `&lt;C-^&gt;`, `:buffer`) auto-save unsaved
+  edits; reload commands (`:e`) do not, so running `:e` on a modified
+  buffer errors with `E37: No write since last change`.
+
+  The `autowriteall=false` guard prevents a specific data-loss
+  scenario: if a buffer is modified while an external process also
+  edits the file on disk, `autowriteall=true` would silently write
+  the stale buffer first when you `:e`, overwriting the external
+  changes, then reloading the result, destroying the external edits
+  with no warning. With `autowriteall=false`, `:e` errors instead,
+  forcing an explicit choice (`:e!` discards buffer edits; `:w!`
+  overwrites disk). Treat `:e` as "load file into buffer," not
+  "reload regardless of state."
+
+  Flip with `vim.o.autowriteall = true` in `user/options.lua` if you
+  prefer the classic "save everything automatically" behaviour.
+
+See `noethervim/options.lua` for all defaults.
+
+------------------------------------------------------------------------------
+4.3 KEYMAPS                                          <a id="noethervim-user-keymaps" class="vimdoc-tag">*noethervim-user-keymaps*</a>
+
+Create `lua/user/keymaps.lua`. It runs after core keymaps and toggles: &gt;lua
+    -- Override a core keymap (last-write wins)
+    vim.keymap.set("n", ";", ";")   -- revert ; to default
+
+    -- Remove a core keymap entirely
+    vim.keymap.del("n", "&lt;C-a&gt;")
+
+    -- Add personal keymaps
+    vim.keymap.set("n", "&lt;space&gt;ev", "&lt;cmd&gt;e $MYVIMRC&lt;cr&gt;", &#123; desc = "edit vimrc" &#125;)
+NoetherVim keymap philosophy: 
+    SearchLeader    fuzzy navigation / search (default: &lt;Space&gt;)
+    &lt;Leader&gt;        global actions
+    &lt;LocalLeader&gt;   filetype-specific actions
+    &lt;C-w&gt;           window navigation / management
+    [x / ]x         prev / next directional navigation
+    [ox / ]ox       toggle option on / off
+
+                                                            <a id="g:mapsearchleader" class="vimdoc-tag">*g:mapsearchleader*</a>
+g:mapsearchleader ~
+    The key prefix for all search/navigation keymaps. Defaults to `&lt;Space&gt;`.
+    Works like |mapleader|; set it in your init.lua BEFORE `lazy.setup()`: &gt;lua
+        vim.g.mapsearchleader = "&lt;C-s&gt;"   -- or ";", "\\", etc.
+    All keymaps in the SearchLeader namespace (find, grep, LSP, git, config,
+    diagnostics, etc.) will use the new prefix. which-key popups and the
+    keymap diff picker automatically reflect the change.
+
+    When unset, all search keymaps use `&lt;Space&gt;` (the default).
+
+------------------------------------------------------------------------------
+4.4 AUTOCOMMANDS                                    <a id="noethervim-user-autocmds" class="vimdoc-tag">*noethervim-user-autocmds*</a>
+
+Create `lua/user/autocmds.lua`. New autocommands are additive.
+To override a core autocmd, clear its augroup first: &gt;lua
+    -- Clear a core augroup and replace it
+    vim.api.nvim_create_augroup("noethervim_q_close", &#123; clear = true &#125;)
+    -- Then re-create with your preferred list
+                                                        <a id="noethervim-q-close" class="vimdoc-tag">*noethervim-q-close*</a>
+q-to-close: ~
+
+A bare `q` closes the window in filetypes you cannot usefully edit (help,
+man, lazy, mason, checkhealth, undotree, diff, and friends). Editable
+filetypes are excluded on purpose, because `q` there would shadow macro
+recording, so `oil`, `markdown` and the like are left alone.
+
+To ADD a filetype, set `q_close_filetypes` in `lua/user/config.lua`; see
+<a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>. To REMOVE one of the defaults, clear the
+`noethervim_q_close` augroup and re-create the autocmd from
+`require("noethervim.util.filetypes").q_close` minus the entries you do
+not want. `templates/user/autocmds.example.lua` has the full snippet.
+
+Core augroups (clear any of these to disable or replace the feature): ~
+    `noethervim_q_close`      q-to-close in non-editing windows
+    `noethervim_profiles`     the writing / code filetype profiles
+    `noethervim_lastplace`    restore last cursor position on read
+    `noethervim_autoread`     reload buffers when focus or edits change
+    `noethervim_term`         terminal window tweaks (no numbers, scrolloff)
+    `noethervim_diff_cleanup` auto diffoff when a diff half closes
+    `noethervim_oil_float`    Oil dual-pane navigation
+
+                                                 <a id="noethervim-filetype-profiles" class="vimdoc-tag">*noethervim-filetype-profiles*</a>
+Filetype profiles (writing and code): ~
+
+NoetherVim applies two FileType autocmds that layer opinionated
+settings on top of the globals:
+
+    `noethervim_writing`  Matches: tex, markdown, norg, text, gitcommit,
+                        gitsendemail, mail, rst, typst. Sets `wrap`,
+                        `linebreak`, `spell`, `conceallevel = 2`, appends
+                        `t` to `formatoptions` (auto-wrap at textwidth),
+                        and hides list chars. Also binds `&lt;C-l&gt;` in
+                        insert mode for spell-fix, and sets a
+                        'statuscolumn' that marks wrapped lines --
+                        see <a href="#noethervim-wrap-marker">|noethervim-wrap-marker|</a>.
+    `noethervim_code`     Matches: every filetype NOT in the writing list,
+                        structured-text set (json, jsonc, yaml, toml),
+                        or special-buffer set (help, man, lspinfo, query,
+                        qf, oil, terminal, snacks_*, lazy, mason,
+                        checkhealth, notify, Trouble, dap / dap-float /
+                        dapui_*). Sets `list` on
+                        so trailing whitespace and tabs are visible.
+                        `formatoptions` omits `t` globally, so typing past
+                        textwidth in code does NOT auto-break mid-line --
+                        formatters handle line length instead. When
+                        `spell_in_code = true` is set in
+                        <a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>, also turns on
+                        `spell`; spellcheck is then scoped to comments
+                        and strings via treesitter @spell captures.
+                        Use `[os` / `]os` to toggle per-buffer and `zg`
+                        to add a word to your spellfile. For CamelCase
+                        identifier splitting, append `camel` to
+                        `spelloptions` yourself in
+                        `lua/user/options.lua`; the distro leaves
+                        `spelloptions` untouched.
+
+                                                    <a id="noethervim-hard-wrap" class="vimdoc-tag">*noethervim-hard-wrap*</a>
+The writing profile hard wraps: `formatoptions+t` breaks a line at
+'textwidth' as you type. That is what you want for prose in version
+control, but it means a phrase can end up split across two lines, and
+`/brown fox` then finds nothing when the wrap falls between the words.
+Enable the `wrapsearch` bundle to make `/` and `?` match across the
+break; see <a href="#noethervim-bundles">|noethervim-bundles|</a>. To stop hard wrapping instead, remove
+`t` from `formatoptions` in an `after/ftplugin/&lt;ft&gt;.lua`.
+
+FileType autocmds fire AFTER `ftplugin/*.lua`, so these profiles win
+over same-named ftplugin settings. To extend the lists (e.g. treat
+`vimwiki` as writing, or skip the code profile for a custom filetype),
+set `writing_filetypes` / `non_code_filetypes` in `lua/user/config.lua`
+-- see <a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>.
+
+Both profiles are applied by a single augroup, `noethervim_profiles`. To
+override the whole profile, clear it and re-create: &gt;lua
+    vim.api.nvim_create_augroup("noethervim_profiles", &#123; clear = true &#125;)
+    -- then register your own FileType autocmd
+The global `wrap` default is OFF; the writing profile re-enables it
+for writing filetypes. Global `list` is OFF; the code profile re-enables
+it for code filetypes. Listchars are styled in `noethervim/options.lua`.
+
+                                                  <a id="noethervim-wrap-marker" class="vimdoc-tag">*noethervim-wrap-marker*</a>
+Soft-wrapped lines are marked with `↳` in the number column rather than
+with 'showbreak', which is empty by default. 'showbreak' occupies a text
+cell, so a continuation line would start one column to the right of the
+text it continues -- visible on any line with no leading indent, and not
+fixable through 'breakindentopt', whose `shift` only adjusts the indent
+'breakindent' already applied.
+
+The marker is set by the writing profile and removed again by the code
+profile. Both steps only touch a 'statuscolumn' the distro itself set, so
+if you define your own in `lua/user/options.lua` it is left alone: &gt;lua
+    vim.o.statuscolumn = "%l "
+To go back to an inline 'showbreak' arrow, set both in
+`lua/user/options.lua`: &gt;lua
+    vim.o.showbreak    = "↳"
+    vim.o.statuscolumn = "%s%=%l "
+Setting 'statuscolumn' to an empty string does NOT opt out -- empty means
+"nothing set yet", so the writing profile fills it in. Give it a value of
+your own, or clear the `noethervim_profiles` augroup entirely.
+
+------------------------------------------------------------------------------
+4.5 HIGHLIGHTS                                    <a id="noethervim-user-highlights" class="vimdoc-tag">*noethervim-user-highlights*</a>
+
+Create `lua/user/highlights.lua`. This file runs AFTER the colorscheme
+is applied, so your overrides are not wiped by the theme: &gt;lua
+    vim.api.nvim_set_hl(0, "Normal", &#123; bg = "#1d2021" &#125;)
+    vim.api.nvim_set_hl(0, "SnacksDashboardHeader", &#123; fg = "#89b4fa" &#125;)
+                                            <a id="noethervim-colorscheme-tweaks" class="vimdoc-tag">*noethervim-colorscheme-tweaks*</a>
+Highlight tweaks: ~
+
+Plain `nvim_set_hl` calls are lost when you switch colorschemes. Use the
+tweak helper instead; tweaks re-apply automatically on every colorscheme
+change. This is a core feature and needs no bundle: &gt;lua
+    -- lua/user/highlights.lua
+    require("noethervim.util.colorscheme").tweak(&#123;
+        Comment    = &#123; italic = true &#125;,
+        CursorLine = &#123; bg = "#1a1a2e" &#125;,
+        LineNr     = &#123; fg = "#555555" &#125;,
+    &#125;)
+Common highlight groups to tweak: ~
+    `Normal`           Main text and background
+    `Comment`          Code comments (try `italic = true`)
+    `CursorLine`       Line the cursor is on
+    `LineNr`           Line numbers
+    `Visual`           Visual selection
+    `Search`           Search matches
+    `DiagnosticError`  Error diagnostics
+    `DiagnosticWarn`   Warning diagnostics
+    `@keyword`         Treesitter keywords
+    `@function`        Treesitter functions
+    `@string`          Treesitter strings
+
+------------------------------------------------------------------------------
+4.6 CONFIG DATA TABLE                          <a id="noethervim-user-config-data" class="vimdoc-tag">*noethervim-user-config-data*</a>
+
+Create `lua/user/config.lua`. It returns a single table of values that
+`noethervim.setup()` and individual bundles read at runtime. This is
+NoetherVim's single user-facing configuration surface: colorscheme,
+statusline overrides, vault paths, feature flags, filetype lists.
+
+Keys you do not set fall back to the distro default; the file is
+optional and missing keys are not an error.
+
+Note: this file is for personal preferences. Arbitrary plugin overrides go in
+`lua/user/plugins/` instead (see <a href="#noethervim-user-plugins">|noethervim-user-plugins|</a>).
+
+Which surface to reach for: ~
+
+    `config.lua`        Values NoetherVim's own code branches on, with no
+                      `vim.o` or plugin-`opts` home of their own.
+    `user/options.lua`  Anything with a `vim.o` / `vim.opt` equivalent.
+    `user/plugins/`     Anything a plugin exposes through `opts`. Plugin
+                      options are not repeated in `config.lua`; go
+                      straight to the spec.
+    `vim.g.*`           Leaders and the dashboard opt-out, set in
+                      `init.lua`. These have to be in place before
+                      plugins load, which is earlier than `config.lua`
+                      is read.
+&gt;lua
+    -- lua/user/config.lua
+    return &#123;
+      colorscheme                  = "gruvbox",
+      colorscheme_persistence      = false,
+      statusline = &#123;
+        edge_style = "round",
+        colors     = &#123;&#125;,
+      &#125;,
+      obsidian_vault               = "~/Documents/MyVault/",
+      completion_style             = "supertab",
+      blink_conservative_filetypes = &#123; "tex", "latex" &#125;,
+      blink_conservative_size_kb   = 500,
+      drop                         = false,
+      writing_filetypes            = &#123; "vimwiki", "quarto" &#125;,
+      non_code_filetypes           = &#123; "csv" &#125;,
+      q_close_filetypes            = &#123; "oil" &#125;,
+      spell_in_code                = true,
+    &#125;
+Current keys: ~
+    `colorscheme`                   Colorscheme applied at startup unless
+                                  persistence has restored a previously
+                                  picked one. Default: `"gruvbox"`, which
+                                  the distribution ships and pins. The
+                                  dashboard and statusline fallback
+                                  colours are chosen against it, so a
+                                  fresh install looks coherent without
+                                  any configuration. Naming a scheme that
+                                  is not installed warns on startup and
+                                  falls back to gruvbox.
+    `colorscheme_persistence`       If true, restore the colorscheme last
+                                  picked with SearchLeader+C, in
+                                  preference to `colorscheme` above. Set
+                                  false to make `colorscheme`
+                                  authoritative. Default: true.
+                                  `:checkhealth noethervim` reports which
+                                  of the two set the active scheme.
+    `statusline_enabled`            Set to `false` to skip NoetherVim's
+                                  heirline statusline, tabline and
+                                  winbar entirely, so a replacement
+                                  (lualine, mini.statusline) dropped into
+                                  `lua/user/plugins/` takes over with no
+                                  conflict. Default: `true`.
+    `statusline.edge_style`         Shape of the colored mode block at
+                                  the left of the statusline. See
+                                  <a href="#noethervim-statusline-edge-style">|noethervim-statusline-edge-style|</a>.
+                                  Default: `"round"`.
+    `statusline.colors`             Heirline color-table overrides.
+                                  See <a href="#noethervim-statusline">|noethervim-statusline|</a>.
+    `statusline.extra_right`        Extra heirline component specs
+                                  appended to the right side of the
+                                  main statusline.
+    `statusline.tab_modified_indicator`
+                                  Glyph rendered on a tab containing
+                                  unsaved changes. Default `" ●"`.
+                                  Common alternatives: `" [+]"`,
+                                  `" *"`, `" "`, `" ◉"`.
+    `statusline.filetype_profile`   Set to `true` to render a marker for
+                                  the filetype profile (writing or code)
+                                  that claimed the current buffer.
+                                  Clicking it reports the profile, the
+                                  detected filetype, and the live values
+                                  of the options the profile sets, so
+                                  per-buffer toggles (`[ow`, `]os`, ...)
+                                  show up too. See
+                                  <a href="#noethervim-filetype-profiles">|noethervim-filetype-profiles|</a>.
+                                  Default: `false`.
+    `statusline.git_click`          Function called when the git
+                                  branch/status block is clicked. The
+                                  default opens lazygit when it is on
+                                  PATH and falls back to snacks'
+                                  git-status picker otherwise; lazygit
+                                  is optional, not a prerequisite.
+    `obsidian_vault`                Path to your Obsidian vault. Read by
+                                  the `obsidian` bundle. Default:
+                                  `~/obsidian/`.
+    `completion_style`              Tab-key philosophy for the
+                                  completion menu: `"snippet"` (default,
+                                  Tab is reserved for LuaSnip jumps),
+                                  `"supertab"` (Tab accepts visible
+                                  menu item, falls back to snippet
+                                  jump), or `"navigate"` (Tab cycles
+                                  the menu without accepting).
+    `blink_conservative_filetypes`  Filetypes where keyword-triggered
+                                  completion is suppressed. `&lt;C-Space&gt;`
+                                  and LSP trigger characters (e.g. `\`
+                                  in LaTeX) still work. Default:
+                                  `&#123; "tex", "latex" &#125;`.
+    `blink_conservative_size_kb`    Files larger than this (in KB) also
+                                  get conservative mode, regardless of
+                                  filetype. Default: `500`.
+    `drop`                          Set to `false` to disable the
+                                  seasonal `drop.nvim` animations from
+                                  the `eye-candy` bundle. Default:
+                                  enabled.
+    `writing_filetypes`             Extra filetypes added to the writing
+                                  profile (wrap, linebreak, spell,
+                                  conceallevel=2, formatoptions+t).
+                                  Additive: defaults stay in place.
+                                  See <a href="#noethervim-filetype-profiles">|noethervim-filetype-profiles|</a>.
+                                  Default: `&#123;&#125;`.
+    `non_code_filetypes`            Extra filetypes that skip both the
+                                  writing and code profiles; their own
+                                  ftplugin / buffer settings take over.
+                                  Additive: defaults stay in place.
+                                  Default: `&#123;&#125;`.
+    `q_close_filetypes`             Extra filetypes where a bare `q`
+                                  closes the window. Additive: defaults
+                                  stay in place. `&#123; "oil" &#125;` is the
+                                  common addition. See
+                                  <a href="#noethervim-q-close">|noethervim-q-close|</a>. Default: `&#123;&#125;`.
+    `spell_in_code`                 If `true`, the code profile turns on
+                                  `spell`. Spellcheck is scoped to
+                                  comments and strings via treesitter
+                                  `@spell` captures; identifiers are not
+                                  flagged. `spelloptions` is left
+                                  untouched; add `camel` yourself if
+                                  you want CamelCase splitting. See
+                                  <a href="#noethervim-filetype-profiles">|noethervim-filetype-profiles|</a>.
+                                  Default: `false`.
+    `toggle_feedback`               Channel for the confirmation message
+                                  emitted when a bracket-prefix toggle
+                                  (`[ow`, `]os`, etc.) fires.
+                                  `"notify"` (default) routes through
+                                  `vim.notify` and is picked up as a
+                                  snacks toast. `"echo"` uses
+                                  `nvim_echo` for the classic one-line
+                                  cmdline message (still recorded in
+                                  `:messages`). `"off"` suppresses the
+                                  message entirely.
+
+See `templates/user/config.example.lua` for the annotated template.
+
+------------------------------------------------------------------------------
+4.7 PLUGINS                                         <a id="noethervim-user-plugins" class="vimdoc-tag">*noethervim-user-plugins*</a>
+
+Create files in `lua/user/plugins/`. Each file returns a lazy.nvim spec
+table. This is where you both add new plugins and adjust the ones the
+distro already ships.
+
+To add a new plugin, write a normal lazy.nvim spec: &gt;lua
+    -- lua/user/plugins/pantran.lua
+    return &#123;
+      &#123; "potamides/pantran.nvim",
+        cmd = "Pantran",
+        opts = &#123; default_engine = "argos" &#125;,
+      &#125;,
+    &#125;
+To override a plugin the distro already loads, use the EXACT same
+repository string, and lazy.nvim deep-merges `opts` tables automatically: &gt;lua
+    -- lua/user/plugins/snacks.lua
+    return &#123;
+      &#123; "folke/snacks.nvim",
+        opts = &#123;
+          picker = &#123; layout = &#123; preset = "vertical" &#125; &#125;,
+        &#125;,
+      &#125;,
+    &#125;
+You only need to specify the fields you want to change. Core defaults
+fill in everything else.
+
+To add extra keymaps to an existing plugin: &gt;lua
+    &#123; "folke/snacks.nvim",
+      keys = &#123;
+        &#123; "&lt;space&gt;fg", function() Snacks.picker.grep() end, desc = "live grep" &#125;,
+      &#125;,
+    &#125;
+lazy.nvim unions `keys`, `cmd`, `event`, and `ft` tables from all specs
+for the same plugin.
+
+If you prefer keeping all keymaps in one place, set them in
+`lua/user/keymaps.lua` instead. That file loads early, before lazy-loaded
+plugins, so map to a `&lt;cmd&gt;...&lt;cr&gt;` (which triggers the load) or wrap the
+call, (function() ... end) rather than referencing a plugin function that may
+not be loaded yet.
+
+Array-valued opts: ~                    <a id="noethervim-user-plugins-arrays" class="vimdoc-tag">*noethervim-user-plugins-arrays*</a>
+
+`vim.tbl_deep_extend` (the function lazy.nvim uses to merge `opts`) does
+NOT extend sequential arrays; it REPLACES them. Keys like
+`ensure_installed` (Mason / treesitter), `formatters_by_ft.&lt;ft&gt;` (conform),
+and `linters_by_ft.&lt;ft&gt;` (nvim-lint) all behave this way.
+
+Two patterns to extend an array key without replacing it: &gt;lua
+
+    -- Pattern 1: list the full set you want.
+    -- (you must track upstream additions yourself.)
+    &#123; "neovim/nvim-lspconfig",
+      opts = &#123; ensure_installed = &#123; "lua_ls", "basedpyright", "gopls" &#125; &#125; &#125;
+
+    -- Pattern 2: opts as a function, mutating in place.
+    -- Picks up upstream additions automatically; preferred when the
+    -- upstream list is long or distro-maintained.
+    &#123; "neovim/nvim-lspconfig",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or &#123;&#125;
+        table.insert(opts.ensure_installed, "gopls")
+      end &#125;
+Pattern 2 receives the resolved upstream `opts` table as the second
+argument. Mutating it (rather than returning a new table) lets you apend your
+entries at runtime.
+
+NOTE: if you specify `config = function()` in your override spec, it
+REPLACES the upstream config function entirely. Only do this as a last
+resort.
+
+See `templates/user/plugins/example.lua` for more examples.
+
+------------------------------------------------------------------------------
+4.8 LSP SERVERS                                         <a id="noethervim-user-lsp" class="vimdoc-tag">*noethervim-user-lsp*</a>
+
+Create files in `lua/user/lsp/`. This is where you both add new server
+configs and adjust the ones the distro already ships
+(see `lua/noethervim/lsp/` for the bundled list).
+
+To add a new server, call `vim.lsp.config()` and `vim.lsp.enable()`: &gt;lua
+    -- lua/user/lsp/gleam.lua
+    vim.lsp.config("gleam", &#123;
+      cmd = &#123; "gleam", "lsp" &#125;,
+      filetypes = &#123; "gleam" &#125;,
+      root_markers = &#123; "gleam.toml", ".git" &#125;,
+    &#125;)
+    vim.lsp.enable("gleam")
+To adjust a server the distro already configures, call `vim.lsp.config()`
+again with the same name, and Neovim deep-merges the tables: &gt;lua
+    -- lua/user/lsp/lua_ls.lua
+    vim.lsp.config("lua_ls", &#123;
+      settings = &#123;
+        Lua = &#123;
+          workspace = &#123; library = &#123; "/my/custom/lib" &#125; &#125;,
+        &#125;,
+      &#125;,
+    &#125;)
+    -- No need to call vim.lsp.enable() again.
+
+------------------------------------------------------------------------------
+4.9 IMPERATIVE OVERRIDES                          <a id="noethervim-user-overrides" class="vimdoc-tag">*noethervim-user-overrides*</a>
+
+Create files in `lua/user/overrides/`. These run at the very end of
+`noethervim.setup()`, after everything else has loaded. Use this only
+when opts merging and module hooks are insufficient: &gt;lua
+    -- lua/user/overrides/custom-diagnostics.lua
+    vim.diagnostic.config(&#123; virtual_text = &#123; prefix = "&gt;&gt;" &#125; &#125;)
+"After everything else" means everything in stage 2 of
+<a href="#noethervim-load-order">|noethervim-load-order|</a>. Overrides also beat plugin `keys` entries: once
+you remap one, lazy.nvim leaves it alone, before and after the plugin
+loads.
+
+They do NOT beat stage 3: a lazy-loaded plugin's own `config` function,
+or buffer-local LSP keymaps applied on `LspAttach`. Those run later and
+win. For a plugin's own bindings use <a href="#noethervim-user-plugins">|noethervim-user-plugins|</a> (spec
+merging), which lazy.nvim times correctly; for LSP keymaps use your own
+`LspAttach` autocmd. See <a href="#noethervim-override-timing">|noethervim-override-timing|</a>.</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="5-bundles">5. Bundles</h2><a class="sl-anchor-link" href="#5-bundles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “5. Bundles”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-bundles" class="vimdoc-tag">*noethervim-bundles*</a> <a id="neothervim-bundles" class="vimdoc-tag">*neothervim-bundles*</a>
+
+Bundles are opt-in plugin groups. They live under
+`lua/noethervim/bundles/&lt;category&gt;/&lt;name&gt;.lua`; if you are using the init.lua
+template, enable them by uncommenting the corresponding `import` line in your
+`init.lua`: &gt;lua
+    &#123; import = "noethervim.bundles.languages.latex" &#125;,
+    &#123; import = "noethervim.bundles.tools.debug" &#125;,
+                                            <a id="noethervim-bundle-toggle" class="vimdoc-tag">*noethervim-bundle-toggle*</a>
+You can also toggle bundles from the picker without editing `init.lua`
+by hand. Open `:NoetherVim bundles` (or SearchLeader+cb) and:
+
+    &lt;C-y&gt;     Enable bundle. Tries to uncomment its `import` line in
+              `init.lua`; if the line is missing, proposes inserting a
+              new one at the end of the `spec = &#123; ... &#125;` table. A
+              floating diff window shows the exact change before any
+              file is written, with [y]es / [n]o confirmation.
+    &lt;C-x&gt;     Disable bundle. Re-comments the active `import` line,
+              again behind a diff prompt.
+    &lt;CR&gt;      Open the bundle source file (unchanged).
+    &lt;C-o&gt;     Seed a user override for this bundle in
+              `user/plugins/&lt;name&gt;.lua`, listing the upstream spec's repo
+              strings as commented stubs. Same as opening the source and
+              running `:NoetherVim override`. See <a href="#noethervim-commands">|noethervim-commands|</a>.
+    &lt;F1&gt;      List every key the picker binds. Press &lt;F1&gt; or &lt;Esc&gt; to
+              dismiss it; &lt;Esc&gt; only closes the picker itself once the
+              list is gone. Works in every snacks picker, not just this
+              one -- see <a href="#noethervim-picker-help">|noethervim-picker-help|</a>.
+
+If `init.lua` has been restructured beyond recognition (multi-file
+specs, no detectable `spec = &#123;` block), &lt;C-y&gt; falls back to copying the
+import line to the `+` and `"` registers and notifies you to paste it
+manually.
+
+After accepting a change, restart Neovim to load the bundle (or use
+`:Lazy reload` if you know what you are doing).
+
+                                            <a id="noethervim-stale-imports" class="vimdoc-tag">*noethervim-stale-imports*</a>
+If an enabled bundle has been removed or renamed upstream, lazy.nvim
+emits a `No specs found for module "..."` error during spec resolution.
+The stock `init.lua.example` bootstrap calls
+`require("noethervim.util").buffer_notify()` immediately before
+`lazy.setup(...)` so these errors surface as `snacks.notifier` notifications
+after VimEnter rather than landing on the cmdline as ErrorMsg.
+`:checkhealth noethervim` mirrors the same errors under "Spec errors"
+so they remain visible after the notification has disappeared.
+Available bundles (grouped by category): ~
+
+    languages/ ~
+    `rust`           rustaceanvim: enhanced Rust beyond rust-analyzer.
+    `go`             go.nvim: Go test gen, struct tags, interface impl.
+    `java`           nvim-jdtls: proper Java LSP (requires special setup).
+    `python`         venv-selector.nvim: virtual environment switching.
+    `latex`          VimTeX, img-clip, bibtex picker, LaTeX textobjects.
+                     Requires: latexmk, TeX distribution.
+    `latex-zotero`   Zotero citation picker.
+                     Requires: Zotero.
+    `web-dev`        JS/TS template string + inline color preview.
+
+    tools/ ~
+    `debug`          nvim-dap + UI. Language-agnostic: the Neovim Lua
+                     adapter is built in, and Python, Go and JS/TS
+                     adapters come from their own language bundles when
+                     both bundles are enabled.
+    `test`           neotest test runner framework.
+    `repl`           iron.nvim interactive REPL.
+    `task-runner`    overseer.nvim + compiler.nvim.
+    `database`       vim-dadbod + UI + SQL completion via blink.cmp.
+    `http`           kulala.nvim HTTP/REST/gRPC/GraphQL client.
+    `git`            Fugitive, Flog, Fugit2, diffview, git-conflict.
+    `ai`             CodeCompanion (Anthropic, OpenAI, Gemini, Ollama, …).
+                     Default: Anthropic. Override adapter in user/plugins/.
+                     Requires: API key env var for cloud providers.
+    `refactoring`    Extract function/variable/block.
+    `octo`           GitHub PRs / issues / reviews via the `gh` CLI.
+                     `&lt;C-w&gt;O` opens the PR list. Requires `gh` (and
+                     a one-time `gh auth login`).
+    `nvim-dev`       Neovim config development: :StartupTime, :Luapad,
+                     vimls LSP for .vim files.
+
+    navigation/ ~
+    `harpoon`        Fast per-project file marks.
+    `flash`          Enhanced f/t and / motions with jump labels.
+                     Note: the flash bundle remaps `S` in normal mode from the
+                     core global-substitute shortcut to a flash jump. The core
+                     `S` behavior remains accessible via `:%s/`.
+    `projects`       Project switcher via snacks.picker.
+    `editing-extras` Argument marking (argmark) + decorative comment boxes.
+    `yanky`          Yank ring: cycle through paste history with
+                     `&lt;C-p&gt;`/`&lt;C-n&gt;` after a paste; SearchLeader+y opens
+                     a fuzzy picker over the full history.
+
+    writing/ ~
+    `markdown`       render-markdown, markdown-preview, tables, math,
+                     img-clip (image paste from clipboard).
+    `obsidian`       Obsidian vault integration (obsidian.nvim).
+                     Recommended: also enable the markdown bundle.
+                     Configure vault path in lua/user/config.lua.
+    `neorg`          .norg wiki / note-taking.
+    `wrapsearch`     Make `/` and `?` match across hard-wrapped lines, so
+                     a phrase split by a wrap is still findable. The
+                     writing profile hard-wraps by default, so this is its
+                     counterpart. `g/` searches verbatim for one search.
+                     See <a href="#noethervim-filetype-profiles">|noethervim-filetype-profiles|</a>.
+    `presentation`   Slide presentations (presenting.nvim) + showkeys.
+
+    terminal/ ~
+    `better-term`    Named terminal windows.
+    `tmux`           Tmux window naming.
+                     Note: vim-tmux-navigator remaps `&lt;C-h/j/k/l&gt;` to navigate
+                     both Neovim splits and tmux panes seamlessly. This
+                     overrides the core window-navigation shortcuts (which do
+                     the same thing for Neovim splits only).
+    `remote-dev`     distant.nvim SSH editing.
+
+    ui/ ~
+    `colorscheme`    Nine themes beyond the gruvbox core already ships.
+                     Mainstream picks: catppuccin, tokyonight, rose-pine,
+                     kanagawa. Long tail: onedark, nord, everforest,
+                     nightfox, solarized. All lazy; only the active one
+                     loads, but the nine cost ~18MB on disk, which is why
+                     they are opt-in.
+                     Switching themes (SearchLeader+C), persistence and
+                     highlight tweaks are core features and work without
+                     this bundle. See <a href="#noethervim-colorscheme-tweaks">|noethervim-colorscheme-tweaks|</a>.
+    `eye-candy`      Animations, scrollbar, code block visualizer.
+    `minimap`        Sidebar minimap with diagnostics and git signs.
+    `helpview`       Rendered :help pages.
+    `tableaux`       noethervim-tableaux: animated mathematical dashboard
+                     scenes (Sieve, Collatz, Lorenz, Game of Life, …).
+
+    practice/ ~
+    `training`       Vim motion and typing practice (vim-be-good,
+                     speedtyper, typr).
+    `hardtime`       Motion habit trainer.
+
+Each bundle file contains full documentation (plugins, keymaps,
+commands, and requirements) in its header comment. Browse them with
+`:NoetherVim bundles` or SearchLeader+cb.
+
+Configuring noethervim-tex (latex bundle): ~
+
+The `latex` bundle includes `noethervim-tex`, which provides LaTeX snippets,
+treesitter textobjects, a preamble completion source, and a spell
+dictionary of common mathematical terms. Configure it
+via opts override in `user/plugins/`: &gt;lua
+    &#123; "Chiarandini/noethervim-tex", opts = &#123;
+        preamble_folder = "~/my/preambles/",
+        extra_snippet_paths = &#123; "~/shared-snippets/" &#125;,
+        textobjects = false,
+    &#125; &#125;
+                                                   <a id="noethervim-snippet-stop" class="vimdoc-tag">*noethervim-snippet-stop*</a>
+Getting out of a snippet: ~
+
+    `&lt;C-u&gt;`             Stop every snippet in the buffer (insert, select)
+    `&lt;LocalLeader&gt;u`    Same, from normal mode
+    `:LuaSnipStop`      Same, as a command
+    `&lt;Leader&gt;u`         Unlink only the snippet you are in
+
+Stopping is not the same as unlinking. Unlinking drops one snippet and
+hands the cursor to its neighbour, but LuaSnip's extmarks stay behind, so
+a buffer can end up with no active snippet and still carry marks that
+highlight text and interfere with later expansions. Stopping unlinks
+everything and clears those marks, which is what to reach for when a
+buffer feels haunted by snippets that are no longer there. Buffer text is
+never touched, and snippets expand normally again afterwards.
+
+                                                       <a id="noethervim-snippets" class="vimdoc-tag">*noethervim-snippets*</a>
+Writing custom snippets: ~
+
+LuaSnip loads user snippets from `stdpath("config")/LuaSnip/&lt;filetype&gt;/`.
+Create a directory for the target filetype (e.g. `LuaSnip/tex/`,
+`LuaSnip/python/`) and add `.lua` files inside it; each file should
+return a snippet list. LuaSnip auto-loads them alongside any
+plugin-provided snippets.
+
+SearchLeader+es (`:LuaSnipEdit`) jumps to a snippet file for the current
+filetype. Every registered file is listed, yours and the ones plugins
+ship, so the picker doubles as a way to read how a bundled snippet is
+built.
+
+Entries read as owner and filename, for example: 
+    ~/.config/nvim    · preamble.lua
+    NoetherVim-Tex    · commands.lua
+The filetype was chosen a prompt earlier, so the `LuaSnip/&lt;ft&gt;/` segment
+every entry shares is left out; the owner is the lazy.nvim plugin name, or
+the tree the file came from when it is one of yours. Filenames alone would
+collide, since your `preamble.lua` and a plugin's are both in the list.
+
+A file owned by a plugin opens with 'readonly' set: a snippet saved there
+is lost on the next |:Lazy| update, and in a `dev` checkout it dirties that
+repository and then loads twice alongside your own copy. Use `:w!` when you
+do mean to edit a plugin you maintain.
+
+When you have no snippet file of your own for the filetype, the list also
+offers one to create, marked `(new)`: 
+    ~/.config/nvim    · rust.lua (new)
+Choosing it writes a skeleton and opens it. The skeleton is not decoration:
+an empty Lua file returns nil, and LuaSnip errors the next time it loads
+that filetype. Without this entry a filetype whose snippets all come from
+plugins is a dead end, because a single candidate is opened directly and
+that candidate is read-only.
+
+Writing the new file registers it immediately, so its snippets work in the
+same session. LuaSnip scans the snippet directory once at startup and its
+own reload-on-write only refreshes files already in that cache, so a
+filetype it has never seen would otherwise stay inert until a restart.
+
+In a buffer with no 'filetype' there is nothing filetype-specific to edit,
+so the prompt can only offer `all` and a warning says so. This is easy to
+hit by accident: Neovim maps `.rs` to `rust`, not `.rust`, so a scratch file
+named `tmp.rust` has no filetype at all and the prompt looks broken rather
+than empty. `:setfiletype` fixes it.
+
+Ownership is taken from lazy.nvim's plugin registry rather than from the
+path, so it stays correct when a config symlinks its `LuaSnip/` directory
+elsewhere, and when a `dev` checkout lives outside `stdpath("data")`.
+
+For LaTeX snippets, `noethervim-tex` exposes helper functions: &gt;lua
+    local helper = require("noethervim-tex").luasnip_helper
+    local tex_utils = helper.tex_utils   -- in_mathzone, in_text, etc.
+    local get_visual = helper.get_visual_node</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="6-inspection">6. Inspection</h2><a class="sl-anchor-link" href="#6-inspection"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “6. Inspection”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-inspect" class="vimdoc-tag">*noethervim-inspect*</a>
+
+Browse and search NoetherVim source code from within the editor.
+All commands are available as `:NoetherVim &lt;subcommand&gt;` and most have
+keymaps under the SearchLeader+c prefix (default: `&lt;Space&gt;c`; see
+<a href="#g:mapsearchleader">|g:mapsearchleader|</a>). Source files open as non-modifiable to prevent
+accidental edits to the distribution.
+
+    SearchLeader+cf  `:NoetherVim files`      Browse NoetherVim source
+    SearchLeader+cg  `:NoetherVim grep`       Live grep NoetherVim source
+    SearchLeader+cu   (snacks)                 Browse user config files
+    SearchLeader+cb   `:NoetherVim bundles`    Browse bundle source files
+    SearchLeader+ct   `:NoetherVim templates`  Stamp user-config templates
+    `&lt;Leader&gt;e`      `:NoetherVim override`   Edit/create user override
+    SearchLeader+cL   (snacks)                 Lazy plugin list
+    SearchLeader+?    `:NoetherVim keymap-guide`  Keymap namespace reference
+    `&lt;Leader&gt;i`     (inspect)                Open init.lua for editing
+
+Run `:NoetherVim status` to see which user override files are active.
+
+                                                       <a id="noethervim-templates" class="vimdoc-tag">*noethervim-templates*</a>
+Templates: ~
+
+    SearchLeader+ct   `:NoetherVim templates`
+
+Merge the bundled `templates/user/&lt;name&gt;.example.lua` files into your config
+as `lua/user/&lt;name&gt;.lua`. The picker shows each template with `[new]` or
+`[exists]` status; press `&lt;C-y&gt;` on a row to write it. A floating diff
+window shows the exact change before any file is created or overwritten:
+`y` or `&lt;CR&gt;` accepts, `n` rejects, `q` or `&lt;Esc&gt;` cancels.
+
+On accept the new file opens for editing, which is what you wanted the
+template for.
+
+`&lt;CR&gt;` in the picker opens the source template read-only, so you can read
+one without copying anything.
+
+If the destination directory does not exist (e.g. `lua/user/plugins/`),
+it is created on accept.
+
+                                                         <a id="noethervim-guide" class="vimdoc-tag">*noethervim-guide*</a>
+Keymap namespace guide: ~
+
+    SearchLeader+?    `:NoetherVim keymap-guide`
+
+Opens a reference buffer showing all active keymaps organized by
+NoetherVim's namespace philosophy:
+
+    SearchLeader      fuzzy navigation and search (sub-grouped by topic)
+    `[` / `]`           directional navigation and option toggles (paired)
+    `&lt;C-w&gt;`             window and panel management
+    `g`                 goto and LSP actions
+    `Z`                 buffer management
+    `&lt;Leader&gt;`          global actions
+    Normal / Insert / Visual / Command-line mode sections
+
+The guide is dynamic: it reads the current keymap state, so it reflects
+active bundles, user additions, and buffer-local LSP keymaps.
+
+Press `q` to close. Press `&lt;CR&gt;` on any keymap line to jump to its
+source definition in the distribution or user config.
+
+                                                   <a id="noethervim-picker-help" class="vimdoc-tag">*noethervim-picker-help*</a>
+Picker key list: ~
+
+Every snacks picker binds `&lt;F1&gt;` to a list of the keys it defines. Snacks
+binds this to `?` as well, but only in normal mode, and pickers open with
+the prompt in insert mode where `?` is just a character in the query.
+`&lt;F1&gt;` is Neovim's help key in both modes (see |&lt;F1&gt;| and |i_&lt;F1&gt;|), so it
+works wherever the cursor is.
+
+Dismiss the list with `&lt;F1&gt;` again or with `&lt;Esc&gt;`. `&lt;Esc&gt;` closes the
+picker itself only once the list is gone, so with the list open it takes
+two presses to leave.
+
+The list shows normal-mode and insert-mode mappings together, and where a
+key exists in both the normal-mode entry is the one displayed. Entries
+like `q`, `j`, `k`, `gg`, `G`, `/` and `&lt;C-w&gt;H/J/K/L` therefore apply to
+the results window rather than the prompt; reach it with `&lt;A-w&gt;`.</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="7-comparison">7. Comparison</h2><a class="sl-anchor-link" href="#7-comparison"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “7. Comparison”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-diff" class="vimdoc-tag">*noethervim-diff*</a>
+
+Compare your user overrides against NoetherVim defaults.
+
+    SearchLeader+ck `:NoetherVim diff keymaps`
+                    Smart picker showing all keymaps annotated with:
+                    `[CORE]`: unchanged NoetherVim default
+                    `[USER]`: keymap added by your user/keymaps.lua
+                    `[OVERRIDE]`: core keymap you changed
+                    `[DELETED]`: core keymap you removed
+                    A second column names the bundle a keymap came from
+                    (`latex`, `debug`, `yanky`, ...) and stays blank for
+                    core and user keymaps. It disappears entirely when no
+                    bundle is enabled. The bundle name is searchable, so
+                    typing `latex` narrows the list to that bundle.
+                    `&lt;CR&gt;` opens the file and line that defined the key.
+                    Keymaps set by third-party plugins (surround, mini.ai,
+                    marks, ...) are hidden by default, since they are not
+                    NoetherVim's to explain; `&lt;C-x&gt;` toggles them in and
+                    out. On one of those, `&lt;CR&gt;` opens the spec file that
+                    installs the plugin rather than the plugin's own
+                    source: the spec is where you add `opts` or `keys` to
+                    change or disable the key, and the plugin's tree is
+                    overwritten on update. When the plugin cannot be
+                    identified, `&lt;CR&gt;` says so instead of guessing.
+                    Neovim's own defaults and `&lt;Plug&gt;` handles are never
+                    listed. Use SearchLeader+fk for a plain search over
+                    every key currently mapped.
+                    Buffer-local keymaps, marked `(buffer)`, are those of
+                    the buffer the picker was opened from, so LSP keymaps
+                    appear only when a server is attached there.
+                    Plugins that have not loaded yet have not registered
+                    their keymaps, so the list grows as a session goes on.
+
+    SearchLeader+co `:NoetherVim diff options`
+                    Smart picker showing all tracked options (the set of
+                    options NoetherVim explicitly configures) annotated with:
+                    `[CORE]`: unchanged NoetherVim default
+                    `[OVERRIDE]`: option you changed in user/options.lua
+
+    SearchLeader+ca `:NoetherVim diff autocmds`
+                    Smart picker showing every augroup NoetherVim
+                    declares, annotated with:
+                    `[CORE]`: unchanged NoetherVim default
+                    `[OVERRIDE]`: augroup you replaced from `lua/user/`
+                    `[CLEARED]`: augroup you emptied and did not refill
+                    `[INACTIVE]`: not in use this session, because the
+                    bundle is off or the plugin has not loaded. Expected,
+                    not a problem.
+                    `[USER]`: augroup you added
+                    Overriding an autocommand means clearing its augroup
+                    and re-registering, so this is the view that tells you
+                    whether that worked. `&lt;CR&gt;` opens the file and line
+                    that registered the handler.
+
+    SearchLeader+cd `:NoetherVim diff`
+                    Smart picker listing all NoetherVim modules across
+                    Core, Plugin, Bundle, and LSP categories. Each entry
+                    shows whether a user override exists. Selecting a
+                    module opens the upstream file (readonly) and user
+                    override in a side-by-side vertical split.
+                    Also accepts a direct argument:
+                    `:NoetherVim diff snacks`</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="8-toggling">8. Toggling</h2><a class="sl-anchor-link" href="#8-toggling"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “8. Toggling”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-toggle" class="vimdoc-tag">*noethervim-toggle*</a>
+
+Disable all user overrides for debugging.
+
+Environment variable (before starting Neovim): &gt;bash
+    NOETHERVIM_NO_USER=1 nvim
+Vim global (set in init.lua before lazy.setup): &gt;lua
+    vim.g.noethervim_no_user = true
+When active, all `user/` module hooks, LSP overrides, and
+`user/overrides/` files are skipped. Plugin spec merging from
+`user/plugins/` is also skipped (via the conditional import in
+init.lua.example).
+
+This is NOT a runtime toggle; restart Neovim to apply.
+
+Check current status: `:NoetherVim status`
+
+                                                        <a id="noethervim-dashboard" class="vimdoc-tag">*noethervim-dashboard*</a>
+Disabling the startup dashboard: ~
+
+The Snacks dashboard shown on empty-arg startup (`nvim` with no file)
+can be turned off with a single flag in your init.lua, set before
+`lazy.setup`: &gt;lua
+    vim.g.noethervim_dashboard = false
+With the flag set, `nvim` opens straight into an empty buffer. Set it
+to `true` or leave unset to keep the dashboard (default).</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="9-keymap-namespaces">9. Keymap namespaces</h2><a class="sl-anchor-link" href="#9-keymap-namespaces"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “9. Keymap namespaces”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-keymaps" class="vimdoc-tag">*noethervim-keymaps*</a> <a id="neothervim-keymaps" class="vimdoc-tag">*neothervim-keymaps*</a>
+
+NoetherVim groups keymaps by prefix. Press any prefix and wait for
+which-key to show available actions, or use SearchLeader+fk to search
+all keymaps interactively.
+
+The which-key popup appears after a 1500 ms delay by default. To
+change this, add to `lua/user/plugins/whichkey.lua`: &gt;lua
+    return &#123;
+      &#123; "folke/which-key.nvim",
+        -- Remember that setting `config` would override, not extend,
+        -- the behaviour, and passing `opts= &#123;...&#125;` would override the
+        -- default optoins
+        opts = function(_, opts)
+          vim.o.timeoutlen = 500
+          opts.delay = 500
+          return opts
+        end,
+      &#125;,
+    &#125;
+
+Prefixes: ~
+                                                        <a id="noethervim-space" class="vimdoc-tag">*noethervim-space*</a>
+                                                        <a id="noethervim-mapsearchleader" class="vimdoc-tag">*noethervim-mapsearchleader*</a>
+    `SearchLeader`      Search &amp; navigation (default: `&lt;Space&gt;`)
+                      f(ind)  g(rep)  G(it)  l(sp)  d(iagnostics)
+                      q(uickfix)  c(onfig)  D(ebug)  s(ession)
+                      o(bsidian)  w(iki)
+                      Configurable via <a href="#g:mapsearchleader">|g:mapsearchleader|</a>.
+                                                        <a id="noethervim-leader" class="vimdoc-tag">*noethervim-leader*</a>
+    `&lt;Leader&gt;` (\)      Global actions
+                      y/Y/p/P (clipboard)  f(ormat)  h(unk)  d(ebug)
+                      R(EPL)  r(efactor)  m(inimap)  b(ox)  a(i)  z(en)
+                                                        <a id="noethervim-localleader" class="vimdoc-tag">*noethervim-localleader*</a>
+    `&lt;LocalLeader&gt;` (,) Filetype-specific actions
+                      LaTeX: vimtex commands, image paste
+                      Neorg: wiki navigation
+                                                        <a id="noethervim-ctrl-w" class="vimdoc-tag">*noethervim-ctrl-w*</a>
+    `&lt;C-w&gt;`             Windows &amp; panels
+                      l(azy)  s(tatusline)  t(erminal)  F(ugit2)
+                      Q (Trouble diagnostics)  &lt;C-q&gt; (quickfix)
+                      [d / ]d (diffview)  &lt;C-h&gt; (harpoon)  &lt;C-e&gt; (explorer)
+                      &lt;C-o&gt; (Oil)
+                                                        <a id="noethervim-g" class="vimdoc-tag">*noethervim-g*</a>
+    `g`                 LSP &amp; go-to
+                      gd(efinition)  gD(eclaration)  gR(eferences float)
+                      gt(ype def)  gi(mplementation)  gs(ignature)
+                      gl(diagnostics)  go(utline)  gy(ank type at cursor)
+                      gr* = Neovim 0.12 defaults (grr/grn/gra…)
+                      SearchLeader+li / +lO (call hierarchy in/out)
+                                                        <a id="noethervim-brackets" class="vimdoc-tag">*noethervim-brackets*</a>
+    `[x` / `]x`         Directional navigation
+                      d(iagnostic)  t(ab)  b(uffer)  f(ile)
+                      q(uickfix / Trouble when open)
+                      T(odo)  e(xchange line)  &lt;Space&gt;(blank line)
+                                                        <a id="noethervim-option-toggles" class="vimdoc-tag">*noethervim-option-toggles*</a>
+    `[ox` / `]ox`       Toggle options
+                      w(rap)  s(pell)  n(umbers)  r(elative)  h(lsearch)
+                      L(SP)  b(ackground)  c(ursorline)  l(ist)  t(extwidth)
+                      i(gnorecase)  I(lluminate)  T(reeSitter)
+                      D(irty whitespace/tidy)  G(uide column/deadcolumn)
+                      G is off by default; toggle persists across sessions
+                      (stored in stdpath("state")).
+                      `[oC`/`]oC` toggle blink.cmp completion on/off
+                                                        <a id="noethervim-Z" class="vimdoc-tag">*noethervim-Z*</a>
+    `Z`                 Closing things -- a grid, not a list of initials.
+                      Rows say how much you are willing to lose; columns
+                      say what you are closing.  Vim's own `ZZ` and `ZQ` are
+                      the bottom and top of the first column.
+
+                                    this window    everything     this buffer
+                      force         `ZQ`  :q!      `ZW`  :qa!     `ZE`  :bd!
+                      refuse dirty  `ZA`  :q       `ZS`  :qa      `ZD`  :bd
+                      save first    `ZZ`  :x       `ZX`  :wa|qa!  `ZC`  :w|bd
+
+                      `ZQ` and `ZZ` are Vim defaults, listed for the shape.
+                      `ZW` is the "kill nvim" key; `ZX` is the one that saves
+                      every buffer it can before forcing out.
+                      `ZR`(scratch sweep) deletes unnamed scratch buffers.
+
+Other notable keymaps: ~
+
+    Normal: ~
+    `&lt;C-a&gt;` / `&lt;C-x&gt;` Enhanced increment/decrement (numbers, booleans,
+                      dates, operators, semver, via dial.nvim)
+    `g&lt;C-a&gt;`/`g&lt;C-x&gt;` Sequential increment/decrement in visual selection
+    `&lt;C-/&gt;`           Toggle comment (builtin gc/gcc, all modes)
+    `&lt;C-S-r&gt;`         Comment lines and paste uncommented copy below
+
+    Visual: ~
+    `gC`              Invert comment per-line. Unlike `gc` (which picks
+                      one direction for the whole range based on the
+                      majority state), `gC` toggles each selected line
+                      independently: so a mixed selection ends up with
+                      every line in the <a id="opposite" class="vimdoc-tag">*opposite*</a> state.
+    `s`               Substitute without polluting register
+    `S`               Global search/replace (:%s/)
+    `;`               Command-line (replaces :)
+    `n` / `N`         Consistent search direction: `n` always forwards,
+                      `N` always backwards
+    `-`               Highlight word under cursor + count
+    `L`               Fold-peek (nvim-ufo); falls through to the default
+                      L motion (jump to last visible line) when not on
+                      a closed fold.
+    `&lt;F2&gt;`            Rename (with count, LSP)
+
+    Visual: ~
+    `Y`               Yank selection to clipboard
+    `P`               Paste clipboard (keep registers)
+    `p`               Paste over (keep register)
+    `il`              Inner-line text object
+    `&lt;Down&gt;` / `&lt;Up&gt;` Move block
+
+    Insert: ~
+    `&lt;M-BS&gt;`          Delete word backward
+    `&lt;C-v&gt;`           Paste from clipboard
+    `&lt;C-=&gt;`           Expression register
+
+    Command-line: ~
+    `&lt;C-l&gt;`           Insert cwd
+    `&lt;C-y&gt;`           Yank cmdline to clipboard
+    `&lt;C-o&gt;`           Redirect output to buffer
+
+Shadowed defaults: ~
+                                                <a id="noethervim-shadowed" class="vimdoc-tag">*noethervim-shadowed*</a>
+    These core keymaps replace standard Vim behavior. The original
+    functionality is available through the alternatives listed.
+
+    `s`             Substitute without register
+                    (default: same as `cl`)
+    `S`             Global `:%s/` replace
+                    (default: same as `cc`)
+    `;`             Command-line (replaces `:`)
+                    (default: repeat last f/F/t/T motion)
+    `n` / `N`       Always forward / always backward
+                    (default: next / prev in search direction: after
+                    `?pat`, default `n` goes up)
+    `|`             Vertical split tmp
+                    (default: go to screen column)
+    `_`             Horizontal split tmp
+                    (default: go N-1 lines down, first non-blank)
+    `+`             New tab
+                    (default: go to next line, first non-blank)
+    `&lt;C-w&gt;&lt;C-q&gt;`    Open quickfix
+                    (default: close window: use `&lt;C-w&gt;q` or `:q`)
+    `&lt;C-w&gt;Q`        Toggle Trouble diagnostics panel
+    `&lt;C-w&gt;t`        Toggle a 12-line terminal along the bottom. Reuses
+                    the same terminal buffer each time rather than
+                    opening a new one, and drops you straight into
+                    terminal mode. `&lt;Esc&gt;&lt;Esc&gt;` leaves terminal mode.
+                    (default: go to top window: use `1&lt;C-w&gt;w`)
+                                                    <a id="noethervim-resize-arrows" class="vimdoc-tag">*noethervim-resize-arrows*</a>
+    `&lt;Arrow&gt;`       Resize current window: push the near edge in the
+                    arrow direction (grow). Falls back to `hjkl` cursor
+                    motion when the tab has a single non-floating window
+                    (nothing to resize against) or the current window is
+                    a float. Counts pass through, so `5&lt;Down&gt;` jumps 5
+                    lines via the `j` remap.
+                    (default: one-cell / one-line motion: use `hjkl`)
+    `&lt;S-Arrow&gt;`     Resize current window: pull the far edge in the
+                    arrow direction (shrink). No-op when no neighbor
+                    exists on the moving edge.
+                    (default: same one-cell / one-line motion)
+
+                                                    <a id="noethervim-semicolon" class="vimdoc-tag">*noethervim-semicolon*</a>
+    Note on `;`: If you lean on `f&#123;char&#125;` / `t&#123;char&#125;` motions with `;` / `,`
+    to repeat them, revert in `lua/user/keymaps.lua`:
+&gt;lua
+    vim.keymap.set(&#123; "n", "v" &#125;, ";", ";", &#123; desc = "repeat f/t motion" &#125;)
+    If you don't reach for `;` / `,` repeat often, give the swap a try.
+    The cmdline becomes a one-key hop and the habit sticks fast.
+
+------------------------------------------------------------------------------
+9.1 FILETYPE KEYMAPS                                   <a id="noethervim-ftplugin" class="vimdoc-tag">*noethervim-ftplugin*</a>
+
+These keymaps activate only in their respective filetype, except for the
+"all filetypes" group below which applies globally.
+
+    all filetypes (insert): ~
+    `&lt;S-CR&gt;`            Smart newline (smart-enter.nvim). Continues the
+                        structure at the cursor: Markdown lists, and LaTeX
+                        environments, etc. Presets are appended when the
+                        Markdown and LaTeX bundles are enabled.
+    Note: smart-enter's `&lt;S-CR&gt;` needs a terminal that sends it distinctly
+    from `&lt;CR&gt;` (Kitty, WezTerm, Ghostty, Neovide, most GUIs); some send
+    plain `&lt;CR&gt;` for both.
+
+    tex: ~
+    `:PDF`              Open compiled PDF
+    `&lt;S-CR&gt;`            Smart newline in environments (insert)
+    `&lt;C-l&gt;`             Auto-fix nearest spelling error (insert)
+    `&lt;LocalLeader&gt;vw`   VimTeX word count
+    `gd`                Jump to the label under the cursor (`\cref`,
+                       `\ref`, `\eqref`, ...) via the label cache;
+                       LSP definition when not on a prefixed label
+    `&lt;C-]&gt;`             Same label jump through the tag stack, so
+                       `&lt;C-t&gt;` returns. Works across subfiles and
+                       nested sub-books
+    `:VimtexToggleMain` Switch between compiling the current subfile
+                       and the full project. Subfile projects
+                       (`subfiles.cls`) start in subfile mode
+    `:VimtexStop`       Stop compilation AND disarm the on-save
+                       auto-compile for the project; the next manual
+                       compile re-arms it. `:VimtexStopAll` does the
+                       same for every open project
+
+    markdown: ~
+    `&lt;S-CR&gt;`            Smart newline in lists (insert)
+    `&lt;C-l&gt;`             Auto-fix nearest spelling error (insert)
+
+    qf (quickfix): ~
+    `q`                 Close quickfix window
+    `&lt;CR&gt;`              Open entry and close quickfix
+    `&lt;S-CR&gt;`            Open entry, keep quickfix open
+    `&lt;C-j&gt;` / `&lt;C-n&gt;`  Navigate down
+    `&lt;C-p&gt;`             Navigate up
+
+    oil (file explorer, `&lt;C-w&gt;&lt;C-o&gt;` or `:Oil`): ~
+    `g?`                Show all Oil keymaps (including defaults)
+    `gf`                Fuzzy find files in current directory
+    `gG`                Live grep in current directory
+    `gV`                Pick destination, open dual-pane float (q closes both)
+    `gd`                Toggle detail view (permissions, size, mtime)
+    `gX`                Open directory in system file browser
+    `gS`                Create symlink in current directory
+    `gz`                Zip entry under cursor (normal) or selection (visual)
+                        Uses `zip` on macOS/Linux, `Compress-Archive` on Windows
+    `gZ`                Unzip .zip entry (normal) or selection (visual)
+                        Uses `unzip` on macOS/Linux, `Expand-Archive` on Windows
+    `g.`                Toggle hidden files
+    `g\`                Toggle trash
+    `Y` (normal)        Copy file under cursor to system clipboard
+    `Y` (visual)        Copy selected files to system clipboard
+                        (skips "../" and unsaved lines)
+    `yp` `yd` `yn`      Yank full path / parent dir / name to unnamed reg
+    `Yp` `Yd` `Yn`      Same, but to the system clipboard ("+)
+
+------------------------------------------------------------------------------
+9.2 STATUSLINE                                        <a id="noethervim-statusline" class="vimdoc-tag">*noethervim-statusline*</a>
+
+NoetherVim uses heirline.nvim for its statusline. Toggle components
+with the `&lt;C-w&gt;s` prefix:
+
+    `&lt;C-w&gt;sg`           Toggle git component
+    `&lt;C-w&gt;sp`           Toggle PDF size indicator
+    `&lt;C-w&gt;sl`           Toggle LSP component
+    `&lt;C-w&gt;sP`           Split the path: project-relative directory as its
+                        own component, bare filename beside it
+    `&lt;C-w&gt;s&lt;C-p&gt;`       Toggle PDF mode
+
+Clickable components: ~
+
+    Every statusline component below responds to mouse clicks:
+
+    Diagnostics count   Open buffer diagnostics picker
+    File name           Open current directory in system file browser
+    Modified indicator  Diff unsaved changes against saved version
+    Deleted-file flag   Offer to write the buffer back (see below)
+    Directory indicator Explain the cwd mismatch, offer `:lcd` (see below)
+    LSP indicator       Open `:LspInfo`
+    Git branch/status   Open lazygit in a terminal
+    Update indicator    Open Lazy plugin manager
+
+                                        <a id="noethervim-statusline-deleted" class="vimdoc-tag">*noethervim-statusline-deleted*</a>
+Deleted-file flag: ~
+
+    Deleting a file from under an open buffer leaves the buffer intact,
+    still holding the path and the only surviving copy of the contents.
+    Nothing in stock Neovim says so. A red marker appears in the flag
+    slot, left of the filename, when that happens -- whether the file
+    went through Oil, `rm` in a terminal, or another program.
+
+    Click it to write the buffer back and recreate the file.
+
+    Detection rides on the `:checktime` that already runs on focus and
+    buffer changes, which reports a vanished file as `v:fcs_reason` of
+    "deleted". A file you have never written is not flagged: Neovim only
+    tracks a modification time for files it has actually read.
+
+    The flag clears on the next write or re-read.
+
+                                       <a id="noethervim-statusline-directory" class="vimdoc-tag">*noethervim-statusline-directory*</a>
+Directory indicator: ~
+
+    A small marker appears left of the filename when the buffer's
+    directory is not the window's working directory. Dimmed when the
+    file is somewhere under cwd, which is ordinary project navigation;
+    in the warning colour when it is outside cwd entirely.
+
+    What it is warning about is relative paths, not saving in general.
+    Neovim's working directory belongs to the window (falling back to
+    the tab, then the global one), never to the buffer, so: 
+
+        :e docs/a.md        cwd stays at the project root
+        :w draft.md         writes &lt;root&gt;/draft.md,
+                            not &lt;root&gt;/docs/draft.md
+    A plain `:w` is never affected. Neovim expands a buffer's name to an
+    absolute path when the buffer is created, so it always writes back
+    to the file it read, whatever cwd has done since.
+
+    Click the marker for the two paths and a `[L]` action that runs
+    `:lcd` to the buffer's directory. `:lcd` rather than `:cd` on
+    purpose: `:cd` from a window holding a window-local or tab-local
+    directory discards both. `:pwd` and `haslocaldir()` report which
+    scope is currently in force.
+
+    Setting 'autochdir' makes cwd follow the buffer, which silences this
+    marker permanently. It also makes every relative path resolve
+    against whichever file you last visited, which is its own way to
+    open or create a file somewhere unexpected. NoetherVim leaves
+    'autochdir' off, matching Neovim's default; `[oa` / `]oa` toggle it.
+
+VimTeX compile indicator (latex bundle): ~
+
+    The compile indicator follows the relevant project automatically.
+    For \input children, it walks vimtex's state list to find the
+    parent project so the status surfaces even when the buffer is
+    a fragment. For subfile projects (`subfiles.cls`) it compiler
+    statusline component marks `[parent]` / `[subfile]` / `[parent+sub]`
+    so it's clear which side is compiling. While compiling it appends a rough
+    percent against the last successful PDF size (cached at
+    `stdpath('state')/noethervim/vimtex_baseline.json`). On success the
+    compile duration is sent to fidget under the `vimtex` group; the
+    statusline shows a persistent `compiled ✓` until the next compile.
+
+Snippet jump indicator: ~
+
+    While a LuaSnip snippet is active, the statusline shows which
+    tabstop you are on out of how many, flanked by arrows for the
+    directions that lead to another tabstop: a left arrow when an
+    earlier tabstop exists, a right arrow when a later one does. So
+    `1/3` with only a right arrow means two tabstops still to fill.
+    The indicator disappears once the snippet is finished or left.
+
+    The count describes the innermost group that actually holds more
+    than one tabstop. Dynamic and choice nodes build groups of their
+    own, so this is what you want in both directions: `:defn`, whose
+    four tabstops are each wrapped in a dynamic node, reads `1/4`
+    through `4/4`, and a `mat:3*3` matrix, whose nine cells all live
+    inside a single dynamic node, reads `1/9` through `9/9`.
+
+    Expanding a second snippet inside a tabstop of the first switches
+    the indicator to the inner snippet's own count while you fill it,
+    then returns to the outer snippet's numbering when you jump out.
+
+Customizing the statusline: ~
+
+These keys apply to the default heirline statusline; if you replace the
+statusline (for example with lualine), they have no effect.
+
+Customize statusline colors and extra components in `lua/user/config.lua`: &gt;lua
+    -- lua/user/config.lua
+    return &#123;
+      statusline = &#123;
+        edge_style  = "round",    -- see edge styles below
+        colors      = &#123; ... &#125;,    -- override heirline color table
+        extra_right = &#123; ... &#125;,    -- heirline component specs
+      &#125;,
+    &#125;
+    Available color keys (from `util/palette.lua`): ~
+    `mode_n`, `mode_i`, `mode_v`, `mode_c`, `mode_t`, `mode_R`,
+    `green`, `blue`, `orange`, `red`, `purple`, `default_gray`,
+    `lazy_updates`, `text_gray`
+
+    Example, changing the normal-mode indicator to blue: &gt;lua
+    -- lua/user/config.lua
+    return &#123;
+      statusline = &#123;
+        colors = &#123; mode_n = "#458588" &#125;,
+      &#125;,
+    &#125;
+                                          <a id="noethervim-statusline-edge-style" class="vimdoc-tag">*noethervim-statusline-edge-style*</a>
+Edge style ~
+
+The colored mode block at the left of the statusline (and, for some
+styles, an opening endcap on the right ruler block) follows the
+`statusline.edge_style` key in `lua/user/config.lua`. All glyphs come
+from the Nerd Font private use area, so a Powerline-capable terminal
+font is required.
+
+    `round`     (default) Rounded mode bubble, flush right edge.
+    `slant`     Slanted Powerline endcaps; right ruler also slanted.
+    `pointy`    Triangle endcaps; right ruler gets a triangle opener.
+    `straight`  No endcap glyphs; mode block renders as a plain
+                rectangle, right edge stays flush.
+    `bubbly`    Rounded endcaps on both sides (left mode block and
+                right ruler block).
+
+Switching styles takes effect on the next Neovim launch (the bar is
+assembled in heirline's `config` callback). Picking an unknown name
+falls back to `round` and emits a `vim.notify` warning during setup.
+
+    For custom component authoring, see |heirline-cookbook|.
+
+                                         <a id="noethervim-statusline-busy-override" class="vimdoc-tag">*noethervim-statusline-busy-override*</a>
+Greedy Busy-component takeover ~
+
+The Busy component (animated spinner while `vim.bo.busy &gt; 0`) can be
+greedily claimed by a bundle or by user config via
+`register_busy_override`. The override supplies a label, highlight and
+optional click handler, and temporarily replaces the default spinner
+rendering. The most recently registered override that returns a
+non-nil spec wins (last-write-wins), so user config overrides bundle
+defaults naturally: &gt;lua
+    require("noethervim.statusline").register_busy_override(function()
+      -- return nil to yield; return a spec to claim the slot:
+      return &#123;
+        icon     = nil,                       -- falls back to the spinner
+        label    = "ai",                      -- shown after icon
+        hl       = &#123; fg = "#c678dd", bold = true &#125;,
+        on_click = function() ... end,        -- mouse handler
+      &#125;
+    end)
+    The animation timer only ticks while something is driving
+    `vim.bo.busy` &gt; 0, so overrides wanting animation should also
+    increment busy on the relevant buffer.
+
+                                          <a id="noethervim-statusline-error-boundary" class="vimdoc-tag">*noethervim-statusline-error-boundary*</a>
+Error recovery ~
+
+If any statusline component raises an error, the bar degrades to a
+`statusline recovering...` marker instead of letting the traceback
+replace the entire statusline. The full error is written to
+|:messages| for diagnosis. After a cooldown, the bar auto-retries;
+if the underlying state has cleared, normal rendering resumes.
+
+Override the cooldown with `vim.g.heirline_recovery_ms` (default
+`1000`). The same protection applies to the tabline, winbar, and
+statuscolumn.
+
+------------------------------------------------------------------------------
+9.3 TABLINE                                              <a id="noethervim-tabline" class="vimdoc-tag">*noethervim-tabline*</a>
+
+NoetherVim ships a tab-based tabline (not a bufferline). Each tab shows
+its focused buffer's file icon, `project: filename` label (derived from
+git root), and a `●` modified indicator. Tabs have per-tab close
+buttons and shrink gracefully when many tabs are open.
+
+Tab management keymaps: ~
+    `+`                 Open a new tab
+    `&lt;C-w&gt;&lt;A-h&gt;`        Move current tab left
+    `&lt;C-w&gt;&lt;A-l&gt;`        Move current tab right
+    `[t` / `]t`         Previous / next tab
+    `&gt;t` / `&lt;t`         Move current tab right / left
+
+                                              <a id="noethervim-tabline-bufferline" class="vimdoc-tag">*noethervim-tabline-bufferline*</a>
+Switching to a bufferline ~
+
+NoetherVim defaults to a tabline because tabs and buffers serve
+different purposes in Vim's model: tabs are layout viewports, buffers
+are open files. Reaching for a bufferline to manage open files often
+signals that a fuzzy-finder or |:ls| would be a more effective habit.
+That said, if you prefer a bufferline, replacing the tabline is
+straightforward. See the example in
+`templates/user/plugins/bufferline.example.lua`, or drop this into your
+`lua/user/plugins/` directory: &gt;lua
+    &#123; "akinsho/bufferline.nvim",
+      event = "UIEnter",
+      dependencies = "nvim-tree/nvim-web-devicons",
+      opts = &#123;&#125;,
+      config = function(_, opts)
+        require("bufferline").setup(opts)
+        -- Disable heirline's tabline so bufferline owns the area.
+        vim.o.tabline = ""
+        vim.o.showtabline = 2
+      end,
+    &#125;</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="10-commands">10. Commands</h2><a class="sl-anchor-link" href="#10-commands"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “10. Commands”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-commands" class="vimdoc-tag">*noethervim-commands*</a>
+
+`:NoetherVim` [subcommand]    Inspection and comparison commands.
+                              See <a href="#noethervim-inspect">|noethervim-inspect|</a> and <a href="#noethervim-diff">|noethervim-diff|</a>.
+                              Run with no subcommand to print the full
+                              subcommand list with descriptions.
+
+`:NoetherVim override`        Open the user override file corresponding to
+                              the current buffer's NoetherVim source file.
+                              Creates the file (and parent directories) if it
+                              does not exist, seeding it with minimal
+                              boilerplate. Opens the override in a vertical
+                              split so you can read the source alongside your
+                              customization.
+                              Path mapping:
+                                `plugins/&lt;name&gt;.lua`              -&gt; `user/plugins/&lt;name&gt;.lua`
+                                `bundles/&lt;cat&gt;/&lt;name&gt;.lua`        -&gt; `user/plugins/&lt;name&gt;.lua`
+                                `lsp/&lt;name&gt;.lua`                  -&gt; `user/lsp/&lt;name&gt;.lua`
+                                `options.lua` etc.                -&gt; `user/&lt;name&gt;.lua`
+                                `ftplugin/&lt;ft&gt;.lua`               -&gt; `&lt;config&gt;/ftplugin/&lt;ft&gt;.lua`
+                              For internal modules (util/, sources/) or files
+                              outside the NoetherVim tree, a warning is shown.
+
+                              For a plugin or bundle, the seeded file lists
+                              every repo string the upstream spec declares, as
+                              commented-out stubs. lazy.nvim merges by repo
+                              string, so those are the keys an override
+                              attaches to; uncomment the one you want.
+
+                              `:NoetherVim bundles` binds `&lt;C-o&gt;` to the same
+                              thing, so you can seed an override straight from
+                              the catalogue without opening the source first.
+
+`:NoetherVim override!`       Copy the upstream file wholesale instead of
+                              seeding stubs. A last resort, and the file says
+                              so in its own header: a full copy shadows every
+                              spec in the original, not just the ones you meant
+                              to change, so later upstream edits to any of them
+                              stop reaching you, and a copied
+                              `config = function()` no longer deep-merges the
+                              way `opts` does. An override that already exists
+                              is never overwritten, with or without the bang.
+
+                                                        <a id="noethervim-override-drift" class="vimdoc-tag">*noethervim-override-drift*</a>
+                              Both forms record which distribution file the
+                              override was written against, and a hash of its
+                              contents at that moment. The record lives in
+                              `stdpath('state')/noethervim/override-base.json`,
+                              never in the override itself: files under
+                              `lua/user/` are yours to rewrite, reformat or
+                              strip comments from, and a marker comment would
+                              stop working the moment you did.
+
+                              `:checkhealth noethervim` rehashes the upstream
+                              file and reports overrides whose upstream has
+                              moved on since, under "Override drift". Without
+                              it an upstream fix simply never arrives: the
+                              override keeps winning, and nothing says so.
+
+                              Compare one with `:NoetherVim diff` &#123;name&#125;,
+                              which opens upstream and your override side by
+                              side in diff mode. Once you have read the
+                              change, run `:NoetherVim override` again from
+                              the upstream file to re-baseline it and clear
+                              the warning. Deleting the override drops its
+                              record on the next health check.
+
+                              Overrides written by hand are not reported:
+                              there is no baseline to compare them against.
+                              Run `:NoetherVim override` from the upstream
+                              file to start tracking one.
+
+                              The record is per-machine. A configuration
+                              copied to a second machine arrives with no
+                              baselines, so nothing is reported there until
+                              an override is created or re-baselined on it.
+
+`:Reset[!]`                   Close all buffers, open dashboard.
+                              Use ! to force (discard unsaved changes).
+
+`:Redir` &#123;cmd&#125;                Redirect command or shell output to a
+                              scratch buffer. Example: `:Redir !ls -la`
+
+`:DiffOrig`                   Diff the current buffer against the file
+                              on disk. Opens a vertical split with the
+                              on-disk version and enters diff mode on
+                              both sides. Useful when the buffer has
+                              unsaved changes or the file was modified
+                              externally. Close the scratch split with
+                              `:q` when done.
+
+`:LuaSnipEdit`                Open a snippet file for the current filetype.
+                              See <a href="#noethervim-snippets">|noethervim-snippets|</a>.
+
+`:LuaSnipStop`                Stop every snippet in the buffer and clear
+                              LuaSnip's leftover marks. See
+                              <a href="#noethervim-snippet-stop">|noethervim-snippet-stop|</a>.
+
+`:LspRename`                  LSP rename with instance count notification.
+
+`:NoetherVimHighlightUnderCursor`
+                              Print every highlight layer covering the
+                              cursor: legacy syntax, treesitter
+                              captures, LSP semantic tokens, and ALL
+                              extmarks on the row (including virtual
+                              text from inlay hints, diagnostics,
+                              gitsigns blame, and nvim-dap-virtual-text).
+                              Useful for tweaking and debugging; the output
+                              names the exact group so you can override it in
+                              `user/highlights.lua`.
+
+Web search command: ~                                 <a id="noethervim-web-search" class="vimdoc-tag">*noethervim-web-search*</a>
+
+`:Search` &#123;query&#125;             Search the web with the current default engine.
+`:Search` &#123;engine&#125; &#123;query&#125;    Search the web with a specific engine.
+`:Search set` &#123;engine&#125;        Set the default search engine for this session.
+`:Search ?`                   Report the engine currently in use, with the
+                            full list of engines (the active one marked).
+                            `:Search set` with no engine does the same.
+
+Available engines: brave (default), duckduckgo, google, ecosia,
+github, startpage, reddit, stackoverflow, wikipedia, youtube.
+
+Tab-completion is available for engine names and the `set` / `?`
+subcommands.</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="11-completion-sources">11. Completion sources</h2><a class="sl-anchor-link" href="#11-completion-sources"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “11. Completion sources”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-completion" class="vimdoc-tag">*noethervim-completion*</a>
+
+NoetherVim uses blink.cmp for completion. The default keybindings are
+designed around a "Tab jumps snippets, C-n/p navigates the menu" model.
+See <a href="#noethervim-completion-custom">|noethervim-completion-custom|</a> below to change this.
+
+Default keybindings: ~
+                                              <a id="noethervim-completion-keys" class="vimdoc-tag">*noethervim-completion-keys*</a>
+  Insert mode: ~
+    `&lt;C-Space&gt;`   Show menu / toggle documentation.
+                  Falls back to native |i_CTRL-N| when blink is
+                  disabled (<a href="#noethervim-option-toggles">|noethervim-option-toggles|</a> `]oC`).
+    `&lt;C-n&gt;`       Next item
+    `&lt;C-p&gt;`       Previous item
+    `&lt;C-y&gt;`       Accept selected item
+    `&lt;C-e&gt;`       Dismiss menu
+    `&lt;Tab&gt;`       Jump to next snippet node (or expand snippet)
+    `&lt;S-Tab&gt;`     Jump to previous snippet node
+    `&lt;C-b&gt;`       Scroll documentation up
+    `&lt;C-f&gt;`       Scroll documentation down
+
+  Cmdline mode: ~
+    `&lt;Tab&gt;`       Select and insert next item (cycles through matches)
+    `&lt;S-Tab&gt;`     Select and insert previous item
+    `&lt;C-y&gt;`       Accept (inherited from insert mode)
+
+Tab key philosophy preset: ~
+                                            <a id="noethervim-completion-style" class="vimdoc-tag">*noethervim-completion-style*</a>
+Set `completion_style` in `lua/user/config.lua` to switch the entire Tab
+behaviour without writing any keymap overrides:
+
+    `"snippet"`   (default) Tab is reserved for LuaSnip jumps. Pick from
+                the menu with C-n/C-p and accept with C-y. Snippet
+                expansion and menu navigation never compete for Tab.
+    `"supertab"`  Tab accepts the highlighted item (auto-selecting the
+                top one if none is selected) and inserts a trailing
+                space. Falls back to snippet_forward, then to literal
+                Tab. IDE muscle memory.
+    `"navigate"` Tab cycles forward through the menu (= C-n) without
+                accepting; C-y or &lt;CR&gt; commits. S-Tab cycles backward.
+                Matches the classic nvim-cmp default and most VSCode
+                setups.
+
+Example: &gt;lua
+    -- lua/user/config.lua
+    return &#123; completion_style = "supertab" &#125;
+The two philosophies people mostly go for are "supertab" and "snippet". The
+"navigate" is here mostly for users coming from older nvim-cmp configs. You
+can accept AI completion (Copilot/Codeium) using Tab in AI plugin's
+accept_word in your `lua/user/keymaps.lua` to shadow whichever preset you
+picked.
+
+Customizing individual keys: ~
+                                           <a id="noethervim-completion-custom" class="vimdoc-tag">*noethervim-completion-custom*</a>
+Override in `user/plugins/` using opts merging. Each key maps to a list
+of actions; blink tries them in order and stops at the first that
+succeeds.
+
+Tab to accept (instead of snippet jump): &gt;lua
+    &#123; "saghen/blink.cmp", opts = &#123;
+        keymap = &#123;
+            ["&lt;Tab&gt;"]   = &#123; "accept", "snippet_forward", "fallback" &#125;,
+            ["&lt;S-Tab&gt;"] = &#123; "snippet_backward", "fallback" &#125;,
+        &#125;,
+    &#125; &#125;
+Enter to accept, Tab/S-Tab to navigate menu: &gt;lua
+    &#123; "saghen/blink.cmp", opts = &#123;
+        keymap = &#123;
+            ["&lt;CR&gt;"]    = &#123; "accept", "fallback" &#125;,
+            ["&lt;Tab&gt;"]   = &#123; "select_next", "fallback" &#125;,
+            ["&lt;S-Tab&gt;"] = &#123; "select_prev", "fallback" &#125;,
+        &#125;,
+    &#125; &#125;
+Use a blink preset (replaces all keymaps): &gt;lua
+    &#123; "saghen/blink.cmp", opts = &#123;
+        keymap = &#123; preset = "super-tab" &#125;,
+    &#125; &#125;
+Cmdline-only overrides (insert mode keymaps stay unchanged): &gt;lua
+    &#123; "saghen/blink.cmp", opts = &#123;
+        cmdline = &#123;
+            keymap = &#123;
+                preset = "inherit",
+                ["&lt;Tab&gt;"]   = &#123; "accept", "fallback" &#125;,
+            &#125;,
+        &#125;,
+    &#125; &#125;
+
+Custom completion sources: ~
+
+NoetherVim ships two custom blink.cmp completion sources.
+
+images ~
+    Triggered when the entire line is "." in a .tex file. Lists image
+    files from ./images/ and inserts a complete \begin&#123;figure&#125;...\end&#123;figure&#125;
+    block.
+
+todos ~
+    Triggered by typing "@" at the start of a line. Inserts a
+    language-appropriate comment prefix + keyword (TODO, FIXME, BUG, etc.).
+    Supported filetypes: lua, vim, tex, python, typescript, javascript.</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="12-health-check">12. Health check</h2><a class="sl-anchor-link" href="#12-health-check"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “12. Health check”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-health" class="vimdoc-tag">*noethervim-health*</a>
+
+Run `:checkhealth noethervim` to verify your setup. Checks include:
+
+- Required tools: git, rg (ripgrep), fd
+- Optional tools: node, zoxide, lazygit, tree-sitter
+- Terminal: true colour, `&lt;S-CR&gt;` support, Nerd Font (heuristic, see below)
+- LaTeX toolchain (if latex bundle enabled)
+- Template version: warns if your init.lua is outdated
+- Override drift: warns when a file you overrode has changed upstream
+  (see <a href="#noethervim-override-drift">|noethervim-override-drift|</a>)
+- User override status: lists loaded user modules
+- Configuration: user config dir, plugin dir, vault paths
+- Active bundles, spec errors, option drift, override conflicts
+- LSP servers and feature flags
+
+                                                  <a id="noethervim-health-terminal" class="vimdoc-tag">*noethervim-health-terminal*</a>
+About the terminal section: ~
+
+These results are a guess. A terminal cannot be asked what it supports,
+so the check goes by `$TERM` and `$TERM_PROGRAM`, both of which can be
+wrong, especially through a multiplexer. An unrecognised terminal is
+reported as unknown rather than broken.
+
+What it is checking for is whether `&lt;S-CR&gt;` arrives as its own key
+instead of a plain `&lt;CR&gt;`. Several keymaps need that, notably the
+list-continuation and environment-aware `&lt;S-CR&gt;` bindings. Terminals
+known to support it include kitty, Ghostty, WezTerm, Alacritty, foot and
+iTerm2 3.5+. Apple Terminal does not. To test it yourself, press `&lt;S-CR&gt;`
+in insert mode inside a markdown list: a new list item means it works.
+
+Under tmux, add `set -g extended-keys on`, otherwise `&lt;S-CR&gt;` never
+reaches Neovim regardless of the terminal.
+
+Nerd Font presence cannot be detected at all. The check prints sample
+glyphs instead; if they render as boxes, the font is missing.</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="13-faq">13. FAQ</h2><a class="sl-anchor-link" href="#13-faq"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “13. FAQ”</span></a></div>
+<div class="vimdoc-reference"><a id="noethervim-faq" class="vimdoc-tag">*noethervim-faq*</a> <a id="neothervim-faq" class="vimdoc-tag">*neothervim-faq*</a>
+
+Q: How do I add a new LSP server?~
+A: Create `lua/user/lsp/&lt;server&gt;.lua` with `vim.lsp.config()` and
+   `vim.lsp.enable()` calls. Add the server to Mason's ensure_installed
+   via a plugin override:
+&gt;lua
+    &#123; "neovim/nvim-lspconfig",
+      opts = &#123; ensure_installed = &#123; "lua_ls", "basedpyright", ..., "gopls" &#125; &#125; &#125;
+   `ensure_installed` is an array, so the table-form override REPLACES
+   the distro list, so include every server you want loaded. To extend
+   the distro list instead, see <a href="#noethervim-user-plugins-arrays">|noethervim-user-plugins-arrays|</a>.
+
+Q: How do I add a linter?~
+A: NoetherVim uses nvim-lint alongside conform.nvim. Most linting is
+   provided by LSP servers; nvim-lint fills the gap for non-LSP tools.
+   Add linters via opts override in `user/plugins/`:
+&gt;lua
+    &#123; "mfussenegger/nvim-lint",
+      opts = &#123; linters_by_ft = &#123; sh = &#123; "shellcheck" &#125;, yaml = &#123; "yamllint" &#125; &#125; &#125; &#125;
+   `linters_by_ft.&lt;ft&gt;` is also an array; same caveat applies. See
+   <a href="#noethervim-user-plugins-arrays">|noethervim-user-plugins-arrays|</a>.
+
+Q: How do I install a formatter or debugger?~
+A: Both are managed by Mason, the same as LSP servers. Use `:Mason`
+   to browse and install interactively. Formatters referenced by
+   conform are installed automatically:
+&gt;lua
+    &#123; "stevearc/conform.nvim",
+      opts = &#123; formatters_by_ft = &#123; sh = &#123; "shfmt" &#125; &#125; &#125; &#125;
+   For debuggers, enable the `debug` bundle plus the bundle for the
+   language you are debugging: `languages.python` brings debugpy,
+   `languages.go` brings delve, `languages.web-dev` brings
+   vscode-js-debug. Neither half installs a debugger on its own, so
+   enabling `debug` alone costs nothing but the UI.
+
+Q: Does NoetherVim format on save?~
+A: No; auto-formatting is deliberately off. Use `&lt;Leader&gt;ff` for
+   explicit formatting (conform.nvim with LSP fallback). To opt into
+   save-time formatting, override conform in `user/plugins/`:
+&gt;lua
+    &#123; "stevearc/conform.nvim",
+      opts = &#123;
+        format_on_save = &#123; timeout_ms = 500, lsp_format = "fallback" &#125;,
+      &#125; &#125;
+
+Q: How do I change a picker keymap?~
+A: NoetherVim uses snacks.picker as the core UI. Default picker keymaps live
+   in bundles (e.g. `bundles/languages/latex.lua`) or core plugin files (e.g.
+   `plugins/snacks.lua`). Override them in `user/keymaps.lua` or by specifying
+   `keys` in your plugin override spec.
+
+Q: Why does my override have no effect?~
+A: Check `:NoetherVim status` to verify your files are loaded. Check
+   `:NoetherVim diff keymaps` or `:NoetherVim diff options` to see what
+   changed. If using `NOETHERVIM_NO_USER`, your overrides are disabled.
+
+Q: How do I completely replace a plugin's config?~
+A: Specify `config = function(_, opts) ... end` in your override spec.
+   This replaces the upstream config entirely. Note in this case you
+   must call the plugin's setup yourself.
+
+Q: Can I disable a plugin from core or a bundle?~
+A: Use `cond = false` (or `enabled = false`) in your `user/plugins/` spec:
+&gt;lua
+    &#123; "some/plugin", cond = false &#125;
+   Both work: lazy.nvim resolves these on the merged plugin (last-write-
+   wins), and user fragments are always last. `cond = false` keeps the
+   plugin in lazy's disabled list (visible in `:Lazy`); `enabled = false`
+   removes it entirely.
+
+   For bundles, comment out the bundle's `import` line in your
+   init.lua to disable the entire bundle.
+
+Q: Why doesn't `p` paste from my system clipboard?~
+A: By design. NoetherVim keeps `y` and `p` bound to Vim's unnamed
+   register so transient edits (`ddp`, `xp`, `ciwp`) don't go to the
+   OS clipboard. By default, there are keybindings for when you want the
+   system clipboard:
+
+    Normal, Visual           &lt;leader&gt;y / &lt;leader&gt;Y   yank (motion / line)
+                             &lt;leader&gt;p / &lt;leader&gt;P   paste (after / before)
+    Visual                   Y / P                    shorthand yank / paste
+    Insert                   &lt;C-v&gt;                    paste (see caveat)
+    Cmdline                  &lt;C-y&gt;                    yank cmdline to clipboard
+                             &lt;C-r&gt;*                   insert clipboard (built-in)
+    Any mode (nvim defualt)  "*y  / "*p               unmapped register access
+   To opt into the "everything through OS clipboard" default,
+   override in `lua/user/options.lua`:
+&gt;lua
+    vim.o.clipboard = "unnamedplus"
+   Caveat: insert `&lt;C-v&gt;` shadows Vim's "insert next char literally"
+   default. Substitutes:
+     - `&lt;C-q&gt;`: literal-insert in most terminals
+     - `&lt;C-r&gt;+`: insert clipboard register literally
+     - cmdline `&lt;C-v&gt;&#123;char&#125;` is unshadowed; pairs well with `:verbose`
+       when introspecting keymaps that contain literal control
+       sequences
+
+Q: How do I change the default colorscheme?~
+A: Set `colorscheme` in `lua/user/config.lua`:
+&gt;lua
+    -- lua/user/config.lua
+    return &#123; colorscheme = "tokyonight" &#125;
+   When the `colorscheme` bundle is enabled, your SearchLeader+C pick
+   is persisted and takes priority over the configured default on
+   subsequent launches. To reset the saved pick, delete
+   `stdpath("data") .. "/noethervim_colorscheme"`.
+
+Q: Why is spell check on in markdown / tex / gitcommit files?~
+A: Writing filetypes (tex, markdown, norg, text, gitcommit, rst, typst)
+   get a "writing profile" that enables wrap, linebreak, spell, and
+   `conceallevel = 2`. See <a href="#noethervim-filetype-profiles">|noethervim-filetype-profiles|</a> for the
+   full picture. Toggle spell per buffer with `[os` / `]os`. To
+   disable the profile entirely, clear the augroup in
+   `lua/user/autocmds.lua`:
+&gt;lua
+    vim.api.nvim_create_augroup("noethervim_writing", &#123; clear = true &#125;)
+
+Q: How do I restore my last session?~
+A: Sessions auto-save per working directory via persistence.nvim.
+   From the dashboard, press `r`. From anywhere else:
+&gt;vim
+    :lua require("persistence").load(&#123; last = true &#125;)
+   Omit `&#123; last = true &#125;` to load the session for the current CWD
+   instead of the most recent one.
+
+Q: I typed `:NeotherVim` and it worked?~
+A: Yes. Years of typing `neo-` will do that. The alias is there so you
+   don't have to think about it. `:help neothervim` and
+   `:checkhealth neothervim` work too. I did consider
+   naming the distribution `NeotherVim`, but this felt it would
+   inadvertently induce the Mandela-effect forevermore on the
+   reading of the name `Noether`.
+
+Q: What is vim-abolish and how do I use it?~
+A: NoetherVim ships a fork of vim-abolish that adds context-aware
+   expansion. The fork exposes three features:
+   1. `:Subvert`: case-preserving find/replace (facility-&gt;building
+      preserves Facility-&gt;Building, FACILITY-&gt;BUILDING)
+   2. `:Abolish`: smart auto-correct (`:Abolish teh the` corrects all
+      case variants in insert mode)
+   3. Coercion operators: `crs` snake_case, `crm` MixedCase,
+      `crc` camelCase, `cru` UPPER_CASE, `cr-` dash-case
+   Add personal typo corrections in `lua/user/plugins/abolish.lua`.
+
+   Context gating: in code buffers, :Abolish corrections only fire when
+   the cursor is inside a comment or @spell-tagged region (typical
+   string content). Prose buffers (tex, markdown, ...) always expand.
+   Use `[oA` to force unconditional expansion in the current buffer
+   and `]oA` to return to context-gated. To opt a specific :Abolish
+   line out of gating entirely, pass `-expr=` explicitly:
+        `:Abolish -expr= teh the` always expands
+
+Q: Can I make my `leader` and `searchleader` the same?~
+A: Yes; simply map both to the same key in your `init.lua` file. You can map
+   your LocalLeader to the same key as well.</div></div><footer class="sl-flex astro-xhxjzfa7"><div class="meta sl-flex astro-xhxjzfa7"></div><div class="pagination-links print:hidden astro-jgq3vlii" dir="ltr"><a href="/noethervim/guides/managing/" rel="prev" class="astro-jgq3vlii"><svg aria-hidden="true" class="astro-jgq3vlii astro-n5k4ipy7" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-jgq3vlii">Previous<br class="astro-jgq3vlii"><span class="link-title astro-jgq3vlii">Managing your install</span></span></a></div></footer></div></div></main></div></div></div></div></body></html>
