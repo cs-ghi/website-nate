@@ -399,6 +399,15 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateCoreProbability -> NateProbability) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCoreProbability",
+      "NateProbability"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateLinearPDE -> NateNonlinearWave) is manual, no backing \\cite found.",
     "refs": [
       "NateLinearPDE",
