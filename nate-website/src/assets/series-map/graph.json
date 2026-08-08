@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-08-08",
     "bookCount": 50,
-    "edgeCount": 367,
+    "edgeCount": 368,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 115
+      "info": 116
     },
     "tiers": [
       {
@@ -137,7 +137,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.463,
+      "xAffinity": -0.462,
       "tier": 2
     },
     {
@@ -153,7 +153,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-analytic-number-theory.pdf&name=Analytic%20Number%20Theory&source=books"
       },
       "lastUpdated": "2026-07-06",
-      "xAffinity": -0.062,
+      "xAffinity": -0.059,
       "tier": 3
     },
     {
@@ -170,7 +170,7 @@
         "pdf": "calculus/EYNTKA-calculus.pdf"
       },
       "lastUpdated": "2026-07-30",
-      "xAffinity": 0.131,
+      "xAffinity": 0.139,
       "tier": 0
     },
     {
@@ -261,7 +261,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_complex_analysis.pdf&name=Complex%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.062,
+      "xAffinity": -0.059,
       "tier": 1
     },
     {
@@ -297,7 +297,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-probability.pdf&name=Core%20Probability&source=books"
       },
       "lastUpdated": "2026-08-05",
-      "xAffinity": 0.495,
+      "xAffinity": 0.686,
       "tier": 1
     },
     {
@@ -369,7 +369,7 @@
         "pdf": "elementary-analysis/EYNTKA-elementary-analysis.pdf"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.495,
+      "xAffinity": 0.53,
       "tier": 0
     },
     {
@@ -387,7 +387,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
       },
       "lastUpdated": "2026-07-22",
-      "xAffinity": -0.532,
+      "xAffinity": -0.531,
       "tier": 3
     },
     {
@@ -454,7 +454,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-geo-rep-theory.pdf&name=Algebraic%20Groups%20and%20Representations&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.361,
+      "xAffinity": -0.36,
       "tier": 3
     },
     {
@@ -594,7 +594,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-algebra.pdf&name=Linear%20Algebra&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": 0.429,
+      "xAffinity": 0.431,
       "tier": 0
     },
     {
@@ -610,7 +610,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-pde.pdf&name=Linear%20Elliptic%20and%20Parabolic%20PDE&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.441,
+      "xAffinity": 0.442,
       "tier": 2
     },
     {
@@ -677,7 +677,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Analysis%20on%20Metric%20and%20Function%20Spaces&source=books"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": 0.344,
+      "xAffinity": 0.352,
       "tier": 0
     },
     {
@@ -726,7 +726,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20PDE&source=books"
       },
       "lastUpdated": "2026-07-20",
-      "xAffinity": 0.243,
+      "xAffinity": 0.245,
       "tier": 3
     },
     {
@@ -744,7 +744,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.286,
+      "xAffinity": 0.292,
       "tier": 1
     },
     {
@@ -777,7 +777,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
       },
       "lastUpdated": "2026-07-18",
-      "xAffinity": 1,
+      "xAffinity": 0.843,
       "tier": 2
     },
     {
@@ -828,7 +828,7 @@
         "pdf": "several-complex-variables/EYNTKA-several-complex-variables.pdf"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": 0.469,
+      "xAffinity": 0.47,
       "tier": 3
     },
     {
@@ -845,7 +845,7 @@
         "pdf": "shimura-varieties/EYNTKA-shimura-varieties.pdf"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.411,
+      "xAffinity": -0.41,
       "tier": 4
     },
     {
@@ -862,7 +862,7 @@
         "pdf": "statistics/EYNTKA-statistics.pdf"
       },
       "lastUpdated": "2026-07-18",
-      "xAffinity": 1,
+      "xAffinity": 0.843,
       "tier": 3
     },
     {
@@ -4369,6 +4369,13 @@
         "probability/drafts/scratch/ch07-s05.tex",
         "probability/drafts/whatnext.tex"
       ]
+    },
+    {
+      "source": "NateProbability",
+      "target": "NateCoreProbability",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateProbability",
