@@ -213,6 +213,9 @@ and Neovim will not let you abandon it unsaved.</li>
 <li><strong><code dir="auto">-</code></strong>: highlights every instance of the word under the cursor and reports
 how many there are, leaving the cursor where it was. <code dir="auto">*</code> does the highlight
 but moves to the next match.</li>
+<li><code dir="auto">&lt;c-l&gt;</code> in insert mode in a buffer with writing (latex, markdown, etc.) will auto-fix the last
+spelling mistake: if you wrote <code dir="auto">helllo world |</code> and press <code dir="auto">&lt;c-l&gt;</code> when at <code dir="auto">|</code> then it will give you
+<code dir="auto">hello world |</code> and bring you back to the same cursor position.</li>
 <li><strong><code dir="auto">[f</code> and <code dir="auto">]f</code></strong>: previous and next file in the current directory,
 alphabetically, wrapping at the ends. Useful for numbered or dated files:
 chapters, notes, migrations.</li>
