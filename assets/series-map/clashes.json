@@ -18,14 +18,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateRealAut' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateRealAut"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NateGeometricAnalysis' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateGeometricAnalysis"
@@ -210,6 +202,24 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay coreq (NateRiemannianGeometry -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateComplexAnalyticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay coreq (NateMicrolocalAnalysis -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateMicrolocalAnalysis",
+      "NateComplexAnalyticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay coreq (NateLinAlg -> NateCoreRepTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLinAlg",
@@ -372,6 +382,15 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateCalcOnManifolds -> NateDiffTop) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCalcOnManifolds",
+      "NateDiffTop"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateCalculus -> NateComplexAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateCalculus",
@@ -480,19 +499,91 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateComplexAnalysis -> NateSeveralComplexVariables) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateComplexAnalysis -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
     "refs": [
       "NateComplexAnalysis",
-      "NateSeveralComplexVariables"
+      "NateComplexAnalyticGeometry"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateFuncAnalysis -> NateSeveralComplexVariables) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateFuncAnalysis -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
     "refs": [
       "NateFuncAnalysis",
-      "NateSeveralComplexVariables"
+      "NateComplexAnalyticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateDiffTop -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateDiffTop",
+      "NateComplexAnalyticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgTop -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgTop",
+      "NateComplexAnalyticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgGeo -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgGeo",
+      "NateComplexAnalyticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCommAlg -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCommAlg",
+      "NateComplexAnalyticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateComplexAnalyticGeometry -> NateHodgeTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateComplexAnalyticGeometry",
+      "NateHodgeTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateComplexAnalyticGeometry -> NateAbelianVarieties) is manual, no backing \\cite found.",
+    "refs": [
+      "NateComplexAnalyticGeometry",
+      "NateAbelianVarieties"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateComplexAnalyticGeometry -> NateIntersectionTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateComplexAnalyticGeometry",
+      "NateIntersectionTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgKTheory -> NateIntersectionTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgKTheory",
+      "NateIntersectionTheory"
     ]
   },
   {
@@ -511,6 +602,24 @@
     "refs": [
       "NateHodgeTheory",
       "NateModuliStacks"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateGeoRepTheory -> NateShimuraVarieties) is manual, no backing \\cite found.",
+    "refs": [
+      "NateGeoRepTheory",
+      "NateShimuraVarieties"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCFT -> NateShimuraVarieties) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCFT",
+      "NateShimuraVarieties"
     ]
   },
   {
@@ -930,19 +1039,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateDiffTop -> NateLieGroups is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateDiffTop -> NateAlgTop is cited in 21 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateDiffTop",
-      "NateLieGroups"
+      "NateAlgTop"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateDiffTop -> NateAlgTop is cited in 21 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateDiffTop -> NateLieGroups is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateDiffTop",
-      "NateAlgTop"
+      "NateLieGroups"
     ]
   },
   {
@@ -1020,9 +1129,10 @@
   {
     "kind": "tier-unassigned",
     "severity": "info",
-    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateMetricFunctionSpaces. Add to overlay layout.tiers to curate.",
+    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateMetricFunctionSpaces. Add to overlay layout.tiers to curate.",
     "refs": [
       "NateCalcOnManifolds",
+      "NateComplexAnalyticGeometry",
       "NateMetricFunctionSpaces"
     ]
   }
