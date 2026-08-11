@@ -498,6 +498,15 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateIntersectionTheory -> NateHodgeTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateIntersectionTheory",
+      "NateHodgeTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateHodgeTheory -> NateModuliStacks) is manual, no backing \\cite found.",
     "refs": [
       "NateHodgeTheory",
