@@ -11,8 +11,14 @@
         
         <div class="nav-all-items" (click)="toggleMenu()" [class.collaspe]="!isMenuOpened" >
           <div class="nav-menu--links" *ngFor="let m of menu">
+            <!-- A `link` entry is deliberately not an Angular route: the
+                 NoetherVim docs are a separate static bundle and the CV is a
+                 PDF. Both leave the app, so both open in a new tab rather
+                 than tearing down the SPA you were browsing. `noopener` is
+                 implied by modern browsers for target=_blank, but stated so
+                 the guarantee does not depend on the browser. -->
             <div *ngIf="m?.link; else elseBlock">
-              <a [href]="m?.link" >
+              <a [href]="m?.link" target="_blank" rel="noopener">
                 <span> {{m?.name}} </span>
               </a>
             </div>
