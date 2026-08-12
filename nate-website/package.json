@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "gen:manifest": "node scripts/gen-pdf-manifest.js",
-    "prestart": "node scripts/gen-pdf-manifest.js",
+    "check:topics": "node scripts/check-book-topics.js",
+    "prestart": "node scripts/gen-pdf-manifest.js && node scripts/check-book-topics.js",
     "start": "ng serve",
-    "prebuild": "node scripts/gen-pdf-manifest.js",
+    "prebuild": "node scripts/gen-pdf-manifest.js && node scripts/check-book-topics.js",
     "build": "ng build",
     "prewatch": "node scripts/gen-pdf-manifest.js",
     "watch": "ng build --watch --configuration development",

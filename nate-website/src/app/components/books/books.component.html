@@ -113,7 +113,7 @@
                 <span class="hint-keys"><kbd>{{ modKey }}</kbd><kbd>K</kbd></span>
             </button>
 
-            <!-- Subject-track filter chips -->
+            <!-- Subject-topic filter chips -->
             <div class="book-chips">
                 <button class="book-chip" [class.active]="activeSection === 'all'"
                         (click)="selectSection('all')">All</button>
@@ -125,18 +125,25 @@
                 </button>
             </div>
 
-            <p *ngIf="searchQuery && !filteredSections.length" class="no-results">
-                No books match "{{ searchQuery }}".
+            <!-- Reading level (graph.json tiers), the second facet -->
+            <div class="level-chips">
+                <span class="level-caption">Level</span>
+                <button class="level-chip" [class.active]="activeTier === 'all'"
+                        (click)="selectTier('all')">All</button>
+                <button *ngFor="let t of tierChips"
+                        class="level-chip"
+                        [class.active]="activeTier === t.tier"
+                        (click)="selectTier(t.tier)">{{ t.label }}</button>
+            </div>
+
+            <p *ngIf="!filteredSections.length" class="no-results">
+                {{ emptyStateMessage }}
             </p>
 
-            <!-- One section per subject track -->
-            <section class="book-section" *ngFor="let section of filteredSections">
-                <div class="section-heading">
-                    <h3>{{ section.label }}</h3>
-                    <span class="section-count">{{ section.books.length }}</span>
-                </div>
-
-                <div class="books-info book-row" *ngFor="let book of section.books"
+            <!-- One book row; shared by a topic's own books and its cross-listings. -->
+            <ng-template #bookRows let-books let-cross="cross">
+                <div class="books-info book-row" *ngFor="let book of books"
+                     [class.cross-listed]="cross"
                      [class.nav-highlighted]="searchFocused && book === highlightedItem">
                     <div class="row flexx book-click" (click)="handleBookClick(book)">
                         <div class="col-sm-3">
@@ -147,6 +154,11 @@
                                     <span class="status-dot"></span>{{ book.status }}
                                 </span>
                                 <span *ngIf="book.tierLabel" class="badge tier">{{ book.tierLabel }}</span>
+                                <span *ngIf="book.volumeLabel" class="badge volume"
+                                      [title]="'Also compiled into the ' + book.volumeLabel + ' volume'">
+                                    in {{ book.volumeLabel }}
+                                </span>
+                                <span *ngIf="cross" class="badge cross">filed under {{ book.sectionLabel }}</span>
                                 <span *ngIf="book.lastUpdated" class="badge date">
                                     Updated {{ book.lastUpdated | date:'MMM d, y' }}
                                 </span>
@@ -158,6 +170,28 @@
                     </div>
                     <mat-divider class="divider-table"></mat-divider>
                 </div>
+            </ng-template>
+
+            <!-- One section per subject topic -->
+            <section class="book-section" *ngFor="let section of filteredSections">
+                <div class="section-heading">
+                    <h3>{{ section.label }}</h3>
+                    <span class="section-count">{{ section.books.length }}</span>
+                </div>
+                <p *ngIf="showAlso" class="section-blurb">{{ section.blurb }}</p>
+
+                <ng-container *ngTemplateOutlet="bookRows; context: { $implicit: section.books }"></ng-container>
+
+                <!-- Cross-listed: shelved under another subject, but this topic
+                     is a secondary one for them. Only worth showing once the
+                     reader has narrowed to a single topic. -->
+                <ng-container *ngIf="showAlso && section.alsoBooks.length">
+                    <div class="also-heading">
+                        <span>Also relevant</span>
+                        <span class="also-note">shelved under another subject</span>
+                    </div>
+                    <ng-container *ngTemplateOutlet="bookRows; context: { $implicit: section.alsoBooks, cross: true }"></ng-container>
+                </ng-container>
             </section>
         <!-- Admin: raw PDF listing (visible when authenticated) -->
         <div *ngIf="isAuthenticated" class="raw-pdfs-section">

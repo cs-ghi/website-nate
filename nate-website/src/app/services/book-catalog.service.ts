@@ -4,40 +4,30 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Book, BookSection } from '../interfaces/books.model';
 import { CURATED_BY_PDF } from '../components/books/book-descriptions';
+import { BOOK_TOPICS, TOPICS, TOPIC_LABELS } from '../components/books/book-topics';
 
 // Single source of truth for the textbooks page: the series-map graph, which is
 // regenerated from the actual .tex sources and synced into assets/. Carries
-// per-book status, last-updated date, tier and subject-track membership. See
+// per-book status, last-updated date, tier and cluster membership. See
 // SeriesMapComponent for how the same file feeds the graph viewer.
 const GRAPH_URL = 'assets/series-map/graph.json';
 
-// Megabooks (a compiled volume + its sub-books). Their parent node itself carries
-// no cluster, so it's assigned to its own section by id.
-const MEGABOOK_IDS = new Set(['NateAlgebra', 'NateRealAnalysis']);
-
-// A book may carry 0..n clusters; assign it to exactly one section by this
-// priority (megabooks first so each compiled series stays together, then
-// thematic tracks by specificity), else "other".
-const SECTION_PRIORITY = [
-  'NateAlgebra', 'NateRealAnalysis',
-  'langlands', 'arithmetic-geometry', 'hodge', 'k-theory', 'analysis-pde',
-];
-
-// Order the section headers / chips appear in on the page.
-const SECTION_ORDER = [
-  'NateAlgebra', 'NateRealAnalysis', 'analysis-pde', 'arithmetic-geometry',
-  'langlands', 'hodge', 'k-theory', 'other',
-];
-
-const SECTION_LABELS: Record<string, string> = {
+// Megabooks (a compiled volume + its sub-books). Grouping is by SUBJECT, so a
+// volume's parts land in whichever topic each part is about — Algebraic Number
+// Theory under Number Theory, Classical Algebraic Geometry under Algebraic
+// Geometry — and the volume link survives as a per-row badge instead.
+const MEGABOOK_LABELS: Record<string, string> = {
   NateAlgebra: 'Algebra',
-  NateRealAnalysis: 'Analysis',
-  'analysis-pde': 'Analysis & PDE',
-  'arithmetic-geometry': 'Arithmetic Geometry',
-  langlands: 'Langlands Programme',
-  hodge: 'Geometry & Hodge Theory',
-  'k-theory': 'K-theory',
-  other: 'Other Topics',
+  NateRealAnalysis: 'Real Analysis',
+};
+
+// Books with no entry in BOOK_TOPICS land here. scripts/check-book-topics.js
+// fails the build before this can reach production; the bucket exists so local
+// dev degrades visibly rather than dropping a book off the page.
+const UNCLASSIFIED = {
+  key: 'unclassified',
+  label: 'Unclassified',
+  blurb: 'No topic assigned — see book-topics.ts.',
 };
 
 interface GraphNode {
@@ -70,20 +60,23 @@ export class BookCatalogService {
 
   constructor(private http: HttpClient) {}
 
-  private sectionKeyFor(n: GraphNode): string {
-    if (MEGABOOK_IDS.has(n.id)) return n.id;
-    for (const key of SECTION_PRIORITY) {
-      if ((n.clusters ?? []).includes(key)) return key;
-    }
-    return 'other';
+  // The compiled volume a book is a part of, if any. A megabook's own node is
+  // the cluster id, so exclude it or the volume would badge itself.
+  private volumeLabelFor(n: GraphNode): string | undefined {
+    const parent = (n.clusters ?? []).find(
+      (c) => c !== n.id && MEGABOOK_LABELS[c] !== undefined,
+    );
+    return parent ? MEGABOOK_LABELS[parent] : undefined;
   }
 
   // Curated prose + link win over graph.json (whose links are occasionally
-  // mis-cased); everything else — name, status, date, tier, section — is graph's.
+  // mis-cased); everything else — name, status, date, tier — is graph's.
   private toBook(n: GraphNode, tierLabels: string[]): Book {
     const curated = CURATED_BY_PDF[pdfBasename(n.links?.pdf)];
-    const sectionKey = this.sectionKeyFor(n);
+    const topic = BOOK_TOPICS[n.id];
+    const key = topic?.primary ?? UNCLASSIFIED.key;
     return {
+      id: n.id,
       name: n.title,
       desc: curated?.desc ?? cleanDesc(n.description ?? ''),
       link: curated?.link ?? `././assets/pdfs/books/${n.links?.pdf?.split('/').pop() ?? ''}`,
@@ -92,45 +85,48 @@ export class BookCatalogService {
       lastUpdated: n.lastUpdated,
       tier: n.tier,
       tierLabel: n.tier != null ? tierLabels[n.tier] : undefined,
-      section: sectionKey,
-      sectionLabel: SECTION_LABELS[sectionKey],
+      section: key,
+      sectionLabel: TOPIC_LABELS[key] ?? UNCLASSIFIED.label,
+      alsoTopics: topic?.also ?? [],
+      volumeLabel: this.volumeLabelFor(n),
       webUrl: n.links?.web,
     };
   }
 
-  // Live (web-published, non-planned) books grouped into subject-track sections,
-  // sections in SECTION_ORDER, each compiled megabook leading its section,
-  // otherwise ordered by tier then title (the learning ladder within a section).
+  // Within a topic, the learning ladder: tier ascending, a compiled volume ahead
+  // of its own parts at equal tier, then the curated within-tier rank, then
+  // alphabetical.
+  private ladder(a: Book, b: Book): number {
+    return (
+      (a.tier ?? 99) - (b.tier ?? 99) ||
+      (MEGABOOK_LABELS[a.id!] ? 0 : 1) - (MEGABOOK_LABELS[b.id!] ? 0 : 1) ||
+      (BOOK_TOPICS[a.id!]?.rank ?? 99) - (BOOK_TOPICS[b.id!]?.rank ?? 99) ||
+      a.name.localeCompare(b.name)
+    );
+  }
+
+  // Live (web-published, non-planned) books grouped into subject-topic sections
+  // in TOPICS order. Each book appears in exactly one section — its primary
+  // topic — and additionally in the `alsoBooks` of every topic it serves, which
+  // the page reveals only when that topic is the active filter.
   readonly sections$: Observable<BookSection[]> = this.graph$.pipe(
     map((g) => {
       const tierLabels = g.meta.tiers.map((t) => t.label);
-      const live = g.nodes.filter(
-        (n) => n.webPublished && n.status !== 'planned',
-      );
+      const live = g.nodes
+        .filter((n) => n.webPublished && n.status !== 'planned')
+        .map((n) => this.toBook(n, tierLabels));
 
-      const buckets = new Map<string, GraphNode[]>();
-      for (const n of live) {
-        const key = this.sectionKeyFor(n);
-        (buckets.get(key) ?? buckets.set(key, []).get(key)!).push(n);
-      }
-
-      const sections: BookSection[] = [];
-      for (const key of SECTION_ORDER) {
-        const nodes = buckets.get(key);
-        if (!nodes?.length) continue;
-        nodes.sort(
-          (a, b) =>
-            (MEGABOOK_IDS.has(a.id) ? 0 : 1) - (MEGABOOK_IDS.has(b.id) ? 0 : 1) ||
-            (a.tier ?? 99) - (b.tier ?? 99) ||
-            a.title.localeCompare(b.title),
-        );
-        sections.push({
-          key,
-          label: SECTION_LABELS[key],
-          books: nodes.map((n) => this.toBook(n, tierLabels)),
-        });
-      }
-      return sections;
+      const defs = [...TOPICS, UNCLASSIFIED];
+      const sections = defs.map((t) => ({
+        key: t.key,
+        label: t.label,
+        blurb: t.blurb,
+        books: live.filter((b) => b.section === t.key).sort((x, y) => this.ladder(x, y)),
+        alsoBooks: live
+          .filter((b) => (b.alsoTopics ?? []).includes(t.key))
+          .sort((x, y) => this.ladder(x, y)),
+      }));
+      return sections.filter((s) => s.books.length);
     }),
     shareReplay(1),
   );

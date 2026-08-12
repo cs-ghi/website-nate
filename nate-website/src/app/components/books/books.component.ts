@@ -41,16 +41,18 @@ function entryScore(query: string, name: string, desc: unknown): number {
 export class BooksComponent implements OnInit {
   @ViewChild('searchInput') searchInput?: ElementRef<HTMLInputElement>;
 
-  // Live catalog, grouped into subject-track sections, from BookCatalogService
-  // (series-map graph.json). See the service for the grouping rules.
+  // Live catalog, grouped into subject-topic sections, from BookCatalogService
+  // (series-map graph.json + book-topics.ts). See the service for the rules.
   allSections: BookSection[] = [];
 
   notesExpanded = false;   // Overview "Notes & caveats" block, collapsed by default
   searchQuery = '';
-  activeSection = 'all';   // selected filter chip ('all' or a section key)
+  activeSection = 'all';   // selected topic chip ('all' or a topic key)
+  activeTier: number | 'all' = 'all';   // selected reading-level chip
 
-  // Sections surviving the current search (chip-independent) — drives the chip
-  // counts — and the sections after also applying the active chip (what renders).
+  // Sections surviving the current search + level (topic-chip-independent) —
+  // drives the chip counts — and the sections after also applying the active
+  // topic chip (what renders).
   queryMatched: BookSection[] = [];
   filteredSections: BookSection[] = [];
 
@@ -104,14 +106,29 @@ export class BooksComponent implements OnInit {
     }
   }
 
-  // Chips: one per section, in the catalog's display order, plus the "All" chip
+  // Chips: one per topic, in the catalog's display order, plus the "All" chip
   // rendered separately in the template.
   get sectionChips(): { key: string; label: string }[] {
     return this.allSections.map(s => ({ key: s.key, label: s.label }));
   }
 
-  // Books matching the current query within a section (chip-independent), so the
-  // chip counts reflect the search.
+  // Reading levels present in the live catalog, in tier order. Derived rather
+  // than hardcoded so a tier with no published book never gets a dead chip.
+  get tierChips(): { tier: number; label: string }[] {
+    const seen = new Map<number, string>();
+    for (const s of this.allSections) {
+      for (const b of s.books) {
+        if (b.tier != null && b.tierLabel) seen.set(b.tier, b.tierLabel);
+      }
+    }
+    return [...seen.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .map(([tier, label]) => ({ tier, label }));
+  }
+
+  // Books matching the current query + level within a topic (topic-chip-
+  // independent), so the chip counts reflect both filters. Counts the topic's
+  // primary members only — the same number the section heading shows.
   countFor(key: string): number {
     return this.queryMatched.find(s => s.key === key)?.books.length ?? 0;
   }
@@ -121,17 +138,36 @@ export class BooksComponent implements OnInit {
     this.recompute();
   }
 
+  selectTier(tier: number | 'all'): void {
+    this.activeTier = tier;
+    this.recompute();
+  }
+
+  // Cross-listed books ("Also relevant") are noise in the all-topics view,
+  // where every book is already on screen under its own subject. They earn
+  // their place only once the reader has narrowed to one topic.
+  get showAlso(): boolean {
+    return this.activeSection !== 'all';
+  }
+
   onSearchChange(): void {
     this.recompute();
   }
 
-  // Recompute the visible sections from the query + active chip, ranked by
-  // relevance. Memoized into fields (rather than getters) so object identity
-  // stays stable for the keyboard-highlight comparison.
+  // Recompute the visible sections from the query + level + active topic chip,
+  // ranked by relevance. Memoized into fields (rather than getters) so object
+  // identity stays stable for the keyboard-highlight comparison.
   private recompute(): void {
     const q = this.searchQuery.trim();
+    const sift = (books: Book[]): Book[] => {
+      const atLevel = this.activeTier === 'all'
+        ? books
+        : books.filter(b => b.tier === this.activeTier);
+      return q ? this.rank(atLevel, q) : atLevel;
+    };
+
     this.queryMatched = this.allSections
-      .map(s => ({ ...s, books: q ? this.rank(s.books, q) : s.books }))
+      .map(s => ({ ...s, books: sift(s.books), alsoBooks: sift(s.alsoBooks) }))
       .filter(s => s.books.length);
     this.filteredSections = this.queryMatched
       .filter(s => this.activeSection === 'all' || s.key === this.activeSection);
@@ -148,7 +184,9 @@ export class BooksComponent implements OnInit {
 
   // Flat list of keyboard-navigable entries, in display order.
   get navItems(): Book[] {
-    return this.filteredSections.flatMap(s => s.books);
+    return this.filteredSections.flatMap(
+      s => this.showAlso ? [...s.books, ...s.alsoBooks] : s.books,
+    );
   }
 
   onSearchFocus(): void {
@@ -184,6 +222,20 @@ export class BooksComponent implements OnInit {
   clearSearch(): void {
     this.searchQuery = '';
     this.recompute();
+  }
+
+  // Shown when the filter combination is empty, naming whichever of the three
+  // filters is actually responsible rather than a generic "no results".
+  get emptyStateMessage(): string {
+    const q = this.searchQuery.trim();
+    const level = this.tierChips.find(t => t.tier === this.activeTier)?.label;
+    const topic = this.allSections.find(s => s.key === this.activeSection)?.label;
+    const parts = [
+      q ? `matching "${q}"` : '',
+      topic ? `in ${topic}` : '',
+      level ? `at the ${level} level` : '',
+    ].filter(Boolean);
+    return `No books ${parts.join(' ')}.`;
   }
 
   // Hidden (admin) raw PDFs filtered by the same query, ranked by relevance.
