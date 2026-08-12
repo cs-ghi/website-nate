@@ -2,6 +2,14 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateToposTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateToposTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NatePadicHodge' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NatePadicHodge"
@@ -494,6 +502,24 @@
     "refs": [
       "NateAlgTop",
       "NateHigherCategoryTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCategoryTheory -> NateToposTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCategoryTheory",
+      "NateToposTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLogic -> NateToposTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLogic",
+      "NateToposTheory"
     ]
   },
   {
@@ -1129,11 +1155,12 @@
   {
     "kind": "tier-unassigned",
     "severity": "info",
-    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateMetricFunctionSpaces. Add to overlay layout.tiers to curate.",
+    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateMetricFunctionSpaces, NateToposTheory. Add to overlay layout.tiers to curate.",
     "refs": [
       "NateCalcOnManifolds",
       "NateComplexAnalyticGeometry",
-      "NateMetricFunctionSpaces"
+      "NateMetricFunctionSpaces",
+      "NateToposTheory"
     ]
   }
 ]
