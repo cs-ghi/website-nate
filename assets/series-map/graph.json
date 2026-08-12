@@ -6,7 +6,7 @@
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 129
+      "info": 132
     },
     "tiers": [
       {
@@ -99,7 +99,7 @@
         "pdf": "algebraic-k-theory/EYNTKA-algebraic-k-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-k-theory.pdf&name=Algebraic%20K-Theory&source=books"
       },
-      "lastUpdated": "2026-08-11",
+      "lastUpdated": "2026-08-12",
       "xAffinity": -0.525,
       "tier": 3
     },
@@ -293,7 +293,7 @@
         "pdf": "core-algebra/EYNTKA-core-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-algebra.pdf&name=Core%20Algebra&source=books"
       },
-      "lastUpdated": "2026-07-16",
+      "lastUpdated": "2026-08-12",
       "xAffinity": -1,
       "tier": 1
     },
@@ -513,7 +513,7 @@
       "id": "NateHomologicalAlg",
       "title": "Homological Algebra",
       "dir": "homological-algebra",
-      "description": "abelian/triangulated categories, derived functors, spectral sequences.",
+      "description": "abelian categories, localization of categories and the derived category, derived functors (Ext/Tor), group cohomology, homological dimension, and spectral sequences. **Supply caveat:** the *triangulated*-category material is sec:derivAndTriangCat, a starred bonus section its own BOOK.md §4 marks pre-framework and unassessed (a live ref:HERE placeholder, a note-to-self parenthetical, a triangulatedd typo). Higher Category Theory Ch. 5 is contracted to cite it for the 1-categorical original of a stable ∞-category, so that chapter should not be drafted before Ch. 3 is assessed. See BACKLOG.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -657,7 +657,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_logic.pdf&name=Logic&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0,
+      "xAffinity": -0.333,
       "tier": 1
     },
     {
@@ -2594,7 +2594,6 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "core-representation-theory/EYNTKA-core-representation-theory.tex",
         "core-representation-theory/drafts/ch4-bound-quiver-algebras.tex"
       ]
     },
