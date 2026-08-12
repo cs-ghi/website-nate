@@ -2,7 +2,7 @@
   "meta": {
     "generated": "2026-08-12",
     "bookCount": 50,
-    "edgeCount": 389,
+    "edgeCount": 390,
     "clashCounts": {
       "error": 0,
       "warn": 0,
@@ -2437,6 +2437,15 @@
       "citedIn": [
         "core-algebra/EYNTKA-core-algebra.tex",
         "core-algebra/drafts/ch16-s02-preimage.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateAlgKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
     {
