@@ -18,7 +18,60 @@ export interface IndexEntry {
 
 export interface ScoredEntry extends IndexEntry {
   score: number;
+  /** Match-quality tier (see MATCH_*); the primary sort key. */
+  tier: number;
 }
+
+// How well the query matched, coarse to fine. This is the PRIMARY sort key, and
+// result type only breaks ties inside a tier — so type priority reorders
+// comparable matches instead of demoting a better one. Getting this wrong is
+// visible: weighting type above match quality floats "The Space L(D)" (a
+// definition whose label is riemannRochSpace) above the Riemann-Roch theorem
+// itself for the query "riemann roch".
+const MATCH_NONE = 0;         // query is a subsequence of the target, nothing more
+const MATCH_SUBSTRING = 1;    // appears, mid-word
+const MATCH_WORD_START = 2;   // appears at a word boundary
+const MATCH_PREFIX = 3;       // the target starts with the query
+const MATCH_EXACT = 4;        // the target IS the query
+
+// Both arguments must already be lower-cased.
+function matchTier(q: string, t: string): number {
+  if (t === q) return MATCH_EXACT;
+  if (t.startsWith(q)) return MATCH_PREFIX;
+  const idx = t.indexOf(q);
+  if (idx < 0) return MATCH_NONE;
+  return t[idx - 1] === ' ' ? MATCH_WORD_START : MATCH_SUBSTRING;
+}
+
+// Combine the title and label tiers into one ordinal. A title match outranks a
+// label match of the SAME tier — the title is what the book prints, the label is
+// a synthetic source key — while a stronger label tier still beats a weaker
+// title one. Without this, "yoneda" ranks The Yoneda Embedding (matched only via
+// df:yonedaEmbedding) above the Yoneda Lemma (matched on its actual title).
+const matchQuality = (titleTier: number, labelTier: number): number =>
+  Math.max(titleTier * 2, labelTier * 2 - 1);
+
+// Result-type priority within a tier. Someone searching a term in a maths
+// library usually wants "what is this" before "here is a result that uses it",
+// so among equally good matches the definition leads. This decides the common
+// case: every prefix match scores identically (fuzzyScore returns 1200 for all
+// of them), so type is what actually orders them.
+//
+// `axiom` sits with `definition`, being definitional in character. `example`
+// sits last — an example named after a term is rarely what a search for that
+// term is after.
+const TYPE_WEIGHT: Record<string, number> = {
+  definition: 1,
+  axiom: 0.95,
+  theorem: 0.9,
+  proposition: 0.88,
+  lemma: 0.86,
+  corollary: 0.84,
+  example: 0.78,
+};
+const UNKNOWN_TYPE_WEIGHT = 0.8;
+
+const typeWeight = (type: string): number => TYPE_WEIGHT[type] ?? UNKNOWN_TYPE_WEIGHT;
 
 @Injectable({ providedIn: 'root' })
 export class BookIndexService {
@@ -51,18 +104,31 @@ export class BookIndexService {
 
   // Rank results against the plain title and the humanized label (so a natural
   // query matches a math-heavy title via its source key). Assumes load() done.
+  //
+  // Order: match quality, then the finer positional score, then result type
+  // (definitions first), then the shorter — so more precisely named — title.
   search(query: string, max = 50): ScoredEntry[] {
     const q = query.trim();
     if (!q) return [];
+    const ql = q.toLowerCase();
     const scored: ScoredEntry[] = [];
     for (const e of this.entries) {
-      const score = Math.max(
-        fuzzyScore(q, e.titlePlain),
-        fuzzyScore(q, humanizeLabel(e.label)),
+      const label = humanizeLabel(e.label);   // already lower-cased
+      const score = Math.max(fuzzyScore(q, e.titlePlain), fuzzyScore(q, label));
+      if (score <= 0) continue;
+      const tier = matchQuality(
+        matchTier(ql, e.titlePlain.toLowerCase()),
+        matchTier(ql, label),
       );
-      if (score > 0) scored.push({ ...e, score });
+      scored.push({ ...e, score, tier });
     }
-    scored.sort((a, b) => b.score - a.score || a.titlePlain.length - b.titlePlain.length);
+    scored.sort(
+      (a, b) =>
+        b.tier - a.tier ||
+        b.score - a.score ||
+        typeWeight(b.type) - typeWeight(a.type) ||
+        a.titlePlain.length - b.titlePlain.length,
+    );
     return scored.slice(0, max);
   }
 
