@@ -480,33 +480,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCategoryTheory -> NateHigherCategoryTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCategoryTheory",
-      "NateHigherCategoryTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHomologicalAlg -> NateHigherCategoryTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHomologicalAlg",
-      "NateHigherCategoryTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgTop -> NateHigherCategoryTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgTop",
-      "NateHigherCategoryTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateCategoryTheory -> NateToposTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateCategoryTheory",

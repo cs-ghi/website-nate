@@ -24,6 +24,23 @@ export function fuzzyScore(query: string, target: string): number {
   return qi === q.length ? score : 0;
 }
 
+// A leading article is a titling convention, not content: for the query
+// "yoneda", "The Yoneda Lemma" is as good a match as "Yoneda Lemma". Scored on
+// the printed title alone the article costs a whole tier (PREFIX -> WORD_START)
+// and demotes the 16.5% of the corpus whose titles start with one — 30% of the
+// examples, 17% of the theorems — purely on style. Labels never carry an
+// article, which is why the label path partly rescues these, but only to
+// quality 5, where an article-free title reaches 6.
+const ARTICLE = /^(?:the|a|an)\s+/i;
+
+// The title as printed, plus — if different — the same without its leading
+// article. Callers take the BEST of the two, so a query that does spell the
+// article out still matches the printed form exactly.
+export function titleForms(title: string): string[] {
+  const stripped = title.replace(ARTICLE, '');
+  return stripped === title ? [title] : [title, stripped];
+}
+
 // Turn a result label into a searchable phrase: drop the `df:`/`th:` prefix and
 // split the camelCase / snake key into words. `df:fourierTransform` -> "fourier
 // transform", so a natural-language query matches even when the printed title is

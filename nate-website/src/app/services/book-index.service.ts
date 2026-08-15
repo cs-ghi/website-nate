@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { fuzzyScore, humanizeLabel } from '../utils/fuzzy-score';
+import { fuzzyScore, humanizeLabel, titleForms } from '../utils/fuzzy-score';
 
 // One named result (definition/theorem/lemma/…) extracted from a book's compiled
 // .aux by .eyntka/scripts/build-book-index.py and shipped at
@@ -46,8 +46,9 @@ function matchTier(q: string, t: string): number {
 // Combine the title and label tiers into one ordinal. A title match outranks a
 // label match of the SAME tier — the title is what the book prints, the label is
 // a synthetic source key — while a stronger label tier still beats a weaker
-// title one. Without this, "yoneda" ranks The Yoneda Embedding (matched only via
-// df:yonedaEmbedding) above the Yoneda Lemma (matched on its actual title).
+// title one. That second half is what surfaces a result whose printed title
+// shares no word with the query at all: "wronskian" finds the ODE example
+// titled "Checking Linear Independence" only via ex:wronskianEx.
 const matchQuality = (titleTier: number, labelTier: number): number =>
   Math.max(titleTier * 2, labelTier * 2 - 1);
 
@@ -114,10 +115,14 @@ export class BookIndexService {
     const scored: ScoredEntry[] = [];
     for (const e of this.entries) {
       const label = humanizeLabel(e.label);   // already lower-cased
-      const score = Math.max(fuzzyScore(q, e.titlePlain), fuzzyScore(q, label));
+      const titles = titleForms(e.titlePlain);
+      const score = Math.max(
+        ...titles.map(t => fuzzyScore(q, t)),
+        fuzzyScore(q, label),
+      );
       if (score <= 0) continue;
       const tier = matchQuality(
-        matchTier(ql, e.titlePlain.toLowerCase()),
+        Math.max(...titles.map(t => matchTier(ql, t.toLowerCase()))),
         matchTier(ql, label),
       );
       scored.push({ ...e, score, tier });
