@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-08-14",
+    "generated": "2026-08-15",
     "bookCount": 50,
     "edgeCount": 390,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 132
+      "info": 129
     },
     "tiers": [
       {
@@ -548,7 +548,7 @@
       "id": "NateKTheory",
       "title": "Vector Bundles and K-Theory",
       "dir": "vector-bundles-and-k-theory",
-      "description": "vector bundles, classifying spaces BO/BU, topological K^0/K^1, Bott periodicity, and characteristic classes (Stiefel–Whitney, Chern, Euler, Pontryagin). Purely topological.",
+      "description": "topological K-theory in nine chapters: vector bundles and their classification by BO/BU; K^0, K^1, the negative and relative groups, and the ring structure; **Bott periodicity, proved here** by the clutching/linearization route, with K* as a 2-periodic generalized cohomology theory; the **Chern character** and the integrality it forces; **Adams operations** and what only they reach, Hopf invariant one, Hurwitz's theorem on real division algebras, parallelizable spheres; **real K-theory** and eight-fold periodicity via Clifford modules and Atiyah–Bott–Shapiro, with the vector-fields-on-spheres bound; the **K-theoretic Thom class and Gysin pushforward**, the Todd genus, and the statement of Atiyah–Singer; **Fredholm operators** and Atiyah–Jänich; and **equivariant K-theory** through K_G(pt)=R(G) and the Atiyah–Segal completion theorem. Purely topological. Prereqs Algebraic Topology, Differential Topology; coreqs Algebraic K-Theory, C*-Algebras and K-Theory; feeds the planned Spin Geometry and Index Theory (Chern character, Thom class) and NateStableHomotopy (KU as the motivating generalized theory).",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -558,7 +558,7 @@
         "pdf": "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Vector_bundles_and_K-theory.pdf&name=Vector%20Bundles%20and%20K-Theory&source=books"
       },
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-08-15",
       "xAffinity": -0.187,
       "tier": 3
     },
@@ -1743,8 +1743,8 @@
     {
       "source": "NateAlgTop",
       "target": "NateCategoryTheory",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
