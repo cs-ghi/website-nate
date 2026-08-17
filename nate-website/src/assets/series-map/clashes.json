@@ -633,15 +633,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHarmonicAnalysis -> NateLanglandsGL2) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHarmonicAnalysis",
-      "NateLanglandsGL2"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateRiemannianGeometry -> NateGR) is manual, no backing \\cite found.",
     "refs": [
       "NateRiemannianGeometry",
@@ -1074,7 +1065,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateEtaleCohomology",
       "NateModuliStacks"

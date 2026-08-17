@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-08-15",
+    "generated": "2026-08-17",
     "bookCount": 50,
-    "edgeCount": 390,
+    "edgeCount": 397,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 129
+      "info": 128
     },
     "tiers": [
       {
@@ -3046,7 +3046,9 @@
       "provenance": "auto",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
-        "etale-cohomology/drafts/scratch/ch02-s04.tex"
+        "etale-cohomology/drafts/gate-snapshot/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/ch02-s04.tex",
+        "etale-cohomology/drafts/scratch/ch05-s04.tex"
       ]
     },
     {
@@ -3066,13 +3068,19 @@
       "provenance": "both",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/gate-snapshot/ch05-s01.tex",
+        "etale-cohomology/drafts/gate-snapshot/ch05-s02.tex",
+        "etale-cohomology/drafts/gate-snapshot/ch05-s04.tex",
         "etale-cohomology/drafts/scratch/ch02-s03.tex",
         "etale-cohomology/drafts/scratch/ch03-s05.tex",
         "etale-cohomology/drafts/scratch/ch04-open.tex",
         "etale-cohomology/drafts/scratch/ch04-s02.tex",
         "etale-cohomology/drafts/scratch/ch04-s03.tex",
         "etale-cohomology/drafts/scratch/ch04-s04.tex",
-        "etale-cohomology/drafts/scratch/ch04-s05.tex"
+        "etale-cohomology/drafts/scratch/ch04-s05.tex",
+        "etale-cohomology/drafts/scratch/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/ch05-s04.tex"
       ]
     },
     {
@@ -3106,6 +3114,7 @@
       "provenance": "auto",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/gate-snapshot/ch05-s02.tex",
         "etale-cohomology/drafts/scratch/ch03-open.tex",
         "etale-cohomology/drafts/scratch/ch03-s01.tex",
         "etale-cohomology/drafts/scratch/ch03-s02.tex",
@@ -3851,7 +3860,16 @@
     },
     {
       "source": "NateLanglandsGL2",
-      "target": "NateClassicalAlgGeo",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateCoreRepTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3887,12 +3905,23 @@
       "source": "NateLanglandsGL2",
       "target": "NateHarmonicAnalysis",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
+      ]
     },
     {
       "source": "NateLanglandsGL2",
       "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "langlands-gl2/EYNTKA-langlands-gl2.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateTopology",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3964,6 +3993,15 @@
     },
     {
       "source": "NateLieGroups",
+      "target": "NateLinAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "lie-groups/EYNTKA-lie-groups.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
       "target": "NateMeasureTheory",
       "type": "reference",
       "provenance": "auto",
@@ -4009,12 +4047,48 @@
     },
     {
       "source": "NateLinAlg",
+      "target": "NateAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateAlgNumberTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
       "target": "NateComplexAnalysis",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
         "linear-algebra/EYNTKA-linear-algebra.tex",
         "linear-algebra/drafts/consolidated/ch04-s01.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateComplexAnalyticGeometry",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
