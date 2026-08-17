@@ -1,85 +1,215 @@
-import { Component, OnInit, Input, NgModule } from '@angular/core';
-import { Book, Books } from 'src/app/interfaces/books.model';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { BlogLevel, BlogPost, LEVEL_LABEL, LEVEL_ORDER } from 'src/app/interfaces/blog.model';
+import { BLOG_TOPICS } from './blog-posts';
+import { BlogCatalogService } from 'src/app/services/blog-catalog.service';
+import { fuzzyScore } from 'src/app/utils/fuzzy-score';
 
-export const blogArray: Book[]= [
+export type BlogSort = 'newest' | 'oldest' | 'shortest' | 'title';
 
-    // {    name: "Alien's Perspective on Analysis",    desc: "We typically build analysis from the bottom up (N -> Q -> R -> C). But in many ways it is more natural to do (N -> Q -> C), and then try to find how R would naturally appear. This post explores an 'Alien' perspective where the algebraic closure of Q is the natural universe and R a derived substructure found via Galois involutions. This shift in perspective tries to explains why Real Analysis is 'flexible' (allowing bump functions) while Complex Analysis is 'rigid,' and characterizes R as the unique 'Cohesive-Connected Field' among all completions of Q",
-    //   link: "././assets/pdfs/blogs/alien_perspective_on_analysis.pdf"
-    // },
-    {
-      name: "Intuition on Fourier Analysis",
-      desc: "Blurb from my real analysis notes extracted to be a separate blog.",
-      link: "././assets/pdfs/blogs/fourier_transforms.pdf"
-    },
-
-    {  name: "A Narrative of Homological Algebra",    desc: "I had a sudden idea of how I see the chronology of homological algebra. I tried to make it as historically as possible. ",
-      link: "././assets/pdfs/blogs/a_narrative_of_homological_algebra.pdf"
-    },
-    {    name: "Some Geometry of Hilbert Spaces",
-      desc: "This blog covers some intuition I've developed when trying to really undersatnd why Hilbert space of all the Lp spaces is the right generalization of euclidean space, namely I dive into how to think of Hilbert space as 'flat' as compared to other Lp spaces.",
-      link: "././assets/pdfs/blogs/geometric_intuition_of_hilbert_spaces.pdf"
-    },
-    { name: "Representation of SL2: L-packets",
-      desc: "This post following the paper 'Representations of SL2(F)' by Guy Henniart and Marie-France Vignéras explores the representation theory of $SL_2(F)$ through the lens of restriction from $GL_2(F)$. While the Local Langlands correspondence is a bijection for the general linear group, the restriction to the special linear group creates L-packets -- finite fibers of indistinguishable representations. Using Clifford Theory adapted for locally profinite groups and the uniqueness of Whittaker models, the paper goes over why these packets have cardinalities of 1, 2, or 4, and alludes to their representation theory information",
-      link: "././assets/pdfs/blogs/langlands_for_sl2.pdf"  },
-    {
-      name: "Some Harmonic Analysis",
-      desc: "This is an extract from EYNTKA Algebra that goes over how the representation of finite abelian groups links to Harmonic analysis. I also added a quick explanation on the generalization to locally compact abelian groups (details in the notes on Pontryagin duality) and how non-commutative geometry arrises from a group-ring",
-      link: "././assets/pdfs/blogs/some_harmonic_analysis.pdf"
-    },
-    {    name: "Comparing Schemes and Manifolds",
-        desc: "An extract from EYTNKA Algebraic Geometry that lists off in bullet point format some differences between schemes and manifolds to get a better sense of the similarities and differences between the geometries they represent",
-        link: "././assets/pdfs/blogs/differences_between_schemes_and_manifolds.pdf"
-    },
-    {
-      name: "Non-Hausdorff Space",
-      desc: "A quick blog for non-mathematicians to see an example of a space that can have two points infinitely close to each other while remaining distinct",
-      link: "././assets/pdfs/blogs/nonhausdorfness.pdf"
-    },
-  {
-    name: 'Reserach in Algebraic Geometry',
-    desc: 'An extract from the end of EYTNKA algebra covering the areas of algebraic geometry research that peeked my interset. Goes over a quick description and resources to understand the math for the statment (either my own or from others)',
-    link:'././assets/pdfs/blogs/areas_of_algebraic_geoemtry_reserach.pdf'
-  },
-
-  {
-    name: 'Clock Arithmetic and some Applications',
-    desc: 'This is a quick expository article requiring no mathematical background that aims to teach the basic notion of modular arithmetic, or "clock arithmetic," to my friends to whom I love giving math riddles. I also added a quick survey of some uses of modular arithmetic as well as some surprising connections between prime numbers.',
-    link: '././assets/pdfs/blogs/clock_arithmetic.pdf'
-  },
-    { name: "Galois Theory - Why use Field Extensions",
-      desc: "This is an extract from EYNTKA algebra of me fleshing out my intuition on why field extensions are the natural setting to study the symmetries of the roots of polynomials.",
-      link: "././assets/pdfs/blogs/galois_theory_intuition_behind_field_extensions.pdf"
-    },
-  // {
-  //   name: 'The Difficulty in the Collatz Conjecture',
-  //   desc: 'While talking to non-math friends about my interest in number theory, the Collatz Conjecture seems to always be on the tip of their tongues. After perhaps being asked a dozen times about it, I decided to take a look at the conjecture. This paper goes over a probablistic distribution that can be put on the represetnation of natural numbers that is stable when extending the number to the 2-adics, and is almost stable over natural numbers. This allows you to define interesting functionals and find their expected value. Using these, we can re-formulate the conjecture into a problem of these functionals expected value to be negative. In the conclusion, I point out how the Collatz conjecture has been reformulated into this new framework and why it is more evident that it is difficult.',
-  //   link: '././assets/pdfs/blogs/Conjecture.pdf'
-  // },
-
-  {
-    name: 'Complex Analysis: What is it?',
-    desc: 'I have struggled with how to perceive complex analysis for awhile, and I finally landed on an intuition that is satisfying. This article expands on the following: "Complex analysis is the analytification of polynomials, giving us the tools to form a link between Algebra and Analysis"',
-    link: '././assets/pdfs/blogs/what_is_complex.pdf'
-  },
-  // {
-  //   name: 'Towards Langland\'s Reciprocity',
-  //   desc: 'Many may have heard the tentalizing claim that quadratic reciprocity is the simplest version of langland\'s reciprocity. In this quick article, I give an overview of the build-up towards it by going through Artin\'s reciprocity. ',
-  //   link: '././assets/pdfs/blogs/From_Quadratic_to_Langland.pdf'
-  // },
+const SORTS: { key: BlogSort; label: string }[] = [
+  { key: 'newest', label: 'Newest' },
+  { key: 'oldest', label: 'Oldest' },
+  { key: 'shortest', label: 'Shortest' },
+  { key: 'title', label: 'A–Z' },
 ];
+
+// Fuzzy on the title, substring on the body — same weighting the books page
+// uses, so a title match always outranks a description mention.
+function entryScore(query: string, post: BlogPost): number {
+  const nameScore = fuzzyScore(query, post.name);
+  if (nameScore > 0) return nameScore + 1000;
+  return post.desc.toLowerCase().includes(query.toLowerCase()) ? 1 : 0;
+}
 
 @Component({
   selector: 'app-blogs',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
 })
-
 export class BlogComponent implements OnInit {
-  blogs=blogArray;
+  @ViewChild('searchInput') searchInput?: ElementRef<HTMLInputElement>;
 
-  constructor() { }
+  allPosts: BlogPost[] = [];
+  visiblePosts: BlogPost[] = [];
+
+  query = '';
+  activeTopic = 'all';
+  activeLevel: BlogLevel | 'all' = 'all';
+  sort: BlogSort = 'newest';
+
+  readonly topics = BLOG_TOPICS;
+  readonly sorts = SORTS;
+
+  constructor(private router: Router, private catalog: BlogCatalogService) {}
 
   ngOnInit(): void {
+    this.catalog.posts$.subscribe((posts) => {
+      this.allPosts = posts;
+      this.recompute();
+    });
+  }
+
+  // Press "/" anywhere on the page to jump to the search box, matching /books.
+  @HostListener('document:keydown', ['$event'])
+  onKeydown(event: KeyboardEvent): void {
+    if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey) return;
+    const el = event.target as HTMLElement | null;
+    if (el?.tagName === 'INPUT' || el?.tagName === 'TEXTAREA' || el?.isContentEditable) return;
+    event.preventDefault();
+    this.searchInput?.nativeElement.focus();
+  }
+
+  // The lead card. Only the unfiltered, newest-first view has a "latest post" —
+  // once the reader is searching or filtering, the top hit is not the latest
+  // anything, and promoting it would misrepresent it.
+  get leadPost(): BlogPost | null {
+    return this.isDefaultView ? this.visiblePosts[0] ?? null : null;
+  }
+
+  get gridPosts(): BlogPost[] {
+    return this.isDefaultView ? this.visiblePosts.slice(1) : this.visiblePosts;
+  }
+
+  private get isDefaultView(): boolean {
+    return (
+      !this.query.trim() &&
+      this.activeTopic === 'all' &&
+      this.activeLevel === 'all' &&
+      this.sort === 'newest'
+    );
+  }
+
+  // Levels actually present in the catalogue, easiest first — derived so a level
+  // with no post never gets a dead chip.
+  get levelChips(): { key: BlogLevel; label: string }[] {
+    const present = new Set(this.allPosts.map((p) => p.level));
+    return LEVEL_ORDER.filter((l) => present.has(l)).map((l) => ({
+      key: l,
+      label: LEVEL_LABEL[l],
+    }));
+  }
+
+  // Posts surviving the search + level, ignoring the topic chips, so each chip's
+  // count reflects what clicking it would actually show.
+  private get topicIndependent(): BlogPost[] {
+    return this.filter(this.allPosts, { withTopic: false });
+  }
+
+  // A post counts toward its primary topic and any secondary one it declares —
+  // the chip is "posts that touch this", which is what a reader picking a
+  // subject means.
+  countFor(key: string): number {
+    return this.topicIndependent.filter((p) => this.inTopic(p, key)).length;
+  }
+
+  private inTopic(post: BlogPost, key: string): boolean {
+    return key === 'all' || post.topic === key || (post.alsoTopics ?? []).includes(key);
+  }
+
+  private filter(posts: BlogPost[], opts: { withTopic: boolean }): BlogPost[] {
+    const q = this.query.trim();
+    let out = posts.filter(
+      (p) =>
+        (this.activeLevel === 'all' || p.level === this.activeLevel) &&
+        (!opts.withTopic || this.inTopic(p, this.activeTopic)),
+    );
+    if (q) {
+      out = out
+        .map((p) => ({ p, score: entryScore(q, p) }))
+        .filter((x) => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .map((x) => x.p);
+    }
+    return out;
+  }
+
+  // Search relevance outranks the sort control: if someone typed a query, the
+  // best match belongs first regardless of which sort is selected.
+  private order(posts: BlogPost[]): BlogPost[] {
+    if (this.query.trim()) return posts;
+    const by = [...posts];
+    switch (this.sort) {
+      case 'oldest':
+        return by.sort((a, b) => (a.updated ?? '').localeCompare(b.updated ?? ''));
+      case 'shortest':
+        return by.sort((a, b) => (a.pages ?? Infinity) - (b.pages ?? Infinity));
+      case 'title':
+        return by.sort((a, b) => a.name.localeCompare(b.name));
+      default:
+        return by.sort((a, b) => (b.updated ?? '').localeCompare(a.updated ?? ''));
+    }
+  }
+
+  private recompute(): void {
+    this.visiblePosts = this.order(this.filter(this.allPosts, { withTopic: true }));
+  }
+
+  setTopic(key: string): void {
+    this.activeTopic = key;
+    this.recompute();
+  }
+
+  setLevel(key: BlogLevel | 'all'): void {
+    this.activeLevel = key;
+    this.recompute();
+  }
+
+  setSort(key: BlogSort): void {
+    this.sort = key;
+    this.recompute();
+  }
+
+  onQueryChange(): void {
+    this.recompute();
+  }
+
+  clearSearch(): void {
+    this.query = '';
+    this.recompute();
+  }
+
+  // The blurb under a topic heading is orienting when one topic is selected and
+  // ten repetitions of noise when none is.
+  get activeTopicBlurb(): string | null {
+    return this.topics.find((t) => t.key === this.activeTopic)?.blurb ?? null;
+  }
+
+  // Name whichever filter is actually responsible for the empty page rather than
+  // a generic "no results".
+  get emptyStateMessage(): string {
+    const q = this.query.trim();
+    const topic = this.topics.find((t) => t.key === this.activeTopic)?.label;
+    const level = this.levelChips.find((l) => l.key === this.activeLevel)?.label;
+    const article = level && /^[aeiou]/i.test(level) ? 'an' : 'a';
+    const parts = [
+      q ? `matching "${q}"` : '',
+      topic ? `in ${topic}` : '',
+      level ? `written for ${article} ${level.toLowerCase()} reader` : '',
+    ].filter(Boolean);
+    return `No posts ${parts.join(' ')}.`;
+  }
+
+  get hasFilters(): boolean {
+    return !!this.query.trim() || this.activeTopic !== 'all' || this.activeLevel !== 'all';
+  }
+
+  resetFilters(): void {
+    this.query = '';
+    this.activeTopic = 'all';
+    this.activeLevel = 'all';
+    this.recompute();
+  }
+
+  trackByFile(_: number, post: BlogPost): string {
+    return post.file;
+  }
+
+  // Open in the site's own PDF viewer rather than dumping the reader into the
+  // browser's — same as /books and /notes. `source` drives its back link.
+  open(post: BlogPost): void {
+    this.router.navigate(['/pdf-viewer'], {
+      queryParams: { src: post.link, name: post.name, source: 'blog' },
+    });
   }
 }

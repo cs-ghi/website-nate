@@ -103,6 +103,9 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
       if (source === 'notes') {
         this.backButtonText = 'Back to Notes';
         this.returnText = 'Return to Notes';
+      } else if (source === 'blog') {
+        this.backButtonText = 'Back to Blog';
+        this.returnText = 'Return to Blog';
       } else {
         this.backButtonText = 'Back to Books';
         this.returnText = 'Return to Books';
@@ -292,6 +295,9 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     const referrer = document.referrer;
     if (referrer.includes('/notes')) {
       return 'notes';
+    }
+    if (referrer.includes('/blog')) {
+      return 'blog';
     }
     return 'books';
   }

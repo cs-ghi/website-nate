@@ -1,38 +1,151 @@
 <div class="section-blog">
   <div class="container">
-    <div class="page-heading"><h2>Blog</h2>
+    <div class="page-heading">
+      <h2>Blog</h2>
       <p>Ideas, Intuitions, Interests</p>
       <mat-divider class="divider"></mat-divider>
     </div>
 
-    <div class="flexx blog-info">
-      <div>
-        <div>
-          <h3 class="mb-20">Overview</h3>
-          <p>
-            This blog section will be a catalogue
-            to organize my ideas and to write down results that don't fit well in
-            a textbook format. There are also scattered results from my
-            research projects that I would like to properly compile into papers and make
-            available here.
-          </p>
-        </div>
+    <div class="blog-intro">
+      <h3 class="mb-20">Overview</h3>
+      <p>
+        A catalogue for ideas and for results that don't fit a textbook format —
+        intuitions I've worked out, extracts from the
+        <a routerLink="/books">EYNTKA books</a> that deserve to stand alone, and
+        scattered pieces of my research projects. Some posts assume no
+        mathematics at all; others are research-adjacent. The
+        <strong>level</strong> badge on each card says which.
+      </p>
+      <p class="muted">
+        Dates are when the post was last typeset, so a revised post returns to
+        the top.
+      </p>
+    </div>
 
-            <div class="row" class="blogs-info" style="padding-bottom: 4em;"> </div>
-            <div class="blogs-info" *ngFor="let blog of blogs">
-                <div class="row flexx">
-                        <a class="col-sm-3" [href]="blog?.link">
-                            <h4 [innerHtml]="blog?.name"></h4>
-                        </a>
-                    <div class="col-sm-9" >
-                        <p [innerHtml]="blog?.desc"></p>
-                    </div>
-                </div>
-                <mat-divider class="divider-table"></mat-divider>
-            </div>
-        <div style="padding-bottom: 7em;"></div>
+    <!-- search + sort -->
+    <div class="blog-controls">
+      <div class="blog-search">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input
+          #searchInput
+          type="text"
+          class="blog-search-input"
+          [(ngModel)]="query"
+          (ngModelChange)="onQueryChange()"
+          placeholder="Search posts...  ( / to focus )"
+          autocomplete="off"
+        />
+        <mat-icon *ngIf="query" class="clear-icon" (click)="clearSearch()">close</mat-icon>
+      </div>
 
+      <div class="blog-sort" [class.muted-sort]="query">
+        <span class="sort-caption">Sort</span>
+        <button
+          *ngFor="let s of sorts"
+          class="sort-chip"
+          [class.active]="sort === s.key"
+          (click)="setSort(s.key)">
+          {{ s.label }}
+        </button>
+        <span *ngIf="query" class="sort-note">by relevance while searching</span>
       </div>
     </div>
+
+    <!-- topic chips -->
+    <div class="blog-chips">
+      <button class="blog-chip" [class.active]="activeTopic === 'all'" (click)="setTopic('all')">
+        All <span class="chip-count">{{ countFor('all') }}</span>
+      </button>
+      <button
+        *ngFor="let t of topics"
+        class="blog-chip"
+        [class.active]="activeTopic === t.key"
+        (click)="setTopic(t.key)">
+        {{ t.label }} <span class="chip-count">{{ countFor(t.key) }}</span>
+      </button>
+    </div>
+
+    <!-- level: the secondary facet, deliberately lighter than the topic row -->
+    <div class="level-chips">
+      <span class="level-caption">Level</span>
+      <button class="level-chip" [class.active]="activeLevel === 'all'" (click)="setLevel('all')">
+        All
+      </button>
+      <button
+        *ngFor="let l of levelChips"
+        class="level-chip"
+        [class.active]="activeLevel === l.key"
+        (click)="setLevel(l.key)">
+        {{ l.label }}
+      </button>
+    </div>
+
+    <p *ngIf="activeTopicBlurb" class="topic-blurb">{{ activeTopicBlurb }}</p>
+
+    <div *ngIf="!visiblePosts.length" class="no-results">
+      <p>{{ emptyStateMessage }}</p>
+      <button *ngIf="hasFilters" class="reset-filters" (click)="resetFilters()">
+        Clear filters
+      </button>
+    </div>
+
+    <!-- Card metadata line, shared by the lead card and the grid. -->
+    <ng-template #meta let-post>
+      <div class="card-meta">
+        <span *ngIf="post.updated" class="meta-date">
+          Updated {{ post.updated | date: 'MMM y' }}
+        </span>
+        <span *ngIf="post.pages" class="meta-dot">·</span>
+        <span *ngIf="post.pages" class="meta-len">{{ post.pages }} pp</span>
+        <span *ngIf="post.readingMinutes" class="meta-dot">·</span>
+        <span *ngIf="post.readingMinutes" class="meta-len">~{{ post.readingMinutes }} min</span>
+      </div>
+    </ng-template>
+
+    <!-- Badges: level, then the subjects the post touches. -->
+    <ng-template #badges let-post>
+      <div class="card-badges">
+        <span class="badge" [ngClass]="'level-' + post.level">
+          <span class="level-dot"></span>{{ post.levelLabel }}
+        </span>
+        <span class="badge topic">{{ post.topicLabel }}</span>
+        <span class="badge topic secondary" *ngFor="let label of post.alsoLabels">
+          {{ label }}
+        </span>
+      </div>
+    </ng-template>
+
+    <!-- Lead card: the most recently revised post, unfiltered view only. -->
+    <article
+      *ngIf="leadPost as post"
+      class="lead-card"
+      (click)="open(post)">
+      <span class="lead-flag">Latest</span>
+      <h3 class="lead-title">{{ post.name }}</h3>
+      <ng-container *ngTemplateOutlet="meta; context: { $implicit: post }"></ng-container>
+      <ng-container *ngTemplateOutlet="badges; context: { $implicit: post }"></ng-container>
+      <p class="lead-desc">{{ post.desc }}</p>
+      <span class="read-link">Read <span class="arrow">→</span></span>
+    </article>
+
+    <div class="blog-grid">
+      <article
+        *ngFor="let post of gridPosts; trackBy: trackByFile"
+        class="blog-card"
+        (click)="open(post)">
+        <h4 class="card-title">{{ post.name }}</h4>
+        <ng-container *ngTemplateOutlet="meta; context: { $implicit: post }"></ng-container>
+        <ng-container *ngTemplateOutlet="badges; context: { $implicit: post }"></ng-container>
+        <!-- The clamped box must not be a flex item: as a direct child of the
+             card it gets blockified to flow-root and -webkit-line-clamp stops
+             applying, which silently cuts the text mid-sentence. -->
+        <div class="card-body">
+          <p class="card-desc">{{ post.desc }}</p>
+        </div>
+        <span class="read-link">Read <span class="arrow">→</span></span>
+      </article>
+    </div>
+
+    <div style="padding-bottom: 7em;"></div>
   </div>
 </div>

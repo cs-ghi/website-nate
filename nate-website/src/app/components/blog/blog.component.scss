@@ -2,102 +2,433 @@
 @import 'src/sass/mixins';
 @import 'src/sass/grid';
 
-@media (max-width:500px){
-    .blogs-info h3, h4  {
-      text-align:center;
+$card-bg: #313236;
+$card-hover: #404145;
+$card-border: #3c3d42;
+$ink: #bab0b0;
+$ink-strong: #c0b6aa;
+$ink-faint: #857d77;
+
+.divider {
+    margin-bottom: 70px;
+    margin-top: 20px;
+    border-top-width: 1.3px;
+}
+
+// ── Overview ────────────────────────────────────────────────────────────────
+.blog-intro {
+    max-width: 720px;
+
+    h3 {
+        color: $ink-strong;
+        font-size: 26px;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    p {
+        color: $ink;
+        font-size: 15px;
+        line-height: 27px;
+    }
+
+    strong { color: $ink-strong; font-weight: 600; }
+
+    a {
+        color: $bg-secondary;
+        text-decoration: underline !important;
+        cursor: pointer;
+    }
+
+    .muted {
+        color: $ink-faint;
+        font-size: 13px;
+        line-height: 1.6;
     }
 }
 
-.blogs-info h3 {
+// ── Controls: search + sort ─────────────────────────────────────────────────
+.blog-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 22px;
+    margin: 2.2em 0 1.4em;
+}
+
+.blog-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 320px;
+    max-width: 420px;
+    padding: 8px 14px;
+    background: $card-bg;
+    border: 1px solid #45464b;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+
+    &:focus-within { border-color: $bg-secondary; }
+
+    .search-icon,
+    .clear-icon {
+        color: #7d766f;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    .clear-icon {
+        cursor: pointer;
+        margin-left: auto;
+        &:hover { color: $bg-secondary; }
+    }
+
+    .blog-search-input {
+        flex: 1;
+        min-width: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: $ink;
+        font-size: 15px;
+
+        &::placeholder { color: #6f6862; }
+    }
+}
+
+// Sort is a refinement, not a filter — styled as quiet text buttons so it never
+// competes with the topic chips for attention.
+.blog-sort {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    transition: opacity 0.25s;
+
+    // A query overrides the sort (relevance wins), so say so by fading the row.
+    &.muted-sort .sort-chip { opacity: 0.45; }
+}
+
+.sort-caption {
     color: $bg-secondary;
-    font-size: 26px;
+    opacity: 0.4;
+    font-size: 11px;
     letter-spacing: 1px;
-    font-weight: 600; }
+    text-transform: uppercase;
+    margin-right: 6px;
+}
 
-.blogs-info h4 {
+.sort-note {
+    color: $ink-faint;
+    font-size: 11.5px;
+    font-style: italic;
+    margin-left: 6px;
+}
+
+.sort-chip {
+    cursor: pointer;
+    padding: 3px 10px;
+    font-size: 12.5px;
     color: $bg-secondary;
-    letter-spacing: 0.7px;
-    font-size: 23px;
-    font-weight: 600;
-    text-decoration: underline;
+    opacity: 0.55;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    transition: 0.25s;
+
+    &:hover { opacity: 0.9; background: rgba(255, 255, 255, 0.04); }
+    &.active {
+        opacity: 1;
+        border-color: #56575d;
+        background: rgba(255, 255, 255, 0.06);
+    }
 }
 
-.col-sm-3{
-    transition: 0.4s;
-    // display: inline-block;
-    height:100%;
+// ── Topic chips (primary facet) ─────────────────────────────────────────────
+.blog-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 12px;
 }
 
-.col-sm-3:hover{
-    height:100%;
-    background-color: #404145;
+.blog-chip {
+    cursor: pointer;
+    padding: 5px 13px;
+    font-size: 13px;
+    color: $bg-secondary;
+    background: $card-bg;
+    border: 1px solid #45464b;
+    border-radius: 999px;
+    transition: 0.25s;
+
+    .chip-count { opacity: 0.5; margin-left: 3px; font-size: 11px; }
+
+    &:hover { background: $card-hover; }
+    &.active {
+        background: $bg-secondary;
+        border-color: $bg-secondary;
+        color: #23242a;
+        .chip-count { color: #23242a; opacity: 0.7; }
+    }
 }
 
-.divider{
-    // border-top-color: #46423f;
-    margin-bottom: 70px;
-    margin-top:20px;
-    border-top-width: 1.3px;
+// ── Level chips (secondary facet) ───────────────────────────────────────────
+.level-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 34px;
 }
 
-.divider-table{
-    // border-top-color:#4b4b4a;
-    margin-bottom: 40px;
-    margin-top:40px;
-    border-top-width: 1.3px;
+.level-caption {
+    color: $bg-secondary;
+    opacity: 0.4;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-right: 4px;
 }
 
+.level-chip {
+    cursor: pointer;
+    padding: 3px 10px;
+    font-size: 12px;
+    color: $bg-secondary;
+    opacity: 0.55;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    transition: 0.25s;
 
+    &:hover { opacity: 0.9; background: rgba(255, 255, 255, 0.04); }
+    &.active {
+        opacity: 1;
+        border-color: #56575d;
+        background: rgba(255, 255, 255, 0.06);
+    }
+}
 
-    // .disclaimer-click{
-    //     display:inline-block !important;
-    // }
+.topic-blurb {
+    color: $bg-secondary;
+    opacity: 0.55;
+    font-size: 14.5px;
+    font-style: italic;
+    line-height: 1.6;
+    margin: -1.6em 0 2.2em;
+}
 
-    // .blogs-info a:hover{
-    //     background-color: transparent !important;
-    // }
+// ── Empty state ─────────────────────────────────────────────────────────────
+.no-results {
+    padding: 10px 0 40px;
 
-    // .col-sm-9{
-    //     background-color: red !important;
-    // }
+    p {
+        color: $bg-secondary;
+        opacity: 0.6;
+        font-size: 16px;
+        font-style: italic;
+        margin-bottom: 12px;
+    }
+}
 
-    // .flexx{
-    //     flex-direction: column;
-    // }
+.reset-filters {
+    cursor: pointer;
+    padding: 5px 14px;
+    font-size: 12.5px;
+    color: $bg-secondary;
+    background: transparent;
+    border: 1px dashed #4a4a4a;
+    border-radius: 999px;
+    transition: 0.25s;
 
-// .disclaimer-click{
-//     display: none;
-// }
+    &:hover { border-color: $bg-secondary; background: rgba(255, 255, 255, 0.05); }
+}
 
-// .blogs-info a{
-//     color: $bg-secondary;
-//     transition: 0.4s;
-//     text-decoration: none;
-//     height:100%;
-// }
+// ── Shared card internals ───────────────────────────────────────────────────
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 5px;
+    color: $ink-faint;
+    font-size: 12px;
+    letter-spacing: 0.3px;
 
-// .row{
-//     // flex-direction: row;
-//     display: table;
-// }
-// .cols{
-//     display: table-cell;
-// }
+    .meta-dot { opacity: 0.5; }
+}
 
-// .col-sm-9:hover{
-//     background-color: #404145 !important;
-// }
+.card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
 
-// .blogs-info h4:hover{
-//         background-color: #404145;
-//         transition:.2s;
-//     }
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    background: #2a2b30;
+    color: #a49b96;
+    border: 1px solid #46474d;
+    white-space: nowrap;
 
-// .blogs-info a:hover > * {
-    // color: #cbc9c8e7;
-// }
+    .level-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+    }
 
-// .blogs-info a:hover{
-//     background-color: #404145;
-// }
+    // Level is the badge a reader actually decides on, so it is the only one
+    // carrying colour; the ramp goes green (open to anyone) to amber (graduate).
+    &.level-general   { color: #8fb98f; border-color: #3d5240; }
+    &.level-undergrad { color: #9aa9c8; border-color: #3f4757; }
+    &.level-graduate  { color: #c8b06e; border-color: #574c30; }
 
+    &.topic { color: #a49b96; border-color: $card-border; background: transparent; }
+    &.secondary { opacity: 0.65; }
+}
+
+.read-link {
+    color: $bg-secondary;
+    font-size: 12.5px;
+    letter-spacing: 0.4px;
+    opacity: 0.7;
+    transition: opacity 0.25s;
+
+    .arrow {
+        display: inline-block;
+        transition: transform 0.25s;
+    }
+}
+
+// ── Lead card ───────────────────────────────────────────────────────────────
+.lead-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    padding: 26px 28px;
+    margin-bottom: 22px;
+    background: linear-gradient(160deg, #35363b 0%, #2e2f34 100%);
+    border: 1px solid #4a4b52;
+    border-radius: 12px;
+    transition: 0.25s;
+
+    &:hover {
+        border-color: $bg-secondary;
+        transform: translateY(-2px);
+
+        .read-link { opacity: 1; }
+        .read-link .arrow { transform: translateX(4px); }
+    }
+
+    .lead-flag {
+        align-self: flex-start;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: #23242a;
+        background: $bg-secondary;
+        padding: 3px 10px;
+        border-radius: 999px;
+    }
+
+    .lead-title {
+        color: $ink-strong;
+        font-size: 27px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        line-height: 1.25;
+        margin: 0;
+    }
+
+    .lead-desc {
+        color: $ink;
+        font-size: 15px;
+        line-height: 1.65;
+        max-width: 70ch;
+        margin: 0;
+    }
+}
+
+// ── Card grid ───────────────────────────────────────────────────────────────
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    padding: 20px 22px;
+    background: $card-bg;
+    border: 1px solid $card-border;
+    border-radius: 10px;
+    transition: 0.25s;
+
+    &:hover {
+        background: $card-hover;
+        border-color: $bg-secondary;
+        transform: translateY(-2px);
+
+        .read-link { opacity: 1; }
+        .read-link .arrow { transform: translateX(4px); }
+    }
+
+    .card-title {
+        color: $ink-strong;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        line-height: 1.3;
+        margin: 0;
+        word-break: break-word;
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        min-height: 0;
+    }
+
+    // Descriptions run from one line to a full paragraph; clamping keeps the
+    // grid from having one 400px-tall row next to a 120px one. Every card
+    // clamps to the same line count so a row's cards match structurally rather
+    // than just being stretched to the tallest one.
+    .card-desc {
+        color: $ink;
+        font-size: 13.5px;
+        line-height: 1.55;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .read-link { margin-top: auto; }
+}
+
+@media (max-width: 600px) {
+    .blog-grid { grid-template-columns: 1fr; }
+
+    .blog-controls { gap: 12px; }
+    .blog-sort { width: 100%; }
+
+    .lead-card {
+        padding: 20px 18px;
+        .lead-title { font-size: 22px; }
+    }
+}

@@ -1,0 +1,77 @@
+{
+  "Conjecture_old.pdf": {
+    "pages": 49,
+    "updated": "2024-12-01",
+    "readingMinutes": 123
+  },
+  "From_Quadratic_to_Langland.pdf": {
+    "pages": 3,
+    "updated": "2024-12-16",
+    "readingMinutes": 8
+  },
+  "PontryaginDuality.pdf": {
+    "pages": 15,
+    "updated": "2024-11-23",
+    "readingMinutes": 38
+  },
+  "a_narrative_of_homological_algebra.pdf": {
+    "pages": 3,
+    "updated": "2026-02-21",
+    "readingMinutes": 8
+  },
+  "alien_perspective_on_analysis.pdf": {
+    "pages": 5,
+    "updated": "2026-02-23",
+    "readingMinutes": 13
+  },
+  "areas_of_algebraic_geoemtry_reserach.pdf": {
+    "pages": 4,
+    "updated": "2025-07-29",
+    "readingMinutes": 10
+  },
+  "clock_arithmetic.pdf": {
+    "pages": 10,
+    "updated": "2025-06-24",
+    "readingMinutes": 25
+  },
+  "fourier_transforms.pdf": {
+    "pages": 10,
+    "updated": "2026-03-06",
+    "readingMinutes": 25
+  },
+  "galois_theory_intuition_behind_field_extensions.pdf": {
+    "pages": 5,
+    "updated": "2025-09-26",
+    "readingMinutes": 13
+  },
+  "geometric_intuition_of_hilbert_spaces.pdf": {
+    "pages": 6,
+    "updated": "2026-03-02",
+    "readingMinutes": 15
+  },
+  "langlands_for_sl2.pdf": {
+    "pages": 18,
+    "updated": "2025-11-26",
+    "readingMinutes": 45
+  },
+  "nonhausdorfness.pdf": {
+    "pages": 7,
+    "updated": "2026-02-07",
+    "readingMinutes": 18
+  },
+  "serre_paper-Theory_of_Simple_Algebras.pdf": {
+    "pages": 10,
+    "updated": "2025-01-28",
+    "readingMinutes": 25
+  },
+  "some_harmonic_analysis.pdf": {
+    "pages": 13,
+    "updated": "2026-01-12",
+    "readingMinutes": 33
+  },
+  "what_is_complex.pdf": {
+    "pages": 7,
+    "updated": "2025-07-11",
+    "readingMinutes": 18
+  }
+}
