@@ -2,7 +2,7 @@
   "meta": {
     "generated": "2026-08-17",
     "bookCount": 50,
-    "edgeCount": 397,
+    "edgeCount": 398,
     "clashCounts": {
       "error": 0,
       "warn": 0,
@@ -3646,6 +3646,15 @@
     {
       "source": "NateHomologicalAlg",
       "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateClassicalAlgGeo",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
