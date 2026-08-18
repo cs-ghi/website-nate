@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-08-17",
-    "bookCount": 50,
-    "edgeCount": 398,
+    "generated": "2026-08-18",
+    "bookCount": 48,
+    "edgeCount": 373,
     "clashCounts": {
       "error": 0,
       "warn": 0,
-      "info": 128
+      "info": 126
     },
     "tiers": [
       {
@@ -47,24 +47,8 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-abelian-varieties.pdf&name=Abelian%20Varieties&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": -0.421,
+      "xAffinity": -0.423,
       "tier": 4
-    },
-    {
-      "id": "NateAlgebra",
-      "title": "Algebra",
-      "dir": "algebra",
-      "description": "The single compiled volume threading core algebra, commutative algebra, classical algebraic geometry, algebraic number theory, representation theory, homological algebra, and category theory.",
-      "status": "in-progress",
-      "webPublished": true,
-      "clusters": [],
-      "links": {
-        "pdf": "algebra/EYNTKA-Algebra.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Algebra.pdf&name=Algebra&source=books"
-      },
-      "lastUpdated": "2026-07-16",
-      "xAffinity": -1,
-      "tier": 1
     },
     {
       "id": "NateAlgGeo",
@@ -82,7 +66,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_algGeo.pdf&name=Algebraic%20Geometry&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": -0.498,
+      "xAffinity": -0.499,
       "tier": 3
     },
     {
@@ -111,7 +95,6 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "NateAlgebra",
         "arithmetic-geometry"
       ],
       "links": {
@@ -137,7 +120,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.373,
+      "xAffinity": -0.374,
       "tier": 2
     },
     {
@@ -153,7 +136,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-analytic-number-theory.pdf&name=Analytic%20Number%20Theory&source=books"
       },
       "lastUpdated": "2026-07-06",
-      "xAffinity": -0.193,
+      "xAffinity": -0.204,
       "tier": 3
     },
     {
@@ -170,7 +153,7 @@
         "pdf": "calculus/EYNTKA-calculus.pdf"
       },
       "lastUpdated": "2026-07-30",
-      "xAffinity": 0.109,
+      "xAffinity": 0.08,
       "tier": 0
     },
     {
@@ -180,9 +163,7 @@
       "description": "the working categorical language (strict 1-category theory), in eight chapters: categories/functors/natural transformations, the Yoneda lemma and representability, universal properties with limits and colimits, adjunctions (including the adjoint functor theorems), monads and their algebras, **Kan extensions** as the core-theory capstone (\"all concepts are Kan extensions\"), then a structured-categories coda, **monoidal categories** (Mac Lane coherence, symmetric/closed) and **enriched and (strict) 2-categories**, that ends by pointing across the coherence seam to the weak/homotopical sequel Higher Category Theory. Standing cast of example categories in place of one running example; arc credited to Riehl's *Category Theory in Context*. **Abelian categories are deliberately ceded to Homological Algebra**. A subfiles sub-book compiled into the *Algebra* mega-book (the \"Category Theory\" Part) that also compiles standalone with the full EYNTKA skeleton, guarded via ifstandalonesubfile.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": [
-        "NateAlgebra"
-      ],
+      "clusters": [],
       "links": {
         "pdf": "category-theory/EYNTKA-category-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-category-theory.pdf&name=Category%20Theory&source=books"
@@ -207,7 +188,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-class-field-theory.pdf&name=Class%20Field%20Theory&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.378,
+      "xAffinity": -0.379,
       "tier": 3
     },
     {
@@ -217,9 +198,7 @@
       "description": "algebraic sets, varieties, normalization, dimension, blow-ups.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": [
-        "NateAlgebra"
-      ],
+      "clusters": [],
       "links": {
         "pdf": "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-classical-algebraic-geometry.pdf&name=Classical%20Algebraic%20Geometry&source=books"
@@ -235,9 +214,7 @@
       "description": "integral extensions, localization, completion, Hilbert's basis theorem.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": [
-        "NateAlgebra"
-      ],
+      "clusters": [],
       "links": {
         "pdf": "commutative-algebra/EYNTKA-commutative-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-commutative-algebra.pdf&name=Commutative%20Algebra&source=books"
@@ -261,7 +238,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_complex_analysis.pdf&name=Complex%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.193,
+      "xAffinity": -0.204,
       "tier": 1
     },
     {
@@ -276,7 +253,7 @@
         "pdf": "complex-analytic-geometry/EYNTKA-complex-analytic-geometry.pdf"
       },
       "lastUpdated": "2026-08-11",
-      "xAffinity": -0.239,
+      "xAffinity": -0.241,
       "tier": 3
     },
     {
@@ -286,9 +263,7 @@
       "description": "groups, rings, modules, fields.",
       "status": "in-progress",
       "webPublished": true,
-      "clusters": [
-        "NateAlgebra"
-      ],
+      "clusters": [],
       "links": {
         "pdf": "core-algebra/EYNTKA-core-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-algebra.pdf&name=Core%20Algebra&source=books"
@@ -312,7 +287,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-probability.pdf&name=Core%20Probability&source=books"
       },
       "lastUpdated": "2026-08-05",
-      "xAffinity": 0.679,
+      "xAffinity": 0.595,
       "tier": 1
     },
     {
@@ -323,7 +298,6 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "NateAlgebra",
         "langlands"
       ],
       "links": {
@@ -349,7 +323,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-cstar-algebras.pdf&name=C*-Algebras%20and%20K-Theory&source=books"
       },
       "lastUpdated": "2026-06-27",
-      "xAffinity": 0.279,
+      "xAffinity": 0.278,
       "tier": 3
     },
     {
@@ -384,7 +358,7 @@
         "pdf": "elementary-analysis/EYNTKA-elementary-analysis.pdf"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.518,
+      "xAffinity": 0.393,
       "tier": 0
     },
     {
@@ -402,14 +376,14 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
       },
       "lastUpdated": "2026-07-22",
-      "xAffinity": -0.528,
+      "xAffinity": -0.531,
       "tier": 3
     },
     {
       "id": "NateEtaleCohomology",
       "title": "Étale Cohomology",
       "dir": "etale-cohomology",
-      "description": "the étale site and étale cohomology of schemes. Four Parts (14 chapters): (I) *the étale topology*, étale morphisms and Henselian local rings, the étale fundamental group pi_1^ét (finite étale covers, Galois categories, Riemann existence, owned here, the series' home of the topic), the étale site and its sheaves; (II) *étale cohomology*, cohomology and the cohomology of a point (= Galois cohomology), Kummer/Artin–Schreier/G_m, the cohomology of curves, constructible sheaves and finiteness; (III) *the Brauer group and the fundamental theorems*, the cohomological Brauer group Br(X)=H^2_ét(X,G_m) (Azumaya, **Gabber proved**), base change / Künneth / comparison, purity / cycle class / Poincaré duality; (IV) *ell-adic cohomology and the Weil conjectures*, ell-adic sheaves, the Lefschetz trace formula + rationality + functional equation, Lefschetz pencils and vanishing cycles, and **Deligne's proof of the Riemann Hypothesis in full** (Weil I). The series' bridge from scheme theory to arithmetic geometry, the upstream home of the geometric Brauer group, and the home of the étale fundamental group. Prereqs Modern Algebraic Geometry, Commutative Algebra, Homological Algebra, Group and Galois Cohomology; **co-requisite Moduli, Deformation Theory, and Stacks** (cites its descent/sites + gerbe interpretation of H^2; supplies back the Gabber proof + higher-dimensional Brauer computations that book defers). Feeds Moduli, Deformation Theory, and Stacks, Hodge Theory (cycle class map / comparison), Abelian Varieties.",
+      "description": "the étale site and étale cohomology of schemes. Four Parts (14 chapters): (I) *the étale topology*, étale morphisms and Henselian local rings, the étale fundamental group pi_1^ét (finite étale covers, Galois categories, Riemann existence, owned here, the series' home of the topic), the étale site and its sheaves; (II) *étale cohomology*, cohomology and the cohomology of a point (= Galois cohomology), Kummer/Artin–Schreier/G_m, the cohomology of curves, constructible sheaves and finiteness; (III) *the Brauer group and the fundamental theorems*, the cohomological Brauer group Br(X)=H^2_ét(X,G_m) (Azumaya, **Gabber proved**), base change / Künneth / comparison, purity / cycle class / Poincaré duality; (IV) *ell-adic cohomology and the Weil conjectures*, ell-adic sheaves, the Lefschetz trace formula + rationality + functional equation, Lefschetz pencils and vanishing cycles, and **Deligne's proof of the Riemann Hypothesis in full** (Weil I). The series' bridge from scheme theory to arithmetic geometry, the upstream home of the geometric Brauer group, and the home of the étale fundamental group. Prereqs Algebraic Geometry, Commutative Algebra, Homological Algebra, Group and Galois Cohomology; **co-requisite Moduli, Deformation Theory, and Stacks** (cites its descent/sites + gerbe interpretation of H^2; supplies back the Gabber proof + higher-dimensional Brauer computations that book defers). Feeds Moduli, Deformation Theory, and Stacks, Hodge Theory (cycle class map / comparison), Abelian Varieties.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
@@ -417,7 +391,7 @@
         "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
       "lastUpdated": "2026-07-15",
-      "xAffinity": -0.616,
+      "xAffinity": -0.618,
       "tier": 4
     },
     {
@@ -428,7 +402,6 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "NateRealAnalysis",
         "analysis-pde"
       ],
       "links": {
@@ -451,7 +424,7 @@
         "pdf": "galois-cohomology/EYNTKA-galois-cohomology.pdf"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.563,
+      "xAffinity": -0.564,
       "tier": 2
     },
     {
@@ -469,7 +442,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-geo-rep-theory.pdf&name=Algebraic%20Groups%20and%20Representations&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.354,
+      "xAffinity": -0.355,
       "tier": 3
     },
     {
@@ -480,7 +453,6 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "NateRealAnalysis",
         "langlands",
         "analysis-pde"
       ],
@@ -506,7 +478,7 @@
         "pdf": "hodge-theory/EYNTKA-hodge-theory.pdf"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": -0.28,
+      "xAffinity": -0.282,
       "tier": 3
     },
     {
@@ -517,7 +489,6 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "NateAlgebra",
         "k-theory"
       ],
       "links": {
@@ -541,7 +512,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-intersection-theory.pdf&name=Intersection%20Theory&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": -0.385,
+      "xAffinity": -0.387,
       "tier": 3
     },
     {
@@ -577,14 +548,14 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-langlands-gl2.pdf&name=Local%20Langlands%20for%20GL%E2%82%82(F)&source=books"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": 0.069,
+      "xAffinity": 0.068,
       "tier": 4
     },
     {
       "id": "NateLieGroups",
       "title": "Lie Groups",
       "dir": "lie-groups",
-      "description": "the analytic / differential-geometric half of Lie theory, complementary to the algebraic-groups treatment in Algebraic Groups and Representations. Four Parts: (I) Lie groups and their Lie algebras, matrix groups and the classical groups, the exponential map, left-invariant vector fields, the closed-subgroup theorem, the Lie group–Lie algebra correspondence, BCH, homogeneous spaces and covering groups; (II) structure of Lie algebras, solvable/nilpotent (Engel, Lie), the Cartan criteria, Weyl complete reducibility, Levi, the root space decomposition, root systems, and the Cartan–Killing classification; (III) compact Lie groups and their representations, invariant integration, the Peter–Weyl theorem, maximal tori and the Weyl integration formula, the Weyl character and dimension formulas; (IV) real forms and symmetric spaces, complexification, the Cartan decomposition, the Iwasawa decomposition KAN, and Riemannian symmetric spaces bridging to Riemannian Geometry. Running example SU(2). Prereqs Differential Topology, Core Algebra, Core Representation Theory, Topology, Real Analysis/Functional Analysis; cites Harmonic Analysis for Haar measure.",
+      "description": "the analytic / differential-geometric half of Lie theory, complementary to the algebraic-groups treatment in Algebraic Groups and Representations. Four Parts: (I) Lie groups and their Lie algebras, matrix groups and the classical groups, the exponential map, left-invariant vector fields, the closed-subgroup theorem, the Lie group–Lie algebra correspondence, BCH, homogeneous spaces and covering groups; (II) structure of Lie algebras, solvable/nilpotent (Engel, Lie), the Cartan criteria, Weyl complete reducibility, Levi, the root space decomposition, root systems, and the Cartan–Killing classification; (III) compact Lie groups and their representations, invariant integration, the Peter–Weyl theorem, maximal tori and the Weyl integration formula, the Weyl character and dimension formulas; (IV) real forms and symmetric spaces, complexification, the Cartan decomposition, the Iwasawa decomposition KAN, and Riemannian symmetric spaces bridging to Riemannian Geometry. Running example SU(2). Prereqs Differential Topology, Core Algebra, Core Representation Theory, Topology, NateRealAnalysis/Functional Analysis; cites Harmonic Analysis for Haar measure.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [],
@@ -609,7 +580,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-algebra.pdf&name=Linear%20Algebra&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": 0.424,
+      "xAffinity": 0.418,
       "tier": 0
     },
     {
@@ -625,7 +596,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-pde.pdf&name=Linear%20Elliptic%20and%20Parabolic%20PDE&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.439,
+      "xAffinity": 0.435,
       "tier": 2
     },
     {
@@ -641,7 +612,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-local-field-theory.pdf&name=Local%20Field%20Theory&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.631,
+      "xAffinity": -0.632,
       "tier": 3
     },
     {
@@ -668,7 +639,6 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "NateRealAnalysis",
         "analysis-pde"
       ],
       "links": {
@@ -692,7 +662,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Analysis%20on%20Metric%20and%20Function%20Spaces&source=books"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": 0.319,
+      "xAffinity": 0.289,
       "tier": 0
     },
     {
@@ -707,7 +677,7 @@
         "pdf": "microlocal-analysis/EYNTKA-microlocal-analysis.pdf"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.079,
+      "xAffinity": 0.077,
       "tier": 3
     },
     {
@@ -723,7 +693,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-moduli-stacks.pdf&name=Moduli%2C%20Deformation%20Theory%2C%20and%20Stacks&source=books"
       },
       "lastUpdated": "2026-07-13",
-      "xAffinity": -0.528,
+      "xAffinity": -0.529,
       "tier": 4
     },
     {
@@ -741,7 +711,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20PDE&source=books"
       },
       "lastUpdated": "2026-07-20",
-      "xAffinity": 0.237,
+      "xAffinity": 0.23,
       "tier": 3
     },
     {
@@ -759,7 +729,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.272,
+      "xAffinity": 0.254,
       "tier": 1
     },
     {
@@ -792,32 +762,14 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
       },
       "lastUpdated": "2026-07-18",
-      "xAffinity": 0.839,
+      "xAffinity": 0.798,
       "tier": 2
-    },
-    {
-      "id": "NateRealAnalysis",
-      "title": "Real Analysis",
-      "dir": "Real-Analysis",
-      "description": "The single compiled volume threading measure theory, functional analysis, and harmonic analysis.",
-      "status": "in-progress",
-      "webPublished": true,
-      "clusters": [
-        "analysis-pde"
-      ],
-      "links": {
-        "pdf": "Real-Analysis/EYNTKA-real-analysis.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-real-analysis.pdf&name=Real%20Analysis&source=books"
-      },
-      "lastUpdated": "2026-07-16",
-      "xAffinity": 1,
-      "tier": 1
     },
     {
       "id": "NateRiemannianGeometry",
       "title": "Riemannian Geometry",
       "dir": "riemannian-geometry",
-      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Topology, Real Analysis, Linear Elliptic and Parabolic PDE. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
+      "description": "a two-Part backbone. Part I (metric Riemannian geometry): metrics of arbitrary signature, the Levi-Civita connection, geodesics and the exponential map, the curvature tensor, Jacobi fields, comparison theorems (Hopf–Rinow, Bonnet–Myers, Cartan–Hadamard, Rauch), submanifold geometry, curvature and topology, homogeneous and symmetric spaces. Part II (analysis and curvature on manifolds): connections and curvature on vector bundles, Chern–Weil theory, the Hodge–de Rham theorem, the Bochner technique. Pseudo-Riemannian threaded throughout for downstream GR. Prereqs Differential Topology, NateRealAnalysis, Linear Elliptic and Parabolic PDE. Part II is a pre-cut split seam. Feeds Hodge Theory (which imports Part II), geometric analysis, GR, and spin/index theory.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -845,7 +797,7 @@
         "pdf": "shimura-varieties/EYNTKA-shimura-varieties.pdf"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.388,
+      "xAffinity": -0.389,
       "tier": 4
     },
     {
@@ -862,7 +814,7 @@
         "pdf": "statistics/EYNTKA-statistics.pdf"
       },
       "lastUpdated": "2026-07-18",
-      "xAffinity": 0.839,
+      "xAffinity": 0.798,
       "tier": 3
     },
     {
@@ -1283,124 +1235,6 @@
       ]
     },
     {
-      "source": "NateAlgebra",
-      "target": "NateAlgGeo",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex",
-        "algebra/introduction.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateAlgTop",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateCFT",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateCommAlg",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateComplexAnalysis",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateDiffTop",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateEllipticCurves",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateFuncAnalysis",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateKTheory",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateLieGroups",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateLinearPDE",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateLogic",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
-      "source": "NateAlgebra",
-      "target": "NateRealAnalysis",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebra/appendix.tex"
-      ]
-    },
-    {
       "source": "NateAlgGeo",
       "target": "NateAbelianVarieties",
       "type": "reference",
@@ -1409,15 +1243,6 @@
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/curve-lemma.tex",
         "algebraic-geometry/drafts/scratch/weil-divisor-families.tex"
-      ]
-    },
-    {
-      "source": "NateAlgGeo",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1563,17 +1388,7 @@
     },
     {
       "source": "NateAlgGeo",
-      "target": "NateModuliStacks",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-G.tex"
-      ]
-    },
-    {
-      "source": "NateAlgGeo",
-      "target": "NateRealAnalysis",
+      "target": "NateMeasureTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1581,12 +1396,13 @@
       ]
     },
     {
-      "source": "NateAlgKTheory",
-      "target": "NateAlgebra",
+      "source": "NateAlgGeo",
+      "target": "NateModuliStacks",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/chevprep-G.tex"
       ]
     },
     {
@@ -1729,15 +1545,6 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-number-theory/EYNTKA-algebraic-number-theory.tex"
-      ]
-    },
-    {
-      "source": "NateAlgTop",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
     {
@@ -1893,7 +1700,7 @@
     },
     {
       "source": "NateAnalyticNumTheory",
-      "target": "NateRealAnalysis",
+      "target": "NateMeasureTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1961,15 +1768,6 @@
       "provenance": "auto",
       "citedIn": [
         "category-theory/EYNTKA-category-theory.tex"
-      ]
-    },
-    {
-      "source": "NateCFT",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "class-field-theory/EYNTKA-class-field-theory.tex"
       ]
     },
     {
@@ -2271,15 +2069,6 @@
     },
     {
       "source": "NateComplexAnalysis",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "complex-analysis/EYNTKA_complex_analysis.tex"
-      ]
-    },
-    {
-      "source": "NateComplexAnalysis",
       "target": "NateAlgGeo",
       "type": "coreq",
       "provenance": "both",
@@ -2341,16 +2130,18 @@
     },
     {
       "source": "NateComplexAnalysis",
-      "target": "NateMetricFunctionSpaces",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "target": "NateMeasureTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
     },
     {
       "source": "NateComplexAnalysis",
-      "target": "NateRealAnalysis",
-      "type": "reference",
-      "provenance": "auto",
+      "target": "NateMetricFunctionSpaces",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "complex-analysis/EYNTKA_complex_analysis.tex"
       ]
@@ -2513,6 +2304,24 @@
     },
     {
       "source": "NateCoreAlgebra",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateHarmonicAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
       "target": "NateHomologicalAlg",
       "type": "reference",
       "provenance": "auto",
@@ -2562,15 +2371,6 @@
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
-    },
-    {
-      "source": "NateCoreAlgebra",
-      "target": "NateRealAnalysis",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "core-algebra/EYNTKA-core-algebra.tex"
-      ]
     },
     {
       "source": "NateCoreProbability",
@@ -2663,7 +2463,7 @@
     },
     {
       "source": "NateCoreRepTheory",
-      "target": "NateRealAnalysis",
+      "target": "NateMeasureTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2917,15 +2717,6 @@
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
-    },
-    {
-      "source": "NateEllipticCurves",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "elliptic-curves/EYNTKA-elliptic-curves.tex"
-      ]
     },
     {
       "source": "NateEllipticCurves",
@@ -3283,15 +3074,6 @@
     },
     {
       "source": "NateGeoRepTheory",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
-      ]
-    },
-    {
-      "source": "NateGeoRepTheory",
       "target": "NateAlgGeo",
       "type": "reference",
       "provenance": "auto",
@@ -3340,15 +3122,6 @@
       "provenance": "auto",
       "citedIn": [
         "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
-      ]
-    },
-    {
-      "source": "NateHarmonicAnalysis",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
       ]
     },
     {
@@ -3851,15 +3624,6 @@
     },
     {
       "source": "NateLanglandsGL2",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "langlands-gl2/EYNTKA-langlands-gl2.tex"
-      ]
-    },
-    {
-      "source": "NateLanglandsGL2",
       "target": "NateCFT",
       "type": "prereq",
       "provenance": "both",
@@ -3915,15 +3679,6 @@
       "target": "NateHarmonicAnalysis",
       "type": "prereq",
       "provenance": "both",
-      "citedIn": [
-        "langlands-gl2/EYNTKA-langlands-gl2.tex"
-      ]
-    },
-    {
-      "source": "NateLanglandsGL2",
-      "target": "NateRealAnalysis",
-      "type": "reference",
-      "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex"
       ]
@@ -4012,15 +3767,6 @@
     {
       "source": "NateLieGroups",
       "target": "NateMeasureTheory",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "lie-groups/EYNTKA-lie-groups.tex"
-      ]
-    },
-    {
-      "source": "NateLieGroups",
-      "target": "NateRealAnalysis",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
@@ -4052,15 +3798,6 @@
       "provenance": "both",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
-      ]
-    },
-    {
-      "source": "NateLinAlg",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -4106,7 +3843,18 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex",
+        "linear-algebra/drafts/scratch/ch09-s01.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateDiffTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex",
+        "linear-algebra/drafts/scratch/done-ch08b/ch08-s05.tex"
       ]
     },
     {
@@ -4227,15 +3975,6 @@
     },
     {
       "source": "NateLocalFieldTheory",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "local-field-theory/EYNTKA-local-field-theory.tex"
-      ]
-    },
-    {
-      "source": "NateLocalFieldTheory",
       "target": "NateAlgGeo",
       "type": "reference",
       "provenance": "auto",
@@ -4308,7 +4047,7 @@
     },
     {
       "source": "NateLocalFieldTheory",
-      "target": "NateRealAnalysis",
+      "target": "NateMeasureTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -4321,15 +4060,6 @@
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
-    },
-    {
-      "source": "NateMeasureTheory",
-      "target": "NateAlgebra",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "measure-theory/EYNTKA-measure-theory.tex"
-      ]
     },
     {
       "source": "NateMeasureTheory",
@@ -4708,13 +4438,6 @@
       ]
     },
     {
-      "source": "NateRealAnalysis",
-      "target": "NateElemAnalysis",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
       "source": "NateRiemannianGeometry",
       "target": "NateAlgGeo",
       "type": "reference",
@@ -4761,6 +4484,15 @@
     },
     {
       "source": "NateRiemannianGeometry",
+      "target": "NateHarmonicAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
       "target": "NateHodgeTheory",
       "type": "reference",
       "provenance": "auto",
@@ -4788,7 +4520,7 @@
     },
     {
       "source": "NateRiemannianGeometry",
-      "target": "NateMicrolocalAnalysis",
+      "target": "NateMeasureTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -4797,7 +4529,7 @@
     },
     {
       "source": "NateRiemannianGeometry",
-      "target": "NateRealAnalysis",
+      "target": "NateMicrolocalAnalysis",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -5009,34 +4741,6 @@
   ],
   "clusters": [
     {
-      "id": "NateRealAnalysis",
-      "label": "Analysis (mega-book)",
-      "kind": "megabook",
-      "book": "NateRealAnalysis",
-      "members": [
-        "NateFuncAnalysis",
-        "NateHarmonicAnalysis",
-        "NateMeasureTheory"
-      ],
-      "color": "#4fa3d1"
-    },
-    {
-      "id": "NateAlgebra",
-      "label": "Algebra (mega-book)",
-      "kind": "megabook",
-      "book": "NateAlgebra",
-      "members": [
-        "NateAlgNumberTheory",
-        "NateCategoryTheory",
-        "NateClassicalAlgGeo",
-        "NateCommAlg",
-        "NateCoreAlgebra",
-        "NateCoreRepTheory",
-        "NateHomologicalAlg"
-      ],
-      "color": "#b07cc6"
-    },
-    {
       "id": "langlands",
       "label": "Langlands programme",
       "kind": "track",
@@ -5100,7 +4804,6 @@
       "members": [
         "NateElemAnalysis",
         "NateMeasureTheory",
-        "NateRealAnalysis",
         "NateFuncAnalysis",
         "NateHarmonicAnalysis",
         "NateODE",
