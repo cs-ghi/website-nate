@@ -336,15 +336,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateElemAnalysis -> NateRealAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateElemAnalysis",
-      "NateRealAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateElemAnalysis -> NateCoreProbability) is manual, no backing \\cite found.",
     "refs": [
       "NateElemAnalysis",
@@ -367,15 +358,6 @@
     "refs": [
       "NateLinAlg",
       "NateODE"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateMetricFunctionSpaces -> NateComplexAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateMetricFunctionSpaces",
-      "NateComplexAnalysis"
     ]
   },
   {
