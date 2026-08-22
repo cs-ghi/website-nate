@@ -606,15 +606,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateGeoRepTheory -> NateLanglandsGL2) is manual, no backing \\cite found.",
-    "refs": [
-      "NateGeoRepTheory",
-      "NateLanglandsGL2"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateRiemannianGeometry -> NateGR) is manual, no backing \\cite found.",
     "refs": [
       "NateRiemannianGeometry",
@@ -1047,7 +1038,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 10 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateEtaleCohomology",
       "NateModuliStacks"
@@ -1096,6 +1087,14 @@
     "refs": [
       "NateProbability",
       "NateAnalyticNumTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "warn",
+    "message": "layout.tiers 'Specialization' lists unknown book 'NateStableHomotopy'.",
+    "refs": [
+      "NateStableHomotopy"
     ]
   },
   {
