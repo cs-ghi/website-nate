@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, Hos
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { BookIndexService } from '../../services/book-index.service';
+import { LEGACY_PDF_REDIRECTS } from '../papers/papers';
 
 @Component({
   selector: 'app-pdf-viewer',
@@ -92,7 +93,13 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(async params => {
-      const newSrc = params['src'] || '';
+      // The two research documents moved from assets/pdfs/notes to
+      // assets/pdfs/papers. Their old URLs are indexable query-string deep
+      // links, and one is pasted into the /books overview copy, so rewrite
+      // rather than 404.
+      const requested = params['src'] || '';
+      const moved = LEGACY_PDF_REDIRECTS[requested.split('/').pop() ?? ''];
+      const newSrc = moved ?? requested;
       const srcChanged = newSrc !== this.pdfSrc;
       this.bookName = params['name'] || 'PDF Document';
       this.pendingLoc = params['loc'] || '';
@@ -106,6 +113,9 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
       } else if (source === 'blog') {
         this.backButtonText = 'Back to Blog';
         this.returnText = 'Return to Blog';
+      } else if (source === 'papers') {
+        this.backButtonText = 'Back to Papers';
+        this.returnText = 'Return to Papers';
       } else {
         this.backButtonText = 'Back to Books';
         this.returnText = 'Return to Books';
@@ -293,6 +303,9 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   private detectSourceFromUrl(): string {
     // Check if we can detect the source from the current URL or referrer
     const referrer = document.referrer;
+    if (referrer.includes('/papers')) {
+      return 'papers';
+    }
     if (referrer.includes('/notes')) {
       return 'notes';
     }

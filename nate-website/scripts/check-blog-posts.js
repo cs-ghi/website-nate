@@ -1,11 +1,21 @@
 #!/usr/bin/env node
-// Fail the build if a live blog post points at a PDF that is not there.
+// Fail the build if a blog post is inconsistent with what is on disk.
 //
 // This exists because it already happened: "Comparing Schemes and Manifolds"
 // shipped for months linking to differences_between_schemes_and_manifolds.pdf,
 // which was never compiled into assets — the card rendered fine and the link
 // 404'd. Nothing in an Angular build checks a string that only ever becomes a
 // URL at runtime, so the check has to be here.
+//
+// Checks:
+//   1. every published post has a `link`, and that PDF is on disk;
+//   2. a `planned` post may omit `link`, but if it has one the PDF must exist —
+//      unlocking the page must never surface a broken link;
+//   3. a `planned` post with no `link` has an `intendedDate`, or it sorts to the
+//      bottom of the stream instead of into it;
+//   4. every `topic` and `alsoTopics` key belongs to that post's own `domain`.
+//      The two-tier taxonomy makes a maths topic on a philosophy post easy to
+//      write and impossible to see.
 //
 // Runs from the `prebuild` hook, so it gates `npm run build` and therefore CI.
 const fs = require('fs');
@@ -17,15 +27,51 @@ const pdfDir = path.join(root, 'src', 'assets', 'pdfs', 'blogs');
 
 const source = fs.readFileSync(postsPath, 'utf8');
 
-// blog-posts.ts is a hand-authored array of object literals. Strip comments
-// first: unpublished posts live commented out in that file by design, and they
-// are exactly the ones whose PDFs may legitimately be absent.
+// Strip comments before parsing so commented-out examples in this file's own
+// prose cannot be mistaken for entries.
 const live = source
   .replace(/\/\/.*$/gm, '')
   .replace(/\/\*[\s\S]*?\*\//g, '');
 
-const links = [...live.matchAll(/link:\s*'([^']+)'/g)].map((m) => m[1]);
-if (links.length === 0) {
+// The domain metadata comes first in the file and the post array second. Split
+// on the array declaration so topic keys declared in BLOG_DOMAINS are not
+// mistaken for post fields.
+const splitAt = live.indexOf('BLOG_POSTS');
+if (splitAt < 0) {
+  console.error('check-blog-posts: no BLOG_POSTS array found. The file shape changed.');
+  process.exit(1);
+}
+const taxonomySrc = live.slice(0, splitAt);
+const postsSrc = live.slice(splitAt);
+
+// Which topic keys each domain owns, read straight out of BLOG_DOMAINS. Matches
+// a domain's `key` / `label` / `topics: [...]` triple and pulls every `key`
+// inside the topics array. Relies on the file's formatting, which is why a zero
+// match below is a hard error rather than a silent pass.
+const domains = Object.fromEntries(
+  [
+    ...taxonomySrc.matchAll(
+      /key:\s*'([^']+)'\s*,\s*\n\s*label:\s*'[^']*'\s*,\s*\n\s*topics:\s*\[([\s\S]*?)\n\s*\]/g,
+    ),
+  ].map(([, domain, body]) => [domain, [...body.matchAll(/key:\s*'([^']+)'/g)].map((m) => m[1])]),
+);
+
+if (!Object.keys(domains).length) {
+  console.error(
+    'check-blog-posts: parsed 0 domains out of BLOG_DOMAINS. The file shape ' +
+      'changed; update the matcher in this script.',
+  );
+  process.exit(1);
+}
+
+// One object literal per post. Splitting on `\n  {` matches the file's
+// formatting: top-level array members are indented two spaces.
+const entries = postsSrc
+  .split(/\n\s{2}\{/)
+  .slice(1)
+  .map((chunk) => chunk.split(/\n\s{2}\},?/)[0]);
+
+if (!entries.length) {
   console.error(
     'check-blog-posts: parsed 0 posts out of blog-posts.ts. The file shape ' +
       'changed; update the matcher in this script.',
@@ -33,29 +79,57 @@ if (links.length === 0) {
   process.exit(1);
 }
 
-const topics = [...live.matchAll(/topic:\s*'([^']+)'/g)].map((m) => m[1]);
-const known = new Set([...live.matchAll(/^\s*key:\s*'([^']+)'/gm)].map((m) => m[1]));
+const field = (chunk, name) => chunk.match(new RegExp(`${name}:\\s*'([^']*)'`))?.[1];
+const list = (chunk, name) => {
+  const raw = chunk.match(new RegExp(`${name}:\\s*\\[([^\\]]*)\\]`))?.[1] ?? '';
+  return [...raw.matchAll(/'([^']+)'/g)].map((m) => m[1]);
+};
 
 const onDisk = new Set(fs.readdirSync(pdfDir).filter((f) => f.toLowerCase().endsWith('.pdf')));
-const missing = links.filter((l) => !onDisk.has(l.split('/').pop()));
-const badTopics = [...new Set(topics.filter((t) => !known.has(t)))];
+const errors = [];
+let published = 0;
+let planned = 0;
 
-if (missing.length) {
-  console.error(
-    `\ncheck-blog-posts: ${missing.length} live post(s) link to a PDF that is not in ` +
-      `${path.relative(root, pdfDir)}:\n` +
-      missing.map((l) => `  ${l.split('/').pop()}`).join('\n') +
-      '\nCompile the PDF into that directory, or comment the entry out.\n',
-  );
+for (const chunk of entries) {
+  const name = field(chunk, 'name') ?? '(unnamed)';
+  const link = field(chunk, 'link');
+  const domain = field(chunk, 'domain');
+  const topic = field(chunk, 'topic');
+  const isPlanned = /planned:\s*true/.test(chunk);
+  isPlanned ? planned++ : published++;
+
+  if (!domain || !(domain in domains)) {
+    errors.push(`${name}: domain '${domain}' is not in BLOG_DOMAINS`);
+    continue;
+  }
+
+  for (const t of [topic, ...list(chunk, 'alsoTopics')]) {
+    if (!t) {
+      errors.push(`${name}: no topic`);
+    } else if (!domains[domain].includes(t)) {
+      errors.push(`${name}: topic '${t}' does not belong to domain '${domain}'`);
+    }
+  }
+
+  if (link) {
+    if (!onDisk.has(link.split('/').pop())) {
+      errors.push(`${name}: links to ${link.split('/').pop()}, which is not in assets/pdfs/blogs`);
+    }
+  } else if (!isPlanned) {
+    errors.push(`${name}: published posts need a link`);
+  } else if (!field(chunk, 'intendedDate')) {
+    errors.push(`${name}: planned with no link needs an intendedDate to sort into the stream`);
+  }
+}
+
+if (errors.length) {
+  console.error(`\ncheck-blog-posts: ${errors.length} problem(s):`);
+  for (const e of errors) console.error(`  ${e}`);
+  console.error('');
   process.exit(1);
 }
 
-if (badTopics.length) {
-  console.error(
-    `\ncheck-blog-posts: ${badTopics.length} post(s) use a topic key that is not in ` +
-      `BLOG_TOPICS: ${badTopics.join(', ')}\n`,
-  );
-  process.exit(1);
-}
-
-console.log(`check-blog-posts: ${links.length} live post(s), all with a PDF and a known topic.`);
+console.log(
+  `check-blog-posts: ${published} published + ${planned} planned post(s), ` +
+    `all with a known domain, an in-domain topic, and a PDF where one is claimed.`,
+);

@@ -3,18 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Note, Notes } from 'src/app/interfaces/notes.model';
 
-
+// Exposition, translations and working notes. Original research moved to
+// /papers, which carries what a paper needs and a note does not — abstract,
+// authors, versions, arXiv identifier, citation block. Deep links to the two
+// that moved are rewritten by LEGACY_PDF_REDIRECTS in pdf-viewer.component.ts.
 export const notesArray: Note[]= [
-  {
-    name: "Integral Hodge Conjecture and its Invariance to Twisting",
-    desc: "The Integral Hodge Conjecture has been disproven by Atiyah and Hirzebruch in the the 1960s. The exact limits of when it is true, and what variations of the conjecture give further information are still being explored. This paper shows that there is no way to introduce a twist (via twisted K-theory), and outlines how the integral hodge conjecture's main area of interest has progressed into algebro-geomeric questions and into K-theoretic generalizations.",
-    link: "././assets/pdfs/notes/twisted-IHC.pdf"
-  },
-  {
-    name: "Hirzebruch-Riemann-Roch Theorem",
-    desc: "Riemann-Roch Theorem is a fundamental result in finding what meromorphic function exist on a Riemann surface that satisfy the conditions of a divisor D. The Hirzebruch-Riemann-Roch generalizes this to finding sections of vector bundles over projective varieites under the right conditions. This paper goes over the proof of HRR, outline a proof for Grothendeick-Riemann Roch, and concludes with some references to the most recent generalization results in the literature",
-    link: "././assets/pdfs/notes/HRR.pdf"
-  },
   {
     name: "Galois Cohomology",
     desc: "These are my current work in progress notes on Galois Cohomology which aim to be inspired by Neukirch and Kumar Murty. They are rapidly changing are mostly here for my reference \"on the go\"",

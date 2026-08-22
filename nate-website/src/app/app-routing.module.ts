@@ -15,6 +15,8 @@ import { TutoringComponent } from './components/tutoring/tutoring.component';
 import { DictionaryComponent } from './components/dictionary/dictionary.component';
 import { JudoComponent } from './components/judo/judo.component';
 import { SeriesMapComponent } from './components/series-map/series-map.component';
+import { PapersComponent } from './components/papers/papers.component';
+import { PaperDetailComponent } from './components/papers/paper-detail.component';
 
 const routes: Routes = [
   {path: '', component: BooksComponent} ,
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'tutoring', component : TutoringComponent},
   {path: 'books', component: BooksComponent},
   {path: 'series-map', component: SeriesMapComponent},
+  {path: 'papers', component: PapersComponent},
+  {path: 'papers/:slug', component: PaperDetailComponent},
   {path: 'notes', component: NotesComponent},
   {path: 'pdf-viewer', component: PdfViewerComponent },
   {path: 'html-viewer', component: HtmlBookViewerComponent },

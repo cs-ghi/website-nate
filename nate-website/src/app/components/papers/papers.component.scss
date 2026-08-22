@@ -1,0 +1,211 @@
+@import 'src/sass/variables';
+@import 'src/sass/mixins';
+@import 'src/sass/grid';
+
+$card-bg: #313236;
+$card-hover: #404145;
+$card-border: #3c3d42;
+$ink: #bab0b0;
+$ink-strong: #c0b6aa;
+$ink-faint: #857d77;
+
+.divider {
+    margin-bottom: 60px;
+    margin-top: 20px;
+    border-top-width: 1.3px;
+}
+
+.papers-intro {
+    max-width: 720px;
+
+    h3 {
+        color: $ink-strong;
+        font-size: 26px;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    p {
+        color: $ink;
+        font-size: 15px;
+        line-height: 27px;
+    }
+
+    a {
+        color: $bg-secondary;
+        text-decoration: underline !important;
+        cursor: pointer;
+    }
+
+    .muted {
+        color: $ink-faint;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+}
+
+// ── Sections ────────────────────────────────────────────────────────────────
+// Grouped by status rather than filtered by it: a publication list is read
+// top-down, and two papers do not justify a chip row.
+.paper-section {
+    margin-top: 3.4em;
+}
+
+.section-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3a3b40;
+
+    h3 {
+        color: $ink-strong;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .section-blurb {
+        color: $ink-faint;
+        font-size: 12.5px;
+        font-style: italic;
+    }
+}
+
+// ── Rows ────────────────────────────────────────────────────────────────────
+.paper-row {
+    padding: 24px 0 22px;
+    border-bottom: 1px solid #333438;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        .p-title { color: #d8cec2; }
+        .p-more { opacity: 1; }
+        .p-more .arrow { transform: translateX(3px); }
+    }
+}
+
+.p-title {
+    font-family: serif !important;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: $ink-strong;
+    transition: color 0.2s;
+}
+
+.p-authors {
+    margin-top: 5px;
+    color: $ink-faint;
+    font-size: 12.5px;
+    letter-spacing: 0.3px;
+}
+
+.p-summary {
+    margin-top: 10px;
+    max-width: 74ch;
+    color: $ink;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.p-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    color: $ink-faint;
+    font-size: 12px;
+
+    .p-sep { opacity: 0.45; }
+    .p-dim { opacity: 0.7; font-style: italic; }
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    background: #2a2b30;
+    color: $bg-secondary;
+    border: 1px solid #46474d;
+
+    // Status is the badge a reader actually decides on, so it is the one
+    // carrying colour: amber while unposted, blue once public, green in print.
+    &.st-draft     { color: #c8b06e; border-color: #574c30; }
+    &.st-preprint,
+    &.st-submitted { color: #9aa9c8; border-color: #3f4757; }
+    &.st-accepted,
+    &.st-published { color: #8fb98f; border-color: #3d5240; }
+
+    &.kind { background: transparent; border-color: $card-border; }
+
+    &.arxiv {
+        background: transparent;
+        border-color: #4a4b52;
+        text-decoration: none !important;
+        &:hover { border-color: $bg-secondary; color: $ink-strong; }
+    }
+}
+
+.p-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.p-action {
+    cursor: pointer;
+    padding: 4px 13px;
+    font-size: 12.5px;
+    color: $bg-secondary;
+    background: transparent;
+    border: 1px solid #45464b;
+    border-radius: 999px;
+    transition: 0.2s;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: $bg-secondary;
+    }
+}
+
+.p-more {
+    margin-left: auto;
+    color: $bg-secondary;
+    font-size: 12.5px;
+    opacity: 0;
+    transition: 0.22s;
+
+    .arrow {
+        display: inline-block;
+        transition: transform 0.25s;
+    }
+}
+
+.p-abstract {
+    margin-top: 16px;
+    padding: 16px 18px;
+    max-width: 82ch;
+    background: $card-bg;
+    border: 1px solid $card-border;
+    border-radius: 8px;
+    cursor: text;
+    color: $ink;
+    font-size: 13.5px;
+    line-height: 1.75;
+}
+
+@media (max-width: 640px) {
+    .p-title { font-size: 19px; }
+    .p-more { display: none; }
+}

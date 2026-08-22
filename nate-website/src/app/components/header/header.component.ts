@@ -4,6 +4,7 @@ import { Component, OnInit} from '@angular/core';
 export const menuItems = [
   { name: 'books', url: '/books'},
   { name: 'series map', url: '/series-map'},
+  { name: 'papers', url: '/papers'},
   { name: 'notes', url: '/notes'},
   { name: 'blog', url: '/blog'},
   { name: 'programming', url: '/programming'},

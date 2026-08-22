@@ -1,17 +1,31 @@
-// Who a post is written for. Unlike the textbooks, whose reading levels come out
-// of graph.json, the blog spans "explain this to a friend with no maths" through
-// to research-adjacent notes — and which one a post is turns out to be the thing
-// a reader most wants to filter on, so it is authored per post.
-export type BlogLevel = 'general' | 'undergrad' | 'graduate';
+// The coarse bucket a reader self-selects into. Distinct from `topic`, which is
+// domain-scoped: "Algebra" is a subfield of one domain, "Philosophy" is a
+// domain, and a single flat filter row comparing the two reads as a category
+// error.
+export type BlogDomain = 'maths' | 'ai' | 'philosophy' | 'quant';
 
-export const LEVEL_LABEL: Record<BlogLevel, string> = {
-  general: 'General audience',
-  undergrad: 'Undergraduate',
-  graduate: 'Graduate',
+// How much the post assumes of you. One three-step ramp shared by every domain,
+// so the colour coding and the ordering stay uniform across a mixed feed — but
+// the *labels* are domain-relative, because "Undergraduate" is a maths ladder
+// and says nothing about a philosophy essay.
+export type BlogLevel = 'open' | 'mid' | 'deep';
+
+export const LEVEL_ORDER: BlogLevel[] = ['open', 'mid', 'deep'];
+
+export const LEVEL_LABEL: Record<BlogDomain, Record<BlogLevel, string>> = {
+  maths:      { open: 'General audience', mid: 'Undergraduate',   deep: 'Graduate' },
+  ai:         { open: 'No background',    mid: 'Practitioner',    deep: 'Research-level' },
+  philosophy: { open: 'General audience', mid: 'Some philosophy', deep: 'Specialist' },
+  quant:      { open: 'General audience', mid: 'Some finance',    deep: 'Practitioner' },
 };
 
-// Chip order: easiest first, so the row reads as a ramp.
-export const LEVEL_ORDER: BlogLevel[] = ['general', 'undergrad', 'graduate'];
+// The rail is ~104px wide; these have to fit on one line at 10px uppercase.
+export const LEVEL_SHORT: Record<BlogDomain, Record<BlogLevel, string>> = {
+  maths:      { open: 'Anyone', mid: 'Undergrad',    deep: 'Graduate' },
+  ai:         { open: 'Anyone', mid: 'Practitioner', deep: 'Research' },
+  philosophy: { open: 'Anyone', mid: 'Some phil.',   deep: 'Specialist' },
+  quant:      { open: 'Anyone', mid: 'Finance',      deep: 'Practitioner' },
+};
 
 export interface BlogTopic {
   key: string;
@@ -19,25 +33,46 @@ export interface BlogTopic {
   blurb: string;
 }
 
+// A domain owns its topic keys. Nothing enforces that two domains do not share
+// a key beyond check-blog-posts.js, which fails the build if a post's topic is
+// not among its own domain's.
+export interface BlogDomainMeta {
+  key: BlogDomain;
+  label: string;
+  topics: BlogTopic[];
+}
+
 // A post as authored in blog-posts.ts, before the PDF's own metadata is merged in.
 export interface BlogEntry {
   name: string;
   desc: string;
-  link: string;
-  topic: string;        // primary topic key — decides the chip it counts toward
-  alsoTopics?: string[]; // secondary topics the post also answers to
+  domain: BlogDomain;
+  topic: string;         // primary topic key — must belong to `domain`
+  alsoTopics?: string[];  // secondary topics the post also answers to
   level: BlogLevel;
+  // Optional only for planned entries. A published post must have one, and the
+  // build check fails if it points at a PDF that is not on disk.
+  link?: string;
+  // Controls visibility only: hidden from visitors behind the unlock at the
+  // bottom of the page. Orthogonal to whether a PDF exists — a planned entry
+  // with a `link` is readable once unlocked, one without is not yet written.
+  planned?: true;
+  // Needed only by a planned entry with no PDF, since nothing else can supply a
+  // date. Without it the entry sorts to the bottom instead of into the stream.
+  intendedDate?: string;  // ISO
 }
 
 // A post as rendered: the authored entry plus what gen-blog-manifest.js read out
 // of the PDF. The metadata fields are optional because a post whose PDF has not
-// been compiled yet should degrade to a card without a date, not vanish.
+// been compiled yet should degrade to an entry without a date, not vanish.
 export interface BlogPost extends BlogEntry {
-  file: string;           // PDF basename — the manifest key
+  file: string;           // PDF basename — the manifest key; '' when planned
+  domainLabel: string;
   topicLabel: string;
   alsoLabels: string[];   // display labels for alsoTopics, resolved once here
   levelLabel: string;
-  updated?: string;       // ISO date of the last compile
+  levelShort: string;
+  updated?: string;       // ISO date of the last compile, or intendedDate
   pages?: number;
   readingMinutes?: number;
 }

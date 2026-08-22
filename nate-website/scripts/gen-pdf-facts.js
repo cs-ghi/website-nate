@@ -1,22 +1,31 @@
 #!/usr/bin/env node
-// Generate src/assets/pdfs/blogs/manifest.json — per-post page count and compile
-// date for every blog PDF, keyed by filename.
+// Generate manifest.json — page count and compile date for every PDF in a
+// directory, keyed by filename.
 //
-// The blog page shows "Updated <month year> · N pp · ~M min" on each card. Those
-// three facts are properties of the PDF, not editorial metadata, so they are
-// read out of the file rather than hand-maintained in blog-posts.ts: recompiling
-// a post and dropping the new PDF in is enough to move it back to the top of the
-// feed. Both values come from the raw bytes with no external dependency —
+//   node scripts/gen-pdf-facts.js src/assets/pdfs/blogs
+//   node scripts/gen-pdf-facts.js src/assets/pdfs/papers
+//
+// /blog shows "Updated <month year> · N pp · ~M min" per entry and /papers shows
+// the same facts about the version it serves. Those are properties of the PDF,
+// not editorial metadata, so they are read out of the file rather than
+// hand-maintained alongside the entry: recompiling and dropping the new PDF in
+// is enough to move a post back to the top of the feed. Both values come from
+// the raw bytes with no external dependency —
 // LaTeX writes /CreationDate into an uncompressed Info dictionary, and the page
 // tree's /Count lives in a Flate-compressed object stream that zlib can inflate.
 //
-// Run automatically before `build`/`start` (npm pre* hooks); the generated
-// manifest is committed so it is present even without a build.
+// Run once per directory before `build`/`start` (npm pre* hooks); the generated
+// manifests are committed so they are present even without a build.
 const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 
-const dir = path.join(__dirname, '..', 'src', 'assets', 'pdfs', 'blogs');
+const target = process.argv[2];
+if (!target) {
+  console.error('gen-pdf-facts: usage: node scripts/gen-pdf-facts.js <dir-of-pdfs>');
+  process.exit(1);
+}
+const dir = path.resolve(__dirname, '..', target);
 const out = path.join(dir, 'manifest.json');
 
 // A dense LaTeX page is not a web page; this is the multiplier that turns a page
@@ -86,11 +95,11 @@ for (const file of fs.readdirSync(dir).filter((f) => f.toLowerCase().endsWith('.
 fs.writeFileSync(out, JSON.stringify(manifest, null, 2) + '\n');
 
 const n = Object.keys(manifest).length;
-console.log(`gen-blog-manifest: ${n} blog PDF(s) -> ${path.relative(process.cwd(), out)}`);
+console.log(`gen-pdf-facts: ${n} PDF(s) in ${target} -> ${path.relative(process.cwd(), out)}`);
 if (skipped.length) {
   // Not fatal: the card degrades to no date / no length rather than not rendering.
   console.warn(
-    `gen-blog-manifest: could not read page count or date from ${skipped.length} file(s): ` +
+    `gen-pdf-facts: could not read page count or date from ${skipped.length} file(s): ` +
       skipped.join(', '),
   );
 }

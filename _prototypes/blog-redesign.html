@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<!--
+  Blog redesign prototypes — local showcase only.
+
+  Not part of the Angular app and not deployed: the GitHub Pages workflow only
+  triggers on nate-website/**, and this file lives above that directory.
+
+  Five tabs: the current /blog page rebuilt for comparison, then four
+  alternatives. Real post data, real compile dates and page counts from
+  src/assets/pdfs/blogs/manifest.json, and the site's own palette so what you
+  see is what shipping it would look like.
+
+  Serve with:  python3 -m http.server 8777 --directory _prototypes
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog redesign — options</title>
+<style>
+  /* ── site tokens, lifted from src/sass/_variables.scss + blog.component.scss ── */
+  :root {
+    --bg:          #2a2b30;
+    --card:        #313236;
+    --card-hover:  #404145;
+    --border:      #3c3d42;
+    --accent:      #a49b96;
+    --ink:         #bab0b0;
+    --ink-strong:  #c0b6aa;
+    --ink-faint:   #857d77;
+    --lvl-open:   #8fb98f;
+    --lvl-mid: #9aa9c8;
+    --lvl-deep:  #c8b06e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 { font-family: Georgia, 'Times New Roman', serif; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; }
+
+  /* ── prototype chrome (not part of any design) ───────────────────────────── */
+  .chrome {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+    padding: 10px 20px;
+    background: #1e1f23;
+    border-bottom: 1px solid #45464b;
+  }
+  .chrome-label {
+    font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--ink-faint); margin-right: 12px;
+  }
+  .tab {
+    cursor: pointer; padding: 5px 13px; font-size: 13px;
+    color: var(--accent); background: transparent;
+    border: 1px solid #45464b; border-radius: 999px;
+    transition: .2s;
+  }
+  .tab:hover { background: rgba(255,255,255,.05); }
+  .tab.active { background: var(--accent); border-color: var(--accent); color: #23242a; }
+  .tab .num { opacity: .45; font-size: 10px; margin-right: 5px; }
+  .tab.active .num { opacity: .6; color: #23242a; }
+  .chrome-hint { margin-left: auto; font-size: 11px; color: #5c5651; font-style: italic; }
+
+  .rationale {
+    max-width: 1080px; margin: 0 auto; padding: 18px 20px 0;
+    font-size: 12.5px; color: var(--ink-faint); line-height: 1.7;
+  }
+  .rationale b { color: var(--accent); font-weight: 500; }
+  .rationale .tag {
+    display: inline-block; font-size: 10px; letter-spacing: 1.4px;
+    text-transform: uppercase; color: #6b645f;
+    border: 1px dashed #454549; border-radius: 3px;
+    padding: 1px 7px; margin-right: 9px;
+  }
+
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 20px 120px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .page-heading { margin-top: 55px; text-align: center; }
+  .page-heading h2 { color: var(--ink-strong); font-size: 26px; letter-spacing: 1px; font-weight: 600; }
+  .page-heading p { font-size: 13px; color: var(--accent); }
+  .page-heading hr { border: 0; border-top: 1.3px solid #46423f; margin: 20px 0 60px; }
+
+  .lvl-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; background: currentColor; }
+  .c-open   { color: var(--lvl-open); }
+  .c-mid { color: var(--lvl-mid); }
+  .c-deep  { color: var(--lvl-deep); }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     0 — CURRENT  (rebuild of blog.component.html, for side-by-side comparison)
+     ══════════════════════════════════════════════════════════════════════════ */
+  #v-current .intro { max-width: 720px; }
+  #v-current .intro h3 { color: var(--ink-strong); font-size: 26px; font-weight: 600; letter-spacing: 1px; margin-bottom: 20px; }
+  #v-current .intro p { font-size: 15px; line-height: 27px; }
+  #v-current .controls { display: flex; flex-wrap: wrap; gap: 14px 22px; margin: 2.2em 0 1.4em; align-items: center; }
+  #v-current .search {
+    display: flex; align-items: center; gap: 8px; flex: 1 1 320px; max-width: 420px;
+    padding: 8px 14px; background: var(--card); border: 1px solid #45464b; border-radius: 8px;
+    color: #6f6862; font-size: 15px;
+  }
+  #v-current .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  #v-current .chip {
+    padding: 5px 13px; font-size: 13px; color: var(--accent);
+    background: var(--card); border: 1px solid #45464b; border-radius: 999px; cursor: pointer;
+  }
+  #v-current .chip.on { background: var(--accent); border-color: var(--accent); color: #23242a; }
+  #v-current .chip .n { opacity: .5; font-size: 11px; margin-left: 3px; }
+  #v-current .lvlrow { display: flex; gap: 6px; align-items: center; margin-bottom: 34px; }
+  #v-current .cap { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); opacity: .4; margin-right: 4px; }
+  #v-current .lchip { padding: 3px 10px; font-size: 12px; color: var(--accent); opacity: .55; background: transparent; border: 1px solid transparent; border-radius: 999px; cursor: pointer; }
+  #v-current .lead {
+    display: flex; flex-direction: column; gap: 12px; padding: 26px 28px; margin-bottom: 22px;
+    background: linear-gradient(160deg,#35363b,#2e2f34); border: 1px solid #4a4b52; border-radius: 12px; cursor: pointer;
+  }
+  #v-current .lead .flag { align-self: flex-start; font-size: 10px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: #23242a; background: var(--accent); padding: 3px 10px; border-radius: 999px; }
+  #v-current .lead h3 { color: var(--ink-strong); font-size: 27px; font-weight: 600; line-height: 1.25; }
+  #v-current .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 16px; }
+  #v-current .card {
+    display: flex; flex-direction: column; gap: 10px; padding: 20px 22px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; transition: .25s;
+  }
+  #v-current .card:hover { background: var(--card-hover); border-color: var(--accent); transform: translateY(-2px); }
+  #v-current .card h4 { color: var(--ink-strong); font-size: 18px; font-weight: 600; line-height: 1.3; }
+  #v-current .card .desc { font-size: 13.5px; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+  .meta { display: flex; flex-wrap: wrap; gap: 5px; color: var(--ink-faint); font-size: 12px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px; font-size: 11px; padding: 2px 9px;
+    border-radius: 999px; background: #2a2b30; color: var(--accent); border: 1px solid #46474d; white-space: nowrap;
+  }
+  .badge.b-open   { color: var(--lvl-open);   border-color: #3d5240; }
+  .badge.b-mid { color: var(--lvl-mid); border-color: #3f4757; }
+  .badge.b-deep  { color: var(--lvl-deep);  border-color: #574c30; }
+  .badge.topic { background: transparent; border-color: var(--border); }
+  .read { color: var(--accent); font-size: 12.5px; opacity: .7; margin-top: auto; }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     A — THE STREAM   typographic index, no cards, no grid
+     ══════════════════════════════════════════════════════════════════════════ */
+  #v-stream .stream-head { max-width: 620px; margin: 0 auto 10px; text-align: center; }
+  #v-stream .stream-head h1 {
+    font-size: 46px; font-weight: 400; color: var(--ink-strong);
+    letter-spacing: -.5px; line-height: 1.1;
+  }
+  #v-stream .stream-head .sub {
+    font-size: 14.5px; font-style: italic; color: var(--ink-faint); margin-top: 14px; line-height: 1.7;
+  }
+  #v-stream .quiet-filter {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 2px 4px;
+    margin: 42px 0 8px; font-size: 12.5px;
+  }
+  #v-stream .qf {
+    background: none; border: 0; cursor: pointer; padding: 3px 9px;
+    color: var(--accent); opacity: .45; border-bottom: 1px solid transparent; transition: .2s;
+  }
+  #v-stream .qf:hover { opacity: .85; }
+  #v-stream .qf.on { opacity: 1; border-bottom-color: var(--accent); }
+  #v-stream .qf-sep { color: #4a4a4e; align-self: center; }
+
+  /* Tier 2 — deliberately smaller and quieter than the domain line, and absent
+     until a domain is picked, so the default view is one line, not two. */
+  #v-stream .sub-filter { display: none; margin: 2px 0 0; }
+  #v-stream .sub-filter.shown { display: flex; }
+  #v-stream .qf.sub { font-size: 11.5px; padding: 2px 7px; }
+
+  #v-stream .e-domain {
+    display: block; font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 5px; opacity: .75;
+  }
+  #v-stream .d-maths      { color: #8a9cae; }
+  #v-stream .d-ai         { color: #a58fae; }
+  #v-stream .d-philosophy { color: #a99a86; }
+  #v-stream .d-quant      { color: #8aa89a; }
+
+  /* A planned entry is legible but visibly not clickable-yet: it holds its slot
+     in the chronology without pretending to be a published post. */
+  #v-stream .entry.planned { opacity: .62; cursor: default; }
+  #v-stream .entry.planned:hover { background: none; }
+  #v-stream .entry.planned:hover .e-title { color: var(--ink-strong); }
+  #v-stream .entry.planned .e-title { font-style: italic; }
+  #v-stream .entry.planned .e-arrow { opacity: .8; font-style: italic; color: var(--ink-faint); }
+  #v-stream .e-planned {
+    display: inline-block; vertical-align: middle; margin-left: 11px;
+    font-family: Roboto, sans-serif; font-style: normal;
+    font-size: 9.5px; letter-spacing: 1.4px; text-transform: uppercase;
+    color: #6b645f; border: 1px dashed #4c4c50; border-radius: 3px; padding: 1px 7px;
+  }
+
+  /* ── Unlock, copied from books.component.scss so the two behave alike ────── */
+  .lock-button {
+    position: relative; float: right; bottom: 20px; right: 20px;
+    cursor: pointer; opacity: .2; transition: opacity .3s ease; z-index: 1000;
+    color: var(--accent); font-size: 15px; line-height: 1;
+    filter: grayscale(1);
+  }
+  .lock-button:hover { opacity: .7; }
+  .password-overlay {
+    position: fixed; bottom: 50px; right: 20px;
+    display: flex; align-items: center; gap: 6px; z-index: 1001;
+    background: #2a2a2a; padding: 8px 12px; border-radius: 6px; border: 1px solid #444;
+  }
+  .password-overlay[hidden] { display: none; }
+  .password-input {
+    background: transparent; border: none; border-bottom: 1px solid #666;
+    color: var(--accent); font-size: 14px; outline: none; width: 120px; padding: 2px 4px;
+  }
+  .password-input::placeholder { color: #666; }
+  .password-submit {
+    background: none; border: none; color: var(--accent);
+    cursor: pointer; font-size: 16px; padding: 0 2px; opacity: .7;
+  }
+  .password-submit:hover { opacity: 1; }
+  .auth-error { color: #c0392b; font-size: 12px; }
+  .auth-error[hidden] { display: none; }
+
+  #v-stream .year {
+    display: flex; align-items: baseline; gap: 16px;
+    margin: 54px 0 6px; color: #45464b;
+  }
+  #v-stream .year span { font-family: Georgia, serif; font-size: 40px; line-height: 1; letter-spacing: 2px; }
+  #v-stream .year i { flex: 1; height: 1px; background: #35363a; }
+
+  #v-stream .entry {
+    display: grid; grid-template-columns: 104px 1fr; gap: 0 26px;
+    padding: 26px 0; border-bottom: 1px solid #333438; cursor: pointer;
+    transition: .22s;
+  }
+  #v-stream .entry:hover { background: rgba(255,255,255,.018); }
+  #v-stream .entry:hover .e-title { color: #d8cec2; }
+  #v-stream .entry:hover .e-arrow { opacity: 1; transform: translateX(3px); }
+  #v-stream .e-rail { text-align: right; padding-top: 7px; }
+  #v-stream .e-date { font-size: 11.5px; color: var(--ink-faint); letter-spacing: .4px; display: block; }
+  #v-stream .e-lvl {
+    display: inline-flex; align-items: center; gap: 5px; justify-content: flex-end;
+    font-size: 10px; letter-spacing: .8px; text-transform: uppercase; margin-top: 7px; opacity: .85;
+  }
+  #v-stream .e-title {
+    font-family: Georgia, serif; font-size: 25px; font-weight: 400; line-height: 1.28;
+    color: var(--ink-strong); transition: color .22s;
+  }
+  #v-stream .e-desc {
+    font-size: 14px; line-height: 1.72; color: var(--ink); margin-top: 9px; max-width: 68ch;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  #v-stream .e-foot {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    margin-top: 13px; font-size: 11.5px; color: var(--ink-faint);
+  }
+  #v-stream .e-topic { color: var(--accent); opacity: .62; }
+  #v-stream .e-arrow { margin-left: auto; color: var(--accent); opacity: 0; transition: .22s; font-size: 14px; }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     B — THE LADDER   audience is the primary axis
+     ══════════════════════════════════════════════════════════════════════════ */
+  #v-ladder .ladder-head { max-width: 700px; margin-bottom: 8px; }
+  #v-ladder .ladder-head h1 { font-size: 34px; font-weight: 400; color: var(--ink-strong); }
+  #v-ladder .ladder-head p { font-size: 14.5px; color: var(--ink); margin-top: 12px; line-height: 1.75; }
+
+  #v-ladder .gauge {
+    display: flex; align-items: stretch; gap: 0; margin: 38px 0 46px;
+    height: 42px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border);
+  }
+  #v-ladder .gauge-seg {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 12px; letter-spacing: .6px; cursor: pointer; transition: .25s;
+    background: #2d2e33; color: var(--ink-faint); border-right: 1px solid var(--border);
+  }
+  #v-ladder .gauge-seg:last-child { border-right: 0; }
+  #v-ladder .gauge-seg:hover { background: #35363b; }
+  #v-ladder .gauge-seg .cnt { font-size: 10.5px; opacity: .6; }
+  #v-ladder .gauge-seg.g-open.on   { background: rgba(143,185,143,.14); color: var(--lvl-open);   box-shadow: inset 0 -2px 0 var(--lvl-open); }
+  #v-ladder .gauge-seg.g-mid.on { background: rgba(154,169,200,.14); color: var(--lvl-mid); box-shadow: inset 0 -2px 0 var(--lvl-mid); }
+  #v-ladder .gauge-seg.g-deep.on  { background: rgba(200,176,110,.14); color: var(--lvl-deep);  box-shadow: inset 0 -2px 0 var(--lvl-deep); }
+
+  #v-ladder .rung { display: grid; grid-template-columns: 168px 1fr; gap: 30px; margin-bottom: 46px; }
+  #v-ladder .rung-label { position: relative; padding-left: 18px; padding-top: 4px; }
+  #v-ladder .rung-label::before {
+    content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 3px; border-radius: 2px;
+  }
+  #v-ladder .rung.r-open   .rung-label::before { background: var(--lvl-open); }
+  #v-ladder .rung.r-mid .rung-label::before { background: var(--lvl-mid); }
+  #v-ladder .rung.r-deep  .rung-label::before { background: var(--lvl-deep); }
+  #v-ladder .rung-label h3 { font-size: 19px; font-weight: 400; line-height: 1.25; }
+  #v-ladder .rung.r-open   .rung-label h3 { color: var(--lvl-open); }
+  #v-ladder .rung.r-mid .rung-label h3 { color: var(--lvl-mid); }
+  #v-ladder .rung.r-deep  .rung-label h3 { color: var(--lvl-deep); }
+  #v-ladder .rung-label .assumes { font-size: 11.5px; color: var(--ink-faint); line-height: 1.6; margin-top: 8px; }
+  #v-ladder .rung-label .count { font-size: 10.5px; letter-spacing: 1.2px; text-transform: uppercase; color: #5f5954; margin-top: 12px; }
+
+  #v-ladder .rung-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px,1fr)); gap: 12px; }
+  #v-ladder .tile {
+    padding: 15px 17px; background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; cursor: pointer; transition: .22s; position: relative; overflow: hidden;
+  }
+  #v-ladder .tile::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; opacity: .55; }
+  #v-ladder .rung.r-open   .tile::before { background: var(--lvl-open); }
+  #v-ladder .rung.r-mid .tile::before { background: var(--lvl-mid); }
+  #v-ladder .rung.r-deep  .tile::before { background: var(--lvl-deep); }
+  #v-ladder .tile:hover { background: var(--card-hover); border-color: var(--accent); transform: translateY(-2px); }
+  #v-ladder .tile h4 { font-size: 15.5px; font-weight: 600; color: var(--ink-strong); line-height: 1.32; }
+  #v-ladder .tile .t-meta { font-size: 11px; color: var(--ink-faint); margin-top: 9px; }
+  #v-ladder .tile .t-topic { font-size: 11px; color: var(--accent); opacity: .6; margin-top: 4px; }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     C — THE CONSTELLATION   posts as a map, wired back to the books
+     ══════════════════════════════════════════════════════════════════════════ */
+  #v-map .map-head { max-width: 680px; margin-bottom: 26px; }
+  #v-map .map-head h1 { font-size: 34px; font-weight: 400; color: var(--ink-strong); }
+  #v-map .map-head p { font-size: 14.5px; margin-top: 12px; line-height: 1.75; }
+  #v-map .map-wrap { display: grid; grid-template-columns: 1fr 292px; gap: 20px; align-items: start; }
+  #v-map .canvas {
+    background: radial-gradient(circle at 42% 38%, #313238 0%, #26272b 78%);
+    border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  #v-map svg { display: block; width: 100%; height: auto; }
+  #v-map .edge { stroke: #4d4e55; stroke-width: 1.1; }
+  #v-map .edge.book { stroke: #45464d; stroke-dasharray: 3 4; }
+  #v-map .node { cursor: pointer; }
+  #v-map .node circle { transition: .2s; }
+  #v-map .node:hover circle { stroke: var(--accent); stroke-width: 2; }
+  #v-map .node.sel circle { stroke: var(--accent); stroke-width: 2.5; }
+  #v-map .node text { font-size: 8.4px; fill: var(--ink); pointer-events: none; font-family: Roboto, sans-serif; }
+  #v-map .bnode rect { fill: #2b2c31; stroke: #43444a; }
+  #v-map .bnode text { font-size: 8px; fill: #6f6862; font-style: italic; pointer-events: none; }
+  #v-map .cluster-label { font-size: 10px; fill: #55565c; letter-spacing: 2.4px; text-transform: uppercase; font-family: Roboto, sans-serif; }
+
+  #v-map .side {
+    position: sticky; top: 74px; background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; min-height: 260px;
+  }
+  #v-map .side .hint { font-size: 13px; color: var(--ink-faint); font-style: italic; line-height: 1.7; }
+  #v-map .side h4 { font-size: 18px; color: var(--ink-strong); font-weight: 600; line-height: 1.3; }
+  #v-map .side .s-meta { font-size: 11.5px; color: var(--ink-faint); margin: 9px 0 11px; }
+  #v-map .side .s-desc { font-size: 13px; line-height: 1.62; margin: 12px 0 14px; }
+  #v-map .side .s-from { font-size: 11.5px; color: var(--ink-faint); font-style: italic; border-top: 1px solid var(--border); padding-top: 11px; }
+  #v-map .side .s-from b { color: var(--accent); font-style: normal; font-weight: 400; }
+  #v-map .side .s-read {
+    display: inline-block; margin-top: 14px; padding: 6px 15px; font-size: 12.5px;
+    color: var(--accent); border: 1px solid #4a4b52; border-radius: 999px; cursor: pointer; background: transparent;
+  }
+  #v-map .side .s-read:hover { background: rgba(255,255,255,.05); border-color: var(--accent); }
+  #v-map .legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; font-size: 11px; color: var(--ink-faint); }
+  #v-map .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+
+  /* ══════════════════════════════════════════════════════════════════════════
+     D — THE BROADSHEET   the PDFs are the imagery
+     ══════════════════════════════════════════════════════════════════════════ */
+  #v-sheet .sheet-masthead {
+    display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+    border-top: 2px solid #46423f; border-bottom: 1px solid #46423f;
+    padding: 16px 0 12px; margin-bottom: 30px;
+  }
+  #v-sheet .sheet-masthead h1 { font-size: 38px; font-weight: 400; color: var(--ink-strong); letter-spacing: 3px; }
+  #v-sheet .sheet-masthead .dek { font-size: 11.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); }
+
+  #v-sheet .featured {
+    display: grid; grid-template-columns: 268px 1fr; gap: 30px; align-items: start;
+    padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid #35363a; cursor: pointer;
+  }
+  #v-sheet .featured:hover .f-title { color: #d8cec2; }
+  #v-sheet .featured:hover .shot img { filter: none; transform: scale(1.015); }
+  .shot {
+    background: #1c1d20; border: 1px solid #43444a; border-radius: 3px; overflow: hidden; line-height: 0;
+  }
+  .shot img {
+    width: 100%; display: block;
+    filter: grayscale(1) contrast(.82) brightness(.86) sepia(.22);
+    transition: .35s;
+  }
+  #v-sheet .f-kicker { font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+  #v-sheet .f-title { font-size: 33px; font-weight: 400; line-height: 1.2; color: var(--ink-strong); margin: 10px 0 12px; transition: color .25s; }
+  #v-sheet .f-desc { font-size: 14.5px; line-height: 1.75; max-width: 62ch; }
+  #v-sheet .f-foot { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 16px; font-size: 11.5px; color: var(--ink-faint); }
+
+  #v-sheet .sheet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(226px,1fr)); gap: 26px 24px; }
+  #v-sheet .clip { cursor: pointer; }
+  #v-sheet .clip:hover h4 { color: #d8cec2; }
+  #v-sheet .clip:hover .shot img { filter: none; }
+  #v-sheet .clip h4 { font-size: 17px; font-weight: 400; line-height: 1.3; color: var(--ink-strong); margin: 12px 0 7px; transition: color .25s; }
+  #v-sheet .clip .c-desc {
+    font-size: 12.5px; line-height: 1.6; color: var(--ink);
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  #v-sheet .clip .c-foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 9px; font-size: 11px; color: var(--ink-faint); }
+  #v-sheet .rule { border: 0; border-top: 1px solid #35363a; margin: 34px 0; }
+
+  @media (max-width: 860px) {
+    #v-map .map-wrap { grid-template-columns: 1fr; }
+    #v-map .side { position: static; }
+    #v-ladder .rung { grid-template-columns: 1fr; gap: 14px; }
+    #v-sheet .featured { grid-template-columns: 1fr; }
+    #v-stream .entry { grid-template-columns: 1fr; gap: 8px; }
+    #v-stream .e-rail { text-align: left; display: flex; gap: 14px; align-items: center; padding-top: 0; }
+    #v-stream .e-lvl { margin-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="chrome">
+  <span class="chrome-label">Blog redesign</span>
+  <button class="tab active" data-v="current"><span class="num">0</span>Current</button>
+  <button class="tab" data-v="stream"><span class="num">1</span>The Stream</button>
+  <button class="tab" data-v="ladder"><span class="num">2</span>The Ladder</button>
+  <button class="tab" data-v="map"><span class="num">3</span>The Constellation</button>
+  <button class="tab" data-v="sheet"><span class="num">4</span>The Broadsheet</button>
+  <span class="chrome-hint">press 0–4 &middot; real posts, real dates</span>
+</div>
+
+<div class="rationale" id="rationale"></div>
+
+<!-- ───────────────────────────── 0 · CURRENT ───────────────────────────── -->
+<div class="panel active" id="v-current">
+  <div class="container">
+    <div class="page-heading"><h2>Blog</h2><p>Ideas, Intuitions, Interests</p><hr></div>
+    <div class="intro">
+      <h3>Overview</h3>
+      <p>A catalogue for ideas and for results that don't fit a textbook format — intuitions
+      I've worked out, extracts from the EYNTKA books that deserve to stand alone, and
+      scattered pieces of my research projects.</p>
+    </div>
+    <div class="controls">
+      <div class="search">&#9906;&nbsp; Search posts... ( / to focus )</div>
+    </div>
+    <div class="chips" id="cur-chips"></div>
+    <div class="lvlrow">
+      <span class="cap">Level</span>
+      <button class="lchip">All</button><button class="lchip">General audience</button>
+      <button class="lchip">Undergraduate</button><button class="lchip">Graduate</button>
+    </div>
+    <div id="cur-lead"></div>
+    <div class="grid" id="cur-grid"></div>
+  </div>
+</div>
+
+<!-- ───────────────────────────── 1 · THE STREAM ────────────────────────── -->
+<div class="panel" id="v-stream">
+  <div class="container">
+    <div class="stream-head" style="margin-top:64px">
+      <h1>Ideas, Intuitions,<br>Interests</h1>
+      <p class="sub">Things I worked out and wanted to write down — mathematics mostly, and
+      increasingly not. Some assume nothing at all; others are research-adjacent. Dated by
+      last typesetting, so a revised piece comes back around.</p>
+    </div>
+    <div class="quiet-filter" id="stream-filter"></div>
+    <div class="quiet-filter sub-filter" id="stream-subfilter"></div>
+    <div id="stream-body"></div>
+
+    <!-- Unlock for unwritten posts. Same shape as the lock on /books: hash
+         compared client-side, unlock held in sessionStorage. -->
+    <div class="password-overlay" id="stream-pw" hidden>
+      <input type="password" id="stream-pw-input" class="password-input" placeholder="password" autocomplete="off">
+      <button class="password-submit" id="stream-pw-go">&rarr;</button>
+      <span class="auth-error" id="stream-pw-err" hidden>incorrect</span>
+    </div>
+    <div class="lock-button" id="stream-lock" title="unlock">&#128274;</div>
+  </div>
+</div>
+
+<!-- ───────────────────────────── 2 · THE LADDER ────────────────────────── -->
+<div class="panel" id="v-ladder">
+  <div class="container">
+    <div class="page-heading" style="text-align:left"><h2 style="text-align:left">Blog</h2></div>
+    <div class="ladder-head">
+      <h1>Start where you are.</h1>
+      <p>The one thing this collection has that the textbooks don't is range — a post here
+      either assumes nothing at all or assumes a graduate course. So that is what the page is
+      organised by. Pick the rung you want to stand on.</p>
+    </div>
+    <div class="gauge" id="ladder-gauge"></div>
+    <div id="ladder-body"></div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── 3 · THE CONSTELLATION ───────────────────── -->
+<div class="panel" id="v-map">
+  <div class="container">
+    <div class="page-heading" style="text-align:left"><h2 style="text-align:left">Blog</h2></div>
+    <div class="map-head">
+      <h1>A map, not a list.</h1>
+      <p>Most of these posts were cut out of a book, or grew into one. Laid out by subject and
+      wired back to where they came from — the same idea as the series map, one level down.</p>
+    </div>
+    <div class="map-wrap">
+      <div class="canvas" id="map-canvas"></div>
+      <div class="side" id="map-side">
+        <p class="hint">Pick a node. Solid lines join posts that lean on each other; dashed
+        lines run to the EYNTKA book the post was extracted from.</p>
+      </div>
+    </div>
+    <div class="legend" id="map-legend"></div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── 4 · THE BROADSHEET ──────────────────────── -->
+<div class="panel" id="v-sheet">
+  <div class="container">
+    <div class="sheet-masthead" style="margin-top:55px">
+      <h1>THE BLOG</h1>
+      <span class="dek">Ideas &middot; Intuitions &middot; Interests</span>
+    </div>
+    <div id="sheet-featured"></div>
+    <div class="sheet-grid" id="sheet-grid"></div>
+  </div>
+</div>
+
+<script>
+/* ── Real data. Copy from blog-posts.ts; dates/pages from
+      src/assets/pdfs/blogs/manifest.json. `book` is where the post was
+      extracted from, read off each post's own description. ───────────────── */
+
+/* ── Taxonomy, amended for non-maths writing ───────────────────────────────
+   Two tiers. DOMAIN is the coarse bucket a reader self-selects into;
+   TOPIC is domain-scoped and only meaningful inside one. A flat chip row
+   mixing "Algebra" with "Philosophy" compares things of different kinds —
+   Algebra is a subfield of one domain, Philosophy is a domain.
+
+   Level keeps a shared three-step ramp (open / mid / deep) so the colour
+   coding and sorting stay uniform, but the *labels* resolve per domain:
+   "Undergraduate" is a maths ladder and says nothing about a philosophy
+   essay. Same three rungs, domain-appropriate names. ────────────────────── */
+const DOMAINS = [
+  { key: 'maths',      label: 'Mathematics', topics: ['analysis','algebra','number-theory','geometry','foundations'] },
+  { key: 'ai',         label: 'AI',          topics: ['ai-systems','interpretability','ai-and-maths'] },
+  { key: 'philosophy', label: 'Philosophy',  topics: ['epistemology','phil-of-maths'] },
+  { key: 'quant',      label: 'Quant',       topics: ['markets','stochastics'] },
+];
+const DOMAIN_LABEL = Object.fromEntries(DOMAINS.map(d => [d.key, d.label]));
+
+const TOPICS = {
+  'analysis':         'Analysis',
+  'algebra':          'Algebra',
+  'number-theory':    'Number Theory',
+  'geometry':         'Geometry & Topology',
+  'foundations':      'Perspective',
+  'ai-systems':       'Systems & Practice',
+  'interpretability': 'Interpretability',
+  'ai-and-maths':     'AI and Mathematics',
+  'epistemology':     'Epistemology',
+  'phil-of-maths':    'Philosophy of Mathematics',
+  'markets':          'Markets',
+  'stochastics':      'Stochastic Models',
+};
+
+const LEVEL_BY_DOMAIN = {
+  maths:      { open: 'General audience', mid: 'Undergraduate',   deep: 'Graduate' },
+  ai:         { open: 'No background',    mid: 'Practitioner',    deep: 'Research-level' },
+  philosophy: { open: 'General audience', mid: 'Some philosophy', deep: 'Specialist' },
+  quant:      { open: 'General audience', mid: 'Some finance',    deep: 'Practitioner' },
+};
+const SHORT_BY_DOMAIN = {
+  maths:      { open: 'Anyone', mid: 'Undergrad',    deep: 'Graduate' },
+  ai:         { open: 'Anyone', mid: 'Practitioner', deep: 'Research' },
+  philosophy: { open: 'Anyone', mid: 'Some phil.',   deep: 'Specialist' },
+  quant:      { open: 'Anyone', mid: 'Finance',      deep: 'Practitioner' },
+};
+const levelLabel = p => LEVEL_BY_DOMAIN[p.domain][p.level];
+const shortLabel = p => SHORT_BY_DOMAIN[p.domain][p.level];
+
+// Back-compat for the three variants below, all of which are maths-only.
+const LEVELS = LEVEL_BY_DOMAIN.maths;
+const SHORT  = SHORT_BY_DOMAIN.maths;
+
+const POSTS = [
+  { file:'fourier_transforms', name:'Intuition on Fourier Analysis',
+    desc:"Blurb from my real analysis notes extracted to be a separate blog.",
+    topic:'analysis', also:[], level:'deep', updated:'2026-03-06', pages:10, mins:25,
+    book:'EYNTKA Real Analysis' },
+  { file:'geometric_intuition_of_hilbert_spaces', name:'Some Geometry of Hilbert Spaces',
+    desc:"Intuition I've developed trying to really understand why, of all the Lp spaces, Hilbert space is the right generalization of euclidean space — namely how to think of Hilbert space as 'flat' compared to the others.",
+    topic:'analysis', also:['geometry'], level:'deep', updated:'2026-03-02', pages:6, mins:15,
+    book:'EYNTKA Functional Analysis' },
+  { file:'a_narrative_of_homological_algebra', name:'A Narrative of Homological Algebra',
+    desc:'I had a sudden idea of how I see the chronology of homological algebra. I tried to make it as historical as possible.',
+    topic:'algebra', also:['foundations'], level:'deep', updated:'2026-02-21', pages:3, mins:8,
+    book:'EYNTKA Algebra' },
+  { file:'nonhausdorfness', name:'Non-Hausdorff Space',
+    desc:'A quick blog for non-mathematicians to see an example of a space that can have two points infinitely close to each other while remaining distinct.',
+    topic:'geometry', also:[], level:'open', updated:'2026-02-07', pages:7, mins:18,
+    book:'EYNTKA Topology' },
+  { file:'some_harmonic_analysis', name:'Some Harmonic Analysis',
+    desc:'An extract from EYNTKA Algebra on how the representation of finite abelian groups links to harmonic analysis, plus the generalization to locally compact abelian groups and how non-commutative geometry arises from a group ring.',
+    topic:'algebra', also:['analysis'], level:'deep', updated:'2026-01-12', pages:13, mins:33,
+    book:'EYNTKA Algebra' },
+  { file:'langlands_for_sl2', name:'Representation of SL2: L-packets',
+    desc:'Following Henniart and Vignéras, the representation theory of SL2(F) through the lens of restriction from GL2(F). Local Langlands is a bijection for the general linear group; restricting to the special linear group creates L-packets — finite fibers of indistinguishable representations.',
+    topic:'number-theory', also:['algebra'], level:'deep', updated:'2025-11-26', pages:18, mins:45,
+    book:null },
+  { file:'galois_theory_intuition_behind_field_extensions', name:'Galois Theory — Why use Field Extensions',
+    desc:'An extract from EYNTKA Algebra fleshing out my intuition on why field extensions are the natural setting to study the symmetries of the roots of polynomials.',
+    topic:'algebra', also:['foundations'], level:'mid', updated:'2025-09-26', pages:5, mins:13,
+    book:'EYNTKA Algebra' },
+  { file:'areas_of_algebraic_geoemtry_reserach', name:'Research in Algebraic Geometry',
+    desc:'An extract from the end of EYNTKA Algebra covering the areas of algebraic geometry research that piqued my interest. A quick description and resources for each.',
+    topic:'geometry', also:[], level:'deep', updated:'2025-07-29', pages:4, mins:10,
+    book:'EYNTKA Algebra' },
+  { file:'what_is_complex', name:'Complex Analysis: What is it?',
+    desc:'I struggled with how to perceive complex analysis for a while, and finally landed on an intuition that is satisfying: complex analysis is the analytification of polynomials, giving us the tools to link algebra and analysis.',
+    topic:'analysis', also:['foundations'], level:'mid', updated:'2025-07-11', pages:7, mins:18,
+    book:'EYNTKA Complex Analysis' },
+  { file:'clock_arithmetic', name:'Clock Arithmetic and some Applications',
+    desc:'A quick expository article requiring no background that teaches modular arithmetic to my friends, whom I love giving math riddles. Plus a survey of its uses and some surprising connections between prime numbers.',
+    topic:'number-theory', also:[], level:'open', updated:'2025-06-24', pages:10, mins:25,
+    book:null },
+];
+POSTS.forEach(p => p.domain = 'maths');   // every live post today is maths
+POSTS.sort((a,b) => b.updated.localeCompare(a.updated));
+
+/* Not-yet-published entries, shown in the Stream only, to prove the layout
+   holds once the blog stops being maths-only.
+
+   The two philosophy pieces are real drafts that exist but have never been put
+   on the site — ~/Documents/academic/blogs/{thoughts_on_epistemology,
+   kant_and_modern_mathematic}. The AI and quant rows are invented placeholders
+   so those domains have something to render; nothing has been written for them.
+   Everything here carries `planned: true` and renders with a dotted tag, so it
+   can never be mistaken for a live post. */
+const PLANNED = [
+  { file:'thoughts_on_epistemology', name:'Thoughts on Epistemology',
+    desc:'A draft that has sat uncompiled for a while — what I actually think knowledge is, written for someone who has not read any philosophy.',
+    domain:'philosophy', topic:'epistemology', also:[], level:'open', updated:'2026-06-01', pages:null, mins:null, planned:true },
+  { file:'kant_and_modern_mathematic', name:'Kant and Modern Mathematics',
+    desc:'Whether the synthetic a priori survives contact with non-Euclidean geometry and formal logic, and what Kant was actually right about.',
+    domain:'philosophy', topic:'phil-of-maths', also:['foundations'], level:'mid', updated:'2026-05-14', pages:null, mins:null, planned:true },
+  { file:'placeholder-ai-interp', name:'What Interpretability Is Actually Measuring',
+    desc:'Placeholder — nothing written. Stands in for the AI domain so the layout can be judged with a mixed stream.',
+    domain:'ai', topic:'interpretability', also:[], level:'mid', updated:'2026-04-20', pages:null, mins:null, planned:true },
+  { file:'placeholder-quant', name:'Stochastic Volatility Without the Machinery',
+    desc:'Placeholder — nothing written. Stands in for the quant domain so the layout can be judged with a mixed stream.',
+    domain:'quant', topic:'stochastics', also:[], level:'mid', updated:'2026-04-02', pages:null, mins:null, planned:true },
+];
+
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fmt = d => { const [y,m] = d.split('-'); return MON[+m-1] + ' ' + y; };
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const el  = (h) => { const t = document.createElement('template'); t.innerHTML = h.trim(); return t.content.firstElementChild; };
+
+const RATIONALE = {
+  current: ['What ships today',
+    'Search box, topic chips, level chips, a promoted lead card, then a card grid. It works — but it is the <b>same shape as /books, /notes and /programming</b>. Nothing about the page says "blog", and the faceted-search machinery is a lot of chrome for ten posts.'],
+  stream: ['Chosen · amended for non-maths writing',
+    'A <b>dated index in serif</b>, one entry per line, broken by year, no cards and no grid. <b>Amended for AI, philosophy and quant:</b> the filter is now <b>two tiers</b> — domain on the top line, and that domain\'s own topics on a quieter second line that only appears once you pick one. A flat row mixing "Algebra" with "Philosophy" would compare a subfield to a domain. Level keeps one three-step ramp so the colour coding stays uniform, but the <b>labels resolve per domain</b>: "Undergraduate" is a maths ladder and says nothing about a philosophy essay, so AI reads Anyone/Practitioner/Research and philosophy reads Anyone/Some&nbsp;phil./Specialist. In a mixed stream the domain sits above the date in the rail — it is the first thing you use to skip an entry — and disappears once a domain is selected. Unwritten posts are <b>hidden behind the lock</b> at the bottom right (password <code>blogpdf</code>, same scheme as /books) — unlock to see the four dotted <b>planned</b> rows and the domains they bring with them. Two are real uncompiled philosophy drafts; the AI and quant ones are invented placeholders.'],
+  ladder: ['Audience is the axis',
+    'The blog\'s one genuinely unique property is <b>range</b> — nothing else on the site spans "no maths at all" to research-adjacent. So promote level from a secondary chip row to the page\'s spine: three rungs, colour-ramped green to amber, each stating what it assumes of you. Topic drops to a line on the tile. <b>Different because:</b> it sorts by reader rather than by subject, which no other page does. <b>Cost:</b> low — the data already carries <code>level</code>. <b>Risk:</b> with 6 of 10 posts graduate, the rungs are lopsided until you write more.'],
+  map: ['Wired back to the books',
+    'Most of these posts were cut out of an EYNTKA book. Draw that: nodes clustered by subject, solid edges between related posts, dashed edges to the parent book. Clicking fills the side panel. <b>Different because:</b> it makes the blog\'s actual relationship to the rest of the site visible, and reuses the series-map motif that is already your signature. <b>Cost:</b> highest of the four — needs real layout work, a mobile fallback list, and an authored <code>relatedTo</code> field per post. <b>Risk:</b> a graph of ten nodes can look sparse; it also duplicates /series-map\'s idea.'],
+  sheet: ['The PDFs become the imagery',
+    'Every post is a typeset LaTeX document and page one already looks good. Render it at build time and use it as the art: a broadsheet with one lead story and an asymmetric run of clips below, thumbnails tinted to the palette and going full-colour on hover. <b>Different because:</b> it would be the only page on the site with images, and the images are the actual mathematics. <b>Cost:</b> medium — a <code>pdftoppm</code> step in the build next to gen-blog-manifest, plus ~60&nbsp;KB of PNG per post. <b>Risk:</b> a text-heavy first page makes a dull thumbnail; the two posts that open on a title page look identical.'],
+};
+
+/* ── 0 · current ──────────────────────────────────────────────────────────── */
+(function () {
+  const chips = document.getElementById('cur-chips');
+  chips.appendChild(el(`<button class="chip on">All <span class="n">${POSTS.length}</span></button>`));
+  Object.entries(TOPICS).forEach(([k, label]) => {
+    const n = POSTS.filter(p => p.topic === k || p.also.includes(k)).length;
+    chips.appendChild(el(`<button class="chip">${label} <span class="n">${n}</span></button>`));
+  });
+  const badges = p => `<div class="badges">
+      <span class="badge b-${p.level}"><span class="lvl-dot"></span>${LEVELS[p.level]}</span>
+      <span class="badge topic">${TOPICS[p.topic]}</span>
+      ${p.also.map(t => `<span class="badge topic" style="opacity:.65">${TOPICS[t]}</span>`).join('')}
+    </div>`;
+  const metaline = p => `<div class="meta">Updated ${fmt(p.updated)} <span style="opacity:.5">·</span> ${p.pages} pp <span style="opacity:.5">·</span> ~${p.mins} min</div>`;
+  const lead = POSTS[0];
+  document.getElementById('cur-lead').appendChild(el(`<article class="lead">
+      <span class="flag">Latest</span><h3>${esc(lead.name)}</h3>${metaline(lead)}${badges(lead)}
+      <p style="font-size:15px;line-height:1.65;max-width:70ch">${esc(lead.desc)}</p>
+      <span class="read">Read →</span></article>`));
+  const grid = document.getElementById('cur-grid');
+  POSTS.slice(1).forEach(p => grid.appendChild(el(`<article class="card">
+      <h4>${esc(p.name)}</h4>${metaline(p)}${badges(p)}
+      <div style="flex:1"><p class="desc">${esc(p.desc)}</p></div>
+      <span class="read">Read →</span></article>`)));
+})();
+
+/* ── 1 · the stream ───────────────────────────────────────────────────────── */
+(function () {
+  // sha256('blogpdf'). Same scheme as books.component.ts.
+  const PASSWORD_HASH = '57a0af3b7fdd6aa6f0e3e9b4c3f2d37cdc11b0087f22d4dd8071869da5724935';
+  const AUTH_KEY = 'blog_planned_auth';
+  const sha256 = async s => Array.from(new Uint8Array(
+    await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s))))
+    .map(b => b.toString(16).padStart(2, '0')).join('');
+
+  let unlocked = sessionStorage.getItem(AUTH_KEY) === 'true';
+
+  const EVERY = [...POSTS, ...PLANNED].sort((a, b) => b.updated.localeCompare(a.updated));
+  // Planned entries are hidden until unlocked, so every count, every filter chip
+  // and every year heading has to be computed off the visible set, not off
+  // EVERY — otherwise a locked visitor sees a "Philosophy" filter that yields
+  // nothing, which advertises exactly what the lock is hiding.
+  const visible = () => unlocked ? EVERY : EVERY.filter(p => !p.planned);
+
+  let domain = 'all';   // tier 1
+  let topic  = 'all';   // tier 2, scoped to the selected domain
+  const dRow = document.getElementById('stream-filter');
+  const tRow = document.getElementById('stream-subfilter');
+  const body = document.getElementById('stream-body');
+
+  const count = d => visible().filter(p => p.domain === d).length;
+
+  // Tier 1 — only domains that have something visible in them. A domain you have
+  // not written for yet must not leave a dead word on the line. Rebuilt on
+  // unlock, because unlocking is exactly what makes a domain non-empty.
+  function domainRow() {
+    dRow.innerHTML = '';
+    const live = DOMAINS.filter(d => count(d.key));
+    if (!live.some(d => d.key === domain)) domain = 'all';
+    [['all', 'Everything'], ...live.map(d => [d.key, d.label])].forEach(([k, label], i) => {
+      if (i) dRow.appendChild(el('<span class="qf-sep">/</span>'));
+      const b = el(`<button class="qf${k === domain ? ' on' : ''}">${label}</button>`);
+      b.onclick = () => {
+        domain = k; topic = 'all';
+        [...dRow.querySelectorAll('.qf')].forEach(x => x.classList.remove('on'));
+        b.classList.add('on');
+        subfilter(); render();
+      };
+      dRow.appendChild(b);
+    });
+  }
+
+  // Tier 2 — appears only once a domain is chosen, and only lists that domain's
+  // topics that actually carry a visible post.
+  function subfilter() {
+    tRow.innerHTML = '';
+    const d = DOMAINS.find(x => x.key === domain);
+    if (!d) { tRow.classList.remove('shown'); return; }
+    const keys = d.topics.filter(t => visible().some(p => p.domain === domain && (p.topic === t || p.also.includes(t))));
+    if (keys.length < 2) { tRow.classList.remove('shown'); return; }
+    tRow.classList.add('shown');
+    [['all', 'All ' + d.label.toLowerCase()], ...keys.map(t => [t, TOPICS[t]])].forEach(([k, label], i) => {
+      if (i) tRow.appendChild(el('<span class="qf-sep">·</span>'));
+      const b = el(`<button class="qf sub${k === 'all' ? ' on' : ''}">${label}</button>`);
+      b.onclick = () => {
+        topic = k;
+        [...tRow.querySelectorAll('.qf')].forEach(x => x.classList.remove('on'));
+        b.classList.add('on');
+        render();
+      };
+      tRow.appendChild(b);
+    });
+  }
+
+  function render() {
+    body.innerHTML = '';
+    const shown = visible().filter(p =>
+      (domain === 'all' || p.domain === domain) &&
+      (topic  === 'all' || p.topic === topic || p.also.includes(topic)));
+    if (!shown.length) {
+      body.appendChild(el('<p style="text-align:center;padding:60px 0;color:#857d77;font-style:italic">Nothing here yet.</p>'));
+      return;
+    }
+    let year = null;
+    shown.forEach(p => {
+      const y = p.updated.slice(0, 4);
+      if (y !== year) { year = y; body.appendChild(el(`<div class="year"><span>${y}</span><i></i></div>`)); }
+      // Domain sits above the date in the rail: in a mixed stream it is the
+      // first thing you need in order to skip an entry, ahead of the date.
+      // With a domain selected it is redundant, so it goes away.
+      const showDomain = domain === 'all';
+      const length = p.pages ? `<span style="opacity:.4">|</span><span>${p.pages} pp</span>
+            <span style="opacity:.4">·</span><span>~${p.mins} min</span>` : '';
+      body.appendChild(el(`<article class="entry${p.planned ? ' planned' : ''}">
+        <div class="e-rail">
+          ${showDomain ? `<span class="e-domain d-${p.domain}">${DOMAIN_LABEL[p.domain]}</span>` : ''}
+          <span class="e-date">${fmt(p.updated)}</span>
+          <span class="e-lvl c-${p.level}"><span class="lvl-dot"></span>${shortLabel(p)}</span>
+        </div>
+        <div>
+          <h3 class="e-title">${esc(p.name)}${p.planned ? '<span class="e-planned">planned</span>' : ''}</h3>
+          <p class="e-desc">${esc(p.desc)}</p>
+          <div class="e-foot">
+            <span class="e-topic">${TOPICS[p.topic]}${p.also.map(t => ' · ' + TOPICS[t]).join('')}</span>
+            ${length}
+            <span class="e-arrow">${p.planned ? 'Not yet written' : 'Read →'}</span>
+          </div>
+        </div></article>`));
+    });
+  }
+  // ── Unlock ────────────────────────────────────────────────────────────────
+  const lock  = document.getElementById('stream-lock');
+  const pw    = document.getElementById('stream-pw');
+  const input = document.getElementById('stream-pw-input');
+  const err   = document.getElementById('stream-pw-err');
+
+  function repaint() {
+    lock.textContent = unlocked ? '\u{1F513}' : '\u{1F512}';
+    lock.title = unlocked ? 'hide unwritten posts' : 'show unwritten posts';
+    domainRow(); subfilter(); render();
+  }
+
+  lock.onclick = () => {
+    if (unlocked) {
+      unlocked = false;
+      sessionStorage.removeItem(AUTH_KEY);
+      pw.hidden = true;
+      repaint();
+    } else {
+      pw.hidden = !pw.hidden;
+      err.hidden = true;
+      input.value = '';
+      if (!pw.hidden) input.focus();
+    }
+  };
+
+  async function submit() {
+    if (await sha256(input.value) === PASSWORD_HASH) {
+      unlocked = true;
+      sessionStorage.setItem(AUTH_KEY, 'true');
+      pw.hidden = true; err.hidden = true; input.value = '';
+      repaint();
+    } else {
+      err.hidden = false;
+      input.value = '';
+    }
+  }
+  document.getElementById('stream-pw-go').onclick = submit;
+  input.onkeydown = e => {
+    if (e.key === 'Enter') submit();
+    if (e.key === 'Escape') pw.hidden = true;
+  };
+
+  repaint();
+})();
+
+/* ── 2 · the ladder ───────────────────────────────────────────────────────── */
+(function () {
+  const RUNGS = [
+    { key: 'open',   title: 'No mathematics assumed', assumes: 'Written for friends. Nothing beyond arithmetic and a willingness to follow an argument.' },
+    { key: 'mid', title: 'Undergraduate',          assumes: 'A first course in algebra or analysis. Definitions get stated; proofs get sketched.' },
+    { key: 'deep',  title: 'Graduate & beyond',      assumes: 'Comfort with the standard graduate toolkit. Research-adjacent in places.' },
+  ];
+  const gauge = document.getElementById('ladder-gauge');
+  const body  = document.getElementById('ladder-body');
+  let focus = null;
+
+  RUNGS.forEach(r => {
+    const n = POSTS.filter(p => p.level === r.key).length;
+    const seg = el(`<div class="gauge-seg g-${r.key}"><span class="lvl-dot c-${r.key}"></span>${SHORT[r.key]}<span class="cnt">${n}</span></div>`);
+    seg.onclick = () => { focus = focus === r.key ? null : r.key; paint(); };
+    gauge.appendChild(seg);
+  });
+
+  function paint() {
+    [...gauge.children].forEach((seg, i) => seg.classList.toggle('on', focus === RUNGS[i].key));
+    body.innerHTML = '';
+    RUNGS.filter(r => !focus || r.key === focus).forEach(r => {
+      const items = POSTS.filter(p => p.level === r.key);
+      if (!items.length) return;
+      const rung = el(`<section class="rung r-${r.key}">
+        <div class="rung-label">
+          <h3>${r.title}</h3>
+          <p class="assumes">${r.assumes}</p>
+          <p class="count">${items.length} post${items.length > 1 ? 's' : ''}</p>
+        </div>
+        <div class="rung-items"></div></section>`);
+      const box = rung.querySelector('.rung-items');
+      items.forEach(p => box.appendChild(el(`<article class="tile">
+        <h4>${esc(p.name)}</h4>
+        <p class="t-topic">${TOPICS[p.topic]}${p.also.map(t => ' · ' + TOPICS[t]).join('')}</p>
+        <p class="t-meta">${fmt(p.updated)} &middot; ${p.pages} pp &middot; ~${p.mins} min</p>
+      </article>`)));
+      body.appendChild(rung);
+    });
+  }
+  paint();
+})();
+
+/* ── 3 · the constellation ────────────────────────────────────────────────── */
+(function () {
+  const W = 760, H = 480;
+  const CLUSTER = {
+    'analysis':      { x: 205, y: 128, colour: '#7fa9c4', label: 'Analysis' },
+    'algebra':       { x: 525, y: 130, colour: '#c1a06a', label: 'Algebra' },
+    'number-theory': { x: 560, y: 350, colour: '#b08fa8', label: 'Number Theory' },
+    'geometry':      { x: 215, y: 350, colour: '#8fb98f', label: 'Geometry' },
+    'foundations':   { x: 380, y: 240, colour: '#9a9490', label: 'Perspective' },
+  };
+  // Hand-placed offsets within each cluster; a force layout on ten nodes is
+  // noise. Real implementation would author these as coordinates per post.
+  const OFF = {
+    fourier_transforms:                            [-58, -46],
+    geometric_intuition_of_hilbert_spaces:         [ 52, -18],
+    what_is_complex:                               [-30,  56],
+    a_narrative_of_homological_algebra:            [-46, -54],
+    some_harmonic_analysis:                        [ 60,  12],
+    galois_theory_intuition_behind_field_extensions:[-14,  62],
+    langlands_for_sl2:                             [ 24, -44],
+    clock_arithmetic:                              [-18,  52],
+    nonhausdorfness:                               [-48, -40],
+    areas_of_algebraic_geoemtry_reserach:          [ 46,  40],
+  };
+  // Posts that lean on one another. Authored, not inferred.
+  const LINKS = [
+    ['fourier_transforms', 'geometric_intuition_of_hilbert_spaces'],
+    ['fourier_transforms', 'some_harmonic_analysis'],
+    ['some_harmonic_analysis', 'langlands_for_sl2'],
+    ['galois_theory_intuition_behind_field_extensions', 'a_narrative_of_homological_algebra'],
+    ['galois_theory_intuition_behind_field_extensions', 'langlands_for_sl2'],
+    ['what_is_complex', 'geometric_intuition_of_hilbert_spaces'],
+    ['clock_arithmetic', 'langlands_for_sl2'],
+    ['nonhausdorfness', 'areas_of_algebraic_geoemtry_reserach'],
+  ];
+  // Books sit in the margins so a dashed edge never has to cross a cluster.
+  const BOOKS = {
+    'EYNTKA Functional Analysis': [ 78,  38],
+    'EYNTKA Real Analysis':       [ 66, 150],
+    'EYNTKA Complex Analysis':    [ 70, 256],
+    'EYNTKA Topology':            [ 78, 442],
+    'EYNTKA Algebra':             [694, 244],
+  };
+
+  const pos = {};
+  POSTS.forEach(p => {
+    const c = CLUSTER[p.topic], o = OFF[p.file] || [0, 0];
+    pos[p.file] = { x: c.x + o[0], y: c.y + o[1], colour: c.colour };
+  });
+
+  const R = p => 8 + Math.min(p.pages, 20) * 0.42;   // node size tracks length
+  let parts = [];
+
+  Object.entries(BOOKS).forEach(([name, [x, y]]) => {
+    const w = 104;
+    parts.push(`<g class="bnode"><rect x="${x - w / 2}" y="${y - 9}" width="${w}" height="18" rx="4"/>
+      <text x="${x}" y="${y + 3.5}" text-anchor="middle">${name.replace('EYNTKA ', '')}</text></g>`);
+  });
+  POSTS.forEach(p => {
+    if (!p.book) return;
+    const b = BOOKS[p.book], n = pos[p.file];
+    if (b) parts.unshift(`<line class="edge book" x1="${n.x}" y1="${n.y}" x2="${b[0]}" y2="${b[1]}"/>`);
+  });
+  LINKS.forEach(([a, b]) => {
+    if (!pos[a] || !pos[b]) return;
+    parts.unshift(`<line class="edge" x1="${pos[a].x}" y1="${pos[a].y}" x2="${pos[b].x}" y2="${pos[b].y}"/>`);
+  });
+  // Only label clusters that actually hold a node. No post's *primary* topic is
+  // 'foundations', so a "Perspective" label would sit over empty space.
+  Object.entries(CLUSTER)
+    .filter(([k]) => POSTS.some(p => p.topic === k))
+    .forEach(([, c]) => parts.unshift(
+      `<text class="cluster-label" x="${c.x}" y="${c.y - 86}" text-anchor="middle">${c.label}</text>`));
+  POSTS.forEach(p => {
+    const n = pos[p.file], r = R(p);
+    const short = p.name.length > 26 ? p.name.slice(0, 24).trimEnd() + '…' : p.name;
+    parts.push(`<g class="node" data-file="${p.file}">
+      <circle cx="${n.x}" cy="${n.y}" r="${r}" fill="${n.colour}22" stroke="${n.colour}" stroke-width="1.3"/>
+      <circle cx="${n.x}" cy="${n.y}" r="3" fill="${n.colour}"/>
+      <text x="${n.x}" y="${n.y + r + 12}" text-anchor="middle">${esc(short)}</text></g>`);
+  });
+
+  document.getElementById('map-canvas').innerHTML =
+    `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${parts.join('')}</svg>`;
+
+  document.getElementById('map-legend').innerHTML =
+    Object.entries(CLUSTER)
+      .filter(([k]) => POSTS.some(p => p.topic === k))
+      .map(([, c]) => `<span><i style="background:${c.colour}"></i>${c.label}</span>`).join('') +
+    '<span style="font-style:italic">node size = length &middot; dashed edge = extracted from that book</span>';
+
+  const side = document.getElementById('map-side');
+  document.querySelectorAll('#v-map .node').forEach(g => {
+    g.onclick = () => {
+      document.querySelectorAll('#v-map .node').forEach(x => x.classList.remove('sel'));
+      g.classList.add('sel');
+      const p = POSTS.find(x => x.file === g.dataset.file);
+      side.innerHTML = `<h4>${esc(p.name)}</h4>
+        <p class="s-meta"><span class="c-${p.level}">${LEVELS[p.level]}</span> &middot; ${fmt(p.updated)} &middot; ${p.pages} pp &middot; ~${p.mins} min</p>
+        <p class="s-desc">${esc(p.desc)}</p>
+        ${p.book ? `<p class="s-from">Extracted from <b>${p.book}</b></p>` : '<p class="s-from">Standalone — not drawn from a book.</p>'}
+        <button class="s-read">Read →</button>`;
+    };
+  });
+})();
+
+/* ── 4 · the broadsheet ───────────────────────────────────────────────────── */
+(function () {
+  const lead = POSTS[0];
+  document.getElementById('sheet-featured').appendChild(el(`<article class="featured">
+    <div class="shot"><img src="thumbs/${lead.file}.png" alt=""></div>
+    <div>
+      <p class="f-kicker">Latest &middot; ${TOPICS[lead.topic]}</p>
+      <h2 class="f-title">${esc(lead.name)}</h2>
+      <p class="f-desc">${esc(lead.desc)}</p>
+      <div class="f-foot">
+        <span class="badge b-${lead.level}"><span class="lvl-dot"></span>${LEVELS[lead.level]}</span>
+        <span>${fmt(lead.updated)}</span><span style="opacity:.45">·</span>
+        <span>${lead.pages} pp</span><span style="opacity:.45">·</span><span>~${lead.mins} min</span>
+      </div>
+    </div></article>`));
+
+  const grid = document.getElementById('sheet-grid');
+  POSTS.slice(1).forEach(p => grid.appendChild(el(`<article class="clip">
+    <div class="shot"><img src="thumbs/${p.file}.png" alt="" loading="lazy"></div>
+    <h4>${esc(p.name)}</h4>
+    <p class="c-desc">${esc(p.desc)}</p>
+    <div class="c-foot">
+      <span class="c-${p.level}"><span class="lvl-dot"></span> ${SHORT[p.level]}</span>
+      <span style="opacity:.45">·</span><span>${TOPICS[p.topic]}</span>
+      <span style="opacity:.45">·</span><span>${fmt(p.updated)}</span>
+      <span style="opacity:.45">·</span><span>~${p.mins} min</span>
+    </div></article>`)));
+})();
+
+/* ── tab switching ────────────────────────────────────────────────────────── */
+const tabs = [...document.querySelectorAll('.tab')];
+function show(v, push) {
+  tabs.forEach(t => t.classList.toggle('active', t.dataset.v === v));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'v-' + v));
+  const [tag, text] = RATIONALE[v];
+  document.getElementById('rationale').innerHTML = `<span class="tag">${tag}</span>${text}`;
+  if (push !== false) history.replaceState(null, '', '?v=' + v);
+  window.scrollTo(0, 0);
+}
+tabs.forEach(t => t.onclick = () => show(t.dataset.v));
+document.addEventListener('keydown', e => {
+  const i = '01234'.indexOf(e.key);
+  if (i >= 0 && tabs[i]) show(tabs[i].dataset.v);
+});
+// ?v=<name> so a single variant can be linked or screenshotted directly.
+const want = new URLSearchParams(location.search).get('v');
+show(RATIONALE[want] ? want : 'current', false);
+</script>
+</body>
+</html>

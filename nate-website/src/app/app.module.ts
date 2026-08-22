@@ -33,6 +33,9 @@ import { HtmlBookViewerComponent } from './components/books/html-book-viewer.com
 import { MiscellaneousComponent} from './components/miscellaneous/miscellaneous.component';
 import { ProgrammingComponent } from './components/programming/programming.component';
 import { ProgrammingDetailComponent } from './components/programming/programming-detail.component';
+import { PapersComponent } from './components/papers/papers.component';
+import { PaperDetailComponent } from './components/papers/paper-detail.component';
+import { MathTextComponent } from './components/papers/math-text.component';
 import { TutoringComponent } from './components/tutoring/tutoring.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { ClickOutsideDirective } from './clickOutside';
@@ -65,6 +68,9 @@ import { AudioService } from './services/audio.service';
     MiscellaneousComponent,
     ProgrammingComponent,
     ProgrammingDetailComponent,
+    PapersComponent,
+    PaperDetailComponent,
+    MathTextComponent,
     TutoringComponent,
     ContactFormComponent,
     AppComponent,
