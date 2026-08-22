@@ -109,8 +109,13 @@ if (write) {
   // pick up a truncated file. Hit within minutes of writing this script: a
   // series-wide recompile was in flight and two books re-drifted between the
   // sync and the check that followed it.
+  // Match the engine by process NAME, not with `pgrep -f`. The latter searches
+  // whole command lines, so any shell whose command merely mentions latexmk --
+  // including `... && npm run sync:pdfs` typed after a pgrep -- counts as a
+  // build in flight and the sync refuses for no reason. The engine is also the
+  // right thing to watch: latexmk orchestrates, but pdflatex writes the PDF.
   const building = require('child_process')
-    .spawnSync('pgrep', ['-f', 'latexmk|pdflatex|xelatex|lualatex'], { encoding: 'utf8' })
+    .spawnSync('pgrep', ['-x', 'pdflatex,xelatex,lualatex,luahbtex,pdftex'], { encoding: 'utf8' })
     .stdout.trim();
   if (building) {
     console.error(
