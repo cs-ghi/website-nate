@@ -6,6 +6,11 @@ import { Note, Notes } from 'src/app/interfaces/notes.model';
 
 export const notesArray: Note[]= [
   {
+    name: "Integral Hodge Conjecture and its Invariance to Twisting",
+    desc: "The Integral Hodge Conjecture has been disproven by Atiyah and Hirzebruch in the the 1960s. The exact limits of when it is true, and what variations of the conjecture give further information are still being explored. This paper shows that there is no way to introduce a twist (via twisted K-theory), and outlines how the integral hodge conjecture's main area of interest has progressed into algebro-geomeric questions and into K-theoretic generalizations.",
+    link: "././assets/pdfs/notes/twisted-IHC.pdf"
+  },
+  {
     name: "Hirzebruch-Riemann-Roch Theorem",
     desc: "Riemann-Roch Theorem is a fundamental result in finding what meromorphic function exist on a Riemann surface that satisfy the conditions of a divisor D. The Hirzebruch-Riemann-Roch generalizes this to finding sections of vector bundles over projective varieites under the right conditions. This paper goes over the proof of HRR, outline a proof for Grothendeick-Riemann Roch, and concludes with some references to the most recent generalization results in the literature",
     link: "././assets/pdfs/notes/HRR.pdf"
