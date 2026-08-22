@@ -2,7 +2,7 @@
   "meta": {
     "generated": "2026-08-22",
     "bookCount": 48,
-    "edgeCount": 386,
+    "edgeCount": 388,
     "clashCounts": {
       "error": 0,
       "warn": 1,
@@ -1243,6 +1243,15 @@
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/curve-lemma.tex",
         "algebraic-geometry/drafts/scratch/weil-divisor-families.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateAlgKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -4789,6 +4798,15 @@
     {
       "source": "NateTopology",
       "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "topology/EYNTKA_topology.tex"
+      ]
+    },
+    {
+      "source": "NateTopology",
+      "target": "NateKTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
