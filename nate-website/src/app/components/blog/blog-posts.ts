@@ -241,11 +241,10 @@ export const BLOG_POSTS: BlogEntry[] = [
   },
   {
     name: 'Comparing Schemes and Manifolds',
-    desc: 'An extract from EYTNKA Algebraic Geometry that lists in bullet-point format some differences between schemes and manifolds, to get a better sense of the similarities and differences between the geometries they represent. Source at ~/Documents/academic/blogs/differences_between_schemes_and_manifolds — never compiled, which is why it has no link.',
+    desc: 'An extract from EYNTKA Algebraic Geometry that lists in bullet-point format some differences between schemes and manifolds, to get a better sense of the similarities and differences between the geometries they represent.',
+    link: '././assets/pdfs/blogs/differences_between_schemes_and_manifolds.pdf',
     domain: 'maths',
     topic: 'geometry',
     level: 'deep',
-    planned: true,
-    intendedDate: '2025-03-01',
   },
 ];

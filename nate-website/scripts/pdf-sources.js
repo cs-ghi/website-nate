@@ -38,6 +38,8 @@ const TRACKED = {
   'blogs/areas_of_algebraic_geoemtry_reserach.pdf':
     'blogs/areas_of_algebraic_geoemtry_reserach/areas_of_algebraic_geoemtry_reserach.pdf',
   'blogs/clock_arithmetic.pdf': 'blogs/clockArithmetics/clock_arithmetic.pdf',
+  'blogs/differences_between_schemes_and_manifolds.pdf':
+    'blogs/differences_between_schemes_and_manifolds/differences_between_schemes_and_manifolds.pdf',
   'blogs/fourier_transforms.pdf': 'blogs/fourier_transforms/fourier_transforms.pdf',
   'blogs/galois_theory_intuition_behind_field_extensions.pdf':
     'blogs/galois_theory_intuition_behind_field_extensions/galois_theory_intuition_behind_field_extensions.pdf',

@@ -22,6 +22,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const zlib = require('zlib');
 
 const { SOURCE_ROOT, TRACKED, PINNED } = require('./pdf-sources');
 
@@ -77,8 +78,42 @@ if (!fs.existsSync(SOURCE_ROOT)) {
   process.exit(0);
 }
 
+// A killed latexmk leaves a truncated PDF behind: the file exists, is newer than
+// the site copy, and is structurally empty. The running-build guard below cannot
+// see it, because the build is already dead. Hit on 2026-08-22, when
+// EYNTKA_algGeo.pdf was left at 510KB / 0 pages against a good 4MB site copy and
+// the sync would happily have shipped it. So: refuse to treat a source with no
+// readable page tree as a sync candidate. Same extraction as gen-pdf-facts.js --
+// LaTeX writes /Count into a Flate-compressed object stream.
+function pageCount(file) {
+  const buf = fs.readFileSync(file);
+  const text = buf.toString('latin1');
+  const scan = (s) => {
+    let best = 0;
+    for (const m of s.matchAll(/\/Type\s*\/Pages[\s\S]{0,600}?\/Count\s+(\d+)/g)) {
+      best = Math.max(best, +m[1]);
+    }
+    return best;
+  };
+  let best = scan(text);
+  const re = /stream\r?\n/g;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    const start = m.index + m[0].length;
+    const end = text.indexOf('endstream', start);
+    if (end < 0) continue;
+    try {
+      best = Math.max(best, scan(zlib.inflateSync(buf.subarray(start, end)).toString('latin1')));
+    } catch {
+      /* not a Flate stream */
+    }
+  }
+  return best;
+}
+
 const stale = [];
 const missing = [];
+const corrupt = [];
 
 for (const [rel, srcRel] of Object.entries(TRACKED)) {
   const src = path.join(SOURCE_ROOT, srcRel);
@@ -87,12 +122,20 @@ for (const [rel, srcRel] of Object.entries(TRACKED)) {
     continue;
   }
   const dst = path.join(assetRoot, rel);
-  if (sha1(src) !== sha1(dst)) stale.push({ rel, src, dst, srcRel });
+  if (sha1(src) === sha1(dst)) continue;
+  if (!pageCount(src)) {
+    corrupt.push(
+      `${rel}: source has no readable page tree (${(fs.statSync(src).size / 1024) | 0}KB). ` +
+        `Looks like an interrupted build -- recompile ${srcRel} before syncing.`,
+    );
+    continue;
+  }
+  stale.push({ rel, src, dst, srcRel });
 }
 
-if (missing.length) {
-  console.error(`\nsync-pdfs: ${missing.length} missing source(s):`);
-  for (const m of missing) console.error(`  ${m}`);
+if (missing.length || corrupt.length) {
+  for (const m of missing) console.error(`sync-pdfs: ${m}`);
+  for (const c of corrupt) console.error(`sync-pdfs: ${c}`);
   console.error('');
   process.exit(1);
 }
