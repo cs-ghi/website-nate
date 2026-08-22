@@ -238,10 +238,17 @@ same key inserts <code dir="auto">![caption](path)</code> instead.</p>
 paths as bundles.</p>
 <p><strong>Plain Markdown + <code dir="auto">markdown</code> bundle.</strong> The lightest option.
 Render-markdown.nvim concealed formatting in-buffer (headings, bold,
-lists), mdmath.nvim renders <code dir="auto">$...$</code> math inline, and markdown-preview
-gives you a browser preview on <code dir="auto">:MarkdownPreview</code>. Paste images the
-same way as LaTeX: <code dir="auto">&lt;LocalLeader&gt;P</code>. Good if you keep notes as
-individual files in a <code dir="auto">notes/</code> directory.</p>
+lists), <code dir="auto">$...$</code> and <code dir="auto">$$...$$</code> are typeset by LaTeX and drawn over the
+source text, and markdown-preview gives you a browser preview on
+<code dir="auto">:MarkdownPreview</code>. Paste images the same way as LaTeX:
+<code dir="auto">&lt;LocalLeader&gt;P</code>. Good if you keep notes as individual files in a
+<code dir="auto">notes/</code> directory.</p>
+<p>Inline math needs <code dir="auto">pdflatex</code> (or <code dir="auto">tectonic</code>), ImageMagick, and a
+terminal that speaks the kitty graphics protocol: kitty, WezTerm or
+Ghostty. Without them the rest of the bundle still works and the
+equations stay as source. Move the cursor onto an equation to see the
+source again. Images in <code dir="auto">![caption](path)</code> render the same way, and
+<code dir="auto">:checkhealth snacks</code> reports which of the three are missing.</p>
 <p><strong>Obsidian vault + <code dir="auto">obsidian</code> bundle.</strong> If you already use Obsidian
 for notes, this bundle makes NoetherVim a first-class editor for your
 vault. Set your vault path in <code dir="auto">lua/user/config.lua</code>:</p>

@@ -1355,7 +1355,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
     {
