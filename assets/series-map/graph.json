@@ -6,7 +6,7 @@
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 125
+      "info": 124
     },
     "tiers": [
       {
@@ -3532,8 +3532,10 @@
       "source": "NateHomologicalAlg",
       "target": "NateCoreAlgebra",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
     },
     {
       "source": "NateHomologicalAlg",

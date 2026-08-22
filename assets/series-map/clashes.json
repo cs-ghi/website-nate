@@ -444,15 +444,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCoreAlgebra -> NateHomologicalAlg) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCoreAlgebra",
-      "NateHomologicalAlg"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateCommAlg -> NateAlgNumberTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateCommAlg",
