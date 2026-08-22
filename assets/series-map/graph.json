@@ -2,7 +2,7 @@
   "meta": {
     "generated": "2026-08-22",
     "bookCount": 48,
-    "edgeCount": 388,
+    "edgeCount": 389,
     "clashCounts": {
       "error": 0,
       "warn": 1,
@@ -1270,7 +1270,8 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/ch-II1-s05.tex"
+        "algebraic-geometry/drafts/scratch/ch-II1-s05.tex",
+        "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
     {
@@ -1316,7 +1317,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
     {
@@ -1371,7 +1373,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
     {
@@ -1429,7 +1431,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
     {
@@ -2281,7 +2283,8 @@
       "provenance": "auto",
       "citedIn": [
         "core-algebra/EYNTKA-core-algebra.tex",
-        "core-algebra/drafts/ch16-s02-preimage.tex"
+        "core-algebra/drafts/ch16-s02-preimage.tex",
+        "core-algebra/sections/galois-intuition.tex"
       ]
     },
     {
@@ -2439,7 +2442,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+        "core-representation-theory/sections/harmonic-analysis.tex"
       ]
     },
     {
@@ -2483,11 +2486,20 @@
     },
     {
       "source": "NateCoreRepTheory",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/sections/harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
       "target": "NateGeoRepTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+        "core-representation-theory/sections/harmonic-analysis.tex"
       ]
     },
     {
@@ -2505,7 +2517,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+        "core-representation-theory/sections/harmonic-analysis.tex"
       ]
     },
     {
@@ -2521,7 +2533,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+        "core-representation-theory/sections/harmonic-analysis.tex"
       ]
     },
     {
@@ -3575,8 +3587,12 @@
       "source": "NateIntersectionTheory",
       "target": "NateAlgKTheory",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "intersection-theory/EYNTKA-intersection-theory.tex",
+        "intersection-theory/drafts/scratch/ch07-s02.tex",
+        "intersection-theory/drafts/scratch/ch07-s03.tex"
+      ]
     },
     {
       "source": "NateIntersectionTheory",
@@ -3588,7 +3604,9 @@
         "intersection-theory/drafts/scratch/_consolidated/ch03-s01.tex",
         "intersection-theory/drafts/scratch/_consolidated/ch03-s02.tex",
         "intersection-theory/drafts/scratch/_consolidated/ch03-s03.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch06-s02.tex"
+        "intersection-theory/drafts/scratch/_consolidated/ch06-s02.tex",
+        "intersection-theory/drafts/scratch/_consolidated/ch07-s01-body.tex",
+        "intersection-theory/drafts/scratch/_consolidated/ch07-s01-moved.tex"
       ]
     },
     {
@@ -3598,9 +3616,9 @@
       "provenance": "auto",
       "citedIn": [
         "intersection-theory/EYNTKA-intersection-theory.tex",
-        "intersection-theory/drafts/scratch/ch08-open.tex",
-        "intersection-theory/drafts/scratch/ch08-s01.tex",
-        "intersection-theory/drafts/scratch/ch08-s02.tex"
+        "intersection-theory/drafts/scratch/_consolidated/ch08-s01.tex",
+        "intersection-theory/drafts/scratch/_consolidated/ch08-s02.tex",
+        "intersection-theory/drafts/scratch/ch08-open.tex"
       ]
     },
     {
@@ -3629,7 +3647,10 @@
       "citedIn": [
         "intersection-theory/EYNTKA-intersection-theory.tex",
         "intersection-theory/drafts/scratch/_consolidated/ch03-s03.tex",
-        "intersection-theory/drafts/scratch/ch08-s02.tex"
+        "intersection-theory/drafts/scratch/_consolidated/ch07-s01-body.tex",
+        "intersection-theory/drafts/scratch/_consolidated/ch07-s01-moved.tex",
+        "intersection-theory/drafts/scratch/_consolidated/ch08-s02.tex",
+        "intersection-theory/drafts/scratch/ch07-s02.tex"
       ]
     },
     {
@@ -3638,7 +3659,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "intersection-theory/EYNTKA-intersection-theory.tex"
+        "intersection-theory/EYNTKA-intersection-theory.tex",
+        "intersection-theory/drafts/scratch/ch07-s02.tex"
       ]
     },
     {
