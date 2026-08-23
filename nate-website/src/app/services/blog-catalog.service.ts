@@ -32,6 +32,10 @@ export class BlogCatalogService {
   // falling to the end rather than being dropped: the build check is what
   // catches a broken link, and a silent disappearance here would hide it.
   //
+  // Order comes from `published`, never from the compile date. Sorting on the
+  // compile date made the stream reshuffle itself every time a PDF was rebuilt,
+  // which is not what a reader means by a date on an article.
+  //
   // Planned entries are included. Hiding them is the component's job, because
   // the unlock state lives there — and because everything the page derives
   // (domain counts, which filters render, year headings) has to be computed
@@ -41,6 +45,11 @@ export class BlogCatalogService {
       BLOG_POSTS.map((entry) => {
         const file = entry.link ? basename(entry.link) : '';
         const meta = file ? manifest[file] : undefined;
+        // A planned entry with no PDF has only `intendedDate` to place it.
+        const published = entry.published ?? entry.intendedDate;
+        // The authored `updated` wins over the compile date, so a rebuild that
+        // changed nothing can be told from a revision that did.
+        const lastTouched = entry.updated ?? meta?.updated ?? undefined;
         return {
           ...entry,
           file,
@@ -49,13 +58,13 @@ export class BlogCatalogService {
           alsoLabels: (entry.alsoTopics ?? []).map((t) => TOPIC_LABELS[t] ?? t),
           levelLabel: LEVEL_LABEL[entry.domain][entry.level],
           levelShort: LEVEL_SHORT[entry.domain][entry.level],
-          // A planned entry with no PDF has no compile date; `intendedDate` is
-          // what puts it in the right place in the chronology.
-          updated: meta?.updated ?? entry.intendedDate ?? undefined,
+          published,
+          updatedNote:
+            lastTouched && published && lastTouched > published ? lastTouched : undefined,
           pages: meta?.pages ?? undefined,
           readingMinutes: meta?.readingMinutes ?? undefined,
         };
-      }).sort((a, b) => (b.updated ?? '').localeCompare(a.updated ?? '')),
+      }).sort((a, b) => (b.published ?? '').localeCompare(a.published ?? '')),
     ),
     shareReplay(1),
   );

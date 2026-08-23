@@ -55,8 +55,22 @@ for (const rel of onDisk) {
   }
 }
 const known = new Set(onDisk);
-for (const rel of [...Object.keys(TRACKED), ...Object.keys(PINNED)]) {
-  if (!known.has(rel)) errors.push(`${rel}: listed in pdf-sources.js but not on disk`);
+for (const rel of Object.keys(PINNED)) {
+  if (!known.has(rel)) errors.push(`${rel}: pinned in pdf-sources.js but not on disk`);
+}
+// A TRACKED entry with no copy yet is how a new PDF enters the site, so under
+// --write it is a file to create rather than an error; the freshness pass copies
+// it, and reports separately if the source is the thing that is missing. Without
+// --write it stays an error, because then the site is short a PDF it claims to
+// serve. Adding a blog on 2026-08-23 showed this had been backwards: the
+// classification pass exited first, so --write could never create the file it
+// was being asked to add, even though the reporting below has a '(new)' case.
+for (const rel of Object.keys(TRACKED)) {
+  if (!known.has(rel) && !write) {
+    errors.push(
+      `${rel}: listed in pdf-sources.js but not on disk. Run \`npm run sync:pdfs\` to create it.`,
+    );
+  }
 }
 
 if (errors.length) {
@@ -122,7 +136,7 @@ for (const [rel, srcRel] of Object.entries(TRACKED)) {
     continue;
   }
   const dst = path.join(assetRoot, rel);
-  if (sha1(src) === sha1(dst)) continue;
+  if (fs.existsSync(dst) && sha1(src) === sha1(dst)) continue;
   const srcPages = pageCount(src);
   if (!srcPages) {
     corrupt.push(
@@ -172,8 +186,13 @@ if (write) {
   // including `... && npm run sync:pdfs` typed after a pgrep -- counts as a
   // build in flight and the sync refuses for no reason. The engine is also the
   // right thing to watch: latexmk orchestrates, but pdflatex writes the PDF.
+  // The list must be a regex alternation: pgrep takes an extended regex, so a
+  // comma-separated string matches only a process literally named
+  // "pdflatex,xelatex,...", i.e. nothing. This guard silently never fired until
+  // 2026-08-23, when the corruption check below caught a mid-write PDF that
+  // this was supposed to have stopped first.
   const building = require('child_process')
-    .spawnSync('pgrep', ['-x', 'pdflatex,xelatex,lualatex,luahbtex,pdftex'], { encoding: 'utf8' })
+    .spawnSync('pgrep', ['-x', 'pdflatex|xelatex|lualatex|luahbtex|pdftex'], { encoding: 'utf8' })
     .stdout.trim();
   if (building) {
     console.error(

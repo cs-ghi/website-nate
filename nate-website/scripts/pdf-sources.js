@@ -41,6 +41,13 @@ const TRACKED = {
   'blogs/differences_between_schemes_and_manifolds.pdf':
     'blogs/differences_between_schemes_and_manifolds/differences_between_schemes_and_manifolds.pdf',
   'blogs/fourier_transforms.pdf': 'blogs/fourier_transforms/fourier_transforms.pdf',
+  // Was PINNED as a frozen 2024 application artifact until it was corrected and
+  // extended on 2026-08-23; it gets recompiled now, so it tracks. Moved out of
+  // PhD applications/ the same day, and the basename lost its Langlands typo --
+  // the old one redirects via LEGACY_PDF_REDIRECTS. The as-submitted December
+  // 2024 PDF stays behind in berkley/ as the record of what was sent.
+  'blogs/from_quadratic_to_langlands.pdf':
+    'blogs/from_quadratic_to_langlands/from_quadratic_to_langlands.pdf',
   'blogs/galois_theory_intuition_behind_field_extensions.pdf':
     'blogs/galois_theory_intuition_behind_field_extensions/galois_theory_intuition_behind_field_extensions.pdf',
   'blogs/geometric_intuition_of_hilbert_spaces.pdf':
@@ -137,9 +144,6 @@ const PINNED = {
     'papers/hirzebruch-riemann-roch-v1.pdf.',
 
   'blogs/Conjecture_old.pdf': 'Published post with no source under SOURCE_ROOT.',
-  'blogs/From_Quadratic_to_Langland.pdf':
-    'Published post. Source is a frozen 2024 PhD-application artifact under ' +
-    'university/masters/PhD applications/, which does not get recompiled.',
   'blogs/PontryaginDuality.pdf':
     'Not referenced by any blog entry; on disk for old /pdf-viewer deep links. ' +
     'Written as 2022-23 MAT436 coursework and frozen there.',

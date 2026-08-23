@@ -109,4 +109,7 @@ export const PAPERS: PaperEntry[] = [
 export const LEGACY_PDF_REDIRECTS: Record<string, string> = {
   'twisted-IHC.pdf': '././assets/pdfs/papers/integral-hodge-twisting-v1.pdf',
   'HRR.pdf': '././assets/pdfs/papers/hirzebruch-riemann-roch-v1.pdf',
+  // Renamed on 2026-08-23: the old basename misspelled Langlands, and the file
+  // was the only blog source still living under PhD applications/.
+  'From_Quadratic_to_Langland.pdf': '././assets/pdfs/blogs/from_quadratic_to_langlands.pdf',
 };

@@ -157,6 +157,17 @@ $rule: #333438;
     letter-spacing: 0.4px;
 }
 
+// Sits under the publication date, and only when the two differ. Deliberately
+// quieter than .e-date: it is a footnote to the date, not a second one.
+.e-upd {
+    display: block;
+    margin-top: 2px;
+    color: $ink-faint;
+    opacity: 0.62;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+}
+
 .e-lvl {
     display: inline-flex;
     align-items: center;

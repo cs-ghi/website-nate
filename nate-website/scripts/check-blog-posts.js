@@ -13,7 +13,11 @@
 //      unlocking the page must never surface a broken link;
 //   3. a `planned` post with no `link` has an `intendedDate`, or it sorts to the
 //      bottom of the stream instead of into it;
-//   4. every `topic` and `alsoTopics` key belongs to that post's own `domain`.
+//   4. every post with a PDF has a `published` date, since that is what orders
+//      the stream. Nothing on disk can supply it — the PDF only records when it
+//      was last compiled, and a rebuild overwrites that — so an entry added
+//      without one would silently sink to the bottom;
+//   5. every `topic` and `alsoTopics` key belongs to that post's own `domain`.
 //      The two-tier taxonomy makes a maths topic on a philosophy post easy to
 //      write and impossible to see.
 //
@@ -79,7 +83,12 @@ if (!entries.length) {
   process.exit(1);
 }
 
-const field = (chunk, name) => chunk.match(new RegExp(`${name}:\\s*'([^']*)'`))?.[1];
+// Accepts either quote style: an entry whose value contains an apostrophe is
+// written with double quotes, and two of them are. Matching only `'...'` left
+// those reading as unnamed in every error message this script can emit.
+const field = (chunk, name) =>
+  chunk.match(new RegExp(`${name}:\\s*'([^']*)'`))?.[1] ??
+  chunk.match(new RegExp(`${name}:\\s*"([^"]*)"`))?.[1];
 const list = (chunk, name) => {
   const raw = chunk.match(new RegExp(`${name}:\\s*\\[([^\\]]*)\\]`))?.[1] ?? '';
   return [...raw.matchAll(/'([^']+)'/g)].map((m) => m[1]);
@@ -111,9 +120,20 @@ for (const chunk of entries) {
     }
   }
 
+  const pub = field(chunk, 'published');
+  if (pub && !/^\d{4}-\d{2}-\d{2}$/.test(pub)) {
+    errors.push(`${name}: published '${pub}' is not an ISO yyyy-mm-dd date`);
+  }
+
   if (link) {
     if (!onDisk.has(link.split('/').pop())) {
       errors.push(`${name}: links to ${link.split('/').pop()}, which is not in assets/pdfs/blogs`);
+    }
+    if (!pub) {
+      errors.push(
+        `${name}: has a PDF but no 'published' date, so it would sort to the bottom. ` +
+          `Use the earliest /CreationDate for its PDF in git if the date is not remembered.`,
+      );
     }
   } else if (!isPlanned) {
     errors.push(`${name}: published posts need a link`);

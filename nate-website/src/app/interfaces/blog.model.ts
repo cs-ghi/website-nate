@@ -57,6 +57,18 @@ export interface BlogEntry {
   // bottom of the page. Orthogonal to whether a PDF exists — a planned entry
   // with a `link` is readable once unlocked, one without is not yet written.
   planned?: true;
+  // When the post went up. This, and not the PDF's compile date, fixes its
+  // position in the stream. Compile dates cannot do that job: rebuilding for an
+  // unrelated preamble change rewrites them, so on 2026-08-23 a sweep across the
+  // LaTeX tree stamped nearly every post with the same day and flattened two
+  // years of chronology. Hand-authored because nothing on disk remembers it —
+  // these were recovered from the earliest /CreationDate for each PDF in git.
+  published?: string;     // ISO; required for anything not `planned`
+  // Optional override for the "updated" marker, which otherwise shows the PDF's
+  // last compile date. Set it when a rebuild was not a revision, or clear it to
+  // suppress the marker on a post whose compile date says more about the build
+  // system than about the writing.
+  updated?: string;       // ISO
   // Needed only by a planned entry with no PDF, since nothing else can supply a
   // date. Without it the entry sorts to the bottom instead of into the stream.
   intendedDate?: string;  // ISO
@@ -72,7 +84,13 @@ export interface BlogPost extends BlogEntry {
   alsoLabels: string[];   // display labels for alsoTopics, resolved once here
   levelLabel: string;
   levelShort: string;
-  updated?: string;       // ISO date of the last compile, or intendedDate
+  // The position key and the date on the card: `published`, or `intendedDate`
+  // for a planned entry that has no PDF yet.
+  published?: string;
+  // Shown as "updated ..." beside the date, and only when it is later than
+  // `published` — otherwise every post carries a redundant second date equal to
+  // its first.
+  updatedNote?: string;
   pages?: number;
   readingMinutes?: number;
 }

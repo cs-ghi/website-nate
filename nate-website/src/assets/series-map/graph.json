@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-08-23",
     "bookCount": 48,
-    "edgeCount": 390,
+    "edgeCount": 395,
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 125
+      "info": 124
     },
     "tiers": [
       {
@@ -388,7 +388,7 @@
       "webPublished": false,
       "clusters": [],
       "links": {
-        "pdf": "etale-cohomology/lectures on etale cohomology.pdf"
+        "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
       "lastUpdated": "2026-07-15",
       "xAffinity": -0.603,
@@ -1137,8 +1137,8 @@
     {
       "source": "NateAbelianVarieties",
       "target": "NateEtaleCohomology",
-      "type": "coreq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch14-open.tex"
@@ -2877,11 +2877,32 @@
     },
     {
       "source": "NateEtaleCohomology",
+      "target": "NateAbelianVarieties",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "etale-cohomology/drafts/ch06-snapshot/cohomologyOfCurve.tex",
+        "etale-cohomology/drafts/ch06-snapshot/divisorsAndPicardOfCurve.tex",
+        "etale-cohomology/drafts/scratch/ch06-armA/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-armA/ch06-s03.tex",
+        "etale-cohomology/drafts/scratch/ch06-armB/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-armB/ch06-s03.tex",
+        "etale-cohomology/drafts/scratch/ch06-armC/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-armC/ch06-s03.tex",
+        "etale-cohomology/drafts/scratch/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-s03.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
       "target": "NateAlgGeo",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/ch06-snapshot/brauerFunctionField.tex",
+        "etale-cohomology/drafts/ch06-snapshot/cohomologyOfCurve.tex",
+        "etale-cohomology/drafts/ch06-snapshot/divisorsAndPicardOfCurve.tex",
         "etale-cohomology/drafts/scratch/ch01-s01.tex",
         "etale-cohomology/drafts/scratch/ch01-s03.tex",
         "etale-cohomology/drafts/scratch/ch01-s04.tex",
@@ -2894,7 +2915,19 @@
         "etale-cohomology/drafts/scratch/ch04-s01.tex",
         "etale-cohomology/drafts/scratch/ch04-s02.tex",
         "etale-cohomology/drafts/scratch/ch04-s04.tex",
-        "etale-cohomology/drafts/scratch/ch04-s05.tex"
+        "etale-cohomology/drafts/scratch/ch04-s05.tex",
+        "etale-cohomology/drafts/scratch/ch06-armA/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-armA/ch06-s02.tex",
+        "etale-cohomology/drafts/scratch/ch06-armA/ch06-s03.tex",
+        "etale-cohomology/drafts/scratch/ch06-armB/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-armB/ch06-s02.tex",
+        "etale-cohomology/drafts/scratch/ch06-armB/ch06-s03.tex",
+        "etale-cohomology/drafts/scratch/ch06-armC/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-armC/ch06-s02.tex",
+        "etale-cohomology/drafts/scratch/ch06-armC/ch06-s03.tex",
+        "etale-cohomology/drafts/scratch/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-s02.tex",
+        "etale-cohomology/drafts/scratch/ch06-s03.tex"
       ]
     },
     {
@@ -2924,6 +2957,19 @@
     },
     {
       "source": "NateEtaleCohomology",
+      "target": "NateCommAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/drafts/ch06-snapshot/divisorsAndPicardOfCurve.tex",
+        "etale-cohomology/drafts/scratch/ch06-armA/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-armB/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-armC/ch06-s01.tex",
+        "etale-cohomology/drafts/scratch/ch06-s01.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
       "target": "NateEllipticCurves",
       "type": "reference",
       "provenance": "auto",
@@ -2939,6 +2985,7 @@
       "provenance": "both",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/ch06-snapshot/brauerFunctionField.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s01.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s02.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s04.tex",
@@ -2990,7 +3037,11 @@
         "etale-cohomology/drafts/scratch/ch04-s05.tex",
         "etale-cohomology/drafts/scratch/ch05-s01.tex",
         "etale-cohomology/drafts/scratch/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/ch05-s04.tex"
+        "etale-cohomology/drafts/scratch/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/ch06-armA/ch06-s02.tex",
+        "etale-cohomology/drafts/scratch/ch06-armB/ch06-s02.tex",
+        "etale-cohomology/drafts/scratch/ch06-armC/ch06-s02.tex",
+        "etale-cohomology/drafts/scratch/ch06-s02.tex"
       ]
     },
     {
@@ -3048,8 +3099,10 @@
       "source": "NateFuncAnalysis",
       "target": "NateLinAlg",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex"
+      ]
     },
     {
       "source": "NateFuncAnalysis",
@@ -3694,12 +3747,39 @@
     },
     {
       "source": "NateIntersectionTheory",
+      "target": "NateEtaleCohomology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "intersection-theory/EYNTKA-intersection-theory.tex"
+      ]
+    },
+    {
+      "source": "NateIntersectionTheory",
+      "target": "NateHodgeTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "intersection-theory/EYNTKA-intersection-theory.tex"
+      ]
+    },
+    {
+      "source": "NateIntersectionTheory",
       "target": "NateHomologicalAlg",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
         "intersection-theory/EYNTKA-intersection-theory.tex",
         "intersection-theory/drafts/scratch/ch07-s02.tex"
+      ]
+    },
+    {
+      "source": "NateIntersectionTheory",
+      "target": "NateModuliStacks",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "intersection-theory/EYNTKA-intersection-theory.tex"
       ]
     },
     {
@@ -3821,7 +3901,10 @@
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
         "langlands-gl2/drafts/scratch/aborted-run-2026-08-19/ch08-s05.tex",
         "langlands-gl2/drafts/scratch/ch08-s04.tex",
-        "langlands-gl2/drafts/scratch/ch08-s05.tex"
+        "langlands-gl2/drafts/scratch/ch08-s05.tex",
+        "langlands-gl2/drafts/scratch/ch09-s01.tex",
+        "langlands-gl2/drafts/scratch/ch09-s02.tex",
+        "langlands-gl2/drafts/scratch/ch09-s03.tex"
       ]
     },
     {
@@ -3876,7 +3959,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "langlands-gl2/EYNTKA-langlands-gl2.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex",
+        "langlands-gl2/drafts/scratch/ch09-s02.tex"
       ]
     },
     {

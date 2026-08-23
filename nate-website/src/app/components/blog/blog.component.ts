@@ -125,7 +125,7 @@ export class BlogComponent implements OnInit {
     // "Undated" heading rather than silently joining the oldest year.
     const years: BlogYear[] = [];
     for (const post of shown) {
-      const year = post.updated ? post.updated.slice(0, 4) : 'Undated';
+      const year = post.published ? post.published.slice(0, 4) : 'Undated';
       const last = years[years.length - 1];
       if (last && last.year === year) last.posts.push(post);
       else years.push({ year, posts: [post] });

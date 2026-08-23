@@ -58,7 +58,10 @@
           <span *ngIf="showDomainInRail" class="e-domain" [ngClass]="'d-' + post.domain">
             {{ post.domainLabel }}
           </span>
-          <span class="e-date">{{ post.updated ? (post.updated | date: 'MMM y') : '—' }}</span>
+          <span class="e-date">{{ post.published ? (post.published | date: 'MMM y') : '—' }}</span>
+          <span *ngIf="post.updatedNote" class="e-upd"
+            >upd. {{ post.updatedNote | date: 'MMM y' }}</span
+          >
           <span class="e-lvl" [ngClass]="'c-' + post.level">
             <span class="lvl-dot"></span>{{ post.levelShort }}
           </span>
