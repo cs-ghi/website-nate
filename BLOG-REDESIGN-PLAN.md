@@ -126,7 +126,7 @@ for "don't show my unfinished list".
 The four entries that used to sit commented out at the bottom of
 `blog-posts.ts` are now planned entries, plus the two philosophy drafts. Three
 of the four already had compiled PDFs on disk
-(`alien_perspective_on_analysis`, `Conjecture_old`, `From_Quadratic_to_Langland`)
+(`alien_perspective_on_analysis`, `Conjecture_old`, `from_quadratic_to_langlands`)
 and are therefore readable once unlocked; only `Comparing Schemes and Manifolds`
 has no PDF. That is why `planned` gates visibility rather than implying "no
 PDF" — collapsing the two would have thrown away three readable documents.
