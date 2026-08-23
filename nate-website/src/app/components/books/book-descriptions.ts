@@ -170,32 +170,6 @@ const CURATED_BOOKS: Book[] = [
 
   },
   {
-    name: 'Real Analysis',
-    desc: 'Abstract and Lebesgue Measure, Measurable and Integrable functions, Signed Measures, Radon-Nikodyn Theorem and FTC, Banach and Hilbert Spaces, Topological Vector Spaces, Lebegue Space, Fourier Analysis, Distribution Theory, and Measure on Locally Compact Topological Groups. ',
-    link: '././assets/pdfs/books/EYNTKA-real-analysis.pdf',
-    type: 'pdf',
-    children: [
-      {
-        name: 'Measure Theory',
-        desc: 'Foundational construction of Sigma-Algebras, Outer Measure, and Borel/Lebesgue measures on the real line.  Coverage of Integration: measurable functions, modes of convergence, Product Measure, and the n-dimensional Lebesgue Integral. Concludes with the theory of Signed and Complex Measures, the Lebesgue-Radon-Nikodym Theorem, and the differentiation of measures on Euclidean Space.',
-        link: '././assets/pdfs/books/EYNTKA-measure-theory.pdf',
-        type: 'pdf'
-      },
-      {
-        name: 'Functional Analysis',
-        desc: 'Begins with Metric Function Spaces, Baire Category Theory, and equicontinuity. Covers the core structures of Functional Analysis: Banach and Fréchet Spaces (including Dual Spaces and Weak Topologies) and Hilbert Spaces (including Compact Operators and Trace). Includes Spectral Theory for Banach Algebras and the Continuous Functional Calculus. Extensive treatment of Lebesgue Spaces and interpolation theorems (Riesz-Thorin), concluding with Radon Measures and the dual theory of continuous functions.',
-        link: '././assets/pdfs/books/EYNTKA-functional-analysis.pdf',
-        type: 'pdf'
-      },
-      {
-        name: 'Harmonic Analysis',
-        desc: 'Centered on Fourier Analysis: definitions, convolution, and the Fourier Transform on the n-Torus and Euclidean Space, including point-wise convergence of Fourier Series. Provides a rigorous treatment of Distribution Theory, covering tempered distributions, Sobolev Spaces, and the Sobolev Embedding Theorem. The final chapters generalize these concepts to Topological Groups, covering the Haar Measure and Pontryagin Duality.',
-        link: '././assets/pdfs/books/EYNTKA-harmonic-analysis.pdf',
-        type: 'pdf'
-      },
-    ]
-  },
-  {
     name: 'Complex Analysis',
     desc: 'Complex numbers, functions, and Mobius transformations. Complex Differentiation, power series, analytic functions. Complex integration, Meromorphic functions, Residue theorem, and Argument Principle. Holomorphic Function spaces, Montel and Marty\'s Theorem, Riemann Mapping Theorem. Factorization of Holomorphic Functions and Riemann-zeta function. Elliptic functions and Weiestrass p-function. Riemann surfaces and Harmonic Functions. Higher-dimensional complex differentiation.',
     link: '././assets/pdfs/books/EYNTKA_complex_analysis.pdf',
@@ -244,12 +218,6 @@ const CURATED_BOOKS: Book[] = [
     name: 'Ordinary Differential Equations (ODE)',
     desc: 'Existence and Uniqueness Theorems (Picard-Lindelöf), Scalar and Linear Second-Order Equations, Linear Systems via Matrix Exponentials and Jordan Forms, Qualitative Theory and Stability (Lyapunov, Poincaré-Bendixson), Boundary Value Problems, Sturm-Liouville Theory and Green\'s Functions, Series Solutions and Special Functions (Bessel, Legendre).',
     link: '././assets/pdfs/books/EYNTKA_ODE.pdf',
-    type: 'pdf'
-  },
-  {
-    name: 'Elementary Analysis',
-    desc: 'Notes that will eventually be the basics that are needed for real analysis (real numbers, sequences and series, etc.) and differentiable geometry (calculus).',
-    link: '././assets/pdfs/books/elementary_analysis.pdf',
     type: 'pdf'
   },
   {

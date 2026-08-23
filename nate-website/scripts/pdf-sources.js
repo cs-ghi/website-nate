@@ -146,16 +146,6 @@ const PINNED = {
   'blogs/serre_paper-Theory_of_Simple_Algebras.pdf':
     'Third-party paper (Serre), not authored here; nothing to track.',
 
-  'books/EYNTKA-real-analysis.pdf':
-    'Linked from book-descriptions.ts, but the book was disbanded on 2026-08-17 ' +
-    '(textbooks/_archive/Real-Analysis-container-disbanded-2026-08-17). Pinned so ' +
-    'the check does not fail on it; the entry itself needs an editorial decision.',
-  'books/EYNTKA_Differential_Geometry.pdf':
-    'No live source; the only copy is in academic/_archive/. Superseded on the ' +
-    'site by EYNTKA-riemannian-geometry.pdf and EYNTKA-differential-topology.pdf.',
-  'books/elementary_analysis.pdf':
-    'No live source. Superseded by EYNTKA-elementary-analysis.pdf, which is ' +
-    'tracked and also served.',
   'notes/EYNTKA_geo_rep_theory.pdf':
     'Old-naming copy. The live book is served as books/EYNTKA-geo-rep-theory.pdf.',
 };

@@ -123,14 +123,29 @@ for (const [rel, srcRel] of Object.entries(TRACKED)) {
   }
   const dst = path.join(assetRoot, rel);
   if (sha1(src) === sha1(dst)) continue;
-  if (!pageCount(src)) {
+  const srcPages = pageCount(src);
+  if (!srcPages) {
     corrupt.push(
       `${rel}: source has no readable page tree (${(fs.statSync(src).size / 1024) | 0}KB). ` +
         `Looks like an interrupted build -- recompile ${srcRel} before syncing.`,
     );
     continue;
   }
-  stale.push({ rel, src, dst, srcRel });
+  // Measure the outgoing copy BEFORE it is overwritten, so --write can report
+  // what actually changed. This is the sanity check that a wrong version has
+  // not been shipped: a book that loses a third of its pages is far more
+  // visible as "879 -> 512 pp" than as a filename in a list.
+  const had = fs.existsSync(dst);
+  stale.push({
+    rel,
+    src,
+    dst,
+    srcRel,
+    srcPages,
+    dstPages: had ? pageCount(dst) : 0,
+    srcSize: fs.statSync(src).size,
+    dstSize: had ? fs.statSync(dst).size : 0,
+  });
 }
 
 if (missing.length || corrupt.length) {
@@ -168,9 +183,37 @@ if (write) {
     process.exit(1);
   }
 
-  for (const { rel, src, dst } of stale) {
-    fs.copyFileSync(src, dst);
-    console.log(`sync-pdfs: updated ${rel}`);
+  // Report what each copy changed. A shrink of more than a fifth in either
+  // pages or bytes gets flagged: that is what shipping the wrong build looks
+  // like, and it is worth a second glance even when it is intentional.
+  const SHRINK = 0.2;
+  const mb = (n) => (n / 1048576).toFixed(2) + 'MB';
+  const width = Math.max(...stale.map((e) => e.rel.length));
+  const suspect = [];
+
+  for (const e of stale) {
+    fs.copyFileSync(e.src, e.dst);
+    const pageDrop = e.dstPages && (e.dstPages - e.srcPages) / e.dstPages;
+    const sizeDrop = e.dstSize && (e.dstSize - e.srcSize) / e.dstSize;
+    const odd = pageDrop > SHRINK || sizeDrop > SHRINK;
+    if (odd) suspect.push(e.rel);
+    const was = e.dstPages
+      ? `${e.dstPages}pp ${mb(e.dstSize)}`
+      : e.dstSize
+        ? `unreadable ${mb(e.dstSize)}`
+        : '(new)';
+    const now = `${e.srcPages}pp ${mb(e.srcSize)}`;
+    const delta = e.dstPages ? ` ${e.srcPages - e.dstPages >= 0 ? '+' : ''}${e.srcPages - e.dstPages}pp` : '';
+    console.log(
+      `sync-pdfs: ${e.rel.padEnd(width)}  ${was.padStart(16)} -> ${now.padEnd(16)}${delta}${odd ? '   <-- SHRANK, CHECK THIS' : ''}`,
+    );
+  }
+
+  if (suspect.length) {
+    console.log(
+      `\nsync-pdfs: ${suspect.length} file(s) lost more than ${SHRINK * 100}% of their pages or bytes: ` +
+        `${suspect.join(', ')}.\n           If that was not intended, the source may be a stale or partial build.`,
+    );
   }
   console.log(
     `sync-pdfs: copied ${stale.length} PDF(s) from ${SOURCE_ROOT}. ` +
