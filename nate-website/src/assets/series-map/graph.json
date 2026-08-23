@@ -388,7 +388,7 @@
       "webPublished": false,
       "clusters": [],
       "links": {
-        "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
+        "pdf": "etale-cohomology/lectures on etale cohomology.pdf"
       },
       "lastUpdated": "2026-07-15",
       "xAffinity": -0.603,
@@ -1137,8 +1137,8 @@
     {
       "source": "NateAbelianVarieties",
       "target": "NateEtaleCohomology",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch14-open.tex"
@@ -3820,6 +3820,7 @@
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
         "langlands-gl2/drafts/scratch/aborted-run-2026-08-19/ch08-s05.tex",
+        "langlands-gl2/drafts/scratch/ch08-s04.tex",
         "langlands-gl2/drafts/scratch/ch08-s05.tex"
       ]
     },
@@ -4019,7 +4020,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/drafts/scratch/ch10-s04.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex",
+        "linear-algebra/drafts/scratch/done-ch10/ch10-s04.tex"
       ]
     },
     {
@@ -4066,9 +4068,9 @@
       "provenance": "auto",
       "citedIn": [
         "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/ch10-s02.tex",
-        "linear-algebra/drafts/scratch/ch10-s03.tex",
-        "linear-algebra/drafts/scratch/done-ch09/ch09-s01.tex"
+        "linear-algebra/drafts/scratch/done-ch09/ch09-s01.tex",
+        "linear-algebra/drafts/scratch/done-ch10/ch10-s02.tex",
+        "linear-algebra/drafts/scratch/done-ch10/ch10-s03.tex"
       ]
     },
     {
