@@ -199,7 +199,11 @@ export const BLOG_POSTS: BlogEntry[] = [
     name: "Towards Langlands's Reciprocity",
     desc: 'Many may have heard the tantalizing claim that quadratic reciprocity is the simplest version of Langlands\'s reciprocity. In this quick article, I give an overview of the build-up towards it by going through Artin\'s reciprocity, computing the Artin map on a quadratic field and a coefficient of a modular form along the way.',
     link: '././assets/pdfs/blogs/from_quadratic_to_langlands.pdf',
-    published: '2024-12-16',
+    // Written 2024-12-16 as a PhD-application writing sample and kept unlisted
+    // until now, so unlike every other entry here its creation and publication
+    // dates differ. This is the publication one on purpose; do not "correct" it
+    // back to the PDF's original date for consistency with its neighbours.
+    published: '2026-08-23',
     domain: 'maths',
     topic: 'number-theory',
     level: 'deep',
