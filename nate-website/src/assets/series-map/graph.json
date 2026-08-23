@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-08-23",
     "bookCount": 48,
-    "edgeCount": 389,
+    "edgeCount": 390,
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 124
+      "info": 125
     },
     "tiers": [
       {
@@ -2909,6 +2909,15 @@
         "etale-cohomology/drafts/scratch/armA2/ch05-s04.tex",
         "etale-cohomology/drafts/scratch/armB/ch05-s04.tex",
         "etale-cohomology/drafts/scratch/armB2/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-A1/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-A2/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-A3/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-B1/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-B2/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-B3/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-C1/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-C2/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-C3/ch05-s04.tex",
         "etale-cohomology/drafts/scratch/ch02-s04.tex",
         "etale-cohomology/drafts/scratch/ch05-s04.tex"
       ]
@@ -2945,6 +2954,33 @@
         "etale-cohomology/drafts/scratch/armB2/ch05-s01.tex",
         "etale-cohomology/drafts/scratch/armB2/ch05-s02.tex",
         "etale-cohomology/drafts/scratch/armB2/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-A1/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-A1/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-A1/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-A2/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-A2/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-A2/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-A3/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-A3/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-A3/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-B1/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-B1/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-B1/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-B2/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-B2/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-B2/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-B3/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-B3/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-B3/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-C1/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-C1/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-C1/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-C2/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-C2/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-C2/ch05-s04.tex",
+        "etale-cohomology/drafts/scratch/bench-C3/ch05-s01.tex",
+        "etale-cohomology/drafts/scratch/bench-C3/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/bench-C3/ch05-s04.tex",
         "etale-cohomology/drafts/scratch/ch02-s03.tex",
         "etale-cohomology/drafts/scratch/ch03-s05.tex",
         "etale-cohomology/drafts/scratch/ch04-open.tex",
@@ -3783,6 +3819,7 @@
       "provenance": "both",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
+        "langlands-gl2/drafts/scratch/aborted-run-2026-08-19/ch08-s05.tex",
         "langlands-gl2/drafts/scratch/ch08-s05.tex"
       ]
     },
@@ -3801,7 +3838,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "langlands-gl2/EYNTKA-langlands-gl2.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex",
+        "langlands-gl2/drafts/scratch/ch08-s02.tex"
       ]
     },
     {
@@ -3977,6 +4015,15 @@
     },
     {
       "source": "NateLinAlg",
+      "target": "NateAbelianVarieties",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/drafts/scratch/ch10-s04.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
       "target": "NateAlgNumberTheory",
       "type": "reference",
       "provenance": "auto",
@@ -4019,7 +4066,9 @@
       "provenance": "auto",
       "citedIn": [
         "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/ch09-s01.tex"
+        "linear-algebra/drafts/scratch/ch10-s02.tex",
+        "linear-algebra/drafts/scratch/ch10-s03.tex",
+        "linear-algebra/drafts/scratch/done-ch09/ch09-s01.tex"
       ]
     },
     {
