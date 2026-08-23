@@ -345,15 +345,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLinAlg -> NateFuncAnalysis) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLinAlg",
-      "NateFuncAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateLinAlg -> NateODE) is manual, no backing \\cite found.",
     "refs": [
       "NateLinAlg",

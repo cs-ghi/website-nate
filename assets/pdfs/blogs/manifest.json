@@ -4,11 +4,6 @@
     "updated": "2024-12-01",
     "readingMinutes": 123
   },
-  "From_Quadratic_to_Langland.pdf": {
-    "pages": 3,
-    "updated": "2024-12-16",
-    "readingMinutes": 8
-  },
   "PontryaginDuality.pdf": {
     "pages": 15,
     "updated": "2024-11-23",
@@ -41,8 +36,13 @@
   },
   "fourier_transforms.pdf": {
     "pages": 11,
-    "updated": "2026-08-22",
+    "updated": "2026-08-23",
     "readingMinutes": 28
+  },
+  "from_quadratic_to_langlands.pdf": {
+    "pages": 4,
+    "updated": "2026-08-23",
+    "readingMinutes": 10
   },
   "galois_theory_intuition_behind_field_extensions.pdf": {
     "pages": 9,
