@@ -219,9 +219,12 @@ spelling mistake: if you wrote <code dir="auto">helllo world |</code> and press 
 <li><strong><code dir="auto">[f</code> and <code dir="auto">]f</code></strong>: previous and next file in the current directory,
 alphabetically, wrapping at the ends. Useful for numbered or dated files:
 chapters, notes, migrations.</li>
-<li><strong><code dir="auto">il</code></strong>: the inner-line text object, from the first non-blank character to
-the last. <code dir="auto">dil</code> clears a line’s contents without touching its indentation and
-<code dir="auto">cil</code> retypes it in place. Vim ships no text object for this.</li>
+<li><strong><code dir="auto">il</code> and <code dir="auto">al</code></strong>: the line text objects Vim leaves out. <code dir="auto">il</code> runs from the
+first non-blank character to the last, so <code dir="auto">dil</code> clears a line’s contents
+without touching its indentation and <code dir="auto">cil</code> retypes it in place. <code dir="auto">al</code> is the
+whole line up to the break, so <code dir="auto">dal</code> empties a line and keeps it, where <code dir="auto">dd</code>
+would take the line with it, and <code dir="auto">yal</code> puts the line in a register as text,
+ready for <code dir="auto">p</code> to drop it inside another line instead of below it.</li>
 <li><strong><code dir="auto">zv</code> and <code dir="auto">zx</code></strong>: <code dir="auto">zz10&lt;C-e&gt;</code> and <code dir="auto">zz10&lt;C-y&gt;</code>. Centre the cursor line, then
 scroll the window ten lines, leaving the cursor on the same buffer line.</li>
 <li><strong><code dir="auto">&lt;C-w&gt;t</code></strong>: a twelve-line terminal along the bottom that toggles rather

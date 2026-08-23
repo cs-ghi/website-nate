@@ -942,6 +942,26 @@ are being collected: &gt;lua
       opts = function(_, opts)
         table.insert(opts.adapters, require("neotest-adapter")(&#123;&#125;))
       end &#125;
+                                                    <a id="noethervim-inline-math" class="vimdoc-tag">*noethervim-inline-math*</a>
+Inline math (markdown bundle): ~
+
+The `markdown` bundle typesets `$...$` and `$$...$$` and draws the result
+over the source, in markdown buffers. Each equation is set by pdflatex or
+tectonic and converted by ImageMagick, then cached, so only its first
+appearance pays for the run. It needs a terminal that speaks the kitty
+graphics protocol (kitty, WezTerm, Ghostty).
+
+Move the cursor onto an equation's line to see the source again, unless
+'concealcursor' covers the mode you are in.
+
+    `[om`             Render math in this buffer. In a tex or typst
+                      buffer this is the opt-in: the bundle claims
+                      markdown and leaves other filetypes to the PDF
+                      or preview they already have.
+    `]om`             Stop rendering math, in every buffer. Reach for
+                      this in a document where typesetting each equation
+                      costs more than reading the source.
+
 Configuring noethervim-tex (latex bundle): ~
 
 The `latex` bundle includes `noethervim-tex`, which provides LaTeX snippets,
@@ -1287,6 +1307,8 @@ Prefixes: ~
                       G is off by default; toggle persists across sessions
                       (stored in stdpath("state")).
                       `[oC`/`]oC` toggle blink.cmp completion on/off
+                      `[om`/`]om` toggle inline math
+                      (<a href="#noethervim-inline-math">|noethervim-inline-math|</a>)
                                                         <a id="noethervim-Z" class="vimdoc-tag">*noethervim-Z*</a>
     `Z`                 Closing things, arranged as a grid. Rows say how
                       much you are willing to lose; columns say what you
@@ -1334,7 +1356,7 @@ Other notable keymaps: ~
     `Y`               Yank selection to clipboard
     `P`               Paste clipboard (keep registers)
     `p`               Paste over (keep register)
-    `il`              Inner-line text object
+    `il` / `al`       Line text objects (<a href="#noethervim-line-objects">|noethervim-line-objects|</a>)
     `&lt;Down&gt;` / `&lt;Up&gt;` Move block
 
     Insert: ~
@@ -1346,6 +1368,31 @@ Other notable keymaps: ~
     `&lt;C-l&gt;`           Insert cwd
     `&lt;C-y&gt;`           Yank cmdline to clipboard
     `&lt;C-o&gt;`           Redirect output to buffer
+
+                                                <a id="noethervim-line-objects" class="vimdoc-tag">*noethervim-line-objects*</a>
+Line text objects ~
+
+Vim has no text object for a line. `V` and `yy` are linewise, so what they
+put in a register comes back as a whole new line, and there is no operator
+target that stops at the line break.
+
+    `al`              The whole line, up to but not including the break.
+    `il`              The line without its indentation: first non-blank
+                      through last non-blank.
+
+Both take an operator and both work on a Visual selection.
+
+    `yal`             Yank a line as text, to drop inside another one
+                      with `p` instead of below it.
+    `dal`             Empty a line and keep it: the line stays, its
+                      contents go.
+    `dil`             The same, with the indentation left in place, ready
+                      to type the line again.
+
+`al` does nothing on an empty line, where the break is all there is.
+
+Both take a register prefix, so `"_dal` clears a line without disturbing
+the unnamed register and `"ayal` puts one in register `a`.
 
                                                         <a id="noethervim-case" class="vimdoc-tag">*noethervim-case*</a>
 Capitalization operators ~
@@ -1542,6 +1589,21 @@ Clickable components: ~
     LSP indicator       Open `:LspInfo`
     Git branch/status   Open lazygit in a terminal
     Update indicator    Open Lazy plugin manager
+
+                                            <a id="noethervim-statusline-mode-chip" class="vimdoc-tag">*noethervim-statusline-mode-chip*</a>
+Mode chip: ~
+
+    The colored block at the left of the bar names the current mode, and
+    hands its space to a counter when there is one to show.
+
+    Search: the match under the cursor and how many the pattern has in the
+    buffer, as `3/12`. It clears with the highlighting, on `&lt;Esc&gt;` or `]oh`.
+
+    Confirmed substitute (`:s/old/new/gc`): the prompt you are answering and
+    how many the pass will offer, as `3/12`. The total is fixed when the run
+    starts, and skipping with `n` advances the count the same as replacing.
+
+    Neither counter is computed in buffers over 50000 lines.
 
                                           <a id="noethervim-statusline-buffer-file" class="vimdoc-tag">*noethervim-statusline-buffer-file*</a>
 Buffer and file: ~
