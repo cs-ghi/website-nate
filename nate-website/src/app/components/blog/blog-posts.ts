@@ -195,6 +195,25 @@ export const BLOG_POSTS: BlogEntry[] = [
     level: 'open',
   },
 
+  {
+    name: "Towards Langlands's Reciprocity",
+    desc: 'Many may have heard the tantalizing claim that quadratic reciprocity is the simplest version of Langlands\'s reciprocity. In this quick article, I give an overview of the build-up towards it by going through Artin\'s reciprocity, computing the Artin map on a quadratic field and a coefficient of a modular form along the way.',
+    link: '././assets/pdfs/blogs/from_quadratic_to_langlands.pdf',
+    published: '2024-12-16',
+    domain: 'maths',
+    topic: 'number-theory',
+    level: 'deep',
+  },
+  {
+    name: 'Comparing Schemes and Manifolds',
+    desc: 'An extract from EYNTKA Algebraic Geometry that lists in bullet-point format some differences between schemes and manifolds, to get a better sense of the similarities and differences between the geometries they represent.',
+    link: '././assets/pdfs/blogs/differences_between_schemes_and_manifolds.pdf',
+    published: '2025-08-04',
+    domain: 'maths',
+    topic: 'geometry',
+    level: 'deep',
+  },
+
   // ─── Planned ────────────────────────────────────────────────────────────────
   // Hidden from visitors until the lock at the bottom of /blog is opened.
   // `planned` controls visibility only; it says nothing about whether a PDF
@@ -245,24 +264,5 @@ export const BLOG_POSTS: BlogEntry[] = [
     topic: 'number-theory',
     level: 'open',
     planned: true,
-  },
-  {
-    name: "Towards Langlands's Reciprocity",
-    desc: 'Many may have heard the tantalizing claim that quadratic reciprocity is the simplest version of Langlands\'s reciprocity. In this quick article, I give an overview of the build-up towards it by going through Artin\'s reciprocity, computing the Artin map on a quadratic field and a coefficient of a modular form along the way.',
-    link: '././assets/pdfs/blogs/from_quadratic_to_langlands.pdf',
-    published: '2024-12-16',
-    domain: 'maths',
-    topic: 'number-theory',
-    level: 'deep',
-    planned: true,
-  },
-  {
-    name: 'Comparing Schemes and Manifolds',
-    desc: 'An extract from EYNTKA Algebraic Geometry that lists in bullet-point format some differences between schemes and manifolds, to get a better sense of the similarities and differences between the geometries they represent.',
-    link: '././assets/pdfs/blogs/differences_between_schemes_and_manifolds.pdf',
-    published: '2025-08-04',
-    domain: 'maths',
-    topic: 'geometry',
-    level: 'deep',
   },
 ];
