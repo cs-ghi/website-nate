@@ -21,18 +21,18 @@
   },
   "alien_perspective_on_analysis.pdf": {
     "pages": 5,
-    "updated": "2026-02-23",
+    "updated": "2026-08-23",
     "readingMinutes": 13
   },
   "areas_of_algebraic_geoemtry_reserach.pdf": {
     "pages": 8,
-    "updated": "2026-08-22",
+    "updated": "2026-08-23",
     "readingMinutes": 20
   },
   "clock_arithmetic.pdf": {
-    "pages": 10,
-    "updated": "2025-06-24",
-    "readingMinutes": 25
+    "pages": 11,
+    "updated": "2026-08-23",
+    "readingMinutes": 28
   },
   "differences_between_schemes_and_manifolds.pdf": {
     "pages": 9,
@@ -46,22 +46,22 @@
   },
   "galois_theory_intuition_behind_field_extensions.pdf": {
     "pages": 9,
-    "updated": "2026-08-22",
+    "updated": "2026-08-23",
     "readingMinutes": 23
   },
   "geometric_intuition_of_hilbert_spaces.pdf": {
     "pages": 6,
-    "updated": "2026-03-02",
+    "updated": "2026-08-23",
     "readingMinutes": 15
   },
   "langlands_for_sl2.pdf": {
     "pages": 18,
-    "updated": "2025-11-26",
+    "updated": "2026-08-23",
     "readingMinutes": 45
   },
   "nonhausdorfness.pdf": {
     "pages": 7,
-    "updated": "2026-02-07",
+    "updated": "2026-08-23",
     "readingMinutes": 18
   },
   "serre_paper-Theory_of_Simple_Algebras.pdf": {
@@ -71,7 +71,7 @@
   },
   "some_harmonic_analysis.pdf": {
     "pages": 19,
-    "updated": "2026-08-22",
+    "updated": "2026-08-23",
     "readingMinutes": 48
   },
   "twisted-IHC.pdf": {
@@ -80,8 +80,8 @@
     "readingMinutes": 110
   },
   "what_is_complex.pdf": {
-    "pages": 7,
-    "updated": "2025-07-11",
-    "readingMinutes": 18
+    "pages": 8,
+    "updated": "2026-08-23",
+    "readingMinutes": 20
   }
 }
