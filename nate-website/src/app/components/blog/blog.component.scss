@@ -10,38 +10,17 @@ $rule: #333438;
 // Deliberately no cards, no grid and no chip pills. /books, /notes and
 // /programming are all catalogue pages built out of bordered boxes; the blog is
 // the one place where the writing is the product, so the page is typography and
-// hairlines and nothing else.
-
-// ── Masthead ────────────────────────────────────────────────────────────────
-.stream-head {
-    max-width: 620px;
-    margin: 64px auto 10px;
-    text-align: center;
-
-    h1 {
-        font-size: 46px;
-        font-weight: 400;
-        color: $ink-strong;
-        letter-spacing: -0.5px;
-        line-height: 1.1;
-    }
-
-    .sub {
-        margin-top: 14px;
-        color: $ink-faint;
-        font-size: 14.5px;
-        font-style: italic;
-        line-height: 1.7;
-    }
-}
+// hairlines and nothing else. The masthead is the exception: it is
+// `.page-heading` from styles.scss, the same one every other page uses.
 
 // ── Filters ─────────────────────────────────────────────────────────────────
+// No top margin: the heading's rule already opens the gap.
 .quiet-filter {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2px 4px;
-    margin: 42px 0 8px;
+    margin: 0 0 8px;
     font-size: 12.5px;
 }
 
@@ -347,11 +326,6 @@ $rule: #333438;
 }
 
 @media (max-width: 640px) {
-    .stream-head {
-        margin-top: 46px;
-        h1 { font-size: 33px; }
-    }
-
     .entry {
         grid-template-columns: 1fr;
         gap: 8px;
