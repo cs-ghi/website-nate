@@ -210,15 +210,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay coreq (NateRiemannianGeometry -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateRiemannianGeometry",
-      "NateComplexAnalyticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay coreq (NateMicrolocalAnalysis -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
     "refs": [
       "NateMicrolocalAnalysis",
@@ -538,15 +529,6 @@
     "refs": [
       "NateComplexAnalyticGeometry",
       "NateIntersectionTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateIntersectionTheory -> NateHodgeTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateIntersectionTheory",
-      "NateHodgeTheory"
     ]
   },
   {
@@ -1033,15 +1015,6 @@
     "refs": [
       "NateHodgeTheory",
       "NateEllipticCurves"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateHodgeTheory -> NateAbelianVarieties is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateHodgeTheory",
-      "NateAbelianVarieties"
     ]
   },
   {
