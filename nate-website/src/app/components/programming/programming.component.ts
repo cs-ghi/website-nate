@@ -9,6 +9,29 @@ import {
 
 export const programmingArray: Program[] = [
   {
+    name: 'collatz-chains',
+    slug: 'collatz-chains',
+    category: 'numerics',
+    status: 'stable',
+    ecosystem: 'CLI',
+    language: 'Rust',
+    tagline: 'Monte Carlo on the accelerated Collatz map, without bignum arithmetic.',
+    desc: "A Rust workspace for large-scale statistical experiments on the accelerated Collatz map. An integer is represented as a chain, a list of positive integers, and one Collatz step becomes a local rewriting rule on that list rather than an arithmetic operation on the number. The cost of a step is then linear in the length of the encoding rather than in the magnitude of the integer, so trajectories can be pushed far past the point where 64-bit arithmetic overflows without paying for arbitrary-precision arithmetic. Three crates: nextform implements the rewriting as a two-state automaton behind a stable C ABI; mc_chains is a multithreaded Monte Carlo driver that iterates it over populations of random chains and emits per-iteration distributional histograms; mc_simd is a 4-lane NEON rewrite that loses to the scalar code, kept in the tree as a documented negative result.",
+    repo: 'https://github.com/Chiarandini/collatz-chains',
+    install:
+      'git clone https://github.com/Chiarandini/collatz-chains\n' +
+      'cd collatz-chains && cargo build --release\n' +
+      './target/release/mc_chains 5000 1000 25 4 --out logs/run.json',
+    features: [
+      'Two-state DFA computes one accelerated-Collatz step in a single left-to-right pass, linear in encoding length',
+      'Each automaton state compiled to its own hot loop with one predictable exit, so the branch predictor specialises per state (~1.7x over the naive port)',
+      'Allocation-free, reentrant, stable C ABI: callable from C, Python, Go, .NET, or WebAssembly',
+      'Multithreaded driver at ~95 ns per chain-iteration, within ~10% of the floor set by the transformation itself',
+      'Bit-exact reproducible runs with a fixed seed schedule, plus checkpoint and resume for multi-hour studies',
+      'A measured SIMD negative result: 0.16s vs 0.13s, with a mechanistic explanation rather than a shrug',
+    ],
+  },
+  {
     name: 'NoetherVim',
     slug: 'noethervim',
     category: 'distro',

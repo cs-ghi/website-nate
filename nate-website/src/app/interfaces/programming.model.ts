@@ -1,6 +1,12 @@
 export type ProgramStatus = 'stable' | 'beta' | 'wip' | 'archived';
 
-export type ProgramCategory = 'distro' | 'nvim' | 'cli' | 'tools' | 'dotfiles';
+export type ProgramCategory =
+  | 'numerics'
+  | 'distro'
+  | 'nvim'
+  | 'cli'
+  | 'tools'
+  | 'dotfiles';
 
 // A single visual (screenshot / gif / short video) for a project. Populated
 // incrementally; the detail page renders whatever is present.
@@ -38,6 +44,7 @@ export interface CategoryMeta {
 }
 
 export const CATEGORY_ORDER: CategoryMeta[] = [
+  { key: 'numerics', label: 'Numerical computing', blurb: 'High-performance simulation and mathematical experiments.' },
   { key: 'distro',   label: 'Distribution',    blurb: 'A full Neovim setup out of the box.' },
   { key: 'nvim',     label: 'Neovim plugins',  blurb: 'Standalone plugins and picker extensions.' },
   { key: 'cli',      label: 'CLI & libraries', blurb: 'Command-line tools and reusable backends.' },
