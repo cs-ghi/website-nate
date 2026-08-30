@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-08-24",
+    "generated": "2026-08-30",
     "bookCount": 48,
-    "edgeCount": 402,
+    "edgeCount": 411,
     "clashCounts": {
       "error": 0,
       "warn": 1,
@@ -1615,6 +1615,24 @@
     },
     {
       "source": "NateAlgTop",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateAlgKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
       "target": "NateCategoryTheory",
       "type": "coreq",
       "provenance": "both",
@@ -1625,6 +1643,15 @@
     {
       "source": "NateAlgTop",
       "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateCStarAlgebras",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1674,6 +1701,15 @@
       "citedIn": [
         "algebraic-topology/.wip/CC1.tex",
         "algebraic-topology/.wip/CC2.tex",
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateRiemannianGeometry",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
@@ -1750,6 +1786,15 @@
         "analytic-number-theory/drafts/ch10-section02-al2ArtinL.tex",
         "analytic-number-theory/drafts/ch10-section03-al3Continuation.tex",
         "analytic-number-theory/drafts/ch10-section04-al4Chebotarev.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
+      "target": "NateEllipticCurves",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
       ]
     },
     {
@@ -4416,6 +4461,15 @@
     },
     {
       "source": "NateMeasureTheory",
+      "target": "NateAnalyticNumTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "measure-theory/EYNTKA-measure-theory.tex"
+      ]
+    },
+    {
+      "source": "NateMeasureTheory",
       "target": "NateElemAnalysis",
       "type": "prereq",
       "provenance": "manual",
@@ -4567,6 +4621,15 @@
     },
     {
       "source": "NateModuliStacks",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
       "target": "NateCategoryTheory",
       "type": "prereq",
       "provenance": "both",
@@ -4593,6 +4656,15 @@
         "moduli-stacks/drafts/scratch/ch06-s04.tex",
         "moduli-stacks/drafts/scratch/ch07-s02.tex",
         "moduli-stacks/drafts/scratch/ch08-s04.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateCStarAlgebras",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
@@ -4757,6 +4829,15 @@
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
+    },
+    {
+      "source": "NateProbability",
+      "target": "NateHarmonicAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "probability/EYNTKA-probability.tex"
+      ]
     },
     {
       "source": "NateProbability",
