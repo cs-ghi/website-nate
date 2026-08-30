@@ -1,11 +1,11 @@
 export type ProgramStatus = 'stable' | 'beta' | 'wip' | 'archived';
 
 export type ProgramCategory =
-  | 'numerics'
   | 'distro'
   | 'nvim'
   | 'cli'
   | 'tools'
+  | 'numerics'
   | 'dotfiles';
 
 // A single visual (screenshot / gif / short video) for a project. Populated
@@ -44,11 +44,11 @@ export interface CategoryMeta {
 }
 
 export const CATEGORY_ORDER: CategoryMeta[] = [
-  { key: 'numerics', label: 'Numerical computing', blurb: 'High-performance simulation and mathematical experiments.' },
   { key: 'distro',   label: 'Distribution',    blurb: 'A full Neovim setup out of the box.' },
   { key: 'nvim',     label: 'Neovim plugins',  blurb: 'Standalone plugins and picker extensions.' },
   { key: 'cli',      label: 'CLI & libraries', blurb: 'Command-line tools and reusable backends.' },
   { key: 'tools',    label: 'Tooling',         blurb: 'Workflow helpers for notes and this site.' },
+  { key: 'numerics', label: 'Numerical computing', blurb: 'High-performance simulation and mathematical experiments.' },
   { key: 'dotfiles', label: 'Dotfiles',        blurb: 'My machine, reproducible from scratch.' },
 ];
 
