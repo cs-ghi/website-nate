@@ -54,6 +54,20 @@ const pdfBasename = (path: string | undefined): string =>
 const cleanDesc = (s: string): string =>
   s.replace(/\*\*(.+?)\*\*/g, '$1').replace(/`([^`]+)`/g, '$1').trim();
 
+// The published path for a book, taken from `links.web` — which the extractor
+// builds from the overlay's `webBook` value, i.e. the path the site actually
+// serves. `links.pdf` is NOT that: it is the newest PDF in the local book
+// directory, a local-dev convenience whose casing tracks the .tex rather than
+// the published copy. The two differ for Probability (EYNTKA-probability.pdf vs
+// EYNTKA-Probability.pdf), and GitHub Pages is case-sensitive, so deriving the
+// URL from links.pdf yielded a 404 that only book-descriptions.ts — a file
+// documented as being for descriptions ONLY — happened to paper over.
+// Unpublished nodes have no links.web, hence the fallbacks.
+const siteLink = (n: GraphNode): string | undefined => {
+  const m = /[?&]src=([^&]+)/.exec(n.links?.web ?? '');
+  return m ? decodeURIComponent(m[1]) : undefined;
+};
+
 @Injectable({ providedIn: 'root' })
 export class BookCatalogService {
   private graph$ = this.http.get<Graph>(GRAPH_URL).pipe(shareReplay(1));
@@ -69,8 +83,8 @@ export class BookCatalogService {
     return parent ? MEGABOOK_LABELS[parent] : undefined;
   }
 
-  // Curated prose + link win over graph.json (whose links are occasionally
-  // mis-cased); everything else — name, status, date, tier — is graph's.
+  // Curated prose wins over graph.json's terser description; everything else —
+  // name, status, date, tier, and the link — is graph's.
   private toBook(n: GraphNode, tierLabels: string[]): Book {
     const curated = CURATED_BY_PDF[pdfBasename(n.links?.pdf)];
     const topic = BOOK_TOPICS[n.id];
@@ -79,7 +93,10 @@ export class BookCatalogService {
       id: n.id,
       name: n.title,
       desc: curated?.desc ?? cleanDesc(n.description ?? ''),
-      link: curated?.link ?? `././assets/pdfs/books/${n.links?.pdf?.split('/').pop() ?? ''}`,
+      link:
+        siteLink(n) ??
+        curated?.link ??
+        `././assets/pdfs/books/${n.links?.pdf?.split('/').pop() ?? ''}`,
       type: 'pdf',
       status: n.status,
       lastUpdated: n.lastUpdated,
