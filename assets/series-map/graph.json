@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-08-31",
+    "generated": "2026-09-01",
     "bookCount": 48,
-    "edgeCount": 411,
+    "edgeCount": 418,
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 121
+      "info": 131
     },
     "tiers": [
       {
@@ -47,7 +47,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-abelian-varieties.pdf&name=Abelian%20Varieties&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": -0.398,
+      "xAffinity": -0.391,
       "tier": 4
     },
     {
@@ -66,7 +66,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_algGeo.pdf&name=Algebraic%20Geometry&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": -0.474,
+      "xAffinity": -0.468,
       "tier": 3
     },
     {
@@ -84,7 +84,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-k-theory.pdf&name=Algebraic%20K-Theory&source=books"
       },
       "lastUpdated": "2026-08-21",
-      "xAffinity": -0.498,
+      "xAffinity": -0.489,
       "tier": 3
     },
     {
@@ -120,7 +120,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.277,
+      "xAffinity": -0.268,
       "tier": 2
     },
     {
@@ -136,7 +136,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-analytic-number-theory.pdf&name=Analytic%20Number%20Theory&source=books"
       },
       "lastUpdated": "2026-07-06",
-      "xAffinity": -0.134,
+      "xAffinity": -0.113,
       "tier": 3
     },
     {
@@ -153,7 +153,7 @@
         "pdf": "calculus/EYNTKA-calculus.pdf"
       },
       "lastUpdated": "2026-07-30",
-      "xAffinity": 0.097,
+      "xAffinity": 0.107,
       "tier": 0
     },
     {
@@ -188,7 +188,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-class-field-theory.pdf&name=Class%20Field%20Theory&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.361,
+      "xAffinity": -0.356,
       "tier": 3
     },
     {
@@ -238,7 +238,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_complex_analysis.pdf&name=Complex%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.134,
+      "xAffinity": -0.113,
       "tier": 1
     },
     {
@@ -253,7 +253,7 @@
         "pdf": "complex-analytic-geometry/EYNTKA-complex-analytic-geometry.pdf"
       },
       "lastUpdated": "2026-08-11",
-      "xAffinity": -0.211,
+      "xAffinity": -0.205,
       "tier": 3
     },
     {
@@ -287,7 +287,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-probability.pdf&name=Core%20Probability&source=books"
       },
       "lastUpdated": "2026-08-05",
-      "xAffinity": 0.601,
+      "xAffinity": 0.616,
       "tier": 1
     },
     {
@@ -323,7 +323,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-cstar-algebras.pdf&name=C*-Algebras%20and%20K-Theory&source=books"
       },
       "lastUpdated": "2026-06-27",
-      "xAffinity": 0.291,
+      "xAffinity": 0.296,
       "tier": 3
     },
     {
@@ -358,7 +358,7 @@
         "pdf": "elementary-analysis/EYNTKA-elementary-analysis.pdf"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.401,
+      "xAffinity": 0.424,
       "tier": 0
     },
     {
@@ -376,7 +376,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
       },
       "lastUpdated": "2026-07-22",
-      "xAffinity": -0.502,
+      "xAffinity": -0.494,
       "tier": 3
     },
     {
@@ -391,7 +391,7 @@
         "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
       "lastUpdated": "2026-07-15",
-      "xAffinity": -0.597,
+      "xAffinity": -0.59,
       "tier": 4
     },
     {
@@ -424,7 +424,7 @@
         "pdf": "galois-cohomology/EYNTKA-galois-cohomology.pdf"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.534,
+      "xAffinity": -0.528,
       "tier": 2
     },
     {
@@ -442,7 +442,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-geo-rep-theory.pdf&name=Algebraic%20Groups%20and%20Representations&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.343,
+      "xAffinity": -0.339,
       "tier": 3
     },
     {
@@ -478,7 +478,7 @@
         "pdf": "hodge-theory/EYNTKA-hodge-theory.pdf"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": -0.257,
+      "xAffinity": -0.249,
       "tier": 3
     },
     {
@@ -512,7 +512,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-intersection-theory.pdf&name=Intersection%20Theory&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": -0.36,
+      "xAffinity": -0.353,
       "tier": 3
     },
     {
@@ -530,7 +530,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Vector_bundles_and_K-theory.pdf&name=Vector%20Bundles%20and%20K-Theory&source=books"
       },
       "lastUpdated": "2026-08-20",
-      "xAffinity": 0.144,
+      "xAffinity": 0.156,
       "tier": 3
     },
     {
@@ -548,7 +548,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-langlands-gl2.pdf&name=Local%20Langlands%20for%20GL%E2%82%82(F)&source=books"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": 0.079,
+      "xAffinity": 0.084,
       "tier": 4
     },
     {
@@ -564,7 +564,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-lie-groups.pdf&name=Lie%20Groups&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.132,
+      "xAffinity": 0.161,
       "tier": 2
     },
     {
@@ -580,7 +580,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-algebra.pdf&name=Linear%20Algebra&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": 0.422,
+      "xAffinity": 0.359,
       "tier": 0
     },
     {
@@ -596,7 +596,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-pde.pdf&name=Linear%20Elliptic%20and%20Parabolic%20PDE&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.443,
+      "xAffinity": 0.447,
       "tier": 2
     },
     {
@@ -612,7 +612,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-local-field-theory.pdf&name=Local%20Field%20Theory&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.619,
+      "xAffinity": -0.615,
       "tier": 3
     },
     {
@@ -627,8 +627,8 @@
         "pdf": "logic/EYNTKA_logic.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_logic.pdf&name=Logic&source=books"
       },
-      "lastUpdated": "2026-07-16",
-      "xAffinity": -0.333,
+      "lastUpdated": "2026-08-29",
+      "xAffinity": -0.191,
       "tier": 1
     },
     {
@@ -662,7 +662,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Analysis%20on%20Metric%20and%20Function%20Spaces&source=books"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": 0.306,
+      "xAffinity": 0.398,
       "tier": 0
     },
     {
@@ -677,7 +677,7 @@
         "pdf": "microlocal-analysis/EYNTKA-microlocal-analysis.pdf"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.093,
+      "xAffinity": 0.099,
       "tier": 3
     },
     {
@@ -693,7 +693,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-moduli-stacks.pdf&name=Moduli%2C%20Deformation%20Theory%2C%20and%20Stacks&source=books"
       },
       "lastUpdated": "2026-07-13",
-      "xAffinity": -0.509,
+      "xAffinity": -0.502,
       "tier": 4
     },
     {
@@ -711,7 +711,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20PDE&source=books"
       },
       "lastUpdated": "2026-07-20",
-      "xAffinity": 0.236,
+      "xAffinity": 0.241,
       "tier": 3
     },
     {
@@ -729,7 +729,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.265,
+      "xAffinity": 0.276,
       "tier": 1
     },
     {
@@ -762,7 +762,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
       },
       "lastUpdated": "2026-07-18",
-      "xAffinity": 0.8,
+      "xAffinity": 0.808,
       "tier": 2
     },
     {
@@ -797,7 +797,7 @@
         "pdf": "shimura-varieties/EYNTKA-shimura-varieties.pdf"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.37,
+      "xAffinity": -0.364,
       "tier": 4
     },
     {
@@ -806,15 +806,16 @@
       "dir": "statistics",
       "description": "Mathematical statistics on a measure-theoretic base: statistical models and the decision-theoretic frame, sufficiency and exponential families, point estimation (Cramér–Rao, UMVU, MLE, Bayes), hypothesis testing and confidence sets (Neyman–Pearson, likelihood ratio, duality), large-sample theory, and the Gaussian linear model.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [
         "analysis-pde"
       ],
       "links": {
-        "pdf": "statistics/EYNTKA-statistics.pdf"
+        "pdf": "statistics/EYNTKA-statistics.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-statistics.pdf&name=Mathematical%20Statistics&source=books"
       },
       "lastUpdated": "2026-07-18",
-      "xAffinity": 0.8,
+      "xAffinity": 0.808,
       "tier": 3
     },
     {
@@ -1902,8 +1903,8 @@
     {
       "source": "NateCFT",
       "target": "NateAnalyticNumTheory",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "class-field-theory/EYNTKA-class-field-theory.tex"
       ]
@@ -2199,6 +2200,15 @@
     {
       "source": "NateComplexAnalysis",
       "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateAnalyticNumTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -2619,6 +2629,15 @@
       "citedIn": [
         "cstar-algebras/EYNTKA-cstar-algebras.tex",
         "cstar-algebras/drafts/scratch/ch03-s04.tex"
+      ]
+    },
+    {
+      "source": "NateCStarAlgebras",
+      "target": "NateCoreRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
       ]
     },
     {
@@ -3127,6 +3146,15 @@
     {
       "source": "NateFuncAnalysis",
       "target": "NateComplexAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateFuncAnalysis",
+      "target": "NateCStarAlgebras",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -4144,8 +4172,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateLinAlg",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "prereq",
+      "provenance": "both",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -4155,6 +4183,15 @@
       "target": "NateMeasureTheory",
       "type": "prereq",
       "provenance": "both",
+      "citedIn": [
+        "lie-groups/EYNTKA-lie-groups.tex"
+      ]
+    },
+    {
+      "source": "NateLieGroups",
+      "target": "NateMetricFunctionSpaces",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -4470,10 +4507,30 @@
     },
     {
       "source": "NateMeasureTheory",
+      "target": "NateCalculus",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "measure-theory/EYNTKA-measure-theory.tex"
+      ]
+    },
+    {
+      "source": "NateMeasureTheory",
       "target": "NateElemAnalysis",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "measure-theory/EYNTKA-measure-theory.tex"
+      ]
+    },
+    {
+      "source": "NateMeasureTheory",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "measure-theory/EYNTKA-measure-theory.tex"
+      ]
     },
     {
       "source": "NateMeasureTheory",
@@ -4832,6 +4889,15 @@
     },
     {
       "source": "NateProbability",
+      "target": "NateFuncAnalysis",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "probability/EYNTKA-probability.tex"
+      ]
+    },
+    {
+      "source": "NateProbability",
       "target": "NateHarmonicAnalysis",
       "type": "reference",
       "provenance": "auto",
@@ -4955,8 +5021,8 @@
     {
       "source": "NateRiemannianGeometry",
       "target": "NateLieGroups",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
