@@ -39,16 +39,14 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   private pendingLoc: string = '';
   private pendingPage: number | null = null;
 
-  // Render mode. `showAll` = continuous scroll (renders every page) is great for
-  // normal books but murders huge ones (the Algebra monolith is 1676 pages), so
-  // books over LARGE_PDF pages render one page at a time with pagination. The
-  // mode is chosen from the shipped page count *before* the PDF renders; a manual
-  // toggle lets the reader override.
+  // Render mode. `showAll` = continuous scroll (renders every page). Every book
+  // opens in it, whatever its length (author's call, 2026-09-01): a size
+  // threshold used to force the longest books into one-page-at-a-time, which
+  // meant the books most worth scrolling through were the ones that wouldn't.
+  // The toolbar toggle still switches to paginated for a reader who wants it.
   showAll: boolean = true;
   page: number = 1;
   totalPages: number = 0;
-  userChoseMode: boolean = false;
-  private readonly LARGE_PDF = 500;
 
   // Whether the top bar is shown. Starts hidden on mobile (≤768px, matching the
   // stylesheet breakpoint) to keep the reader full-screen; open on wider
@@ -126,16 +124,13 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.error = 'No PDF source provided';
         this.isLoading = false;
       } else if (srcChanged) {
-        // New book: pick the render mode from its page count *before* binding
-        // src, so a huge book never tries to render every page at once.
+        // New book: always continuous, so there is nothing to decide before the
+        // src binds and no need to wait on the index to decide it.
         this.page = 1;
         this.totalPages = 0;
-        this.userChoseMode = false;
         this.isLoading = true;
-        await this.bookIndex.load();
-        const count = this.bookIndex.pageCount(newSrc.split('/').pop() || '');
-        this.showAll = count <= this.LARGE_PDF;   // continuous unless very large
-        this.pdfSrc = newSrc;                     // bind src → render in that mode
+        this.showAll = true;
+        this.pdfSrc = newSrc;
       } else if (this.pdfDocument) {
         // Same PDF already loaded (e.g. jumping to another result in the same
         // book from the palette): ng2-pdf-viewer won't reload, so navigate now.
@@ -255,14 +250,6 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     this.totalPages = pdf.numPages || 0;
     console.log('PDF loaded successfully', pdf);
 
-    // Fallback: if the shipped page count was missing (e.g. a stale cached index)
-    // and this turns out to be a big book the reader hasn't set a mode for, drop
-    // to single-page mode now that we know the real page count.
-    if (!this.userChoseMode && this.showAll && this.totalPages > this.LARGE_PDF) {
-      this.showAll = false;
-      this.page = this.currentTopPage || 1;
-    }
-
     setTimeout(() => {
       this.focusPdfViewer();
     }, 100);
@@ -355,7 +342,6 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Flip between continuous scroll and one-page-at-a-time, keeping your place.
   toggleRenderMode(): void {
-    this.userChoseMode = true;
     if (this.showAll) {
       this.page = this.currentTopPage || this.page || 1;
       this.showAll = false;
