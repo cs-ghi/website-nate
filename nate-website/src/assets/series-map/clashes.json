@@ -2,14 +2,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateToposTheory' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateToposTheory"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NatePadicHodge' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NatePadicHodge"
@@ -125,6 +117,30 @@
     "message": "'NateModularRepTheory' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateModularRepTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateHigherToposTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateHigherToposTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateHomotopyTypeTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateHomotopyTypeTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateSetTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateSetTheory"
     ]
   },
   {
@@ -318,15 +334,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateElemAnalysis -> NateMeasureTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateElemAnalysis",
-      "NateMeasureTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateElemAnalysis -> NateCoreProbability) is manual, no backing \\cite found.",
     "refs": [
       "NateElemAnalysis",
@@ -390,6 +397,33 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateMeasureTheory -> NateGeometricMeasureTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateMeasureTheory",
+      "NateGeometricMeasureTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateMetricFunctionSpaces -> NateGeometricMeasureTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateMetricFunctionSpaces",
+      "NateGeometricMeasureTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateFuncAnalysis -> NateGeometricMeasureTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateFuncAnalysis",
+      "NateGeometricMeasureTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateCoreProbability -> NateProbability) is manual, no backing \\cite found.",
     "refs": [
       "NateCoreProbability",
@@ -435,19 +469,73 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCategoryTheory -> NateToposTheory) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateLogic -> NateToposTheory) is manual, no backing \\cite found.",
     "refs": [
-      "NateCategoryTheory",
+      "NateLogic",
       "NateToposTheory"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLogic -> NateToposTheory) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateLogic -> NateSetTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateLogic",
+      "NateSetTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateTopology -> NateSetTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateTopology",
+      "NateSetTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateSetTheory -> NateToposTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateSetTheory",
       "NateToposTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHigherCategoryTheory -> NateHigherToposTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHigherCategoryTheory",
+      "NateHigherToposTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateToposTheory -> NateHigherToposTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateToposTheory",
+      "NateHigherToposTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateToposTheory -> NateHomotopyTypeTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateToposTheory",
+      "NateHomotopyTypeTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHigherToposTheory -> NateHomotopyTypeTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHigherToposTheory",
+      "NateHomotopyTypeTheory"
     ]
   },
   {
@@ -966,6 +1054,15 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
+    "message": "NateDiffTop -> NateMeasureTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateDiffTop",
+      "NateMeasureTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
     "message": "NateDiffTop -> NateAlgTop is cited in 21 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateDiffTop",
@@ -979,15 +1076,6 @@
     "refs": [
       "NateDiffTop",
       "NateLieGroups"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateDiffTop -> NateMeasureTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateDiffTop",
-      "NateMeasureTheory"
     ]
   },
   {
@@ -1064,11 +1152,15 @@
   {
     "kind": "tier-unassigned",
     "severity": "info",
-    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateMetricFunctionSpaces, NateToposTheory. Add to overlay layout.tiers to curate.",
+    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateGeometricMeasureTheory, NateHigherToposTheory, NateHomotopyTypeTheory, NateMetricFunctionSpaces, NateSetTheory, NateToposTheory. Add to overlay layout.tiers to curate.",
     "refs": [
       "NateCalcOnManifolds",
       "NateComplexAnalyticGeometry",
+      "NateGeometricMeasureTheory",
+      "NateHigherToposTheory",
+      "NateHomotopyTypeTheory",
       "NateMetricFunctionSpaces",
+      "NateSetTheory",
       "NateToposTheory"
     ]
   }

@@ -111,6 +111,7 @@ const TRACKED = {
   'books/EYNTKA-nonlinear-wave.pdf': 'textbooks/nonlinear-wave-pde/EYNTKA-nonlinear-wave.pdf',
   'books/EYNTKA-riemannian-geometry.pdf':
     'textbooks/riemannian-geometry/EYNTKA-riemannian-geometry.pdf',
+  'books/EYNTKA-statistics.pdf': 'textbooks/statistics/EYNTKA-statistics.pdf',
   'books/EYNTKA_ODE.pdf': 'textbooks/ODE/EYNTKA_ODE.pdf',
   'books/EYNTKA_Vector_bundles_and_K-theory.pdf':
     'textbooks/vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.pdf',
