@@ -10,6 +10,14 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateModularForms' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateModularForms"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateRealReductiveGroups' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateRealReductiveGroups"
@@ -157,14 +165,6 @@
     "message": "'NateTraceFormula' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateTraceFormula"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateModularForms' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateModularForms"
     ]
   },
   {
@@ -454,6 +454,15 @@
     "message": "Overlay prereq (NateCoreRepTheory -> NateGeoRepTheory) is manual, no backing \\cite found.",
     "refs": [
       "NateCoreRepTheory",
+      "NateGeoRepTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateDiffTop -> NateGeoRepTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateDiffTop",
       "NateGeoRepTheory"
     ]
   },
@@ -1108,7 +1117,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateLinAlg -> NateCoreAlgebra is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateLinAlg -> NateCoreAlgebra is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateLinAlg",
       "NateCoreAlgebra"
