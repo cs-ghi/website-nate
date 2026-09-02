@@ -114,19 +114,24 @@ required dependencies (TeX distribution, <code dir="auto">latexmk</code>, Zotero
 you enabled zotero, <code dir="auto">uv</code>/Python for image tooling) and tells you exactly
 which command to run if something is missing.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="3-writing-a-latex-paper">3. Writing a LaTeX paper</h2><a class="sl-anchor-link" href="#3-writing-a-latex-paper"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “3. Writing a LaTeX paper”</span></a></div>
-<p>The LaTeX bundle gives you the same level of support as an IDE: live
-compilation, forward/reverse PDF sync, snippet-driven math entry,
-citation picker, theorem navigation, and a 1000+ math spell
-dictionary.</p>
+<p>The LaTeX bundle gives you the same level of support as an IDE: compilation,
+forward/reverse PDF sync, snippet-driven math entry, citation picker, theorem
+navigation, and a math spell dictionary of about a thousand terms.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="compile-and-preview">Compile and preview</h3><a class="sl-anchor-link" href="#compile-and-preview"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Compile and preview”</span></a></div>
 <p>VimTeX handles compilation. Open a <code dir="auto">.tex</code> file and:</p>
 <ul>
-<li><code dir="auto">&lt;LocalLeader&gt;ll</code>: start continuous compilation (latexmk watches the
-file and recompiles on save).</li>
-<li><code dir="auto">&lt;LocalLeader&gt;lv</code>: open the PDF in your viewer.</li>
+<li><code dir="auto">&lt;LocalLeader&gt;ll</code>: build once with latexmk. Nothing watches the file
+afterwards, so a large book does not rebuild on every keystroke-triggered
+write; press it again when you want the PDF caught up. A second press while
+a build is running stops it.</li>
+<li><code dir="auto">&lt;LocalLeader&gt;lv</code>: open the PDF in your viewer and jump it to the cursor.</li>
 <li><code dir="auto">&lt;LocalLeader&gt;lc</code>: clean auxiliary files.</li>
 <li><code dir="auto">&lt;LocalLeader&gt;le</code>: show the error/warning log if compilation fails.</li>
 </ul>
+<p>Because builds happen on request, the PDF can fall behind the source, and
+SyncTeX maps the line numbers as they were at the last build. When that is the
+case, <code dir="auto">&lt;LocalLeader&gt;lv</code> says so before jumping, naming the key that rebuilds:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">forward search may be off: the PDF is 13 minutes behind this file (\ll rebuilds it)</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="forward search may be off: the PDF is 13 minutes behind this file (\ll rebuilds it)"><div></div></button></div></figure></div>
 <p>Forward search (jump from <code dir="auto">.tex</code> cursor to PDF location) and reverse
 search (click in the PDF, jump to the source line) need a viewer set
 up per OS. On macOS, <a href="https://skim-app.sourceforge.io/">Skim</a> with
@@ -135,8 +140,11 @@ is the common choice. VimTeX’s documentation covers the setup:
 <code dir="auto">:help vimtex-synctex</code>.</p>
 <p>A couple of NoetherVim-specific extras on top of VimTeX:</p>
 <ul>
-<li><code dir="auto">yP</code>: copy the compiled PDF path to the system clipboard (useful
-for drag-and-drop into email or a tracker).</li>
+<li><code dir="auto">yP</code>: put the compiled PDF itself on the system clipboard, so the next
+paste into an email or an issue attaches the file.</li>
+<li><code dir="auto">:PDF</code>: hand the compiled PDF to whatever your system opens PDFs with. This
+and <code dir="auto">yP</code> treat the PDF as a file and need no viewer configured;
+<code dir="auto">&lt;LocalLeader&gt;lv</code> is the one that drives your viewer and syncs.</li>
 <li><code dir="auto">&lt;C-w&gt;sp</code>: toggle whether the PDF size shows in the statusline.</li>
 <li><code dir="auto">&lt;LocalLeader&gt;vw</code>: run VimTeX’s word count.</li>
 </ul>
@@ -152,33 +160,52 @@ math mode only). Examples:
 <li><code dir="auto">pp</code> -&gt; <code dir="auto">\partial</code></li>
 <li><code dir="auto">ee</code> -&gt; <code dir="auto">e^{}</code></li>
 <li><code dir="auto">((</code> -&gt; <code dir="auto">\left( \right)</code> pair</li>
-<li><code dir="auto">bb</code> -&gt; <code dir="auto">\bar{}</code></li>
+<li><code dir="auto">BB</code> -&gt; <code dir="auto">\overline{}</code></li>
 </ul>
 </li>
 <li><strong>Manual</strong> (type the trigger and press <code dir="auto">&lt;Tab&gt;</code> to expand). Used for
 larger scaffolds so you don’t get surprise expansions:
 <ul>
-<li><code dir="auto">:thm Title</code> -&gt; full theorem environment with label</li>
-<li><code dir="auto">:defn</code>, <code dir="auto">:prop</code>, <code dir="auto">:lem</code>, <code dir="auto">:cor</code>, <code dir="auto">:example</code>, <code dir="auto">:exercise</code>, <code dir="auto">:box</code></li>
+<li><code dir="auto">:align</code> -&gt; <code dir="auto">\begin{align}...\end{align}</code>, and the same for any
+environment name you put after the colon</li>
+<li><code dir="auto">mathpkgs</code>, <code dir="auto">thmset</code>, <code dir="auto">amsart</code>: preamble blocks, above <code dir="auto">\begin{document}</code></li>
 </ul>
 </li>
 </ul>
-<p>A handful of text abbreviations also auto-expand: <code dir="auto">tfae</code> -&gt; “the
-following are equivalent”, <code dir="auto">iff</code> -&gt; “if and only if”, <code dir="auto">wrt</code>, <code dir="auto">wlog</code>,
-<code dir="auto">ftsoc</code>, <code dir="auto">SES</code>, <code dir="auto">fg</code>. These snippets are also aware if you are in math-mode or text-mode
-and will expand accordingly.</p>
-<p>Open <code dir="auto">:NoetherVim plugins</code>, pick <code dir="auto">noethervim-tex</code>, and browse
-<code dir="auto">LuaSnip/tex/</code> for the full snippet catalog. Context detection
-(math zone vs. text zone vs. tikz) means snippets only fire where
-they make sense.</p>
+<p>Everything above works in any LaTeX document. Two further sets ship switched
+off, because each assumes something about you rather than about LaTeX:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- ~/.config/nvim/lua/user/plugins/noethervim-tex.lua</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">return</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Chiarandini/NoetherVim-tex</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#C5E478;--1:#3B61B0">opts</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">snippets</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">conventions</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">true</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#C5E478;--1:#3B61B0">acronyms</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3B61B0">true</span><span style="--0:#D6DEEB;--1:#403F53"> } },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- ~/.config/nvim/lua/user/plugins/noethervim-tex.luareturn {    { &quot;Chiarandini/NoetherVim-tex&quot;,      opts = { snippets = { conventions = true, acronyms = true } },    },}"><div></div></button></div></figure></div>
+<ul>
+<li><code dir="auto">conventions</code>: the theorem family as <code dir="auto">:thm</code>, <code dir="auto">:defn</code>, <code dir="auto">:prop</code>, <code dir="auto">:lem</code>,
+<code dir="auto">:cor</code>, <code dir="auto">:example</code>, <code dir="auto">:exercise</code> and <code dir="auto">:box</code>. They emit
+<code dir="auto">\begin{defn}{Name}{label}</code>, a two-argument form that needs declarations
+your preamble may not have. <a href="/noethervim/guides/latex-setup/">One LaTeX setup</a> writes them
+out.</li>
+<li><code dir="auto">acronyms</code>: prose shorthand, where <code dir="auto">tfae</code> becomes “the following are
+equivalent” and <code dir="auto">wlog</code>, <code dir="auto">wrt</code>, <code dir="auto">ftsoc</code>, <code dir="auto">SES</code> and <code dir="auto">iff</code> do the same. No
+preamble needed; it is off because it is one writer’s vocabulary.</li>
+</ul>
+<p>Open <code dir="auto">:NoetherVim plugins</code>, pick <code dir="auto">noethervim-tex</code>, and browse <code dir="auto">LuaSnip/tex/</code>
+for the always-on catalog and <code dir="auto">snippets/</code> for the two switchable sets.
+Context detection (math zone versus text zone versus tikz) means snippets only
+fire where they make sense.</p>
 <div class="sl-heading-wrapper level-h3"><h3 id="preamble">Preamble</h3><a class="sl-anchor-link" href="#preamble"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Preamble”</span></a></div>
-<p>At the start of a line in the preamble (above <code dir="auto">\begin{document}</code>),
-type <code dir="auto">@</code> and press <code dir="auto">&lt;Tab&gt;</code> to get a picker of <code dir="auto">.tex</code> files from your
-preamble folder; useful if you maintain shared macros across
-documents. The folder defaults to <code dir="auto">preamble/</code> inside your config
-directory. Point it elsewhere with an <code dir="auto">opts</code> override on the
-<code dir="auto">NoetherVim-Tex</code> spec:</p>
-<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- ~/.config/nvim/lua/user/plugins/noethervim-tex.lua</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">return</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Chiarandini/NoetherVim-Tex</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#C5E478;--1:#3B61B0">opts</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">preamble_folder</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">~/Documents/LaTeX/preamble/</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- ~/.config/nvim/lua/user/plugins/noethervim-tex.luareturn {    { &quot;Chiarandini/NoetherVim-Tex&quot;,      opts = { preamble_folder = &quot;~/Documents/LaTeX/preamble/&quot; },    },}"><div></div></button></div></figure></div>
+<p>At the start of a line above <code dir="auto">\begin{document}</code>, type <code dir="auto">@</code> for a menu of the
+<code dir="auto">.tex</code> fragments it can find. Nothing ships in it. A fragment is any <code dir="auto">.tex</code>
+file in one of the preamble folders, and its first <code dir="auto">%</code> comment line becomes
+the description shown in the menu:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="tex"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">% Standard mathematics packages</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">\usepackage</span><span style="--0:#D6DEEB;--1:#403F53">{amsmath, amssymb, amsthm, mathtools}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">\usepackage</span><span style="--0:#D6DEEB;--1:#403F53">{cleveref}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="% Standard mathematics packages\usepackage{amsmath, amssymb, amsthm, mathtools}\usepackage{cleveref}"><div></div></button></div></figure></div>
+<p>Saved as <code dir="auto">preamble/packages.tex</code>, that appears as <code dir="auto">packages</code> the next time <code dir="auto">@</code>
+is typed.</p>
+<p>Two folders are searched. <code dir="auto">preamble</code> beside or above the document is the
+project’s own, and accepting a fragment from it writes <code dir="auto">\input{...}</code>, so a
+book’s chapters share one file. <code dir="auto">preamble/</code> inside your config directory is
+your library, and accepting from it inserts the contents, because an <code dir="auto">\input</code>
+naming a path on your own machine stops compiling the moment the <code dir="auto">.tex</code>
+reaches a co-author. The menu labels each item with which one it came from.</p>
+<p><code dir="auto">:checkhealth noethervim-tex</code> reports the folders it resolved and how many
+fragments each holds. Point the library elsewhere with an <code dir="auto">opts</code> override:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- ~/.config/nvim/lua/user/plugins/noethervim-tex.lua</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">return</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Chiarandini/NoetherVim-tex</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#C5E478;--1:#3B61B0">opts</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">preamble</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">folders</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">preamble</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">~/Documents/LaTeX/preamble</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">} } },</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- ~/.config/nvim/lua/user/plugins/noethervim-tex.luareturn {    { &quot;Chiarandini/NoetherVim-tex&quot;,      opts = { preamble = { folders = { &quot;preamble&quot;, &quot;~/Documents/LaTeX/preamble&quot; } } },    },}"><div></div></button></div></figure></div>
 <div class="sl-heading-wrapper level-h3"><h3 id="motions-navigating-by-theorem">Motions: navigating by theorem</h3><a class="sl-anchor-link" href="#motions-navigating-by-theorem"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “Motions: navigating by theorem”</span></a></div>
 <p>The bundle adds treesitter-powered normal-mode motions for LaTeX
 structure, in the <code dir="auto">[</code> / <code dir="auto">]</code> pairing the rest of the distribution uses:</p>
@@ -186,8 +213,13 @@ structure, in the <code dir="auto">[</code> / <code dir="auto">]</code> pairing 
 <li><code dir="auto">]g</code> / <code dir="auto">[g</code> - next / previous theorem (or any theorem-like env)</li>
 <li><code dir="auto">]p</code> / <code dir="auto">[p</code> - next / previous proof, <code dir="auto">]P</code> / <code dir="auto">[P</code> for its <code dir="auto">\end</code></li>
 <li><code dir="auto">]x</code> / <code dir="auto">[x</code> - next / previous example, <code dir="auto">]X</code> / <code dir="auto">[X</code> for its <code dir="auto">\end</code></li>
-<li><code dir="auto">]c</code> / <code dir="auto">[c</code> - next / previous chapter</li>
 </ul>
+<p>Which environment names count is configuration, not a fixed list, because the
+names in a document are yours. <code dir="auto">]g</code> covers both the standard amsthm spellings
+and their abbreviations, so <code dir="auto">\begin{theorem}</code> and <code dir="auto">\begin{thm}</code> are both
+found; <code dir="auto">:help noethervim-tex-textobjects</code> shows how to narrow the list, add a
+motion, or bind chapter navigation, which ships unbound because <code dir="auto">]c</code> and <code dir="auto">[c</code>
+are Vim’s diff-mode change motions and gitsigns’ hunk motions.</p>
 <p>These are motions, not textobjects, and they compose with operators the way
 <code dir="auto">]m</code> or <code dir="auto">]}</code> do: <code dir="auto">d]g</code> deletes from the cursor to the start of the next
 theorem, <code dir="auto">v]g</code> extends a selection there, <code dir="auto">y]g</code> yanks the span.</p>
@@ -208,8 +240,9 @@ those escapes first and spell-checks the word they spell, so <code dir="auto">Po
 checked as <em>Poincaré</em> and passes. Misspellings inside an accented word are
 still caught, and are reported as diagnostics as well as highlights.</p>
 <p>Add your own words by pressing <code dir="auto">zg</code> on one in normal mode. In <code dir="auto">.tex</code> buffers
-<code dir="auto">zg</code> is routed: an accented word goes to the accent dictionary in its decoded
-form, a plain one to your ordinary spell file. You can also edit
+<code dir="auto">zg</code> understands the accent: on <code dir="auto">Poincar\'e</code> it writes the decoded <em>Poincaré</em>
+to your spell file rather than the fragment the cursor is sitting on. <code dir="auto">zw</code> and
+<code dir="auto">z=</code> are accent-aware in the same way. You can also edit
 <code dir="auto">~/.local/share/nvim/site/spell/en.utf-8.add</code> directly.</p>
 <p>The <code dir="auto">:NoetherTexAccent*</code> commands cover the rest: <code dir="auto">Add</code>, <code dir="auto">MarkWrong</code>,
 <code dir="auto">Suggest</code> for corrections, <code dir="auto">Diagnostic</code> to control whether accent findings
@@ -277,7 +310,7 @@ workflows covered in this document:</p>
 <div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- ~/.config/nvim/lua/user/keymaps.lua</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C5E478;--1:#3B61B0">vim</span><span style="--0:#D6DEEB;--1:#403F53">.keymap.</span><span style="--0:#C5E478;--1:#3B61B0">set</span><span style="--0:#D6DEEB;--1:#403F53">(</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">n</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">&lt;LocalLeader&gt;c</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">, </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">&lt;Plug&gt;(vimtex-compile)</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#C5E478;--1:#3B61B0">desc</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Compile (custom)</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">})</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- ~/.config/nvim/lua/user/keymaps.luavim.keymap.set(&quot;n&quot;, &quot;<LocalLeader>c&quot;, &quot;<Plug>(vimtex-compile)&quot;,    { desc = &quot;Compile (custom)&quot; })"><div></div></button></div></figure></div>
 <p><strong>Point the preamble picker somewhere else,</strong> if you keep shared macros
 outside your config directory:</p>
-<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- ~/.config/nvim/lua/user/plugins/noethervim-tex.lua</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">return</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Chiarandini/NoetherVim-Tex</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#C5E478;--1:#3B61B0">opts</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">preamble_folder</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">~/Documents/LaTeX/preamble/</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- ~/.config/nvim/lua/user/plugins/noethervim-tex.luareturn {    { &quot;Chiarandini/NoetherVim-Tex&quot;,      opts = { preamble_folder = &quot;~/Documents/LaTeX/preamble/&quot; },    },}"><div></div></button></div></figure></div>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="lua"><code><div class="ec-line"><div class="code"><span style="--0:#919F9F;--1:#5F636F">-- ~/.config/nvim/lua/user/plugins/noethervim-tex.lua</span></div></div><div class="ec-line"><div class="code"><span style="--0:#C792EA;--1:#8844AE">return</span><span style="--0:#D6DEEB;--1:#403F53"> {</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">{ </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">Chiarandini/NoetherVim-tex</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">      </span><span style="--0:#C5E478;--1:#3B61B0">opts</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> { </span><span style="--0:#C5E478;--1:#3B61B0">preamble_folder</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#7FDBCA;--1:#096E72">=</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">~/Documents/LaTeX/preamble/</span><span style="--0:#D9F5DD;--1:#111111">" </span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#D6DEEB;--1:#403F53">    </span></span><span style="--0:#D6DEEB;--1:#403F53">},</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D6DEEB;--1:#403F53">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="-- ~/.config/nvim/lua/user/plugins/noethervim-tex.luareturn {    { &quot;Chiarandini/NoetherVim-tex&quot;,      opts = { preamble_folder = &quot;~/Documents/LaTeX/preamble/&quot; },    },}"><div></div></button></div></figure></div>
 <p><strong>Change where pasted figures land,</strong> or the environment they are wrapped in,
 by overriding img-clip’s <code dir="auto">tex</code> filetype entry in
 <code dir="auto">~/.config/nvim/lua/user/plugins/</code>.</p>
