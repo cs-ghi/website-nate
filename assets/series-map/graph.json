@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-09-01",
+    "generated": "2026-09-02",
     "bookCount": 48,
-    "edgeCount": 418,
+    "edgeCount": 423,
     "clashCounts": {
       "error": 0,
       "warn": 1,
-      "info": 131
+      "info": 132
     },
     "tiers": [
       {
@@ -1778,6 +1778,15 @@
     },
     {
       "source": "NateAnalyticNumTheory",
+      "target": "NateCoreProbability",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
       "target": "NateCoreRepTheory",
       "type": "reference",
       "provenance": "auto",
@@ -2571,6 +2580,15 @@
     },
     {
       "source": "NateCoreRepTheory",
+      "target": "NateHomologicalAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCoreRepTheory",
       "target": "NateLanglandsGL2",
       "type": "reference",
       "provenance": "auto",
@@ -3207,6 +3225,15 @@
     },
     {
       "source": "NateGaloisCohom",
+      "target": "NateAbelianVarieties",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
       "target": "NateAlgGeo",
       "type": "reference",
       "provenance": "auto",
@@ -3342,10 +3369,8 @@
       "source": "NateGeoRepTheory",
       "target": "NateDiffTop",
       "type": "prereq",
-      "provenance": "both",
-      "citedIn": [
-        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
-      ]
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateGeoRepTheory",
@@ -3359,6 +3384,24 @@
     {
       "source": "NateGeoRepTheory",
       "target": "NateLanglandsGL2",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
+      ]
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "geometric-representation-theory/EYNTKA-geo-rep-theory.tex"
+      ]
+    },
+    {
+      "source": "NateGeoRepTheory",
+      "target": "NateLinAlg",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -4277,6 +4320,7 @@
       "provenance": "auto",
       "citedIn": [
         "linear-algebra/EYNTKA-linear-algebra.tex",
+        "linear-algebra/drafts/scratch/ch12-s02.tex",
         "linear-algebra/drafts/scratch/done-ch09/ch09-s01.tex",
         "linear-algebra/drafts/scratch/done-ch10/ch10-s02.tex",
         "linear-algebra/drafts/scratch/done-ch10/ch10-s03.tex"
