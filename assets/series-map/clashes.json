@@ -982,15 +982,6 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateCFT is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateCFT"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateAlgGeo -> NateAbelianVarieties is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
@@ -1018,28 +1009,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAnalyticNumTheory -> NateLocalFieldTheory is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAnalyticNumTheory",
-      "NateLocalFieldTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateAnalyticNumTheory -> NateCoreRepTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAnalyticNumTheory",
       "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAnalyticNumTheory -> NateCFT is cited in 9 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAnalyticNumTheory",
-      "NateCFT"
     ]
   },
   {
@@ -1063,37 +1036,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateDiffTop -> NateMeasureTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateDiffTop",
-      "NateMeasureTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateDiffTop -> NateAlgTop is cited in 21 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateDiffTop",
-      "NateAlgTop"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateDiffTop -> NateLieGroups is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateDiffTop",
       "NateLieGroups"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateDiffTop -> NateCoreAlgebra is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateDiffTop",
-      "NateCoreAlgebra"
     ]
   },
   {
@@ -1117,6 +1063,24 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
+    "message": "NateLinAlg -> NateFuncAnalysis is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateFuncAnalysis"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateODE is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateODE"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
     "message": "NateLinAlg -> NateCoreAlgebra is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateLinAlg",
@@ -1126,19 +1090,10 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateMicrolocalAnalysis -> NateDiffTop is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateLinAlg -> NateLieGroups is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateMicrolocalAnalysis",
-      "NateDiffTop"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateModuliStacks -> NateEllipticCurves is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateModuliStacks",
-      "NateEllipticCurves"
+      "NateLinAlg",
+      "NateLieGroups"
     ]
   },
   {
@@ -1171,6 +1126,33 @@
       "NateMetricFunctionSpaces",
       "NateSetTheory",
       "NateToposTheory"
+    ]
+  },
+  {
+    "kind": "tier-inversion",
+    "severity": "warn",
+    "message": "Tier inversion: NateComplexAnalysis (tier 1) builds on NateAlgTop (tier 2); a book cannot sit below its prerequisite.",
+    "refs": [
+      "NateComplexAnalysis",
+      "NateAlgTop"
+    ]
+  },
+  {
+    "kind": "tier-inversion",
+    "severity": "warn",
+    "message": "Tier inversion: NateGaloisCohom (tier 2) builds on NateLocalFieldTheory (tier 3); a book cannot sit below its prerequisite.",
+    "refs": [
+      "NateGaloisCohom",
+      "NateLocalFieldTheory"
+    ]
+  },
+  {
+    "kind": "tier-inversion",
+    "severity": "warn",
+    "message": "Tier inversion: NateRiemannianGeometry (tier 2) builds on NateMicrolocalAnalysis (tier 3); a book cannot sit below its prerequisite.",
+    "refs": [
+      "NateRiemannianGeometry",
+      "NateMicrolocalAnalysis"
     ]
   }
 ]
