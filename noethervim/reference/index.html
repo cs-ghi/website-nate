@@ -1014,6 +1014,22 @@ everything and clears those marks. Reach for it when a buffer still
 behaves as though a snippet were active. Buffer text is never touched,
 and snippets expand normally afterwards.
 
+                                                  <a id="noethervim-snippet-reenter" class="vimdoc-tag">*noethervim-snippet-reenter*</a>
+Getting back into one: ~
+
+    `&lt;Leader&gt;j`         Jump back into the snippet under the cursor
+
+Tabbing past the last placeholder finishes a snippet, and normally that is
+the end of it. `&lt;Leader&gt;j` reopens one you have already left, so a
+placeholder you filled in wrongly can be filled in again without expanding
+the snippet a second time. Put the cursor anywhere in the snippet's text
+and press it; `&lt;Tab&gt;` and `&lt;S-Tab&gt;` then move between its placeholders as
+they did the first time. A snippet nested inside another is reached the
+same way.
+
+Snippets stay reachable for as long as the buffer is open. If the cursor
+is not in one, `&lt;Leader&gt;j` says so and does nothing.
+
                                                        <a id="noethervim-snippets" class="vimdoc-tag">*noethervim-snippets*</a>
 Writing custom snippets: ~
 
@@ -1022,6 +1038,11 @@ Create a directory for the target filetype (e.g. `LuaSnip/tex/`,
 `LuaSnip/python/`) and add `.lua` files inside it; each file should
 return a snippet list. LuaSnip auto-loads them alongside any
 plugin-provided snippets.
+
+Saving a snippet file puts it to work straight away. That holds for a file
+you have just created for a filetype you had no snippets for before, and it
+holds in every other Neovim you have open at the time. Nothing needs
+restarting.
 
 SearchLeader+es (`:LuaSnipEdit`) jumps to a snippet file for the current
 filetype. Every registered file is listed, yours and the ones plugins
