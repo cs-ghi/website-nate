@@ -1,107 +1,114 @@
 <div class="pdf-viewer-container">
-  <div class="pdf-header" *ngIf="headerVisible">
-    <div class="header-actions">
-      <!-- Left: Title, with Contents as the primary navigation affordance -->
-      <div class="header-left">
-        <h2 class="document-title">{{ bookName }}</h2>
-
-        <button class="outline-toggle" (click)="toggleOutline()" *ngIf="hasOutline"
-                [class.active]="showOutline"
-                [attr.aria-expanded]="showOutline" aria-controls="pdf-outline-panel"
-                title="Table of contents (T)">
-          <span aria-hidden="true">☰</span> Contents
-        </button>
-      </div>
-
-      <!-- Center: reading controls -->
-      <div class="center-controls">
-        <div class="zoom-controls">
-          <button class="zoom-button" (click)="zoomOut()" [disabled]="currentZoom <= 0.25">
-            <span>-</span>
-          </button>
-          <span class="zoom-display">{{ (currentZoom * 100).toFixed(0) }}%</span>
-          <button class="zoom-button" (click)="zoomIn()" [disabled]="currentZoom >= 3">
-            <span>+</span>
-          </button>
+  @if (headerVisible) {
+    <div class="pdf-header">
+      <div class="header-actions">
+        <!-- Left: Title, with Contents as the primary navigation affordance -->
+        <div class="header-left">
+          <h2 class="document-title">{{ bookName }}</h2>
+          @if (hasOutline) {
+            <button class="outline-toggle" (click)="toggleOutline()"
+              [class.active]="showOutline"
+              [attr.aria-expanded]="showOutline" aria-controls="pdf-outline-panel"
+              title="Table of contents (T)">
+              <span aria-hidden="true">☰</span> Contents
+            </button>
+          }
         </div>
-
-        <!-- Page navigator — always visible; works in both render modes -->
-        <div class="page-controls">
-          <button class="page-button" (click)="prevPage()" [disabled]="currentPage <= 1"
-                  title="Previous page (←)">‹</button>
-          <span class="page-display">
-            <input class="page-input" type="number" min="1" [max]="totalPages"
-                   [value]="currentPage" (change)="onPageInput($any($event.target).value)"
-                   title="Go to page" />
-            <span class="page-total">/ {{ totalPages }}</span>
-            <!-- What this page is printed as, where that differs from its index -->
-            <span class="page-printed" *ngIf="printedPage"
-                  title="This page is printed as {{ printedPage }}">· p. {{ printedPage }}</span>
-          </span>
-          <button class="page-button" (click)="nextPage()" [disabled]="currentPage >= totalPages"
-                  title="Next page (→)">›</button>
-        </div>
-
-        <!-- Continuous ↔ one-page-at-a-time toggle -->
-        <button class="mode-toggle" (click)="toggleRenderMode()"
+        <!-- Center: reading controls -->
+        <div class="center-controls">
+          <div class="zoom-controls">
+            <button class="zoom-button" (click)="zoomOut()" [disabled]="currentZoom <= 0.25">
+              <span>-</span>
+            </button>
+            <span class="zoom-display">{{ (currentZoom * 100).toFixed(0) }}%</span>
+            <button class="zoom-button" (click)="zoomIn()" [disabled]="currentZoom >= 3">
+              <span>+</span>
+            </button>
+          </div>
+          <!-- Page navigator — always visible; works in both render modes -->
+          <div class="page-controls">
+            <button class="page-button" (click)="prevPage()" [disabled]="currentPage <= 1"
+            title="Previous page (←)">‹</button>
+            <span class="page-display">
+              <input class="page-input" type="number" min="1" [max]="totalPages"
+                [value]="currentPage" (change)="onPageInput($any($event.target).value)"
+                title="Go to page" />
+              <span class="page-total">/ {{ totalPages }}</span>
+              <!-- What this page is printed as, where that differs from its index -->
+              @if (printedPage) {
+                <span class="page-printed"
+                title="This page is printed as {{ printedPage }}">· p. {{ printedPage }}</span>
+              }
+            </span>
+            <button class="page-button" (click)="nextPage()" [disabled]="currentPage >= totalPages"
+            title="Next page (→)">›</button>
+          </div>
+          <!-- Continuous ↔ one-page-at-a-time toggle -->
+          <button class="mode-toggle" (click)="toggleRenderMode()"
                 [title]="showAll ? 'Switch to one page at a time (faster for large books)'
                                  : 'Switch to continuous scroll'">
-          <span aria-hidden="true">{{ showAll ? '▤' : '⇕' }}</span>
-          <span class="mode-label">{{ showAll ? 'Page view' : 'Scroll view' }}</span>
-        </button>
-      </div>
-
-      <!-- Right: back, and the control that hides the whole bar -->
-      <div class="header-right">
-        <button class="back-button" (click)="goBack()">
-          <span aria-hidden="true">←</span>
-          <span class="back-label">{{ backButtonText }}</span>
-        </button>
-
-        <button class="close-header" (click)="hideHeader()"
-                title="Hide this bar for more screen space"
-                aria-label="Hide top bar">×</button>
+            <span aria-hidden="true">{{ showAll ? '▤' : '⇕' }}</span>
+            <span class="mode-label">{{ showAll ? 'Page view' : 'Scroll view' }}</span>
+          </button>
+        </div>
+        <!-- Right: back, and the control that hides the whole bar -->
+        <div class="header-right">
+          <button class="back-button" (click)="goBack()">
+            <span aria-hidden="true">←</span>
+            <span class="back-label">{{ backButtonText }}</span>
+          </button>
+          <button class="close-header" (click)="hideHeader()"
+            title="Hide this bar for more screen space"
+          aria-label="Hide top bar">×</button>
+        </div>
       </div>
     </div>
-  </div>
+  }
 
   <!-- Floating reopen button, shown only while the bar is hidden -->
-  <button *ngIf="!headerVisible" class="reader-reopen" (click)="showHeader()"
-          title="Show the toolbar" aria-label="Show toolbar">☰</button>
+  @if (!headerVisible) {
+    <button class="reader-reopen" (click)="showHeader()"
+    title="Show the toolbar" aria-label="Show toolbar">☰</button>
+  }
 
   <!-- Rest of your existing HTML remains the same -->
   <div class="pdf-content">
-    <div *ngIf="isLoading" class="loading-spinner">
-      <p>Loading PDF...</p>
-    </div>
-
-    <div *ngIf="error" class="error-message">
-      <p>{{ error }}</p>
-      <button (click)="goBack()">{{ returnText }}</button>
-    </div>
-
-    <div *ngIf="pdfSrc && !error" class="pdf-layout">
-      <app-pdf-outline
-        [pdf]="pdfDocument"
-        [open]="showOutline"
-        [drawer]="isDrawer"
-        [currentPage]="currentPage"
-        (navigate)="onOutlineNavigate($event)"
-        (closeRequested)="closeOutline()"
-        (availableChange)="onOutlineAvailable($event)">
-      </app-pdf-outline>
-
-      <!-- PDF viewer -->
-      <div class="pdf-viewer-wrapper">
-        <app-pdf-document
-          [src]="pdfSrc"
-          [zoom]="currentZoom"
-          [continuous]="showAll"
-          (loaded)="onLoadComplete($event)"
-          (pageChange)="onPageChange($event)"
-          (loadError)="onError($event)">
-        </app-pdf-document>
+    @if (isLoading) {
+      <div class="loading-spinner">
+        <p>Loading PDF...</p>
       </div>
-    </div>
+    }
+
+    @if (error) {
+      <div class="error-message">
+        <p>{{ error }}</p>
+        <button (click)="goBack()">{{ returnText }}</button>
+      </div>
+    }
+
+    @if (pdfSrc && !error) {
+      <div class="pdf-layout">
+        <app-pdf-outline
+          [pdf]="pdfDocument"
+          [open]="showOutline"
+          [drawer]="isDrawer"
+          [currentPage]="currentPage"
+          (navigate)="onOutlineNavigate($event)"
+          (closeRequested)="closeOutline()"
+          (availableChange)="onOutlineAvailable($event)">
+        </app-pdf-outline>
+        <!-- PDF viewer -->
+        <div class="pdf-viewer-wrapper">
+          <app-pdf-document
+            [src]="pdfSrc"
+            [zoom]="currentZoom"
+            [continuous]="showAll"
+            (loaded)="onLoadComplete($event)"
+            (pageChange)="onPageChange($event)"
+            (loadError)="onError($event)">
+          </app-pdf-document>
+        </div>
+      </div>
+    }
   </div>
 </div>

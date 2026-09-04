@@ -21,58 +21,65 @@
       </p>
     </div>
 
-    <section class="paper-section" *ngFor="let section of sections">
-      <div class="section-head">
-        <h3>{{ section.label }}</h3>
-        <span class="section-blurb">{{ section.blurb }}</span>
-      </div>
-
-      <article
-        *ngFor="let paper of section.papers; trackBy: trackBySlug"
-        class="paper-row"
-        (click)="openPaper(paper)">
-
-        <h4 class="p-title">{{ paper.title }}</h4>
-
-        <p class="p-authors">{{ paper.authors.join(', ') }}</p>
-
-        <p class="p-summary" *ngIf="paper.summary">{{ paper.summary }}</p>
-
-        <div class="p-meta">
-          <span class="badge" [ngClass]="'st-' + paper.status">{{ paper.statusLabel }}</span>
-          <span class="badge kind">{{ paper.kindLabel }}</span>
-          <a
-            *ngIf="paper.arxiv as arxiv"
-            class="badge arxiv"
-            [href]="paper.arxivAbsUrl"
-            target="_blank"
-            rel="noopener"
-            (click)="stop($event)">
-            arXiv:{{ arxiv.id }}
-          </a>
-          <span *ngIf="!paper.arxiv" class="p-dim">not yet posted</span>
-          <span class="p-sep">·</span>
-          <span>{{ paper.year }}</span>
-          <span *ngIf="paper.pages" class="p-sep">·</span>
-          <span *ngIf="paper.pages">{{ paper.pages }} pp</span>
+    @for (section of sections; track section) {
+      <section class="paper-section">
+        <div class="section-head">
+          <h3>{{ section.label }}</h3>
+          <span class="section-blurb">{{ section.blurb }}</span>
         </div>
-
-        <div class="p-actions">
-          <button class="p-action" (click)="read(paper, $event)">Read</button>
-          <button class="p-action" (click)="toggleAbstract(paper, $event)">
-            {{ isOpen(paper) ? 'Hide abstract' : 'Abstract' }}
-          </button>
-          <button class="p-action" (click)="copyBibtex(paper, $event)">
-            {{ copiedSlug === paper.slug ? 'Copied' : 'BibTeX' }}
-          </button>
-          <span class="p-more">Full record <span class="arrow">→</span></span>
-        </div>
-
-        <div class="p-abstract" *ngIf="isOpen(paper)" (click)="stop($event)">
-          <app-math-text [text]="paper.abstract"></app-math-text>
-        </div>
-      </article>
-    </section>
+        @for (paper of section.papers; track trackBySlug($index, paper)) {
+          <article
+            class="paper-row"
+            (click)="openPaper(paper)">
+            <h4 class="p-title">{{ paper.title }}</h4>
+            <p class="p-authors">{{ paper.authors.join(', ') }}</p>
+            @if (paper.summary) {
+              <p class="p-summary">{{ paper.summary }}</p>
+            }
+            <div class="p-meta">
+              <span class="badge" [ngClass]="'st-' + paper.status">{{ paper.statusLabel }}</span>
+              <span class="badge kind">{{ paper.kindLabel }}</span>
+              @if (paper.arxiv; as arxiv) {
+                <a
+                  class="badge arxiv"
+                  [href]="paper.arxivAbsUrl"
+                  target="_blank"
+                  rel="noopener"
+                  (click)="stop($event)">
+                  arXiv:{{ arxiv.id }}
+                </a>
+              }
+              @if (!paper.arxiv) {
+                <span class="p-dim">not yet posted</span>
+              }
+              <span class="p-sep">·</span>
+              <span>{{ paper.year }}</span>
+              @if (paper.pages) {
+                <span class="p-sep">·</span>
+              }
+              @if (paper.pages) {
+                <span>{{ paper.pages }} pp</span>
+              }
+            </div>
+            <div class="p-actions">
+              <button class="p-action" (click)="read(paper, $event)">Read</button>
+              <button class="p-action" (click)="toggleAbstract(paper, $event)">
+                {{ isOpen(paper) ? 'Hide abstract' : 'Abstract' }}
+              </button>
+              <button class="p-action" (click)="copyBibtex(paper, $event)">
+                {{ copiedSlug === paper.slug ? 'Copied' : 'BibTeX' }}
+              </button>
+              <span class="p-more">Full record <span class="arrow">→</span></span>
+            </div>
+            @if (isOpen(paper)) {
+              <div class="p-abstract" (click)="stop($event)">
+                <app-math-text [text]="paper.abstract"></app-math-text>
+              </div>
+            }
+          </article>
+        }
+      </section>
+    }
 
     <div style="padding-bottom: 7em;"></div>
   </div>

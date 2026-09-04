@@ -1,87 +1,106 @@
 <!-- Dismiss the drawer by tapping the page behind it -->
-<div class="outline-scrim" *ngIf="open && available && drawer"
-     (click)="closeRequested.emit()"></div>
+@if (open && available && drawer) {
+  <div class="outline-scrim"
+  (click)="closeRequested.emit()"></div>
+}
 
 <!-- Pushes the page aside on wide screens, overlays it in drawer mode -->
 <aside class="outline-shell" id="pdf-outline-panel"
-       [class.visible]="open && available" [class.drawer]="drawer"
-       aria-label="Table of contents">
+  [class.visible]="open && available" [class.drawer]="drawer"
+  aria-label="Table of contents">
   <div class="outline-panel">
     <div class="outline-header">
       <h3>Contents</h3>
       <div class="outline-controls">
         <small class="keyboard-hint">T</small>
         <button class="close-outline" (click)="closeRequested.emit()"
-                aria-label="Close contents">×</button>
+        aria-label="Close contents">×</button>
       </div>
     </div>
 
     <div class="outline-filter">
       <input #outlineFilter type="search" class="outline-filter-input"
-             placeholder="Filter contents…" aria-label="Filter contents"
-             [(ngModel)]="filterQuery" (ngModelChange)="onFilterChange()"
-             (keydown)="onFilterKeydown($event)" />
-      <button type="button" class="outline-filter-clear" *ngIf="filtering"
-              (click)="clearFilter()" aria-label="Clear filter">×</button>
+        placeholder="Filter contents…" aria-label="Filter contents"
+        [(ngModel)]="filterQuery" (ngModelChange)="onFilterChange()"
+        (keydown)="onFilterKeydown($event)" />
+      @if (filtering) {
+        <button type="button" class="outline-filter-clear"
+        (click)="clearFilter()" aria-label="Clear filter">×</button>
+      }
     </div>
 
     <nav class="outline-content" #outlineList>
       <!-- Ranked flat list while filtering; the tree otherwise -->
-      <ng-container *ngIf="filtering; else treeView">
-        <p class="outline-empty" *ngIf="!filterResults.length">
-          Nothing matches “{{ filterQuery }}”.
-        </p>
-        <div class="outline-item" *ngFor="let node of filterResults; index as i">
-          <div class="outline-row" [class.highlighted]="i === highlighted"
-               [class.active]="node === activeNode">
-            <button type="button" class="outline-link" (click)="goToNode(node)"
-                    [title]="pageTooltip(node)">
-              <span class="outline-title">
-                {{ node.title }}
-                <small class="outline-crumb" *ngIf="breadcrumb(node)">
-                  {{ breadcrumb(node) }}
-                </small>
-              </span>
-              <span class="outline-page" *ngIf="node.pageLabel">{{ node.pageLabel }}</span>
-            </button>
+      @if (filtering) {
+        @if (!filterResults.length) {
+          <p class="outline-empty">
+            Nothing matches “{{ filterQuery }}”.
+          </p>
+        }
+        @for (node of filterResults; track node; let i = $index) {
+          <div class="outline-item">
+            <div class="outline-row" [class.highlighted]="i === highlighted"
+              [class.active]="node === activeNode">
+              <button type="button" class="outline-link" (click)="goToNode(node)"
+                [title]="pageTooltip(node)">
+                <span class="outline-title">
+                  {{ node.title }}
+                  @if (breadcrumb(node)) {
+                    <small class="outline-crumb">
+                      {{ breadcrumb(node) }}
+                    </small>
+                  }
+                </span>
+                @if (node.pageLabel) {
+                  <span class="outline-page">{{ node.pageLabel }}</span>
+                }
+              </button>
+            </div>
           </div>
-        </div>
-      </ng-container>
-
-      <ng-template #treeView>
+        }
+      } @else {
         <ng-container *ngTemplateOutlet="outlineNodes; context: { $implicit: tree }">
         </ng-container>
-      </ng-template>
+      }
+
     </nav>
   </div>
 </aside>
 
 <!-- Recursive outline rows. Nesting (rather than a flat list with computed
-     indent) is what makes a chapter collapsible and gives each level its own
-     guide rule. -->
+indent) is what makes a chapter collapsible and gives each level its own
+guide rule. -->
 <ng-template #outlineNodes let-nodes>
-  <div class="outline-item" *ngFor="let node of nodes">
-    <div class="outline-row" [class.active]="node === activeNode"
-         [attr.data-level]="node.level">
-      <button type="button" class="outline-twisty" *ngIf="node.children.length"
-              (click)="toggleNode(node, $event)"
-              [attr.aria-expanded]="node.expanded"
-              [attr.aria-label]="(node.expanded ? 'Collapse ' : 'Expand ') + node.title">
-        <span aria-hidden="true">{{ node.expanded ? '▾' : '▸' }}</span>
-      </button>
-      <span class="outline-twisty spacer" *ngIf="!node.children.length" aria-hidden="true"></span>
-
-      <button type="button" class="outline-link" (click)="goToNode(node)"
-              [attr.aria-current]="node === activeNode ? 'true' : null"
-              [title]="pageTooltip(node)">
-        <span class="outline-title">{{ node.title }}</span>
-        <span class="outline-page" *ngIf="node.pageLabel">{{ node.pageLabel }}</span>
-      </button>
+  @for (node of nodes; track node) {
+    <div class="outline-item">
+      <div class="outline-row" [class.active]="node === activeNode"
+        [attr.data-level]="node.level">
+        @if (node.children.length) {
+          <button type="button" class="outline-twisty"
+            (click)="toggleNode(node, $event)"
+            [attr.aria-expanded]="node.expanded"
+            [attr.aria-label]="(node.expanded ? 'Collapse ' : 'Expand ') + node.title">
+            <span aria-hidden="true">{{ node.expanded ? '▾' : '▸' }}</span>
+          </button>
+        }
+        @if (!node.children.length) {
+          <span class="outline-twisty spacer" aria-hidden="true"></span>
+        }
+        <button type="button" class="outline-link" (click)="goToNode(node)"
+          [attr.aria-current]="node === activeNode ? 'true' : null"
+          [title]="pageTooltip(node)">
+          <span class="outline-title">{{ node.title }}</span>
+          @if (node.pageLabel) {
+            <span class="outline-page">{{ node.pageLabel }}</span>
+          }
+        </button>
+      </div>
+      @if (node.expanded && node.children.length) {
+        <div class="outline-children">
+          <ng-container *ngTemplateOutlet="outlineNodes; context: { $implicit: node.children }">
+          </ng-container>
+        </div>
+      }
     </div>
-
-    <div class="outline-children" *ngIf="node.expanded && node.children.length">
-      <ng-container *ngTemplateOutlet="outlineNodes; context: { $implicit: node.children }">
-      </ng-container>
-    </div>
-  </div>
+  }
 </ng-template>

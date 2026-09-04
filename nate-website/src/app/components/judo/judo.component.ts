@@ -56,8 +56,10 @@ export class JudoComponent implements OnInit {
   @HostListener('window:keydown.arrowleft')
   onArrowLeft(): void { if (this.studyMode) this.prevCard(); }
 
+  // Typed as Event, not KeyboardEvent: Angular types a host listener's $event
+  // as Event, and preventDefault is all this needs.
   @HostListener('window:keydown.space', ['$event'])
-  onSpace(e: KeyboardEvent): void {
+  onSpace(e: Event): void {
     if (this.studyMode) { e.preventDefault(); this.flipCard(); }
   }
 

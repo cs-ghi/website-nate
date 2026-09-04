@@ -5,106 +5,124 @@
       <h1>Ideas, Intuitions,<br />Interests</h1>
       <p class="sub">
         Things I worked out and wanted to write down.
-        </p>
+      </p>
       <mat-divider class="divider"></mat-divider>
     </header>
 
     <!-- Tier 1: domain. One quiet line of text rather than a chip row — the
-         page is typography-led and a row of pills would put the catalogue
-         furniture straight back. -->
+    page is typography-led and a row of pills would put the catalogue
+    furniture straight back. -->
     <nav class="quiet-filter">
       <button class="qf" [class.on]="activeDomain === 'all'" (click)="setDomain('all')">
         Everything
       </button>
-      <ng-container *ngFor="let d of domainChips">
+      @for (d of domainChips; track d.key) {
         <span class="qf-sep">/</span>
         <button class="qf" [class.on]="activeDomain === d.key" (click)="setDomain(d.key)">
           {{ d.label }}
         </button>
-      </ng-container>
+      }
     </nav>
 
     <!-- Tier 2: that domain's own topics. Absent until a domain is picked, so
-         the default view is one line and not two. -->
-    <nav class="quiet-filter sub-filter" *ngIf="topicChips.length">
-      <button class="qf sub" [class.on]="activeTopic === 'all'" (click)="setTopic('all')">
-        All
-      </button>
-      <ng-container *ngFor="let t of topicChips">
-        <span class="qf-sep">·</span>
-        <button class="qf sub" [class.on]="activeTopic === t.key" (click)="setTopic(t.key)">
-          {{ t.label }}
+    the default view is one line and not two. -->
+    @if (topicChips.length) {
+      <nav class="quiet-filter sub-filter">
+        <button class="qf sub" [class.on]="activeTopic === 'all'" (click)="setTopic('all')">
+          All
         </button>
-      </ng-container>
-    </nav>
+        @for (t of topicChips; track t.key) {
+          <span class="qf-sep">·</span>
+          <button class="qf sub" [class.on]="activeTopic === t.key" (click)="setTopic(t.key)">
+            {{ t.label }}
+          </button>
+        }
+      </nav>
+    }
 
-    <p *ngIf="activeTopicBlurb" class="topic-blurb">{{ activeTopicBlurb }}</p>
+    @if (activeTopicBlurb) {
+      <p class="topic-blurb">{{ activeTopicBlurb }}</p>
+    }
 
-    <p *ngIf="isEmpty" class="no-results">{{ emptyStateMessage }}</p>
+    @if (isEmpty) {
+      <p class="no-results">{{ emptyStateMessage }}</p>
+    }
 
-    <ng-container *ngFor="let group of years; trackBy: trackByYear">
+    @for (group of years; track trackByYear($index, group)) {
       <div class="year"><span>{{ group.year }}</span><i></i></div>
-
-      <article
-        *ngFor="let post of group.posts; trackBy: trackByPost"
-        class="entry"
-        [class.planned]="post.planned"
-        [class.unreadable]="!post.link"
-        (click)="open(post)">
-
-        <div class="e-rail">
-          <span *ngIf="showDomainInRail" class="e-domain" [ngClass]="'d-' + post.domain">
-            {{ post.domainLabel }}
-          </span>
-          <span class="e-date">{{ post.published ? (post.published | date: 'MMM y') : '—' }}</span>
-          <span *ngIf="post.updatedNote" class="e-upd"
-            >upd. {{ post.updatedNote | date: 'MMM y' }}</span
-          >
-          <span class="e-lvl" [ngClass]="'c-' + post.level">
-            <span class="lvl-dot"></span>{{ post.levelShort }}
-          </span>
-        </div>
-
-        <div>
-          <h2 class="e-title">
-            {{ post.name }}
-            <span *ngIf="post.planned" class="e-planned">planned</span>
-          </h2>
-          <p class="e-desc">{{ post.desc }}</p>
-          <div class="e-foot">
-            <span class="e-topic">
-              {{ post.topicLabel }}<span *ngFor="let l of post.alsoLabels"> · {{ l }}</span>
-            </span>
-            <ng-container *ngIf="post.pages">
-              <span class="e-bar">|</span>
-              <span>{{ post.pages }} pp</span>
-              <span class="e-dot">·</span>
-              <span>~{{ post.readingMinutes }} min</span>
-            </ng-container>
-            <span class="e-arrow">
-              {{ post.link ? 'Read' : 'Not yet written' }}
-              <span *ngIf="post.link" class="arrow">→</span>
-            </span>
+      @for (post of group.posts; track trackByPost($index, post)) {
+        <article
+          class="entry"
+          [class.planned]="post.planned"
+          [class.unreadable]="!post.link"
+          (click)="open(post)">
+          <div class="e-rail">
+            @if (showDomainInRail) {
+              <span class="e-domain" [ngClass]="'d-' + post.domain">
+                {{ post.domainLabel }}
+              </span>
+            }
+            <span class="e-date">{{ post.published ? (post.published | date: 'MMM y') : '—' }}</span>
+            @if (post.updatedNote) {
+              <span class="e-upd"
+                >upd. {{ post.updatedNote | date: 'MMM y' }}</span
+                >
+              }
+              <span class="e-lvl" [ngClass]="'c-' + post.level">
+                <span class="lvl-dot"></span>{{ post.levelShort }}
+              </span>
+            </div>
+            <div>
+              <h2 class="e-title">
+                {{ post.name }}
+                @if (post.planned) {
+                  <span class="e-planned">planned</span>
+                }
+              </h2>
+              <p class="e-desc">{{ post.desc }}</p>
+              <div class="e-foot">
+                <span class="e-topic">
+                  {{ post.topicLabel }}@for (l of post.alsoLabels; track l) {
+                  <span> · {{ l }}</span>
+                }
+              </span>
+              @if (post.pages) {
+                <span class="e-bar">|</span>
+                <span>{{ post.pages }} pp</span>
+                <span class="e-dot">·</span>
+                <span>~{{ post.readingMinutes }} min</span>
+              }
+              <span class="e-arrow">
+                {{ post.link ? 'Read' : 'Not yet written' }}
+                @if (post.link) {
+                  <span class="arrow">→</span>
+                }
+              </span>
+            </div>
           </div>
-        </div>
-      </article>
-    </ng-container>
+        </article>
+      }
+    }
 
     <div style="padding-bottom: 7em;"></div>
 
     <!-- Password form overlay -->
-    <div *ngIf="showPasswordForm" class="password-overlay">
-      <input
-        type="password"
-        [(ngModel)]="passwordInput"
-        (keydown)="onPasswordKeydown($event)"
-        placeholder="password"
-        class="password-input"
-        autofocus
-      />
-      <button class="password-submit" (click)="submitPassword()">→</button>
-      <span *ngIf="authError" class="auth-error">incorrect</span>
-    </div>
+    @if (showPasswordForm) {
+      <div class="password-overlay">
+        <input
+          type="password"
+          [(ngModel)]="passwordInput"
+          (keydown)="onPasswordKeydown($event)"
+          placeholder="password"
+          class="password-input"
+          autofocus
+          />
+        <button class="password-submit" (click)="submitPassword()">→</button>
+        @if (authError) {
+          <span class="auth-error">incorrect</span>
+        }
+      </div>
+    }
 
     <!-- Lock button -->
     <div

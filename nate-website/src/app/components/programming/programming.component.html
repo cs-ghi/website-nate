@@ -1,94 +1,106 @@
 <div class="section-programming">
-    <div class="container">
-        <div class="page-heading">
-            <h1>Programming</h1>
-            <p class="sub">
-                NoetherVim and Neovim Plugins, AI, and CLI tools.
-            </p>
-            <mat-divider class="divider"></mat-divider>
-        </div>
-
-        <div class="programming-info intro">
-            <p>
-                Most of these grew out of my own Neovim<sup class="footnote-ref">1</sup> and mathematics workflow:
-                a Neovim distribution, a handful of quality-of-life plugins and
-                picker extensions, and the tooling that keeps my notes and this
-                site running. Everything can be found on GitHub:
-                <a href="https://github.com/Chiarandini"><strong>github.com/Chiarandini</strong></a>.
-            </p>
-            <p class="footnote">
-                <sup>1</sup> Neovim stands for
-                <a href="https://www.reddit.com/r/neovim/comments/1v3y3y6/full_legal_name/"
-                   target="_blank" rel="noopener">New Visual Extended Text Editor Improved</a>.
-            </p>
-            <p class="muted">Click a project for details, install, and (soon) demos.</p>
-        </div>
-
-        <!-- search + category filter -->
-        <div class="prog-controls">
-            <div class="prog-search">
-                <mat-icon class="search-icon">search</mat-icon>
-                <input
-                    type="text"
-                    class="prog-search-input"
-                    [(ngModel)]="query"
-                    placeholder="Search projects..."
-                    autocomplete="off"
-                />
-                <mat-icon *ngIf="query" class="clear-icon" (click)="clearSearch()">close</mat-icon>
-            </div>
-
-            <div class="prog-chips">
-                <button
-                    class="prog-chip"
-                    [class.active]="activeCategory === 'all'"
-                    (click)="setCategory('all')">
-                    All
-                </button>
-                <button
-                    *ngFor="let c of categories"
-                    class="prog-chip"
-                    [class.active]="activeCategory === c.key"
-                    (click)="setCategory(c.key)">
-                    {{ c.label }} <span class="chip-count">{{ countFor(c.key) }}</span>
-                </button>
-            </div>
-        </div>
-
-        <p *ngIf="!hasResults" class="no-results">No projects match "{{ query }}".</p>
-
-        <!-- one section per category -->
-        <section class="prog-group" *ngFor="let group of visibleGroups">
-            <div class="group-heading">
-                <h3>{{ group.meta.label }}</h3>
-                <span class="group-blurb">{{ group.meta.blurb }}</span>
-            </div>
-
-            <div class="prog-grid">
-                <article
-                    class="prog-card"
-                    *ngFor="let p of group.programs; trackBy: trackBySlug"
-                    (click)="openDetail(p)">
-                    <div class="card-top">
-                        <h4 class="card-name">{{ p.name }}</h4>
-                        <a
-                            *ngIf="p.repo"
-                            class="card-repo"
-                            (click)="openRepo(p, $event)"
-                            title="View on GitHub">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="card-tagline">{{ p.tagline }}</p>
-                    <div class="card-badges">
-                        <span class="badge" [ngClass]="'status-' + p.status">{{ p.status }}</span>
-                        <span class="badge lang" *ngIf="p.language">{{ p.language }}</span>
-                        <span class="badge eco" *ngIf="p.ecosystem">{{ p.ecosystem }}</span>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <div style="padding-bottom: 7em;"></div>
+  <div class="container">
+    <div class="page-heading">
+      <h1>Programming</h1>
+      <p class="sub">
+        NoetherVim and Neovim Plugins, AI, and CLI tools.
+      </p>
+      <mat-divider class="divider"></mat-divider>
     </div>
+
+    <div class="programming-info intro">
+      <p>
+        Most of these grew out of my own Neovim<sup class="footnote-ref">1</sup> and mathematics workflow:
+        a Neovim distribution, a handful of quality-of-life plugins and
+        picker extensions, and the tooling that keeps my notes and this
+        site running. Everything can be found on GitHub:
+        <a href="https://github.com/Chiarandini"><strong>github.com/Chiarandini</strong></a>.
+      </p>
+      <p class="footnote">
+        <sup>1</sup> Neovim stands for
+        <a href="https://www.reddit.com/r/neovim/comments/1v3y3y6/full_legal_name/"
+        target="_blank" rel="noopener">New Visual Extended Text Editor Improved</a>.
+      </p>
+      <p class="muted">Click a project for details, install, and (soon) demos.</p>
+    </div>
+
+    <!-- search + category filter -->
+    <div class="prog-controls">
+      <div class="prog-search">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input
+          type="text"
+          class="prog-search-input"
+          [(ngModel)]="query"
+          placeholder="Search projects..."
+          autocomplete="off"
+          />
+        @if (query) {
+          <mat-icon class="clear-icon" (click)="clearSearch()">close</mat-icon>
+        }
+      </div>
+
+      <div class="prog-chips">
+        <button
+          class="prog-chip"
+          [class.active]="activeCategory === 'all'"
+          (click)="setCategory('all')">
+          All
+        </button>
+        @for (c of categories; track c) {
+          <button
+            class="prog-chip"
+            [class.active]="activeCategory === c.key"
+            (click)="setCategory(c.key)">
+            {{ c.label }} <span class="chip-count">{{ countFor(c.key) }}</span>
+          </button>
+        }
+      </div>
+    </div>
+
+    @if (!hasResults) {
+      <p class="no-results">No projects match "{{ query }}".</p>
+    }
+
+    <!-- one section per category -->
+    @for (group of visibleGroups; track group.meta.key) {
+      <section class="prog-group">
+        <div class="group-heading">
+          <h3>{{ group.meta.label }}</h3>
+          <span class="group-blurb">{{ group.meta.blurb }}</span>
+        </div>
+        <div class="prog-grid">
+          @for (p of group.programs; track trackBySlug($index, p)) {
+            <article
+              class="prog-card"
+              (click)="openDetail(p)">
+              <div class="card-top">
+                <h4 class="card-name">{{ p.name }}</h4>
+                @if (p.repo) {
+                  <a
+                    class="card-repo"
+                    (click)="openRepo(p, $event)"
+                    title="View on GitHub">
+                    <i class="fa fa-github"></i>
+                  </a>
+                }
+              </div>
+              <p class="card-tagline">{{ p.tagline }}</p>
+              <div class="card-badges">
+                <span class="badge" [ngClass]="'status-' + p.status">{{ p.status }}</span>
+                @if (p.language) {
+                  <span class="badge lang">{{ p.language }}</span>
+                }
+                @if (p.ecosystem) {
+                  <span class="badge eco">{{ p.ecosystem }}</span>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      </section>
+    }
+
+    <div style="padding-bottom: 7em;"></div>
+  </div>
 </div>

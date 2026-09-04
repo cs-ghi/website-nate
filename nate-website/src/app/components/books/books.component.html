@@ -1,236 +1,270 @@
 <div class="section-books">
-    <div class="container">
-        <div class="page-heading"><h1>Textbooks</h1>
-            <p class="sub">
-                The Everything You Need To Know About (EYNTKA) series
-            </p>
-            <mat-divider class="divider"></mat-divider>
-        </div>
-            <div class=row class="books-info">
+  <div class="container">
+    <div class="page-heading"><h1>Textbooks</h1>
+    <p class="sub">
+      The Everything You Need To Know About (EYNTKA) series
+    </p>
+    <mat-divider class="divider"></mat-divider>
+  </div>
+  <div class=row class="books-info">
 
-                <p>
-                    I found that writing down what I learn as though I'm writing a textbook
-                    has been incredibly helpful in internalizing what I learn, and has
-                    produced these books as a by-product. They have become my foundations
-                    for finding references and interweaving interesting connections I found.
-                    I named my series of books "Everything You Need To Know About" (EYNTKA)
-                    as they contain what I believed was the "core" material for the subject
-                    matter, being limited in material by my time to write down results. I update my books
-                    on a regular basis with new information and fixes.
-                </p>
-                <div class="notes-toggle" (click)="toggleNotes()">
-                    <span class="expand-chevron" [class.expanded]="notesExpanded"></span>
-                    <span>Notes &amp; caveats</span>
-                </div>
-
-                <div class="notes-wrapper" [class.notes-open]="notesExpanded">
-                  <div class="notes-body">
-                    <ul>
-                        <li>
-                        None of these books would be considered "first edition"; there is
-                        a lack of exercises and often a lack of figures that I should draw.
-                    </li>
-                    <li>
-                        Unsurprisingly, I learn faster than I can write, so there
-                        are some gaps in the books where I decided I want to include material
-                        but have not had the time to fill it in. This is in line with the
-                        above comment that none of the books should be considered "first
-                        edition".
-                    </li>
-                    <li>
-                        I don't have books on the foundations of modern mathematics or
-                        calculus.
-                        There are many great books that cover the foundational material; three that come to
-                        mind are Brendan W. Sullivan's <a
-                        href="https://www.math.cmu.edu/~jmackey/151_128/bws_book.pdf">Everything
-                        You Always Wanted To Know About Mathematics</a> Shay Fuchs's <a
-                        href="https://www.cambridge.org/highereducation/books/introduction-to-proofs-and-proof-strategies/3E17FC9C3CA060246BF1B5476687AEB0#overview">Introduction
-                        to Proofs and Proof Strategies</a>, and Martin Liebecks <a
-                        href="https://archive.org/details/AConciseIntroductionToPureMathematicsThirdEditionPDFDrive.com/A%20Concise%20Introduction%20to%20Pure%20Mathematics%2C%20Third%20Edition%20%28%20PDFDrive.com%20%29/">a
-                        concise introduction to prue mathematics</a>. For calculus,
-                        there are so many options that it feels like an injustice to
-                        single one out, but if I had to explicitly recommend one, the one that
-                        I used most often when teaching calculus is <a
-                          href="https://www.stewartcalculus.com/">Stewart's calculus</a>. For algebra, I have some notes outlining the necessary material
-                        that can be found <a
-                          href="https://nathanaelsrawley.com/pdf-viewer?src=.%2F.%2Fassets%2Flatex%2Fnotes%2Fpreliminary_chapter%2Fpreliminary_chapter.pdf&name=Preliminary%20Chapter&source=notes">here</a>.
-                    </li>
-                    <li>
-                        As I have control over all of these books, I have the liberty to
-                        cross reference material between them. Due to this, the
-                        organization of the material is chosen to as best as possible fit
-                        a "narrative" that works well between the books. Checkout the <b><strong><a routerLink="/series-map"
-                       >series map</a></strong></b> to see which books depend on which.
-                    </li>
-                    <li>
-                        Some of these books have overlapping content as the material is
-                        worth having in both places for completion (ex. elliptic curves
-                        are covered in both EYNTKA Complex Analysis and
-                        Elliptic Curves, fundamental groups are in EYTNKA Topology and
-                        Algebraic Topology, Riemann Roch in Algebraic Geometry and Complex
-                        Geometry, Banach and Hilbert spaces in ETYNKA functional analysis
-                        and Real Analysis, etc.).
-                    </li>
-                    <li>
-                      On the other hand, since the EYNTKA series serves multiple disciplines of
-                      mathametics, I sometimes decide to have material at the lowest comon
-                      denominator of many books. For example, topological groups are covered in
-                      the foundational topology book as the material is important for analysis,
-                      representation theory, and geometry all at once.
-                    </li>
-                    <li>
-                        Disclaimer: apologies for any typos in the books! Feel free to
-                        send me any errata (see <b><strong><a routerLink="/contact"
-                       >contact</a></strong></b>).
-                    </li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-
-            <div class="row" class="books-info" style="padding-bottom: 4em;"> </div>
-
-            <div class="book-search">
-                <mat-icon class="search-icon">search</mat-icon>
-                <input
-                    #searchInput
-                    type="text"
-                    class="book-search-input"
-                    [(ngModel)]="searchQuery"
-                    (ngModelChange)="onSearchChange()"
-                    (focus)="onSearchFocus()"
-                    (blur)="searchFocused = false"
-                    (keydown)="onSearchKeydown($event)"
-                    placeholder="Search books...  ( / to focus · ↑ ↓ then ⏎ )"
-                    autocomplete="off"
-                />
-                <mat-icon *ngIf="searchQuery" class="clear-icon" (click)="clearSearch()">close</mat-icon>
-            </div>
-
-            <button class="result-search-hint" (click)="openResultSearch()"
-                    title="Search across every book for a specific definition or theorem">
-                <mat-icon>search</mat-icon>
-                <span>Search <strong>inside</strong> every book</span>
-                <span class="hint-keys"><kbd>{{ modKey }}</kbd><kbd>K</kbd></span>
-            </button>
-
-            <!-- Subject-topic filter chips -->
-            <div class="book-chips">
-                <button class="book-chip" [class.active]="activeSection === 'all'"
-                        (click)="selectSection('all')">All</button>
-                <button *ngFor="let c of sectionChips"
-                        class="book-chip"
-                        [class.active]="activeSection === c.key"
-                        (click)="selectSection(c.key)">
-                    {{ c.label }} <span class="chip-count">{{ countFor(c.key) }}</span>
-                </button>
-            </div>
-
-            <!-- Reading level (graph.json tiers), the second facet -->
-            <div class="level-chips">
-                <span class="level-caption">Level</span>
-                <button class="level-chip" [class.active]="activeTier === 'all'"
-                        (click)="selectTier('all')">All</button>
-                <button *ngFor="let t of tierChips"
-                        class="level-chip"
-                        [class.active]="activeTier === t.tier"
-                        (click)="selectTier(t.tier)">{{ t.label }}</button>
-            </div>
-
-            <p *ngIf="!filteredSections.length" class="no-results">
-                {{ emptyStateMessage }}
-            </p>
-
-            <!-- One book row; shared by a topic's own books and its cross-listings. -->
-            <ng-template #bookRows let-books let-cross="cross">
-                <div class="books-info book-row" *ngFor="let book of books"
-                     [class.cross-listed]="cross"
-                     [class.nav-highlighted]="searchFocused && book === highlightedItem">
-                    <div class="row flexx book-click" (click)="handleBookClick(book)">
-                        <div class="col-sm-3">
-                            <h4 [innerHtml]="book?.name"></h4>
-                            <div class="book-badges">
-                                <span *ngIf="book.status" class="badge"
-                                      [ngClass]="'status-' + book.status">
-                                    <span class="status-dot"></span>{{ book.status }}
-                                </span>
-                                <span *ngIf="book.tierLabel" class="badge tier">{{ book.tierLabel }}</span>
-                                <span *ngIf="book.volumeLabel" class="badge volume"
-                                      [title]="'Also compiled into the ' + book.volumeLabel + ' volume'">
-                                    in {{ book.volumeLabel }}
-                                </span>
-                                <span *ngIf="cross" class="badge cross">filed under {{ book.sectionLabel }}</span>
-                                <span *ngIf="book.lastUpdated" class="badge date">
-                                    Updated {{ book.lastUpdated | date:'MMM d, y' }}
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-sm-9">
-                            <p [innerHtml]="book?.desc"></p>
-                        </div>
-                    </div>
-                    <mat-divider class="divider-table"></mat-divider>
-                </div>
-            </ng-template>
-
-            <!-- One section per subject topic -->
-            <section class="book-section" *ngFor="let section of filteredSections">
-                <div class="section-heading">
-                    <h3>{{ section.label }}</h3>
-                    <span class="section-count">{{ section.books.length }}</span>
-                </div>
-                <p *ngIf="showAlso" class="section-blurb">{{ section.blurb }}</p>
-
-                <ng-container *ngTemplateOutlet="bookRows; context: { $implicit: section.books }"></ng-container>
-
-                <!-- Cross-listed: shelved under another subject, but this topic
-                     is a secondary one for them. Only worth showing once the
-                     reader has narrowed to a single topic. -->
-                <ng-container *ngIf="showAlso && section.alsoBooks.length">
-                    <div class="also-heading">
-                        <span>Also relevant</span>
-                        <span class="also-note">shelved under another subject</span>
-                    </div>
-                    <ng-container *ngTemplateOutlet="bookRows; context: { $implicit: section.alsoBooks, cross: true }"></ng-container>
-                </ng-container>
-            </section>
-        <!-- Admin: raw PDF listing (visible when authenticated) -->
-        <div *ngIf="isAuthenticated" class="raw-pdfs-section">
-            <mat-divider class="divider"></mat-divider>
-            <h3>Raw PDFs
-                <span *ngIf="isLoadingPdfs" class="loading-indicator"> loading...</span>
-            </h3>
-            <div class="raw-pdfs-grid">
-                <div *ngFor="let pdf of filteredRawPdfs" class="raw-pdf-item" (click)="openRawPdf(pdf)" title="{{ pdf.name }}">
-                    <mat-icon>picture_as_pdf</mat-icon>
-                    <span>{{ pdf.name }}</span>
-                </div>
-                <p *ngIf="searchQuery && !filteredRawPdfs.length && !isLoadingPdfs" class="no-results">
-                    No raw PDFs match "{{ searchQuery }}".
-                </p>
-            </div>
-        </div>
-
-        <div style="padding-bottom: 7em;"></div>
-
-        <!-- Password form overlay -->
-        <div *ngIf="showPasswordForm" class="password-overlay">
-            <input
-                type="password"
-                [(ngModel)]="passwordInput"
-                (keydown)="onPasswordKeydown($event)"
-                placeholder="password"
-                class="password-input"
-                autofocus
-            />
-            <button class="password-submit" (click)="submitPassword()">→</button>
-            <span *ngIf="authError" class="auth-error">incorrect</span>
-        </div>
-
-        <!-- Lock button -->
-        <div class="lock-button" (click)="toggleLock()" [title]="isAuthenticated ? 'lock' : 'unlock'">
-            <mat-icon>{{ isAuthenticated ? 'lock_open' : 'lock' }}</mat-icon>
-        </div>
-
+    <p>
+      I found that writing down what I learn as though I'm writing a textbook
+      has been incredibly helpful in internalizing what I learn, and has
+      produced these books as a by-product. They have become my foundations
+      for finding references and interweaving interesting connections I found.
+      I named my series of books "Everything You Need To Know About" (EYNTKA)
+      as they contain what I believed was the "core" material for the subject
+      matter, being limited in material by my time to write down results. I update my books
+      on a regular basis with new information and fixes.
+    </p>
+    <div class="notes-toggle" (click)="toggleNotes()">
+      <span class="expand-chevron" [class.expanded]="notesExpanded"></span>
+      <span>Notes &amp; caveats</span>
     </div>
+
+    <div class="notes-wrapper" [class.notes-open]="notesExpanded">
+      <div class="notes-body">
+        <ul>
+          <li>
+            None of these books would be considered "first edition"; there is
+            a lack of exercises and often a lack of figures that I should draw.
+          </li>
+          <li>
+            Unsurprisingly, I learn faster than I can write, so there
+            are some gaps in the books where I decided I want to include material
+            but have not had the time to fill it in. This is in line with the
+            above comment that none of the books should be considered "first
+            edition".
+          </li>
+          <li>
+            I don't have books on the foundations of modern mathematics or
+            calculus.
+            There are many great books that cover the foundational material; three that come to
+            mind are Brendan W. Sullivan's <a
+            href="https://www.math.cmu.edu/~jmackey/151_128/bws_book.pdf">Everything
+          You Always Wanted To Know About Mathematics</a> Shay Fuchs's <a
+          href="https://www.cambridge.org/highereducation/books/introduction-to-proofs-and-proof-strategies/3E17FC9C3CA060246BF1B5476687AEB0#overview">Introduction
+        to Proofs and Proof Strategies</a>, and Martin Liebecks <a
+        href="https://archive.org/details/AConciseIntroductionToPureMathematicsThirdEditionPDFDrive.com/A%20Concise%20Introduction%20to%20Pure%20Mathematics%2C%20Third%20Edition%20%28%20PDFDrive.com%20%29/">a
+      concise introduction to prue mathematics</a>. For calculus,
+      there are so many options that it feels like an injustice to
+      single one out, but if I had to explicitly recommend one, the one that
+      I used most often when teaching calculus is <a
+    href="https://www.stewartcalculus.com/">Stewart's calculus</a>. For algebra, I have some notes outlining the necessary material
+    that can be found <a
+  href="https://nathanaelsrawley.com/pdf-viewer?src=.%2F.%2Fassets%2Flatex%2Fnotes%2Fpreliminary_chapter%2Fpreliminary_chapter.pdf&name=Preliminary%20Chapter&source=notes">here</a>.
+</li>
+<li>
+  As I have control over all of these books, I have the liberty to
+  cross reference material between them. Due to this, the
+  organization of the material is chosen to as best as possible fit
+  a "narrative" that works well between the books. Checkout the <b><strong><a routerLink="/series-map"
+>series map</a></strong></b> to see which books depend on which.
+</li>
+<li>
+  Some of these books have overlapping content as the material is
+  worth having in both places for completion (ex. elliptic curves
+  are covered in both EYNTKA Complex Analysis and
+  Elliptic Curves, fundamental groups are in EYTNKA Topology and
+  Algebraic Topology, Riemann Roch in Algebraic Geometry and Complex
+  Geometry, Banach and Hilbert spaces in ETYNKA functional analysis
+  and Real Analysis, etc.).
+</li>
+<li>
+  On the other hand, since the EYNTKA series serves multiple disciplines of
+  mathametics, I sometimes decide to have material at the lowest comon
+  denominator of many books. For example, topological groups are covered in
+  the foundational topology book as the material is important for analysis,
+  representation theory, and geometry all at once.
+</li>
+<li>
+  Disclaimer: apologies for any typos in the books! Feel free to
+  send me any errata (see <b><strong><a routerLink="/contact"
+>contact</a></strong></b>).
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="row" class="books-info" style="padding-bottom: 4em;"> </div>
+
+<div class="book-search">
+  <mat-icon class="search-icon">search</mat-icon>
+  <input
+    #searchInput
+    type="text"
+    class="book-search-input"
+    [(ngModel)]="searchQuery"
+    (ngModelChange)="onSearchChange()"
+    (focus)="onSearchFocus()"
+    (blur)="searchFocused = false"
+    (keydown)="onSearchKeydown($event)"
+    placeholder="Search books...  ( / to focus · ↑ ↓ then ⏎ )"
+    autocomplete="off"
+    />
+  @if (searchQuery) {
+    <mat-icon class="clear-icon" (click)="clearSearch()">close</mat-icon>
+  }
+</div>
+
+<button class="result-search-hint" (click)="openResultSearch()"
+  title="Search across every book for a specific definition or theorem">
+  <mat-icon>search</mat-icon>
+  <span>Search <strong>inside</strong> every book</span>
+  <span class="hint-keys"><kbd>{{ modKey }}</kbd><kbd>K</kbd></span>
+</button>
+
+<!-- Subject-topic filter chips -->
+<div class="book-chips">
+  <button class="book-chip" [class.active]="activeSection === 'all'"
+  (click)="selectSection('all')">All</button>
+  @for (c of sectionChips; track c.key) {
+    <button
+      class="book-chip"
+      [class.active]="activeSection === c.key"
+      (click)="selectSection(c.key)">
+      {{ c.label }} <span class="chip-count">{{ countFor(c.key) }}</span>
+    </button>
+  }
+</div>
+
+<!-- Reading level (graph.json tiers), the second facet -->
+<div class="level-chips">
+  <span class="level-caption">Level</span>
+  <button class="level-chip" [class.active]="activeTier === 'all'"
+  (click)="selectTier('all')">All</button>
+  @for (t of tierChips; track t.tier) {
+    <button
+      class="level-chip"
+      [class.active]="activeTier === t.tier"
+    (click)="selectTier(t.tier)">{{ t.label }}</button>
+  }
+</div>
+
+@if (!filteredSections.length) {
+  <p class="no-results">
+    {{ emptyStateMessage }}
+  </p>
+}
+
+<!-- One book row; shared by a topic's own books and its cross-listings. -->
+<ng-template #bookRows let-books let-cross="cross">
+  @for (book of books; track book) {
+    <div class="books-info book-row"
+      [class.cross-listed]="cross"
+      [class.nav-highlighted]="searchFocused && book === highlightedItem">
+      <div class="row flexx book-click" (click)="handleBookClick(book)">
+        <div class="col-sm-3">
+          <h4 [innerHtml]="book?.name"></h4>
+          <div class="book-badges">
+            @if (book.status) {
+              <span class="badge"
+                [ngClass]="'status-' + book.status">
+                <span class="status-dot"></span>{{ book.status }}
+              </span>
+            }
+            @if (book.tierLabel) {
+              <span class="badge tier">{{ book.tierLabel }}</span>
+            }
+            @if (book.volumeLabel) {
+              <span class="badge volume"
+                [title]="'Also compiled into the ' + book.volumeLabel + ' volume'">
+                in {{ book.volumeLabel }}
+              </span>
+            }
+            @if (cross) {
+              <span class="badge cross">filed under {{ book.sectionLabel }}</span>
+            }
+            @if (book.lastUpdated) {
+              <span class="badge date">
+                Updated {{ book.lastUpdated | date:'MMM d, y' }}
+              </span>
+            }
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <p [innerHtml]="book?.desc"></p>
+        </div>
+      </div>
+      <mat-divider class="divider-table"></mat-divider>
+    </div>
+  }
+</ng-template>
+
+<!-- One section per subject topic -->
+@for (section of filteredSections; track section) {
+  <section class="book-section">
+    <div class="section-heading">
+      <h3>{{ section.label }}</h3>
+      <span class="section-count">{{ section.books.length }}</span>
+    </div>
+    @if (showAlso) {
+      <p class="section-blurb">{{ section.blurb }}</p>
+    }
+    <ng-container *ngTemplateOutlet="bookRows; context: { $implicit: section.books }"></ng-container>
+    <!-- Cross-listed: shelved under another subject, but this topic
+    is a secondary one for them. Only worth showing once the
+    reader has narrowed to a single topic. -->
+    @if (showAlso && section.alsoBooks.length) {
+      <div class="also-heading">
+        <span>Also relevant</span>
+        <span class="also-note">shelved under another subject</span>
+      </div>
+      <ng-container *ngTemplateOutlet="bookRows; context: { $implicit: section.alsoBooks, cross: true }"></ng-container>
+    }
+  </section>
+}
+<!-- Admin: raw PDF listing (visible when authenticated) -->
+@if (isAuthenticated) {
+  <div class="raw-pdfs-section">
+    <mat-divider class="divider"></mat-divider>
+    <h3>Raw PDFs
+      @if (isLoadingPdfs) {
+        <span class="loading-indicator"> loading...</span>
+      }
+    </h3>
+    <div class="raw-pdfs-grid">
+      @for (pdf of filteredRawPdfs; track pdf) {
+        <div class="raw-pdf-item" (click)="openRawPdf(pdf)" title="{{ pdf.name }}">
+          <mat-icon>picture_as_pdf</mat-icon>
+          <span>{{ pdf.name }}</span>
+        </div>
+      }
+      @if (searchQuery && !filteredRawPdfs.length && !isLoadingPdfs) {
+        <p class="no-results">
+          No raw PDFs match "{{ searchQuery }}".
+        </p>
+      }
+    </div>
+  </div>
+}
+
+<div style="padding-bottom: 7em;"></div>
+
+<!-- Password form overlay -->
+@if (showPasswordForm) {
+  <div class="password-overlay">
+    <input
+      type="password"
+      [(ngModel)]="passwordInput"
+      (keydown)="onPasswordKeydown($event)"
+      placeholder="password"
+      class="password-input"
+      autofocus
+      />
+    <button class="password-submit" (click)="submitPassword()">→</button>
+    @if (authError) {
+      <span class="auth-error">incorrect</span>
+    }
+  </div>
+}
+
+<!-- Lock button -->
+<div class="lock-button" (click)="toggleLock()" [title]="isAuthenticated ? 'lock' : 'unlock'">
+  <mat-icon>{{ isAuthenticated ? 'lock_open' : 'lock' }}</mat-icon>
+</div>
+
+</div>
 </div>

@@ -6,16 +6,18 @@
   </div>
 
   <!-- ── U of T intro (shown only when U of T syllabus is active) ── -->
-  <div class="uoft-intro" *ngIf="syllabus === 'uoft'">
-    <blockquote class="uoft-epigraph">
-      "It is not the accumulation of extraneous knowledge, but the realization of the self within, that constitutes true progress."
-      <cite>&mdash; Okakura Kakuzo</cite>
-    </blockquote>
-    <a href="https://judo.sa.utoronto.ca/syllabus/" target="_blank" rel="noopener" class="uoft-source-link">
-      <mat-icon>open_in_new</mat-icon>
-      View official U of T Judo syllabus
-    </a>
-  </div>
+  @if (syllabus === 'uoft') {
+    <div class="uoft-intro">
+      <blockquote class="uoft-epigraph">
+        "It is not the accumulation of extraneous knowledge, but the realization of the self within, that constitutes true progress."
+        <cite>&mdash; Okakura Kakuzo</cite>
+      </blockquote>
+      <a href="https://judo.sa.utoronto.ca/syllabus/" target="_blank" rel="noopener" class="uoft-source-link">
+        <mat-icon>open_in_new</mat-icon>
+        View official U of T Judo syllabus
+      </a>
+    </div>
+  }
 
   <!-- ── Vocabulary glossary ───────────────────────────────────────── -->
   <div class="glossary">
@@ -27,369 +29,421 @@
     <div class="glossary-body-wrapper" [class.glossary-open]="glossaryOpen">
       <div class="glossary-body">
         <div class="glossary-body-inner">
-        <div class="glossary-grid">
+          <div class="glossary-grid">
 
-          <div class="gloss-group">
-            <h4>立技 Tachi-waza &mdash; Standing Techniques</h4>
-            <dl>
-              <dt>手技 Te-waza</dt>
-              <dd>Hand techniques, throws executed primarily through arm and hand action, with minimal hip or leg involvement (e.g. Seoi Nage, Tai Otoshi).</dd>
-              <dt>腰技 Koshi-waza</dt>
-              <dd>Hip techniques, throws where tori's hip acts as the fulcrum to lift and project uke (e.g. Ogoshi, Harai Goshi).</dd>
-              <dt>足技 Ashi-waza</dt>
-              <dd>Foot &amp; leg techniques, throws driven by foot sweeps, reaps, or blocks (e.g. De Ashi Barai, Osoto Gari, Uchi Mata).</dd>
-              <dt>捨身技 Sutemi-waza</dt>
-              <dd>Sacrifice techniques, tori deliberately falls to the mat to execute the throw.
-                <em>Ma-sutemi-waza</em> (真捨身技) falls straight back; <em>Yoko-sutemi-waza</em> (横捨身技) falls to the side.</dd>
-              <dt>巻込技 Makikomi-waza</dt>
-              <dd>Winding techniques, tori wraps an arm around uke and falls with them, preventing uke from posting out (e.g. Kouchi Makikomi, Osoto Makikomi).</dd>
-            </dl>
-          </div>
+            <div class="gloss-group">
+              <h4>立技 Tachi-waza &mdash; Standing Techniques</h4>
+              <dl>
+                <dt>手技 Te-waza</dt>
+                <dd>Hand techniques, throws executed primarily through arm and hand action, with minimal hip or leg involvement (e.g. Seoi Nage, Tai Otoshi).</dd>
+                <dt>腰技 Koshi-waza</dt>
+                <dd>Hip techniques, throws where tori's hip acts as the fulcrum to lift and project uke (e.g. Ogoshi, Harai Goshi).</dd>
+                <dt>足技 Ashi-waza</dt>
+                <dd>Foot &amp; leg techniques, throws driven by foot sweeps, reaps, or blocks (e.g. De Ashi Barai, Osoto Gari, Uchi Mata).</dd>
+                <dt>捨身技 Sutemi-waza</dt>
+                <dd>Sacrifice techniques, tori deliberately falls to the mat to execute the throw.
+                  <em>Ma-sutemi-waza</em> (真捨身技) falls straight back; <em>Yoko-sutemi-waza</em> (横捨身技) falls to the side.</dd>
+                  <dt>巻込技 Makikomi-waza</dt>
+                  <dd>Winding techniques, tori wraps an arm around uke and falls with them, preventing uke from posting out (e.g. Kouchi Makikomi, Osoto Makikomi).</dd>
+                </dl>
+              </div>
 
-          <div class="gloss-group">
-            <h4>寝技 Ne-waza &mdash; Ground Techniques</h4>
-            <dl>
-              <dt>抑込技 Osaekomi-waza</dt>
-              <dd>Holding / pinning techniques, tori immobilizes uke on their back for a set duration. 10&ndash;19 s = Waza-ari; 20 s = Ippon.</dd>
-              <dt>絞技 Shime-waza</dt>
-              <dd>Strangling / choking techniques, compress the carotid arteries or windpipe to force a submission (e.g. Hadaka Jime, Okuri Eri Jime, Sangaku Jime).</dd>
-              <dt>関節技 Kansetsu-waza</dt>
-              <dd>Joint locking techniques, hyperextend or rotate a joint beyond its natural range to force a tap-out. In judo, only elbow locks are legal in competition (e.g. Juji Gatame, Ude Garami).</dd>
-            </dl>
-          </div>
+              <div class="gloss-group">
+                <h4>寝技 Ne-waza &mdash; Ground Techniques</h4>
+                <dl>
+                  <dt>抑込技 Osaekomi-waza</dt>
+                  <dd>Holding / pinning techniques, tori immobilizes uke on their back for a set duration. 10&ndash;19 s = Waza-ari; 20 s = Ippon.</dd>
+                  <dt>絞技 Shime-waza</dt>
+                  <dd>Strangling / choking techniques, compress the carotid arteries or windpipe to force a submission (e.g. Hadaka Jime, Okuri Eri Jime, Sangaku Jime).</dd>
+                  <dt>関節技 Kansetsu-waza</dt>
+                  <dd>Joint locking techniques, hyperextend or rotate a joint beyond its natural range to force a tap-out. In judo, only elbow locks are legal in competition (e.g. Juji Gatame, Ude Garami).</dd>
+                </dl>
+              </div>
 
-          <div class="gloss-group">
-            <h4>基礎 Kiso &mdash; Fundamentals</h4>
-            <dl>
-              <dt>受身 Ukemi</dt>
-              <dd>Breakfalling, the art of falling safely to avoid injury. The first and most essential skill in judo.</dd>
-              <dt>崩し Kuzushi</dt>
-              <dd>Off-balancing, disrupting uke's posture and balance before attempting a throw. Kuzushi → Tsukuri → Kake is the three-stage throw sequence.</dd>
-              <dt>作り Tsukuri</dt>
-              <dd>Fitting in, positioning and turning the body to set up the throw after kuzushi.</dd>
-              <dt>掛け Kake</dt>
-              <dd>Execution, the completion of the throw once in position.</dd>
-            </dl>
-          </div>
+              <div class="gloss-group">
+                <h4>基礎 Kiso &mdash; Fundamentals</h4>
+                <dl>
+                  <dt>受身 Ukemi</dt>
+                  <dd>Breakfalling, the art of falling safely to avoid injury. The first and most essential skill in judo.</dd>
+                  <dt>崩し Kuzushi</dt>
+                  <dd>Off-balancing, disrupting uke's posture and balance before attempting a throw. Kuzushi → Tsukuri → Kake is the three-stage throw sequence.</dd>
+                  <dt>作り Tsukuri</dt>
+                  <dd>Fitting in, positioning and turning the body to set up the throw after kuzushi.</dd>
+                  <dt>掛け Kake</dt>
+                  <dd>Execution, the completion of the throw once in position.</dd>
+                </dl>
+              </div>
 
-          <div class="gloss-group">
-            <h4>General Terms</h4>
-            <dl>
-              <dt>取 Tori</dt>
-              <dd>The person performing the technique.</dd>
-              <dt>受 Uke</dt>
-              <dd>The person receiving the technique.</dd>
-              <dt>乱取 Randori</dt>
-              <dd>Free practice, both partners attempt techniques against each other without a fixed script.</dd>
-              <dt>形 Kata</dt>
-              <dd>Formal pre-arranged forms performed with a partner, demonstrating the principles of judo technique with precision and control.</dd>
-              <dt>道場 Dojo</dt>
-              <dd>Training hall. Literally "place of the way."</dd>
-              <dt>礼 Rei</dt>
-              <dd>Bow, a sign of respect performed when entering/leaving the dojo and before/after every match or drill.</dd>
-            </dl>
-          </div>
+              <div class="gloss-group">
+                <h4>General Terms</h4>
+                <dl>
+                  <dt>取 Tori</dt>
+                  <dd>The person performing the technique.</dd>
+                  <dt>受 Uke</dt>
+                  <dd>The person receiving the technique.</dd>
+                  <dt>乱取 Randori</dt>
+                  <dd>Free practice, both partners attempt techniques against each other without a fixed script.</dd>
+                  <dt>形 Kata</dt>
+                  <dd>Formal pre-arranged forms performed with a partner, demonstrating the principles of judo technique with precision and control.</dd>
+                  <dt>道場 Dojo</dt>
+                  <dd>Training hall. Literally "place of the way."</dd>
+                  <dt>礼 Rei</dt>
+                  <dd>Bow, a sign of respect performed when entering/leaving the dojo and before/after every match or drill.</dd>
+                </dl>
+              </div>
 
+            </div>
+          </div><!-- /glossary-body-inner -->
         </div>
-        </div><!-- /glossary-body-inner -->
       </div>
     </div>
-  </div>
 
-  <!-- ── Controls bar, collapses on scroll down ───────────────────── -->
-  <div class="controls-wrapper" [class.controls-collapsed]="controlsCollapsed" [class.controls-at-top]="atTop">
-    <div class="controls-inner">
+    <!-- ── Controls bar, collapses on scroll down ───────────────────── -->
+    <div class="controls-wrapper" [class.controls-collapsed]="controlsCollapsed" [class.controls-at-top]="atTop">
+      <div class="controls-inner">
 
-      <div class="ctrl-group ctrl-group--search">
-        <label class="ctrl-label">Search</label>
-        <input type="text" class="ctrl-input"
-               [(ngModel)]="searchQuery" (ngModelChange)="filter()"
-               placeholder="Technique name, kanji, English…">
-      </div>
-
-      <div class="ctrl-group" *ngIf="showBeltFilter">
-        <label class="ctrl-label">Belt</label>
-        <div class="ctrl-select-wrap">
-          <mat-select [(ngModel)]="selectedBelt" (ngModelChange)="filter()" [panelClass]="'judo-panel'">
-            <mat-option *ngFor="let b of beltOptions" [value]="b.value">{{ b.label }}</mat-option>
-          </mat-select>
+        <div class="ctrl-group ctrl-group--search">
+          <label class="ctrl-label">Search</label>
+          <input type="text" class="ctrl-input"
+            [(ngModel)]="searchQuery" (ngModelChange)="filter()"
+            placeholder="Technique name, kanji, English…">
         </div>
-      </div>
 
-      <div class="ctrl-group">
-        <label class="ctrl-label">Category</label>
-        <div class="ctrl-select-wrap">
-          <mat-select [(ngModel)]="selectedCategory" (ngModelChange)="filter()" [panelClass]="'judo-panel'">
-            <mat-option *ngFor="let c of categoryOptions" [value]="c.value">{{ c.label }}</mat-option>
-          </mat-select>
+        @if (showBeltFilter) {
+          <div class="ctrl-group">
+            <label class="ctrl-label">Belt</label>
+            <div class="ctrl-select-wrap">
+              <mat-select [(ngModel)]="selectedBelt" (ngModelChange)="filter()" [panelClass]="'judo-panel'">
+                @for (b of beltOptions; track b) {
+                  <mat-option [value]="b.value">{{ b.label }}</mat-option>
+                }
+              </mat-select>
+            </div>
+          </div>
+        }
+
+        <div class="ctrl-group">
+          <label class="ctrl-label">Category</label>
+          <div class="ctrl-select-wrap">
+            <mat-select [(ngModel)]="selectedCategory" (ngModelChange)="filter()" [panelClass]="'judo-panel'">
+              @for (c of categoryOptions; track c) {
+                <mat-option [value]="c.value">{{ c.label }}</mat-option>
+              }
+            </mat-select>
+          </div>
         </div>
-      </div>
 
-      <div class="ctrl-group">
-        <label class="ctrl-label">Syllabus</label>
-        <div class="ctrl-select-wrap">
-          <mat-select [(ngModel)]="syllabus" (ngModelChange)="onSyllabusChange()" [panelClass]="'judo-panel'">
-            <mat-option *ngFor="let s of syllabusOptions" [value]="s.value"
-                        [disabled]="s.disabled">{{ s.label }}</mat-option>
-          </mat-select>
+        <div class="ctrl-group">
+          <label class="ctrl-label">Syllabus</label>
+          <div class="ctrl-select-wrap">
+            <mat-select [(ngModel)]="syllabus" (ngModelChange)="onSyllabusChange()" [panelClass]="'judo-panel'">
+              @for (s of syllabusOptions; track s) {
+                <mat-option [value]="s.value"
+                [disabled]="s.disabled">{{ s.label }}</mat-option>
+              }
+            </mat-select>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
 
-  <div class="results-row">
-    <p class="results-count">
-      {{ filteredTechniques.length }} technique<span *ngIf="filteredTechniques.length !== 1">s</span>
+    <div class="results-row">
+      <p class="results-count">
+        {{ filteredTechniques.length }} technique@if (filteredTechniques.length !== 1) {
+        <span>s</span>
+      }
     </p>
-    <button class="clear-btn" *ngIf="hasActiveFilters" (click)="clearFilters()">
-      <mat-icon>close</mat-icon>
-      Clear filters
-    </button>
+    @if (hasActiveFilters) {
+      <button class="clear-btn" (click)="clearFilters()">
+        <mat-icon>close</mat-icon>
+        Clear filters
+      </button>
+    }
   </div>
 
   <!-- ── Cards grid ─────────────────────────────────────────────────── -->
   <div class="techniques-grid">
-    <div class="technique-card" *ngFor="let t of filteredTechniques" (click)="openModal(t)">
-
-      <div class="media">
-        <!-- Inline YouTube player -->
-        <ng-container *ngIf="t.youtube_id">
-          <iframe *ngIf="playingCardId === t.youtube_id"
-                  [src]="'https://www.youtube.com/embed/' + t.youtube_id + '?autoplay=1' | safe"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  (click)="$event.stopPropagation()">
-          </iframe>
-          <div *ngIf="playingCardId !== t.youtube_id" class="thumb-wrap" (click)="playCard(t.youtube_id, $event)">
-            <img [src]="'https://img.youtube.com/vi/' + t.youtube_id + '/mqdefault.jpg'"
-                 [alt]="t.title_romaji + ' demonstration'">
-            <div class="play-btn">&#9654;</div>
+    @for (t of filteredTechniques; track t) {
+      <div class="technique-card" (click)="openModal(t)">
+        <div class="media">
+          <!-- Inline YouTube player -->
+          @if (t.youtube_id) {
+            @if (playingCardId === t.youtube_id) {
+              <iframe
+                [src]="'https://www.youtube.com/embed/' + t.youtube_id + '?autoplay=1' | safe"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                (click)="$event.stopPropagation()">
+              </iframe>
+            }
+            @if (playingCardId !== t.youtube_id) {
+              <div class="thumb-wrap" (click)="playCard(t.youtube_id, $event)">
+                <img [src]="'https://img.youtube.com/vi/' + t.youtube_id + '/mqdefault.jpg'"
+                  [alt]="t.title_romaji + ' demonstration'">
+                <div class="play-btn">&#9654;</div>
+              </div>
+            }
+          }
+          @if (!t.youtube_id) {
+            <div class="media-placeholder">
+              <mat-icon>videocam_off</mat-icon>
+              <span>No video yet</span>
+            </div>
+          }
+        </div>
+        <div class="card-body">
+          <h3 class="romaji">{{ t.title_romaji }}</h3>
+          <span class="kanji">{{ t.title_kanji }}</span>
+          <p class="english">{{ t.title_en }}</p>
+          <div class="badges">
+            <span class="badge belt-badge belt-{{ t.belt_requirement }}">{{ t.belt_requirement }}</span>
+            <span class="badge sub-badge">{{ t.sub_category }}</span>
+            @if (t.is_kata) {
+              <span class="badge kata-badge">kata</span>
+            }
+            @if (t.is_theory) {
+              <span class="badge theory-badge">theory</span>
+            }
           </div>
-        </ng-container>
-        <div *ngIf="!t.youtube_id" class="media-placeholder">
-          <mat-icon>videocam_off</mat-icon>
-          <span>No video yet</span>
+          <div class="card-actions">
+            <button class="icon-btn bookmark-btn"
+              (click)="toggleBookmark(t, $event)"
+              [title]="isBookmarked(t) ? 'Remove from study deck' : 'Add to study deck'">
+              <mat-icon>{{ isBookmarked(t) ? 'bookmark' : 'bookmark_border' }}</mat-icon>
+            </button>
+            <span class="expand-hint">
+              <mat-icon>open_in_full</mat-icon>
+            </span>
+          </div>
         </div>
       </div>
-
-      <div class="card-body">
-        <h3 class="romaji">{{ t.title_romaji }}</h3>
-        <span class="kanji">{{ t.title_kanji }}</span>
-        <p class="english">{{ t.title_en }}</p>
-
-        <div class="badges">
-          <span class="badge belt-badge belt-{{ t.belt_requirement }}">{{ t.belt_requirement }}</span>
-          <span class="badge sub-badge">{{ t.sub_category }}</span>
-          <span class="badge kata-badge" *ngIf="t.is_kata">kata</span>
-          <span class="badge theory-badge" *ngIf="t.is_theory">theory</span>
-        </div>
-
-        <div class="card-actions">
-          <button class="icon-btn bookmark-btn"
-                  (click)="toggleBookmark(t, $event)"
-                  [title]="isBookmarked(t) ? 'Remove from study deck' : 'Add to study deck'">
-            <mat-icon>{{ isBookmarked(t) ? 'bookmark' : 'bookmark_border' }}</mat-icon>
-          </button>
-          <span class="expand-hint">
-            <mat-icon>open_in_full</mat-icon>
-          </span>
-        </div>
-      </div>
-    </div>
+    }
   </div>
 
   <!-- No results -->
-  <div class="no-results" *ngIf="filteredTechniques.length === 0">
-    <mat-icon>search_off</mat-icon>
-    <p>No techniques match your filters.</p>
-    <button (click)="clearFilters()">
-      Clear filters
-    </button>
-  </div>
+  @if (filteredTechniques.length === 0) {
+    <div class="no-results">
+      <mat-icon>search_off</mat-icon>
+      <p>No techniques match your filters.</p>
+      <button (click)="clearFilters()">
+        Clear filters
+      </button>
+    </div>
+  }
 
   <!-- Study FAB -->
-  <div class="study-fab-group" *ngIf="bookmarked.size > 0">
-    <button class="study-fab" (click)="startStudy()">
-      <mat-icon>school</mat-icon>
-      Study {{ bookmarked.size }} {{ bookmarked.size === 1 ? 'technique' : 'techniques' }}
-    </button>
-    <button class="study-fab-clear" (click)="bookmarked.clear()" title="Clear all selected">
-      <mat-icon>close</mat-icon>
-    </button>
-  </div>
+  @if (bookmarked.size > 0) {
+    <div class="study-fab-group">
+      <button class="study-fab" (click)="startStudy()">
+        <mat-icon>school</mat-icon>
+        Study {{ bookmarked.size }} {{ bookmarked.size === 1 ? 'technique' : 'techniques' }}
+      </button>
+      <button class="study-fab-clear" (click)="bookmarked.clear()" title="Clear all selected">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  }
 
 </div>
 
 <!-- ── MODAL ──────────────────────────────────────────────────────── -->
-<div class="modal-overlay" *ngIf="selectedTechnique" (click)="closeModal()">
-  <div class="modal-panel" (click)="$event.stopPropagation()">
-
-    <button class="modal-close" (click)="closeModal()" title="Close (Esc)">
-      <mat-icon>close</mat-icon>
-    </button>
-
-    <!-- Modal header -->
-    <div class="modal-header">
-      <div class="modal-titles">
-        <h2 class="modal-romaji">{{ selectedTechnique.title_romaji }}</h2>
-        <span class="modal-kanji">{{ selectedTechnique.title_kanji }}</span>
-        <p class="modal-english">{{ selectedTechnique.title_en }}</p>
+@if (selectedTechnique) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-panel" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()" title="Close (Esc)">
+        <mat-icon>close</mat-icon>
+      </button>
+      <!-- Modal header -->
+      <div class="modal-header">
+        <div class="modal-titles">
+          <h2 class="modal-romaji">{{ selectedTechnique.title_romaji }}</h2>
+          <span class="modal-kanji">{{ selectedTechnique.title_kanji }}</span>
+          <p class="modal-english">{{ selectedTechnique.title_en }}</p>
+        </div>
+        <div class="modal-badges">
+          <span class="badge belt-badge belt-{{ selectedTechnique.belt_requirement }}">
+            {{ selectedTechnique.belt_requirement }}
+          </span>
+          <span class="badge sub-badge">{{ selectedTechnique.sub_category }}</span>
+          @if (selectedTechnique.is_kata) {
+            <span class="badge kata-badge">kata</span>
+          }
+          @if (selectedTechnique.is_theory) {
+            <span class="badge theory-badge">theory</span>
+          }
+        </div>
       </div>
-      <div class="modal-badges">
-        <span class="badge belt-badge belt-{{ selectedTechnique.belt_requirement }}">
-          {{ selectedTechnique.belt_requirement }}
-        </span>
-        <span class="badge sub-badge">{{ selectedTechnique.sub_category }}</span>
-        <span class="badge kata-badge" *ngIf="selectedTechnique.is_kata">kata</span>
-        <span class="badge theory-badge" *ngIf="selectedTechnique.is_theory">theory</span>
-      </div>
-    </div>
-
-    <!-- Video, inline embed in modal -->
-    <div class="modal-media" *ngIf="selectedTechnique.youtube_id">
-      <iframe *ngIf="modalVideoPlaying"
+      <!-- Video, inline embed in modal -->
+      @if (selectedTechnique.youtube_id) {
+        <div class="modal-media">
+          @if (modalVideoPlaying) {
+            <iframe
               [src]="'https://www.youtube.com/embed/' + selectedTechnique.youtube_id + '?autoplay=1' | safe"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
-      </iframe>
-      <div *ngIf="!modalVideoPlaying" class="modal-thumb-wrap" (click)="modalVideoPlaying = true">
-        <img [src]="'https://img.youtube.com/vi/' + selectedTechnique.youtube_id + '/hqdefault.jpg'"
-             [alt]="selectedTechnique.title_romaji">
-        <div class="modal-play-btn">&#9654;</div>
-      </div>
+            </iframe>
+          }
+          @if (!modalVideoPlaying) {
+            <div class="modal-thumb-wrap" (click)="modalVideoPlaying = true">
+              <img [src]="'https://img.youtube.com/vi/' + selectedTechnique.youtube_id + '/hqdefault.jpg'"
+                [alt]="selectedTechnique.title_romaji">
+              <div class="modal-play-btn">&#9654;</div>
+            </div>
+          }
+        </div>
+      }
+      @if (!selectedTechnique.youtube_id) {
+        <div class="modal-media modal-video-placeholder">
+          <mat-icon>smart_display</mat-icon>
+          <span>No video linked yet</span>
+        </div>
+      }
+      <!-- Description -->
+      @if (selectedTechnique.description) {
+        <div class="modal-section">
+          <h4 class="section-title">Overview</h4>
+          <p class="modal-description">{{ selectedTechnique.description }}</p>
+        </div>
+      }
+      <!-- Key points -->
+      @if (selectedTechnique.key_points && selectedTechnique.key_points.length) {
+        <div class="modal-section">
+          <h4 class="section-title">Key Points</h4>
+          <ul class="key-points-list">
+            @for (point of selectedTechnique.key_points; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        </div>
+      }
+      <!-- Kata forms -->
+      @if (selectedTechnique.kata_forms && selectedTechnique.kata_forms.length) {
+        <div class="modal-section">
+          <h4 class="section-title">Required Forms</h4>
+          <ul class="kata-forms-list">
+            @for (form of selectedTechnique.kata_forms; track form) {
+              <li>{{ form }}</li>
+            }
+          </ul>
+        </div>
+      }
+      @if (selectedTechnique.official_url) {
+        <div class="modal-footer">
+          <a [href]="selectedTechnique.official_url" target="_blank" rel="noopener" class="official-link-btn">
+            <mat-icon>open_in_new</mat-icon>
+            Official Reference
+          </a>
+        </div>
+      }
     </div>
-    <div class="modal-media modal-video-placeholder" *ngIf="!selectedTechnique.youtube_id">
-      <mat-icon>smart_display</mat-icon>
-      <span>No video linked yet</span>
-    </div>
-
-    <!-- Description -->
-    <div class="modal-section" *ngIf="selectedTechnique.description">
-      <h4 class="section-title">Overview</h4>
-      <p class="modal-description">{{ selectedTechnique.description }}</p>
-    </div>
-
-    <!-- Key points -->
-    <div class="modal-section" *ngIf="selectedTechnique.key_points && selectedTechnique.key_points.length">
-      <h4 class="section-title">Key Points</h4>
-      <ul class="key-points-list">
-        <li *ngFor="let point of selectedTechnique.key_points">{{ point }}</li>
-      </ul>
-    </div>
-
-    <!-- Kata forms -->
-    <div class="modal-section" *ngIf="selectedTechnique.kata_forms && selectedTechnique.kata_forms.length">
-      <h4 class="section-title">Required Forms</h4>
-      <ul class="kata-forms-list">
-        <li *ngFor="let form of selectedTechnique.kata_forms">{{ form }}</li>
-      </ul>
-    </div>
-
-    <div class="modal-footer" *ngIf="selectedTechnique.official_url">
-      <a [href]="selectedTechnique.official_url" target="_blank" rel="noopener" class="official-link-btn">
-        <mat-icon>open_in_new</mat-icon>
-        Official Reference
-      </a>
-    </div>
-
   </div>
-</div>
+}
 
 <!-- ── STUDY MODE OVERLAY ────────────────────────────────────────── -->
-<div class="study-overlay" *ngIf="studyMode">
-
-  <!-- Header -->
-  <div class="study-header">
-    <button class="study-exit" (click)="exitStudy()">
-      <mat-icon>close</mat-icon>
-      Exit
-    </button>
-    <div class="study-progress-wrap">
-      <div class="study-progress-bar">
-        <div class="study-progress-fill"
-             [style.width.%]="((deckIndex + 1) / studyDeck.length) * 100">
+@if (studyMode) {
+  <div class="study-overlay">
+    <!-- Header -->
+    <div class="study-header">
+      <button class="study-exit" (click)="exitStudy()">
+        <mat-icon>close</mat-icon>
+        Exit
+      </button>
+      <div class="study-progress-wrap">
+        <div class="study-progress-bar">
+          <div class="study-progress-fill"
+            [style.width.%]="((deckIndex + 1) / studyDeck.length) * 100">
+          </div>
         </div>
+        <span class="study-counter">{{ deckIndex + 1 }} / {{ studyDeck.length }}</span>
       </div>
-      <span class="study-counter">{{ deckIndex + 1 }} / {{ studyDeck.length }}</span>
     </div>
-  </div>
-
-  <!-- Card area -->
-  <div class="study-area">
-    <div class="study-card-wrap"
-         (click)="flipCard()"
-         (touchstart)="onTouchStart($event)"
-         (touchend)="onTouchEnd($event)">
-
-      <div class="study-card" [class.flipped]="cardFlipped">
-
-        <!-- Front: kanji prompt -->
-        <div class="study-face card-front">
-          <div class="sf-badges">
-            <span class="badge sub-badge">{{ studyDeck[deckIndex].sub_category }}</span>
-            <span class="badge belt-badge belt-{{ studyDeck[deckIndex].belt_requirement }}"
-                  *ngIf="studyDeck[deckIndex].belt_requirement">
-              {{ studyDeck[deckIndex].belt_requirement }}
-            </span>
-          </div>
-          <div class="sf-kanji">{{ studyDeck[deckIndex].title_kanji }}</div>
-          <div class="sf-romaji">{{ studyDeck[deckIndex].title_romaji }}</div>
-          <div class="sf-hint">
-            <mat-icon>touch_app</mat-icon>
-            Tap to reveal &nbsp;·&nbsp; Swipe to navigate
-          </div>
-        </div>
-
-        <!-- Back: answer + details -->
-        <div class="study-face card-back">
-          <div class="sb-inner">
-            <div class="sb-badges">
+    <!-- Card area -->
+    <div class="study-area">
+      <div class="study-card-wrap"
+        (click)="flipCard()"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)">
+        <div class="study-card" [class.flipped]="cardFlipped">
+          <!-- Front: kanji prompt -->
+          <div class="study-face card-front">
+            <div class="sf-badges">
               <span class="badge sub-badge">{{ studyDeck[deckIndex].sub_category }}</span>
-              <span class="badge belt-badge belt-{{ studyDeck[deckIndex].belt_requirement }}"
-                    *ngIf="studyDeck[deckIndex].belt_requirement">
-                {{ studyDeck[deckIndex].belt_requirement }}
-              </span>
+              @if (studyDeck[deckIndex].belt_requirement) {
+                <span class="badge belt-badge belt-{{ studyDeck[deckIndex].belt_requirement }}"
+                  >
+                  {{ studyDeck[deckIndex].belt_requirement }}
+                </span>
+              }
             </div>
-            <h2 class="sb-title-en">{{ studyDeck[deckIndex].title_en }}</h2>
-            <p class="sb-romaji">{{ studyDeck[deckIndex].title_romaji }} &nbsp;·&nbsp; {{ studyDeck[deckIndex].title_kanji }}</p>
-            <p class="sb-description" *ngIf="studyDeck[deckIndex].description">
-              {{ studyDeck[deckIndex].description }}
-            </p>
-            <ul class="sb-key-points" *ngIf="studyDeck[deckIndex].key_points?.length">
-              <li *ngFor="let kp of studyDeck[deckIndex].key_points">{{ kp }}</li>
-            </ul>
-            <div *ngIf="studyDeck[deckIndex].youtube_id" class="sb-video" (click)="$event.stopPropagation()">
-              <iframe *ngIf="studyVideoPlaying"
+            <div class="sf-kanji">{{ studyDeck[deckIndex].title_kanji }}</div>
+            <div class="sf-romaji">{{ studyDeck[deckIndex].title_romaji }}</div>
+            <div class="sf-hint">
+              <mat-icon>touch_app</mat-icon>
+              Tap to reveal &nbsp;·&nbsp; Swipe to navigate
+            </div>
+          </div>
+          <!-- Back: answer + details -->
+          <div class="study-face card-back">
+            <div class="sb-inner">
+              <div class="sb-badges">
+                <span class="badge sub-badge">{{ studyDeck[deckIndex].sub_category }}</span>
+                @if (studyDeck[deckIndex].belt_requirement) {
+                  <span class="badge belt-badge belt-{{ studyDeck[deckIndex].belt_requirement }}"
+                    >
+                    {{ studyDeck[deckIndex].belt_requirement }}
+                  </span>
+                }
+              </div>
+              <h2 class="sb-title-en">{{ studyDeck[deckIndex].title_en }}</h2>
+              <p class="sb-romaji">{{ studyDeck[deckIndex].title_romaji }} &nbsp;·&nbsp; {{ studyDeck[deckIndex].title_kanji }}</p>
+              @if (studyDeck[deckIndex].description) {
+                <p class="sb-description">
+                  {{ studyDeck[deckIndex].description }}
+                </p>
+              }
+              @if (studyDeck[deckIndex].key_points?.length) {
+                <ul class="sb-key-points">
+                  @for (kp of studyDeck[deckIndex].key_points; track kp) {
+                    <li>{{ kp }}</li>
+                  }
+                </ul>
+              }
+              @if (studyDeck[deckIndex].youtube_id) {
+                <div class="sb-video" (click)="$event.stopPropagation()">
+                  @if (studyVideoPlaying) {
+                    <iframe
                       [src]="'https://www.youtube.com/embed/' + studyDeck[deckIndex].youtube_id + '?autoplay=1' | safe"
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowfullscreen>
-              </iframe>
-              <div *ngIf="!studyVideoPlaying" class="sb-thumb-wrap" (click)="studyVideoPlaying = true">
-                <img [src]="'https://img.youtube.com/vi/' + studyDeck[deckIndex].youtube_id + '/mqdefault.jpg'"
-                     [alt]="studyDeck[deckIndex].title_romaji">
-                <div class="sb-play-btn">&#9654;</div>
-              </div>
+                    </iframe>
+                  }
+                  @if (!studyVideoPlaying) {
+                    <div class="sb-thumb-wrap" (click)="studyVideoPlaying = true">
+                      <img [src]="'https://img.youtube.com/vi/' + studyDeck[deckIndex].youtube_id + '/mqdefault.jpg'"
+                        [alt]="studyDeck[deckIndex].title_romaji">
+                      <div class="sb-play-btn">&#9654;</div>
+                    </div>
+                  }
+                </div>
+              }
             </div>
           </div>
         </div>
-
       </div>
     </div>
+    <!-- Footer nav -->
+    <div class="study-footer">
+      <button class="study-nav-btn" (click)="prevCard()" [disabled]="deckIndex === 0">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <span class="study-flip-hint">Space / tap to flip</span>
+      <button class="study-nav-btn" (click)="nextCard()" [disabled]="deckIndex === studyDeck.length - 1">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
   </div>
-
-  <!-- Footer nav -->
-  <div class="study-footer">
-    <button class="study-nav-btn" (click)="prevCard()" [disabled]="deckIndex === 0">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-    <span class="study-flip-hint">Space / tap to flip</span>
-    <button class="study-nav-btn" (click)="nextCard()" [disabled]="deckIndex === studyDeck.length - 1">
-      <mat-icon>arrow_forward</mat-icon>
-    </button>
-  </div>
-
-</div>
+}

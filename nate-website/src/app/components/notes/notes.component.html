@@ -1,31 +1,33 @@
 <div class="section-notes">
-    <div class="container">
-        <div class="page-heading"><h1>Notes</h1>
-            <p class="sub">
-                Class notes, write-ups, and translations.
-            </p>
-            <mat-divider class="divider"></mat-divider>
+  <div class="container">
+    <div class="page-heading"><h1>Notes</h1>
+    <p class="sub">
+      Class notes, write-ups, and translations.
+    </p>
+    <mat-divider class="divider"></mat-divider>
+  </div>
+  <div class=row class="notes-info">
+    <p class="disclaimer">
+      Apologies for any typos in the notes — feel free to send me
+      any corrections.
+    </p>
+  </div>
+
+  <div class="row" class="notes-info" style="padding-bottom: 4em;"> </div>
+  @for (note of notes; track note) {
+    <div class="notes-info">
+      <div class="row flexx">
+        <div class="col-sm-3 note-link" (click)="viewPdf(note)">
+          <h4 [innerHtml]="note?.name"></h4>
         </div>
-            <div class=row class="notes-info">
-                <p class="disclaimer">
-                    Apologies for any typos in the notes — feel free to send me
-                    any corrections.
-                </p>
-            </div>
-
-            <div class="row" class="notes-info" style="padding-bottom: 4em;"> </div>
-            <div class="notes-info" *ngFor="let note of notes">
-                <div class="row flexx">
-                        <div class="col-sm-3 note-link" (click)="viewPdf(note)">
-                            <h4 [innerHtml]="note?.name"></h4>
-                        </div>
-                    <div class="col-sm-9" >
-                        <p [innerHtml]="note?.desc"></p>
-                    </div>
-                </div>
-                <mat-divider class="divider-table"></mat-divider>
-            </div>
-        <div style="padding-bottom: 7em;"></div>
-
+        <div class="col-sm-9" >
+          <p [innerHtml]="note?.desc"></p>
+        </div>
+      </div>
+      <mat-divider class="divider-table"></mat-divider>
     </div>
+  }
+  <div style="padding-bottom: 7em;"></div>
+
+</div>
 </div>

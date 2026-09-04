@@ -1,108 +1,136 @@
-<div class="section-paper-detail" *ngIf="paper as p">
-  <div class="container">
-
-    <a class="back-link" (click)="back()">← Papers</a>
-
-    <header class="paper-hero">
-      <h1>{{ p.title }}</h1>
-      <p class="authors">{{ p.authors.join(', ') }}</p>
-
-      <div class="hero-badges">
-        <span class="badge" [ngClass]="'st-' + p.status">{{ p.statusLabel }}</span>
-        <span class="badge kind">{{ p.kindLabel }}</span>
-        <span class="badge plain" *ngIf="p.arxiv?.primaryClass">{{ p.arxiv?.primaryClass }}</span>
-        <span class="badge plain" *ngFor="let c of p.arxiv?.crossLists">{{ c }}</span>
-        <span class="badge plain" *ngFor="let m of p.msc">MSC {{ m }}</span>
-      </div>
-
-      <div class="hero-actions">
-        <button class="action primary" (click)="read()">Read PDF</button>
-        <a
-          *ngIf="p.arxivAbsUrl"
-          class="action"
-          [href]="p.arxivAbsUrl"
-          target="_blank"
-          rel="noopener">
-          arXiv abstract
-        </a>
-        <a
-          *ngIf="p.arxivPdfUrl"
-          class="action"
-          [href]="p.arxivPdfUrl"
-          target="_blank"
-          rel="noopener">
-          arXiv PDF
-        </a>
-        <a
-          *ngIf="p.venue?.doi as doi"
-          class="action"
-          [href]="'https://doi.org/' + doi"
-          target="_blank"
-          rel="noopener">
-          DOI
-        </a>
-        <a *ngIf="p.code" class="action" [href]="p.code" target="_blank" rel="noopener">Code</a>
-      </div>
-
-      <p class="hero-facts">
-        <span *ngIf="p.pages">{{ p.pages }} pp</span>
-        <span *ngIf="p.pages" class="dot">·</span>
-        <span>{{ p.current.label }}, typeset {{ p.compiled | date: 'MMM y' }}</span>
-        <ng-container *ngIf="p.venue as v">
-          <span class="dot">·</span>
-          <span>{{ v.name }}<span *ngIf="v.volume"> {{ v.volume }}</span><span *ngIf="v.pages">, {{ v.pages }}</span></span>
-        </ng-container>
-      </p>
-    </header>
-
-    <section class="block">
-      <h2>Abstract</h2>
-      <div class="abstract">
-        <app-math-text [text]="p.abstract"></app-math-text>
-      </div>
-    </section>
-
-    <!-- Only meaningful once there is something to compare against. -->
-    <section class="block" *ngIf="p.versions.length > 1">
-      <h2>Versions</h2>
-      <table class="versions">
-        <tr *ngFor="let v of p.versions">
-          <td class="v-label">{{ v.label }}</td>
-          <td class="v-date">{{ v.date | date: 'd MMM y' }}</td>
-          <td class="v-note">{{ v.note }}</td>
-        </tr>
-      </table>
-    </section>
-
-    <section class="block" *ngIf="p.keywords?.length">
-      <h2>Keywords</h2>
-      <div class="keywords">
-        <span class="keyword" *ngFor="let k of p.keywords">{{ k }}</span>
-      </div>
-    </section>
-
-    <section class="block">
-      <h2>
-        Cite
-        <button class="copy-btn" (click)="copyBibtex()">{{ copied ? 'Copied' : 'Copy' }}</button>
-      </h2>
-      <pre class="bibtex">{{ p.bibtex }}</pre>
-      <p class="cite-note" *ngIf="!p.arxiv">
-        This entry becomes an arXiv citation the moment the paper is posted — the
-        eprint fields are generated from the record, not typed here.
-      </p>
-    </section>
-
-    <section class="block" *ngIf="p.relatedNotes?.length">
-      <h2>Related reading</h2>
-      <ul class="related">
-        <li *ngFor="let r of p.relatedNotes">
-          <a *ngIf="r.route" [routerLink]="r.route">{{ r.label }}</a>
-          <a *ngIf="r.href" [href]="r.href" target="_blank" rel="noopener">{{ r.label }}</a>
-        </li>
-      </ul>
-    </section>
-
-    <div style="padding-bottom: 7em;"></div>
+@if (paper; as p) {
+  <div class="section-paper-detail">
+    <div class="container">
+      <a class="back-link" (click)="back()">← Papers</a>
+      <header class="paper-hero">
+        <h1>{{ p.title }}</h1>
+        <p class="authors">{{ p.authors.join(', ') }}</p>
+        <div class="hero-badges">
+          <span class="badge" [ngClass]="'st-' + p.status">{{ p.statusLabel }}</span>
+          <span class="badge kind">{{ p.kindLabel }}</span>
+          @if (p.arxiv?.primaryClass) {
+            <span class="badge plain">{{ p.arxiv?.primaryClass }}</span>
+          }
+          @for (c of p.arxiv?.crossLists; track c) {
+            <span class="badge plain">{{ c }}</span>
+          }
+          @for (m of p.msc; track m) {
+            <span class="badge plain">MSC {{ m }}</span>
+          }
+        </div>
+        <div class="hero-actions">
+          <button class="action primary" (click)="read()">Read PDF</button>
+          @if (p.arxivAbsUrl) {
+            <a
+              class="action"
+              [href]="p.arxivAbsUrl"
+              target="_blank"
+              rel="noopener">
+              arXiv abstract
+            </a>
+          }
+          @if (p.arxivPdfUrl) {
+            <a
+              class="action"
+              [href]="p.arxivPdfUrl"
+              target="_blank"
+              rel="noopener">
+              arXiv PDF
+            </a>
+          }
+          @if (p.venue?.doi; as doi) {
+            <a
+              class="action"
+              [href]="'https://doi.org/' + doi"
+              target="_blank"
+              rel="noopener">
+              DOI
+            </a>
+          }
+          @if (p.code) {
+            <a class="action" [href]="p.code" target="_blank" rel="noopener">Code</a>
+          }
+        </div>
+        <p class="hero-facts">
+          @if (p.pages) {
+            <span>{{ p.pages }} pp</span>
+          }
+          @if (p.pages) {
+            <span class="dot">·</span>
+          }
+          <span>{{ p.current.label }}, typeset {{ p.compiled | date: 'MMM y' }}</span>
+          @if (p.venue; as v) {
+            <span class="dot">·</span>
+            <span>{{ v.name }}@if (v.volume) {
+              <span> {{ v.volume }}</span>
+              }@if (v.pages) {
+              <span>, {{ v.pages }}</span>
+            }</span>
+          }
+        </p>
+      </header>
+      <section class="block">
+        <h2>Abstract</h2>
+        <div class="abstract">
+          <app-math-text [text]="p.abstract"></app-math-text>
+        </div>
+      </section>
+      <!-- Only meaningful once there is something to compare against. -->
+      @if (p.versions.length > 1) {
+        <section class="block">
+          <h2>Versions</h2>
+          <table class="versions">
+            @for (v of p.versions; track v) {
+              <tr>
+                <td class="v-label">{{ v.label }}</td>
+                <td class="v-date">{{ v.date | date: 'd MMM y' }}</td>
+                <td class="v-note">{{ v.note }}</td>
+              </tr>
+            }
+          </table>
+        </section>
+      }
+      @if (p.keywords?.length) {
+        <section class="block">
+          <h2>Keywords</h2>
+          <div class="keywords">
+            @for (k of p.keywords; track k) {
+              <span class="keyword">{{ k }}</span>
+            }
+          </div>
+        </section>
+      }
+      <section class="block">
+        <h2>
+          Cite
+          <button class="copy-btn" (click)="copyBibtex()">{{ copied ? 'Copied' : 'Copy' }}</button>
+        </h2>
+        <pre class="bibtex">{{ p.bibtex }}</pre>
+        @if (!p.arxiv) {
+          <p class="cite-note">
+            This entry becomes an arXiv citation the moment the paper is posted — the
+            eprint fields are generated from the record, not typed here.
+          </p>
+        }
+      </section>
+      @if (p.relatedNotes?.length) {
+        <section class="block">
+          <h2>Related reading</h2>
+          <ul class="related">
+            @for (r of p.relatedNotes; track r) {
+              <li>
+                @if (r.route) {
+                  <a [routerLink]="r.route">{{ r.label }}</a>
+                }
+                @if (r.href) {
+                  <a [href]="r.href" target="_blank" rel="noopener">{{ r.label }}</a>
+                }
+              </li>
+            }
+          </ul>
+        </section>
+      }
+      <div style="padding-bottom: 7em;"></div>
+    </div>
   </div>
-</div>
+}

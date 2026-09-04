@@ -8,25 +8,30 @@
   </div>
 
   <div class="viewer-body">
-    <div *ngIf="isLoading && !hasError" class="loading-spinner">
-      <p>Loading book…</p>
+    @if (isLoading && !hasError) {
+      <div class="loading-spinner">
+        <p>Loading book…</p>
+      </div>
+    }
+
+    @if (hasError) {
+      <div class="error-message">
+        <p>Could not load <strong>{{ bookName }}</strong>.</p>
+        <p class="error-hint">The HTML version of this book may not have been built yet.<br>
+          Run <code>python build.py &lt;book-dir&gt;</code> to generate it.</p>
+          <button (click)="goBack()">Back to Books</button>
+        </div>
+      }
+
+      @if (bookSrc && !hasError) {
+        <iframe
+          [src]="bookSrc"
+          class="book-iframe"
+          [title]="bookName"
+          (load)="onLoad()"
+          (error)="onError()">
+        </iframe>
+      }
     </div>
 
-    <div *ngIf="hasError" class="error-message">
-      <p>Could not load <strong>{{ bookName }}</strong>.</p>
-      <p class="error-hint">The HTML version of this book may not have been built yet.<br>
-        Run <code>python build.py &lt;book-dir&gt;</code> to generate it.</p>
-      <button (click)="goBack()">Back to Books</button>
-    </div>
-
-    <iframe
-      *ngIf="bookSrc && !hasError"
-      [src]="bookSrc"
-      class="book-iframe"
-      [title]="bookName"
-      (load)="onLoad()"
-      (error)="onError()">
-    </iframe>
   </div>
-
-</div>
