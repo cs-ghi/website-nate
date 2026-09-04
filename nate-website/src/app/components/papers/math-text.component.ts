@@ -31,10 +31,10 @@ const escapeHtml = (s: string): string =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 @Component({
-  selector: 'app-math-text',
-  template: `<span class="math-text" [innerHTML]="html"></span>`,
-  styles: [
-    `
+    selector: 'app-math-text',
+    template: `<span class="math-text" [innerHTML]="html"></span>`,
+    styles: [
+        `
       .math-text {
         display: inline;
       }
@@ -44,7 +44,8 @@ const escapeHtml = (s: string): string =>
         margin: 1.1em 0;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class MathTextComponent implements OnChanges {
   @Input() text = '';

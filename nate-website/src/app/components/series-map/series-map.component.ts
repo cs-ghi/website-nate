@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
  * viewer's dependencies, it only points an iframe at the static bundle.
  */
 @Component({
-  selector: 'app-series-map',
-  templateUrl: './series-map.component.html',
-  styleUrls: ['./series-map.component.scss'],
+    selector: 'app-series-map',
+    templateUrl: './series-map.component.html',
+    styleUrls: ['./series-map.component.scss'],
+    standalone: false
 })
 export class SeriesMapComponent {
   // ?mode=site applies the embedded styling (stronger WIP treatment, etc.).

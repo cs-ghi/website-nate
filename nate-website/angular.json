@@ -96,10 +96,10 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "testing:build:production"
+              "buildTarget": "testing:build:production"
             },
             "development": {
-              "browserTarget": "testing:build:development"
+              "buildTarget": "testing:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -4,9 +4,10 @@ import { Location } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-html-book-viewer',
-  templateUrl: './html-book-viewer.component.html',
-  styleUrls: ['./html-book-viewer.component.scss']
+    selector: 'app-html-book-viewer',
+    templateUrl: './html-book-viewer.component.html',
+    styleUrls: ['./html-book-viewer.component.scss'],
+    standalone: false
 })
 export class HtmlBookViewerComponent implements OnInit {
   bookSrc: SafeResourceUrl | null = null;

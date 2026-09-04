@@ -376,9 +376,10 @@ export const programmingArray: Program[] = [
 ];
 
 @Component({
-  selector: 'app-programming',
-  templateUrl: './programming.component.html',
-  styleUrls: ['./programming.component.scss'],
+    selector: 'app-programming',
+    templateUrl: './programming.component.html',
+    styleUrls: ['./programming.component.scss'],
+    standalone: false
 })
 export class ProgrammingComponent {
   readonly categories: CategoryMeta[] = CATEGORY_ORDER;

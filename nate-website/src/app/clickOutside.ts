@@ -13,7 +13,8 @@ import { filter } from 'rxjs/internal/operators/filter';
 
 @Directive({
     selector: '[clickOutside]',
-  })
+    standalone: false
+})
   export class ClickOutsideDirective implements AfterViewInit, OnDestroy {
     @Output() clickOutside = new EventEmitter<void>();
   

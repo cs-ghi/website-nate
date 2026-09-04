@@ -21,9 +21,10 @@ const OUTLINE_TRANSITION_MS = 220;
 const OUTLINE_OPEN_KEY = 'reader.outline.open';
 
 @Component({
-  selector: 'app-pdf-viewer',
-  templateUrl: './pdf-viewer.component.html',
-  styleUrls: ['./pdf-viewer.component.scss']
+    selector: 'app-pdf-viewer',
+    templateUrl: './pdf-viewer.component.html',
+    styleUrls: ['./pdf-viewer.component.scss'],
+    standalone: false
 })
 export class PdfViewerComponent implements OnInit, OnDestroy {
   @ViewChild(PdfDocumentComponent) private doc?: PdfDocumentComponent;

@@ -12,9 +12,10 @@ const TYPE_ABBR: Record<string, string> = {
 };
 
 @Component({
-  selector: 'app-command-palette',
-  templateUrl: './command-palette.component.html',
-  styleUrls: ['./command-palette.component.scss'],
+    selector: 'app-command-palette',
+    templateUrl: './command-palette.component.html',
+    styleUrls: ['./command-palette.component.scss'],
+    standalone: false
 })
 export class CommandPaletteComponent {
   @ViewChild('input') input?: ElementRef<HTMLInputElement>;

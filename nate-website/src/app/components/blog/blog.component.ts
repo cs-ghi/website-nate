@@ -31,9 +31,10 @@ export interface BlogYear {
 }
 
 @Component({
-  selector: 'app-blogs',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss'],
+    selector: 'app-blogs',
+    templateUrl: './blog.component.html',
+    styleUrls: ['./blog.component.scss'],
+    standalone: false
 })
 export class BlogComponent implements OnInit {
   private allPosts: BlogPost[] = [];

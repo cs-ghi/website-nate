@@ -22,16 +22,17 @@ const H_PADDING = 0;
 // place, reporting the current page, and resolving outline/link destinations to
 // an exact position rather than to the top of a page.
 @Component({
-  selector: 'app-pdf-document',
-  template: `
+    selector: 'app-pdf-document',
+    template: `
     <div class="pdf-document" #container>
       <div class="pdfViewer"></div>
     </div>
   `,
-  styleUrls: ['./pdf-document.component.scss'],
-  // pdf.js creates the page elements itself, so they can't carry Angular's
-  // per-component attribute.
-  encapsulation: ViewEncapsulation.None,
+    styleUrls: ['./pdf-document.component.scss'],
+    // pdf.js creates the page elements itself, so they can't carry Angular's
+    // per-component attribute.
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class PdfDocumentComponent implements AfterViewInit, OnChanges, OnDestroy {
   @ViewChild('container', { static: true }) private containerRef!: ElementRef<HTMLDivElement>;

@@ -4,26 +4,27 @@ import { AudioService } from '../../services/audio.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
-  selector: 'app-dictionary',
-  templateUrl: './dictionary.component.html',
-  styleUrls: ['./dictionary.component.scss'],
-  animations: [
-    trigger('fadeInOut', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-10px)', maxHeight: '0px', marginBottom: '0' }),
-        animate('400ms ease-out', style({ opacity: 1, transform: 'translateY(0)', maxHeight: '500px', marginBottom: '1.5rem' }))
-      ]),
-      transition(':leave', [
-        animate('400ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)', maxHeight: '0px', marginBottom: '0' }))
-      ])
-    ]),
-    trigger('slideIn', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(20px)' }),
-        animate('500ms 200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-      ])
-    ])
-  ]
+    selector: 'app-dictionary',
+    templateUrl: './dictionary.component.html',
+    styleUrls: ['./dictionary.component.scss'],
+    animations: [
+        trigger('fadeInOut', [
+            transition(':enter', [
+                style({ opacity: 0, transform: 'translateY(-10px)', maxHeight: '0px', marginBottom: '0' }),
+                animate('400ms ease-out', style({ opacity: 1, transform: 'translateY(0)', maxHeight: '500px', marginBottom: '1.5rem' }))
+            ]),
+            transition(':leave', [
+                animate('400ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)', maxHeight: '0px', marginBottom: '0' }))
+            ])
+        ]),
+        trigger('slideIn', [
+            transition(':enter', [
+                style({ opacity: 0, transform: 'translateY(20px)' }),
+                animate('500ms 200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+            ])
+        ])
+    ],
+    standalone: false
 })
 export class DictionaryComponent implements OnInit {
   searchQuery = '';

@@ -29,9 +29,10 @@ const MAX_FILTER_RESULTS = 60;
 // reader is currently in. Knows nothing about how the page is rendered or
 // scrolled — it emits a physical page number and the host viewer navigates.
 @Component({
-  selector: 'app-pdf-outline',
-  templateUrl: './pdf-outline.component.html',
-  styleUrls: ['./pdf-outline.component.scss'],
+    selector: 'app-pdf-outline',
+    templateUrl: './pdf-outline.component.html',
+    styleUrls: ['./pdf-outline.component.scss'],
+    standalone: false
 })
 export class PdfOutlineComponent implements OnChanges {
   // The loaded PDFDocumentProxy; setting it rebuilds the tree.

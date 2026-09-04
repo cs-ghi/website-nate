@@ -4,9 +4,10 @@ import { Program, STATUS_LABEL } from 'src/app/interfaces/programming.model';
 import { programmingArray } from './programming.component';
 
 @Component({
-  selector: 'app-programming-detail',
-  templateUrl: './programming-detail.component.html',
-  styleUrls: ['./programming-detail.component.scss'],
+    selector: 'app-programming-detail',
+    templateUrl: './programming-detail.component.html',
+    styleUrls: ['./programming-detail.component.scss'],
+    standalone: false
 })
 export class ProgrammingDetailComponent implements OnInit {
   program?: Program;

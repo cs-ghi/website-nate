@@ -4,9 +4,10 @@ import { KODOKAN_TECHNIQUES } from './kodokan.data';
 import { UOFT_TECHNIQUES } from './uoft.data';
 
 @Component({
-  selector: 'app-judo',
-  templateUrl: './judo.component.html',
-  styleUrls: ['./judo.component.scss']
+    selector: 'app-judo',
+    templateUrl: './judo.component.html',
+    styleUrls: ['./judo.component.scss'],
+    standalone: false
 })
 export class JudoComponent implements OnInit {
 

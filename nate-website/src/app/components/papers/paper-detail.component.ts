@@ -5,9 +5,10 @@ import { HOST_LABEL, Paper } from 'src/app/interfaces/papers.model';
 import { PaperCatalogService } from 'src/app/services/paper-catalog.service';
 
 @Component({
-  selector: 'app-paper-detail',
-  templateUrl: './paper-detail.component.html',
-  styleUrls: ['./paper-detail.component.scss'],
+    selector: 'app-paper-detail',
+    templateUrl: './paper-detail.component.html',
+    styleUrls: ['./paper-detail.component.scss'],
+    standalone: false
 })
 export class PaperDetailComponent implements OnInit {
   paper?: Paper;
