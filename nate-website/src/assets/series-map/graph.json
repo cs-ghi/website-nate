@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-09-02",
+    "generated": "2026-09-04",
     "bookCount": 48,
-    "edgeCount": 428,
+    "edgeCount": 434,
     "clashCounts": {
       "error": 0,
       "warn": 4,
@@ -1920,6 +1920,15 @@
     },
     {
       "source": "NateCFT",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "class-field-theory/EYNTKA-class-field-theory.tex"
+      ]
+    },
+    {
+      "source": "NateCFT",
       "target": "NateEllipticCurves",
       "type": "reference",
       "provenance": "auto",
@@ -3170,6 +3179,15 @@
       ]
     },
     {
+      "source": "NateEtaleCohomology",
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex"
+      ]
+    },
+    {
       "source": "NateFuncAnalysis",
       "target": "NateComplexAnalysis",
       "type": "prereq",
@@ -3533,6 +3551,15 @@
         "hodge-theory/drafts/scratch/ch09-s03.tex",
         "hodge-theory/drafts/scratch/ch10-s01.tex",
         "hodge-theory/drafts/scratch/ch10-s02.tex"
+      ]
+    },
+    {
+      "source": "NateHodgeTheory",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4038,7 +4065,8 @@
       "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
-        "langlands-gl2/drafts/scratch/ch10-s02.tex"
+        "langlands-gl2/drafts/scratch/ch10-s02.tex",
+        "langlands-gl2/drafts/scratch/ch11-s03.tex"
       ]
     },
     {
@@ -4053,7 +4081,8 @@
         "langlands-gl2/drafts/scratch/ch08-s05.tex",
         "langlands-gl2/drafts/scratch/ch09-s01.tex",
         "langlands-gl2/drafts/scratch/ch09-s02.tex",
-        "langlands-gl2/drafts/scratch/ch09-s03.tex"
+        "langlands-gl2/drafts/scratch/ch09-s03.tex",
+        "langlands-gl2/drafts/scratch/ch11-s01.tex"
       ]
     },
     {
@@ -4062,7 +4091,10 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "langlands-gl2/EYNTKA-langlands-gl2.tex"
+        "langlands-gl2/EYNTKA-langlands-gl2.tex",
+        "langlands-gl2/drafts/scratch/ch11-s01.tex",
+        "langlands-gl2/drafts/scratch/ch11-s02.tex",
+        "langlands-gl2/drafts/scratch/ch11-s03.tex"
       ]
     },
     {
@@ -4072,7 +4104,8 @@
       "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
-        "langlands-gl2/drafts/scratch/ch08-s02.tex"
+        "langlands-gl2/drafts/scratch/ch08-s02.tex",
+        "langlands-gl2/drafts/scratch/ch11-s03.tex"
       ]
     },
     {
@@ -4109,7 +4142,9 @@
       "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
-        "langlands-gl2/drafts/scratch/ch09-s02.tex"
+        "langlands-gl2/drafts/scratch/ch09-s02.tex",
+        "langlands-gl2/drafts/scratch/ch11-s01.tex",
+        "langlands-gl2/drafts/scratch/ch11-s03.tex"
       ]
     },
     {
@@ -4128,6 +4163,16 @@
       "provenance": "both",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex"
+      ]
+    },
+    {
+      "source": "NateLanglandsGL2",
+      "target": "NateLocalFieldTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "langlands-gl2/EYNTKA-langlands-gl2.tex",
+        "langlands-gl2/drafts/scratch/ch11-s03.tex"
       ]
     },
     {
@@ -4314,8 +4359,8 @@
     {
       "source": "NateLinAlg",
       "target": "NateComplexAnalysis",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "linear-algebra/EYNTKA-linear-algebra.tex",
         "linear-algebra/drafts/consolidated/ch04-s01.tex"
@@ -4345,6 +4390,15 @@
     },
     {
       "source": "NateLinAlg",
+      "target": "NateCoreProbability",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
       "target": "NateCStarAlgebras",
       "type": "reference",
       "provenance": "auto",
@@ -4366,8 +4420,8 @@
     {
       "source": "NateLinAlg",
       "target": "NateElemAnalysis",
-      "type": "reference",
-      "provenance": "auto",
+      "type": "coreq",
+      "provenance": "both",
       "citedIn": [
         "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
@@ -4739,6 +4793,15 @@
     },
     {
       "source": "NateModuliStacks",
+      "target": "NateAbelianVarieties",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/drafts/picard-section.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
       "target": "NateAlgGeo",
       "type": "prereq",
       "provenance": "both",
@@ -4781,6 +4844,7 @@
       "provenance": "both",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
+        "moduli-stacks/drafts/picard-section.tex",
         "moduli-stacks/drafts/scratch/ch04-s01.tex",
         "moduli-stacks/drafts/scratch/ch04-s04.tex",
         "moduli-stacks/drafts/scratch/ch05-s03.tex",
@@ -4863,6 +4927,7 @@
       "provenance": "both",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
+        "moduli-stacks/drafts/picard-section.tex",
         "moduli-stacks/drafts/scratch/ch02-s04.tex",
         "moduli-stacks/drafts/scratch/ch04-s04.tex",
         "moduli-stacks/drafts/scratch/ch05-s02.tex",

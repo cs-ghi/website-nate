@@ -1,8 +1,24 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { PdfViewerComponent as Ng2PdfViewer } from 'ng2-pdf-viewer';
 import { BookIndexService } from '../../services/book-index.service';
+import { PdfOutlineComponent } from '../shared/pdf-outline.component';
 import { LEGACY_PDF_REDIRECTS } from '../papers/papers';
+
+// Below this width the outline overlays the page instead of pushing it aside.
+// Single source of truth — the outline component keys off the `drawer` input
+// this drives, not a parallel media query that can drift out of step.
+const OUTLINE_DRAWER_MAX_WIDTH = 1100;
+
+// Keep in step with the panel's width/transform transition in the stylesheet;
+// the PDF is re-scaled once the panel has finished taking its width.
+const OUTLINE_TRANSITION_MS = 220;
+
+// Whether the panel is open persists across books and reloads; which nodes are
+// expanded deliberately does not, since the tree re-expands around wherever the
+// reader currently is, which is more useful than restoring a stale shape.
+const OUTLINE_OPEN_KEY = 'reader.outline.open';
 
 @Component({
   selector: 'app-pdf-viewer',
@@ -11,6 +27,8 @@ import { LEGACY_PDF_REDIRECTS } from '../papers/papers';
 })
 export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('pdfViewer', { static: false }) pdfViewer!: ElementRef;
+  @ViewChild(Ng2PdfViewer) private ng2Viewer?: Ng2PdfViewer;
+  @ViewChild(PdfOutlineComponent) private outline?: PdfOutlineComponent;
 
   // Rotation handling: track the page at the top of the viewport so we can
   // restore it after ng2-pdf-viewer re-renders at the new width.
@@ -27,11 +45,18 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   backButtonText: string = 'Back to Books';
   returnText: string = 'Return to Books';
 
-  // Outline properties
-  showOutline: boolean = false;
+  // Outline. The panel itself is <app-pdf-outline>; the viewer owns only whether
+  // it is open, and hands it the document plus the reader's current page.
+  showOutline: boolean = localStorage.getItem(OUTLINE_OPEN_KEY) === '1';
   hasOutline: boolean = false;
-  pdfOutline: any[] = [];
-  private pdfDocument: any;
+  /** The loaded PDFDocumentProxy; bound into the outline. */
+  pdfDocument: any = null;
+  /** The PDF's own page labels, when it has any: physical index -> printed number. */
+  private pageLabels: string[] | null = null;
+
+  // Drives the push-vs-drawer layout. Kept as a field rather than read from
+  // `window` in a getter, which the template would re-run every change detection.
+  viewportWidth: number = window.innerWidth;
 
   // Deep-link target from the URL: a stable result label (?loc=df:topSp) and/or
   // an explicit page (?page=8). `loc` wins — it's resolved against the shipped
@@ -65,22 +90,42 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   // Keyboard shortcut listener
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent): void {
-    // Check for Ctrl+Shift+T (or Cmd+Shift+T on Mac)
-    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === 't') {
-      // Only trigger if we have an outline and the component is active
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+
+    // Never steal a keystroke the reader meant for a text field.
+    const el = event.target as HTMLElement | null;
+    if (el?.tagName === 'INPUT' || el?.tagName === 'TEXTAREA') return;
+
+    // `t` toggles the contents. Deliberately not Ctrl/Cmd+Shift+T: that is
+    // "reopen last closed tab" in Chrome, Firefox and Safari and is not
+    // suppressible by preventDefault, so the old binding fired the browser's
+    // action too.
+    if (event.key === 't' || event.key === 'T') {
       if (this.hasOutline) {
-        event.preventDefault(); // Prevent browser default behavior
+        event.preventDefault();
         this.toggleOutline();
-        console.log('Table of contents toggled via keyboard shortcut');
       }
       return;
     }
 
-    // In single-page mode, ←/→ (and PageUp/PageDown) flip pages — unless the
-    // user is typing in a field (e.g. the page-number input).
-    if (!this.showAll && !event.metaKey && !event.ctrlKey && !event.altKey) {
-      const el = event.target as HTMLElement | null;
-      if (el?.tagName === 'INPUT' || el?.tagName === 'TEXTAREA') return;
+    // `/` opens the contents and puts the caret in its filter.
+    if (event.key === '/') {
+      if (this.hasOutline) {
+        event.preventDefault();
+        if (!this.showOutline) this.openOutline();
+        this.outline?.focusFilter();
+      }
+      return;
+    }
+
+    if (event.key === 'Escape' && this.showOutline) {
+      event.preventDefault();
+      this.closeOutline();
+      return;
+    }
+
+    // In single-page mode, ←/→ (and PageUp/PageDown) flip pages.
+    if (!this.showAll) {
       if (event.key === 'ArrowRight' || event.key === 'PageDown') {
         event.preventDefault(); this.nextPage();
       } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
@@ -130,6 +175,11 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
         this.totalPages = 0;
         this.isLoading = true;
         this.showAll = true;
+        // Clearing the document resets <app-pdf-outline>; onLoadComplete rebinds it.
+        this.pdfDocument = null;
+        this.pageLabels = null;
+        this.hasOutline = false;
+        this.currentTopPage = 1;
         this.pdfSrc = newSrc;
       } else if (this.pdfDocument) {
         // Same PDF already loaded (e.g. jumping to another result in the same
@@ -151,7 +201,7 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
       await this.bookIndex.load();
       const entry = this.bookIndex.lookup(base, this.pendingLoc);
       if (entry && entry.page != null) {
-        page = await this.printedToPhysical(entry.page);
+        page = this.printedToPhysical(entry.page);
       }
     }
     if (!page) return;
@@ -168,18 +218,22 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   // labels. Books with front matter print a number that differs from the
   // physical page; the last physical page carrying that label is the main-matter
   // one. If the PDF has no page labels, printed == physical.
-  private async printedToPhysical(printed: number): Promise<number> {
-    try {
-      const labels: string[] | null = await this.pdfDocument.getPageLabels();
-      if (labels) {
-        const want = String(printed);
-        const idx = labels.lastIndexOf(want);
-        if (idx >= 0) return idx + 1;
-      }
-    } catch (error) {
-      console.warn('Could not read page labels:', error);
+  private printedToPhysical(printed: number): number {
+    if (this.pageLabels) {
+      const idx = this.pageLabels.lastIndexOf(String(printed));
+      if (idx >= 0) return idx + 1;
     }
     return printed;
+  }
+
+  // What the current page is printed as, shown beside the navigator when it
+  // differs from the physical index — which it does in 16 of the 44 books,
+  // wherever front matter shifts the numbering. The navigator itself still
+  // counts physical pages: a printed number is ambiguous as *input* (front
+  // matter and main matter both run 1..k), but unambiguous as a readout.
+  get printedPage(): string | null {
+    const label = this.pageLabels?.[this.currentPage - 1];
+    return label && label !== String(this.currentPage) ? label : null;
   }
 
   // Rotating the phone (or resizing) makes ng2-pdf-viewer re-render every page
@@ -188,6 +242,7 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostListener('window:resize')
   @HostListener('window:orientationchange')
   onViewportChange(): void {
+    this.viewportWidth = window.innerWidth;
     if (this.resizeAnchorPage === null) {
       this.resizeAnchorPage = this.currentTopPage;
     }
@@ -225,6 +280,8 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.scrollRaf = requestAnimationFrame(() => {
       this.scrollRaf = null;
+      // Bound to the outline's `currentPage`, which highlights the section the
+      // reader is in.
       this.currentTopPage = this.detectTopPage();
     });
   };
@@ -248,27 +305,32 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isLoading = false;
     this.pdfDocument = pdf;
     this.totalPages = pdf.numPages || 0;
-    console.log('PDF loaded successfully', pdf);
 
     setTimeout(() => {
       this.focusPdfViewer();
     }, 100);
 
     try {
-      const outline = await pdf.getOutline();
-      if (outline && outline.length > 0) {
-        this.hasOutline = true;
-        this.pdfOutline = await this.flattenOutline(outline);
-
-        console.log('PDF outline extracted:', this.pdfOutline);
-        console.log('Use Ctrl+Shift+T to toggle table of contents');
-      }
+      this.pageLabels = await pdf.getPageLabels();
     } catch (error) {
-      console.log('No outline available or error extracting outline:', error);
+      this.pageLabels = null;
+      console.warn('Could not read page labels:', error);
     }
+
+    // Binding pdfDocument hands the document to <app-pdf-outline>, which builds
+    // its own tree and reports back through (availableChange).
 
     // Honor a ?loc / ?page deep link once the document is ready.
     this.scrollToDeepLink();
+  }
+
+  // The outline finished building (or the document has none). If the panel was
+  // restored open from a previous session it is about to take its width from
+  // the page, so re-scale exactly as toggling it would. A deep link scrolls
+  // later than this, so it still wins.
+  onOutlineAvailable(available: boolean): void {
+    this.hasOutline = available;
+    if (available && this.showOutline) this.reflowAfterPanelChange();
   }
 
   onError(error: any): void {
@@ -352,9 +414,51 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  // Outline methods
+  // ── Outline ────────────────────────────────────────────────────────────────
+
+  // Under this width the panel overlays the page instead of pushing it aside;
+  // pushing would leave too little room for the page itself.
+  get isDrawer(): boolean {
+    return this.viewportWidth <= OUTLINE_DRAWER_MAX_WIDTH;
+  }
+
   toggleOutline(): void {
-    this.showOutline = !this.showOutline;
+    this.showOutline ? this.closeOutline() : this.openOutline();
+  }
+
+  openOutline(): void {
+    this.showOutline = true;
+    localStorage.setItem(OUTLINE_OPEN_KEY, '1');
+    this.reflowAfterPanelChange();
+  }
+
+  closeOutline(): void {
+    this.showOutline = false;
+    localStorage.setItem(OUTLINE_OPEN_KEY, '0');
+    this.reflowAfterPanelChange();
+  }
+
+  // The outline emits a physical page; navigating is the viewer's job. Via
+  // goToPageNum so it works in single-page mode too — scrollToPage alone only
+  // works in continuous mode, where the target page is actually in the DOM.
+  onOutlineNavigate(page: number): void {
+    this.goToPageNum(page);
+  }
+
+  // In push mode the panel takes 320px from the page, but ng2-pdf-viewer only
+  // re-scales on a *window* resize (it subscribes to fromEvent(window,
+  // 'resize')), so a container-width change alone leaves the canvas at its old
+  // width and the page clipped behind an overflow-x scrollbar. Re-scale by hand
+  // once the transition has settled — and put the reader back where they were,
+  // since updateSize() calls _setScale(…, noScroll) and does not preserve the
+  // scroll position itself.
+  private reflowAfterPanelChange(): void {
+    if (this.isDrawer || !this.pdfDocument) return;
+    const anchor = this.currentTopPage;
+    setTimeout(() => {
+      this.ng2Viewer?.updateSize();
+      this.scrollToPage(anchor);
+    }, OUTLINE_TRANSITION_MS + 20);
   }
 
   hideHeader(): void {
@@ -365,107 +469,7 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     this.headerVisible = true;
   }
 
-  private async flattenOutline(outline: any[], level: number = 0): Promise<any[]> {
-    const result: any[] = [];
-
-    for (const item of outline) {
-      let pageNumber: number | null = null;
-
-      if (item.dest) {
-        try {
-          if (Array.isArray(item.dest) && item.dest.length > 0) {
-            if (item.dest[0] && typeof item.dest[0] === 'object' && item.dest[0].num !== undefined) {
-              const pageRef = await this.pdfDocument.getPageIndex(item.dest[0]);
-              pageNumber = pageRef + 1;
-            }
-          } else if (typeof item.dest === 'string') {
-            const namedDest = await this.pdfDocument.getDestination(item.dest);
-            if (namedDest && namedDest.length > 0) {
-              const pageRef = await this.pdfDocument.getPageIndex(namedDest[0]);
-              pageNumber = pageRef + 1;
-            }
-          }
-        } catch (error) {
-          console.warn('Could not resolve page for outline item:', item.title, error);
-        }
-      }
-
-      result.push({
-        title: item.title,
-        dest: item.dest,
-        pageNumber: pageNumber,
-        level: level
-      });
-
-      if (item.items && item.items.length > 0) {
-        const childItems = await this.flattenOutline(item.items, level + 1);
-        result.push(...childItems);
-      }
-    }
-
-    return result;
-  }
-
-  async goToPage(destination: any, preResolvedPageNumber?: number): Promise<void> {
-    console.log('goToPage called with:', { destination, preResolvedPageNumber });
-
-    if (preResolvedPageNumber) {
-      this.scrollToPage(preResolvedPageNumber);
-
-      if (window.innerWidth <= 768) {
-        this.showOutline = false;
-      }
-      return;
-    }
-
-    if (!this.pdfDocument || !destination) return;
-
-    try {
-      let pageNumber: number | null = null;
-
-      if (Array.isArray(destination) && destination.length > 0) {
-        if (destination[0] && typeof destination[0] === 'object' && destination[0].num !== undefined) {
-          try {
-            const pageRef = await this.pdfDocument.getPageIndex(destination[0]);
-            pageNumber = pageRef + 1;
-          } catch (error) {
-            console.warn('Failed to get page index from destination:', error);
-          }
-        } else if (typeof destination[0] === 'number') {
-          pageNumber = destination[0];
-        }
-      } else if (typeof destination === 'string') {
-        try {
-          const namedDest = await this.pdfDocument.getDestination(destination);
-          if (namedDest && namedDest.length > 0) {
-            const pageRef = await this.pdfDocument.getPageIndex(namedDest[0]);
-            pageNumber = pageRef + 1;
-          }
-        } catch (error) {
-          console.warn('Failed to resolve named destination:', error);
-        }
-      } else if (typeof destination === 'number') {
-        pageNumber = destination;
-      }
-
-      if (pageNumber) {
-        this.scrollToPage(pageNumber);
-      } else {
-        console.warn('Could not resolve destination to page number');
-      }
-
-      if (window.innerWidth <= 768) {
-        this.showOutline = false;
-      }
-
-    } catch (error) {
-      console.error('Error in goToPage:', error);
-    }
-  }
-
   private scrollToPage(pageNumber: number): void {
-    console.log('Attempting to scroll to page:', pageNumber);
-
     setTimeout(() => {
       let targetElement = document.querySelector(`[data-page-number="${pageNumber}"]`);
 
@@ -488,7 +492,6 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
       }
 
       if (targetElement) {
-        console.log('Found target element:', targetElement);
         targetElement.scrollIntoView({
           block: 'start',
           inline: 'nearest'

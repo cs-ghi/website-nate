@@ -1,10 +1,19 @@
 <div class="pdf-viewer-container">
   <div class="pdf-header" *ngIf="headerVisible">
     <div class="header-actions">
-      <!-- Left: Title -->
-      <h2 class="document-title">{{ bookName }}</h2>
+      <!-- Left: Title, with Contents as the primary navigation affordance -->
+      <div class="header-left">
+        <h2 class="document-title">{{ bookName }}</h2>
 
-      <!-- Center: Grouped Controls (Zoom left, Contents right) -->
+        <button class="outline-toggle" (click)="toggleOutline()" *ngIf="hasOutline"
+                [class.active]="showOutline"
+                [attr.aria-expanded]="showOutline" aria-controls="pdf-outline-panel"
+                title="Table of contents (T)">
+          <span aria-hidden="true">☰</span> Contents
+        </button>
+      </div>
+
+      <!-- Center: reading controls -->
       <div class="center-controls">
         <div class="zoom-controls">
           <button class="zoom-button" (click)="zoomOut()" [disabled]="currentZoom <= 0.25">
@@ -16,11 +25,6 @@
           </button>
         </div>
 
-        <button class="outline-toggle" (click)="toggleOutline()" *ngIf="hasOutline"
-                title="Toggle Table of Contents (Ctrl+Shift+T)">
-          <span>☰</span> Contents
-        </button>
-
         <!-- Page navigator — always visible; works in both render modes -->
         <div class="page-controls">
           <button class="page-button" (click)="prevPage()" [disabled]="currentPage <= 1"
@@ -30,6 +34,9 @@
                    [value]="currentPage" (change)="onPageInput($any($event.target).value)"
                    title="Go to page" />
             <span class="page-total">/ {{ totalPages }}</span>
+            <!-- What this page is printed as, where that differs from its index -->
+            <span class="page-printed" *ngIf="printedPage"
+                  title="This page is printed as {{ printedPage }}">· p. {{ printedPage }}</span>
           </span>
           <button class="page-button" (click)="nextPage()" [disabled]="currentPage >= totalPages"
                   title="Next page (→)">›</button>
@@ -71,24 +78,15 @@
     </div>
 
     <div *ngIf="pdfSrc && !error" class="pdf-layout">
-      <!-- Outline sidebar -->
-      <div class="pdf-outline" [class.visible]="showOutline && hasOutline">
-        <div class="outline-header">
-          <h3>Table of Contents</h3>
-          <div class="outline-controls">
-            <small class="keyboard-hint">Ctrl+Shift+T</small>
-            <button class="close-outline" (click)="toggleOutline()">×</button>
-          </div>
-        </div>
-        <div class="outline-content">
-          <div *ngFor="let item of pdfOutline" class="outline-item">
-            <a (click)="goToPage(item.dest, item.pageNumber)" [style.padding-left]="(item.level * 15) + 'px'">
-              {{ item.title }}
-              <span *ngIf="item.pageNumber" class="page-number">(p. {{ item.pageNumber }})</span>
-            </a>
-          </div>
-        </div>
-      </div>
+      <app-pdf-outline
+        [pdf]="pdfDocument"
+        [open]="showOutline"
+        [drawer]="isDrawer"
+        [currentPage]="currentPage"
+        (navigate)="onOutlineNavigate($event)"
+        (closeRequested)="closeOutline()"
+        (availableChange)="onOutlineAvailable($event)">
+      </app-pdf-outline>
 
       <!-- PDF viewer -->
       <div class="pdf-viewer-wrapper">

@@ -29,6 +29,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { BooksComponent } from './components/books/books.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { PdfViewerComponent } from './components/books/pdf-viewer.component';
+import { PdfOutlineComponent } from './components/shared/pdf-outline.component';
 import { HtmlBookViewerComponent } from './components/books/html-book-viewer.component';
 import { MiscellaneousComponent} from './components/miscellaneous/miscellaneous.component';
 import { ProgrammingComponent } from './components/programming/programming.component';
@@ -59,6 +60,7 @@ import { AudioService } from './services/audio.service';
     BooksComponent,
     NotesComponent,
     PdfViewerComponent,
+    PdfOutlineComponent,
     HtmlBookViewerComponent,
     // ResumeComponent,
     ContactComponent,

@@ -25,8 +25,42 @@
   justify-content: space-between;
   /* max-width: 1200px; */
   margin: 0 auto;
+  // Row gap matters once the reading controls take their own line.
+  gap: 0.35rem 1rem;
+  // Wrap as whole groups rather than compressing them: the title, the reading
+  // controls and the back button do not fit a laptop width side by side.
+  flex-wrap: wrap;
+}
+
+// Title + Contents travel together: the outline is the primary way around a
+// 2000-page book, not one more equal-weight chip among the zoom controls.
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+// The reading controls are one unit: never let them shred into stacked rows.
+// They either fit on the toolbar's line or take a line of their own.
+.center-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: nowrap;
+  flex: 0 1 auto;
+}
+
+// Between the mobile column layout and this width the toolbar cannot hold the
+// title, the reading controls and the back button on one line, so the controls
+// take a row of their own rather than being squeezed.
+@media (min-width: 769px) and (max-width: 1200px) {
+  .center-controls {
+    order: 3;
+    flex: 1 0 100%;
+  }
 }
 
 .back-button, .download-button {
@@ -94,6 +128,12 @@
   flex-shrink: 0;
 
   &:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  // Reads as pressed while the panel is open.
+  &.active {
     background-color: #007bff;
     color: #fff;
   }
@@ -192,6 +232,11 @@
   }
 }
 .page-total { color: #666; }
+.page-printed {
+  color: #999;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
 
 .mode-toggle {
   background: #fff;
@@ -234,120 +279,6 @@
   height: 100%;
   position: relative;
 }
-
-.pdf-outline {
-  width: 300px;
-  background: #f8f9fa;
-  border-right: 1px solid #e0e0e0;
-  overflow-y: auto;
-  display: none;
-  transition: all 0.3s ease;
-  z-index: 100;
-
-  &.visible {
-    display: block;
-  }
-}
-
-.outline-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid #e0e0e0;
-  background: #fff;
-  position: sticky;
-  top: 0;
-
-  h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #333;
-  }
-}
-
-.close-outline {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #666;
-  display: none;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background-color 0.2s ease;
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
-}
-
-.outline-content {
-  padding: 0.5rem 0;
-}
-
-.outline-item {
-  margin: 0;
-
-  a {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: #333;
-    cursor: pointer;
-    border-left: 3px solid transparent;
-    transition: all 0.2s ease;
-    font-size: 0.9rem;
-    line-height: 1.4;
-
-    &:hover {
-      background: #e9ecef;
-      border-left-color: #007bff;
-    }
-  }
-}
-.outline-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.center-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; // This will push zoom left and contents right
-  flex: 1; // Take up available space
-  max-width: 400px; // Optional: limit the max width so they don't get too far apart
-  margin: 0 auto; // Center the whole group
-}
-
-
-.keyboard-hint {
-  font-size: 0.75rem;
-  color: #666;
-  background: #f0f0f0;
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
-  font-family: monospace;
-}
-
-@media (max-width: 768px) {
-  .keyboard-hint {
-    display: none; // Hide on mobile since keyboard shortcuts aren't relevant
-  }
-}
-
-// Dark theme
-@media (prefers-color-scheme: dark) {
-  .keyboard-hint {
-    background: #444;
-    color: #ccc;
-  }
-}
-
 
 .pdf-viewer-wrapper {
   flex: 1;
@@ -410,10 +341,15 @@
     align-items: stretch;
   }
 
+  .header-left {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+  }
+
   .document-title {
     font-size: 0.9rem;
     text-align: center;
-    order: -1;
     margin: 0.125rem 0;
   }
 
@@ -439,27 +375,8 @@
     min-width: 2.5rem;
   }
 
-  // Mobile outline styles
-  .pdf-outline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 280px;
-    z-index: 1500;
-    transform: translateX(-100%);
-    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-    background: #fff;
-
-    &.visible {
-      transform: translateX(0);
-      display: block;
-    }
-  }
-
-  .close-outline {
-    display: flex !important;
-  }
+  // The outline's drawer layout is driven by the `.drawer` class the component
+  // sets, not by a media query here — one breakpoint, in the TypeScript.
 
   .outline-toggle {
     justify-content: center;
@@ -554,43 +471,7 @@
     color: #fff;
   }
 
-  // Dark theme outline styles
-  .pdf-outline {
-    background: #2d2d2d;
-    border-right-color: #444;
-  }
-
-  .outline-header {
-    background: #1a1a1a;
-    border-bottom-color: #444;
-
-    h3 {
-      color: #fff;
-    }
-  }
-
-  .close-outline {
-    color: #fff;
-
-    &:hover {
-      background-color: #444;
-    }
-  }
-
-  .outline-item a {
-    color: #fff;
-
-    &:hover {
-      background: #444;
-      border-left-color: #007bff;
-    }
-  }
-
   @media (max-width: 768px) {
-    .pdf-outline {
-      background: #1a1a1a;
-    }
-
     .outline-toggle {
       background: rgba(45, 45, 45, 0.95);
       color: #fff;
@@ -623,6 +504,7 @@
     &:focus { outline: none; border-color: #a49b96; }
   }
   .page-total { color: #8f8880; }
+  .page-printed { color: #7d7670; }
 
   // De-blue the existing buttons' hover to the site accent.
   .back-button, .zoom-button, .outline-toggle {
@@ -631,5 +513,11 @@
       border-color: #a49b96;
       color: #2a2b30;
     }
+  }
+
+  .outline-toggle.active {
+    background-color: #a49b96;
+    border-color: #a49b96;
+    color: #2a2b30;
   }
 }

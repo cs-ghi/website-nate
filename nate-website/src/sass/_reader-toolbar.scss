@@ -1,5 +1,6 @@
-// Shared controls for the full-screen PDF readers (books + notes viewers).
-// Both viewers @import this so the close/reopen affordances stay in sync.
+// Shared controls for the full-screen PDF reader. One viewer serves books,
+// notes, blog posts and papers alike (routed at /pdf-viewer), which is why the
+// close/reopen affordances live here rather than in the component.
 
 // Close button that lives at the right end of the reader toolbar. Hides the
 // whole bar; a floating .reader-reopen button brings it back (no refresh).

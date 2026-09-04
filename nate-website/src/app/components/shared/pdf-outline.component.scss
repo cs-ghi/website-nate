@@ -1,0 +1,399 @@
+// Width of the panel's contents. The shell animates its own width from 0; the
+// panel keeps a fixed width so the rows don't reflow mid-transition.
+$outline-width: 320px;
+
+// The host box disappears so `.outline-shell` is itself the flex item of the
+// reader's layout, and the fixed-position scrim is not clipped by the shell's
+// `overflow: hidden`.
+:host {
+  display: contents;
+}
+
+// Push layout: the shell collapses to zero width, taking the page's width with
+// it. The host viewer re-scales the PDF once this transition settles — ng2-pdf-
+// viewer only re-scales on a window resize, which this is not.
+.outline-shell {
+  flex: 0 0 0px;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.22s ease, flex-basis 0.22s ease;
+
+  &.visible {
+    flex: 0 0 $outline-width;
+    width: $outline-width;
+  }
+}
+
+.outline-panel {
+  width: $outline-width;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+  border-right: 1px solid #e0e0e0;
+}
+
+// Drawer layout. Declared after `.visible` so the shared specificity resolves
+// this way round.
+.outline-shell.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100dvh;
+  flex: none;
+  width: min(#{$outline-width}, 85vw);
+  z-index: 1500;
+  transform: translateX(-100%);
+  transition: transform 0.22s ease;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.28);
+
+  .outline-panel {
+    width: 100%;
+    background: #fff;
+  }
+
+  &.visible {
+    flex: none;
+    width: min(#{$outline-width}, 85vw);
+    transform: translateX(0);
+  }
+}
+
+.outline-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1400;
+}
+
+.outline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  flex-shrink: 0;
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+.outline-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.keyboard-hint {
+  font-size: 0.75rem;
+  color: #666;
+  background: #f0f0f0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.close-outline {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.outline-filter {
+  position: relative;
+  flex-shrink: 0;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+}
+
+.outline-filter-input {
+  width: 100%;
+  padding: 0.35rem 1.6rem 0.35rem 0.5rem;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.85rem;
+  color: #333;
+  background: #fff;
+
+  &::-webkit-search-cancel-button { -webkit-appearance: none; }
+  &:focus { outline: none; border-color: #007bff; }
+}
+
+.outline-filter-clear {
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: #888;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover { background: #eee; color: #333; }
+}
+
+.outline-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0.5rem 1.5rem;
+  overscroll-behavior: contain;
+}
+
+.outline-empty {
+  margin: 1rem 0.75rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+// Where a filter hit lives in the book.
+.outline-crumb {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #8a8a8a;
+}
+
+// Each nesting level indents once and draws its own guide rule, so depth reads
+// from the structure rather than from an inline padding-left.
+.outline-children {
+  margin-left: 0.7rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.outline-row {
+  display: flex;
+  align-items: flex-start;
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+
+  &:hover {
+    background: #ebedef;
+  }
+
+  // Keyboard cursor in the filter results.
+  &.highlighted {
+    background: #dfe6ee;
+    outline: 1px solid rgba(0, 123, 255, 0.45);
+    outline-offset: -1px;
+  }
+
+  // Where the reader currently is.
+  &.active {
+    background: rgba(0, 123, 255, 0.1);
+    border-left-color: #007bff;
+
+    > .outline-link .outline-title {
+      color: #0059b3;
+      font-weight: 600;
+    }
+  }
+}
+
+// The glyph is small, but the target is not: the button fills the full height of
+// its row (so a two-line title gives a two-line-tall strip) and is wide enough
+// to hit without aiming. The arrow stays top-aligned with the first line.
+.outline-twisty {
+  flex: 0 0 1.75rem;
+  width: 1.75rem;
+  align-self: stretch;
+  min-height: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0.32rem 0 0;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: #8a8a8a;
+  font-size: 0.7rem;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    color: #007bff;
+    background: rgba(0, 0, 0, 0.07);
+  }
+
+  &.spacer {
+    cursor: default;
+    &:hover { background: none; }
+  }
+}
+
+// Touch: no hover to aim with, so give the target more room.
+@media (pointer: coarse) {
+  .outline-twisty {
+    flex-basis: 2.35rem;
+    width: 2.35rem;
+  }
+}
+
+.outline-link {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.3rem 0.5rem 0.3rem 0;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: #333;
+  line-height: 1.35;
+}
+
+.outline-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+// Fixed right-hand gutter, so long titles get the full column and the numbers
+// line up as a column of their own.
+.outline-page {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  color: #8a8a8a;
+  font-variant-numeric: tabular-nums;
+}
+
+// Weight and size carry the hierarchy; the guide rules carry the nesting.
+.outline-row[data-level="0"] .outline-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.outline-row[data-level="1"] .outline-title {
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+.outline-row[data-level="2"] .outline-title,
+.outline-row[data-level="3"] .outline-title,
+.outline-row[data-level="4"] .outline-title {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .keyboard-hint {
+    display: none; // Keyboard shortcuts aren't relevant on mobile
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .outline-panel {
+    background: #2d2d2d;
+    border-right-color: #444;
+  }
+
+  .outline-shell.drawer .outline-panel {
+    background: #1a1a1a;
+  }
+
+  .outline-header {
+    background: #1a1a1a;
+    border-bottom-color: #444;
+
+    h3 { color: #fff; }
+  }
+
+  .keyboard-hint {
+    background: #444;
+    color: #ccc;
+  }
+
+  .close-outline {
+    color: #fff;
+    &:hover { background-color: #444; }
+  }
+
+  .outline-filter {
+    background: #1a1a1a;
+    border-bottom-color: #444;
+  }
+
+  .outline-filter-input {
+    background: #2d2d2d;
+    border-color: #4a4a4a;
+    color: #d9d2cd;
+
+    &::placeholder { color: #8f8880; }
+    &:focus { border-color: #a49b96; }
+  }
+
+  .outline-filter-clear {
+    color: #8f8880;
+    &:hover { background: #444; color: #fff; }
+  }
+
+  .outline-empty { color: #8f8880; }
+  .outline-crumb { color: #8f8880; }
+
+  .outline-children {
+    border-left-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .outline-link { color: #e6e1dd; }
+  .outline-page { color: #8f8880; }
+
+  .outline-twisty {
+    color: #8f8880;
+    &:hover { color: #d9d2cd; background: rgba(255, 255, 255, 0.09); }
+    &.spacer:hover { background: none; }
+  }
+
+  .outline-row {
+    &:hover { background: #3a3a3a; }
+
+    &.highlighted {
+      background: #414141;
+      outline: 1px solid rgba(164, 155, 150, 0.6);
+      outline-offset: -1px;
+    }
+
+    &.active {
+      background: rgba(164, 155, 150, 0.22);   // $bg-secondary at low alpha
+      border-left-color: #a49b96;
+
+      > .outline-link .outline-title {
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .outline-row[data-level="2"] .outline-title,
+  .outline-row[data-level="3"] .outline-title,
+  .outline-row[data-level="4"] .outline-title {
+    color: #bdb6b0;
+  }
+}
