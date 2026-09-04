@@ -143,9 +143,12 @@ export class PdfDocumentComponent implements AfterViewInit, OnChanges, OnDestroy
       this.ready = true;
       this.applyScale();
     }));
-    this.eventBus.on('pagechanging', (e: any) => this.zone.run(() => {
-      this.pageChange.emit(e.pageNumber);
-    }));
+    // pdf.js can fire this synchronously inside a change-detection pass already
+    // in progress — a click handler scrolls, which updates the current page —
+    // so emitting straight away writes a binding that has just been checked
+    // (NG0100). Defer to the next turn, which is imperceptible for a readout.
+    this.eventBus.on('pagechanging', (e: any) =>
+      this.zone.run(() => setTimeout(() => this.pageChange.emit(e.pageNumber))));
   }
 
   private destroyViewer(): void {

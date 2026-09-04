@@ -46,19 +46,22 @@
         <button class="mode-toggle" (click)="toggleRenderMode()"
                 [title]="showAll ? 'Switch to one page at a time (faster for large books)'
                                  : 'Switch to continuous scroll'">
-          <span>{{ showAll ? '▤' : '⇕' }}</span> {{ showAll ? 'Page view' : 'Scroll view' }}
+          <span aria-hidden="true">{{ showAll ? '▤' : '⇕' }}</span>
+          <span class="mode-label">{{ showAll ? 'Page view' : 'Scroll view' }}</span>
         </button>
       </div>
 
-      <!-- Right: Back Button -->
-      <button class="back-button" (click)="goBack()">
-        <span>←</span> {{ backButtonText }}
-      </button>
+      <!-- Right: back, and the control that hides the whole bar -->
+      <div class="header-right">
+        <button class="back-button" (click)="goBack()">
+          <span aria-hidden="true">←</span>
+          <span class="back-label">{{ backButtonText }}</span>
+        </button>
 
-      <!-- Far right: Close bar (reopen via the floating button) -->
-      <button class="close-header" (click)="hideHeader()"
-              title="Hide this bar for more screen space"
-              aria-label="Hide top bar">×</button>
+        <button class="close-header" (click)="hideHeader()"
+                title="Hide this bar for more screen space"
+                aria-label="Hide top bar">×</button>
+      </div>
     </div>
   </div>
 
