@@ -12,7 +12,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { MatDividerModule } from '@angular/material/divider';
@@ -50,63 +50,56 @@ import { AudioService } from './services/audio.service';
 // import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    AboutComponent,
-    BlogComponent,
-    BooksComponent,
-    NotesComponent,
-    PdfViewerComponent,
-    PdfOutlineComponent,
-    PdfDocumentComponent,
-    HtmlBookViewerComponent,
-    // ResumeComponent,
-    ContactComponent,
-    NotFoundComponent,
-    // LoadingComponent,
-    // ShimmerComponent,
-    MiscellaneousComponent,
-    ProgrammingComponent,
-    ProgrammingDetailComponent,
-    PapersComponent,
-    PaperDetailComponent,
-    MathTextComponent,
-    TutoringComponent,
-    ContactFormComponent,
-    AppComponent,
-    ClickOutsideDirective,
-    DictionaryComponent,
-    JudoComponent,
-    SeriesMapComponent,
-    CommandPaletteComponent,
-    SafeUrlPipe,
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule,
-    HttpClientModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    BrowserAnimationsModule,
-    MatExpansionModule,
-    MatOptionModule,
-    MatIconModule,
-    // FontAwesomeModule,
-  ],
-  providers: [
-    DictionaryService,
-    AudioService
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        AboutComponent,
+        BlogComponent,
+        BooksComponent,
+        NotesComponent,
+        PdfViewerComponent,
+        PdfOutlineComponent,
+        PdfDocumentComponent,
+        HtmlBookViewerComponent,
+        // ResumeComponent,
+        ContactComponent,
+        NotFoundComponent,
+        // LoadingComponent,
+        // ShimmerComponent,
+        MiscellaneousComponent,
+        ProgrammingComponent,
+        ProgrammingDetailComponent,
+        PapersComponent,
+        PaperDetailComponent,
+        MathTextComponent,
+        TutoringComponent,
+        ContactFormComponent,
+        AppComponent,
+        ClickOutsideDirective,
+        DictionaryComponent,
+        JudoComponent,
+        SeriesMapComponent,
+        CommandPaletteComponent,
+        SafeUrlPipe,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        RouterModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+        MatDividerModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        BrowserAnimationsModule,
+        MatExpansionModule,
+        MatOptionModule,
+        MatIconModule], providers: [
+        DictionaryService,
+        AudioService,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule {
  }
