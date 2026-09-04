@@ -6,7 +6,7 @@
     "clashCounts": {
       "error": 0,
       "warn": 4,
-      "info": 126
+      "info": 127
     },
     "tiers": [
       {
@@ -47,7 +47,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-abelian-varieties.pdf&name=Abelian%20Varieties&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": -0.668,
+      "xAffinity": -0.67,
       "tier": 4
     },
     {
@@ -66,7 +66,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_algGeo.pdf&name=Algebraic%20Geometry&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": -0.617,
+      "xAffinity": -0.618,
       "tier": 3
     },
     {
@@ -84,7 +84,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-k-theory.pdf&name=Algebraic%20K-Theory&source=books"
       },
       "lastUpdated": "2026-08-21",
-      "xAffinity": -0.538,
+      "xAffinity": -0.539,
       "tier": 3
     },
     {
@@ -120,7 +120,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.285,
+      "xAffinity": -0.286,
       "tier": 2
     },
     {
@@ -136,7 +136,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-analytic-number-theory.pdf&name=Analytic%20Number%20Theory&source=books"
       },
       "lastUpdated": "2026-07-06",
-      "xAffinity": -0.27,
+      "xAffinity": -0.2,
       "tier": 3
     },
     {
@@ -153,7 +153,7 @@
         "pdf": "calculus/EYNTKA-calculus.pdf"
       },
       "lastUpdated": "2026-07-30",
-      "xAffinity": 0.113,
+      "xAffinity": 0.114,
       "tier": 0
     },
     {
@@ -188,7 +188,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-class-field-theory.pdf&name=Class%20Field%20Theory&source=books"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.547,
+      "xAffinity": -0.601,
       "tier": 3
     },
     {
@@ -238,7 +238,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_complex_analysis.pdf&name=Complex%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.098,
+      "xAffinity": -0.093,
       "tier": 1
     },
     {
@@ -376,7 +376,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
       },
       "lastUpdated": "2026-07-22",
-      "xAffinity": -0.647,
+      "xAffinity": -0.655,
       "tier": 3
     },
     {
@@ -391,7 +391,7 @@
         "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
       "lastUpdated": "2026-07-15",
-      "xAffinity": -0.619,
+      "xAffinity": -0.621,
       "tier": 4
     },
     {
@@ -424,7 +424,7 @@
         "pdf": "galois-cohomology/EYNTKA-galois-cohomology.pdf"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.643,
+      "xAffinity": -0.649,
       "tier": 2
     },
     {
@@ -442,7 +442,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-geo-rep-theory.pdf&name=Algebraic%20Groups%20and%20Representations&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.53,
+      "xAffinity": -0.535,
       "tier": 3
     },
     {
@@ -530,7 +530,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Vector_bundles_and_K-theory.pdf&name=Vector%20Bundles%20and%20K-Theory&source=books"
       },
       "lastUpdated": "2026-08-20",
-      "xAffinity": 0.131,
+      "xAffinity": 0.133,
       "tier": 3
     },
     {
@@ -548,7 +548,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-langlands-gl2.pdf&name=Local%20Langlands%20for%20GL%E2%82%82(F)&source=books"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": -0.01,
+      "xAffinity": -0.026,
       "tier": 4
     },
     {
@@ -564,7 +564,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-lie-groups.pdf&name=Lie%20Groups&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.039,
+      "xAffinity": 0.043,
       "tier": 2
     },
     {
@@ -580,7 +580,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-algebra.pdf&name=Linear%20Algebra&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": 0.328,
+      "xAffinity": 0.329,
       "tier": 0
     },
     {
@@ -693,7 +693,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-moduli-stacks.pdf&name=Moduli%2C%20Deformation%20Theory%2C%20and%20Stacks&source=books"
       },
       "lastUpdated": "2026-07-13",
-      "xAffinity": -0.696,
+      "xAffinity": -0.698,
       "tier": 4
     },
     {
@@ -729,7 +729,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.271,
+      "xAffinity": 0.272,
       "tier": 1
     },
     {
@@ -797,7 +797,7 @@
         "pdf": "shimura-varieties/EYNTKA-shimura-varieties.pdf"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.555,
+      "xAffinity": -0.572,
       "tier": 4
     },
     {
@@ -1743,8 +1743,8 @@
     {
       "source": "NateAnalyticNumTheory",
       "target": "NateCFT",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "analytic-number-theory/EYNTKA-analytic-number-theory.tex",
         "analytic-number-theory/drafts/ch08-section05-dz5FE.tex",
@@ -4297,8 +4297,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateRiemannianGeometry",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -4835,6 +4835,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex",
         "moduli-stacks/drafts/picard-section.tex"
       ]
     },
