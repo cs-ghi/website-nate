@@ -38,7 +38,7 @@
     "@types/sql.js": "^1.4.9",
     "bootstrap": "^5.2.3",
     "katex": "^0.16.47",
-    "ng2-pdf-viewer": "^9.1.5",
+    "pdfjs-dist": "^2.14.305",
     "rxjs": "~7.5.0",
     "sql.js": "^1.8.0",
     "tslib": "^2.3.0",

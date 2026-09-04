@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PdfViewerModule } from 'ng2-pdf-viewer'; // Import the module
 
 
 import { BooksComponent } from './books.component';

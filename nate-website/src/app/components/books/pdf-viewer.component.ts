@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { PdfViewerComponent as Ng2PdfViewer } from 'ng2-pdf-viewer';
 import { BookIndexService } from '../../services/book-index.service';
+import { PdfDocumentComponent } from '../shared/pdf-document.component';
 import { PdfOutlineComponent } from '../shared/pdf-outline.component';
 import { LEGACY_PDF_REDIRECTS } from '../papers/papers';
 
@@ -25,17 +25,14 @@ const OUTLINE_OPEN_KEY = 'reader.outline.open';
   templateUrl: './pdf-viewer.component.html',
   styleUrls: ['./pdf-viewer.component.scss']
 })
-export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('pdfViewer', { static: false }) pdfViewer!: ElementRef;
-  @ViewChild(Ng2PdfViewer) private ng2Viewer?: Ng2PdfViewer;
+export class PdfViewerComponent implements OnInit, OnDestroy {
+  @ViewChild(PdfDocumentComponent) private doc?: PdfDocumentComponent;
   @ViewChild(PdfOutlineComponent) private outline?: PdfOutlineComponent;
 
-  // Rotation handling: track the page at the top of the viewport so we can
-  // restore it after ng2-pdf-viewer re-renders at the new width.
+  // The page pdf.js reports as in view; drives the toolbar and the outline's
+  // active-section highlight.
   private currentTopPage: number = 1;
-  private scrollRaf: number | null = null;
   private resizeTimer: any = null;
-  private resizeAnchorPage: number | null = null;
 
   pdfSrc: string = '';
   bookName: string = '';
@@ -70,7 +67,6 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   // meant the books most worth scrolling through were the ones that wouldn't.
   // The toolbar toggle still switches to paginated for a reader who wants it.
   showAll: boolean = true;
-  page: number = 1;
   totalPages: number = 0;
 
   // Whether the top bar is shown. Starts hidden on mobile (≤768px, matching the
@@ -171,7 +167,6 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
       } else if (srcChanged) {
         // New book: always continuous, so there is nothing to decide before the
         // src binds and no need to wait on the index to decide it.
-        this.page = 1;
         this.totalPages = 0;
         this.isLoading = true;
         this.showAll = true;
@@ -205,13 +200,7 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     }
     if (!page) return;
-    if (this.showAll) {
-      // Continuous mode: pages render asynchronously — give them a beat, scroll.
-      setTimeout(() => this.scrollToPage(page as number), 400);
-    } else {
-      // Single-page mode: navigate ng2-pdf-viewer straight to the page.
-      this.page = page;
-    }
+    this.goToPageNum(page);
   }
 
   // Map a printed page number to a 1-based physical page using the PDF's page
@@ -236,79 +225,36 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     return label && label !== String(this.currentPage) ? label : null;
   }
 
-  // Rotating the phone (or resizing) makes ng2-pdf-viewer re-render every page
-  // at a new width, so the old pixel scroll offset lands on a different page.
-  // Re-anchor to the page that was at the top before the reflow.
+  // Re-fit after the available width changes. pdf.js re-scales *and* keeps the
+  // reader's place: assigning `currentScale` routes through _setScale with
+  // noScroll = false, which restores its saved location. Zoom needs nothing at
+  // all here — the [zoom] binding goes straight to the same setter.
   @HostListener('window:resize')
   @HostListener('window:orientationchange')
   onViewportChange(): void {
     this.viewportWidth = window.innerWidth;
-    if (this.resizeAnchorPage === null) {
-      this.resizeAnchorPage = this.currentTopPage;
-    }
-    if (this.resizeTimer) {
-      clearTimeout(this.resizeTimer);
-    }
+    if (this.resizeTimer) clearTimeout(this.resizeTimer);
     this.resizeTimer = setTimeout(() => {
-      const page = this.resizeAnchorPage ?? this.currentTopPage;
-      this.resizeAnchorPage = null;
       this.resizeTimer = null;
-      this.scrollToPage(page);
-    }, 300);
-  }
-
-  ngAfterViewInit(): void {
-    this.focusPdfViewer();
-    // Scroll events from the PDF's inner container don't bubble to window, so
-    // listen in the capture phase to catch whichever element actually scrolls.
-    document.addEventListener('scroll', this.onScrollCapture, true);
+      this.doc?.refit();
+    }, 150);
   }
 
   ngOnDestroy(): void {
-    document.removeEventListener('scroll', this.onScrollCapture, true);
-    if (this.resizeTimer) {
-      clearTimeout(this.resizeTimer);
-    }
-    if (this.scrollRaf !== null) {
-      cancelAnimationFrame(this.scrollRaf);
-    }
+    if (this.resizeTimer) clearTimeout(this.resizeTimer);
   }
 
-  private onScrollCapture = (): void => {
-    if (this.scrollRaf !== null) {
-      return;
-    }
-    this.scrollRaf = requestAnimationFrame(() => {
-      this.scrollRaf = null;
-      // Bound to the outline's `currentPage`, which highlights the section the
-      // reader is in.
-      this.currentTopPage = this.detectTopPage();
-    });
-  };
-
-  private detectTopPage(): number {
-    const pages = document.querySelectorAll('.ng2-pdf-viewer-container .page');
-    if (pages.length === 0) {
-      return this.currentTopPage;
-    }
-    const container = document.querySelector('.ng2-pdf-viewer-container');
-    const refTop = container ? container.getBoundingClientRect().top : 0;
-    for (let i = 0; i < pages.length; i++) {
-      if (pages[i].getBoundingClientRect().bottom > refTop + 2) {
-        return i + 1;
-      }
-    }
-    return pages.length;
+  // pdf.js tells us which page is in view (via ng2's pageChange output, fed by
+  // the viewer's own `pagechanging` event). This used to be re-derived by
+  // querying .page elements and comparing bounding boxes on every scroll frame.
+  onPageChange(page: number): void {
+    this.currentTopPage = page;
   }
 
   async onLoadComplete(pdf: any): Promise<void> {
     this.isLoading = false;
     this.pdfDocument = pdf;
     this.totalPages = pdf.numPages || 0;
-
-    setTimeout(() => {
-      this.focusPdfViewer();
-    }, 100);
 
     try {
       this.pageLabels = await pdf.getPageLabels();
@@ -339,12 +285,6 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     console.error('PDF loading error:', error);
   }
 
-  private focusPdfViewer(): void {
-    if (this.pdfViewer && this.pdfViewer.nativeElement) {
-      this.pdfViewer.nativeElement.focus();
-    }
-  }
-
   goBack(): void {
     this.location.back();
   }
@@ -364,16 +304,13 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     return 'books';
   }
 
-  zoomIn(): void {
-    if (this.currentZoom < 3) {
-      this.currentZoom += 0.25;
-    }
-  }
+  zoomIn(): void { this.applyZoom(this.currentZoom + 0.25); }
+  zoomOut(): void { this.applyZoom(this.currentZoom - 0.25); }
 
-  zoomOut(): void {
-    if (this.currentZoom > 0.25) {
-      this.currentZoom -= 0.25;
-    }
+  // No save/restore dance: the [zoom] binding reaches pdf.js's own `currentScale`
+  // setter, which re-scales and puts the reader back where they were.
+  private applyZoom(next: number): void {
+    this.currentZoom = Math.min(3, Math.max(0.25, next));
   }
 
   private setInitialZoom(): void {
@@ -384,34 +321,24 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   // ── Pagination (always visible, works in both modes) ───────────────────────
   // The page shown in the toolbar: the tracked top-of-viewport page in continuous
   // mode, or the rendered page in single-page mode.
+  // pdf.js reports the current page in both render modes, so there is one
+  // source of truth rather than a mode-dependent pair.
   get currentPage(): number {
-    return this.showAll ? this.currentTopPage : this.page;
+    return this.currentTopPage;
   }
 
   goToPageNum(n: number): void {
     if (isNaN(n)) return;
-    const clamped = Math.min(this.totalPages || n, Math.max(1, n));
-    if (this.showAll) {
-      this.currentTopPage = clamped;
-      this.scrollToPage(clamped);
-    } else {
-      this.page = clamped;
-    }
+    this.doc?.goToPage(n);
   }
   nextPage(): void { this.goToPageNum(this.currentPage + 1); }
   prevPage(): void { this.goToPageNum(this.currentPage - 1); }
   onPageInput(value: string): void { this.goToPageNum(parseInt(value, 10)); }
 
-  // Flip between continuous scroll and one-page-at-a-time, keeping your place.
+  // Flip between continuous scroll and one-page-at-a-time. The document
+  // component swaps PDFViewer for PDFSinglePageViewer and restores the page.
   toggleRenderMode(): void {
-    if (this.showAll) {
-      this.page = this.currentTopPage || this.page || 1;
-      this.showAll = false;
-    } else {
-      const target = this.page;
-      this.showAll = true;
-      setTimeout(() => this.scrollToPage(target), 400);
-    }
+    this.showAll = !this.showAll;
   }
 
   // ── Outline ────────────────────────────────────────────────────────────────
@@ -438,11 +365,11 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     this.reflowAfterPanelChange();
   }
 
-  // The outline emits a physical page; navigating is the viewer's job. Via
-  // goToPageNum so it works in single-page mode too — scrollToPage alone only
-  // works in continuous mode, where the target page is actually in the DOM.
-  onOutlineNavigate(page: number): void {
-    this.goToPageNum(page);
+  // The outline emits its own destination where it has one, so pdf.js can land
+  // on the section itself rather than the top of the page containing it.
+  onOutlineNavigate(target: { page: number; dest: any }): void {
+    if (target.dest != null) this.doc?.goToDestination(target.dest);
+    else this.goToPageNum(target.page);
   }
 
   // In push mode the panel takes 320px from the page, but ng2-pdf-viewer only
@@ -454,11 +381,7 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
   // scroll position itself.
   private reflowAfterPanelChange(): void {
     if (this.isDrawer || !this.pdfDocument) return;
-    const anchor = this.currentTopPage;
-    setTimeout(() => {
-      this.ng2Viewer?.updateSize();
-      this.scrollToPage(anchor);
-    }, OUTLINE_TRANSITION_MS + 20);
+    setTimeout(() => this.doc?.refit(), OUTLINE_TRANSITION_MS + 20);
   }
 
   hideHeader(): void {
@@ -469,62 +392,5 @@ export class PdfViewerComponent implements OnInit, AfterViewInit, OnDestroy {
     this.headerVisible = true;
   }
 
-  private scrollToPage(pageNumber: number): void {
-    setTimeout(() => {
-      let targetElement = document.querySelector(`[data-page-number="${pageNumber}"]`);
 
-      if (!targetElement) {
-        targetElement = document.querySelector(`.ng2-pdf-viewer-container .page:nth-child(${pageNumber})`);
-      }
-
-      if (!targetElement) {
-        const allPages = document.querySelectorAll('.page');
-        if (allPages.length >= pageNumber) {
-          targetElement = allPages[pageNumber - 1];
-        }
-      }
-
-      if (!targetElement) {
-        const allCanvases = document.querySelectorAll('canvas');
-        if (allCanvases.length >= pageNumber) {
-          targetElement = allCanvases[pageNumber - 1].closest('.page') || allCanvases[pageNumber - 1];
-        }
-      }
-
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          block: 'start',
-          inline: 'nearest'
-        });
-      } else {
-        console.warn('Could not find page element, trying calculation method');
-        this.scrollToPageByCalculation(pageNumber);
-      }
-    }, 200);
-  }
-
-  private scrollToPageByCalculation(pageNumber: number): void {
-    const pdfContainer = document.querySelector('.ng2-pdf-viewer-container') ||
-                        document.querySelector('pdf-viewer') ||
-                        document.querySelector('.pdf-display');
-
-    if (!pdfContainer) {
-      console.warn('PDF container not found');
-      return;
-    }
-
-    const containerHeight = pdfContainer.clientHeight;
-    const scrollHeight = pdfContainer.scrollHeight;
-    const totalPages = this.pdfDocument.numPages;
-    const estimatedPageHeight = scrollHeight / totalPages;
-    const scrollTop = (pageNumber - 1) * estimatedPageHeight;
-
-    if (pdfContainer.scrollTo) {
-      pdfContainer.scrollTo({
-        top: scrollTop
-      });
-    } else {
-      pdfContainer.scrollTop = scrollTop;
-    }
-  }
 }

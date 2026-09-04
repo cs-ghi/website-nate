@@ -2,11 +2,11 @@
   "meta": {
     "generated": "2026-09-04",
     "bookCount": 48,
-    "edgeCount": 434,
+    "edgeCount": 438,
     "clashCounts": {
       "error": 0,
       "warn": 4,
-      "info": 127
+      "info": 126
     },
     "tiers": [
       {
@@ -2616,13 +2616,6 @@
     },
     {
       "source": "NateCoreRepTheory",
-      "target": "NateLinAlg",
-      "type": "coreq",
-      "provenance": "manual",
-      "citedIn": []
-    },
-    {
-      "source": "NateCoreRepTheory",
       "target": "NateMeasureTheory",
       "type": "reference",
       "provenance": "auto",
@@ -4349,6 +4342,15 @@
     },
     {
       "source": "NateLinAlg",
+      "target": "NateCalculus",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
       "target": "NateClassicalAlgGeo",
       "type": "reference",
       "provenance": "auto",
@@ -4399,6 +4401,15 @@
     },
     {
       "source": "NateLinAlg",
+      "target": "NateCoreRepTheory",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
       "target": "NateCStarAlgebras",
       "type": "reference",
       "provenance": "auto",
@@ -4435,6 +4446,15 @@
         "linear-algebra/EYNTKA-linear-algebra.tex",
         "linear-algebra/drafts/consolidated/ch05-open.tex",
         "linear-algebra/drafts/scratch/ch12-s05.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateHodgeTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -4483,6 +4503,24 @@
       "target": "NatePrelim",
       "type": "prereq",
       "provenance": "both",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateRiemannianGeometry",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "linear-algebra/EYNTKA-linear-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateLinAlg",
+      "target": "NateStatistics",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "linear-algebra/EYNTKA-linear-algebra.tex"
       ]

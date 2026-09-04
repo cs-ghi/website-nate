@@ -235,15 +235,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay coreq (NateLinAlg -> NateCoreRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLinAlg",
-      "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay coreq (NateCombinatorics -> NateCoreProbability) is manual, no backing \\cite found.",
     "refs": [
       "NateCombinatorics",

@@ -1,0 +1,21 @@
+// pdf.js needs an absolutely-positioned, scrolling container: it measures
+// `container.clientWidth` to fit pages and drives `container.scrollTop` when it
+// restores the reading position after a re-scale.
+app-pdf-document {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pdf-document {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// pdf.js positions pages absolutely inside .pdfViewer.
+.pdf-document .pdfViewer {
+  position: relative;
+}

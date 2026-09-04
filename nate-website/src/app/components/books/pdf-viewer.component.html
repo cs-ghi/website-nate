@@ -90,22 +90,14 @@
 
       <!-- PDF viewer -->
       <div class="pdf-viewer-wrapper">
-        <pdf-viewer
-          *ngIf="pdfSrc && !error"
+        <app-pdf-document
           [src]="pdfSrc"
-          [render-text]="true"
-          [original-size]="false"
-          [fit-to-page]="true"
           [zoom]="currentZoom"
-          [show-all]="showAll"
-          [page]="page"
-          [autoresize]="true"
-          [external-link-target]="'blank'"
-          [zoom-scale]="'page-width'"
-          (after-load-complete)="onLoadComplete($event)"
-          (error)="onError($event)"
-          class="pdf-display">
-        </pdf-viewer>
+          [continuous]="showAll"
+          (loaded)="onLoadComplete($event)"
+          (pageChange)="onPageChange($event)"
+          (loadError)="onError($event)">
+        </app-pdf-document>
       </div>
     </div>
   </div>

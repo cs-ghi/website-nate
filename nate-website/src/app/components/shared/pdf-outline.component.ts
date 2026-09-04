@@ -43,8 +43,10 @@ export class PdfOutlineComponent implements OnChanges {
   // Physical page the reader is on; drives the active-section highlight.
   @Input() currentPage: number = 1;
 
-  /** Physical page to navigate to. */
-  @Output() navigate = new EventEmitter<number>();
+  // Physical page plus the entry's own PDF destination. The host prefers the
+  // destination: it carries the position *within* the page, so a section that
+  // starts halfway down one isn't scrolled off the top.
+  @Output() navigate = new EventEmitter<{ page: number; dest: any }>();
   @Output() closeRequested = new EventEmitter<void>();
   /** Whether this document has an outline at all, so the host can hide its toggle. */
   @Output() availableChange = new EventEmitter<boolean>();
@@ -237,7 +239,9 @@ export class PdfOutlineComponent implements OnChanges {
   }
 
   goToNode(node: OutlineNode): void {
-    if (node.page != null) this.navigate.emit(node.page);
+    if (node.page != null || node.dest != null) {
+      this.navigate.emit({ page: node.page ?? 1, dest: node.dest });
+    }
     // Drop back to the tree, now expanded around where the reader just landed.
     this.clearFilter();
     if (this.drawer) this.closeRequested.emit();

@@ -8,7 +8,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { BlogComponent } from './components/blog/blog.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
  import { CommonModule } from '@angular/common';
 import { ContactComponent } from './components/contact/contact.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -30,6 +29,7 @@ import { BooksComponent } from './components/books/books.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { PdfViewerComponent } from './components/books/pdf-viewer.component';
 import { PdfOutlineComponent } from './components/shared/pdf-outline.component';
+import { PdfDocumentComponent } from './components/shared/pdf-document.component';
 import { HtmlBookViewerComponent } from './components/books/html-book-viewer.component';
 import { MiscellaneousComponent} from './components/miscellaneous/miscellaneous.component';
 import { ProgrammingComponent } from './components/programming/programming.component';
@@ -61,6 +61,7 @@ import { AudioService } from './services/audio.service';
     NotesComponent,
     PdfViewerComponent,
     PdfOutlineComponent,
+    PdfDocumentComponent,
     HtmlBookViewerComponent,
     // ResumeComponent,
     ContactComponent,
@@ -89,7 +90,6 @@ import { AudioService } from './services/audio.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    PdfViewerModule,
     CommonModule,
     HttpClientModule,
     MatDividerModule,

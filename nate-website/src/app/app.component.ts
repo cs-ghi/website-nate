@@ -2,7 +2,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { PdfViewerModule } from 'ng2-pdf-viewer'; // Import the module
 
 // import { Observable } from 'rxjs';
 //import { environment } from 'src/environments/environment';

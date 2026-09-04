@@ -323,15 +323,6 @@
   }
 }
 
-.pdf-display {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  min-height: calc(100vh - 100px);
-  min-height: calc(100dvh - 100px);
-}
-
 // Mobile styles - the toolbar shows here too now (closable via ×); its
 // presence is driven by the *ngIf, so the flex layout sizes the PDF area.
 @media (max-width: 768px) {
@@ -384,31 +375,6 @@
     font-size: 0.8rem;
   }
 
-  // Hide PDF viewer's internal toolbar/header
-  ::ng-deep .ng2-pdf-viewer-container .toolbar {
-    display: none !important;
-  }
-
-  ::ng-deep .ng2-pdf-viewer-container .pdfViewer {
-    top: 0 !important;
-  }
-
-  // Hide PDF.js default toolbar
-  ::ng-deep .ng2-pdf-viewer-container #toolbarContainer {
-    display: none !important;
-  }
-
-  // Adjust PDF viewer container
-  ::ng-deep .ng2-pdf-viewer-container #viewerContainer {
-    top: 0 !important;
-  }
-
-  // Hide any PDF viewer headers
-  ::ng-deep pdf-viewer .toolbar,
-  ::ng-deep pdf-viewer .ng2-pdf-viewer-container .toolbar,
-  ::ng-deep pdf-viewer #toolbarContainer {
-    display: none !important;
-  }
 }
 
 // Short viewports (e.g. a phone rotated to landscape, which is wider than the
