@@ -1,2 +1,4 @@
 [tools]
-node = "24"
+# Angular 22 requires Node >= 22.22.3, 24.15.0 or 26. Pinned to the 22 LTS
+# line; move to 24 or 26 whenever you like.
+node = "22"
