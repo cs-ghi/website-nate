@@ -2,7 +2,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    // paths (not baseUrl) so the src/* imports keep resolving: baseUrl is
+    // deprecated and stops working in TypeScript 7.
+    "paths": { "src/*": ["./src/*"] },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -13,7 +15,6 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "importHelpers": true,

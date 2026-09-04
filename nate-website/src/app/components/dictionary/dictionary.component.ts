@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DictionaryService, DictionaryResponse, LanguageOutput } from '../../services/dictionary.service';
 import { AudioService } from '../../services/audio.service';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -24,6 +24,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
             ])
         ])
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class DictionaryComponent implements OnInit {

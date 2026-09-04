@@ -18,10 +18,10 @@
     <div class="notes-info">
       <div class="row flexx">
         <div class="col-sm-3 note-link" (click)="viewPdf(note)">
-          <h4 [innerHtml]="note?.name"></h4>
+          <h4 [innerHtml]="$safeNavigationMigration(note?.name)"></h4>
         </div>
         <div class="col-sm-9" >
-          <p [innerHtml]="note?.desc"></p>
+          <p [innerHtml]="$safeNavigationMigration(note?.desc)"></p>
         </div>
       </div>
       <mat-divider class="divider-table"></mat-divider>

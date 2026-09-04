@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { JudoTechnique, BeltLevel, MainCategory } from '../../interfaces/judo.model';
 import { KODOKAN_TECHNIQUES } from './kodokan.data';
 import { UOFT_TECHNIQUES } from './uoft.data';
@@ -7,6 +7,7 @@ import { UOFT_TECHNIQUES } from './uoft.data';
     selector: 'app-judo',
     templateUrl: './judo.component.html',
     styleUrls: ['./judo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class JudoComponent implements OnInit {

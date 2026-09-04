@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Paper, STATUS_SECTIONS } from 'src/app/interfaces/papers.model';
 import { PaperCatalogService } from 'src/app/services/paper-catalog.service';
@@ -13,6 +13,7 @@ export interface PaperSection {
     selector: 'app-papers',
     templateUrl: './papers.component.html',
     styleUrls: ['./papers.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PapersComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookIndexService, ScoredEntry } from '../../services/book-index.service';
 import { CommandPaletteService } from '../../services/command-palette.service';
@@ -15,6 +15,7 @@ const TYPE_ABBR: Record<string, string> = {
     selector: 'app-command-palette',
     templateUrl: './command-palette.component.html',
     styleUrls: ['./command-palette.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class CommandPaletteComponent {

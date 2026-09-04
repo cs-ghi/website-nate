@@ -1,6 +1,7 @@
 import {
   AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, OnChanges,
   OnDestroy, Output, SimpleChanges, ViewChild, ViewEncapsulation,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import * as pdfjs from 'pdfjs-dist';
 import * as pdfjsViewer from 'pdfjs-dist/web/pdf_viewer';
@@ -32,6 +33,7 @@ const H_PADDING = 0;
     // pdf.js creates the page elements itself, so they can't carry Angular's
     // per-component attribute.
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PdfDocumentComponent implements AfterViewInit, OnChanges, OnDestroy {

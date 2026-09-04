@@ -6,7 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { BlogComponent } from './blog.component';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 
 describe('BlogComponent', () => {
   let component: BlogComponent;
@@ -19,7 +19,7 @@ describe('BlogComponent', () => {
         MatIconModule,
         MatDividerModule,
         RouterTestingModule],
-    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+    providers: [provideHttpClient(withXhr(), withInterceptorsFromDi()), provideHttpClientTesting()]
 })
     .compileComponents();
 

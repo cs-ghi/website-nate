@@ -1,5 +1,6 @@
 import {
   Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { fuzzyScore, titleForms } from '../../utils/fuzzy-score';
 
@@ -32,6 +33,7 @@ const MAX_FILTER_RESULTS = 60;
     selector: 'app-pdf-outline',
     templateUrl: './pdf-outline.component.html',
     styleUrls: ['./pdf-outline.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PdfOutlineComponent implements OnChanges {

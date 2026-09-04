@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   Program,
@@ -379,6 +379,7 @@ export const programmingArray: Program[] = [
     selector: 'app-programming',
     templateUrl: './programming.component.html',
     styleUrls: ['./programming.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProgrammingComponent {

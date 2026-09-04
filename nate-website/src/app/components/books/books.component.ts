@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Book, BookSection } from 'src/app/interfaces/books.model';
@@ -37,6 +37,7 @@ function entryScore(query: string, name: string, desc: unknown): number {
     selector: 'app-books',
     templateUrl: './books.component.html',
     styleUrls: ['./books.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class BooksComponent implements OnInit {

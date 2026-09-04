@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { BookIndexService } from '../../services/book-index.service';
@@ -24,6 +24,7 @@ const OUTLINE_OPEN_KEY = 'reader.outline.open';
     selector: 'app-pdf-viewer',
     templateUrl: './pdf-viewer.component.html',
     styleUrls: ['./pdf-viewer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PdfViewerComponent implements OnInit, OnDestroy {

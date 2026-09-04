@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 // Render authored prose that contains TeX between $…$ (inline) and $$…$$
@@ -45,6 +45,7 @@ const escapeHtml = (s: string): string =>
       }
     `,
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class MathTextComponent implements OnChanges {

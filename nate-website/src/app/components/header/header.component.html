@@ -20,12 +20,12 @@
               the guarantee does not depend on the browser. -->
               @if (m?.link) {
                 <div>
-                  <a [href]="m?.link" target="_blank" rel="noopener">
+                  <a [href]="$safeNavigationMigration(m?.link)" target="_blank" rel="noopener">
                     <span> {{m?.name}} </span>
                   </a>
                 </div>
               } @else {
-                <a class="test" [routerLink]="[m?.url]" routerLinkActive="active">
+                <a class="test" [routerLink]="[$safeNavigationMigration(m?.url)]" routerLinkActive="active">
                   <span> {{m?.name}} </span>
                 </a>
               }

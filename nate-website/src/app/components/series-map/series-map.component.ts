@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 /**
  * Hosts the standalone EYNTKA series-map viewer (a self-contained Vite +
@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
     selector: 'app-series-map',
     templateUrl: './series-map.component.html',
     styleUrls: ['./series-map.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SeriesMapComponent {

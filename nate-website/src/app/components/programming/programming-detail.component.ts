@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Program, STATUS_LABEL } from 'src/app/interfaces/programming.model';
 import { programmingArray } from './programming.component';
@@ -7,6 +7,7 @@ import { programmingArray } from './programming.component';
     selector: 'app-programming-detail',
     templateUrl: './programming-detail.component.html',
     styleUrls: ['./programming-detail.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProgrammingDetailComponent implements OnInit {

@@ -1,5 +1,5 @@
 // import { NotExpr } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Note, Notes } from 'src/app/interfaces/notes.model';
 
@@ -44,6 +44,7 @@ export const notesArray: Note[]= [
     selector: 'app-notes',
     templateUrl: './notes.component.html',
     styleUrls: ['./notes.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class NotesComponent implements OnInit {

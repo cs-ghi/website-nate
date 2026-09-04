@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { HOST_LABEL, Paper } from 'src/app/interfaces/papers.model';
@@ -8,6 +8,7 @@ import { PaperCatalogService } from 'src/app/services/paper-catalog.service';
     selector: 'app-paper-detail',
     templateUrl: './paper-detail.component.html',
     styleUrls: ['./paper-detail.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class PaperDetailComponent implements OnInit {

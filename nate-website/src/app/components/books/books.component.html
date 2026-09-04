@@ -157,7 +157,7 @@
       [class.nav-highlighted]="searchFocused && book === highlightedItem">
       <div class="row flexx book-click" (click)="handleBookClick(book)">
         <div class="col-sm-3">
-          <h4 [innerHtml]="book?.name"></h4>
+          <h4 [innerHtml]="$safeNavigationMigration(book?.name)"></h4>
           <div class="book-badges">
             @if (book.status) {
               <span class="badge"
@@ -185,7 +185,7 @@
           </div>
         </div>
         <div class="col-sm-9">
-          <p [innerHtml]="book?.desc"></p>
+          <p [innerHtml]="$safeNavigationMigration(book?.desc)"></p>
         </div>
       </div>
       <mat-divider class="divider-table"></mat-divider>
