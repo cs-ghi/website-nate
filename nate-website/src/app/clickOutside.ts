@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+
 import {
   AfterViewInit,
   Directive,
@@ -7,6 +7,7 @@ import {
   Inject,
   OnDestroy,
   Output,
+  DOCUMENT
 } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { filter } from 'rxjs/internal/operators/filter';
