@@ -3,7 +3,10 @@
 @import 'src/sass/variables';
 @import 'src/sass/mixins';
 @import 'src/sass/grid';
-@import "~font-awesome/css/font-awesome.min.css";
+// Vendored at the repo root, not installed from npm — so this is a real
+// relative path. The old "~font-awesome/..." form was webpack syntax for
+// node_modules, where this package has never existed.
+@import "../font-awesome/css/font-awesome.min.css";
 // @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 
 // html, body { height: 100%; }

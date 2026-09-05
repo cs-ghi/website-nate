@@ -1,6 +1,16 @@
 import { Injectable } from '@angular/core';
-import initSqlJs, { Database } from 'sql.js';
+import type { Database, SqlJsStatic } from 'sql.js';
 import { numberedToTones } from '../utils/pinyin-converter';
+
+// sql.js is loaded as a plain script (see `scripts` in angular.json) rather than
+// bundled. Its dist is Emscripten output whose Node branches call require('fs')
+// and require('path'); esbuild cannot stub those the way webpack's `fallback`
+// did, and stubbing them was the only reason this project carried a custom
+// webpack config at all. Loaded as a script it declares a global instead — the
+// import above is type-only and erases at compile time.
+declare const initSqlJs: (config?: {
+  locateFile?: (file: string) => string;
+}) => Promise<SqlJsStatic>;
 
 export interface DictionaryResponse {
   meta: {
