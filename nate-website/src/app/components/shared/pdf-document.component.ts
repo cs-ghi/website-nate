@@ -7,10 +7,14 @@ import * as pdfjs from 'pdfjs-dist';
 import * as pdfjsViewer from 'pdfjs-dist/web/pdf_viewer';
 
 // Self-hosted, so the reader does not depend on a third-party CDN at runtime.
-// Both are copied out of pdfjs-dist by the `assets` globs in angular.json, and
-// must stay on the same version as the `pdfjs-dist` dependency.
+// Copied out of pdfjs-dist by the `assets` glob in angular.json, and must stay
+// on the same version as the `pdfjs-dist` dependency.
+//
+// pdf.js's CMap files are deliberately NOT shipped: they are only needed for
+// CID-keyed fonts with CJK encodings, and none of the 72 PDFs on this site uses
+// one. If a CJK document is ever published, re-add the cmaps asset glob and
+// pass cMapUrl/cMapPacked to getDocument below.
 pdfjs.GlobalWorkerOptions.workerSrc = 'assets/pdfjs/pdf.worker.min.js';
-const CMAP_URL = 'assets/pdfjs/cmaps/';
 
 // pdf.js's own page-width calculation, which it does not expose: see
 // `_setScale` in pdfjs-dist/legacy/web/pdf_viewer.js. `removePageBorders` zeroes
@@ -182,7 +186,7 @@ export class PdfDocumentComponent implements AfterViewInit, OnChanges, OnDestroy
     this.loadingTask?.destroy();
     if (!this.src) return;
 
-    this.loadingTask = pdfjs.getDocument({ url: this.src, cMapUrl: CMAP_URL, cMapPacked: true });
+    this.loadingTask = pdfjs.getDocument({ url: this.src });
     this.loadingTask.promise.then(
       (pdf: any) => this.zone.run(() => {
         this.pdf = pdf;

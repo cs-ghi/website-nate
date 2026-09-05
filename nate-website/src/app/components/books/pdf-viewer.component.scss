@@ -73,30 +73,6 @@
   }
 }
 
-.back-button, .download-button {
-  padding: 0.5rem 1rem;
-  border: 1px solid #007bff;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #007bff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-  flex-shrink: 0;
-  min-width: fit-content;
-  max-width: 200px;
-
-  &:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-}
-
 .back-button {
   padding: 0.5rem 1rem;
   border: 1px solid #007bff;
