@@ -20,6 +20,20 @@ const OUTLINE_TRANSITION_MS = 220;
 // reader currently is, which is more useful than restoring a stale shape.
 const OUTLINE_OPEN_KEY = 'reader.outline.open';
 
+// This reader opens this site's own documents and nothing else. `src` comes
+// straight off the query string, so without this check an emailed link like
+// ?src=https://evil.com/x.pdf renders a stranger's PDF on this origin — and any
+// pdf.js carrying CVE-2024-4367 turns a crafted font in that PDF into script
+// execution here. Rejects absolute and protocol-relative URLs and traversal;
+// leading "./" is normalised because LEGACY_PDF_REDIRECTS spells its targets
+// "././assets/pdfs/...".
+export function isOwnDocument(src: string): boolean {
+  if (!src) return false;
+  if (/^[a-z][a-z0-9+.-]*:/i.test(src) || src.startsWith('//')) return false;
+  const path = src.replace(/^(?:\.?\/)+/, '');
+  return !path.includes('..') && path.startsWith('assets/pdfs/');
+}
+
 @Component({
     selector: 'app-pdf-viewer',
     templateUrl: './pdf-viewer.component.html',
@@ -165,6 +179,10 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
       if (!newSrc) {
         this.pdfSrc = '';
         this.error = 'No PDF source provided';
+        this.isLoading = false;
+      } else if (!isOwnDocument(newSrc)) {
+        this.pdfSrc = '';
+        this.error = 'That link does not point to a document on this site.';
         this.isLoading = false;
       } else if (srcChanged) {
         // New book: always continuous, so there is nothing to decide before the
