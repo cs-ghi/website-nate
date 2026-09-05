@@ -1,6 +1,6 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 @media (max-width:500px){
     .books-info h3, h4  {
@@ -10,20 +10,20 @@
     .expand-chevron {
       border-top: 4px solid transparent;
       border-bottom: 4px solid transparent;
-      border-left: 6px solid $bg-secondary;
+      border-left: 6px solid variables.$bg-secondary;
     }
 }
 
 .books-info { // Added this wrapper for better nesting and organization
     h3 {
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         font-size: 26px;
         letter-spacing: 1px;
         font-weight: 600;
     }
 
     h4 {
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         letter-spacing: 0.7px;
         font-size: 23px;
         font-weight: 600;
@@ -32,7 +32,7 @@
 
     /* --- NEW STYLES FOR LISTS AND PARAGRAPHS --- */
     p {
-        color: $bg-secondary; // Assumes $bg-secondary is your primary text color
+        color: variables.$bg-secondary; // Assumes $bg-secondary is your primary text color
         font-size: 16px;
         line-height: 1.7;
         margin-bottom: 1em;
@@ -50,7 +50,7 @@
     }
 
     li {
-        color: $bg-secondary; // Match text color
+        color: variables.$bg-secondary; // Match text color
         font-size: 16px;
         line-height: 1.7;
         margin-bottom: 0.8em; // Spacing between list items
@@ -79,7 +79,7 @@
     gap: 9px;
     cursor: pointer;
     user-select: none;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 17px;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -126,12 +126,12 @@
     transition: border-color 0.3s ease;
 
     &:focus-within {
-        border-color: $bg-secondary;
+        border-color: variables.$bg-secondary;
     }
 
     .search-icon,
     .clear-icon {
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         opacity: 0.5;
         font-size: 20px;
         width: 20px;
@@ -149,25 +149,25 @@
         background: transparent;
         border: none;
         outline: none;
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         font-size: 17px;
         letter-spacing: 0.5px;
 
         &::placeholder {
-            color: $bg-secondary;
+            color: variables.$bg-secondary;
             opacity: 0.4;
         }
     }
 }
 
 .nav-highlighted {
-    background-color: rgba($bg-secondary, 0.07);
-    box-shadow: inset 3px 0 0 0 $bg-secondary;
+    background-color: rgba(variables.$bg-secondary, 0.07);
+    box-shadow: inset 3px 0 0 0 variables.$bg-secondary;
     border-radius: 4px;
 }
 
 .no-results {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     opacity: 0.6;
     font-size: 16px;
     font-style: italic;
@@ -186,7 +186,7 @@
     cursor: pointer;
     padding: 5px 13px;
     font-size: 13px;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid #45464b;
     border-radius: 999px;
@@ -196,8 +196,8 @@
 
     &:hover { background: #404145; }
     &.active {
-        background: $bg-secondary;
-        border-color: $bg-secondary;
+        background: variables.$bg-secondary;
+        border-color: variables.$bg-secondary;
         color: #23242a;
         .chip-count { color: #23242a; opacity: 0.7; }
     }
@@ -215,7 +215,7 @@
 }
 
 .level-caption {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     opacity: 0.4;
     font-size: 11px;
     letter-spacing: 1px;
@@ -227,7 +227,7 @@
     cursor: pointer;
     padding: 3px 10px;
     font-size: 12px;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     opacity: 0.55;
     background: transparent;
     border: 1px solid transparent;
@@ -254,14 +254,14 @@
     border-bottom: 1px solid #3c3d42;
 
     h3 {
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         font-size: 22px;
         font-weight: 600;
         letter-spacing: 0.6px;
         margin: 0;
     }
     .section-count {
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         opacity: 0.45;
         font-size: 14px;
     }
@@ -270,7 +270,7 @@
 // Shown only when a single topic is selected — orienting prose is welcome there
 // and would be 10 repetitions of noise in the all-topics view.
 .section-blurb {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     opacity: 0.55;
     font-size: 14.5px;
     font-style: italic;
@@ -287,7 +287,7 @@
     margin: 2.4em 0 1.6em;
     padding-bottom: 6px;
     border-bottom: 1px dashed #3c3d42;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.4px;
@@ -445,7 +445,7 @@
     height: 0;
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
-    border-left: 10px solid $bg-secondary;
+    border-left: 10px solid variables.$bg-secondary;
     cursor: pointer;
     transition: transform 0.25s ease, opacity 0.2s;
     flex-shrink: 0;
@@ -472,7 +472,7 @@
     opacity: 0.2;
     transition: opacity 0.3s ease;
     z-index: 1000;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
 
     &:hover {
         opacity: 0.7;
@@ -502,7 +502,7 @@
         background: transparent;
         border: none;
         border-bottom: 1px solid #666;
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         font-size: 14px;
         outline: none;
         width: 120px;
@@ -516,7 +516,7 @@
     .password-submit {
         background: none;
         border: none;
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         cursor: pointer;
         font-size: 16px;
         padding: 0 2px;
@@ -535,7 +535,7 @@
     margin-top: 2em;
 
     h3 {
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         font-size: 20px;
         font-weight: 600;
         margin-bottom: 1em;
@@ -563,7 +563,7 @@
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.2s;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 14px;
     font-family: monospace;
 
@@ -595,7 +595,7 @@
     background: rgba(255, 255, 255, 0.03);
     border: 1px dashed #4a4a4a;
     border-radius: 999px;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 12.5px;
     cursor: pointer;
     transition: border-color 0.25s, background-color 0.25s;
@@ -632,7 +632,7 @@
     }
 
     &:hover {
-        border-color: $bg-secondary;
+        border-color: variables.$bg-secondary;
         background: rgba(255, 255, 255, 0.05);
     }
 

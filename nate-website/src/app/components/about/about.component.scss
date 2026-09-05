@@ -1,6 +1,6 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 .flexx{
   display:flex;
@@ -41,7 +41,7 @@
 
 // professional "at a glance" strip: a skimmable summary for professional visitors
 .about-info .at-a-glance {
-  border-left: 3px solid $bg-secondary;
+  border-left: 3px solid variables.$bg-secondary;
   padding-left: 18px;
   margin-bottom: 30px;
 }

@@ -1,6 +1,6 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 $card-bg: #313236;
 $card-hover: #404145;
@@ -32,7 +32,7 @@ $ink-faint: #857d77;
     }
 
     a {
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         text-decoration: underline !important;
         cursor: pointer;
     }
@@ -134,7 +134,7 @@ $ink-faint: #857d77;
     letter-spacing: 0.3px;
     white-space: nowrap;
     background: #2a2b30;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     border: 1px solid #46474d;
 
     // Status is the badge a reader actually decides on, so it is the one
@@ -151,7 +151,7 @@ $ink-faint: #857d77;
         background: transparent;
         border-color: #4a4b52;
         text-decoration: none !important;
-        &:hover { border-color: $bg-secondary; color: $ink-strong; }
+        &:hover { border-color: variables.$bg-secondary; color: $ink-strong; }
     }
 }
 
@@ -167,7 +167,7 @@ $ink-faint: #857d77;
     cursor: pointer;
     padding: 4px 13px;
     font-size: 12.5px;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     background: transparent;
     border: 1px solid #45464b;
     border-radius: 999px;
@@ -175,13 +175,13 @@ $ink-faint: #857d77;
 
     &:hover {
         background: rgba(255, 255, 255, 0.05);
-        border-color: $bg-secondary;
+        border-color: variables.$bg-secondary;
     }
 }
 
 .p-more {
     margin-left: auto;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 12.5px;
     opacity: 0;
     transition: 0.22s;

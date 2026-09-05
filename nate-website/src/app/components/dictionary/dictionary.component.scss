@@ -1,6 +1,6 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 .dictionary-container {
   max-width: 1200px;
@@ -22,7 +22,7 @@
     letter-spacing: 1px;
     position: sticky;
     top: 50px;
-    background-color: $bg-primary;
+    background-color: variables.$bg-primary;
     padding: 1rem 0;
     z-index: 50;
   }
@@ -61,7 +61,7 @@
       }
 
       &:focus {
-        border-color: $bg-secondary;
+        border-color: variables.$bg-secondary;
       }
 
       &:disabled {
@@ -86,7 +86,7 @@
 
       &:hover:not(:disabled) {
         color: #d3d0d0;
-        border-color: $bg-secondary;
+        border-color: variables.$bg-secondary;
       }
 
       &:disabled {
@@ -124,7 +124,7 @@
   }
 
   .loading {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
   }
 
   .error {
@@ -154,7 +154,7 @@
       h2 {
         margin: 0;
         font-size: 1.5rem;
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         font-weight: 600;
         letter-spacing: 1px;
       }
@@ -179,7 +179,7 @@
 
       &:hover {
         color: #d3d0d0;
-        border-color: $bg-secondary;
+        border-color: variables.$bg-secondary;
       }
     }
   }
@@ -197,13 +197,13 @@
 
     &:hover {
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-      border-color: $bg-secondary;
+      border-color: variables.$bg-secondary;
       background: rgba(164, 155, 150, 0.05);
     }
 
     &.copied {
       background: rgba(164, 155, 150, 0.15);
-      border-color: $bg-secondary;
+      border-color: variables.$bg-secondary;
       animation: copyFlash 0.3s ease-out;
     }
 
@@ -216,7 +216,7 @@
       .result-number {
         font-size: 1rem;
         font-weight: bold;
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
         margin-right: 0.5rem;
       }
 
@@ -235,7 +235,7 @@
 
         &:hover {
           color: #d3d0d0;
-          border-color: $bg-secondary;
+          border-color: variables.$bg-secondary;
         }
 
         &::before {
@@ -272,7 +272,7 @@
       top: 1.25rem;
       right: 1.25rem;
       font-size: 0.9rem;
-      color: $bg-secondary;
+      color: variables.$bg-secondary;
       font-weight: bold;
       animation: fadeIn 0.2s ease-in;
       pointer-events: none;
@@ -302,7 +302,7 @@
       h3 {
         font-size: 1rem;
         margin-bottom: 0.75rem;
-        color: $bg-secondary;
+        color: variables.$bg-secondary;
       }
 
       .example {

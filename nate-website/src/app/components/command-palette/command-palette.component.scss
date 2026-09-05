@@ -1,10 +1,10 @@
-@import 'src/sass/variables';
+@use 'src/sass/variables';
 
 // Palette matches the site: charcoal card, warm-taupe ($bg-secondary) text.
 $cp-panel: #2b2c31;
 $cp-border: #4a4a4a;
-$cp-muted: rgba($bg-secondary, 0.62);
-$cp-highlight: rgba($bg-secondary, 0.12);
+$cp-muted: rgba(variables.$bg-secondary, 0.62);
+$cp-highlight: rgba(variables.$bg-secondary, 0.12);
 
 .cp-backdrop {
   position: fixed;
@@ -28,7 +28,7 @@ $cp-highlight: rgba($bg-secondary, 0.12);
   border-radius: 10px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
   overflow: hidden;
-  font-family: $font, 'Helvetica Neue', sans-serif;
+  font-family: variables.$font, 'Helvetica Neue', sans-serif;
 }
 
 .cp-search {
@@ -38,13 +38,13 @@ $cp-highlight: rgba($bg-secondary, 0.12);
   padding: 13px 15px;
   border-bottom: 1px solid $cp-border;
 }
-.cp-search-icon { font-size: 20px; color: $bg-secondary; opacity: 0.8; }
+.cp-search-icon { font-size: 20px; color: variables.$bg-secondary; opacity: 0.8; }
 .cp-input {
   flex: 1;
   border: none;
   outline: none;
   font-size: 16px;
-  color: $bg-secondary;
+  color: variables.$bg-secondary;
   background: transparent;
   &::placeholder { color: $cp-muted; }
 }
@@ -76,7 +76,7 @@ $cp-highlight: rgba($bg-secondary, 0.12);
   padding: 9px 11px;
   border-radius: 7px;
   cursor: pointer;
-  color: $bg-secondary;
+  color: variables.$bg-secondary;
 
   &.highlighted { background: $cp-highlight; }
   // Reveal the copy button on the active row only, to keep rows clean.
@@ -125,7 +125,7 @@ $cp-highlight: rgba($bg-secondary, 0.12);
 }
 .cp-book {
   font-size: 12px;
-  color: $bg-secondary;
+  color: variables.$bg-secondary;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -141,9 +141,9 @@ $cp-highlight: rgba($bg-secondary, 0.12);
   border-radius: 6px;
   border: 1px solid $cp-border;
   background: rgba(255, 255, 255, 0.04);
-  color: $bg-secondary;
+  color: variables.$bg-secondary;
   cursor: pointer;
-  &:hover { background: rgba($bg-secondary, 0.16); }
+  &:hover { background: rgba(variables.$bg-secondary, 0.16); }
   &.copied { color: #7fd39a; border-color: #7fd39a; }
 }
 
@@ -158,7 +158,7 @@ $cp-highlight: rgba($bg-secondary, 0.12);
 
 .cp-hint-lead {
   margin: 0 0 9px;
-  color: $bg-secondary;
+  color: variables.$bg-secondary;
   opacity: 0.85;
   font-size: 13px;
 }
@@ -170,14 +170,14 @@ $cp-highlight: rgba($bg-secondary, 0.12);
 .cp-legend span { white-space: nowrap; }
 
 kbd {
-  font-family: $font, monospace;
+  font-family: variables.$font, monospace;
   font-size: 11px;
   border: 1px solid $cp-border;
   border-bottom-width: 2px;
   border-radius: 4px;
   padding: 1px 5px;
   margin: 0 1px;
-  color: $bg-secondary;
+  color: variables.$bg-secondary;
   background: rgba(255, 255, 255, 0.05);
 }
 

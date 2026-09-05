@@ -1,6 +1,7 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use "sass:list";
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 // ── Belt color map ─────────────────────────────────────────────────
 $belt-colors: (
@@ -111,7 +112,7 @@ $belt-colors: (
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
   transition: color 0.2s, border-bottom-color 0.2s;
 
   &.glossary-toggle--open {
@@ -170,7 +171,7 @@ $belt-colors: (
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     margin: 0 0 0.75rem;
   }
 
@@ -273,7 +274,7 @@ $belt-colors: (
 .ctrl-input {
   padding: 0.55rem 0.85rem;
   font-size: 0.88rem;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
   background-color: rgba(255, 255, 255, 0.04);
   border: 1px solid #3a3733;
   border-radius: 4px;
@@ -287,7 +288,7 @@ $belt-colors: (
   &::placeholder { color: #4a4540; }
 
   &:focus {
-    border-color: $bg-secondary;
+    border-color: variables.$bg-secondary;
     background-color: rgba(255, 255, 255, 0.06);
   }
 }
@@ -306,7 +307,7 @@ $belt-colors: (
   cursor: pointer;
 
   &:focus-within {
-    border-color: $bg-secondary;
+    border-color: variables.$bg-secondary;
     background-color: rgba(255, 255, 255, 0.06);
     outline: none;
   }
@@ -327,7 +328,7 @@ $belt-colors: (
   ::ng-deep .mat-select-value {
     color: #bab0b0;
     font-size: 0.88rem;
-    font-family: $font, sans-serif;
+    font-family: variables.$font, sans-serif;
     line-height: 1.4;
   }
 
@@ -359,7 +360,7 @@ $belt-colors: (
 
   .mat-option {
     font-size: 0.88rem;
-    font-family: $font, sans-serif;
+    font-family: variables.$font, sans-serif;
     color: #a49b96;
     height: 2.6rem;
     line-height: 2.6rem;
@@ -419,7 +420,7 @@ $belt-colors: (
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #666;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
   transition: color 0.15s, border-color 0.15s;
 
   mat-icon {
@@ -430,7 +431,7 @@ $belt-colors: (
 
   &:hover {
     color: #c0b6aa;
-    border-color: $bg-secondary;
+    border-color: variables.$bg-secondary;
   }
 }
 
@@ -455,7 +456,7 @@ $belt-colors: (
   transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    border-color: $bg-secondary;
+    border-color: variables.$bg-secondary;
     background: rgba(164, 155, 150, 0.05);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 
@@ -542,7 +543,7 @@ $belt-colors: (
   .kanji {
     display: block;
     font-size: 0.9rem;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     margin-bottom: 0.2rem;
   }
 
@@ -591,8 +592,8 @@ $belt-colors: (
 
 @each $belt, $colors in $belt-colors {
   .belt-#{$belt} {
-    background: nth($colors, 1);
-    color: nth($colors, 2);
+    background: list.nth($colors, 1);
+    color: list.nth($colors, 2);
 
     @if $belt == 'white' {
       border: 1px solid #6d5e56;
@@ -622,7 +623,7 @@ $belt-colors: (
   min-height: 32px;
 
   &:hover {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
   }
 
   mat-icon {
@@ -684,7 +685,7 @@ $belt-colors: (
 
     &:hover {
       color: #d3d0d0;
-      border-color: $bg-secondary;
+      border-color: variables.$bg-secondary;
     }
   }
 }
@@ -730,7 +731,7 @@ $belt-colors: (
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -747,7 +748,7 @@ $belt-colors: (
 .study-overlay {
   position: fixed;
   inset: 0;
-  background: $bg-body;
+  background: variables.$bg-body;
   z-index: 300;
   display: flex;
   flex-direction: column;
@@ -774,13 +775,13 @@ $belt-colors: (
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
   padding: 0.3rem 0.6rem;
   cursor: pointer;
   flex-shrink: 0;
   transition: color 0.15s, border-color 0.15s;
 
-  &:hover { color: #c0b6aa; border-color: $bg-secondary; }
+  &:hover { color: #c0b6aa; border-color: variables.$bg-secondary; }
 
   mat-icon { font-size: 0.9rem; height: 0.9rem; width: 0.9rem; }
 }
@@ -810,7 +811,7 @@ $belt-colors: (
 .study-counter {
   font-size: 0.8rem;
   color: #666;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
   white-space: nowrap;
 }
 
@@ -850,7 +851,7 @@ $belt-colors: (
   -webkit-backface-visibility: hidden;
   border: 1px solid #2a2b30;
   border-radius: 6px;
-  background: $bg-primary;
+  background: variables.$bg-primary;
   overflow: hidden;
 }
 
@@ -883,8 +884,8 @@ $belt-colors: (
 
 .sf-romaji {
   font-size: 1.1rem;
-  color: $bg-secondary;
-  font-family: $font, sans-serif;
+  color: variables.$bg-secondary;
+  font-family: variables.$font, sans-serif;
   font-weight: 400;
 }
 
@@ -898,7 +899,7 @@ $belt-colors: (
   color: #3a3733;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
 
   mat-icon { font-size: 0.85rem; height: 0.85rem; width: 0.85rem; }
 }
@@ -935,13 +936,13 @@ $belt-colors: (
 .sb-romaji {
   font-size: 0.85rem;
   color: #666;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
   margin: 0;
 }
 
 .sb-description {
   font-size: 0.9rem;
-  color: $bg-secondary;
+  color: variables.$bg-secondary;
   line-height: 1.6;
   margin: 0;
 }
@@ -1044,7 +1045,7 @@ $belt-colors: (
 
   &:hover:not(:disabled) {
     color: #e0d9d3;
-    border-color: $bg-secondary;
+    border-color: variables.$bg-secondary;
     background: rgba(255, 255, 255, 0.04);
   }
 
@@ -1058,7 +1059,7 @@ $belt-colors: (
   color: #3a3733;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-family: $font, sans-serif;
+  font-family: variables.$font, sans-serif;
 }
 
 // ── Modal overlay ────────────────────────────────────────────────
@@ -1080,7 +1081,7 @@ $belt-colors: (
 }
 
 .modal-panel {
-  background: $bg-primary;
+  background: variables.$bg-primary;
   border: 1px solid #46423f;
   border-radius: 4px;
   width: 100%;
@@ -1148,7 +1149,7 @@ $belt-colors: (
   .modal-kanji {
     display: inline-block;
     font-size: 1.15rem;
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     margin-bottom: 0.2rem;
   }
 
@@ -1320,7 +1321,7 @@ $belt-colors: (
 
   &:hover {
     color: #d3d0d0;
-    border-color: $bg-secondary;
+    border-color: variables.$bg-secondary;
   }
 
   mat-icon {

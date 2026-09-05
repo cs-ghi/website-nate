@@ -1,6 +1,6 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 @media (max-width:500px){
     .notes-info h3, h4  {
@@ -9,19 +9,19 @@
 }
 
 .disclaimer {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     opacity: 0.7;
     font-size: 14px;
 }
 
 .notes-info h3 {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 26px;
     letter-spacing: 1px;
     font-weight: 600; }
 
 .notes-info h4 {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     letter-spacing: 0.7px;
     font-size: 23px;
     font-weight: 600;

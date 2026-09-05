@@ -1,16 +1,16 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 
 .miscellaneous-info h3 {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 26px;
     letter-spacing: 1px;
     font-weight: 600; }
 
 .miscellaneous-info h4 {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 20px;
     letter-spacing: 0.7px;
     font-weight: 520; }

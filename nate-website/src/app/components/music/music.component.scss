@@ -1,6 +1,6 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 .flexx{
   display:flex;
@@ -10,7 +10,7 @@
 
 // about section header
 .about-info h3 {
-  color: $bg-secondary;
+  color: variables.$bg-secondary;
   font-size: 26px;
   letter-spacing: 1px;
   font-weight: 600; }

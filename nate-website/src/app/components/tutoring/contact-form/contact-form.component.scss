@@ -1,7 +1,7 @@
 // @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 form.contact {
 	display: flex;
@@ -16,7 +16,7 @@ form.contact {
 
 .title{
 	// color: $bg-secondary;
-	color:$bg-secondary !important;
+	color:variables.$bg-secondary !important;
 	font-size:13px !important;
 }
 
@@ -48,7 +48,7 @@ button {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
-	color: $bg-secondary;
+	color: variables.$bg-secondary;
 	margin-top:16px !important;
 
 	
@@ -69,14 +69,14 @@ button {
 }
 
 button:hover:enabled{
-	color: $bg-secondary;
-	background-color: $bg-body;
+	color: variables.$bg-secondary;
+	background-color: variables.$bg-body;
 	border:none;
 	cursor: pointer;
 }
 
 .response-text{
-	color:$bg-secondary;
+	color:variables.$bg-secondary;
 }
 
 
@@ -90,7 +90,7 @@ button:hover:enabled{
 	// text-align: center;
 	font-size: 14px;
     margin-bottom: 0px; 
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
   }
 
 .hidden {
@@ -213,8 +213,8 @@ div.sphereborder {
 	width: 10px;
 	height: 10px;
 	border-radius: 5px;
-	background-color: $bg-secondary;
-	color: $bg-secondary;
+	background-color: variables.$bg-secondary;
+	color: variables.$bg-secondary;
 	transform: scale(1.25, 1.25);
 	animation: dotStretching 2s infinite ease-in;
   }
@@ -230,8 +230,8 @@ div.sphereborder {
 	width: 10px;
 	height: 10px;
 	border-radius: 5px;
-	background-color: $bg-secondary;
-	color: $bg-secondary;
+	background-color: variables.$bg-secondary;
+	color: variables.$bg-secondary;
 	animation: dotStretchingBefore 2s infinite ease-in;
   }
   
@@ -239,8 +239,8 @@ div.sphereborder {
 	width: 10px;
 	height: 10px;
 	border-radius: 5px;
-	background-color: $bg-secondary;
-	color: $bg-secondary;
+	background-color: variables.$bg-secondary;
+	color: variables.$bg-secondary;
 	animation: dotStretchingAfter 2s infinite ease-in;
   }
   

@@ -1,10 +1,10 @@
 
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 .header{
-  background-color: $bg-body;
+  background-color: variables.$bg-body;
   width: 100%;
   max-width: 100%;
   padding: 0.2em;
@@ -71,7 +71,7 @@
 }
 
 .nav-menu {
-  background-color: $bg-body;
+  background-color: variables.$bg-body;
   margin-top: 0px;
   align-items: center;
   display: flex;
@@ -98,7 +98,7 @@
 }
 
 .nav-menu--links{
-  background-color: $bg-body;
+  background-color: variables.$bg-body;
   margin-top: 0px;
   margin: 7px 9px 7px;
 }

@@ -1,9 +1,9 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
  a{
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     transition: 0.4s;
   }
   a:hover{
@@ -14,17 +14,17 @@
 .not-found-info p {
     font-size: 14px;
     margin-bottom: 0px; 
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     text-align: center;
   }
 .not-found-info h3 {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     font-size: 26px;
     letter-spacing: 1px;
     font-weight: 600; }
 
 .not-found-info h4 {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     letter-spacing: 0.7px;
     font-size: 23px;
     font-weight: 600;
@@ -53,7 +53,7 @@
 }
 
 .not-found-info h4 {
-    color: $bg-secondary;
+    color: variables.$bg-secondary;
     letter-spacing: 0.7px;
     font-size: 23px;
     font-weight: 600;

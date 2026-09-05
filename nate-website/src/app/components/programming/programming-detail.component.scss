@@ -1,6 +1,6 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 $card-bg: #313236;
 $ink: #bab0b0;
@@ -19,7 +19,7 @@ $ink-strong: #c0b6aa;
     transition: 0.2s;
 
     mat-icon { font-size: 18px; height: 18px; width: 18px; }
-    &:hover { color: $bg-secondary; }
+    &:hover { color: variables.$bg-secondary; }
 }
 
 .detail-hero {
@@ -77,8 +77,8 @@ $ink-strong: #c0b6aa;
         &:hover { background: #404145; color: $ink-strong; }
 
         &.primary {
-            background: $bg-secondary;
-            border-color: $bg-secondary;
+            background: variables.$bg-secondary;
+            border-color: variables.$bg-secondary;
             color: #23242a;
             &:hover { filter: brightness(1.08); color: #23242a; }
         }
@@ -159,7 +159,7 @@ $ink-strong: #c0b6aa;
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: $bg-secondary;
+            background: variables.$bg-secondary;
         }
     }
 }

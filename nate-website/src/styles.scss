@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 // Vendored at the repo root, not installed from npm — so this is a real
 // relative path. The old "~font-awesome/..." form was webpack syntax for
 // node_modules, where this package has never existed.
@@ -21,7 +21,7 @@
 }
 
 .mat-select-value {
-  color:$bg-secondary;
+  color:variables.$bg-secondary;
 }
 
 .dropDown-seasons-panel {
@@ -59,11 +59,11 @@
 
 // regular underline label
 .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before{
-  border-bottom-color: $bg-secondary !important;
+  border-bottom-color: variables.$bg-secondary !important;
 }
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after{
-  border-bottom-color: $bg-secondary !important;
+  border-bottom-color: variables.$bg-secondary !important;
 }
 
 // autofill solution (funny)
@@ -117,7 +117,7 @@ input:-webkit-autofill,input:-webkit-autofill:focus {
 }
 
 html, body {
-  background-color:$bg-primary;
+  background-color:variables.$bg-primary;
 }
 
 

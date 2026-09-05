@@ -1,6 +1,6 @@
-@import 'src/sass/variables';
-@import 'src/sass/mixins';
-@import 'src/sass/grid';
+@use 'src/sass/variables';
+@use 'src/sass/mixins';
+@use 'src/sass/grid';
 
 $card-bg: #313236;
 $card-hover: #404145;
@@ -11,7 +11,7 @@ $ink-strong: #c0b6aa;
     h3 { color: $ink-strong; }
     p { color: $ink; font-size: 15px; line-height: 27px; }
     .muted { color: #8b837e; font-size: 13px; }
-    .footnote-ref { color: $bg-secondary; font-size: 11px; vertical-align: super; line-height: 0; }
+    .footnote-ref { color: variables.$bg-secondary; font-size: 11px; vertical-align: super; line-height: 0; }
     .footnote {
         color: #8b837e;
         font-size: 12px;
@@ -21,7 +21,7 @@ $ink-strong: #c0b6aa;
         border-top: 1px solid #3c3d42;
         max-width: 640px;
     }
-    a { color: $bg-secondary; text-decoration: underline !important; }
+    a { color: variables.$bg-secondary; text-decoration: underline !important; }
 }
 
 // ---- controls: search + chips ----
@@ -74,8 +74,8 @@ $ink-strong: #c0b6aa;
 
     &:hover { background: $card-hover; }
     &.active {
-        background: $bg-secondary;
-        border-color: $bg-secondary;
+        background: variables.$bg-secondary;
+        border-color: variables.$bg-secondary;
         color: #23242a;
         .chip-count { color: #23242a; }
     }
@@ -120,7 +120,7 @@ $ink-strong: #c0b6aa;
 
     &:hover {
         background: $card-hover;
-        border-color: $bg-secondary;
+        border-color: variables.$bg-secondary;
         transform: translateY(-2px);
     }
 
@@ -143,7 +143,7 @@ $ink-strong: #c0b6aa;
         font-size: 18px;
         line-height: 1;
         transition: 0.2s;
-        &:hover { color: $bg-secondary; }
+        &:hover { color: variables.$bg-secondary; }
     }
 
     .card-tagline {
