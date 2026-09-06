@@ -379,18 +379,18 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateMeasureTheory -> NateFuncAnalysis) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateRealAnalysis -> NateFuncAnalysis) is manual, no backing \\cite found.",
     "refs": [
-      "NateMeasureTheory",
+      "NateRealAnalysis",
       "NateFuncAnalysis"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateMeasureTheory -> NateGeometricMeasureTheory) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateRealAnalysis -> NateGeometricMeasureTheory) is manual, no backing \\cite found.",
     "refs": [
-      "NateMeasureTheory",
+      "NateRealAnalysis",
       "NateGeometricMeasureTheory"
     ]
   },
@@ -437,15 +437,6 @@
     "refs": [
       "NateODE",
       "NateNonlinearWave"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCoreRepTheory -> NateGeoRepTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCoreRepTheory",
-      "NateGeoRepTheory"
     ]
   },
   {
@@ -973,7 +964,16 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateAbelianVarieties is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAbelianVarieties -> NateCFT is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateCFT"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateAbelianVarieties is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
       "NateAbelianVarieties"
@@ -1097,15 +1097,6 @@
     ]
   },
   {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateProbability -> NateAnalyticNumTheory is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateProbability",
-      "NateAnalyticNumTheory"
-    ]
-  },
-  {
     "kind": "unsupported-edge",
     "severity": "warn",
     "message": "layout.tiers 'Specialization' lists unknown book 'NateStableHomotopy'.",
@@ -1144,6 +1135,15 @@
     "refs": [
       "NateGaloisCohom",
       "NateLocalFieldTheory"
+    ]
+  },
+  {
+    "kind": "tier-inversion",
+    "severity": "warn",
+    "message": "Tier inversion: NateProbability (tier 2) builds on NateAnalyticNumTheory (tier 3); a book cannot sit below its prerequisite.",
+    "refs": [
+      "NateProbability",
+      "NateAnalyticNumTheory"
     ]
   },
   {

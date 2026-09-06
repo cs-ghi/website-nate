@@ -103,7 +103,7 @@ const TRACKED = {
   'books/EYNTKA-linear-pde.pdf': 'textbooks/linear-pde/EYNTKA-linear-pde.pdf',
   'books/EYNTKA-local-field-theory.pdf':
     'textbooks/local-field-theory/EYNTKA-local-field-theory.pdf',
-  'books/EYNTKA-measure-theory.pdf': 'textbooks/measure-theory/EYNTKA-measure-theory.pdf',
+  'books/EYNTKA-real-analysis.pdf': 'textbooks/real-analysis/EYNTKA-real-analysis.pdf',
   'books/EYNTKA-metric-function-spaces.pdf':
     'textbooks/metric-function-spaces/EYNTKA-metric-function-spaces.pdf',
   'books/EYNTKA-modern-alg-geo.pdf': 'textbooks/modern-algebraic-geometry/EYNTKA-modern-alg-geo.pdf',

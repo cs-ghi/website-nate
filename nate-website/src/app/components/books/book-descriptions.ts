@@ -13,9 +13,10 @@ const CURATED_BOOKS: Book[] = [
   // so graph.json carries no NateAlgebra node and nothing looks this parent up.
   // The entry stays because the by-basename map at the bottom of this file
   // recurses into `children`, so its seven members keep these curated
-  // descriptions while standing alone. 'Real Analysis' below is the same shape
-  // for the same reason: that container was DISBANDED outright on 2026-08-17,
-  // so its three members are now standalone books and the parent never renders.
+  // descriptions while standing alone. (The 'Real Analysis' parent that used to
+  // sit below is gone: that container was DISBANDED on 2026-08-17, its three
+  // members are standalone books, and the codename was reassigned 2026-09-06 to
+  // the volume formerly titled Measure Theory.)
   {
     name: 'Abstract Algebra',
     desc: 'Covers "all" of the core topics algebra: Groups, Rings, Modules, Fields (including Galois Theory), Commutative algebra, Classical Algebraic Geometry, Algebraic Number Theory, and Representation of finite groups, and Homological algebra with an extra chapter on spectral sequences. Special topics include Quiver Theory and Category theory. Note that some group cohomology was included so that EYNTKA Class Field Theory can reference this book without needing to reference the more dense book on Galois Cohomology.\n\n Note that this book is a monolith of the algebra series of texbooks.',
