@@ -2,6 +2,14 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateGeometricAnalysis' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateGeometricAnalysis"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NatePadicHodge' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NatePadicHodge"
@@ -26,9 +34,17 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateGeometricAnalysis' is planned (cited/registered but has no folder yet).",
+    "message": "'NateErgodicTheory' is planned (cited/registered but has no folder yet).",
     "refs": [
-      "NateGeometricAnalysis"
+      "NateErgodicTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
+    "message": "'NateStochasticCalculus' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateStochasticCalculus"
     ]
   },
   {
@@ -53,22 +69,6 @@
     "message": "'NateAutomorphicForms' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateAutomorphicForms"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateStochasticCalculus' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateStochasticCalculus"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateErgodicTheory' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateErgodicTheory"
     ]
   },
   {
