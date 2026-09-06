@@ -2,7 +2,7 @@
   "meta": {
     "generated": "2026-09-06",
     "bookCount": 48,
-    "edgeCount": 447,
+    "edgeCount": 459,
     "clashCounts": {
       "error": 0,
       "warn": 5,
@@ -3232,6 +3232,24 @@
     },
     {
       "source": "NateFuncAnalysis",
+      "target": "NateHarmonicAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateFuncAnalysis",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateFuncAnalysis",
       "target": "NateLinAlg",
       "type": "prereq",
       "provenance": "both",
@@ -3254,6 +3272,24 @@
       "target": "NateMetricFunctionSpaces",
       "type": "prereq",
       "provenance": "both",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateFuncAnalysis",
+      "target": "NateMicrolocalAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "functional-analysis/EYNTKA-functional-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateFuncAnalysis",
+      "target": "NateNonlinearWave",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "functional-analysis/EYNTKA-functional-analysis.tex"
       ]
@@ -3490,6 +3526,15 @@
     },
     {
       "source": "NateHarmonicAnalysis",
+      "target": "NateAnalyticNumTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
       "target": "NateElemAnalysis",
       "type": "reference",
       "provenance": "auto",
@@ -3526,6 +3571,15 @@
     },
     {
       "source": "NateHarmonicAnalysis",
+      "target": "NateLieGroups",
+      "type": "coreq",
+      "provenance": "both",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
       "target": "NateLinearPDE",
       "type": "reference",
       "provenance": "auto",
@@ -3550,6 +3604,24 @@
       "citedIn": [
         "harmonic-analysis/EYNTKA-harmonic-analysis.tex",
         "harmonic-analysis/drafts/scratch/rellich-bessel.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NateNonlinearWave",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateHarmonicAnalysis",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
       ]
     },
     {
@@ -4064,7 +4136,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex",
+        "vector-bundles-and-k-theory/drafts/ch04-s01-draft.tex"
       ]
     },
     {
@@ -4332,8 +4405,8 @@
     {
       "source": "NateLieGroups",
       "target": "NateHarmonicAnalysis",
-      "type": "coreq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "lie-groups/EYNTKA-lie-groups.tex"
       ]
@@ -5187,6 +5260,42 @@
     {
       "source": "NateRealAnalysis",
       "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-analysis/EYNTKA-real-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateRealAnalysis",
+      "target": "NateHarmonicAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-analysis/EYNTKA-real-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateRealAnalysis",
+      "target": "NateLieGroups",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-analysis/EYNTKA-real-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateRealAnalysis",
+      "target": "NateProbability",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-analysis/EYNTKA-real-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateRealAnalysis",
+      "target": "NateStatistics",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
