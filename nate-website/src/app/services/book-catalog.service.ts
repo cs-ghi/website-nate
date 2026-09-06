@@ -18,7 +18,9 @@ const GRAPH_URL = 'assets/series-map/graph.json';
 // Geometry — and the volume link survives as a per-row badge instead.
 const MEGABOOK_LABELS: Record<string, string> = {
   NateAlgebra: 'Algebra',
-  NateRealAnalysis: 'Real Analysis',
+  // NateRealAnalysis removed 2026-09-06: the disbanded Analysis container's
+  // codename now names a standalone book, and a stale entry here would badge
+  // and sort it as a compiled volume.
 };
 
 // Books with no entry in BOOK_TOPICS land here. scripts/check-book-topics.js

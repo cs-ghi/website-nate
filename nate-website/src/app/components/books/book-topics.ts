@@ -148,8 +148,7 @@ export const BOOK_TOPICS: Record<string, TopicAssignment> = {
   NateMetricFunctionSpaces: { primary: 'analysis', also: ['geometry-topology'] },
   NateElemAnalysis: { primary: 'analysis' },
   NateCalculus: { primary: 'analysis' },
-  NateRealAnalysis: { primary: 'analysis' },
-  NateMeasureTheory: { primary: 'analysis', also: ['probability'], rank: 1 },
+  NateRealAnalysis: { primary: 'analysis', also: ['probability'], rank: 1 },
   // Riemann surfaces and the zeta function put it in reach of both geometry and
   // number theory; the book itself is one-variable complex analysis.
   NateComplexAnalysis: { primary: 'analysis', also: ['geometry-topology', 'number-theory'], rank: 2 },
