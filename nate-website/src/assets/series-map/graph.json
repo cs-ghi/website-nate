@@ -6,7 +6,7 @@
     "clashCounts": {
       "error": 0,
       "warn": 5,
-      "info": 126
+      "info": 125
     },
     "tiers": [
       {
@@ -390,7 +390,7 @@
       "links": {
         "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
-      "lastUpdated": "2026-07-15",
+      "lastUpdated": "2026-09-06",
       "xAffinity": -0.629,
       "tier": 4
     },
@@ -633,7 +633,7 @@
     },
     {
       "id": "NateMetricFunctionSpaces",
-      "title": "Analysis on Metric and Function Spaces",
+      "title": "Metric and Function Spaces",
       "dir": "metric-function-spaces",
       "description": "Metric spaces and completeness, the Banach contraction principle, compactness (sequential and totally bounded), uniform convergence, and the function-space theorems: Stone-Weierstrass, Arzela-Ascoli, and Baire category.",
       "status": "in-progress",
@@ -641,7 +641,7 @@
       "clusters": [],
       "links": {
         "pdf": "metric-function-spaces/EYNTKA-metric-function-spaces.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Analysis%20on%20Metric%20and%20Function%20Spaces&source=books"
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Metric%20and%20Function%20Spaces&source=books"
       },
       "lastUpdated": "2026-08-01",
       "xAffinity": 0.464,
@@ -2906,8 +2906,10 @@
       "source": "NateElemAnalysis",
       "target": "NatePrelim",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "elementary-analysis/EYNTKA-elementary-analysis.tex"
+      ]
     },
     {
       "source": "NateEllipticCurves",
