@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-06",
+    "generated": "2026-09-07",
     "bookCount": 48,
     "edgeCount": 459,
     "clashCounts": {
@@ -2908,7 +2908,10 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "elementary-analysis/EYNTKA-elementary-analysis.tex"
+        "elementary-analysis/EYNTKA-elementary-analysis.tex",
+        "elementary-analysis/drafts/scratch/ch02-s01.tex",
+        "elementary-analysis/drafts/scratch/ch02-s04.tex",
+        "elementary-analysis/drafts/scratch/ch02-s06.tex"
       ]
     },
     {
@@ -4136,8 +4139,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex",
-        "vector-bundles-and-k-theory/drafts/ch04-s01-draft.tex"
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
       ]
     },
     {
