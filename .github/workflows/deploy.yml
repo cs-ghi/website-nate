@@ -40,14 +40,12 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      # Angular 15 predates Node 20/22 and is not tested on them, so the app
-      # build stays pinned to 18. The docs build below switches to 22, which
-      # Astro 7 requires (engines: node >=22.12.0). Two setup-node calls in
-      # one job is deliberate; do not collapse them.
-      - name: Set up Node 18 (Angular)
+      # One Node for both builds: Angular 22 requires >= 22.22.3 (matching
+      # nate-website/mise.toml) and Astro 7 requires >= 22.12.0.
+      - name: Set up Node 22
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "22"
           cache: npm
           cache-dependency-path: nate-website/package-lock.json
 
@@ -70,11 +68,6 @@ jobs:
         with:
           repository: Chiarandini/NoetherVim
           path: noethervim-src
-
-      - name: Set up Node 22 (Astro)
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
 
       - name: Build NoetherVim docs
         working-directory: noethervim-src/docs-site
