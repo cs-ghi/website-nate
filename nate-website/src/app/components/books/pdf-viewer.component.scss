@@ -27,9 +27,10 @@
   margin: 0 auto;
   // Row gap matters once the reading controls take their own line.
   gap: 0.35rem 1rem;
-  // Wrap as whole groups rather than compressing them: the title, the reading
-  // controls and the back button do not fit a laptop width side by side.
-  flex-wrap: wrap;
+  // One line here: with wrapping on, a long title never ellipsizes — it just
+  // shoves the back button onto a row of its own. The narrower breakpoints
+  // below turn wrapping back on, where a second row is what we actually want.
+  flex-wrap: nowrap;
 }
 
 // Title + Contents travel together: the outline is the primary way around a
@@ -52,24 +53,34 @@
   flex: 0 0 auto;
 }
 
-// The reading controls are one unit: never let them shred into stacked rows.
-// They either fit on the toolbar's line or take a line of their own.
+// The reading controls are one unit: never let them shred into stacked rows,
+// and never let them absorb the shrinking a long title should be doing.
 .center-controls {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   flex-wrap: nowrap;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
 }
 
 // Between the mobile column layout and this width the toolbar cannot hold the
 // title, the reading controls and the back button on one line, so the controls
 // take a row of their own rather than being squeezed.
 @media (min-width: 769px) and (max-width: 1200px) {
+  .header-actions {
+    flex-wrap: wrap;
+  }
+
   .center-controls {
     order: 3;
     flex: 1 0 100%;
+  }
+
+  // Zero basis so the title's length can't push the back button off the first
+  // row; it grows into whatever the back button leaves and ellipsizes there.
+  .header-left {
+    flex: 1 1 0;
   }
 }
 
@@ -329,7 +340,7 @@
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
-    flex: 1 1 auto;
+    flex: 1 1 0;
     min-width: 0;
   }
 

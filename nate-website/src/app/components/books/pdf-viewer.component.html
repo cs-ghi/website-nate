@@ -4,7 +4,7 @@
       <div class="header-actions">
         <!-- Left: Title, with Contents as the primary navigation affordance -->
         <div class="header-left">
-          <h2 class="document-title">{{ bookName }}</h2>
+          <h2 class="document-title" [title]="bookName">{{ bookName }}</h2>
           @if (hasOutline) {
             <button class="outline-toggle" (click)="toggleOutline()"
               [class.active]="showOutline"
