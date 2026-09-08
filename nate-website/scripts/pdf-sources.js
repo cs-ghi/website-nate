@@ -135,6 +135,9 @@ const PINNED = {
   'papers/hirzebruch-riemann-roch-v1.pdf':
     'arXiv v1 snapshot. /papers serves a named version and says which one, so ' +
     'the file must not move when the working copy does (PAPERS-SECTION-PLAN.md).',
+  'papers/hirzebruch-riemann-roch-v2.pdf':
+    'v2 snapshot (2026-09-08 correctness audit of notes/HRR/HRR.tex); same ' +
+    'named-version rule as v1.',
   'papers/integral-hodge-twisting-v1.pdf': 'arXiv v1 snapshot; same as above.',
 
   'blogs/twisted-IHC.pdf':
@@ -142,7 +145,7 @@ const PINNED = {
     '/pdf-viewer deep link to papers/integral-hodge-twisting-v1.pdf.',
   'books/HRR.pdf':
     'Redirect target only. LEGACY_PDF_REDIRECTS rewrites it to ' +
-    'papers/hirzebruch-riemann-roch-v1.pdf.',
+    'papers/hirzebruch-riemann-roch-v2.pdf.',
 
   'blogs/Conjecture_old.pdf': 'Published post with no source under SOURCE_ROOT.',
   'blogs/PontryaginDuality.pdf':
