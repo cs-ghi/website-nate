@@ -129,15 +129,14 @@ const TRACKED = {
   'notes/EYTNKA_p-adic_rep.pdf':
     'university/PhD/2025-2026/1st semester/p-adic_representation/EYNTKA_p-adic_rep.pdf',
   'notes/preliminary_chapter.pdf': 'notes/preliminary_chapter/preliminary_chapter.pdf',
+
+  // --- papers: unversioned main copies -------------------------------------
+  // De-versioned 2026-09-08: /papers serves the living copy of the HRR thesis,
+  // so it tracks the source instead of being a PINNED snapshot.
+  'papers/hirzebruch-riemann-roch.pdf': 'notes/HRR/HRR.pdf',
 };
 
 const PINNED = {
-  'papers/hirzebruch-riemann-roch-v1.pdf':
-    'arXiv v1 snapshot. /papers serves a named version and says which one, so ' +
-    'the file must not move when the working copy does (PAPERS-SECTION-PLAN.md).',
-  'papers/hirzebruch-riemann-roch-v2.pdf':
-    'v2 snapshot (2026-09-08 correctness audit of notes/HRR/HRR.tex); same ' +
-    'named-version rule as v1.',
   'papers/integral-hodge-twisting-v1.pdf': 'arXiv v1 snapshot; same as above.',
 
   'blogs/twisted-IHC.pdf':
@@ -145,7 +144,7 @@ const PINNED = {
     '/pdf-viewer deep link to papers/integral-hodge-twisting-v1.pdf.',
   'books/HRR.pdf':
     'Redirect target only. LEGACY_PDF_REDIRECTS rewrites it to ' +
-    'papers/hirzebruch-riemann-roch-v2.pdf.',
+    'papers/hirzebruch-riemann-roch.pdf.',
 
   'blogs/Conjecture_old.pdf': 'Published post with no source under SOURCE_ROOT.',
   'blogs/PontryaginDuality.pdf':

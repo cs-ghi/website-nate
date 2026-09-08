@@ -70,7 +70,7 @@ export const PAPERS: PaperEntry[] = [
       '$$\\chi(M, E) = \\int_M \\operatorname{ch}(E) \\smile \\operatorname{td}(M).$$ ' +
       'The proof is organized around two generating functions — the $\\chi_y$-characteristic, which packages the ' +
       'Euler characteristics, and the $T$-characteristic $T_y$, which packages the Chern character and Todd class ' +
-      'data. The two agree at $y = 0$ with $\\chi(M,E)$, and at $y = 1$ with the spin index $\\tau(M)$; that second ' +
+      'data. The two agree at $y = 0$ with $\\chi(M,E)$, and at $y = 1$ with the signature $\\tau(M)$; that second ' +
       'agreement is the bridge which forces the theorem, and cobordism then reduces the statement to the case ' +
       '$M = \\mathbb{C}\\mathrm{P}^n$. ' +
       'The exposition deliberately reverses the order of Hirzebruch’s original treatment, introducing each tool at ' +
@@ -87,18 +87,14 @@ export const PAPERS: PaperEntry[] = [
       'cobordism',
       'signature theorem',
     ],
+    // Unversioned by request (2026-09-08): this entry serves the living main
+    // copy, tracked against notes/HRR/HRR.pdf in pdf-sources.js. A single
+    // entry keeps the Versions table hidden.
     versions: [
       {
-        label: 'v1',
-        date: '2026-08-22',
-        file: 'hirzebruch-riemann-roch-v1.pdf',
-        note: 'abstract added',
-      },
-      {
-        label: 'v2',
+        label: 'current',
         date: '2026-09-08',
-        file: 'hirzebruch-riemann-roch-v2.pdf',
-        note: 'full correctness audit: ~850 fixes to prose, formulas, and references',
+        file: 'hirzebruch-riemann-roch.pdf',
       },
     ],
     relatedNotes: [
@@ -114,7 +110,7 @@ export const PAPERS: PaperEntry[] = [
 // pdf-viewer.component.ts rewrites these rather than letting them 404.
 export const LEGACY_PDF_REDIRECTS: Record<string, string> = {
   'twisted-IHC.pdf': '././assets/pdfs/papers/integral-hodge-twisting-v1.pdf',
-  'HRR.pdf': '././assets/pdfs/papers/hirzebruch-riemann-roch-v2.pdf',
+  'HRR.pdf': '././assets/pdfs/papers/hirzebruch-riemann-roch.pdf',
   // Renamed on 2026-08-23: the old basename misspelled Langlands, and the file
   // was the only blog source still living under PhD applications/.
   'From_Quadratic_to_Langland.pdf': '././assets/pdfs/blogs/from_quadratic_to_langlands.pdf',
