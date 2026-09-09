@@ -1061,11 +1061,17 @@ is lost on the next |:Lazy| update, and in a `dev` checkout it dirties that
 repository and then loads twice alongside your own copy. Use `:w!` when you
 do mean to edit a plugin you maintain.
 
-When you have no snippet file of your own for the filetype, the list also
-offers one to create, marked `(new)`: 
+A filetype you have no snippets of your own for says so in the first
+prompt: 
+    rust   (creates a new file)
+    all
+Where a plugin already ships snippets for that filetype, the second prompt
+lists yours alongside them, marked `(new)`: 
     ~/.config/nvim    · rust.lua (new)
-Choosing it writes a skeleton and opens it. Do not empty the file: a Lua
-file that returns nil errors the next time LuaSnip loads that filetype.
+Where nothing else offers that filetype there is no second prompt, so the
+path is put to you before anything is written. Either way a new file gets
+a skeleton and opens. Do not empty it: a Lua file that returns nil errors
+the next time LuaSnip loads that filetype.
 
 Writing the new file registers it immediately, so its snippets work in the
 same session without a restart.
@@ -1078,7 +1084,46 @@ not `.rust`, so a scratch file named `tmp.rust` has no filetype at all;
 For LaTeX snippets, `noethervim-tex` exposes helper functions: &gt;lua
     local helper = require("noethervim-tex").luasnip_helper
     local tex_utils = helper.tex_utils   -- in_mathzone, in_text, etc.
-    local get_visual = helper.get_visual_node</div>
+    local get_visual = helper.get_visual_node
+                                                <a id="noethervim-snippet-disable" class="vimdoc-tag">*noethervim-snippet-disable*</a>
+Switching a snippet off: ~
+
+    SearchLeader+cs  `:NoetherVim snippets`
+
+Lists every snippet loaded for every filetype you have typed in, and says
+what each one is doing:
+
+    on        offered as usual
+    off       switched off on this machine
+    blocked   switched off by `snippets_disabled` in your config
+    session   switched off, but with no way to remember it past a restart
+    hidden    shipped hidden by whoever wrote it
+
+    `&lt;CR&gt;`      open where it is defined; a plugin's file opens read-only
+    `&lt;C-x&gt;`     switch off
+    `&lt;C-y&gt;`     switch back on
+    `&lt;C-o&gt;`     copy a `snippets_disabled` entry for `lua/user/config.lua`
+    `&lt;A-o&gt;`     show only what is switched off
+    `&lt;Tab&gt;`     add to the selection, so one key acts on several
+    `&lt;C-q&gt;`     send the selection to the quickfix list
+
+A snippet that is off leaves the completion menu and stops expanding when
+its trigger is typed. Saving the file it came from does not bring it back.
+
+Two places remember the choice, and they answer different questions.
+`&lt;C-x&gt;` writes to `stdpath("state")`, which belongs to this machine and is
+not copied along with your config. `snippets_disabled` in
+`lua/user/config.lua` travels with the config and means you never want the
+snippet anywhere. Where the two disagree the machine wins for the session,
+and `:checkhealth noethervim` names the snippet and both ways to settle it.
+
+Nothing here writes `lua/user/config.lua` for you. `&lt;C-o&gt;` puts the entry
+on the clipboard with its owner and file already filled in, to paste where
+you want it.
+
+A snippet LuaSnip recorded no source for has no durable name, so it can be
+switched off for the session but not remembered. `:checkhealth noethervim`
+counts them.</div>
 <div class="sl-heading-wrapper level-h2"><h2 id="6-inspection">6. Inspection</h2><a class="sl-anchor-link" href="#6-inspection"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “6. Inspection”</span></a></div>
 <div class="vimdoc-reference"><a id="noethervim-inspect" class="vimdoc-tag">*noethervim-inspect*</a>
 
@@ -1092,6 +1137,7 @@ accidental edits to the distribution.
     SearchLeader+cg  `:NoetherVim grep`       Live grep NoetherVim source
     SearchLeader+cu   (snacks)                 Browse user config files
     SearchLeader+cb   `:NoetherVim bundles`    Browse bundle source files
+    SearchLeader+cs   `:NoetherVim snippets`   Browse snippets, switch off
     SearchLeader+ct   `:NoetherVim templates`  Write user-config templates
     `&lt;Leader&gt;e`      `:NoetherVim override`   Edit/create user override
     SearchLeader+cL   (snacks)                 Lazy plugin list
