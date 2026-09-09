@@ -29,11 +29,6 @@ export const notesArray: Note[]= [
     link: '././assets/pdfs/blogs/serre_paper-Theory_of_Simple_Algebras.pdf'
   },
   {
-    name: "A little  Hodge Theory",
-    desc: "These are my current work in progress notes on Hodge Theory I'll update as I have time. They are rapidly changing are mostly here for my reference \"on the go\"",
-    link: "././assets/pdfs/notes/EYNTKA_hodge.pdf"
-  },
-  {
     name: 'Pontryagin Duality',
     desc: 'The existence and applicability Fourier transform is a fascinating piece of mathematics. Pushing the limits of where it may be applied then becomes an interesting question, which lead me to explore Pontryagin duality. This paper is a quick summary that builds up Pontryagin duality and gives some applications of it',
     link: '././assets/pdfs/blogs/PontryaginDuality.pdf'
