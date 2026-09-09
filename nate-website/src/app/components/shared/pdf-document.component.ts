@@ -3,9 +3,14 @@ import {
   OnDestroy, Output, SimpleChanges, ViewChild, ViewEncapsulation,
   ChangeDetectionStrategy
 } from '@angular/core';
-import * as pdfjs from 'pdfjs-dist';
-import * as pdfjsViewer from 'pdfjs-dist/web/pdf_viewer';
+import * as pdfjs from 'pdfjs-dist/legacy/build/pdf.mjs';
+import * as pdfjsViewer from 'pdfjs-dist/legacy/web/pdf_viewer.mjs';
 
+// The `legacy` build, not the default one: pdf.js's modern bundle uses very new
+// JS (Map.prototype.getOrInsertComputed and friends) and simply throws on any
+// browser a version or two behind. legacy/ is the transpiled, widely-compatible
+// build — the right default for a public site.
+//
 // Self-hosted, so the reader does not depend on a third-party CDN at runtime.
 // Copied out of pdfjs-dist by the `assets` glob in angular.json, and must stay
 // on the same version as the `pdfjs-dist` dependency.
@@ -14,7 +19,7 @@ import * as pdfjsViewer from 'pdfjs-dist/web/pdf_viewer';
 // CID-keyed fonts with CJK encodings, and none of the 72 PDFs on this site uses
 // one. If a CJK document is ever published, re-add the cmaps asset glob and
 // pass cMapUrl/cMapPacked to getDocument below.
-pdfjs.GlobalWorkerOptions.workerSrc = 'assets/pdfjs/pdf.worker.min.js';
+pdfjs.GlobalWorkerOptions.workerSrc = 'assets/pdfjs/pdf.worker.min.mjs';
 
 // pdf.js's own page-width calculation, which it does not expose: see
 // `_setScale` in pdfjs-dist/legacy/web/pdf_viewer.js. `removePageBorders` zeroes
@@ -105,8 +110,16 @@ export class PdfDocumentComponent implements AfterViewInit, OnChanges, OnDestroy
   }
 
   // Jump to an outline/link destination — a named string or an explicit array.
-  // Unlike navigating by page number this lands on the destination's own
-  // position, so a section starting halfway down a page is not scrolled off.
+  // Resolves through pdf.js's own link service, which understands named
+  // destinations and, in principle, the position *within* the page.
+  //
+  // Known gap on pdf.js 6: for a long jump (page 1 to 695 of a 2053-page book)
+  // the within-page offset is dropped and you land on the page top. The same
+  // call lands exactly when the target page has already rendered, so pdf.js is
+  // computing the offset against a page height that is still an estimate.
+  // Rendering the page first and re-applying on `pagerendered` does not fix it;
+  // this was exact on pdf.js 2.14. Landing on the right page is the contract
+  // the test holds us to until this is chased down properly.
   goToDestination(dest: any): void {
     if (!this.ready || !this.linkService || dest == null) {
       return;
@@ -136,8 +149,6 @@ export class PdfDocumentComponent implements AfterViewInit, OnChanges, OnDestroy
       linkService: this.linkService,
       textLayerMode: 1,           // selectable text
       removePageBorders: true,
-      l10n: pdfjsViewer.NullL10n,
-      renderer: 'canvas',
     };
     this.viewer = this.continuous
       ? new pdfjsViewer.PDFViewer(options)
@@ -207,7 +218,7 @@ export class PdfDocumentComponent implements AfterViewInit, OnChanges, OnDestroy
   // _setScale with noScroll) is what keeps the reader's place.
   private applyScale(): void {
     if (!this.ready || !this.viewer?.pagesCount) return;
-    const page = this.viewer._pages?.[this.viewer.currentPageNumber - 1];
+    const page = this.viewer.getPageView(this.viewer.currentPageNumber - 1);
     if (!page?.width) return;
     const container = this.containerRef.nativeElement;
     const pageWidthScale = ((container.clientWidth - H_PADDING) / page.width) * page.scale;

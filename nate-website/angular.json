@@ -17,11 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "allowedCommonJsDependencies": [
-              "pdfjs-dist/build/pdf",
-              "pdfjs-dist/web/pdf_viewer",
-              "pdfjs-dist"
-            ],
+            "allowedCommonJsDependencies": [],
             "outputPath": {
               "base": "dist/testing",
               "browser": ""
@@ -36,13 +32,13 @@
               "src/favicon.ico",
               "src/assets",
               {
-                "glob": "pdf.worker.min.js",
-                "input": "node_modules/pdfjs-dist/build",
+                "glob": "pdf.worker.min.mjs",
+                "input": "node_modules/pdfjs-dist/legacy/build",
                 "output": "assets/pdfjs"
               }
             ],
             "styles": [
-              "node_modules/pdfjs-dist/web/pdf_viewer.css",
+              "node_modules/pdfjs-dist/legacy/web/pdf_viewer.css",
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss",
               "node_modules/katex/dist/katex.min.css",
@@ -121,13 +117,13 @@
               "src/favicon.ico",
               "src/assets",
               {
-                "glob": "pdf.worker.min.js",
-                "input": "node_modules/pdfjs-dist/build",
+                "glob": "pdf.worker.min.mjs",
+                "input": "node_modules/pdfjs-dist/legacy/build",
                 "output": "assets/pdfjs"
               }
             ],
             "styles": [
-              "node_modules/pdfjs-dist/web/pdf_viewer.css",
+              "node_modules/pdfjs-dist/legacy/web/pdf_viewer.css",
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss",
               "node_modules/katex/dist/katex.min.css"
