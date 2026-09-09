@@ -2,7 +2,7 @@
   "meta": {
     "generated": "2026-09-09",
     "bookCount": 48,
-    "edgeCount": 459,
+    "edgeCount": 464,
     "clashCounts": {
       "error": 0,
       "warn": 5,
@@ -2605,6 +2605,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-representation-theory/EYNTKA-core-representation-theory.tex",
         "core-representation-theory/sections/harmonic-analysis.tex"
       ]
     },
@@ -2913,18 +2914,63 @@
     },
     {
       "source": "NateElemAnalysis",
+      "target": "NateCalculus",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elementary-analysis/EYNTKA-elementary-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateElemAnalysis",
+      "target": "NateHarmonicAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elementary-analysis/EYNTKA-elementary-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateElemAnalysis",
+      "target": "NateMetricFunctionSpaces",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elementary-analysis/EYNTKA-elementary-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateElemAnalysis",
       "target": "NatePrelim",
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
         "elementary-analysis/EYNTKA-elementary-analysis.tex",
-        "elementary-analysis/drafts/scratch/ch02-s01.tex",
-        "elementary-analysis/drafts/scratch/ch02-s04.tex",
-        "elementary-analysis/drafts/scratch/ch02-s06.tex",
-        "elementary-analysis/drafts/scratch/ch03-s02.tex",
+        "elementary-analysis/drafts/scratch/ch02-consolidated/ch02-s01.tex",
+        "elementary-analysis/drafts/scratch/ch02-consolidated/ch02-s04.tex",
+        "elementary-analysis/drafts/scratch/ch02-consolidated/ch02-s06.tex",
+        "elementary-analysis/drafts/scratch/ch03-consolidated/ch03-s02.tex",
         "elementary-analysis/drafts/scratch/ch03-snapshot/ch03-s02.tex",
-        "elementary-analysis/drafts/scratch/ch04-s05.tex",
+        "elementary-analysis/drafts/scratch/ch04-consolidated/ch04-s05.tex",
         "elementary-analysis/drafts/scratch/ch04-snapshot/ch04-s05.tex"
+      ]
+    },
+    {
+      "source": "NateElemAnalysis",
+      "target": "NateRealAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elementary-analysis/EYNTKA-elementary-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateElemAnalysis",
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "elementary-analysis/EYNTKA-elementary-analysis.tex"
       ]
     },
     {
