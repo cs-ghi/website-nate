@@ -2,6 +2,14 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateModularRepTheory' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateModularRepTheory"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateGeometricAnalysis' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateGeometricAnalysis"
@@ -117,14 +125,6 @@
     "message": "'NateGroupCohomology' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateGroupCohomology"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateModularRepTheory' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateModularRepTheory"
     ]
   },
   {
