@@ -197,6 +197,79 @@ for (const path of ROUTES) {
   await p.close();
 }
 
+{ // Teardown. Every route in ONE page session, navigating in-app so each
+  // transition runs the previous component's ngOnDestroy — which opening and
+  // closing a page never does. This is the class of bug that took Back to
+  // Books down: a throw in teardown aborts the router mid-navigation and
+  // leaves a blank page.
+  const p = await ctx.newPage();
+  const errs = [];
+  p.on('console', m => m.type() === 'error' && errs.push(m.text().split('\n')[0]));
+  p.on('pageerror', e => errs.push('pageerror: ' + String(e).split('\n')[0]));
+  const nav = r => p.evaluate(
+    x => window.ng.getComponent(document.querySelector('app-root')).router.navigate([x]), r);
+  const chars = () => p.evaluate(() => document.body.innerText.trim().length);
+  const click = async (sel, ms = 900) => {
+    const l = p.locator(sel).first();
+    if (!(await l.count())) return false;
+    await l.click({ timeout: 5000 }).catch(() => {});
+    await p.waitForTimeout(ms);
+    return true;
+  };
+
+  await p.goto(BASE + '/books', { waitUntil: 'networkidle', timeout: 60000 });
+  await p.waitForTimeout(1200);
+
+  let broken = null;
+  for (const r of ROUTES) {
+    errs.length = 0;
+    await nav(r);
+    await p.waitForTimeout(800);
+    const n = await chars();
+    if ((errs.length || n < 40) && !broken) broken = `${r}: ${errs[0] || 'blank'}`;
+  }
+  chk('teardown: walk every route in-app', !broken, broken || `${ROUTES.length} routes`);
+
+  // Leaving a page that has acquired state, which is what made the reader bug
+  // reachable in the first place.
+  const stateful = [];
+
+  await nav('/judo'); await p.waitForTimeout(1200);
+  await click('.bookmark-btn', 600);              // the study FAB is gated on a bookmark
+  const studying = await click('.study-fab', 1200);
+  await p.keyboard.press('Space'); await p.waitForTimeout(300);
+  errs.length = 0;
+  await nav('/programming'); await p.waitForTimeout(1000);
+  if (!studying) stateful.push('judo study mode never started');
+  else if (errs.length || (await chars()) < 40) stateful.push('judo(study) -> programming: ' + (errs[0] || 'blank'));
+
+  await click('.prog-card', 1500);                // programming detail
+  errs.length = 0;
+  await nav('/papers'); await p.waitForTimeout(1000);
+  if (errs.length || (await chars()) < 40) stateful.push('programming detail -> papers: ' + (errs[0] || 'blank'));
+
+  await click('.paper-row', 1500);                // paper detail
+  errs.length = 0;
+  await nav('/dictionary'); await p.waitForTimeout(1000);
+  if (errs.length || (await chars()) < 40) stateful.push('paper detail -> dictionary: ' + (errs[0] || 'blank'));
+
+  await p.fill('.search-input', 'water').catch(() => {});
+  await click('.search-button', 300);             // leave with the query still in flight
+  errs.length = 0;
+  await nav('/books'); await p.waitForTimeout(1400);
+  if (errs.length || (await chars()) < 40) stateful.push('dictionary(in flight) -> books: ' + (errs[0] || 'blank'));
+
+  await click('.book-row', 2500);                 // reader with a document loaded
+  await p.waitForSelector('.outline-toggle', { timeout: 120000 }).catch(() => {});
+  await p.waitForTimeout(1200);
+  errs.length = 0;
+  await nav('/judo'); await p.waitForTimeout(1200);
+  if (errs.length || (await chars()) < 40) stateful.push('reader(loaded) -> judo: ' + (errs[0] || 'blank'));
+
+  chk('teardown: leave pages holding state', stateful.length === 0, stateful[0] || '6 stateful exits');
+  await p.close();
+}
+
 console.log(`\n  ${pass} passed, ${fail} failed`);
 await browser.close();
 process.exit(fail ? 1 : 0);
