@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-09-07",
+    "generated": "2026-09-09",
     "bookCount": 48,
     "edgeCount": 459,
     "clashCounts": {
       "error": 0,
       "warn": 5,
-      "info": 125
+      "info": 127
     },
     "tiers": [
       {
@@ -1243,6 +1243,7 @@
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/curve-lemma.tex",
+        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
         "algebraic-geometry/drafts/scratch/frag-W3-valuative-dvr.tex",
         "algebraic-geometry/drafts/scratch/weil-divisor-families.tex"
       ]
@@ -1311,7 +1312,9 @@
         "algebraic-geometry/drafts/scratch/chevprep-H.tex",
         "algebraic-geometry/drafts/scratch/fix-P2.tex",
         "algebraic-geometry/drafts/scratch/fix-P3.tex",
-        "algebraic-geometry/drafts/scratch/frag-W3-valuative-dvr.tex"
+        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
+        "algebraic-geometry/drafts/scratch/frag-W3-valuative-dvr.tex",
+        "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex"
       ]
     },
     {
@@ -1341,6 +1344,8 @@
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
+        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
+        "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
         "algebraic-geometry/drafts/scratch/frag-W5-krull-akizuki-CA.tex"
       ]
     },
@@ -1369,6 +1374,7 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1387,6 +1393,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1398,7 +1406,8 @@
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/chevprep-G.tex",
-        "algebraic-geometry/drafts/scratch/fix-P2.tex"
+        "algebraic-geometry/drafts/scratch/fix-P2.tex",
+        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex"
       ]
     },
     {
@@ -2911,7 +2920,9 @@
         "elementary-analysis/EYNTKA-elementary-analysis.tex",
         "elementary-analysis/drafts/scratch/ch02-s01.tex",
         "elementary-analysis/drafts/scratch/ch02-s04.tex",
-        "elementary-analysis/drafts/scratch/ch02-s06.tex"
+        "elementary-analysis/drafts/scratch/ch02-s06.tex",
+        "elementary-analysis/drafts/scratch/ch03-s02.tex",
+        "elementary-analysis/drafts/scratch/ch03-snapshot/ch03-s02.tex"
       ]
     },
     {

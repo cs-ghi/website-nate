@@ -964,10 +964,28 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateAbelianVarieties is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateEtaleCohomology is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateEtaleCohomology"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateAbelianVarieties is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
       "NateAbelianVarieties"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateHodgeTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateHodgeTheory"
     ]
   },
   {
