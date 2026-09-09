@@ -123,7 +123,7 @@ const TRACKED = {
   // --- notes ----------------------------------------------------------------
   'notes/EYNTKA_galois_cohomology.pdf':
     'textbooks/galois-cohomology/EYNTKA_galois_cohomology.pdf',
-  'notes/EYNTKA_hodge.pdf': 'research/hodge-research/EYNTKA_hodge.pdf',
+  'notes/EYNTKA_hodge.pdf': 'research/integral-hodge/hodge-notes/EYNTKA_hodge.pdf',
   'notes/EYNTKA_toric_geometry.pdf': 'textbooks/toric-geometry/EYNTKA_toric_geometry.pdf',
   // Site filename transposes the acronym; the source spells it EYNTKA.
   'notes/EYTNKA_p-adic_rep.pdf':
