@@ -56,32 +56,32 @@ export const PAPERS: PaperEntry[] = [
   },
   {
     slug: 'hirzebruch-riemann-roch',
-    title: 'Hirzebruch–Riemann–Roch Theorem',
+    title: 'Hirzebruch-Riemann-Roch Theorem',
     authors: ['Nathanael Chwojko-Srawley'],
     kind: 'thesis',
     status: 'draft',
     summary:
-      'A motivated, tools-as-needed proof of Hirzebruch–Riemann–Roch, ending in a sketch of the Grothendieck generalization.',
+      'A motivated, tools-as-needed proof of Hirzebruch-Riemann-Roch, ending in a sketch of the Grothendieck generalization.',
     abstract:
-      'The Riemann–Roch problem asks how many holomorphic, meromorphic, or algebraic sections a space admits — ' +
-      'equivalently, what can be said about $H^0(M, \\mathcal{F})$, and what the higher sheaf cohomology says when that group ' +
-      'is smaller than one would expect. This paper is an exposition of the Hirzebruch–Riemann–Roch Theorem, ' +
+      'The Riemann-Roch problem asks how many holomorphic, meromorphic, or algebraic sections a space admits ' +
+      '(equivalently, what can be said about $H^0(M, \\mathcal{F})$, and what the higher sheaf cohomology says when that ' +
+      'group is smaller than one would expect). This paper is an exposition of the Hirzebruch-Riemann-Roch Theorem, ' +
       'which answers this for a complex vector bundle $E$ over a projective variety $M$: ' +
       '$$\\chi(M, E) = \\int_M \\operatorname{ch}(E) \\smile \\operatorname{td}(M).$$ ' +
-      'The proof is organized around two generating functions — the $\\chi_y$-characteristic, which packages the ' +
+      'The proof is organized around two generating functions: the $\\chi_y$-characteristic, which packages the ' +
       'Euler characteristics, and the $T$-characteristic $T_y$, which packages the Chern character and Todd class ' +
-      'data. The two agree at $y = 0$ with $\\chi(M,E)$, and at $y = 1$ with the signature $\\tau(M)$; that second ' +
+      'data. The two agree at $y = 0$ with $\\chi(M,E)$, and, for trivial $E$, at $y = 1$ with the signature $\\tau(M)$; that second ' +
       'agreement is the bridge which forces the theorem, and cobordism then reduces the statement to the case ' +
       '$M = \\mathbb{C}\\mathrm{P}^n$. ' +
       'The exposition deliberately reverses the order of Hirzebruch’s original treatment, introducing each tool at ' +
       'the point where the problem calls for it rather than in advance: Chern classes and the Chern character, via ' +
       'the splitting principle and $K$-theory; Dolbeault cohomology and Kähler geometry, to relate the analytic ' +
       'and algebraic Euler characteristics; the Todd class, as a multiplicative sequence; and the oriented cobordism ' +
-      'ring together with the Hirzebruch signature theorem. A closing chapter sketches Grothendieck–Riemann–Roch and ' +
-      'surveys the current generalizations in the literature.',
+      'ring together with the Hirzebruch signature theorem. The final chapter closes with a sketch of ' +
+      'Grothendieck-Riemann-Roch and a survey of the current generalizations in the literature.',
     msc: ['14C40', '19E20', '32J25'],
     keywords: [
-      'Hirzebruch–Riemann–Roch',
+      'Hirzebruch-Riemann-Roch',
       'Todd class',
       'Chern character',
       'cobordism',
