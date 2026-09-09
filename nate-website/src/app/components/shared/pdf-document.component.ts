@@ -88,8 +88,12 @@ export class PdfDocumentComponent implements AfterViewInit, OnChanges, OnDestroy
 
   ngOnDestroy(): void {
     this.destroyViewer();
-    this.loadingTask?.destroy();
-    this.pdf?.destroy();
+    // Only the loading task has destroy(); pdf.js 6 removed it from
+    // PDFDocumentProxy, and calling it there threw out of ngOnDestroy, which
+    // aborted Angular's route teardown — leaving a blank page and the old URL
+    // whenever you left the reader. Destroying the task tears down the document
+    // and its worker anyway.
+    this.loadingTask?.destroy().catch(() => {});
   }
 
   // ── Public API ─────────────────────────────────────────────────────────────

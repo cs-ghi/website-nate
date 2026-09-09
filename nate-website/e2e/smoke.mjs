@@ -164,6 +164,26 @@ for (const path of ROUTES) {
   }
 }
 
+{ // leaving the reader by in-app navigation, not a fresh page load — the
+  // teardown path, which closing a tab never exercises
+  const p = await ctx.newPage();
+  const errs = [];
+  p.on('console', m => m.type() === 'error' && errs.push(m.text().split('\n')[0]));
+  p.on('pageerror', e => errs.push('pageerror: ' + String(e).split('\n')[0]));
+  await p.goto(BASE + '/books', { waitUntil: 'networkidle', timeout: 60000 });
+  await p.waitForTimeout(1000);
+  await p.locator('.book-row').first().click();
+  await p.waitForSelector('.outline-toggle', { timeout: 120000 });
+  await p.waitForTimeout(2000);
+  errs.length = 0;
+  await p.click('.back-button');
+  await p.waitForTimeout(2500);
+  const rows = await p.evaluate(() => document.querySelectorAll('.book-row').length);
+  chk('back out of the reader', rows > 0 && errs.length === 0,
+      `${rows} book rows${errs.length ? '; ' + errs[0].slice(0, 70) : ''}`);
+  await p.close();
+}
+
 { // cross-book search
   const p = await ctx.newPage();
   await p.goto(BASE + '/books', { waitUntil: 'networkidle', timeout: 60000 });
