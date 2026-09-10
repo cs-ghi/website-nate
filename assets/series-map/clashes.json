@@ -98,14 +98,6 @@
   {
     "kind": "phantom-node",
     "severity": "info",
-    "message": "'NateSymplecticGeometry' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateSymplecticGeometry"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
     "message": "'NateCalcVariations' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateCalcVariations"
@@ -662,6 +654,33 @@
     "refs": [
       "NateNonlinearWave",
       "NateGeometricAnalysis"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateDiffTop -> NateSymplecticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateDiffTop",
+      "NateSymplecticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLinAlg -> NateSymplecticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinAlg",
+      "NateSymplecticGeometry"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLieGroups -> NateSymplecticGeometry) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLieGroups",
+      "NateSymplecticGeometry"
     ]
   },
   {
