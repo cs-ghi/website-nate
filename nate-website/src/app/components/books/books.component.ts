@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, HostListener, ChangeDetection
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Book, BookSection } from 'src/app/interfaces/books.model';
-import { fuzzyScore } from 'src/app/utils/fuzzy-score';
+import { fuzzyScore, humanizeLabel } from 'src/app/utils/fuzzy-score';
 import { CommandPaletteService } from 'src/app/services/command-palette.service';
 import { BookCatalogService } from 'src/app/services/book-catalog.service';
 
@@ -82,6 +82,12 @@ export class BooksComponent implements OnInit {
   isLoadingPdfs = false;
   rawPdfs: Book[] = [];
 
+  // PDF basename -> the book's printed title, for every graph node whether or
+  // not it is on the shelf. Lets the raw list be searched the way the book is
+  // actually named: the C*-algebras book ships as EYNTKA-cstar-algebras.pdf, so
+  // nothing derived from the filename can match a query of "c*".
+  private rawTitles = new Map<string, string>();
+
   // ⌘ on Mac, Ctrl elsewhere — shown in the "search inside all books" hint.
   readonly modKey = /Mac|iPhone|iPad/.test(navigator.platform) ? '⌘' : 'Ctrl';
 
@@ -101,6 +107,12 @@ export class BooksComponent implements OnInit {
     this.catalog.sections$.subscribe(sections => {
       this.allSections = sections;
       this.recompute();
+    });
+    this.catalog.allBooks$.subscribe(books => {
+      for (const b of books) {
+        const base = b.link.toString().split('/').pop();
+        if (base) this.rawTitles.set(base.toLowerCase(), b.name);
+      }
     });
     this.isAuthenticated = sessionStorage.getItem(AUTH_KEY) === 'true';
     if (this.isAuthenticated) {
@@ -240,12 +252,34 @@ export class BooksComponent implements OnInit {
     return `No books ${parts.join(' ')}.`;
   }
 
+  // Best score over the three ways a reader might name a raw PDF: the filename
+  // as printed, the filename humanized, and the book's own title.
+  //
+  // fuzzyScore wants the query to be a SUBSEQUENCE of the target, and raw names
+  // are hyphenated (EYNTKA-intersection-theory.pdf), so before this ANY query
+  // containing a space scored 0 against every PDF on the list — "intersection
+  // theory" found nothing while "intersection" found it. The shelf rows never
+  // showed the bug because they score the printed title, which has the spaces.
+  // Titles are hyphenated too ("C*-Algebras and K-Theory"), so the title needs
+  // the same humanizing the filename does or "c* algebras" misses it. Both raw
+  // forms are kept as well: humanizeLabel truncates at a colon, which is right
+  // for a `df:`-prefixed result label but would drop a subtitled book's stem.
+  private rawScore(q: string, name: string): number {
+    const title = this.rawTitles.get(name.toLowerCase());
+    return Math.max(
+      fuzzyScore(q, name),
+      fuzzyScore(q, humanizeLabel(name)),
+      title ? fuzzyScore(q, title) : 0,
+      title ? fuzzyScore(q, humanizeLabel(title)) : 0,
+    );
+  }
+
   // Hidden (admin) raw PDFs filtered by the same query, ranked by relevance.
   get filteredRawPdfs(): Book[] {
     const q = this.searchQuery.trim();
     if (!q) return this.rawPdfs;
     return this.rawPdfs
-      .map(p => ({ pdf: p, score: fuzzyScore(q, p.name) }))
+      .map(p => ({ pdf: p, score: this.rawScore(q, p.name) }))
       .filter(x => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .map(x => x.pdf);
