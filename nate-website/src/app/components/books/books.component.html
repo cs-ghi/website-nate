@@ -119,7 +119,9 @@
 <!-- Subject-topic filter chips -->
 <div class="book-chips">
   <button class="book-chip" [class.active]="activeSection === 'all'"
-  (click)="selectSection('all')">All</button>
+    (click)="selectSection('all')">
+    All <span class="chip-count">{{ allSectionCount }}</span>
+  </button>
   @for (c of sectionChips; track c.key) {
     <button
       class="book-chip"

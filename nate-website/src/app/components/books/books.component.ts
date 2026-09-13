@@ -147,6 +147,12 @@ export class BooksComponent implements OnInit {
     return this.queryMatched.find(s => s.key === key)?.books.length ?? 0;
   }
 
+  // The "All" topic chip. A book is a primary member of exactly one topic, so
+  // summing the sections is the honest total — never double counts.
+  get allSectionCount(): number {
+    return this.queryMatched.reduce((n, s) => n + s.books.length, 0);
+  }
+
   selectSection(key: string): void {
     this.activeSection = key;
     this.recompute();
