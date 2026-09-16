@@ -19,7 +19,9 @@ import { PapersComponent } from './components/papers/papers.component';
 import { PaperDetailComponent } from './components/papers/paper-detail.component';
 
 const routes: Routes = [
-  {path: '', component: BooksComponent} ,
+  // Land on About, not the textbook library: that page's first substantive
+  // text is a disclaimer. /books keeps its own route below.
+  {path: '', redirectTo: 'about', pathMatch: 'full'},
   {path: 'about', component : AboutComponent},
   {path: 'tutoring', component : TutoringComponent},
   {path: 'books', component: BooksComponent},

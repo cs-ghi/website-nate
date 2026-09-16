@@ -21,24 +21,36 @@
           <div>
           <h3 class="mb-20">Hi there!</h3>
 
+            <!--
+              "If I'm known for anything" rather than "I am probably best known for":
+              the latter asserted a notability that is not there yet. This keeps the
+              opening rhythm without claiming something untrue.
+
+              Note also what this paragraph deliberately does NOT do: argue that the
+              programming is ongoing. The "Current work" section below opens with
+              "I still like to code" and lists live projects, so the opener does not
+              have to carry that, and a clause like "which I never stopped doing"
+              reads as defending a case the page already wins.
+            -->
             <p>
-              I'm Nathanael Chwojko-Srawley. I am probably best known for being driven by my
-              curiosity, choosing to study mathematics for its endless ability to provide
-              challenging avenues of research. Before mathematics, I would have labeled myself
-              a programmer and a writer, writing essays on my thoughts.
+              I'm Nathanael Chwojko-Srawley. If I'm known for anything, it's probably the number
+              of textbooks I've written for subjects I was trying to learn. I study mathematics
+              for its endless supply of problems at the limit of what I can do, and I tend to have
+              more projects going than I finish (as this website probably shows).
             </p>
 
             <div class="at-a-glance">
               <p>
                 Mathematics PhD student at the University of Toronto, leaning toward
                 algebraic geometry and number theory. Currently drawn to Hodge theory, anabelian
-                geometry, and facets of Langlands. Before the PhD I spent a year as a software developer, and I
-                write a <em>Everything You Need To Know About</em> (EYNTKA) textbook series.
+                geometry, and facets of Langlands. Before the PhD I spent around two years as a software developer, and I
+                write an <em>Everything You Need To Know About</em> (EYNTKA) textbook series.
               </p>
               <p class="quick-links">
                 Quick links:
+                <a routerLink="../papers">papers</a> &middot;
                 <a routerLink="../books">EYNTKA books</a> &middot;
-                <a routerLink="../notes">notes</a> &middot;
+                <a routerLink="../programming">programming</a> &middot;
                 <a routerLink="../blog">blog</a> &middot;
                 <a routerLink="../contact">contact</a>
               </p>
@@ -57,10 +69,30 @@
             </p>
 
             <p>
+              My first PhD project asked whether twisted K-theory strengthens the topological
+              obstruction to the integral Hodge conjecture. I wanted to settle what structure a
+              cohomology theory needs in order to factor the cycle map, which led to showing that
+              twisting gives no additional information, and moves the question toward algebraic
+              obstructions.
+            </p>
+
+            <p>
               Alongside research, I
               try to compile what I learn into a series of textbooks called <em>Everything You Need To Know
               About</em> (EYNTKA) (<strong><a routerLink="../books">click here</a></strong>), and for standalone
               projects I keep <strong><a routerLink="../notes">notes</a></strong>.
+            </p>
+
+            <h4 class="sub-title">Comp-Sci</h4>
+            <p>
+              I decided to pursue mathematics after being a software developer for around two years. Software
+              development was a natural path for me as I loved how coding made the world "open" to
+              you if you knew the infrastructure of computers. Fulfilling this path, I had the incredible opportunity to
+              join a talented team and worked on some amazing projects that touched many fields
+              of computer science. But, I realized that the aspect of the job I liked the most was
+              creating the frameworks other systems depend on, similar to how mathematics creates
+              the mental framework for computer science and physics. Combined with my interest in
+              teaching and research, I decided I must give a fair shot at pursuing it.
             </p>
 
             <h4 class="sub-title">Hobbies</h4>
@@ -78,25 +110,25 @@
               area of great interest to me.
             </p>
 
-            <h4 class="sub-title">Comp-Sci</h4>
-            <p>
-              I decided to pursue mathematics after being a software developer for a year. Software
-              development was a natural path for me as I loved how coding made the world "open" to
-              you if you knew the infrastructure of computers. Fulfilling this path, I had the incredible opportunity to
-              join a talented team and worked on some amazing projects that touched many fields
-              of computer science. But, I realized that the aspect of the job I liked the most was
-              creating the frameworks other systems depend on, similar to how mathematics creates
-              the mental framework for computer science and physics. Combined with my interest in
-              teaching and research, I decided I must give a fair shot at pursuing it.
-            </p>
-
             <h4 class="sub-title">Current work</h4>
             <p>
-              Though my software developer days are behind me, I maintain some neovim tooling (repo to my
-              dotfiles can be found <b><strong><a routerLink="../programming"
-               >this link</a></strong></b>). With the
-              boom of AI, I hope to gain a deeper intuition on my beliefs about the limits of what it can achieve and want to make
-              public a few AI projects in the coming future.
+              I still like to code: I currently maintain eleven open-source Neovim plugins, mostly
+              LaTeX and quality-of-life. Lately I have become interested in Rust as well: I made a
+              <b><strong><a href="https://github.com/Chiarandini/microstructure" target="_blank"
+               rel="noopener">market-microstructure engine</a></strong></b> in Rust that reconstructs
+              limit order books from raw exchange data. Besides that, I often make something if I
+              can't find a good app for it (e.g. the
+              <b><strong><a href="https://github.com/Chiarandini/trilingual-dict" target="_blank"
+               rel="noopener">trilingual dictionary</a></strong></b>,
+              <a routerLink="../dictionary">hosted on this website</a>).
+            </p>
+
+            <p>
+              On AI, I'm working on LLM projects (to be posted under
+              <b><strong><a routerLink="../programming">programming</a></strong></b> soon) and playing
+              around with agentic workflows (see the bottom of
+              <b><strong><a routerLink="../papers">papers</a></strong></b> for a research-worthy paper
+              produced by the research workflow).
             </p>
 
             <!-- register: warm — short and friendly -->
