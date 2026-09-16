@@ -8,6 +8,16 @@ export type PaperStatus =
 
 export type PaperKind = 'research' | 'thesis' | 'survey';
 
+// WHO wrote it. Orthogonal to status: a machine-produced paper still moves
+// draft -> preprint -> published like any other, so this must not be folded
+// into PaperStatus. Absent means 'human', so every existing entry is unchanged.
+//   'human'   — written by me.
+//   'machine' — written by the agentic research system, under my direction.
+//               Rendered in a separated, explicitly labelled section at the
+//               bottom of /papers. The separation is the point; see
+//               MACHINE_SECTION below and AI-PAPERS-SECTION.md at the repo root.
+export type PaperProvenance = 'human' | 'machine';
+
 export const STATUS_LABEL: Record<PaperStatus, string> = {
   draft: 'draft',
   preprint: 'preprint',
@@ -20,6 +30,27 @@ export const KIND_LABEL: Record<PaperKind, string> = {
   research: 'Research paper',
   thesis: 'Thesis',
   survey: 'Survey',
+};
+
+// The trailing, separated section for machine-produced work. Deliberately not
+// a STATUS_SECTION: those group my own papers by lifecycle, and this sits below
+// all of them behind a hard visual break.
+//
+// Wording is load-bearing and was chosen carefully - do not compress it:
+//   - NOT "AI-proven". "Proven" means verified in mathematics, and this cleared
+//     adversarial review and a numerical battery, not a proof assistant.
+//     "AI-" alone also erases the direction, which is the human contribution.
+//   - the "I set the problem ... I did not derive the result" sentence is what
+//     makes the corresponding resume claim defensible. Keep it verbatim.
+//   - the closing referee line answers the obvious question before it is asked.
+//     Remove it only when it stops being true.
+export const MACHINE_SECTION = {
+  label: 'Papers written by an AI system I directed',
+  standfirst:
+    'Everything below here has been proven by AI, and read-through by me to the best of my ability.',
+  body: [
+    `With the rise of AI, I wanted test for myself how good is getting. So I built an agentic research system that is self-aware of the validity of its results (is it derived, conjectured, mixed with assumptions, etc) is able to build off of its own research results, can detect when it is backed into a corner and start new research initiatives, and is aware of important results to re-check thoroughly. I pointed it at an open problem and directed it across multiple sessions. The papers below are the outcome. I did not derive the result.`
+  ],
 };
 
 // Section headings on /papers, in render order. Empty sections do not render.
@@ -95,6 +126,7 @@ export interface PaperEntry {
   code?: string;
   relatedNotes?: { label: string; route?: string; href?: string; query?: Record<string, string> }[];
   bibtexKey?: string;
+  provenance?: PaperProvenance;   // default 'human'
 }
 
 // A paper as rendered: the authored entry plus what the PDF-facts manifest

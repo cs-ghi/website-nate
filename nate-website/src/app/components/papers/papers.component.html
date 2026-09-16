@@ -10,17 +10,14 @@
 
     <div class="papers-intro">
       <p>
-        Expository writing lives under
-        <a routerLink="/notes">notes</a>, shorter pieces under
-        <a routerLink="/blog">blog</a>, and the textbook series under
-        <a routerLink="/books">textbooks</a>.
+        Mathematical papers I have written up. Expository work lives under <a routerLink="/notes">notes</a>, and the textbook series under <a routerLink="/books">textbooks</a>.
       </p>
       <p class="muted">
-        Nothing here is on arXiv yet. When a paper is posted, its identifier,
-        links and citation fields appear on its page automatically.
+        <!-- Official links for the papers will be  -->
       </p>
     </div>
 
+    <!-- My own work. -->
     @for (section of sections; track section) {
       <section class="paper-section">
         <div class="section-head">
@@ -28,55 +25,38 @@
           <span class="section-blurb">{{ section.blurb }}</span>
         </div>
         @for (paper of section.papers; track trackBySlug($index, paper)) {
-          <article
-            class="paper-row"
-            (click)="openPaper(paper)">
-            <h4 class="p-title">{{ paper.title }}</h4>
-            <p class="p-authors">{{ paper.authors.join(', ') }}</p>
-            @if (paper.summary) {
-              <p class="p-summary">{{ paper.summary }}</p>
-            }
-            <div class="p-meta">
-              <span class="badge" [ngClass]="'st-' + paper.status">{{ paper.statusLabel }}</span>
-              <span class="badge kind">{{ paper.kindLabel }}</span>
-              @if (paper.arxiv; as arxiv) {
-                <a
-                  class="badge arxiv"
-                  [href]="paper.arxivAbsUrl"
-                  target="_blank"
-                  rel="noopener"
-                  (click)="stop($event)">
-                  arXiv:{{ arxiv.id }}
-                </a>
-              }
-              @if (!paper.arxiv) {
-                <span class="p-dim">not yet posted</span>
-              }
-              <span class="p-sep">·</span>
-              <span>{{ paper.year }}</span>
-              @if (paper.pages) {
-                <span class="p-sep">·</span>
-              }
-              @if (paper.pages) {
-                <span>{{ paper.pages }} pp</span>
-              }
-            </div>
-            <div class="p-actions">
-              <button class="p-action" (click)="read(paper, $event)">Read</button>
-              <button class="p-action" (click)="toggleAbstract(paper, $event)">
-                {{ isOpen(paper) ? 'Hide abstract' : 'Abstract' }}
-              </button>
-              <button class="p-action" (click)="copyBibtex(paper, $event)">
-                {{ copiedSlug === paper.slug ? 'Copied' : 'BibTeX' }}
-              </button>
-              <span class="p-more">Full record <span class="arrow">→</span></span>
-            </div>
-            @if (isOpen(paper)) {
-              <div class="p-abstract" (click)="stop($event)">
-                <app-math-text [text]="paper.abstract"></app-math-text>
-              </div>
-            }
-          </article>
+          <ng-container *ngTemplateOutlet="paperRow; context: { $implicit: paper }"></ng-container>
+        }
+      </section>
+    }
+
+    <!--
+      Machine-produced work, below a deliberate hard break.
+
+      The separation IS the point of this section: it exists so a reader cannot
+      mistake what follows for my own mathematics. Do not soften the divider,
+      merge this into the loop above, or move it higher up the page.
+      Wording rationale: MACHINE_SECTION in papers.model.ts, and
+      AI-PAPERS-SECTION.md at the repo root.
+    -->
+    @if (machinePapers.length) {
+      <div class="machine-break" role="separator"></div>
+
+      <section class="paper-section machine-section">
+        <div class="section-head machine-head">
+          <h3>{{ machine.label }}</h3>
+        </div>
+
+        <p class="machine-standfirst">{{ machine.standfirst }}</p>
+
+        <div class="machine-body">
+          @for (para of machine.body; track para) {
+            <p>{{ para }}</p>
+          }
+        </div>
+
+        @for (paper of machinePapers; track trackBySlug($index, paper)) {
+          <ng-container *ngTemplateOutlet="paperRow; context: { $implicit: paper }"></ng-container>
         }
       </section>
     }
@@ -84,3 +64,60 @@
     <div style="padding-bottom: 7em;"></div>
   </div>
 </div>
+
+<!--
+  One row definition, shared by both sections, so they can never drift apart
+  visually. A machine-produced paper is presented exactly like any other -- the
+  separation above is what distinguishes it, not a different row treatment.
+-->
+<ng-template #paperRow let-paper>
+  <article
+    class="paper-row"
+    (click)="openPaper(paper)">
+    <h4 class="p-title">{{ paper.title }}</h4>
+    <p class="p-authors">{{ paper.authors.join(', ') }}</p>
+    @if (paper.summary) {
+      <p class="p-summary">{{ paper.summary }}</p>
+    }
+    <div class="p-meta">
+      <span class="badge" [ngClass]="'st-' + paper.status">{{ paper.statusLabel }}</span>
+      <span class="badge kind">{{ paper.kindLabel }}</span>
+      @if (paper.arxiv; as arxiv) {
+        <a
+          class="badge arxiv"
+          [href]="paper.arxivAbsUrl"
+          target="_blank"
+          rel="noopener"
+          (click)="stop($event)">
+          arXiv:{{ arxiv.id }}
+        </a>
+      }
+      @if (!paper.arxiv) {
+        <span class="p-dim">not yet posted</span>
+      }
+      <span class="p-sep">·</span>
+      <span>{{ paper.year }}</span>
+      @if (paper.pages) {
+        <span class="p-sep">·</span>
+      }
+      @if (paper.pages) {
+        <span>{{ paper.pages }} pp</span>
+      }
+    </div>
+    <div class="p-actions">
+      <button class="p-action" (click)="read(paper, $event)">Read</button>
+      <button class="p-action" (click)="toggleAbstract(paper, $event)">
+        {{ isOpen(paper) ? 'Hide abstract' : 'Abstract' }}
+      </button>
+      <button class="p-action" (click)="copyBibtex(paper, $event)">
+        {{ copiedSlug === paper.slug ? 'Copied' : 'BibTeX' }}
+      </button>
+      <span class="p-more">Full record <span class="arrow">→</span></span>
+    </div>
+    @if (isOpen(paper)) {
+      <div class="p-abstract" (click)="stop($event)">
+        <app-math-text [text]="paper.abstract"></app-math-text>
+      </div>
+    }
+  </article>
+</ng-template>

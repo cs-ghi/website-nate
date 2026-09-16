@@ -133,6 +133,16 @@ const TRACKED = {
   // De-versioned 2026-09-08: /papers serves the living copy of the HRR thesis,
   // so it tracks the source instead of being a PINNED snapshot.
   'papers/hirzebruch-riemann-roch.pdf': 'notes/HRR/HRR.pdf',
+
+  // TRACKED rather than PINNED despite the -v1 name (2026-09-15). The other
+  // -v1 file here is a frozen arXiv snapshot; this one is NOT on arXiv and is
+  // still pre-submission -- REVIEW-TRAIL.md lists acknowledgements, contact
+  // email and byline spelling as open. Pinning it would let the site copy fall
+  // silently behind the next recompile, which is the exact failure this
+  // registry exists to catch. Re-pin it once a v1 is actually posted somewhere
+  // and frozen, and add the successor as a new file.
+  'papers/sl6-degree6-surjectivity-v1.pdf':
+    'research/integral-hodge/outputs/papers/sl6-degree6-surjectivity/sl6-degree6.pdf',
 };
 
 const PINNED = {

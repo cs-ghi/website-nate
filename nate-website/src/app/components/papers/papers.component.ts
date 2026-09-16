@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { Paper, STATUS_SECTIONS } from 'src/app/interfaces/papers.model';
+import { MACHINE_SECTION, Paper, STATUS_SECTIONS } from 'src/app/interfaces/papers.model';
 import { PaperCatalogService } from 'src/app/services/paper-catalog.service';
 
 export interface PaperSection {
@@ -19,6 +19,12 @@ export interface PaperSection {
 export class PapersComponent implements OnInit {
   sections: PaperSection[] = [];
 
+  // Machine-produced work, rendered below a hard break at the bottom of the
+  // page. Kept in its own array rather than as another STATUS_SECTION so the
+  // template cannot accidentally interleave it with my own papers.
+  machinePapers: Paper[] = [];
+  readonly machine = MACHINE_SECTION;
+
   // Which rows have their abstract expanded, by slug. Expanding does not
   // navigate — the full record is one click deeper, at /papers/:slug.
   private open = new Set<string>();
@@ -30,13 +36,18 @@ export class PapersComponent implements OnInit {
 
   ngOnInit(): void {
     this.catalog.papers$.subscribe((papers) => {
+      // Split on provenance FIRST. Absent means human, so existing entries are
+      // unaffected; only an explicit 'machine' drops below the break.
+      const mine = papers.filter((p) => p.provenance !== 'machine');
+      this.machinePapers = papers.filter((p) => p.provenance === 'machine');
+
       // Grouped by status rather than filtered by it: with two or three papers
       // a chip row would be more chrome than content, and a reader (or a hiring
       // committee) expects a publication list to read top-down.
       this.sections = STATUS_SECTIONS.map((s) => ({
         label: s.label,
         blurb: s.blurb,
-        papers: papers.filter((p) => s.keys.includes(p.status)),
+        papers: mine.filter((p) => s.keys.includes(p.status)),
       })).filter((s) => s.papers.length);
     });
   }

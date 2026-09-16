@@ -209,3 +209,52 @@ $ink-faint: #857d77;
     .p-title { font-size: 19px; }
     .p-more { display: none; }
 }
+
+/* ---------------------------------------------------------------------------
+   Machine-produced work: the break, and the section below it.
+
+   This is not decoration. The whole reason the section exists is that a reader
+   must not be able to mistake what follows for my own mathematics, so the
+   separation is deliberately heavier than anything else on the page: real
+   whitespace above and below, a double rule, and a tinted, inset block.
+
+   If a future redesign flattens this, the section loses its purpose.
+   See MACHINE_SECTION in papers.model.ts and AI-PAPERS-SECTION.md.
+--------------------------------------------------------------------------- */
+
+.machine-break {
+  margin: 6.5em 0 3.25em;
+  border-top: 1px solid $card-border;
+  border-bottom: 1px solid $card-border;
+  height: 6px;
+}
+
+.machine-section {
+  border-left: 3px solid #8a6f3d;
+  padding-left: 1.4em;
+
+  .machine-head h3 {
+    color: #c8b06e;
+    letter-spacing: 0.01em;
+  }
+
+  /* The one sentence a skimming reader must not miss. */
+  .machine-standfirst {
+    margin: 0.35em 0 1.2em;
+    font-style: italic;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: #d8cec2;
+  }
+
+  .machine-body {
+    margin-bottom: 2em;
+    max-width: 62ch;
+
+    p {
+      margin: 0 0 0.85em;
+      color: $ink;
+      line-height: 1.6;
+    }
+  }
+}
