@@ -1744,6 +1744,32 @@ These keymaps activate only in their respective filetype, except for the
 
     oil (file explorer, `&lt;C-w&gt;&lt;C-o&gt;` or `:Oil`): ~
     `g?`                Show all Oil keymaps (including defaults)
+    `&lt;S-CR&gt;`            Finish what you are in the middle of. From insert
+                        mode it applies the pending edits and returns you
+                        to normal mode with the listing still open, so the
+                        name you just typed is committed without reaching
+                        for `&lt;Esc&gt;`. From normal mode it applies them and
+                        leaves Oil: the window returns to what it held
+                        before Oil opened, or Neovim exits if Oil was the
+                        only buffer. Renaming and then leaving is therefore
+                        `&lt;S-CR&gt;` twice.
+                        Anything that raised a confirmation keeps the
+                        listing open once you have answered it, so a
+                        deletion leaves you looking at the result rather
+                        than somewhere else; press `&lt;S-CR&gt;` again to go.
+                        The confirmation itself is the one `:w` would show
+    Note: to go without the confirmation on small edits, set
+    `skip_confirm_for_simple_edits` in a user override for oil. Open
+    NoetherVim's `plugins/oil.lua` and run `:NoetherVim override`, or write
+    `lua/user/plugins/oil.lua` yourself: &gt;lua
+        return &#123;
+          "stevearc/oil.nvim",
+          opts = &#123; skip_confirm_for_simple_edits = true &#125;,
+        &#125;
+    Deletes always ask, as do more than one rename, more than one copy, and
+    more than five new files. The setting reaches every Oil write, `:w`
+    included, not just `&lt;S-CR&gt;`.
+
     `&lt;C-p&gt;`             Preview the entry under the cursor in a split, and
                         keep it in step as you move. Press it again to
                         close. The split side follows the window shape;
