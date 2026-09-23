@@ -26,6 +26,14 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NatePerverseSheaves' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NatePerverseSheaves"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateModularForms' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateModularForms"
@@ -42,17 +50,27 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateStochasticCalculus' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateStochasticCalculus"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateErgodicTheory' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateErgodicTheory"
     ]
   },
   {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateStochasticCalculus' is planned (cited/registered but has no folder yet).",
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateX} resolves to no known book. Fix the citation or add an alias/registry entry.",
     "refs": [
-      "NateStochasticCalculus"
+      "NateX",
+      "symplectic-geometry/EYNTKA-symplectic-geometry.tex",
+      "symplectic-geometry/drafts/scratch/ch01-s03.tex"
     ]
   },
   {
@@ -181,14 +199,6 @@
     "message": "'NatePerfectoidGeometry' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NatePerfectoidGeometry"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NatePerverseSheaves' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NatePerverseSheaves"
     ]
   },
   {
@@ -654,33 +664,6 @@
     "refs": [
       "NateNonlinearWave",
       "NateGeometricAnalysis"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateDiffTop -> NateSymplecticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateDiffTop",
-      "NateSymplecticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLinAlg -> NateSymplecticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLinAlg",
-      "NateSymplecticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateLieGroups -> NateSymplecticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateLieGroups",
-      "NateSymplecticGeometry"
     ]
   },
   {
