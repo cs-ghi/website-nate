@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-09-16",
+    "generated": "2026-09-23",
     "bookCount": 48,
-    "edgeCount": 464,
+    "edgeCount": 469,
     "clashCounts": {
-      "error": 0,
+      "error": 1,
       "warn": 5,
-      "info": 129
+      "info": 126
     },
     "tiers": [
       {
@@ -482,7 +482,7 @@
       "id": "NateHomologicalAlg",
       "title": "Homological Algebra",
       "dir": "homological-algebra",
-      "description": "abelian categories, localization of categories and the derived category, derived functors (Ext/Tor), group cohomology, homological dimension, and spectral sequences. **Supply caveat:** the *triangulated*-category material is sec:derivAndTriangCat, a starred bonus section its own BOOK.md §4 marks pre-framework and unassessed (a live ref:HERE placeholder, a note-to-self parenthetical, a triangulatedd typo). Higher Category Theory Ch. 5 is contracted to cite it for the 1-categorical original of a stable ∞-category, so that chapter should not be drafted before Ch. 3 is assessed. See BACKLOG.",
+      "description": "the series' algebraic engine room, in five chapters: abelian categories and the localization of categories (Ch. 1); complexes, resolutions and the derived functors Ext/Tor with delta-functors and double complexes (Ch. 2); **the derived category** (Ch. 3: triangulated categories with the octahedral axiom, D(textbfA), total derived functors via adapted classes, RHom and otimes^L, and the derived-category route to spectral sequences); applications of (co)homology, group cohomology as the worked instance of a derived functor, homological dimension, Serre's criterion for normality, the local criterion for flatness, varprojlim^1 (Ch. 4); and spectral sequences. **Ch. 3 and 4 became 4 and 5, with every label unchanged. §1 is written and gated; §§2–5 are pending, so Higher Category Theory Ch. 5, contracted to cite this chapter for the 1-categorical original of a stable ∞-category, is unblocked for its triangulated-category input but still waits on §§2–4. **t-structures are deliberately NOT here**: Perverse Sheaves and D-modules owns them.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -914,7 +914,6 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
         "abelian-varieties/drafts/scratch/ch06-s04.tex",
         "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex"
       ]
@@ -1837,6 +1836,15 @@
     },
     {
       "source": "NateAnalyticNumTheory",
+      "target": "NateProbability",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
       "target": "NateRealAnalysis",
       "type": "reference",
       "provenance": "auto",
@@ -2313,6 +2321,15 @@
     {
       "source": "NateComplexAnalysis",
       "target": "NateRiemannianGeometry",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "complex-analysis/EYNTKA_complex_analysis.tex"
+      ]
+    },
+    {
+      "source": "NateComplexAnalysis",
+      "target": "NateTopology",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3947,7 +3964,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/ch3-s2-derived.tex"
       ]
     },
     {
@@ -5287,6 +5305,15 @@
       ]
     },
     {
+      "source": "NateProbability",
+      "target": "NateStatistics",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "probability/EYNTKA-probability.tex"
+      ]
+    },
+    {
       "source": "NateRealAnalysis",
       "target": "NateAnalyticNumTheory",
       "type": "reference",
@@ -5298,6 +5325,15 @@
     {
       "source": "NateRealAnalysis",
       "target": "NateCalculus",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "real-analysis/EYNTKA-real-analysis.tex"
+      ]
+    },
+    {
+      "source": "NateRealAnalysis",
+      "target": "NateComplexAnalysis",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -5457,6 +5493,15 @@
       "target": "NateLieGroups",
       "type": "coreq",
       "provenance": "both",
+      "citedIn": [
+        "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
+      ]
+    },
+    {
+      "source": "NateRiemannianGeometry",
+      "target": "NateLinAlg",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "riemannian-geometry/EYNTKA-riemannian-geometry.tex"
       ]
