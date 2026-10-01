@@ -2,6 +2,14 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NateModularForms' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NateModularForms"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateModularRepTheory' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateModularRepTheory"
@@ -29,14 +37,6 @@
     "message": "'NatePerverseSheaves' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NatePerverseSheaves"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NateModularForms' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NateModularForms"
     ]
   },
   {
@@ -318,15 +318,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateElemAnalysis -> NateCoreProbability) is manual, no backing \\cite found.",
-    "refs": [
-      "NateElemAnalysis",
-      "NateCoreProbability"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateLinAlg -> NateODE) is manual, no backing \\cite found.",
     "refs": [
       "NateLinAlg",
@@ -417,18 +408,54 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateLinearPDE -> NateNonlinearWave) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateStatistics -> NateMLTheory) is manual, no backing \\cite found.",
     "refs": [
-      "NateLinearPDE",
-      "NateNonlinearWave"
+      "NateStatistics",
+      "NateMLTheory"
     ]
   },
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateODE -> NateNonlinearWave) is manual, no backing \\cite found.",
+    "message": "Overlay prereq (NateProbability -> NateMLTheory) is manual, no backing \\cite found.",
     "refs": [
-      "NateODE",
+      "NateProbability",
+      "NateMLTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLinAlg -> NateMLTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinAlg",
+      "NateMLTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCalculus -> NateMLTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCalculus",
+      "NateMLTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateFuncAnalysis -> NateMLTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateFuncAnalysis",
+      "NateMLTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLinearPDE -> NateNonlinearWave) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinearPDE",
       "NateNonlinearWave"
     ]
   },
@@ -664,6 +691,78 @@
     "refs": [
       "NateNonlinearWave",
       "NateGeometricAnalysis"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateHigherCategoryTheory -> NateUnstableMotivic) is manual, no backing \\cite found.",
+    "refs": [
+      "NateHigherCategoryTheory",
+      "NateUnstableMotivic"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgGeo -> NateUnstableMotivic) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgGeo",
+      "NateUnstableMotivic"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCommAlg -> NateUnstableMotivic) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCommAlg",
+      "NateUnstableMotivic"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateCoreAlgebra -> NateUnstableMotivic) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCoreAlgebra",
+      "NateUnstableMotivic"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateEtaleCohomology -> NateUnstableMotivic) is manual, no backing \\cite found.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NateUnstableMotivic"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateModuliStacks -> NateUnstableMotivic) is manual, no backing \\cite found.",
+    "refs": [
+      "NateModuliStacks",
+      "NateUnstableMotivic"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateAlgKTheory -> NateUnstableMotivic) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAlgKTheory",
+      "NateUnstableMotivic"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateIntersectionTheory -> NateUnstableMotivic) is manual, no backing \\cite found.",
+    "refs": [
+      "NateIntersectionTheory",
+      "NateUnstableMotivic"
     ]
   },
   {
@@ -1011,15 +1110,6 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAnalyticNumTheory -> NateCoreRepTheory is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAnalyticNumTheory",
-      "NateCoreRepTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateAnalyticNumTheory -> NateCFT is cited in 9 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAnalyticNumTheory",
@@ -1074,25 +1164,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateLinAlg -> NateFuncAnalysis is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateFuncAnalysis"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateODE is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateODE"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateCoreAlgebra is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateLinAlg -> NateCoreAlgebra is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateLinAlg",
       "NateCoreAlgebra"
@@ -1101,10 +1173,100 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateLinAlg -> NateLieGroups is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateLinAlg -> NateFuncAnalysis is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateFuncAnalysis"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateODE is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateODE"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateClassicalAlgGeo is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateClassicalAlgGeo"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateAlgGeo is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateAlgGeo"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateAlgNumberTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateAlgNumberTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateLieGroups is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateLinAlg",
       "NateLieGroups"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateUnitaryRepTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateUnitaryRepTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateDiffTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateDiffTop"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateAbelianVarieties is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateAbelianVarieties"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLinAlg -> NateCStarAlgebras is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLinAlg",
+      "NateCStarAlgebras"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateLLM -> NateCoreProbability is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateLLM",
+      "NateCoreProbability"
     ]
   },
   {
@@ -1118,13 +1280,14 @@
   {
     "kind": "tier-unassigned",
     "severity": "info",
-    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateGeometricMeasureTheory, NateHigherToposTheory, NateHomotopyTypeTheory, NateMetricFunctionSpaces, NateSetTheory, NateToposTheory. Add to overlay layout.tiers to curate.",
+    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateGeometricMeasureTheory, NateHigherToposTheory, NateHomotopyTypeTheory, NateLLM, NateMetricFunctionSpaces, NateSetTheory, NateToposTheory. Add to overlay layout.tiers to curate.",
     "refs": [
       "NateCalcOnManifolds",
       "NateComplexAnalyticGeometry",
       "NateGeometricMeasureTheory",
       "NateHigherToposTheory",
       "NateHomotopyTypeTheory",
+      "NateLLM",
       "NateMetricFunctionSpaces",
       "NateSetTheory",
       "NateToposTheory"
