@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-10-01",
+    "generated": "2026-10-02",
     "bookCount": 48,
-    "edgeCount": 481,
+    "edgeCount": 482,
     "clashCounts": {
       "error": 1,
       "warn": 5,
-      "info": 144
+      "info": 143
     },
     "tiers": [
       {
@@ -2461,6 +2461,15 @@
     },
     {
       "source": "NateCoreAlgebra",
+      "target": "NateAnalyticNumTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
       "target": "NateCategoryTheory",
       "type": "reference",
       "provenance": "auto",
@@ -2598,8 +2607,10 @@
       "source": "NateCoreAlgebra",
       "target": "NatePrelim",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
     },
     {
       "source": "NateCoreProbability",
