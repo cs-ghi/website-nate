@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-10-02",
+    "generated": "2026-10-06",
     "bookCount": 48,
     "edgeCount": 482,
     "clashCounts": {
-      "error": 1,
+      "error": 3,
       "warn": 5,
-      "info": 143
+      "info": 150
     },
     "tiers": [
       {
@@ -64,7 +64,7 @@
         "pdf": "algebraic-geometry/EYNTKA_algGeo.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_algGeo.pdf&name=Algebraic%20Geometry&source=books"
       },
-      "lastUpdated": "2026-08-04",
+      "lastUpdated": "2026-10-05",
       "xAffinity": -0.641,
       "tier": 3
     },
@@ -372,7 +372,7 @@
         "pdf": "elliptic-curves/EYNTKA-elliptic-curves.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
       },
-      "lastUpdated": "2026-07-22",
+      "lastUpdated": "2026-10-05",
       "xAffinity": -0.676,
       "tier": 3
     },
@@ -1236,6 +1236,12 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r3.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/drafts/scratch/curve-lemma.tex",
         "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
         "algebraic-geometry/drafts/scratch/frag-W3-valuative-dvr.tex",
@@ -1248,7 +1254,9 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex"
       ]
     },
     {
@@ -1257,7 +1265,14 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
+        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
+        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex"
       ]
     },
     {
@@ -1267,6 +1282,8 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
         "algebraic-geometry/drafts/scratch/ch-II1-s05.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
@@ -1277,7 +1294,9 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex"
       ]
     },
     {
@@ -1287,9 +1306,19 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
         "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
         "algebraic-geometry/drafts/scratch/ch-II1-s05.tex",
         "algebraic-geometry/drafts/scratch/ch-II2-s03.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r4.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r4.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
+        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
+        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex",
         "algebraic-geometry/drafts/scratch/weil-divisor-families.tex"
       ]
     },
@@ -1300,7 +1329,17 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
         "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r2.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r2.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r5.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r5.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/drafts/scratch/chevprep-C.tex",
         "algebraic-geometry/drafts/scratch/chevprep-G.tex",
         "algebraic-geometry/drafts/scratch/chevprep-H.tex",
@@ -1308,7 +1347,9 @@
         "algebraic-geometry/drafts/scratch/fix-P3.tex",
         "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
         "algebraic-geometry/drafts/scratch/frag-W3-valuative-dvr.tex",
-        "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex"
+        "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
+        "algebraic-geometry/drafts/scratch/new-curves-fields-ch7.tex",
+        "algebraic-geometry/drafts/scratch/new-curves-fields.tex"
       ]
     },
     {
@@ -1318,6 +1359,9 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1337,7 +1381,13 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
         "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r2.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r2.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
         "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
         "algebraic-geometry/drafts/scratch/frag-W5-krull-akizuki-CA.tex"
@@ -1349,7 +1399,11 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
+        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex"
       ]
     },
     {
@@ -1358,7 +1412,16 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r3.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r3.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
+        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
+        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex"
       ]
     },
     {
@@ -1368,7 +1431,18 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r2.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r3.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
+        "algebraic-geometry/drafts/scratch/glimpse-source.tex",
+        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
+        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1378,7 +1452,9 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex"
       ]
     },
     {
@@ -1388,7 +1464,16 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r4.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r5.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
+        "algebraic-geometry/drafts/scratch/glimpse-source.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1399,9 +1484,16 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r2.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/drafts/scratch/chevprep-G.tex",
         "algebraic-geometry/drafts/scratch/fix-P2.tex",
-        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex"
+        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
+        "algebraic-geometry/drafts/scratch/glimpse-source.tex"
       ]
     },
     {
@@ -1411,7 +1503,20 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-G.tex"
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r4.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r4.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r5.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r5.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r6.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
+        "algebraic-geometry/drafts/scratch/chevprep-G.tex",
+        "algebraic-geometry/drafts/scratch/glimpse-source.tex"
       ]
     },
     {
@@ -1421,7 +1526,18 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-G.tex"
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r3.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r3.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r6.orig.tex",
+        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
+        "algebraic-geometry/drafts/scratch/chevprep-G.tex",
+        "algebraic-geometry/drafts/scratch/glimpse-source.tex"
       ]
     },
     {
@@ -1430,7 +1546,9 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex"
       ]
     },
     {
@@ -1439,6 +1557,9 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
+        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },

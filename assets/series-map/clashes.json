@@ -1,5 +1,27 @@
 [
   {
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateBirationalGeometry} resolves to no known book. Fix the citation or add an alias/registry entry.",
+    "refs": [
+      "NateBirationalGeometry",
+      "algebraic-geometry/EYNTKA_algGeo.tex",
+      "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+      "algebraic-geometry/drafts/scratch/ch7-r4.tex"
+    ]
+  },
+  {
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateDerivedAlgGeo} resolves to no known book. Fix the citation or add an alias/registry entry.",
+    "refs": [
+      "NateDerivedAlgGeo",
+      "algebraic-geometry/EYNTKA_algGeo.tex",
+      "algebraic-geometry/drafts/scratch/ch7-r1.tex",
+      "algebraic-geometry/drafts/scratch/ch7-r6.tex"
+    ]
+  },
+  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateModularForms' is planned (cited/registered but has no folder yet).",
@@ -1056,7 +1078,16 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateEtaleCohomology is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateComplexAnalysis is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateComplexAnalysis"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateEtaleCohomology is cited in 14 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
       "NateEtaleCohomology"
@@ -1065,7 +1096,43 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateAbelianVarieties is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateModuliStacks is cited in 13 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateModuliStacks"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateFuncAnalysis is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateFuncAnalysis"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateAlgNumberTheory is cited in 8 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateAlgNumberTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateIntersectionTheory is cited in 15 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateIntersectionTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateAbelianVarieties is cited in 11 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
       "NateAbelianVarieties"
@@ -1074,10 +1141,28 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateHodgeTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateAlgKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateAlgKTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateHodgeTheory is cited in 12 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
       "NateHodgeTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAlgGeo -> NateEllipticCurves is cited in 10 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateEllipticCurves"
     ]
   },
   {
