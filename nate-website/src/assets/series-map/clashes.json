@@ -304,6 +304,24 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateCombinatorics -> NateGraphTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateCombinatorics",
+      "NateGraphTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateLinAlg -> NateGraphTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateLinAlg",
+      "NateGraphTheory"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NatePrelim -> NateLogic) is manual, no backing \\cite found.",
     "refs": [
       "NatePrelim",
@@ -1168,19 +1186,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgTop -> NateKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgTop -> NateDiffTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgTop",
-      "NateKTheory"
+      "NateDiffTop"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgTop -> NateDiffTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgTop -> NateKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgTop",
-      "NateDiffTop"
+      "NateKTheory"
     ]
   },
   {
@@ -1356,11 +1374,12 @@
   {
     "kind": "tier-unassigned",
     "severity": "info",
-    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateGeometricMeasureTheory, NateHigherToposTheory, NateHomotopyTypeTheory, NateLLM, NateMetricFunctionSpaces, NateSetTheory, NateToposTheory. Add to overlay layout.tiers to curate.",
+    "message": "Tier inherited from prerequisites for: NateCalcOnManifolds, NateComplexAnalyticGeometry, NateGeometricMeasureTheory, NateGraphTheory, NateHigherToposTheory, NateHomotopyTypeTheory, NateLLM, NateMetricFunctionSpaces, NateSetTheory, NateToposTheory. Add to overlay layout.tiers to curate.",
     "refs": [
       "NateCalcOnManifolds",
       "NateComplexAnalyticGeometry",
       "NateGeometricMeasureTheory",
+      "NateGraphTheory",
       "NateHigherToposTheory",
       "NateHomotopyTypeTheory",
       "NateLLM",

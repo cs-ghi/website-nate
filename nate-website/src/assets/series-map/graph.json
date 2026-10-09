@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-10-06",
+    "generated": "2026-10-09",
     "bookCount": 48,
-    "edgeCount": 482,
+    "edgeCount": 484,
     "clashCounts": {
       "error": 3,
       "warn": 5,
-      "info": 150
+      "info": 152
     },
     "tiers": [
       {
@@ -83,7 +83,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-k-theory.pdf&name=Algebraic%20K-Theory&source=books"
       },
       "lastUpdated": "2026-08-21",
-      "xAffinity": -0.59,
+      "xAffinity": -0.591,
       "tier": 3
     },
     {
@@ -151,7 +151,7 @@
         "pdf": "calculus/EYNTKA-calculus.pdf"
       },
       "lastUpdated": "2026-07-30",
-      "xAffinity": 0.173,
+      "xAffinity": 0.172,
       "tier": 0
     },
     {
@@ -236,7 +236,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_complex_analysis.pdf&name=Complex%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.105,
+      "xAffinity": -0.106,
       "tier": 1
     },
     {
@@ -251,7 +251,7 @@
         "pdf": "complex-analytic-geometry/EYNTKA-complex-analytic-geometry.pdf"
       },
       "lastUpdated": "2026-08-11",
-      "xAffinity": -0.279,
+      "xAffinity": -0.28,
       "tier": 3
     },
     {
@@ -285,7 +285,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-probability.pdf&name=Core%20Probability&source=books"
       },
       "lastUpdated": "2026-08-05",
-      "xAffinity": 0.451,
+      "xAffinity": 0.45,
       "tier": 1
     },
     {
@@ -355,7 +355,7 @@
         "pdf": "elementary-analysis/EYNTKA-elementary-analysis.pdf"
       },
       "lastUpdated": "2026-09-04",
-      "xAffinity": 0.417,
+      "xAffinity": 0.416,
       "tier": 0
     },
     {
@@ -475,7 +475,7 @@
         "pdf": "hodge-theory/EYNTKA-hodge-theory.pdf"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": -0.24,
+      "xAffinity": -0.241,
       "tier": 3
     },
     {
@@ -526,7 +526,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Vector_bundles_and_K-theory.pdf&name=Vector%20Bundles%20and%20K-Theory&source=books"
       },
       "lastUpdated": "2026-09-05",
-      "xAffinity": 0.118,
+      "xAffinity": 0.117,
       "tier": 3
     },
     {
@@ -560,7 +560,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-lie-groups.pdf&name=Lie%20Groups&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.048,
+      "xAffinity": 0.045,
       "tier": 2
     },
     {
@@ -576,7 +576,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-algebra.pdf&name=Linear%20Algebra&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": 0.332,
+      "xAffinity": 0.311,
       "tier": 0
     },
     {
@@ -640,7 +640,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Metric%20and%20Function%20Spaces&source=books"
       },
       "lastUpdated": "2026-08-01",
-      "xAffinity": 0.46,
+      "xAffinity": 0.459,
       "tier": 0
     },
     {
@@ -655,7 +655,7 @@
         "pdf": "microlocal-analysis/EYNTKA-microlocal-analysis.pdf"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.38,
+      "xAffinity": 0.379,
       "tier": 3
     },
     {
@@ -688,7 +688,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20PDE&source=books"
       },
       "lastUpdated": "2026-07-20",
-      "xAffinity": 0.45,
+      "xAffinity": 0.449,
       "tier": 3
     },
     {
@@ -706,7 +706,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.283,
+      "xAffinity": 0.278,
       "tier": 1
     },
     {
@@ -739,7 +739,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
       },
       "lastUpdated": "2026-07-18",
-      "xAffinity": 0.485,
+      "xAffinity": 0.483,
       "tier": 2
     },
     {
@@ -810,7 +810,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-statistics.pdf&name=Mathematical%20Statistics&source=books"
       },
       "lastUpdated": "2026-08-24",
-      "xAffinity": 0.672,
+      "xAffinity": 0.67,
       "tier": 3
     },
     {
@@ -1856,7 +1856,8 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+        "algebraic-topology/EYNTKA-algebraic-topology.tex",
+        "algebraic-topology/drafts/scratch/ch07-rank-two.tex"
       ]
     },
     {
@@ -5421,6 +5422,15 @@
     },
     {
       "source": "NateNonlinearWave",
+      "target": "NateElemAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "nonlinear-wave-pde/EYNTKA-nonlinear-wave.tex"
+      ]
+    },
+    {
+      "source": "NateNonlinearWave",
       "target": "NateFuncAnalysis",
       "type": "prereq",
       "provenance": "both",
@@ -5443,6 +5453,15 @@
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
+    },
+    {
+      "source": "NateNonlinearWave",
+      "target": "NateMetricFunctionSpaces",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "nonlinear-wave-pde/EYNTKA-nonlinear-wave.tex"
+      ]
     },
     {
       "source": "NateNonlinearWave",
