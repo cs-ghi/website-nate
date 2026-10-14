@@ -60,7 +60,6 @@ const TRACKED = {
   // --- books: sources in academic/textbooks/<book>/ -------------------------
   'books/EYNTKA-Algebra.pdf': 'textbooks/algebra/EYNTKA-Algebra.pdf',
   'books/EYNTKA-Probability.pdf': 'textbooks/probability/EYNTKA-probability.pdf',
-  'books/EYNTKA-abelian-varieties.pdf': 'textbooks/abelian-varieties/EYNTKA-abelian-varieties.pdf',
   'books/EYNTKA-algebraic-k-theory.pdf':
     'textbooks/algebraic-k-theory/EYNTKA-algebraic-k-theory.pdf',
   'books/EYNTKA-algebraic-number-theory.pdf':
