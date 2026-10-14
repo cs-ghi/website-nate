@@ -38,6 +38,15 @@
     ]
   },
   {
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateStableHomotopy} resolves to no known book. Fix the citation or add an alias/registry entry.",
+    "refs": [
+      "NateStableHomotopy",
+      "differential-topology/EYNTKA-differential-topology.tex"
+    ]
+  },
+  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateGeometricAnalysis' is planned (cited/registered but has no folder yet).",
@@ -736,24 +745,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateAlgGeo -> NateUnstableMotivic) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgGeo",
-      "NateUnstableMotivic"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCommAlg -> NateUnstableMotivic) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCommAlg",
-      "NateUnstableMotivic"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateCoreAlgebra -> NateUnstableMotivic) is manual, no backing \\cite found.",
     "refs": [
       "NateCoreAlgebra",
@@ -763,36 +754,9 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateEtaleCohomology -> NateUnstableMotivic) is manual, no backing \\cite found.",
-    "refs": [
-      "NateEtaleCohomology",
-      "NateUnstableMotivic"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateModuliStacks -> NateUnstableMotivic) is manual, no backing \\cite found.",
     "refs": [
       "NateModuliStacks",
-      "NateUnstableMotivic"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgKTheory -> NateUnstableMotivic) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgKTheory",
-      "NateUnstableMotivic"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateIntersectionTheory -> NateUnstableMotivic) is manual, no backing \\cite found.",
-    "refs": [
-      "NateIntersectionTheory",
       "NateUnstableMotivic"
     ]
   },
