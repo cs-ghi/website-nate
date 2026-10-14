@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-10-09",
-    "bookCount": 48,
-    "edgeCount": 484,
+    "generated": "2026-10-14",
+    "bookCount": 50,
+    "edgeCount": 509,
     "clashCounts": {
-      "error": 3,
+      "error": 4,
       "warn": 5,
-      "info": 152
+      "info": 147
     },
     "tiers": [
       {
@@ -58,7 +58,8 @@
       "webPublished": true,
       "clusters": [
         "arithmetic-geometry",
-        "hodge"
+        "hodge",
+        "motivic"
       ],
       "links": {
         "pdf": "algebraic-geometry/EYNTKA_algGeo.pdf",
@@ -76,7 +77,8 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "k-theory"
+        "k-theory",
+        "motivic"
       ],
       "links": {
         "pdf": "algebraic-k-theory/EYNTKA-algebraic-k-theory.pdf",
@@ -112,7 +114,8 @@
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
-        "k-theory"
+        "k-theory",
+        "motivic"
       ],
       "links": {
         "pdf": "algebraic-topology/EYNTKA-algebraic-topology.pdf",
@@ -383,7 +386,9 @@
       "description": "the étale site and étale cohomology of schemes. Four Parts (14 chapters): (I) *the étale topology*, étale morphisms and Henselian local rings, the étale fundamental group pi_1^ét (finite étale covers, Galois categories, Riemann existence, owned here, the series' home of the topic), the étale site and its sheaves; (II) *étale cohomology*, cohomology and the cohomology of a point (= Galois cohomology), Kummer/Artin–Schreier/G_m, the cohomology of curves, constructible sheaves and finiteness; (III) *the Brauer group and the fundamental theorems*, the cohomological Brauer group Br(X)=H^2_ét(X,G_m) (Azumaya, **Gabber proved**), base change / Künneth / comparison, purity / cycle class / Poincaré duality; (IV) *ell-adic cohomology and the Weil conjectures*, ell-adic sheaves, the Lefschetz trace formula + rationality + functional equation, Lefschetz pencils and vanishing cycles, and **Deligne's proof of the Riemann Hypothesis in full** (Weil I). The series' bridge from scheme theory to arithmetic geometry, the upstream home of the geometric Brauer group, and the home of the étale fundamental group. Prereqs Algebraic Geometry, Commutative Algebra, Homological Algebra, Group and Galois Cohomology; **co-requisite Moduli, Deformation Theory, and Stacks** (cites its descent/sites + gerbe interpretation of H^2; supplies back the Gabber proof + higher-dimensional Brauer computations that book defers). Feeds Moduli, Deformation Theory, and Stacks, Hodge Theory (cycle class map / comparison), Abelian Varieties.",
       "status": "in-progress",
       "webPublished": false,
-      "clusters": [],
+      "clusters": [
+        "motivic"
+      ],
       "links": {
         "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
@@ -460,6 +465,23 @@
       "lastUpdated": "2026-07-21",
       "xAffinity": 1,
       "tier": 2
+    },
+    {
+      "id": "NateHigherCategoryTheory",
+      "title": "Higher Category Theory",
+      "dir": "higher-category-theory",
+      "description": "Simplicial sets, nerves and Kan complexes; model categories, the small object argument, Quillen functors; homotopy limits and colimits, bar constructions, the realization lemma; simplicial, monoidal and pointed model categories, mapping spaces, left Bousfield localization; Dold-Kan, the Kan loop group, simplicial coverings, Postnikov and Moore-Postnikov towers with twisted k-invariants; quasi-categories, the Joyal model structure, ∞-limits, the ∞-Yoneda lemma, the coherent nerve; stable ∞-categories (coming soon); ∞-toposes survey (coming soon).",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "motivic"
+      ],
+      "links": {
+        "pdf": "higher-category-theory/EYNTKA-higher-category-theory.pdf"
+      },
+      "lastUpdated": "2026-08-23",
+      "xAffinity": -0.69,
+      "tier": 3
     },
     {
       "id": "NateHodgeTheory",
@@ -718,7 +740,7 @@
       "webPublished": false,
       "clusters": [],
       "links": {
-        "pdf": "preliminary-chapter/EYNTKA-preliminary-chapter.pdf"
+        "pdf": "preliminary-chapter/preliminary-chapter.pdf"
       },
       "lastUpdated": "2026-05-31",
       "xAffinity": 0,
@@ -843,6 +865,23 @@
       "lastUpdated": "2026-07-17",
       "xAffinity": -1,
       "tier": 3
+    },
+    {
+      "id": "NateUnstableMotivic",
+      "title": "Unstable Motivic Homotopy Theory",
+      "dir": "unstable-motivic-homotopy",
+      "description": "Serre's problem, Quillen-Suslin, Bass-Quillen; A1-invariant theories and the topological template; simplicial presheaves and local homotopy theory, the Nisnevich topology, the A1-homotopy category (coming soon); motivic spheres, classifying spaces, representability of algebraic K-theory, Thom spaces and purity, affine representability, realizations (coming soon); Milnor-Witt K-theory, strongly A1-invariant sheaves, the Rost-Schmid complex, A1-Hurewicz, the A1-degree (coming soon); Euler classes in Chow-Witt groups, rank-two bundles on smooth affine threefolds (coming soon).",
+      "status": "in-progress",
+      "webPublished": false,
+      "clusters": [
+        "motivic"
+      ],
+      "links": {
+        "pdf": "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.pdf"
+      },
+      "lastUpdated": "2026-09-29",
+      "xAffinity": -0.724,
+      "tier": 4
     }
   ],
   "edges": [
@@ -1673,6 +1712,15 @@
     },
     {
       "source": "NateAlgKTheory",
+      "target": "NateHigherCategoryTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
+      ]
+    },
+    {
+      "source": "NateAlgKTheory",
       "target": "NateHomologicalAlg",
       "type": "prereq",
       "provenance": "both",
@@ -1779,6 +1827,15 @@
     },
     {
       "source": "NateAlgTop",
+      "target": "NateComplexAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
       "target": "NateCoreAlgebra",
       "type": "prereq",
       "provenance": "both",
@@ -1818,6 +1875,15 @@
     },
     {
       "source": "NateAlgTop",
+      "target": "NateHigherCategoryTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
       "target": "NateHomologicalAlg",
       "type": "coreq",
       "provenance": "both",
@@ -1827,7 +1893,8 @@
         "algebraic-topology/.wip/P06.tex",
         "algebraic-topology/.wip/P11.tex",
         "algebraic-topology/.wip/P12.tex",
-        "algebraic-topology/EYNTKA-algebraic-topology.tex"
+        "algebraic-topology/EYNTKA-algebraic-topology.tex",
+        "algebraic-topology/drafts/scratch/ch09-s01.tex"
       ]
     },
     {
@@ -1857,7 +1924,9 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-topology/EYNTKA-algebraic-topology.tex",
-        "algebraic-topology/drafts/scratch/ch07-rank-two.tex"
+        "algebraic-topology/drafts/scratch/ch07-rank-two.tex",
+        "algebraic-topology/drafts/scratch/ch09-s01.tex",
+        "algebraic-topology/drafts/scratch/ch09-s03.tex"
       ]
     },
     {
@@ -2024,6 +2093,16 @@
         "category-theory/drafts/scratch/ch07-s02.tex",
         "category-theory/drafts/scratch/ch07-s04.tex",
         "category-theory/drafts/scratch/ch08-s01.tex",
+        "category-theory/drafts/scratch/ch08-s04.tex"
+      ]
+    },
+    {
+      "source": "NateCategoryTheory",
+      "target": "NateHigherCategoryTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "category-theory/EYNTKA-category-theory.tex",
         "category-theory/drafts/scratch/ch08-s04.tex"
       ]
     },
@@ -2229,6 +2308,15 @@
     {
       "source": "NateClassicalAlgGeo",
       "target": "NateIntersectionTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.tex"
+      ]
+    },
+    {
+      "source": "NateClassicalAlgGeo",
+      "target": "NateTopology",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3933,6 +4021,145 @@
       ]
     },
     {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateAlgKTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/grow-bf.tex"
+      ]
+    },
+    {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateAlgTop",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/ch01-open.tex",
+        "higher-category-theory/drafts/scratch/ch01-s02.tex",
+        "higher-category-theory/drafts/scratch/ch01-s04.tex",
+        "higher-category-theory/drafts/scratch/ch01-s05.tex",
+        "higher-category-theory/drafts/scratch/ch01-s06.tex",
+        "higher-category-theory/drafts/scratch/ch02-s01.tex",
+        "higher-category-theory/drafts/scratch/ch02-s03.tex",
+        "higher-category-theory/drafts/scratch/ch02-s04.tex",
+        "higher-category-theory/drafts/scratch/ch02-s06.tex",
+        "higher-category-theory/drafts/scratch/ch02-s07.tex",
+        "higher-category-theory/drafts/scratch/ch03-s01.tex",
+        "higher-category-theory/drafts/scratch/ch03-s02.tex",
+        "higher-category-theory/drafts/scratch/ch03-s05.tex",
+        "higher-category-theory/drafts/scratch/ch03-s07.tex",
+        "higher-category-theory/drafts/scratch/ch04-s03.tex",
+        "higher-category-theory/drafts/scratch/ch05-s01.tex",
+        "higher-category-theory/drafts/scratch/ch05-s03.tex",
+        "higher-category-theory/drafts/scratch/ch05-s04.tex",
+        "higher-category-theory/drafts/scratch/ch05-s05.tex",
+        "higher-category-theory/drafts/scratch/ch05-s06.tex",
+        "higher-category-theory/drafts/scratch/ch05-s07.tex",
+        "higher-category-theory/drafts/scratch/ch06-s07.tex",
+        "higher-category-theory/drafts/scratch/grow-bf.tex",
+        "higher-category-theory/drafts/scratch/grow-degenbc.tex",
+        "higher-category-theory/drafts/scratch/grow-injective.tex",
+        "higher-category-theory/drafts/scratch/grow-kanfib.tex"
+      ]
+    },
+    {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateCategoryTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/ch01-open.tex",
+        "higher-category-theory/drafts/scratch/ch01-s01.tex",
+        "higher-category-theory/drafts/scratch/ch01-s02.tex",
+        "higher-category-theory/drafts/scratch/ch01-s04.tex",
+        "higher-category-theory/drafts/scratch/ch01-s05.tex",
+        "higher-category-theory/drafts/scratch/ch01-s06.tex",
+        "higher-category-theory/drafts/scratch/ch02-s01.tex",
+        "higher-category-theory/drafts/scratch/ch02-s02.tex",
+        "higher-category-theory/drafts/scratch/ch02-s03.tex",
+        "higher-category-theory/drafts/scratch/ch02-s04.tex",
+        "higher-category-theory/drafts/scratch/ch02-s05.tex",
+        "higher-category-theory/drafts/scratch/ch02-s06.tex",
+        "higher-category-theory/drafts/scratch/ch02-s07.tex",
+        "higher-category-theory/drafts/scratch/ch03-open.tex",
+        "higher-category-theory/drafts/scratch/ch03-s01.tex",
+        "higher-category-theory/drafts/scratch/ch03-s02.tex",
+        "higher-category-theory/drafts/scratch/ch03-s03.tex",
+        "higher-category-theory/drafts/scratch/ch03-s05.tex",
+        "higher-category-theory/drafts/scratch/ch03-s06.tex",
+        "higher-category-theory/drafts/scratch/ch03-s07.tex",
+        "higher-category-theory/drafts/scratch/ch04-s01.tex",
+        "higher-category-theory/drafts/scratch/ch04-s02.tex",
+        "higher-category-theory/drafts/scratch/ch04-s03.tex",
+        "higher-category-theory/drafts/scratch/ch05-s02.tex",
+        "higher-category-theory/drafts/scratch/ch05-s04.tex",
+        "higher-category-theory/drafts/scratch/ch05-s05.tex",
+        "higher-category-theory/drafts/scratch/ch05-s06.tex",
+        "higher-category-theory/drafts/scratch/ch06-s01.tex",
+        "higher-category-theory/drafts/scratch/ch06-s02.tex",
+        "higher-category-theory/drafts/scratch/ch06-s03.tex",
+        "higher-category-theory/drafts/scratch/ch06-s04.tex",
+        "higher-category-theory/drafts/scratch/ch06-s05.tex",
+        "higher-category-theory/drafts/scratch/ch06-s06.tex",
+        "higher-category-theory/drafts/scratch/ch06-s07.tex",
+        "higher-category-theory/drafts/scratch/grow-fubini.tex",
+        "higher-category-theory/drafts/scratch/grow-injective.tex",
+        "higher-category-theory/drafts/scratch/grow-kanfib.tex",
+        "higher-category-theory/drafts/scratch/grow-presentable.tex",
+        "higher-category-theory/drafts/scratch/grow-proper.tex"
+      ]
+    },
+    {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/ch05-s03.tex"
+      ]
+    },
+    {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateHomologicalAlg",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/ch01-s03.tex",
+        "higher-category-theory/drafts/scratch/ch02-open.tex",
+        "higher-category-theory/drafts/scratch/ch02-s04.tex",
+        "higher-category-theory/drafts/scratch/ch02-s05.tex",
+        "higher-category-theory/drafts/scratch/ch02-s06.tex",
+        "higher-category-theory/drafts/scratch/ch04-s02.tex",
+        "higher-category-theory/drafts/scratch/ch05-s01.tex",
+        "higher-category-theory/drafts/scratch/ch05-s06.tex",
+        "higher-category-theory/drafts/scratch/ch05-s07.tex"
+      ]
+    },
+    {
+      "source": "NateHigherCategoryTheory",
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/ch01-open.tex",
+        "higher-category-theory/drafts/scratch/ch01-s04.tex",
+        "higher-category-theory/drafts/scratch/ch02-s03.tex",
+        "higher-category-theory/drafts/scratch/ch02-s07.tex",
+        "higher-category-theory/drafts/scratch/ch05-s01.tex",
+        "higher-category-theory/drafts/scratch/ch05-s04.tex",
+        "higher-category-theory/drafts/scratch/ch05-s07.tex",
+        "higher-category-theory/drafts/scratch/ch06-s02.tex",
+        "higher-category-theory/drafts/scratch/grow-injective.tex"
+      ]
+    },
+    {
       "source": "NateHodgeTheory",
       "target": "NateAbelianVarieties",
       "type": "coreq",
@@ -4254,6 +4481,16 @@
       "provenance": "auto",
       "citedIn": [
         "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateHigherCategoryTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/ch3-s1-triangulated.tex"
       ]
     },
     {
@@ -5391,6 +5628,15 @@
     },
     {
       "source": "NateModuliStacks",
+      "target": "NateHigherCategoryTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
       "target": "NateHodgeTheory",
       "type": "prereq",
       "provenance": "manual",
@@ -5487,6 +5733,15 @@
       "type": "prereq",
       "provenance": "manual",
       "citedIn": []
+    },
+    {
+      "source": "NateODE",
+      "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "ODE/EYNTKA_ODE.tex"
+      ]
     },
     {
       "source": "NateODE",
@@ -6047,6 +6302,112 @@
       "citedIn": [
         "toric-geometry/EYNTKA_toric_geometry.tex"
       ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateAlgGeo",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateAlgKTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateAlgTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s03.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateCommAlg",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateCoreAlgebra",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateEtaleCohomology",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateHigherCategoryTheory",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateHomologicalAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateIntersectionTheory",
+      "type": "prereq",
+      "provenance": "both",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateLinAlg",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateModuliStacks",
+      "type": "prereq",
+      "provenance": "manual",
+      "citedIn": []
     }
   ],
   "clusters": [
@@ -6106,6 +6467,21 @@
       ],
       "color": "#5aa6a0",
       "description": "The three flavours of K-theory, topological, algebraic, and operator (C*), and their shared homotopical/homological foundations."
+    },
+    {
+      "id": "motivic",
+      "label": "Motivic homotopy",
+      "kind": "track",
+      "members": [
+        "NateAlgTop",
+        "NateHigherCategoryTheory",
+        "NateAlgGeo",
+        "NateEtaleCohomology",
+        "NateAlgKTheory",
+        "NateUnstableMotivic"
+      ],
+      "color": "#4f7cac",
+      "description": "From simplicial sets and model categories through algebraic geometry and algebraic K-theory to A1-homotopy theory and the classification of algebraic vector bundles."
     },
     {
       "id": "analysis-pde",
