@@ -26,8 +26,8 @@
         "description": "For the reader committed to an area: the entry books of each research track."
       },
       {
-        "label": "Frontier",
-        "description": "For the specialist: books whose goal is current research."
+        "label": "Research preparation",
+        "description": "For the specialist preparing for research: books that end where the current literature begins."
       }
     ]
   },
