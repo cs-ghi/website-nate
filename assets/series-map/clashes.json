@@ -736,33 +736,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateHigherCategoryTheory -> NateUnstableMotivic) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHigherCategoryTheory",
-      "NateUnstableMotivic"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateCoreAlgebra -> NateUnstableMotivic) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCoreAlgebra",
-      "NateUnstableMotivic"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateModuliStacks -> NateUnstableMotivic) is manual, no backing \\cite found.",
-    "refs": [
-      "NateModuliStacks",
-      "NateUnstableMotivic"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateUnitaryRepTheory -> NateRealReductiveGroups) is manual, no backing \\cite found.",
     "refs": [
       "NateUnitaryRepTheory",
@@ -1177,7 +1150,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateCoreAlgebra -> NateAlgGeo is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateCoreAlgebra -> NateAlgGeo is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateCoreAlgebra",
       "NateAlgGeo"
@@ -1217,6 +1190,24 @@
     "refs": [
       "NateHodgeTheory",
       "NateEllipticCurves"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateHomologicalAlg -> NateHigherCategoryTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateHomologicalAlg",
+      "NateHigherCategoryTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateHomologicalAlg -> NatePerverseSheaves is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateHomologicalAlg",
+      "NatePerverseSheaves"
     ]
   },
   {
