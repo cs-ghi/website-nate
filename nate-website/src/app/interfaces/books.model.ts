@@ -14,7 +14,7 @@ export interface Book {
   status?: string;        // e.g. 'in-progress', 'planned'
   lastUpdated?: string;   // ISO date, e.g. '2026-07-16'
   tier?: number;          // 0..4
-  tierLabel?: string;     // 'Foundations' … 'Frontier'
+  tierLabel?: string;     // 'Foundations' … 'Research preparation'
   webUrl?: string;        // in-site /pdf-viewer route from graph.json links.web
 
   // ─── Subject topic (book-topics.ts) ───
