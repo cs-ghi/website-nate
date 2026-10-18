@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-10-14",
+    "generated": "2026-10-18",
     "bookCount": 50,
-    "edgeCount": 509,
+    "edgeCount": 512,
     "clashCounts": {
       "error": 4,
       "warn": 5,
-      "info": 147
+      "info": 146
     },
     "tiers": [
       {
@@ -651,17 +651,17 @@
     },
     {
       "id": "NateMetricFunctionSpaces",
-      "title": "Metric and Function Spaces",
+      "title": "Elementary Analysis II",
       "dir": "metric-function-spaces",
-      "description": "Metric spaces and completeness, the Banach contraction principle, compactness (sequential and totally bounded), uniform convergence, and the function-space theorems: Stone-Weierstrass, Arzela-Ascoli, and Baire category.",
+      "description": "Metric spaces: open and closed sets, continuity, subspaces, products and equivalent metrics. Completeness: Cauchy sequences, the complete spaces of analysis, Cantor's intersection theorem, the completion. The Banach contraction principle, compactness, uniform convergence, the space C(K) with Stone-Weierstrass and Arzelà-Ascoli, and Baire category (coming soon).",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [],
       "links": {
         "pdf": "metric-function-spaces/EYNTKA-metric-function-spaces.pdf",
-        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Metric%20and%20Function%20Spaces&source=books"
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Elementary%20Analysis%20II&source=books"
       },
-      "lastUpdated": "2026-08-01",
+      "lastUpdated": "2026-10-18",
       "xAffinity": 0.459,
       "tier": 0
     },
@@ -1335,7 +1335,8 @@
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex"
+        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/limits-sec1.tex"
       ]
     },
     {
@@ -1429,7 +1430,17 @@
         "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
         "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
-        "algebraic-geometry/drafts/scratch/frag-W5-krull-akizuki-CA.tex"
+        "algebraic-geometry/drafts/scratch/frag-W5-krull-akizuki-CA.tex",
+        "algebraic-geometry/drafts/scratch/limits-sec1.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateCoreRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -2628,6 +2639,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2637,6 +2649,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex",
         "core-algebra/drafts/ch16-s02-preimage.tex",
         "core-algebra/sections/galois-intuition.tex"
@@ -2648,6 +2661,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2657,6 +2671,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2666,6 +2681,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2675,6 +2691,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2684,6 +2701,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2693,6 +2711,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2702,6 +2721,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2711,6 +2731,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2720,6 +2741,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2729,6 +2751,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2738,6 +2761,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2747,6 +2771,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2756,6 +2781,17 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
+        "core-algebra/EYNTKA-core-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCoreAlgebra",
+      "target": "NateGeoRepTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2765,6 +2801,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2774,6 +2811,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2783,6 +2821,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2792,6 +2831,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2801,6 +2841,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2810,6 +2851,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -2819,6 +2861,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
+        "core-algebra/EYNTKA-core-algebra-backup.tex",
         "core-algebra/EYNTKA-core-algebra.tex"
       ]
     },
@@ -3405,6 +3448,7 @@
         "etale-cohomology/drafts/scratch/ch01-s01.tex",
         "etale-cohomology/drafts/scratch/ch01-s03.tex",
         "etale-cohomology/drafts/scratch/ch01-s04.tex",
+        "etale-cohomology/drafts/scratch/ch01-s05-henselian-pairs.tex",
         "etale-cohomology/drafts/scratch/ch02-s01.tex",
         "etale-cohomology/drafts/scratch/ch03-s01.tex",
         "etale-cohomology/drafts/scratch/ch03-s02.tex",
@@ -3454,6 +3498,7 @@
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/ch06-snapshot/divisorsAndPicardOfCurve.tex",
+        "etale-cohomology/drafts/scratch/ch01-s05-henselian-pairs.tex",
         "etale-cohomology/drafts/scratch/ch06-s01.tex"
       ]
     },
@@ -4490,6 +4535,7 @@
       "provenance": "auto",
       "citedIn": [
         "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/ch05u-s04.tex",
         "homological-algebra/drafts/scratch/ch3-s1-triangulated.tex"
       ]
     },
@@ -6312,7 +6358,11 @@
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex"
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s02.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
       ]
     },
     {
@@ -6335,7 +6385,23 @@
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s03.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex"
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+      ]
+    },
+    {
+      "source": "NateUnstableMotivic",
+      "target": "NateCategoryTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s02.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
       ]
     },
     {
@@ -6352,8 +6418,11 @@
       "source": "NateUnstableMotivic",
       "target": "NateCoreAlgebra",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+      ]
     },
     {
       "source": "NateUnstableMotivic",
@@ -6369,8 +6438,17 @@
       "source": "NateUnstableMotivic",
       "target": "NateHigherCategoryTheory",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-open.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s02.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s03.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+      ]
     },
     {
       "source": "NateUnstableMotivic",
@@ -6379,7 +6457,9 @@
       "provenance": "auto",
       "citedIn": [
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
       ]
     },
     {
@@ -6406,8 +6486,14 @@
       "source": "NateUnstableMotivic",
       "target": "NateModuliStacks",
       "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
+      "provenance": "both",
+      "citedIn": [
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
+        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+      ]
     }
   ],
   "clusters": [
