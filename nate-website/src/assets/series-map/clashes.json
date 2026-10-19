@@ -1150,7 +1150,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateCoreAlgebra -> NateAlgGeo is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateCoreAlgebra -> NateAlgGeo is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateCoreAlgebra",
       "NateAlgGeo"
