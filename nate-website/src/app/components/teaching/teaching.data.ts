@@ -39,7 +39,7 @@ export const COURSES: Course[] = [
               ch7('C01', 'C01_ScaleOneDirection', 'Scaling one direction',
                 'Stretching one direction by 3 multiplies area by 3.', 17),
               ch7('C02', 'C02_ScaleTwoDirections', 'Scaling two directions',
-                'Stretch by 3, then squash by ½: the scaling factors multiply.', 21),
+                'Scale by 2 and by 3/2 at once: F(S) holds 2 × 3/2 = 3 copies of S.', 23),
               ch7('C03', 'C03_Rotation', 'Rotation',
                 'Rotating the plane never changes area.', 26),
               ch7('C04', 'C04_Shear', 'Shear',
