@@ -23,7 +23,7 @@
 // EYNTKA-probability.pdf served 404 for the same file. graph.json's `links.pdf`
 // is the newest PDF found in the local book directory — a local-dev path, by
 // design — so its casing tracks the .tex, not the published copy. Probability's
-// two differ, and its /books link only resolved because book-descriptions.ts
+// two differ, and its /books link only resolved because book-descriptions.ts (now book-links.ts)
 // happened to carry a correctly-cased override in a file documented as being
 // for DESCRIPTIONS ONLY. Deleting that "prose" entry would have broken the link.
 //
@@ -35,7 +35,7 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const graphPath = path.join(root, 'src', 'assets', 'series-map', 'graph.json');
 const indexPath = path.join(root, 'src', 'assets', 'books-index.json');
-const descPath = path.join(root, 'src', 'app', 'components', 'books', 'book-descriptions.ts');
+const linksPath = path.join(root, 'src', 'app', 'components', 'books', 'book-links.ts');
 const bookDir = path.join(root, 'src', 'assets', 'pdfs', 'books');
 
 const { TRACKED, PINNED } = require('./pdf-sources');
@@ -43,12 +43,12 @@ const { TRACKED, PINNED } = require('./pdf-sources');
 const graph = JSON.parse(fs.readFileSync(graphPath, 'utf8'));
 const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
 
-// Curated links, keyed by lower-cased basename exactly as CURATED_BY_PDF is.
+// Curated links, keyed by lower-cased basename exactly as CURATED_LINK_BY_PDF is.
 // Regex over the source, the same approach check-book-topics.js takes to
 // book-topics.ts: these are hand-authored object literals, not data files.
-const descSource = fs.readFileSync(descPath, 'utf8');
+const linksSource = fs.readFileSync(linksPath, 'utf8');
 const curatedLink = new Map();
-for (const m of descSource.matchAll(/link:\s*'[^']*assets\/pdfs\/books\/([^']+)'/g)) {
+for (const m of linksSource.matchAll(/'[^']*assets\/pdfs\/books\/([^']+)'/g)) {
   curatedLink.set(m[1].toLowerCase(), m[1]);
 }
 

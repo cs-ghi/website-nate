@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Book, BookSection } from '../interfaces/books.model';
-import { CURATED_BY_PDF } from '../components/books/book-descriptions';
+import { CURATED_LINK_BY_PDF } from '../components/books/book-links';
 import { BOOK_TOPICS, TOPICS, TOPIC_LABELS } from '../components/books/book-topics';
 
 // Single source of truth for the textbooks page: the series-map graph, which is
@@ -62,8 +62,8 @@ const cleanDesc = (s: string): string =>
 // directory, a local-dev convenience whose casing tracks the .tex rather than
 // the published copy. The two differ for Probability (EYNTKA-probability.pdf vs
 // EYNTKA-Probability.pdf), and GitHub Pages is case-sensitive, so deriving the
-// URL from links.pdf yielded a 404 that only book-descriptions.ts — a file
-// documented as being for descriptions ONLY — happened to paper over.
+// URL from links.pdf yielded a 404 that only the old book-descriptions.ts (now
+// book-links.ts) happened to paper over.
 // Unpublished nodes have no links.web, hence the fallbacks.
 const siteLink = (n: GraphNode): string | undefined => {
   const m = /[?&]src=([^&]+)/.exec(n.links?.web ?? '');
@@ -85,19 +85,19 @@ export class BookCatalogService {
     return parent ? MEGABOOK_LABELS[parent] : undefined;
   }
 
-  // Curated prose wins over graph.json's terser description; everything else —
-  // name, status, date, tier, and the link — is graph's.
+  // Everything, the description included, is graph's. The curated link is only a
+  // fallback for a node with no links.web (see book-links.ts).
   private toBook(n: GraphNode, tierLabels: string[]): Book {
-    const curated = CURATED_BY_PDF[pdfBasename(n.links?.pdf)];
+    const curatedLink = CURATED_LINK_BY_PDF[pdfBasename(n.links?.pdf)];
     const topic = BOOK_TOPICS[n.id];
     const key = topic?.primary ?? UNCLASSIFIED.key;
     return {
       id: n.id,
       name: n.title,
-      desc: curated?.desc ?? cleanDesc(n.description ?? ''),
+      desc: cleanDesc(n.description ?? ''),
       link:
         siteLink(n) ??
-        curated?.link ??
+        curatedLink ??
         `././assets/pdfs/books/${n.links?.pdf?.split('/').pop() ?? ''}`,
       type: 'pdf',
       status: n.status,
