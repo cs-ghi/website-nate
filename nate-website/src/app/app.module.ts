@@ -36,6 +36,8 @@ import { ProgrammingComponent } from './components/programming/programming.compo
 import { ProgrammingDetailComponent } from './components/programming/programming-detail.component';
 import { PapersComponent } from './components/papers/papers.component';
 import { PaperDetailComponent } from './components/papers/paper-detail.component';
+import { TeachingComponent } from './components/teaching/teaching.component';
+import { TeachingCourseComponent } from './components/teaching/teaching-course.component';
 import { MathTextComponent } from './components/papers/math-text.component';
 import { TutoringComponent } from './components/tutoring/tutoring.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
@@ -72,6 +74,8 @@ import { AudioService } from './services/audio.service';
         ProgrammingDetailComponent,
         PapersComponent,
         PaperDetailComponent,
+        TeachingComponent,
+        TeachingCourseComponent,
         MathTextComponent,
         TutoringComponent,
         ContactFormComponent,

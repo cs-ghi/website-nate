@@ -1,0 +1,70 @@
+@use 'src/sass/variables';
+
+$card-bg: #313236;
+$card-hover: #404145;
+$ink: #bab0b0;
+$ink-strong: #c0b6aa;
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px 20px;
+    background: $card-bg;
+    border: 1px solid #3c3d42;
+    border-radius: 10px;
+    transition: 0.25s;
+    cursor: pointer;
+
+    &:hover {
+        background: $card-hover;
+        border-color: variables.$bg-secondary;
+        transform: translateY(-2px);
+    }
+
+    .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .course-code {
+        color: $ink-strong;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .course-title {
+        color: $ink-strong;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .course-blurb {
+        color: $ink;
+        font-size: 13.5px;
+        line-height: 1.5;
+        margin: 0;
+        flex: 1;
+    }
+}
+
+.card-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.badge {
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    background: #2a2b30;
+    color: #a49b96;
+    border: 1px solid #46474d;
+}

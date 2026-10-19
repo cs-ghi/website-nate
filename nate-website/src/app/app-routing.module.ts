@@ -17,6 +17,8 @@ import { JudoComponent } from './components/judo/judo.component';
 import { SeriesMapComponent } from './components/series-map/series-map.component';
 import { PapersComponent } from './components/papers/papers.component';
 import { PaperDetailComponent } from './components/papers/paper-detail.component';
+import { TeachingComponent } from './components/teaching/teaching.component';
+import { TeachingCourseComponent } from './components/teaching/teaching-course.component';
 
 const routes: Routes = [
   // Land on About, not the textbook library: that page's first substantive
@@ -29,6 +31,8 @@ const routes: Routes = [
   {path: 'papers', component: PapersComponent},
   {path: 'papers/:slug', component: PaperDetailComponent},
   {path: 'notes', component: NotesComponent},
+  {path: 'teaching', component: TeachingComponent},
+  {path: 'teaching/:slug', component: TeachingCourseComponent},
   {path: 'pdf-viewer', component: PdfViewerComponent },
   {path: 'html-viewer', component: HtmlBookViewerComponent },
   {path: 'blog', component: BlogComponent},

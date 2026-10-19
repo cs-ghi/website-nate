@@ -7,6 +7,7 @@ export const menuItems = [
   { name: 'series map', url: '/series-map'},
   { name: 'papers', url: '/papers'},
   { name: 'notes', url: '/notes'},
+  { name: 'teaching', url: '/teaching'},
   { name: 'blog', url: '/blog'},
   { name: 'programming', url: '/programming'},
   // Static Astro bundle published alongside the SPA, not an Angular route,

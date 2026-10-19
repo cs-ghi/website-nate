@@ -1,0 +1,146 @@
+@use 'src/sass/variables';
+
+$card-bg: #313236;
+$ink: #bab0b0;
+$ink-strong: #c0b6aa;
+$clip-bg: #101218;   // the clips' own background colour
+
+.chapter { margin-bottom: 3.5em; }
+
+.chapter-title {
+    color: $ink-strong;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.chapter-blurb {
+    color: $ink;
+    font-size: 15px;
+    line-height: 27px;
+    max-width: 760px;
+    margin: 0.6em 0 1.8em;
+}
+
+.group-heading {
+    margin: 1.6em 0 1em;
+
+    h3 {
+        color: $ink-strong;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+}
+
+// Three columns on an iPad in landscape, two in portrait, one on a phone.
+.clip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+}
+
+.clip-card {
+    display: flex;
+    flex-direction: column;
+    background: $card-bg;
+    border: 1px solid #3c3d42;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.25s;
+
+    &:hover { border-color: variables.$bg-secondary; }
+}
+
+.clip-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: $clip-bg;
+
+    video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: $clip-bg;
+    }
+}
+
+// Covers the poster until the clip is first played. Big target for a tap.
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    background: rgba(16, 18, 24, 0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover { background: rgba(16, 18, 24, 0.0); }
+    &:hover .play-icon { transform: scale(1.08); }
+
+    .play-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: rgba(42, 43, 48, 0.85);
+        border: 1.5px solid variables.$bg-secondary;
+        transition: transform 0.2s;
+
+        mat-icon { color: $ink-strong; font-size: 38px; width: 38px; height: 38px; }
+    }
+
+    .clip-length {
+        position: absolute;
+        right: 10px;
+        bottom: 8px;
+        padding: 1px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        color: $ink-strong;
+        background: rgba(42, 43, 48, 0.85);
+    }
+}
+
+.clip-text { padding: 12px 16px 16px; }
+
+.clip-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.clip-title {
+    color: $ink-strong;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.clip-blurb {
+    color: $ink;
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin: 6px 0 0;
+}
+
+.badge {
+    flex-shrink: 0;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    background: #2a2b30;
+    color: #a49b96;
+    border: 1px solid #46474d;
+}
+
+@media (max-width: 500px) {
+    .clip-grid { grid-template-columns: 1fr; }
+}

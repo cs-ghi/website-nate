@@ -1,0 +1,58 @@
+@if (course; as c) {
+  <div class="section-teaching">
+    <div class="container">
+      <div class="page-heading">
+        <h1>{{ c.code }}: {{ c.title }}</h1>
+        <p class="sub">{{ c.term }}, {{ c.institution }}. Tap a clip to play it full screen.</p>
+        <mat-divider class="divider"></mat-divider>
+      </div>
+
+      @for (ch of c.chapters; track ch.title) {
+        <section class="chapter">
+          <h2 class="chapter-title">{{ ch.title }}</h2>
+          <p class="chapter-blurb">{{ ch.blurb }}</p>
+
+          @for (g of ch.groups; track g.title) {
+            <div class="group-heading">
+              <h3>{{ g.title }}</h3>
+            </div>
+            <div class="clip-grid">
+              @for (clip of g.clips; track clip.src) {
+                <article class="clip-card">
+                  <div class="clip-frame">
+                    <video
+                      #video
+                      [src]="clip.src"
+                      [poster]="clip.poster"
+                      [controls]="started.has(clip.src)"
+                      preload="metadata"
+                      playsinline></video>
+                    @if (!started.has(clip.src)) {
+                      <button
+                        class="play-overlay"
+                        type="button"
+                        [attr.aria-label]="'Play ' + clip.title + ' full screen'"
+                        (click)="present(video, clip)">
+                        <span class="play-icon"><mat-icon>play_arrow</mat-icon></span>
+                        <span class="clip-length">{{ duration(clip.seconds) }}</span>
+                      </button>
+                    }
+                  </div>
+                  <div class="clip-text">
+                    <div class="clip-title-row">
+                      <span class="badge">{{ clip.code }}</span>
+                      <h4 class="clip-title">{{ clip.title }}</h4>
+                    </div>
+                    <p class="clip-blurb">{{ clip.blurb }}</p>
+                  </div>
+                </article>
+              }
+            </div>
+          }
+        </section>
+      }
+
+      <div style="padding-bottom: 7em;"></div>
+    </div>
+  </div>
+}
