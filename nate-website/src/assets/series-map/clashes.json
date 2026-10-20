@@ -1042,7 +1042,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateEtaleCohomology is cited in 14 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateEtaleCohomology is cited in 15 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
       "NateEtaleCohomology"
@@ -1051,7 +1051,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateModuliStacks is cited in 13 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateModuliStacks is cited in 14 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
       "NateModuliStacks"
@@ -1177,7 +1177,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 10 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 11 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateEtaleCohomology",
       "NateModuliStacks"

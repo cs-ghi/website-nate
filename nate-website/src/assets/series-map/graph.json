@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-10-19",
+    "generated": "2026-10-20",
     "bookCount": 50,
-    "edgeCount": 512,
+    "edgeCount": 514,
     "clashCounts": {
       "error": 4,
       "warn": 5,
@@ -269,7 +269,7 @@
         "pdf": "core-algebra/EYNTKA-core-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-algebra.pdf&name=Core%20Algebra&source=books"
       },
-      "lastUpdated": "2026-08-12",
+      "lastUpdated": "2026-10-20",
       "xAffinity": -1,
       "tier": 1
     },
@@ -392,7 +392,7 @@
       "links": {
         "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
-      "lastUpdated": "2026-09-06",
+      "lastUpdated": "2026-10-19",
       "xAffinity": -0.663,
       "tier": 4
     },
@@ -1371,6 +1371,7 @@
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
         "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
         "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
         "algebraic-geometry/drafts/scratch/ch7-r1.tex",
@@ -1423,6 +1424,7 @@
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
         "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
         "algebraic-geometry/drafts/scratch/ch7-r2.orig.tex",
         "algebraic-geometry/drafts/scratch/ch7-r2.tex",
@@ -1452,6 +1454,7 @@
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
         "algebraic-geometry/drafts/scratch/new-weil-section.tex",
         "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex"
       ]
@@ -1483,6 +1486,7 @@
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
         "algebraic-geometry/drafts/scratch/ch7-r1.tex",
         "algebraic-geometry/drafts/scratch/ch7-r2.tex",
         "algebraic-geometry/drafts/scratch/ch7-r3.tex",
@@ -1578,6 +1582,7 @@
         "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
         "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
+        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
         "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
         "algebraic-geometry/drafts/scratch/ch7-r1.tex",
         "algebraic-geometry/drafts/scratch/ch7-r3.orig.tex",
@@ -2862,15 +2867,6 @@
     },
     {
       "source": "NateCoreRepTheory",
-      "target": "NateAlgKTheory",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "core-representation-theory/drafts/ch4-bound-quiver-algebras.tex"
-      ]
-    },
-    {
-      "source": "NateCoreRepTheory",
       "target": "NateCFT",
       "type": "reference",
       "provenance": "auto",
@@ -2884,8 +2880,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "core-representation-theory/EYNTKA-core-representation-theory.tex",
-        "core-representation-theory/drafts/ch2-s1-radical.tex"
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
       ]
     },
     {
@@ -2894,9 +2889,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "core-representation-theory/EYNTKA-core-representation-theory.tex",
-        "core-representation-theory/drafts/ch2-s3-projective-covers.tex",
-        "core-representation-theory/drafts/ch4-bound-quiver-algebras.tex"
+        "core-representation-theory/EYNTKA-core-representation-theory.tex"
       ]
     },
     {
@@ -3422,6 +3415,10 @@
         "etale-cohomology/drafts/ch06-snapshot/brauerFunctionField.tex",
         "etale-cohomology/drafts/ch06-snapshot/cohomologyOfCurve.tex",
         "etale-cohomology/drafts/ch06-snapshot/divisorsAndPicardOfCurve.tex",
+        "etale-cohomology/drafts/scratch/add-ch1.tex",
+        "etale-cohomology/drafts/scratch/add-ch2.tex",
+        "etale-cohomology/drafts/scratch/add-ch3.tex",
+        "etale-cohomology/drafts/scratch/add-ch4.tex",
         "etale-cohomology/drafts/scratch/ch01-s01.tex",
         "etale-cohomology/drafts/scratch/ch01-s03.tex",
         "etale-cohomology/drafts/scratch/ch01-s04.tex",
@@ -3469,14 +3466,37 @@
     },
     {
       "source": "NateEtaleCohomology",
+      "target": "NateCategoryTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/add-ch3.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
       "target": "NateCommAlg",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/ch06-snapshot/divisorsAndPicardOfCurve.tex",
+        "etale-cohomology/drafts/scratch/add-ch1.tex",
+        "etale-cohomology/drafts/scratch/add-ch3.tex",
+        "etale-cohomology/drafts/scratch/add-ch4.tex",
         "etale-cohomology/drafts/scratch/ch01-s05-henselian-pairs.tex",
         "etale-cohomology/drafts/scratch/ch06-s01.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/add-ch2.tex"
       ]
     },
     {
@@ -3559,6 +3579,8 @@
       "provenance": "both",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/add-ch3.tex",
+        "etale-cohomology/drafts/scratch/add-ch4.tex",
         "etale-cohomology/drafts/scratch/ch04-open.tex",
         "etale-cohomology/drafts/scratch/ch04-s01.tex",
         "etale-cohomology/drafts/scratch/ch04-s02.tex",
@@ -3584,6 +3606,7 @@
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s02.tex",
+        "etale-cohomology/drafts/scratch/add-ch4.tex",
         "etale-cohomology/drafts/scratch/armA/ch05-s02.tex",
         "etale-cohomology/drafts/scratch/armB/ch05-s02.tex",
         "etale-cohomology/drafts/scratch/armB2/ch05-s02.tex",
@@ -5589,6 +5612,15 @@
         "moduli-stacks/drafts/scratch/ch06-s04.tex",
         "moduli-stacks/drafts/scratch/ch07-s02.tex",
         "moduli-stacks/drafts/scratch/ch08-s04.tex"
+      ]
+    },
+    {
+      "source": "NateModuliStacks",
+      "target": "NateCoreAlgebra",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
