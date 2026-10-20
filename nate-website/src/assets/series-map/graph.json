@@ -688,12 +688,13 @@
       "dir": "moduli-stacks",
       "description": "Moduli problems as functors, fine and coarse moduli spaces, and representability. The Hilbert and Quot schemes. Geometric invariant theory. First-order deformations, obstructions, and Schlessinger's criteria. Grothendieck topologies, faithfully flat descent, torsors, and the Picard scheme. Fibered categories, stacks, and quotient stacks. Algebraic spaces, Deligne-Mumford and Artin stacks, and Artin's representability criteria. Gerbes, the Brauer group, and twisted sheaves. The moduli of stable curves.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [],
       "links": {
-        "pdf": "moduli-stacks/EYNTKA-moduli-stacks.pdf"
+        "pdf": "moduli-stacks/EYNTKA-moduli-stacks.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-moduli-stacks.pdf&name=Moduli%2C%20Deformation%20Theory%2C%20and%20Stacks&source=books"
       },
-      "lastUpdated": "2026-07-13",
+      "lastUpdated": "2026-10-20",
       "xAffinity": -0.708,
       "tier": 4
     },
