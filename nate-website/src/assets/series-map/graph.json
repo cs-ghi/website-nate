@@ -525,12 +525,13 @@
       "dir": "intersection-theory",
       "description": "Algebraic cycles and rational equivalence. Cartier divisors and the first Chern class. Segre classes and Chern classes. Deformation to the normal cone and the Gysin map. The intersection product, the Chow ring, excess intersection, and Bézout's theorem. Algebraic equivalence, the cycle class map, homological and numerical equivalence, and correspondences. Grothendieck-Riemann-Roch. Schubert calculus, degeneracy loci, and classical enumerative problems.",
       "status": "in-progress",
-      "webPublished": false,
+      "webPublished": true,
       "clusters": [],
       "links": {
-        "pdf": "intersection-theory/EYNTKA-intersection-theory.pdf"
+        "pdf": "intersection-theory/EYNTKA-intersection-theory.pdf",
+        "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-intersection-theory.pdf&name=Intersection%20Theory&source=books"
       },
-      "lastUpdated": "2026-08-04",
+      "lastUpdated": "2026-10-20",
       "xAffinity": -0.495,
       "tier": 3
     },
