@@ -1819,6 +1819,63 @@ These keymaps activate only in their respective filetype, except for the
                         (skips "../" and unsaved lines)
     `yp` `yd` `yn`      Yank full path / parent dir / name to unnamed reg
     `Yp` `Yd` `Yn`      Same, but to the system clipboard ("+)
+    `gm`                Select mode: mark entries one at a time, wherever
+                        they sit in the listing, then copy, move, trash or
+                        rename them together. See <a href="#noethervim-oil-select">|noethervim-oil-select|</a>
+
+Select mode in Oil: ~
+                                                     <a id="noethervim-oil-select" class="vimdoc-tag">*noethervim-oil-select*</a>
+    `gm` marks the entry under the cursor and turns select mode on; from
+    visual mode it marks the whole range. Marked rows are highlighted
+    (`NoetherVimOilSelected`, linked to `Visual`) and the statusline chip
+    reads `SEL` with the count. While it is on:
+
+    `&lt;Space&gt;`           Mark or unmark the entry under the cursor. Over a
+                        visual range, mark all of it, or clear it when
+                        every entry in it is already marked
+    `/` `?` `n` `N`     Vim's own search, for reaching the entries to mark
+    `y`                 Yank the marked entries. Put them with `p` in any
+                        Oil directory and `:w` to copy
+    `d`                 Cut the marked entries. Put them with `p` in
+                        another directory and `:w` to move. Writing
+                        without putting them anywhere deletes them, as
+                        `dd` does in Oil
+    `D`                 Delete the marked entries now. Oil asks first, and
+                        answering no puts the listing back as it was
+    `c`                 Rename by substitution: enter `s/pat/rep/` and it
+                        runs on the marked names only, with the flags `g`,
+                        `i` and `I`. An empty pattern reuses the last
+                        search, so `/draft` to find the entries, then
+                        `s//final/`. Review the new names, `:w` to apply
+    `Y` `gz` `gZ`       Copy to the system clipboard, zip, or unzip the
+                        marked entries. The clipboard copy of marked
+                        entries is macOS-only
+    `&lt;Esc&gt;`             Leave select mode
+
+    Every action ends select mode, as an operator ends visual mode, and so
+    does leaving the directory. `u` takes back a `d` or `c` in one step.
+    `y` and `d` honor a register prefix, and an uppercase register appends,
+    so `"ay` in one directory, `"Ay` in another and `"ap` in a third gathers
+    entries from both.
+
+    While select mode is on, `&lt;Space&gt;` is the toggle, so SearchLeader
+    mappings wait until you leave. To enter it from another key as well,
+    or to change the keys inside it, add a user override for oil: &gt;lua
+        return &#123;
+          "stevearc/oil.nvim",
+          opts = &#123;
+            keymaps = &#123;
+              ["&lt;Space&gt;&lt;Space&gt;"] = &#123;
+                desc = "select mode",
+                callback = function()
+                  require("noethervim.util.oil_select").enter(&#123;
+                    keys = &#123; rename = "R" &#125;,  -- toggle, yank, cut,
+                  &#125;)                          -- trash, rename, leave
+                end,
+              &#125;,
+            &#125;,
+          &#125;,
+        &#125;
 
 ------------------------------------------------------------------------------
 9.2 STATUSLINE                                        <a id="noethervim-statusline" class="vimdoc-tag">*noethervim-statusline*</a>
