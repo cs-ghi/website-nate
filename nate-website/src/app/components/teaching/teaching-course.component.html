@@ -15,6 +15,14 @@
           @for (g of ch.groups; track g.title) {
             <div class="group-heading">
               <h3>{{ g.title }}</h3>
+              @if (g.blurb) {
+                <p class="group-blurb">{{ g.blurb }}</p>
+              }
+              @if (g.sheet; as sh) {
+                <a class="group-sheet" [href]="sh.src" target="_blank" rel="noopener">
+                  <mat-icon>image</mat-icon><span>{{ sh.label }}</span>
+                </a>
+              }
             </div>
             <div class="clip-grid">
               @for (clip of g.clips; track clip.src) {

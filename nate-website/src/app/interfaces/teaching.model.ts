@@ -10,6 +10,8 @@ export interface TeachingClip {
 
 export interface ClipGroup {
   title: string;        // e.g. 'In the plane'
+  blurb?: string;       // optional line under the group title
+  sheet?: { src: string; label: string };   // optional one-page image (opens in a new tab)
   clips: TeachingClip[];
 }
 

@@ -33,6 +33,30 @@ $clip-bg: #101218;   // the clips' own background colour
     }
 }
 
+.group-blurb {
+    color: $ink;
+    font-size: 14px;
+    line-height: 24px;
+    max-width: 760px;
+    margin: 0.3em 0 0;
+}
+
+.group-sheet {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0.5em;
+    color: $ink-strong;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+
+    mat-icon { font-size: 18px; width: 18px; height: 18px; }
+
+    &:hover { border-bottom-color: $ink-strong; }
+}
+
 // Three columns on an iPad in landscape, two in portrait, one on a phone.
 .clip-grid {
     display: grid;
