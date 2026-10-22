@@ -771,7 +771,7 @@
       "id": "NateRealAnalysis",
       "title": "Real Analysis",
       "dir": "real-analysis",
-      "description": "σ-algebras, outer measure, the Carathéodory construction, and Lebesgue-Stieltjes measures. Measurable functions, the Lebesgue integral, the convergence theorems, and modes of convergence. Product measures, Fubini-Tonelli, and Lebesgue measure on Rⁿ. Signed measures, the Radon-Nikodym theorem, complex measures, the Lebesgue differentiation theorem, and functions of bounded variation. Radon measures and the Riesz-Markov theorem. Hausdorff dimension, Besicovitch sets, and the Kakeya conjecture. Haar measure.",
+      "description": "σ-algebras, outer measure, the Carathéodory construction, and Lebesgue-Stieltjes measures. Measurable functions, the Lebesgue integral, the convergence theorems, and modes of convergence. Product measures, Fubini-Tonelli, and Lebesgue measure on Rⁿ. Signed measures, the Radon-Nikodym theorem, complex measures, the Lebesgue differentiation theorem, functions of bounded variation, and absolute continuity. Radon measures and the Riesz-Markov theorem. Hausdorff dimension, Besicovitch sets, and the Kakeya conjecture. Haar measure.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -781,7 +781,7 @@
         "pdf": "real-analysis/EYNTKA-real-analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-real-analysis.pdf&name=Real%20Analysis&source=books"
       },
-      "lastUpdated": "2026-07-16",
+      "lastUpdated": "2026-10-22",
       "xAffinity": 1,
       "tier": 1
     },
