@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-10-21",
+    "generated": "2026-10-22",
     "bookCount": 50,
     "edgeCount": 514,
     "clashCounts": {
@@ -771,7 +771,7 @@
       "id": "NateRealAnalysis",
       "title": "Real Analysis",
       "dir": "real-analysis",
-      "description": "σ-algebras, outer measure, the Carathéodory construction, and Lebesgue-Stieltjes measures. Measurable functions, the Lebesgue integral, the convergence theorems, and modes of convergence. Product measures, Fubini-Tonelli, and Lebesgue measure on Rⁿ. Signed measures, the Radon-Nikodym theorem, complex measures, the Lebesgue differentiation theorem, and functions of bounded variation. Radon measures and the Riesz-Markov theorem. Hausdorff dimension, Besicovitch sets, and the Kakeya conjecture. Haar measure.",
+      "description": "σ-algebras, outer measure, the Carathéodory construction, and Lebesgue-Stieltjes measures. Measurable functions, the Lebesgue integral, the convergence theorems, and modes of convergence. Product measures, Fubini-Tonelli, and Lebesgue measure on Rⁿ. Signed measures, the Radon-Nikodym theorem, complex measures, the Lebesgue differentiation theorem, functions of bounded variation, and absolute continuity. Radon measures and the Riesz-Markov theorem. Hausdorff dimension, Besicovitch sets, and the Kakeya conjecture. Haar measure.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -781,7 +781,7 @@
         "pdf": "real-analysis/EYNTKA-real-analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-real-analysis.pdf&name=Real%20Analysis&source=books"
       },
-      "lastUpdated": "2026-07-16",
+      "lastUpdated": "2026-10-22",
       "xAffinity": 1,
       "tier": 1
     },
@@ -850,7 +850,7 @@
         "pdf": "topology/EYNTKA_topology.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_topology.pdf&name=Topology&source=books"
       },
-      "lastUpdated": "2026-07-16",
+      "lastUpdated": "2026-10-21",
       "xAffinity": 0,
       "tier": 1
     },
@@ -6368,6 +6368,7 @@
       "provenance": "both",
       "citedIn": [
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex",
@@ -6395,6 +6396,7 @@
       "provenance": "auto",
       "citedIn": [
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s03.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex",
@@ -6408,7 +6410,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s02.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
@@ -6432,7 +6434,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
       ]
     },
@@ -6452,7 +6454,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-open.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s02.tex",
@@ -6469,6 +6471,7 @@
       "provenance": "auto",
       "citedIn": [
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
@@ -6500,7 +6503,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
         "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
