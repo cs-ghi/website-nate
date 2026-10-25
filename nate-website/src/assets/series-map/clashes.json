@@ -1123,24 +1123,6 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgTop -> NateDiffTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgTop",
-      "NateDiffTop"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgTop -> NateKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgTop",
-      "NateKTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
     "message": "NateAnalyticNumTheory -> NateCFT is cited in 9 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAnalyticNumTheory",
