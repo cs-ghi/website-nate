@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-10-22",
+    "generated": "2026-10-25",
     "bookCount": 50,
     "edgeCount": 514,
     "clashCounts": {
       "error": 4,
       "warn": 5,
-      "info": 146
+      "info": 144
     },
     "tiers": [
       {
@@ -1877,8 +1877,6 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-topology/.wip/CC1.tex",
-        "algebraic-topology/.wip/CC2.tex",
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
@@ -1888,7 +1886,6 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-topology/.wip/LC.tex",
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
@@ -1907,11 +1904,6 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-topology/.wip/BR.tex",
-        "algebraic-topology/.wip/LC.tex",
-        "algebraic-topology/.wip/P06.tex",
-        "algebraic-topology/.wip/P11.tex",
-        "algebraic-topology/.wip/P12.tex",
         "algebraic-topology/EYNTKA-algebraic-topology.tex",
         "algebraic-topology/drafts/scratch/ch09-s01.tex"
       ]
@@ -1922,8 +1914,6 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-topology/.wip/CC1.tex",
-        "algebraic-topology/.wip/CC2.tex",
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
