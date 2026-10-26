@@ -22,6 +22,16 @@
     ]
   },
   {
+    "kind": "unknown-codename",
+    "severity": "error",
+    "message": "\\cite{NateStableHomotopy} resolves to no known book. Fix the citation or add an alias/registry entry.",
+    "refs": [
+      "NateStableHomotopy",
+      "algebraic-topology/EYNTKA-algebraic-topology.tex",
+      "differential-topology/EYNTKA-differential-topology.tex"
+    ]
+  },
+  {
     "kind": "phantom-node",
     "severity": "info",
     "message": "'NateModularForms' is planned (cited/registered but has no folder yet).",
@@ -35,15 +45,6 @@
     "message": "'NateModularRepTheory' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateModularRepTheory"
-    ]
-  },
-  {
-    "kind": "unknown-codename",
-    "severity": "error",
-    "message": "\\cite{NateStableHomotopy} resolves to no known book. Fix the citation or add an alias/registry entry.",
-    "refs": [
-      "NateStableHomotopy",
-      "differential-topology/EYNTKA-differential-topology.tex"
     ]
   },
   {
@@ -1177,7 +1178,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateHomologicalAlg -> NateHigherCategoryTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateHomologicalAlg -> NateHigherCategoryTheory is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateHomologicalAlg",
       "NateHigherCategoryTheory"
@@ -1186,10 +1187,19 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateHomologicalAlg -> NatePerverseSheaves is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateHomologicalAlg -> NatePerverseSheaves is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateHomologicalAlg",
       "NatePerverseSheaves"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateHomologicalAlg -> NateAlgKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateHomologicalAlg",
+      "NateAlgKTheory"
     ]
   },
   {
