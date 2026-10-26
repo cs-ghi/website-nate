@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-10-25",
+    "generated": "2026-10-26",
     "bookCount": 50,
-    "edgeCount": 514,
+    "edgeCount": 515,
     "clashCounts": {
       "error": 4,
       "warn": 5,
-      "info": 144
+      "info": 145
     },
     "tiers": [
       {
@@ -110,7 +110,7 @@
       "id": "NateAlgTop",
       "title": "Algebraic Topology",
       "dir": "algebraic-topology",
-      "description": "Homotopy and cell complexes. The fundamental group, van Kampen's theorem, and the classification of covering spaces. Δ-complexes, singular and relative homology. Cohomology, cup and cap products, the Künneth formula, Poincaré duality, and local coefficients. Higher homotopy groups, fibrations, the Whitehead and Hurewicz theorems, Eilenberg-MacLane spaces, classifying spaces, Postnikov towers, and Freudenthal suspension. The Serre spectral sequence. Characteristic classes, the Thom isomorphism, and obstruction theory. Generalized cohomology, Brown representability, spectra, and the Atiyah-Hirzebruch spectral sequence. Steenrod squares.",
+      "description": "Homotopy and cell complexes. The fundamental group, van Kampen's theorem, and the classification of covering spaces. Δ-complexes, singular and relative homology. Cohomology, cup and cap products, the Künneth formula, Poincaré duality, and local coefficients. Higher homotopy groups, fibrations, the Whitehead and Hurewicz theorems, Eilenberg-MacLane spaces, group cohomology, Postnikov towers, and Freudenthal suspension. The Serre spectral sequence. Principal bundles and classifying spaces, characteristic classes, the Thom isomorphism, and obstruction theory. Generalized cohomology, Brown representability, spectra, and the Atiyah-Hirzebruch spectral sequence. Steenrod squares.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -121,7 +121,7 @@
         "pdf": "algebraic-topology/EYNTKA-algebraic-topology.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
       },
-      "lastUpdated": "2026-10-19",
+      "lastUpdated": "2026-10-26",
       "xAffinity": -0.352,
       "tier": 2
     },
@@ -873,7 +873,7 @@
       "id": "NateUnstableMotivic",
       "title": "Unstable Motivic Homotopy Theory",
       "dir": "unstable-motivic-homotopy",
-      "description": "Serre's problem, Quillen-Suslin, and the Bass-Quillen conjecture. A¹-invariant presheaves. Simplicial presheaves, the Nisnevich topology, the A¹-homotopy category, motivic spheres and classifying spaces, representability of algebraic K-theory, purity, affine representability, realizations, Milnor-Witt K-theory, strongly A¹-invariant sheaves, the A¹-degree, Euler classes, and rank-two bundles on affine threefolds coming soon.",
+      "description": "Serre's problem, Quillen-Suslin, and the Bass-Quillen conjecture. A¹-invariant presheaves. Presheaves of spaces, the Nisnevich topology, the A¹-homotopy category, motivic spheres and classifying spaces, representability of algebraic K-theory, purity, affine representability, realizations, Milnor-Witt K-theory, strongly A¹-invariant sheaves, the A¹-degree, Euler classes, and rank-two bundles on affine threefolds coming soon.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [
@@ -1936,6 +1936,15 @@
         "algebraic-topology/drafts/scratch/ch07-rank-two.tex",
         "algebraic-topology/drafts/scratch/ch09-s01.tex",
         "algebraic-topology/drafts/scratch/ch09-s03.tex"
+      ]
+    },
+    {
+      "source": "NateAlgTop",
+      "target": "NateUnstableMotivic",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
     {
@@ -4144,6 +4153,7 @@
         "higher-category-theory/drafts/scratch/ch06-s05.tex",
         "higher-category-theory/drafts/scratch/ch06-s06.tex",
         "higher-category-theory/drafts/scratch/ch06-s07.tex",
+        "higher-category-theory/drafts/scratch/ch07-open.tex",
         "higher-category-theory/drafts/scratch/grow-fubini.tex",
         "higher-category-theory/drafts/scratch/grow-injective.tex",
         "higher-category-theory/drafts/scratch/grow-kanfib.tex",
@@ -4445,7 +4455,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4455,7 +4466,8 @@
       "provenance": "auto",
       "citedIn": [
         "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/ch3-s2-derived.tex"
+        "homological-algebra/drafts/scratch/ch3-s2-derived.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4464,7 +4476,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4473,7 +4486,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4482,7 +4496,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4491,7 +4506,8 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4500,7 +4516,8 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4509,7 +4526,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4518,7 +4536,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4529,7 +4548,8 @@
       "citedIn": [
         "homological-algebra/EYNTKA-homological-algebra.tex",
         "homological-algebra/drafts/scratch/ch05u-s04.tex",
-        "homological-algebra/drafts/scratch/ch3-s1-triangulated.tex"
+        "homological-algebra/drafts/scratch/ch3-s1-triangulated.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -4538,7 +4558,8 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex",
+        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
       ]
     },
     {
@@ -6572,7 +6593,7 @@
         "NateUnstableMotivic"
       ],
       "color": "#4f7cac",
-      "description": "From simplicial sets and model categories through algebraic geometry and algebraic K-theory to A1-homotopy theory and the classification of algebraic vector bundles."
+      "description": "From simplicial sets and ∞-categories, sheaves of spaces and ∞-toposes, through algebraic geometry and algebraic K-theory to A1-homotopy theory and the classification of algebraic vector bundles."
     },
     {
       "id": "analysis-pde",
