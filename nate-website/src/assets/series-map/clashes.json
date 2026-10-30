@@ -260,15 +260,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay coreq (NateMicrolocalAnalysis -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateMicrolocalAnalysis",
-      "NateComplexAnalyticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay coreq (NateCombinatorics -> NateCoreProbability) is manual, no backing \\cite found.",
     "refs": [
       "NateCombinatorics",
@@ -593,45 +584,9 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateComplexAnalysis -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateComplexAnalysis",
-      "NateComplexAnalyticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateFuncAnalysis -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
     "refs": [
       "NateFuncAnalysis",
-      "NateComplexAnalyticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateDiffTop -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateDiffTop",
-      "NateComplexAnalyticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgTop -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgTop",
-      "NateComplexAnalyticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateAlgGeo -> NateComplexAnalyticGeometry) is manual, no backing \\cite found.",
-    "refs": [
-      "NateAlgGeo",
       "NateComplexAnalyticGeometry"
     ]
   },
@@ -642,24 +597,6 @@
     "refs": [
       "NateCommAlg",
       "NateComplexAnalyticGeometry"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateComplexAnalyticGeometry -> NateHodgeTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateComplexAnalyticGeometry",
-      "NateHodgeTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateComplexAnalyticGeometry -> NateAbelianVarieties) is manual, no backing \\cite found.",
-    "refs": [
-      "NateComplexAnalyticGeometry",
-      "NateAbelianVarieties"
     ]
   },
   {
@@ -678,6 +615,15 @@
     "refs": [
       "NateHodgeTheory",
       "NateModuliStacks"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateMicrolocalAnalysis -> NateHodgeTheory) is manual, no backing \\cite found.",
+    "refs": [
+      "NateMicrolocalAnalysis",
+      "NateHodgeTheory"
     ]
   },
   {
