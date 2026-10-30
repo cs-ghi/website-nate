@@ -554,14 +554,14 @@ Which surface to reach for: ~
       colorscheme             = "gruvbox",
       colorscheme_persistence = false,
       statusline = &#123;
-        edge_style = "round",
-        colors     = &#123;&#125;,
+        style  = &#123; edge_style = "round" &#125;,
+        layout = &#123; profile = true, git = false &#125;,
       &#125;,
       completion = &#123; style = "supertab" &#125;,
       profiles = &#123;
         classes       = &#123; vimwiki = "writing", csv = false &#125;,
         spell_in_code = true,
-        conservative  = &#123; filetypes = &#123; "tex", "latex" &#125;, size_kb = 500 &#125;,
+        conservative  = &#123; latex = false, markdown = true, size_kb = 500 &#125;,
       &#125;,
       q_close = &#123; oil = true &#125;,
       keymaps = &#123; remaps = false &#125;,
@@ -584,54 +584,32 @@ Current keys: ~
                                   authoritative. Default: true.
                                   `:checkhealth noethervim` reports which
                                   of the two set the active scheme.
-    `statusline_enabled`            Set to `false` to skip NoetherVim's
-                                  heirline statusline, tabline and
-                                  winbar entirely, so a replacement
-                                  (lualine, mini.statusline) dropped into
-                                  `lua/user/plugins/` takes over with no
-                                  conflict. Default: `true`.
-    `statusline.edge_style`         Shape of the colored mode block at
-                                  the left of the statusline. See
-                                  <a href="#noethervim-statusline-edge-style">|noethervim-statusline-edge-style|</a>.
-                                  Default: `"round"`.
-    `statusline.colors`             Heirline color-table overrides.
-                                  See <a href="#noethervim-statusline">|noethervim-statusline|</a>.
-    `statusline.extra_right`        Extra heirline component specs
-                                  appended to the right side of the
-                                  main statusline.
-    `statusline.tab_modified_indicator`
-                                  Glyph rendered on a tab containing
-                                  unsaved changes. Default `" ●"`.
-                                  Common alternatives: `" [+]"`,
-                                  `" *"`, `" "`, `" ◉"`.
-    `statusline.mode_background`    Set to `false` to keep one statusline
-                                  background in every mode. On by default:
-                                  the bar shifts to blue in insert, so the
-                                  mode is legible from the shape of the bar
-                                  and not only from the mode chip, which
-                                  still changes colour either way.
-    `statusline.filetype_profile`   Set to `true` to render a marker for
-                                  the filetype profile (writing or code)
-                                  that claimed the current buffer: a
-                                  pencil in blue for writing, angle
-                                  brackets in purple for code, and
-                                  nothing at all for a buffer neither
-                                  profile claims.
-                                  Clicking it reports the profile, the
-                                  detected filetype, and the live values
-                                  of the options the profile sets, so
-                                  per-buffer toggles (`[ow`, `]os`, ...)
-                                  show up too. `&lt;C-w&gt;sf` turns it on and
-                                  off in a running session; this sets
-                                  where it starts. See
-                                  <a href="#noethervim-filetype-profiles">|noethervim-filetype-profiles|</a>.
-                                  Default: `false`.
-    `statusline.git_click`          Function called when the git
-                                  branch/status block is clicked. The
-                                  default opens lazygit when it is on
-                                  PATH and falls back to snacks'
-                                  git-status picker otherwise; lazygit
-                                  is optional, not a prerequisite.
+    `statusline.style`              How heirline draws the bars:
+                                  `edge_style` (the shape of the mode
+                                  block, <a href="#noethervim-statusline-edge-style">|noethervim-statusline-edge-style|</a>),
+                                  `colors` (color-table overrides),
+                                  `mode_background` (`false` keeps one
+                                  background in every mode),
+                                  `tab_modified_indicator` (default
+                                  `" ●"`) and `git_click` (a function run
+                                  when the git block is clicked; lazygit
+                                  by default, when it is on PATH). See
+                                  <a href="#noethervim-statusline">|noethervim-statusline|</a>.
+    `statusline.layout`             Per block or segment id: `true` shows
+                                  it from the start, `false` hides it, a
+                                  table such as `&#123; after = "git" &#125;`
+                                  moves it. `profile = true` starts the
+                                  filetype-profile marker. See
+                                  <a href="#noethervim-statusline-segments">|noethervim-statusline-segments|</a>.
+    `statusline.segments`           Segments of yours, by id, or in place
+                                  of a unit's with the same id. See
+                                  <a href="#noethervim-statusline-segments">|noethervim-statusline-segments|</a>.
+    `statusline.bars`               `&#123; tabline = false &#125;` leaves that bar
+                                  (`statusline`, `tabline`, `winbar`) to
+                                  Neovim. To replace them all, switch
+                                  heirline off: `&#123; "rebelot/heirline.nvim",
+                                  enabled = false &#125;` in
+                                  `lua/user/plugins/`.
     `completion.style`              Tab-key philosophy for the
                                   completion menu: `"snippet"` (default,
                                   Tab is reserved for LuaSnip jumps),
@@ -657,12 +635,13 @@ Current keys: ~
                                   Default: `false`.
     `profiles.conservative`         Where the completion menu waits to be
                                   asked instead of opening as you type:
-                                  `filetypes` (default `&#123; "tex",
-                                  "latex" &#125;`), and files larger than
-                                  `size_kb` (default `500`) in any
-                                  filetype. `&lt;C-Space&gt;` and LSP trigger
-                                  characters (`\` in LaTeX) still open
-                                  it. Holds with `profiles = false` too.
+                                  `&#123; [ft] = true | false &#125;` adds or
+                                  removes a filetype (tex and latex wait
+                                  by default), and `size_kb` (default
+                                  `500`) makes any larger file wait.
+                                  `&lt;C-Space&gt;` and LSP trigger characters
+                                  (`\` in LaTeX) still open it. Holds
+                                  with `profiles = false` too.
     `q_close`                       `&#123; [ft] = true | false &#125;`: filetypes
                                   where a bare `q` closes the window.
                                   `true` adds one, `false` removes one
@@ -844,6 +823,8 @@ Public: ~
     require("noethervim.util").search_leader
     require("noethervim.util").icons
     require("noethervim.util").buffer_notify()
+    require("noethervim.statusline").text(id)
+    require("noethervim.statusline").visible(id)
     `lua/user/config.lua` (<a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>), the four hook
     files, `lua/user/plugins/`, and Neovim's own `plugin/`,
     `after/plugin/`, `after/ftplugin/` and `after/lsp/`
@@ -855,16 +836,20 @@ Public: ~
 Provisional: ~
     require("noethervim.run")
     require("noethervim.profiles.spell")
-    require("noethervim.statusline").register_busy_override(fn)
+    the shape of a statusline segment and of a `busy` entry
+    (<a href="#noethervim-statusline-segments">|noethervim-statusline-segments|</a>, <a href="#noethervim-statusline-busy">|noethervim-statusline-busy|</a>)
     `vim.b.noethervim_conservative`
 
 Contributor: ~
     require("noethervim.keymaps.rows").contribute(owner, rows)
     require("noethervim.default")
     require("noethervim.util.mason_install").ensure(tools)
-    require("noethervim.util.gutter").register(pattern, fn)
+    require("noethervim.util").labels(spec)
+    require("noethervim.toggles").rows(lhs, enable, disable, desc)
+    the sections of `&#123; "NoetherVim", optional = true &#125;` fragments:
+    `rows`, `g`, `startup`, `gutter`, `segments`, `busy`
     the bundle header tags (`---@bundle`, `---@desc`, `---@about`,
-    `---@requires`)</div>
+    `---@requires`, `---@recommended`)</div>
 <div class="sl-heading-wrapper level-h2"><h2 id="5-bundles">5. Bundles</h2><a class="sl-anchor-link" href="#5-bundles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “5. Bundles”</span></a></div>
 <div class="vimdoc-reference"><a id="noethervim-bundles" class="vimdoc-tag">*noethervim-bundles*</a> <a id="neothervim-bundles" class="vimdoc-tag">*neothervim-bundles*</a>
 
@@ -874,6 +859,11 @@ template, enable them by uncommenting the corresponding `import` line in your
 `init.lua`: &gt;lua
     &#123; import = "noethervim.bundles.languages.latex" &#125;,
     &#123; import = "noethervim.bundles.tools.debug" &#125;,
+The first time you open a TeX file in an install without the latex
+bundle, a window offers it, once: it says what the bundle adds, `&lt;CR&gt;`
+shows the change to `init.lua` that enables it (nothing is written
+without your go-ahead), and `&lt;Esc&gt;` closes it for good.
+
                                             <a id="noethervim-bundle-toggle" class="vimdoc-tag">*noethervim-bundle-toggle*</a>
 You can also toggle bundles from the picker without editing `init.lua`
 by hand. Open `:NoetherVim bundles` (or SearchLeader+cb) and:
@@ -2009,11 +1999,11 @@ NoetherVim uses heirline.nvim for its statusline. Toggle components
 with the `&lt;C-w&gt;s` prefix:
 
     `&lt;C-w&gt;sg`           Toggle git component
-    `&lt;C-w&gt;sp`           Toggle PDF size indicator
+    `&lt;C-w&gt;sp`           Toggle PDF size indicator (latex bundle)
     `&lt;C-w&gt;sl`           Toggle LSP component
     `&lt;C-w&gt;sf`           Toggle the filetype-profile marker. Starts from
-                        `statusline.filetype_profile`; see
-                        <a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>.
+                        `statusline = &#123; layout = &#123; profile = true &#125; &#125;`;
+                        see <a href="#noethervim-statusline-segments">|noethervim-statusline-segments|</a>.
     `&lt;C-w&gt;sP`           Split the path: project-relative directory as its
                         own component, bare filename beside it
     `&lt;C-w&gt;s&lt;C-p&gt;`       PDF mode: drop the git and LSP blocks and show the
@@ -2166,16 +2156,15 @@ Snippet jump indicator: ~
 
 Customizing the statusline: ~
 
-These keys apply to the default heirline statusline; if you replace the
-statusline (for example with lualine), they have no effect.
-
-Customize statusline colors and extra components in `lua/user/config.lua`: &gt;lua
+`statusline.style` sets how heirline draws the bars; with heirline
+switched off it has no effect. &gt;lua
     -- lua/user/config.lua
     return &#123;
       statusline = &#123;
-        edge_style  = "round",    -- see edge styles below
-        colors      = &#123; ... &#125;,    -- override heirline color table
-        extra_right = &#123; ... &#125;,    -- heirline component specs
+        style = &#123;
+          edge_style = "round",     -- see edge styles below
+          colors     = &#123; ... &#125;,     -- override the color table
+        &#125;,
       &#125;,
     &#125;
     Available color keys (from `theme/palette.lua`): ~
@@ -2209,7 +2198,7 @@ Customize statusline colors and extra components in `lua/user/config.lua`: &gt;l
     -- lua/user/config.lua
     return &#123;
       statusline = &#123;
-        colors = &#123; mode_n = "#458588" &#125;,
+        style = &#123; colors = &#123; mode_n = "#458588" &#125; &#125;,
       &#125;,
     &#125;
                                           <a id="noethervim-statusline-edge-style" class="vimdoc-tag">*noethervim-statusline-edge-style*</a>
@@ -2217,7 +2206,7 @@ Edge style ~
 
 The colored mode block at the left of the statusline (and, for some
 styles, an opening endcap on the right ruler block) follows the
-`statusline.edge_style` key in `lua/user/config.lua`. All glyphs come
+`statusline.style.edge_style` key in `lua/user/config.lua`. All glyphs come
 from the Nerd Font private use area, so a Powerline-capable terminal
 font is required.
 
@@ -2243,30 +2232,88 @@ Switching styles takes effect on the next Neovim launch (the bar is
 assembled in heirline's `config` callback). Picking an unknown name
 falls back to `round` and emits a `vim.notify` warning during setup.
 
-    For custom component authoring, see |heirline-cookbook|.
+                                              <a id="noethervim-statusline-segments" class="vimdoc-tag">*noethervim-statusline-segments*</a>
+Segments and layout ~
 
-                                         <a id="noethervim-statusline-busy-override" class="vimdoc-tag">*noethervim-statusline-busy-override*</a>
-Greedy Busy-component takeover ~
+The main bar is made of blocks with ids. NoetherVim's own are
+`diagnostics`, `busy` and `filename` on the left and `lsp`, `git` and
+`profile` on the right. Bundles add segments: `latex.compile` and
+`latex.pdfsize` (latex), `dap` (debug). `statusline.layout` in
+`lua/user/config.lua` shows, hides or moves any of them by id: &gt;lua
+    return &#123;
+      statusline = &#123;
+        layout = &#123;
+          profile = true,                    -- shown from the start
+          git     = false,                   -- hidden
+          dap     = &#123; after = "git" &#125;,       -- moved
+        &#125;,
+      &#125;,
+    &#125;
+`true` and `false` set where a block starts; the `&lt;C-w&gt;s` keys and the
+presets still flip it afterwards, except that a block you set here keeps
+your setting through `&lt;C-w&gt;s&lt;C-p&gt;` and `&lt;C-w&gt;s&lt;C-s&gt;`.
 
-The Busy component (animated spinner while `vim.bo.busy &gt; 0`) can be
-greedily claimed by a bundle or by user config via
-`register_busy_override`. The override supplies a label, highlight and
-optional click handler, and temporarily replaces the default spinner
-rendering. The most recently registered override that returns a
-non-nil spec wins (last-write-wins), so user config overrides bundle
-defaults naturally: &gt;lua
-    require("noethervim.statusline").register_busy_override(function()
-      -- return nil to yield; return a spec to claim the slot:
-      return &#123;
-        icon     = nil,                       -- falls back to the spinner
-        label    = "ai",                      -- shown after icon
-        hl       = &#123; fg = "#c678dd", bold = true &#125;,
-        on_click = function() ... end,        -- mouse handler
-      &#125;
-    end)
-    The animation timer only ticks while something is driving
-    `vim.bo.busy` &gt; 0, so overrides wanting animation should also
-    increment busy on the relevant buffer.
+A segment of your own goes in `statusline.segments`, by id. A provider
+returns text, or chunks of text with a highlight group (or a `&#123; fg = ...
+&#125;` table); nil or "" shows nothing: &gt;lua
+    return &#123;
+      statusline = &#123;
+        segments = &#123;
+          clock = &#123;
+            provider = function() return os.date("%H:%M") end,
+            hl       = "Comment",
+            place    = &#123; side = "right", after = "profile" &#125;,
+            refresh  = 1000,
+          &#125;,
+        &#125;,
+      &#125;,
+    &#125;
+`cond`, `click` (called with the button: "l", "m" or "r"), `place` and
+`refresh` are optional. Without `place` a segment goes at the start of the
+right side, before the core blocks there; `after = "profile"` puts it at
+the end. The bar is redrawn only when something happens, so text that
+changes on its own, a clock, needs `refresh` (milliseconds) to keep up. A segment with the id of a bundle's replaces it. One that raises an
+error is switched off until restart and named by `:checkhealth
+noethervim`. `:NoetherVim where` &#123;id&#125; shows where a segment comes from and
+how to move or hide it.
+
+Any other statusline can show a segment: `text(id)` and `visible(id)`
+from `require("noethervim.statusline")` work with heirline switched off.
+For lualine: &gt;lua
+    -- lua/user/plugins/statusline.lua
+    return &#123;
+      &#123; "rebelot/heirline.nvim", enabled = false &#125;,
+      &#123; "nvim-lualine/lualine.nvim", event = "UIEnter", opts = function()
+          local sl = require("noethervim.statusline")
+          return &#123; sections = &#123; lualine_x = &#123;
+            &#123; function() return sl.text("latex.compile") end,
+              cond = function() return sl.visible("latex.compile") end &#125;,
+            "diagnostics", "filetype",
+          &#125; &#125; &#125;
+        end &#125;,
+    &#125;
+                                                  <a id="noethervim-statusline-busy" class="vimdoc-tag">*noethervim-statusline-busy*</a>
+The busy slot ~
+
+The `busy` block shows an animated spinner while |'busy'| is set on a
+visible buffer. A plugin spec of yours can claim it with a `busy` entry
+on NoetherVim's spec; the function answers nil to leave the slot alone,
+`true` for the plain spinner, or a table that labels it: &gt;lua
+    -- lua/user/plugins/assistant.lua
+    local function ai()
+      if not require("assistant").pending() then return nil end
+      return &#123; label = "ai", hl = &#123; fg = "#c678dd", bold = true &#125;,
+               click = function() require("assistant").show() end &#125;
+    end
+    return &#123;
+      "me/assistant.nvim",
+      specs = &#123;
+        &#123; "NoetherVim", optional = true, opts = &#123; busy = &#123; ai = ai &#125; &#125; &#125;,
+      &#125;,
+    &#125;
+Entries are asked in id order and the first answer wins. The spinner
+only animates while something sets |'busy'|, so an entry that wants the
+animation should also raise `busy` on the buffer it works for.
 
                                           <a id="noethervim-statusline-error-boundary" class="vimdoc-tag">*noethervim-statusline-error-boundary*</a>
 Error recovery ~
