@@ -100,6 +100,8 @@ License:  MIT</div><div class="vimdoc-reference">CONTENTS                       
     9. Keymap namespaces ................... <a href="#noethervim-keymaps">|noethervim-keymaps|</a>
        9.1 Filetype keymaps ................ <a href="#noethervim-ftplugin">|noethervim-ftplugin|</a>
        9.2 Statusline ...................... <a href="#noethervim-statusline">|noethervim-statusline|</a>
+       9.3 Tabline ......................... <a href="#noethervim-tabline">|noethervim-tabline|</a>
+       9.4 Pickers ......................... <a href="#noethervim-pick">|noethervim-pick|</a>
    10. Commands ............................ <a href="#noethervim-commands">|noethervim-commands|</a>
    11. Completion sources .................. <a href="#noethervim-completion">|noethervim-completion|</a>
    12. Health check ........................ <a href="#noethervim-health">|noethervim-health|</a>
@@ -108,7 +110,7 @@ License:  MIT</div><div class="vimdoc-reference">CONTENTS                       
 <div class="vimdoc-reference"><a id="noethervim" class="vimdoc-tag">*noethervim*</a> <a id="neothervim" class="vimdoc-tag">*neothervim*</a>
 
 NoetherVim is an opinionated Neovim distribution built on lazy.nvim. It
-ships sensible defaults, 30+ core plugins, and 39 opt-in bundles, with a
+ships sensible defaults, 30+ core plugins, and 40 opt-in bundles, with a
 user configuration system that survives upstream updates.
 
 This help file covers in-editor usage and reference. For design rationale,
@@ -670,6 +672,10 @@ Current keys: ~
     `lsp`                           `&#123; [name] = false &#125;` drops
                                   NoetherVim's settings for a language
                                   server. See <a href="#noethervim-user-lsp">|noethervim-user-lsp|</a>.
+    `pick`                          Which engine opens each picker verb:
+                                  `route = &#123; files = "fff" &#125;`, and
+                                  `engines` of your own. See
+                                  <a href="#noethervim-pick">|noethervim-pick|</a>.
     `snippets_disabled`             Snippets kept switched off wherever
                                   this config is used. See
                                   <a href="#noethervim-snippets">|noethervim-snippets|</a>.
@@ -825,6 +831,10 @@ Public: ~
     require("noethervim.util").buffer_notify()
     require("noethervim.statusline").text(id)
     require("noethervim.statusline").visible(id)
+    require("noethervim.pick").open(verb, opts)
+    require("noethervim.pick").root(buf)
+    the picker verbs `files`, `grep`, `grep_word`, `recent`, `buffers`
+    and `resume` (<a href="#noethervim-pick">|noethervim-pick|</a>)
     `lua/user/config.lua` (<a href="#noethervim-user-config-data">|noethervim-user-config-data|</a>), the four hook
     files, `lua/user/plugins/`, and Neovim's own `plugin/`,
     `after/plugin/`, `after/ftplugin/` and `after/lsp/`
@@ -838,6 +848,8 @@ Provisional: ~
     require("noethervim.profiles.spell")
     the shape of a statusline segment and of a `busy` entry
     (<a href="#noethervim-statusline-segments">|noethervim-statusline-segments|</a>, <a href="#noethervim-statusline-busy">|noethervim-statusline-busy|</a>)
+    the shape of a picker engine, and the picker verbs `headings`,
+    `labels` and `citations` (<a href="#noethervim-pick">|noethervim-pick|</a>)
     `vim.b.noethervim_conservative`
 
 Contributor: ~
@@ -846,8 +858,11 @@ Contributor: ~
     require("noethervim.util.mason_install").ensure(tools)
     require("noethervim.util").labels(spec)
     require("noethervim.toggles").rows(lhs, enable, disable, desc)
+    require("noethervim.pick").row(lhs, verb, fields)
+    require("noethervim.pick").served(engine)
     the sections of `&#123; "NoetherVim", optional = true &#125;` fragments:
-    `rows`, `g`, `startup`, `gutter`, `segments`, `busy`
+    `rows`, `g`, `startup`, `gutter`, `segments`, `busy`, `engines`,
+    `route`
     the bundle header tags (`---@bundle`, `---@desc`, `---@about`,
     `---@requires`, `---@recommended`)</div>
 <div class="sl-heading-wrapper level-h2"><h2 id="5-bundles">5. Bundles</h2><a class="sl-anchor-link" href="#5-bundles"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “5. Bundles”</span></a></div>
@@ -958,6 +973,8 @@ Available bundles (grouped by category): ~
                      core global-substitute shortcut to a flash jump. The core
                      `S` behavior remains accessible via `:%s/`.
     `projects`       Project switcher via snacks.picker.
+    `fff`            fff for a project's files and grep; see
+                     <a href="#noethervim-pick">|noethervim-pick|</a>.
     `editing-extras` Decorative comment boxes.
     `yanky`          Yank ring: cycle through paste history with
                      `&lt;C-p&gt;`/`&lt;C-n&gt;` after a paste; SearchLeader+y opens
@@ -2365,7 +2382,70 @@ straightforward. See the example in
         vim.o.tabline = ""
         vim.o.showtabline = 2
       end,
-    &#125;</div>
+    &#125;
+
+------------------------------------------------------------------------------
+9.4 PICKERS                                                  <a id="noethervim-pick" class="vimdoc-tag">*noethervim-pick*</a>
+
+The keys that find files, grep and the like each open a picker verb, and
+an engine serves the verb. snacks serves every verb unless a bundle, or
+`pick.route` in `lua/user/config.lua`, hands it to another engine.
+
+Verbs: ~
+    `files`        SearchLeader+ff (the cwd), SearchLeader+fp (the
+                   project root), the dashboard's `f`, `gf` in Oil
+    `grep`         SearchLeader+gg (the cwd), SearchLeader+gp (the
+                   project root), `gG` in Oil
+    `grep_word`    SearchLeader+gw: the word under the cursor, or the
+                   selection
+    `recent`       SearchLeader+fo, the dashboard's `o`
+    `buffers`      SearchLeader+fb
+    `resume`       SearchLeader+r: the picker opened last, by whichever
+                   engine opened it
+    `headings`     SearchLeader+t (snacks-cached-headings)
+    `labels`       SearchLeader+w, and &lt;LocalLeader&gt;w in TeX (latex
+                   bundle)
+    `citations`    &lt;C-S-c&gt; in Insert mode (latex bundle, BibTeX)
+
+The project root is the nearest directory up from the cwd that holds
+`.git`, else the cwd. Every other picker (help, keymaps, git, LSP lists,
+diagnostics, colorschemes) is a snacks picker of its own, and so are the
+pickers over a fixed directory: SearchLeader+gC, gc, gs, cu and cc.
+
+Routing a verb: &gt;lua
+    -- lua/user/config.lua
+    return &#123;
+      pick = &#123; route = &#123; files = "fff", grep = "fff" &#125; &#125;,
+    &#125;
+A verb with no route there keeps its bundle's route, else snacks. A route
+to an engine that is missing, or that does not serve the verb, falls back
+to snacks, and <a href="#noethervim-health">|noethervim-health|</a> reports it. `:NoetherVim where files`
+shows the engine serving a verb, the engines that could, and its keys.
+
+An engine of your own: &gt;lua
+    -- lua/user/config.lua
+    return &#123;
+      pick = &#123;
+        engines = &#123;
+          telescope = &#123;
+            files = function(opts)
+              require("telescope.builtin").find_files(&#123; cwd = opts.cwd &#125;)
+            end,
+          &#125;,
+        &#125;,
+        route = &#123; files = "telescope" &#125;,
+      &#125;,
+    &#125;
+Each function gets the verb's options: `cwd` always, `title` mostly, and
+whatever the caller adds (the Oil pickers add snacks' `hidden` and
+`ignored`). Returning `false` declines the call, and snacks serves it.
+
+fff: ~
+The navigation/fff bundle routes `files`, `grep` and `grep_word` to fff
+inside a project, meaning the git root, else the cwd. Another directory,
+and $HOME and /, go to snacks: fff keeps one index and builds it again
+for each new directory. `[oF` and `]oF` switch between fff and snacks for
+the session.</div>
 <div class="sl-heading-wrapper level-h2"><h2 id="10-commands">10. Commands</h2><a class="sl-anchor-link" href="#10-commands"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “10. Commands”</span></a></div>
 <div class="vimdoc-reference"><a id="noethervim-commands" class="vimdoc-tag">*noethervim-commands*</a>
 
