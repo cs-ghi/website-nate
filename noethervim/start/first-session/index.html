@@ -91,7 +91,9 @@ keeping open the first week:</p>
 <ul>
 <li><strong><code dir="auto">:Tutor</code></strong> runs inside any Neovim install. About thirty minutes, covering
 modes, motions, <code dir="auto">dd</code>/<code dir="auto">yy</code>/<code dir="auto">p</code>, search, and writing buffers. This is the
-single best use of your time as a new Vim user.</li>
+single best use of your time as a new Vim user. NoetherVim adds eleven
+lessons of its own to the same command: <code dir="auto">:Tutor noethervim</code> opens the
+index, and <code dir="auto">:Tutor &lt;Tab&gt;</code> lists them by name.</li>
 <li><strong><a href="https://github.com/micahkepe/vimtutor-sequel">vimtutor-sequel</a></strong> numbers
 its lessons 8 through 16, picking up where <code dir="auto">:Tutor</code> ends: splits,
 spellcheck, advanced search and replace, macros, sessions and registers,
@@ -145,6 +147,10 @@ thing you want and read the panel. <code dir="auto">&lt;Space&gt;</code> searche
 <code dir="auto">&lt;Leader&gt;</code> acts on the editor, <code dir="auto">[</code> and <code dir="auto">]</code> move backwards and forwards through
 lists, <code dir="auto">[o</code> and <code dir="auto">]o</code> enabled/disable options, and <code dir="auto">&lt;C-w&gt;</code> manipulates windows. The full table is in <a href="/noethervim/guides/keybindings/">keybinding
 philosophy</a>.</p>
+<p>This page moves on after naming the prefixes. To drill them instead, run
+<code dir="auto">:Tutor noethervim-02-namespaces</code>: ten minutes inside the editor, with each
+prefix pressed against a live panel and answers checked in the margin as you
+type them. It is one of eleven lessons; <code dir="auto">:Tutor noethervim</code> is the index.</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="4-see-every-keymap-at-once">4. See every keymap at once</h2><a class="sl-anchor-link" href="#4-see-every-keymap-at-once"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “4. See every keymap at once”</span></a></div>
 <p>Press <code dir="auto">&lt;Space&gt;?</code>.</p>
 <p>A buffer opens listing every active keymap, grouped by namespace. It reads
@@ -168,7 +174,7 @@ yanks the full path, and there are pickers to find and grep inside the
 directory you are looking at.</li>
 </ul>
 <p><code dir="auto">q</code> does NOT the float since it is a buffer where editing is expected, but if you want <code dir="auto">q</code> to close
-an oil buffer add it to the <code dir="auto">q_close_filetypes</code> table in <code dir="auto">config.lua</code> (see <code dir="auto">:help noethervim-q-close</code>)</p>
+an oil buffer set <code dir="auto">q_close = { oil = true }</code> in <code dir="auto">config.lua</code> (see <code dir="auto">:help noethervim-q-close</code>)</p>
 <p>Note Oil replaces Neovim’s default navigation buffer (that includes overriding <code dir="auto">:e .</code>). Disable the
 plugin your user files if you want the default (see the FAQ <code dir="auto">Can I disable a plugin from core or a bundle?</code>).</p>
 <div class="sl-heading-wrapper level-h2"><h2 id="6-create-your-configuration-file">6. Create your configuration file</h2><a class="sl-anchor-link" href="#6-create-your-configuration-file"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 1 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 0 0-1.42-1.42m8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 1 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l3.88-3.89a4.49 4.49 0 0 0 0-6.33M8.83 15.17a1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.92-4.92a1 1 0 1 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42"></path></svg></span><span class="sr-only" data-pagefind-ignore>Section titled “6. Create your configuration file”</span></a></div>
@@ -242,7 +248,8 @@ behaviour can attach to. <code dir="auto">lua/user/autocmds.lua</code> is where 
 <li>Run <code dir="auto">:checkhealth noethervim</code> first. Most first-launch problems are a
 missing external tool, and it names them.</li>
 <li>To tell whether a problem is yours or the distribution’s, start with
-<code dir="auto">NOETHERVIM_NO_USER=1 nvim</code>, which skips every file in <code dir="auto">lua/user/</code>.</li>
+<code dir="auto">NOETHERVIM_NO_USER=1 nvim</code>, which runs nothing from your config
+directory except <code dir="auto">init.lua</code> itself.</li>
 <li><code dir="auto">:Lazy</code> shows plugin status and load times. A bundle enabled in step 6 that
 never installed will be visible there.</li>
 <li><code dir="auto">:messages</code> holds anything that scrolled past during startup. Errors often
