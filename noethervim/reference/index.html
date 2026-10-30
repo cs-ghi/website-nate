@@ -636,8 +636,8 @@ Current keys: ~
     `profiles.conservative`         Where the completion menu waits to be
                                   asked instead of opening as you type:
                                   `&#123; [ft] = true | false &#125;` adds or
-                                  removes a filetype (tex and latex wait
-                                  by default), and `size_kb` (default
+                                  removes a filetype (tex waits by
+                                  default), and `size_kb` (default
                                   `500`) makes any larger file wait.
                                   `&lt;C-Space&gt;` and LSP trigger characters
                                   (`\` in LaTeX) still open it. Holds
@@ -1003,7 +1003,7 @@ Available bundles (grouped by category): ~
                      Switching themes (SearchLeader+C), persistence and
                      highlight tweaks are core features and work without
                      this bundle. See <a href="#noethervim-colorscheme-tweaks">|noethervim-colorscheme-tweaks|</a>.
-    `eye-candy`      Animations, scrollbar, code block visualizer.
+    `eye-candy`      Animations and a diagnostics scrollbar.
     `minimap`        Sidebar minimap with diagnostics and git signs.
     `helpview`       Rendered :help pages.
     `tableaux`       noethervim-tableaux: animated mathematical dashboard
@@ -2602,12 +2602,7 @@ Cmdline-only overrides (insert mode keymaps stay unchanged): &gt;lua
 
 Custom completion sources: ~
 
-NoetherVim ships three custom blink.cmp completion sources.
-
-images ~
-    Triggered when the entire line is "." in a .tex file. Lists image
-    files from ./images/ and inserts a complete \begin&#123;figure&#125;...\end&#123;figure&#125;
-    block.
+NoetherVim ships two custom blink.cmp completion sources.
 
 todos ~
     Triggered by typing "@" at the start of a line. Inserts a
