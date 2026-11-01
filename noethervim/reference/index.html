@@ -110,7 +110,7 @@ License:  MIT</div><div class="vimdoc-reference">CONTENTS                       
 <div class="vimdoc-reference"><a id="noethervim" class="vimdoc-tag">*noethervim*</a> <a id="neothervim" class="vimdoc-tag">*neothervim*</a>
 
 NoetherVim is an opinionated Neovim distribution built on lazy.nvim. It
-ships sensible defaults, 30+ core plugins, and 40 opt-in bundles, with a
+ships sensible defaults, 30+ core plugins, and 43 opt-in bundles, with a
 user configuration system that survives upstream updates.
 
 This help file covers in-editor usage and reference. For design rationale,
@@ -717,13 +717,30 @@ To add extra keymaps to an existing plugin: &gt;lua
       &#125;,
     &#125;
 lazy.nvim unions `keys`, `cmd`, `event`, and `ft` tables from all specs
-for the same plugin.
+for the same plugin, and your `lazy`, `enabled` or `cond` replaces the
+distro's: `&#123; "mrcjkb/rustaceanvim", lazy = true, ft = "rust" &#125;` loads it on
+Rust buffers only, and `enabled = false` removes the plugin with every key
+and toggle that came with it. `&#123; "&lt;lhs&gt;", false &#125;` in a plugin's `keys`
+removes one NoetherVim key that plugin brought.
 
 If you prefer keeping all keymaps in one place, set them in
-`lua/user/keymaps.lua` instead. That file loads early, before lazy-loaded
-plugins, so map to a `&lt;cmd&gt;...&lt;cr&gt;` (which triggers the load) or wrap the
-call, (function() ... end) rather than referencing a plugin function that may
-not be loaded yet.
+`lua/user/keymaps.lua` instead. It runs after NoetherVim's own keys, so a
+key there replaces one of NoetherVim's; call a plugin inside a function,
+`function() require("plugin").fn() end`, so it loads when the key is
+pressed.
+
+Plugins without setup(): ~                <a id="noethervim-user-plugins-globals" class="vimdoc-tag">*noethervim-user-plugins-globals*</a>
+
+`opts` works on every plugin NoetherVim configures in Lua, including those
+that read their settings from a global instead of a setup() function
+(rustaceanvim, neominimap): your `opts` merge with the distro's as they
+do anywhere else. A Vimscript plugin is configured with Vim variables
+instead, and `opts` on its spec is an error. Set the variable: above
+`lazy.setup()` in `init.lua` when the plugin loads at startup, or in
+`lua/user/options.lua` when it loads later. A value you set wins over
+NoetherVim's: &gt;lua
+    -- lua/user/options.lua
+    vim.g.startuptime_tries = 20
 
 Array-valued opts: ~                    <a id="noethervim-user-plugins-arrays" class="vimdoc-tag">*noethervim-user-plugins-arrays*</a>
 
@@ -748,8 +765,8 @@ Two patterns to extend an array key without replacing it: &gt;lua
         table.insert(opts.ensure_installed, "gopls")
       end &#125;
 Pattern 2 receives the resolved upstream `opts` table as the second
-argument. Mutating it (rather than returning a new table) lets you apend your
-entries at runtime.
+argument. Mutating it (rather than returning a new table) lets you append
+your entries at runtime.
 
 NOTE: if you specify `config = function()` in your override spec, it
 REPLACES the upstream config function entirely. Only do this as a last
@@ -857,6 +874,7 @@ Contributor: ~
     require("noethervim.default")
     require("noethervim.util.mason_install").ensure(tools)
     require("noethervim.util").labels(spec)
+    require("noethervim.util").opts_of(plugin)
     require("noethervim.toggles").rows(lhs, enable, disable, desc)
     require("noethervim.pick").row(lhs, verb, fields)
     require("noethervim.pick").served(engine)
@@ -963,8 +981,18 @@ Available bundles (grouped by category): ~
     `octo`           GitHub PRs / issues / reviews via the `gh` CLI.
                      `&lt;C-w&gt;O` opens the PR list. Requires `gh` (and
                      a one-time `gh auth login`).
+    `trouble`        trouble.nvim's diagnostics panel on `&lt;C-w&gt;Q`, grouped
+                     by file and updated as diagnostics change; `]q` and
+                     `[q` walk its items while the panel is open.
     `nvim-dev`       Neovim config development: :StartupTime, :Luapad,
                      vimls LSP for .vim files.
+    `named-sessions` Sessions saved under a name (mini.sessions):
+                     `:SaveSession [name]` writes one, the dashboard's
+                     Sessions key loads one. Core restores the last
+                     session of a directory without it.
+
+    editing/ ~
+    `comment-box`    Decorative comment boxes.
 
     navigation/ ~
     `harpoon`        Fast per-project file marks.
@@ -975,7 +1003,9 @@ Available bundles (grouped by category): ~
     `projects`       Project switcher via snacks.picker.
     `fff`            fff for a project's files and grep; see
                      <a href="#noethervim-pick">|noethervim-pick|</a>.
-    `editing-extras` Decorative comment boxes.
+    `argmark`        The arglist, edited in a float (SearchLeader+ae)
+                     and changed from any buffer with `&lt;Leader&gt;aa`, `ax`,
+                     `ac`, `aX` and `aA`.
     `yanky`          Yank ring: cycle through paste history with
                      `&lt;C-p&gt;`/`&lt;C-n&gt;` after a paste; SearchLeader+y opens
                      a fuzzy picker over the full history.
@@ -1509,7 +1539,7 @@ Prefixes: ~
                                                         <a id="noethervim-ctrl-w" class="vimdoc-tag">*noethervim-ctrl-w*</a>
     `&lt;C-w&gt;`             Windows &amp; panels
                       l(azy)  s(tatusline)  t(erminal)  F(ugit2)
-                      Q (Trouble diagnostics)  &lt;C-q&gt; (quickfix)
+                      Q (diagnostics list)  &lt;C-q&gt; (quickfix)
                       [d / ]d (diffview)  &lt;C-h&gt; (harpoon)  &lt;C-e&gt; (explorer)
                       &lt;C-o&gt; (Oil)
                                                         <a id="noethervim-g" class="vimdoc-tag">*noethervim-g*</a>
@@ -1523,7 +1553,7 @@ Prefixes: ~
                                                         <a id="noethervim-brackets" class="vimdoc-tag">*noethervim-brackets*</a>
     `[x` / `]x`         Directional navigation
                       d(iagnostic)  t(ab)  b(uffer)  f(ile)
-                      q(uickfix / Trouble when open)
+                      q(uickfix)
                       T(odo)  e(xchange line)  &lt;Space&gt;(blank line)
                                                         <a id="noethervim-option-toggles" class="vimdoc-tag">*noethervim-option-toggles*</a>
     `[ox` / `]ox`       Toggle options
@@ -1775,7 +1805,9 @@ Shadowed defaults: ~
                     (default: go to next line, first non-blank)
     `&lt;C-w&gt;&lt;C-q&gt;`    Open quickfix
                     (default: close window: use `&lt;C-w&gt;q` or `:q`)
-    `&lt;C-w&gt;Q`        Toggle Trouble diagnostics panel
+    `&lt;C-w&gt;Q`        Toggle every diagnostic, the project's included, in the
+                    quickfix list; `]q` and `[q` walk it. With the trouble
+                    bundle, its panel instead.
     `&lt;C-w&gt;t`        Toggle a 12-line terminal along the bottom. Reuses
                     the same terminal buffer each time rather than
                     opening a new one, and drops you straight into
@@ -1898,8 +1930,8 @@ These keymaps activate only in their respective filetype, except for the
                         The confirmation itself is the one `:w` would show
     Note: to go without the confirmation on small edits, set
     `skip_confirm_for_simple_edits` in a user override for oil. Open
-    NoetherVim's `plugins/oil.lua` and run `:NoetherVim override`, or write
-    `lua/user/plugins/oil.lua` yourself: &gt;lua
+    NoetherVim's `core/navigation/oil.lua` and run `:NoetherVim override`,
+    or write `lua/user/plugins/oil.lua` yourself: &gt;lua
         return &#123;
           "stevearc/oil.nvim",
           opts = &#123; skip_confirm_for_simple_edits = true &#125;,
@@ -2846,8 +2878,8 @@ A: No; auto-formatting is deliberately off. Use `&lt;Leader&gt;ff` for
 Q: How do I change a picker keymap?~
 A: NoetherVim uses snacks.picker as the core UI. Default picker keymaps live
    in bundles (e.g. `bundles/languages/latex.lua`) or core plugin files (e.g.
-   `plugins/snacks.lua`). Override them in `user/keymaps.lua` or by specifying
-   `keys` in your plugin override spec.
+   `core/foundation/snacks.lua`). Override them in `user/keymaps.lua` or by
+   specifying `keys` in your plugin override spec.
 
 Q: Why does my override have no effect?~
 A: Check `:NoetherVim status` to verify your files are loaded. Check
