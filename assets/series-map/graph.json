@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-10-30",
+    "generated": "2026-11-03",
     "bookCount": 50,
-    "edgeCount": 522,
+    "edgeCount": 524,
     "clashCounts": {
       "error": 4,
       "warn": 5,
-      "info": 139
+      "info": 138
     },
     "tiers": [
       {
@@ -46,14 +46,14 @@
         "pdf": "abelian-varieties/EYNTKA-abelian-varieties.pdf"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.681,
+      "xAffinity": -0.687,
       "tier": 4
     },
     {
       "id": "NateAlgGeo",
       "title": "Algebraic Geometry",
       "dir": "algebraic-geometry",
-      "description": "Sheaves, pushforward and pullback, and ringed spaces. Spec, schemes, Proj, dimension, and regular and smooth schemes. Morphisms: fiber products, the functor of points, finiteness conditions, separated and proper morphisms, rational maps, and Bertini's theorems. Group schemes. Quasi-coherent sheaves, divisors and the Picard group, and differentials. Sheaf cohomology, the cohomology of projective space, Serre duality, higher direct images, flatness and semicontinuity, and GAGA. Curves: Riemann-Roch and Hurwitz's formula. Surfaces: intersection theory, the Hodge index theorem, blow-ups, the Enriques-Kodaira classification, and the Weil bound for curves over finite fields.",
+      "description": "Sheaves, pushforward and pullback, and ringed spaces. Spec, schemes, Proj, dimension, and regular and smooth schemes. Morphisms: fiber products, the functor of points, finiteness conditions, flat and smooth morphisms, separated and proper morphisms, rational maps, and Bertini's theorems. Group schemes. Quasi-coherent sheaves, divisors and the Picard group, differentials, and étale morphisms. Sheaf cohomology, the cohomology of projective space, Serre duality, higher direct images, formal functions, flatness and semicontinuity, formal GAGA, and GAGA. Curves: Riemann-Roch and Hurwitz's formula. Surfaces: intersection theory, the Hodge index theorem, blow-ups, the Enriques-Kodaira classification, and the Weil bound for curves over finite fields.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [
@@ -66,7 +66,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_algGeo.pdf&name=Algebraic%20Geometry&source=books"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.641,
+      "xAffinity": -0.658,
       "tier": 3
     },
     {
@@ -85,7 +85,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-k-theory.pdf&name=Algebraic%20K-Theory&source=books"
       },
       "lastUpdated": "2026-08-21",
-      "xAffinity": -0.591,
+      "xAffinity": -0.723,
       "tier": 3
     },
     {
@@ -122,7 +122,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.352,
+      "xAffinity": -0.393,
       "tier": 2
     },
     {
@@ -154,7 +154,7 @@
         "pdf": "calculus/EYNTKA-calculus.pdf"
       },
       "lastUpdated": "2026-07-30",
-      "xAffinity": 0.172,
+      "xAffinity": 0.189,
       "tier": 0
     },
     {
@@ -189,7 +189,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-class-field-theory.pdf&name=Class%20Field%20Theory&source=books"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.729,
+      "xAffinity": -0.733,
       "tier": 3
     },
     {
@@ -239,7 +239,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_complex_analysis.pdf&name=Complex%20Analysis&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.106,
+      "xAffinity": -0.102,
       "tier": 1
     },
     {
@@ -254,7 +254,7 @@
         "pdf": "complex-analytic-geometry/EYNTKA-complex-analytic-geometry.pdf"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.28,
+      "xAffinity": -0.203,
       "tier": 3
     },
     {
@@ -288,7 +288,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-probability.pdf&name=Core%20Probability&source=books"
       },
       "lastUpdated": "2026-08-05",
-      "xAffinity": 0.45,
+      "xAffinity": 0.453,
       "tier": 1
     },
     {
@@ -323,7 +323,7 @@
         "pdf": "cstar-algebras/EYNTKA-cstar-algebras.pdf"
       },
       "lastUpdated": "2026-06-27",
-      "xAffinity": 0.178,
+      "xAffinity": 0.301,
       "tier": 3
     },
     {
@@ -358,7 +358,7 @@
         "pdf": "elementary-analysis/EYNTKA-elementary-analysis.pdf"
       },
       "lastUpdated": "2026-09-04",
-      "xAffinity": 0.416,
+      "xAffinity": 0.422,
       "tier": 0
     },
     {
@@ -376,7 +376,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.676,
+      "xAffinity": -0.688,
       "tier": 3
     },
     {
@@ -393,7 +393,7 @@
         "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.663,
+      "xAffinity": -0.68,
       "tier": 4
     },
     {
@@ -427,7 +427,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-galois-cohomology.pdf&name=Galois%20Cohomology&source=books"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.682,
+      "xAffinity": -0.696,
       "tier": 2
     },
     {
@@ -445,7 +445,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-geo-rep-theory.pdf&name=Algebraic%20Groups%20and%20Representations&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": -0.491,
+      "xAffinity": -0.504,
       "tier": 3
     },
     {
@@ -481,7 +481,7 @@
         "pdf": "higher-category-theory/EYNTKA-higher-category-theory.pdf"
       },
       "lastUpdated": "2026-08-23",
-      "xAffinity": -0.69,
+      "xAffinity": -0.728,
       "tier": 3
     },
     {
@@ -498,7 +498,7 @@
         "pdf": "hodge-theory/EYNTKA-hodge-theory.pdf"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.241,
+      "xAffinity": -0.256,
       "tier": 3
     },
     {
@@ -532,7 +532,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-intersection-theory.pdf&name=Intersection%20Theory&source=books"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.495,
+      "xAffinity": -0.52,
       "tier": 3
     },
     {
@@ -550,7 +550,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Vector_bundles_and_K-theory.pdf&name=Vector%20Bundles%20and%20K-Theory&source=books"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": 0.117,
+      "xAffinity": 0.142,
       "tier": 3
     },
     {
@@ -568,7 +568,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-langlands-gl2.pdf&name=Local%20Langlands%20for%20GL%E2%82%82(F)&source=books"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.052,
+      "xAffinity": -0.054,
       "tier": 4
     },
     {
@@ -584,7 +584,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-lie-groups.pdf&name=Lie%20Groups&source=books"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": 0.045,
+      "xAffinity": 0.048,
       "tier": 2
     },
     {
@@ -600,7 +600,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-algebra.pdf&name=Linear%20Algebra&source=books"
       },
       "lastUpdated": "2026-08-04",
-      "xAffinity": 0.311,
+      "xAffinity": 0.313,
       "tier": 0
     },
     {
@@ -616,7 +616,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-pde.pdf&name=Linear%20Elliptic%20and%20Parabolic%20PDE&source=books"
       },
       "lastUpdated": "2026-07-21",
-      "xAffinity": 0.518,
+      "xAffinity": 0.516,
       "tier": 2
     },
     {
@@ -632,7 +632,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-local-field-theory.pdf&name=Local%20Field%20Theory&source=books"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.769,
+      "xAffinity": -0.773,
       "tier": 3
     },
     {
@@ -648,7 +648,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_logic.pdf&name=Logic&source=books"
       },
       "lastUpdated": "2026-10-22",
-      "xAffinity": -0.196,
+      "xAffinity": -0.2,
       "tier": 1
     },
     {
@@ -664,22 +664,22 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Elementary%20Analysis%20II&source=books"
       },
       "lastUpdated": "2026-10-18",
-      "xAffinity": 0.459,
+      "xAffinity": 0.466,
       "tier": 0
     },
     {
       "id": "NateMicrolocalAnalysis",
       "title": "Microlocal Analysis",
       "dir": "microlocal-analysis",
-      "description": "Symbol classes, oscillatory integrals, and stationary phase. Pseudodifferential operators and the symbolic calculus. Elliptic operators, parametrices, and elliptic regularity. Pseudodifferential operators and elliptic theory on closed manifolds. Wavefront sets, propagation of singularities, Fourier integral operators, and the Atiyah-Singer index theorem coming soon.",
+      "description": "Symbol classes, oscillatory integrals, and stationary phase. Pseudodifferential operators and the symbolic calculus. Elliptic operators, parametrices, and elliptic regularity. Pseudodifferential operators and elliptic theory on closed manifolds and on vector bundles. Wavefront sets, propagation of singularities, Fourier integral operators, and the Atiyah-Singer index theorem coming soon.",
       "status": "in-progress",
       "webPublished": false,
       "clusters": [],
       "links": {
         "pdf": "microlocal-analysis/EYNTKA-microlocal-analysis.pdf"
       },
-      "lastUpdated": "2026-07-21",
-      "xAffinity": 0.379,
+      "lastUpdated": "2026-11-02",
+      "xAffinity": 0.386,
       "tier": 3
     },
     {
@@ -695,7 +695,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-moduli-stacks.pdf&name=Moduli%2C%20Deformation%20Theory%2C%20and%20Stacks&source=books"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.708,
+      "xAffinity": -0.768,
       "tier": 4
     },
     {
@@ -713,7 +713,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20PDE&source=books"
       },
       "lastUpdated": "2026-07-20",
-      "xAffinity": 0.449,
+      "xAffinity": 0.45,
       "tier": 3
     },
     {
@@ -731,7 +731,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
       },
       "lastUpdated": "2026-07-16",
-      "xAffinity": 0.278,
+      "xAffinity": 0.284,
       "tier": 1
     },
     {
@@ -764,7 +764,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
       },
       "lastUpdated": "2026-07-18",
-      "xAffinity": 0.483,
+      "xAffinity": 0.485,
       "tier": 2
     },
     {
@@ -817,7 +817,7 @@
         "pdf": "shimura-varieties/EYNTKA-shimura-varieties.pdf"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.603,
+      "xAffinity": -0.61,
       "tier": 4
     },
     {
@@ -835,14 +835,14 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-statistics.pdf&name=Mathematical%20Statistics&source=books"
       },
       "lastUpdated": "2026-08-24",
-      "xAffinity": 0.67,
+      "xAffinity": 0.672,
       "tier": 3
     },
     {
       "id": "NateTopology",
       "title": "Topology",
       "dir": "topology",
-      "description": "Topological spaces, continuity, Hausdorff spaces, and countability axioms. Subspace, product, and quotient topologies, metric spaces, and uniform spaces. Connectedness, compactness, nets and filters, and function spaces. Separation axioms, Urysohn's lemma, metrization, and the Tietze extension theorem. Paracompactness, partitions of unity, and the Stone-Čech compactification. The fundamental group, covering spaces and their classification, and Brouwer's fixed point theorem. Topological groups and locally compact groups.",
+      "description": "Topological spaces, continuity, Hausdorff spaces, and countability axioms. Subspace, product, and quotient topologies, metric spaces, and uniform spaces. Connectedness, compactness, nets and filters, function spaces, and the Stone-Weierstrass theorem. Separation axioms, Urysohn's lemma, metrization, and the Tietze extension theorem. Paracompactness, partitions of unity, and the Stone-Čech compactification. The fundamental group, covering spaces and their classification, and Brouwer's fixed point theorem. Topological groups and locally compact groups.",
       "status": "in-progress",
       "webPublished": true,
       "clusters": [],
@@ -883,7 +883,7 @@
         "pdf": "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.pdf"
       },
       "lastUpdated": "2026-09-29",
-      "xAffinity": -0.724,
+      "xAffinity": -0.76,
       "tier": 4
     }
   ],
@@ -1402,6 +1402,8 @@
         "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
         "algebraic-geometry/drafts/scratch/frag-W3-valuative-dvr.tex",
         "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
+        "algebraic-geometry/drafts/scratch/g9-1-comparison.tex",
+        "algebraic-geometry/drafts/scratch/g9-2-formal-gaga.tex",
         "algebraic-geometry/drafts/scratch/new-curves-fields-ch7.tex",
         "algebraic-geometry/drafts/scratch/new-curves-fields.tex"
       ]
@@ -1446,6 +1448,7 @@
         "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
         "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
         "algebraic-geometry/drafts/scratch/frag-W5-krull-akizuki-CA.tex",
+        "algebraic-geometry/drafts/scratch/g9-1-comparison.tex",
         "algebraic-geometry/drafts/scratch/limits-sec1.tex"
       ]
     },
@@ -1526,6 +1529,15 @@
     },
     {
       "source": "NateAlgGeo",
+      "target": "NateGaloisCohom",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
       "target": "NateHodgeTheory",
       "type": "reference",
       "provenance": "auto",
@@ -1560,6 +1572,7 @@
         "algebraic-geometry/drafts/scratch/chevprep-G.tex",
         "algebraic-geometry/drafts/scratch/fix-P2.tex",
         "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
+        "algebraic-geometry/drafts/scratch/g9-1-comparison.tex",
         "algebraic-geometry/drafts/scratch/glimpse-source.tex"
       ]
     },
@@ -1769,8 +1782,8 @@
     {
       "source": "NateAlgKTheory",
       "target": "NateKTheory",
-      "type": "coreq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "algebraic-k-theory/EYNTKA-algebraic-k-theory.tex"
       ]
@@ -1911,7 +1924,7 @@
     {
       "source": "NateAlgTop",
       "target": "NateHomologicalAlg",
-      "type": "coreq",
+      "type": "prereq",
       "provenance": "both",
       "citedIn": [
         "algebraic-topology/EYNTKA-algebraic-topology.tex",
@@ -2681,7 +2694,7 @@
     {
       "source": "NateComplexAnalyticGeometry",
       "target": "NateMicrolocalAnalysis",
-      "type": "coreq",
+      "type": "prereq",
       "provenance": "both",
       "citedIn": [
         "complex-analytic-geometry/EYNTKA-complex-analytic-geometry.tex"
@@ -2690,7 +2703,7 @@
     {
       "source": "NateComplexAnalyticGeometry",
       "target": "NateRiemannianGeometry",
-      "type": "coreq",
+      "type": "prereq",
       "provenance": "both",
       "citedIn": [
         "complex-analytic-geometry/EYNTKA-complex-analytic-geometry.tex"
@@ -3008,8 +3021,8 @@
     {
       "source": "NateCStarAlgebras",
       "target": "NateAlgKTheory",
-      "type": "prereq",
-      "provenance": "both",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "cstar-algebras/EYNTKA-cstar-algebras.tex"
       ]
@@ -3073,7 +3086,7 @@
     {
       "source": "NateCStarAlgebras",
       "target": "NateKTheory",
-      "type": "coreq",
+      "type": "prereq",
       "provenance": "both",
       "citedIn": [
         "cstar-algebras/EYNTKA-cstar-algebras.tex",
@@ -3948,9 +3961,27 @@
     },
     {
       "source": "NateGaloisCohom",
+      "target": "NateLanglandsGL2",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
       "target": "NateLocalFieldTheory",
       "type": "prereq",
       "provenance": "both",
+      "citedIn": [
+        "galois-cohomology/EYNTKA-galois-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateGaloisCohom",
+      "target": "NateModuliStacks",
+      "type": "reference",
+      "provenance": "auto",
       "citedIn": [
         "galois-cohomology/EYNTKA-galois-cohomology.tex"
       ]
@@ -4137,10 +4168,8 @@
       "source": "NateHarmonicAnalysis",
       "target": "NateMetricFunctionSpaces",
       "type": "prereq",
-      "provenance": "both",
-      "citedIn": [
-        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
-      ]
+      "provenance": "manual",
+      "citedIn": []
     },
     {
       "source": "NateHarmonicAnalysis",
@@ -4196,6 +4225,8 @@
       "provenance": "both",
       "citedIn": [
         "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s06.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s06.tex",
         "higher-category-theory/drafts/scratch/ch01-open.tex",
         "higher-category-theory/drafts/scratch/ch01-s02.tex",
         "higher-category-theory/drafts/scratch/ch01-s04.tex",
@@ -4232,6 +4263,22 @@
       "provenance": "both",
       "citedIn": [
         "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s01.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s02.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s03.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s04.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s05.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s06.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s07.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s08.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s01.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s02.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s03.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s04.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s05.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s06.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s07.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s08.tex",
         "higher-category-theory/drafts/scratch/ch01-open.tex",
         "higher-category-theory/drafts/scratch/ch01-s01.tex",
         "higher-category-theory/drafts/scratch/ch01-s02.tex",
@@ -4299,6 +4346,8 @@
       "provenance": "both",
       "citedIn": [
         "higher-category-theory/EYNTKA-higher-category-theory.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s07.tex",
+        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s07.tex",
         "higher-category-theory/drafts/scratch/ch01-s03.tex",
         "higher-category-theory/drafts/scratch/ch02-open.tex",
         "higher-category-theory/drafts/scratch/ch02-s04.tex",
@@ -4517,13 +4566,6 @@
         "hodge-theory/EYNTKA-hodge-theory.tex",
         "hodge-theory/drafts/scratch/ch07-s02.tex"
       ]
-    },
-    {
-      "source": "NateHodgeTheory",
-      "target": "NateMicrolocalAnalysis",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateHodgeTheory",
@@ -5140,15 +5182,6 @@
     },
     {
       "source": "NateLieGroups",
-      "target": "NateMetricFunctionSpaces",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "lie-groups/EYNTKA-lie-groups.tex"
-      ]
-    },
-    {
-      "source": "NateLieGroups",
       "target": "NateRealAnalysis",
       "type": "prereq",
       "provenance": "both",
@@ -5630,7 +5663,8 @@
         "microlocal-analysis/drafts/scratch/ch1-s3.tex",
         "microlocal-analysis/drafts/scratch/ch4-s1.tex",
         "microlocal-analysis/drafts/scratch/ch4-s2.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s3.tex"
+        "microlocal-analysis/drafts/scratch/ch4-s3.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s5.tex"
       ]
     },
     {
@@ -5645,7 +5679,8 @@
         "microlocal-analysis/drafts/scratch/ch2-s1.tex",
         "microlocal-analysis/drafts/scratch/ch2-s3.tex",
         "microlocal-analysis/drafts/scratch/ch4-s3.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s4.tex"
+        "microlocal-analysis/drafts/scratch/ch4-s4.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s6.tex"
       ]
     },
     {
@@ -5661,7 +5696,8 @@
         "microlocal-analysis/drafts/scratch/ch2-s2.tex",
         "microlocal-analysis/drafts/scratch/ch2-s3.tex",
         "microlocal-analysis/drafts/scratch/ch3-s2.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s2.tex"
+        "microlocal-analysis/drafts/scratch/ch4-s2.tex",
+        "microlocal-analysis/drafts/scratch/ch4-s6.tex"
       ]
     },
     {
@@ -5816,13 +5852,6 @@
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
-    },
-    {
-      "source": "NateModuliStacks",
-      "target": "NateHodgeTheory",
-      "type": "prereq",
-      "provenance": "manual",
-      "citedIn": []
     },
     {
       "source": "NateModuliStacks",
@@ -6318,6 +6347,15 @@
     },
     {
       "source": "NateTopology",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "topology/EYNTKA_topology.tex"
+      ]
+    },
+    {
+      "source": "NateTopology",
       "target": "NateAlgTop",
       "type": "reference",
       "provenance": "auto",
@@ -6377,6 +6415,15 @@
     {
       "source": "NateTopology",
       "target": "NateElemAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "topology/EYNTKA_topology.tex"
+      ]
+    },
+    {
+      "source": "NateTopology",
+      "target": "NateEtaleCohomology",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [

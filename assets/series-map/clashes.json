@@ -368,15 +368,6 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
-    "message": "Overlay prereq (NateCalcOnManifolds -> NateDiffTop) is manual, no backing \\cite found.",
-    "refs": [
-      "NateCalcOnManifolds",
-      "NateDiffTop"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
     "message": "Overlay prereq (NateCalculus -> NateComplexAnalysis) is manual, no backing \\cite found.",
     "refs": [
       "NateCalculus",
@@ -606,24 +597,6 @@
     "refs": [
       "NateComplexAnalyticGeometry",
       "NateIntersectionTheory"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateHodgeTheory -> NateModuliStacks) is manual, no backing \\cite found.",
-    "refs": [
-      "NateHodgeTheory",
-      "NateModuliStacks"
-    ]
-  },
-  {
-    "kind": "unsupported-edge",
-    "severity": "info",
-    "message": "Overlay prereq (NateMicrolocalAnalysis -> NateHodgeTheory) is manual, no backing \\cite found.",
-    "refs": [
-      "NateMicrolocalAnalysis",
-      "NateHodgeTheory"
     ]
   },
   {
@@ -960,12 +933,30 @@
     ]
   },
   {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateMetricFunctionSpaces -> NateHarmonicAnalysis) is manual, no backing \\cite found.",
+    "refs": [
+      "NateMetricFunctionSpaces",
+      "NateHarmonicAnalysis"
+    ]
+  },
+  {
     "kind": "heavy-reference",
     "severity": "info",
     "message": "NateAbelianVarieties -> NateShimuraVarieties is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAbelianVarieties",
       "NateShimuraVarieties"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateAbelianVarieties -> NateHodgeTheory is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAbelianVarieties",
+      "NateHodgeTheory"
     ]
   },
   {
@@ -1034,6 +1025,15 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
+    "message": "NateAlgGeo -> NateEllipticCurves is cited in 10 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateAlgGeo",
+      "NateEllipticCurves"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
     "message": "NateAlgGeo -> NateAbelianVarieties is cited in 11 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
@@ -1056,15 +1056,6 @@
     "refs": [
       "NateAlgGeo",
       "NateHodgeTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgGeo -> NateEllipticCurves is cited in 10 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgGeo",
-      "NateEllipticCurves"
     ]
   },
   {
