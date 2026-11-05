@@ -1480,7 +1480,9 @@ Check current status: `:NoetherVim status`
 The startup dashboard: ~
 
 `nvim` with no file opens the Snacks dashboard. Each entry shows its key;
-`l` opens lazy.nvim, as `&lt;C-w&gt;ll` does from anywhere. A bundle can add an
+`l` opens lazy.nvim, as `&lt;C-w&gt;ll` does from anywhere; `.` opens Oil
+on the working directory, as `:e .` does. `:Dashboard` brings it back
+later without closing your buffers. A bundle can add an
 entry (named-sessions adds Sessions). It is a snacks.nvim feature, turned
 off in its options: &gt;lua
     -- lua/user/plugins/snacks.lua
@@ -2587,6 +2589,10 @@ the session.</div>
                               copied to a second machine arrives with no
                               baselines, so nothing is reported there until
                               an override is created or re-baselined on it.
+
+`:Dashboard`                  Open the dashboard in the current window.
+                              Your buffers stay open. See
+                              <a href="#noethervim-dashboard">|noethervim-dashboard|</a>.
 
 `:Reset[!]`                   Close all buffers, open dashboard.
                               Use ! to force (discard unsaved changes).
