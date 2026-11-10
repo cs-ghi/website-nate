@@ -2,9 +2,10 @@ import { Course, TeachingClip } from 'src/app/interfaces/teaching.model';
 
 // Videos are 1080p H.264 with the index at the front (so playback starts
 // before the file finishes downloading). Source and render scripts live with
-// the course files, in mat223/ch7-manim/ and mat223/ch8-manim/, not in this repo.
+// the course files, in mat223/ch7-manim/, mat223/ch8-manim/ and mat223/ch9-10-manim/, not in this repo.
 const MAT223_CH7 = 'assets/teaching/mat223/ch7';
 const MAT223_CH8 = 'assets/teaching/mat223/ch8';
+const MAT223_CH9_10 = 'assets/teaching/mat223/ch9-10';
 
 function clipsIn(dir: string) {
   return (code: string, file: string, title: string, blurb: string, seconds: number): TeachingClip => ({
@@ -19,6 +20,8 @@ function clipsIn(dir: string) {
 
 const ch7 = clipsIn(MAT223_CH7);
 const ch8 = clipsIn(MAT223_CH8);
+// Chapters 9 and 10 were one CAP and share a folder. Their file names start with the order they're played in.
+const ch9 = clipsIn(MAT223_CH9_10);
 
 export const COURSES: Course[] = [
   {
@@ -28,8 +31,101 @@ export const COURSES: Course[] = [
     term: 'Fall 2026',
     role: 'Instructor',
     institution: 'University of Toronto',
-    blurb: 'Animations for lecture: determinants as area and volume, and coordinates and change of basis.',
+    blurb: 'Animations for lecture: determinants as area and volume, coordinates and change of basis, ' +
+      'and eigenvalues and diagonalization.',
     chapters: [
+      {
+        title: 'Chapter 10: Similarity and Diagonalization',
+        blurb:
+          'A map can look much simpler in a different basis. In a basis of eigenvectors the running example ' +
+          'becomes the diagonal matrix D = diag(2, ½), and A = CDC⁻¹ splits it into three moves.',
+        groups: [
+          {
+            title: 'Defining matrices and similarity',
+            clips: [
+              ch9('D00', '08_D00_AnotherGrid', 'The same map in another grid',
+                'Count steps on the grid of B = {(1, 0), (1, 1)} to build the matrix of T_A in B-coordinates (Theorem 10.1).', 56),
+              ch9('D01', '09_D01_TwoGrids', 'One map, two grids',
+                'In a grid of eigenvectors T_A only stretches the grid lines, so its matrix is diag(2, ½). Same map, similar matrices.', 50),
+            ],
+          },
+          {
+            title: 'Diagonalization',
+            clips: [
+              ch9('D02', '10_D02_ThreeMoves', 'Three moves: A = CDC⁻¹',
+                'Go to B-coordinates, stretch along the axes, come back. The three moves land exactly on T_A (Theorem 10.8).', 47),
+              ch9('D03', '11_D03_ShearOneLine', 'The shear: only one eigen-line',
+                'The same characteristic polynomial as the identity, but only one line of eigenvectors, so a shear is not diagonalizable.', 30),
+              ch9('D04', '12_D04_Powers', 'Powers',
+                'Aⁿ = CDⁿC⁻¹. The ½ direction dies out, and Aⁿ(S) becomes a long thin sliver of area 1.', 42),
+            ],
+          },
+          {
+            title: 'Lecture Activities 10.1, 10.2 and 10.5 to 10.7',
+            blurb: 'These use the CAP\'s numbers and show the answers, so play them after students try the activity.',
+            clips: [
+              ch9('R06', 'R06_LA101', 'Lecture Activity 10.1',
+                'F stretches along b₁ and fixes b₂, so in B-coordinates its matrix is diag(2, 1). Then the general case.', 37),
+              ch9('R07', 'R07_LA102', 'Lecture Activity 10.2',
+                'Rotate b₁ and b₂ by 90° and count steps on the B-grid: the rotation in B-coordinates, and why it is similar to C.', 44),
+              ch9('R08', 'R08_LA105A1', 'Lecture Activity 10.5 P1',
+                'Eigenvalues 2 and −1 give two eigen-lines. A₁ = C₁D₁C₁⁻¹ as three moves, and the −1 flips the plane over.', 50),
+              ch9('R09', 'R09_LA105', 'Lecture Activities 10.5 and 10.6 in ℝ³',
+                'A₂ and A₃ have the same characteristic polynomial, but only A₃ has enough eigenvectors to be diagonalizable.', 54),
+              ch9('R10', 'R10_LA107', 'Lecture Activity 10.7',
+                'Build A from its eigenvectors and eigenvalues with the three moves, then check it on two vectors.', 50),
+            ],
+          },
+        ],
+      },
+      {
+        title: 'Chapter 9: Eigenvalues and Eigenvectors',
+        blurb:
+          'Vectors that a matrix only stretches, and how to find them. The clips follow one example: the matrix A ' +
+          'with rows (3/2, 1) and (1/2, 1), which stretches (2, 1) by 2 and shrinks (−1, 1) by ½.',
+        groups: [
+          {
+            title: 'Eigenvectors and eigenspaces',
+            clips: [
+              ch9('E01', '01_E01_StayOnLine', 'Staying on the line',
+                'A knocks most vectors off their line. Eigenvectors only stretch (Definition 9.1).', 44),
+              ch9('E02', '02_E02_EigenvectorHunt', 'The eigenvector hunt',
+                'Sweep a unit vector v around the circle and watch for Av to land on the line through v.', 49),
+              ch9('E03', '03_E03_EigenvalueZoo', 'Kinds of eigenvalues',
+                'Same eigenvectors, eigenvalues 2, 1, ½, 0 and −1. Eigenvalue 0 squashes the plane onto a line.', 51),
+              ch9('E04', '04_E04_EigenspaceNullSpace', 'Eigenspace = null space',
+                'Av = ½v exactly when (A − ½I)v = 0, so the eigenvectors fill a null space (Proposition 9.2).', 52),
+            ],
+          },
+          {
+            title: 'Finding eigenvalues',
+            clips: [
+              ch9('E05', '05_E05_HuntingForFlat', 'Hunting for flat',
+                'Slide λ until A − λI flattens the plane. Those λ are the roots of det(A − λI) (Proposition 9.5).', 48),
+              ch9('E06', '06_E06_RotationNoEigen', 'Rotations: no real eigenvalues',
+                'A rotation moves every vector off its line, and its characteristic polynomial has no real roots.', 33),
+              ch9('E07', '07_E07_RotationAxis3D', 'Every rotation of space has an axis',
+                'In ℝ³ the characteristic polynomial has odd degree, so there is always a real eigenvalue (Proposition 9.7).', 39),
+            ],
+          },
+          {
+            title: 'Lecture Activities 9.1 to 9.3',
+            blurb: 'These use the CAP\'s numbers and show the answers, so play them after students try the activity.',
+            clips: [
+              ch9('R01', 'R01_LA91', 'Lecture Activity 9.1',
+                'Apply each matrix to its vector and check whether the vector stays on its line. An eigenvalue can be 0.', 55),
+              ch9('R02', 'R02_LA92', 'Lecture Activity 9.2',
+                'A − 2I crushes the line through (−2, 1) to 0. That line is the 2-eigenspace.', 22),
+              ch9('R03', 'R03_LA93A', 'Lecture Activity 9.3: A',
+                'Slide λ: the plane goes flat at λ = 0 and at λ = 2.', 39),
+              ch9('R04', 'R04_LA93B', 'Lecture Activity 9.3: B',
+                'In ℝ³ the whole floor is fixed (eigenvalue 1) and the line through (1, 1, 1) doubles (eigenvalue 2).', 35),
+              ch9('R05', 'R05_LA93C', 'Lecture Activity 9.3: C',
+                'The plane never goes flat, so C has no real eigenvalues.', 37),
+            ],
+          },
+        ],
+      },
       {
         title: 'Chapter 8: Coordinate Systems and Change of Basis',
         blurb:
