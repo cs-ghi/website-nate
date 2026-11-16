@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, HostListener, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { BookIndexService } from '../../services/book-index.service';
 import { PdfDocumentComponent } from '../shared/pdf-document.component';
 import { PdfOutlineComponent } from '../shared/pdf-outline.component';
@@ -55,6 +54,7 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
   isLoading: boolean = true;
   error: string = '';
   currentZoom: number = 1;
+  backRoute: string = '/books';
   backButtonText: string = 'Back to Books';
   returnText: string = 'Return to Books';
 
@@ -93,7 +93,6 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location,
     private bookIndex: BookIndexService
   ) {
     this.setInitialZoom();
@@ -160,21 +159,18 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
       this.pendingLoc = params['loc'] || '';
       this.pendingPage = params['page'] ? parseInt(params['page'], 10) : null;
 
-      // Determine back button text based on the source or referrer
+      // Where the back button goes, from the source or referrer. It goes to
+      // that section's own route rather than stepping back through history:
+      // a deep link opened fresh (shared, from search, in a new tab) has no
+      // history on this site, so history.back() went nowhere or off-site.
       const source = params['source'] || this.detectSourceFromUrl();
-      if (source === 'notes') {
-        this.backButtonText = 'Back to Notes';
-        this.returnText = 'Return to Notes';
-      } else if (source === 'blog') {
-        this.backButtonText = 'Back to Blog';
-        this.returnText = 'Return to Blog';
-      } else if (source === 'papers') {
-        this.backButtonText = 'Back to Papers';
-        this.returnText = 'Return to Papers';
-      } else {
-        this.backButtonText = 'Back to Books';
-        this.returnText = 'Return to Books';
-      }
+      const label = source === 'notes' ? 'Notes'
+        : source === 'blog' ? 'Blog'
+        : source === 'papers' ? 'Papers'
+        : 'Books';
+      this.backRoute = '/' + label.toLowerCase();
+      this.backButtonText = `Back to ${label}`;
+      this.returnText = `Return to ${label}`;
 
       if (!newSrc) {
         this.pdfSrc = '';
@@ -306,7 +302,7 @@ export class PdfViewerComponent implements OnInit, OnDestroy {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigateByUrl(this.backRoute);
   }
 
   private detectSourceFromUrl(): string {
