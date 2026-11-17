@@ -42,38 +42,50 @@ export const COURSES: Course[] = [
         groups: [
           {
             title: 'Defining matrices and similarity',
+            sheet: { src: `${MAT223_CH9_10}/diagonalization-one-page.pdf`, label: 'Chapter 10 on one page (PDF)' },
             clips: [
               ch9('D00', '08_D00_AnotherGrid', 'The same map in another grid',
                 'Count steps on the grid of B = {(1, 0), (1, 1)} to build the matrix of T_A in B-coordinates (Theorem 10.1).', 56),
-              ch9('D01', '09_D01_TwoGrids', 'One map, two grids',
-                'In a grid of eigenvectors T_A only stretches the grid lines, so its matrix is diag(2, ½). Same map, similar matrices.', 50),
+              ch9('D05', '09_D05_ThreeGrids', 'One map, three matrices',
+                'The same map T_A drawn in three grids gives three different matrices. Matrices of one map are similar (Definition 10.3).', 49),
+              ch9('D06', '10_D06_TwoRoutes', 'Two routes, one answer',
+                'Multiply by M, or rewrite in standard coordinates, apply A and rewrite back. Both give the same answer, so M = P⁻¹AP (Theorem 10.4).', 58),
             ],
           },
           {
             title: 'Diagonalization',
             clips: [
-              ch9('D02', '10_D02_ThreeMoves', 'Three moves: A = CDC⁻¹',
+              ch9('D01', '11_D01_TwoGrids', 'One map, two grids',
+                'In a grid of eigenvectors T_A only stretches the grid lines, so its matrix is diagonal and A is diagonalizable (Definitions 10.6 and 10.7).', 56),
+              ch9('D02', '12_D02_ThreeMoves', 'Three moves: A = CDC⁻¹',
                 'Go to B-coordinates, stretch along the axes, come back. The three moves land exactly on T_A (Theorem 10.8).', 47),
-              ch9('D03', '11_D03_ShearOneLine', 'The shear: only one eigen-line',
+              ch9('D07', '13_D07_NoRoomForThird', 'No room for a third eigenvector',
+                'A mix of two eigenvectors with different eigenvalues tilts off its line, so eigenvectors for distinct eigenvalues are independent (Proposition 10.9).', 60),
+              ch9('D03', '14_D03_ShearOneLine', 'The shear: only one eigen-line',
                 'The same characteristic polynomial as the identity, but only one line of eigenvectors, so a shear is not diagonalizable.', 30),
-              ch9('D04', '12_D04_Powers', 'Powers',
+              ch9('D04', '15_D04_Powers', 'Powers',
                 'Aⁿ = CDⁿC⁻¹. The ½ direction dies out, and Aⁿ(S) becomes a long thin sliver of area 1.', 42),
             ],
           },
           {
-            title: 'Lecture Activities 10.1, 10.2 and 10.5 to 10.7',
-            blurb: 'These use the CAP\'s numbers and show the answers, so play them after students try the activity.',
+            title: 'Lecture Activities 10.1 to 10.8',
+            blurb: 'These use the CAP\'s numbers and show the answers, so play them after students try the activity. ' +
+              'Lecture Activity 10.4 is on the closing card of D01.',
             clips: [
               ch9('R06', 'R06_LA101', 'Lecture Activity 10.1',
                 'F stretches along b₁ and fixes b₂, so in B-coordinates its matrix is diag(2, 1). Then the general case.', 37),
               ch9('R07', 'R07_LA102', 'Lecture Activity 10.2',
                 'Rotate b₁ and b₂ by 90° and count steps on the B-grid: the rotation in B-coordinates, and why it is similar to C.', 44),
-              ch9('R08', 'R08_LA105A1', 'Lecture Activity 10.5 P1',
+              ch9('R08', 'R08_LA103', 'Lecture Activity 10.3',
+                'B turns the unit cube into a solid of volume 2, and C flattens it. Similar matrices have equal determinants, so B and C are not similar.', 41),
+              ch9('R09', 'R09_LA105A1', 'Lecture Activity 10.5 P1',
                 'Eigenvalues 2 and −1 give two eigen-lines. A₁ = C₁D₁C₁⁻¹ as three moves, and the −1 flips the plane over.', 50),
-              ch9('R09', 'R09_LA105', 'Lecture Activities 10.5 and 10.6 in ℝ³',
+              ch9('R10', 'R10_LA105', 'Lecture Activities 10.5 and 10.6 in ℝ³',
                 'A₂ and A₃ have the same characteristic polynomial, but only A₃ has enough eigenvectors to be diagonalizable.', 54),
-              ch9('R10', 'R10_LA107', 'Lecture Activity 10.7',
+              ch9('R11', 'R11_LA107', 'Lecture Activity 10.7',
                 'Build A from its eigenvectors and eigenvalues with the three moves, then check it on two vectors.', 50),
+              ch9('R12', 'R12_LA108', 'Lecture Activity 10.8',
+                'Powers of A₃ fix the plane E₁ and double the line E₂. Following e₁ gives the first column of A₃ⁿ = C₃DⁿC₃⁻¹.', 48),
             ],
           },
         ],
@@ -86,6 +98,7 @@ export const COURSES: Course[] = [
         groups: [
           {
             title: 'Eigenvectors and eigenspaces',
+            sheet: { src: `${MAT223_CH9_10}/eigenvalues-one-page.pdf`, label: 'Chapter 9 on one page (PDF)' },
             clips: [
               ch9('E01', '01_E01_StayOnLine', 'Staying on the line',
                 'A knocks most vectors off their line. Eigenvectors only stretch (Definition 9.1).', 44),
