@@ -59,6 +59,8 @@ export const COURSES: Course[] = [
                 'In a basis of eigenvectors T_A scales each basis vector, so its matrix is diagonal and A is diagonalizable (Definitions 10.6 and 10.7).', 56),
               ch9('D02', '12_D02_ThreeFactors', 'A = CDC⁻¹, one factor at a time',
                 'C⁻¹ converts to eigenvector coordinates, D scales the axes by 2 and ½, and C converts back. The composition is T_A (Theorem 10.8).', 47),
+              ch9('D08', '12b_D08_RowOperations', 'Row operations change eigenvectors',
+                'Row reduce A to I one operation at a time. Each row operation replaces A by EA, so v₁ and v₂ leave their lines and the eigenvalues go from 2 and ½ to 3/2 and 2/3, then to 1. The determinant stays 1.', 62),
               ch9('D07', '13_D07_DistinctEigenvalues', 'Distinct eigenvalues, independent eigenvectors',
                 'A(v₁ + v₂) = 2v₁ + ½v₂ is not a multiple of v₁ + v₂. Eigenvectors for distinct eigenvalues are linearly independent (Proposition 10.9).', 60),
               ch9('D03', '14_D03_ShearOneLine', 'The shear: only one eigen-line',
