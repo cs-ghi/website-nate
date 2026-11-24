@@ -2,10 +2,12 @@ import { Course, TeachingClip } from 'src/app/interfaces/teaching.model';
 
 // Videos are 1080p H.264 with the index at the front (so playback starts
 // before the file finishes downloading). Source and render scripts live with
-// the course files, in mat223/ch7-manim/, mat223/ch8-manim/ and mat223/ch9-10-manim/, not in this repo.
+// the course files, in mat223/ch7-manim/, mat223/ch8-manim/, mat223/ch9-10-manim/ and mat223/ch11-manim/,
+// not in this repo.
 const MAT223_CH7 = 'assets/teaching/mat223/ch7';
 const MAT223_CH8 = 'assets/teaching/mat223/ch8';
 const MAT223_CH9_10 = 'assets/teaching/mat223/ch9-10';
+const MAT223_CH11 = 'assets/teaching/mat223/ch11';
 
 function clipsIn(dir: string) {
   return (code: string, file: string, title: string, blurb: string, seconds: number): TeachingClip => ({
@@ -22,6 +24,8 @@ const ch7 = clipsIn(MAT223_CH7);
 const ch8 = clipsIn(MAT223_CH8);
 // Chapters 9 and 10 were one CAP and share a folder. Their file names start with the order they're played in.
 const ch9 = clipsIn(MAT223_CH9_10);
+// In Chapter 11 the O clips are numbered in the order they are played; W clips show applications.
+const ch11 = clipsIn(MAT223_CH11);
 
 export const COURSES: Course[] = [
   {
@@ -32,8 +36,81 @@ export const COURSES: Course[] = [
     role: 'Instructor',
     institution: 'University of Toronto',
     blurb: 'Animations for lecture: determinants as area and volume, coordinates and change of basis, ' +
-      'and eigenvalues and diagonalization.',
+      'eigenvalues and diagonalization, and orthogonality.',
     chapters: [
+      {
+        title: 'Chapter 11: Orthogonality',
+        blurb:
+          'Bases whose vectors are orthogonal and of length 1, orthogonal projection, the Gram–Schmidt process and ' +
+          'orthogonal matrices. The running example is the orthonormal basis U = {(3/5, 4/5), (−4/5, 3/5)}.',
+        groups: [
+          {
+            title: 'Where orthogonality is used',
+            sheet: { src: `${MAT223_CH11}/orthogonality-one-page.pdf`, label: 'Chapter 11 on one page (PDF)' },
+            clips: [
+              ch11('W0', 'W0_WhyOrthogonality', 'Why orthogonality?',
+                'Four uses of orthogonality: forces on a ramp, best-fit lines, photo compression and 3D graphics.', 21),
+              ch11('W1', 'W1_RampProjection', 'Forces on a ramp: a projection',
+                'The part of gravity along a ramp is the projection of g onto the direction of the ramp, of length 9.8 sin θ (Definition 11.5).', 37),
+              ch11('W2', 'W2_BestFitSlope', 'The best-fit slope is a projection',
+                'The slope c that makes the squared error ‖d − ct‖² smallest is c = (t · d)/(t · t), so ct is the projection of d onto Span(t) in ℝ⁴.', 39),
+              ch11('W3', 'W3_Compression', 'Compressing a photo',
+                'In an orthonormal basis each coordinate is a dot product. Dropping the small coordinates of four pixel values loses exactly their length (Proposition 11.4).', 45),
+            ],
+          },
+          {
+            title: 'Orthonormal bases',
+            clips: [
+              ch11('O01', 'O01_OrthonormalBases', 'Orthogonal and orthonormal bases',
+                'Three bases of ℝ²: one not orthogonal, one orthogonal with a vector of length 2, and one orthonormal (Definition 11.3).', 35),
+              ch11('O02', 'O02_DotProductCoordinates', 'Dot products in an orthonormal basis',
+                'x · y = 5, computed from coordinates: 5 again in the orthonormal basis U, but 12 and 11/4 in two other bases (Proposition 11.4).', 51),
+            ],
+          },
+          {
+            title: 'Projections and Gram–Schmidt',
+            clips: [
+              ch11('O03', 'O03_DistanceToLine', 'Distance from a point to a line',
+                'A point z = cy moves along Span(y) with its distance to x shown. Which c gives the smallest distance? (Lecture Activity 11.2)', 26),
+              ch11('O04', 'O04_Projection', 'Orthogonal projection onto a line',
+                'The projection of (1, 3) onto (3, 4) is (9/5, 12/5), and the remainder is orthogonal to (3, 4). Replacing y by 2y or −y gives the same projection (Definition 11.5).', 53),
+              ch11('O05', 'O05_GramSchmidt2D', 'Gram–Schmidt with two vectors',
+                'From (3, 4) and (−2, 4): subtract a projection, then divide by the norms. The result is the orthonormal basis U (Theorem 11.6).', 42),
+              ch11('O06', 'O06_Example117', 'Example 11.7: Gram–Schmidt in ℝ³',
+                'The three steps of Example 11.7. The third vector is orthogonal to the plane spanned by the first two.', 46),
+            ],
+          },
+          {
+            title: 'Orthogonal matrices',
+            clips: [
+              ch11('O07', 'O07_MatrixOfBasis', 'The matrix of an orthonormal basis',
+                'Q = [u₁ u₂] sends e₁ and e₂ to u₁ and u₂, and converts U-coordinates to standard coordinates. Which matrix sends u₁ and u₂ back?', 32),
+              ch11('O08', 'O08_QTQ', 'QᵀQ and orthonormal columns',
+                'Entry (i, j) of XᵀX is the dot product of columns i and j, so XᵀX = I exactly when the columns are orthonormal (Proposition 11.8).', 36),
+              ch11('O09', 'O09_Preservation', 'Orthogonal matrices preserve dot products',
+                'An orthogonal matrix keeps dot products, lengths and angles. A matrix whose orthogonal columns have lengths 2 and 1 does not (Theorem 11.11).', 50),
+              ch11('O10', 'O10_RotationsReflections', 'Orthogonal 2 × 2 matrices: rotations and reflections',
+                'The first column lies on the unit circle and the second is orthogonal to it: a rotation (det 1) or a reflection (det −1) (Remark 11.12).', 60),
+              ch11('O11', 'O11_OrthogonalMatrix3D', 'An orthogonal 3 × 3 matrix',
+                'The orthonormal basis of Example 11.7 as the columns of Q, with det Q = −1: a reflection and then a rotation send the unit cube to a unit cube.', 33),
+            ],
+          },
+          {
+            title: 'Lecture Activities 11.1 to 11.4',
+            blurb: 'These use the CAP\'s numbers and show the answers, so try each activity first.',
+            clips: [
+              ch11('R01', 'R01_LA111', 'Lecture Activity 11.1',
+                'Which of B, C and D is orthogonal or orthonormal, and x · y from coordinates in each. Only in D is it the dot product of the coordinates.', 32),
+              ch11('R02', 'R02_LA112', 'Lecture Activity 11.2',
+                'If the segment from x to a point of the line is not perpendicular to the line, a closer point exists. So y · (x − z) = 0 and z = ((x · y)/(y · y)) y.', 47),
+              ch11('R03', 'R03_LA113', 'Lecture Activity 11.3',
+                'Gram–Schmidt on the plane W in ℝ³, then a view straight onto W, where u₁ and u₂ meet at a right angle.', 35),
+              ch11('R04', 'R04_LA114', 'Lecture Activity 11.4',
+                'Each entry of QᵀQ is a dot product of two columns of Q, so QᵀQ = I and Q⁻¹ = Qᵀ. Then a check with a rotation.', 41),
+            ],
+          },
+        ],
+      },
       {
         title: 'Chapter 10: Similarity and Diagonalization',
         blurb:
