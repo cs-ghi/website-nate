@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated": "2026-11-05",
+    "generated": "2026-11-26",
     "bookCount": 50,
-    "edgeCount": 524,
+    "edgeCount": 536,
     "clashCounts": {
       "error": 4,
       "warn": 5,
-      "info": 138
+      "info": 121
     },
     "tiers": [
       {
@@ -46,7 +46,7 @@
         "pdf": "abelian-varieties/EYNTKA-abelian-varieties.pdf"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.687,
+      "xAffinity": -0.69,
       "tier": 4
     },
     {
@@ -65,8 +65,8 @@
         "pdf": "algebraic-geometry/EYNTKA_algGeo.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_algGeo.pdf&name=Algebraic%20Geometry&source=books"
       },
-      "lastUpdated": "2026-10-20",
-      "xAffinity": -0.658,
+      "lastUpdated": "2026-11-26",
+      "xAffinity": -0.661,
       "tier": 3
     },
     {
@@ -84,8 +84,8 @@
         "pdf": "algebraic-k-theory/EYNTKA-algebraic-k-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-k-theory.pdf&name=Algebraic%20K-Theory&source=books"
       },
-      "lastUpdated": "2026-08-21",
-      "xAffinity": -0.723,
+      "lastUpdated": "2026-11-10",
+      "xAffinity": -0.729,
       "tier": 3
     },
     {
@@ -102,7 +102,7 @@
         "pdf": "algebraic-number-theory/EYNTKA-algebraic-number-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-number-theory.pdf&name=Algebraic%20Number%20Theory&source=books"
       },
-      "lastUpdated": "2026-07-16",
+      "lastUpdated": "2026-10-12",
       "xAffinity": -1,
       "tier": 2
     },
@@ -121,8 +121,8 @@
         "pdf": "algebraic-topology/EYNTKA-algebraic-topology.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-algebraic-topology.pdf&name=Algebraic%20Topology&source=books"
       },
-      "lastUpdated": "2026-10-27",
-      "xAffinity": -0.393,
+      "lastUpdated": "2026-11-10",
+      "xAffinity": -0.423,
       "tier": 2
     },
     {
@@ -154,7 +154,7 @@
         "pdf": "calculus/EYNTKA-calculus.pdf"
       },
       "lastUpdated": "2026-07-30",
-      "xAffinity": 0.189,
+      "xAffinity": 0.188,
       "tier": 0
     },
     {
@@ -169,7 +169,7 @@
         "pdf": "category-theory/EYNTKA-category-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-category-theory.pdf&name=Category%20Theory&source=books"
       },
-      "lastUpdated": "2026-07-18",
+      "lastUpdated": "2026-10-14",
       "xAffinity": -1,
       "tier": 2
     },
@@ -188,8 +188,8 @@
         "pdf": "class-field-theory/EYNTKA-class-field-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-class-field-theory.pdf&name=Class%20Field%20Theory&source=books"
       },
-      "lastUpdated": "2026-10-27",
-      "xAffinity": -0.733,
+      "lastUpdated": "2026-11-02",
+      "xAffinity": -0.73,
       "tier": 3
     },
     {
@@ -204,7 +204,7 @@
         "pdf": "classical-algebraic-geometry/EYNTKA-classical-algebraic-geometry.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-classical-algebraic-geometry.pdf&name=Classical%20Algebraic%20Geometry&source=books"
       },
-      "lastUpdated": "2026-08-04",
+      "lastUpdated": "2026-11-26",
       "xAffinity": -1,
       "tier": 2
     },
@@ -220,7 +220,7 @@
         "pdf": "commutative-algebra/EYNTKA-commutative-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-commutative-algebra.pdf&name=Commutative%20Algebra&source=books"
       },
-      "lastUpdated": "2026-10-27",
+      "lastUpdated": "2026-11-26",
       "xAffinity": -1,
       "tier": 2
     },
@@ -238,8 +238,8 @@
         "pdf": "complex-analysis/EYNTKA_complex_analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_complex_analysis.pdf&name=Complex%20Analysis&source=books"
       },
-      "lastUpdated": "2026-07-16",
-      "xAffinity": -0.102,
+      "lastUpdated": "2026-10-12",
+      "xAffinity": -0.106,
       "tier": 1
     },
     {
@@ -254,7 +254,7 @@
         "pdf": "complex-analytic-geometry/EYNTKA-complex-analytic-geometry.pdf"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.203,
+      "xAffinity": -0.207,
       "tier": 3
     },
     {
@@ -269,7 +269,7 @@
         "pdf": "core-algebra/EYNTKA-core-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-algebra.pdf&name=Core%20Algebra&source=books"
       },
-      "lastUpdated": "2026-10-21",
+      "lastUpdated": "2026-11-26",
       "xAffinity": -1,
       "tier": 1
     },
@@ -287,7 +287,7 @@
         "pdf": "core-probability/EYNTKA-core-probability.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-probability.pdf&name=Core%20Probability&source=books"
       },
-      "lastUpdated": "2026-08-05",
+      "lastUpdated": "2026-10-01",
       "xAffinity": 0.453,
       "tier": 1
     },
@@ -305,7 +305,7 @@
         "pdf": "core-representation-theory/EYNTKA-core-representation-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-core-representation-theory.pdf&name=Core%20Representation%20Theory&source=books"
       },
-      "lastUpdated": "2026-10-20",
+      "lastUpdated": "2026-11-02",
       "xAffinity": -1,
       "tier": 2
     },
@@ -323,7 +323,7 @@
         "pdf": "cstar-algebras/EYNTKA-cstar-algebras.pdf"
       },
       "lastUpdated": "2026-06-27",
-      "xAffinity": 0.301,
+      "xAffinity": 0.287,
       "tier": 3
     },
     {
@@ -340,7 +340,7 @@
         "pdf": "differential-topology/EYNTKA-differential-topology.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-differential-topology.pdf&name=Differential%20Topology&source=books"
       },
-      "lastUpdated": "2026-07-23",
+      "lastUpdated": "2026-11-25",
       "xAffinity": 0,
       "tier": 2
     },
@@ -358,7 +358,7 @@
         "pdf": "elementary-analysis/EYNTKA-elementary-analysis.pdf"
       },
       "lastUpdated": "2026-09-04",
-      "xAffinity": 0.422,
+      "xAffinity": 0.421,
       "tier": 0
     },
     {
@@ -375,8 +375,8 @@
         "pdf": "elliptic-curves/EYNTKA-elliptic-curves.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-elliptic-curves.pdf&name=Elliptic%20Curves&source=books"
       },
-      "lastUpdated": "2026-10-20",
-      "xAffinity": -0.688,
+      "lastUpdated": "2026-11-25",
+      "xAffinity": -0.689,
       "tier": 3
     },
     {
@@ -392,8 +392,8 @@
       "links": {
         "pdf": "etale-cohomology/EYNTKA-etale-cohomology.pdf"
       },
-      "lastUpdated": "2026-10-27",
-      "xAffinity": -0.68,
+      "lastUpdated": "2026-11-25",
+      "xAffinity": -0.683,
       "tier": 4
     },
     {
@@ -410,7 +410,7 @@
         "pdf": "functional-analysis/EYNTKA-functional-analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-functional-analysis.pdf&name=Functional%20Analysis&source=books"
       },
-      "lastUpdated": "2026-07-16",
+      "lastUpdated": "2026-11-02",
       "xAffinity": 1,
       "tier": 2
     },
@@ -426,7 +426,7 @@
         "pdf": "galois-cohomology/EYNTKA-galois-cohomology.pdf"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.696,
+      "xAffinity": -0.698,
       "tier": 2
     },
     {
@@ -443,8 +443,8 @@
         "pdf": "geometric-representation-theory/EYNTKA-geo-rep-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-geo-rep-theory.pdf&name=Algebraic%20Groups%20and%20Representations&source=books"
       },
-      "lastUpdated": "2026-07-16",
-      "xAffinity": -0.504,
+      "lastUpdated": "2026-11-13",
+      "xAffinity": -0.503,
       "tier": 3
     },
     {
@@ -462,7 +462,7 @@
         "pdf": "harmonic-analysis/EYNTKA-harmonic-analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-harmonic-analysis.pdf&name=Harmonic%20Analysis&source=books"
       },
-      "lastUpdated": "2026-07-21",
+      "lastUpdated": "2026-11-02",
       "xAffinity": 1,
       "tier": 2
     },
@@ -480,7 +480,7 @@
         "pdf": "higher-category-theory/EYNTKA-higher-category-theory.pdf"
       },
       "lastUpdated": "2026-08-23",
-      "xAffinity": -0.728,
+      "xAffinity": -0.734,
       "tier": 3
     },
     {
@@ -497,7 +497,7 @@
         "pdf": "hodge-theory/EYNTKA-hodge-theory.pdf"
       },
       "lastUpdated": "2026-10-27",
-      "xAffinity": -0.256,
+      "xAffinity": -0.26,
       "tier": 3
     },
     {
@@ -514,7 +514,7 @@
         "pdf": "homological-algebra/EYNTKA-homological-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-homological-algebra.pdf&name=Homological%20Algebra&source=books"
       },
-      "lastUpdated": "2026-10-21",
+      "lastUpdated": "2026-11-26",
       "xAffinity": -1,
       "tier": 2
     },
@@ -530,7 +530,7 @@
         "pdf": "intersection-theory/EYNTKA-intersection-theory.pdf"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.52,
+      "xAffinity": -0.524,
       "tier": 3
     },
     {
@@ -547,8 +547,8 @@
         "pdf": "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_Vector_bundles_and_K-theory.pdf&name=Vector%20Bundles%20and%20K-Theory&source=books"
       },
-      "lastUpdated": "2026-10-20",
-      "xAffinity": 0.142,
+      "lastUpdated": "2026-11-02",
+      "xAffinity": 0.134,
       "tier": 3
     },
     {
@@ -565,8 +565,8 @@
         "pdf": "langlands-gl2/EYNTKA-langlands-gl2.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-langlands-gl2.pdf&name=Local%20Langlands%20for%20GL%E2%82%82(F)&source=books"
       },
-      "lastUpdated": "2026-10-20",
-      "xAffinity": -0.054,
+      "lastUpdated": "2026-11-02",
+      "xAffinity": -0.037,
       "tier": 4
     },
     {
@@ -581,8 +581,8 @@
         "pdf": "lie-groups/EYNTKA-lie-groups.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-lie-groups.pdf&name=Lie%20Groups&source=books"
       },
-      "lastUpdated": "2026-10-27",
-      "xAffinity": 0.048,
+      "lastUpdated": "2026-11-26",
+      "xAffinity": 0.049,
       "tier": 2
     },
     {
@@ -597,7 +597,7 @@
         "pdf": "linear-algebra/EYNTKA-linear-algebra.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-algebra.pdf&name=Linear%20Algebra&source=books"
       },
-      "lastUpdated": "2026-08-04",
+      "lastUpdated": "2026-10-21",
       "xAffinity": 0.313,
       "tier": 0
     },
@@ -613,8 +613,8 @@
         "pdf": "linear-pde/EYNTKA-linear-pde.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-linear-pde.pdf&name=Linear%20Elliptic%20and%20Parabolic%20PDE&source=books"
       },
-      "lastUpdated": "2026-07-21",
-      "xAffinity": 0.516,
+      "lastUpdated": "2026-10-07",
+      "xAffinity": 0.515,
       "tier": 2
     },
     {
@@ -629,7 +629,7 @@
         "pdf": "local-field-theory/EYNTKA-local-field-theory.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-local-field-theory.pdf&name=Local%20Field%20Theory&source=books"
       },
-      "lastUpdated": "2026-10-27",
+      "lastUpdated": "2026-11-26",
       "xAffinity": -0.773,
       "tier": 3
     },
@@ -662,7 +662,7 @@
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-metric-function-spaces.pdf&name=Elementary%20Analysis%20II&source=books"
       },
       "lastUpdated": "2026-10-18",
-      "xAffinity": 0.466,
+      "xAffinity": 0.463,
       "tier": 0
     },
     {
@@ -677,7 +677,7 @@
         "pdf": "microlocal-analysis/EYNTKA-microlocal-analysis.pdf"
       },
       "lastUpdated": "2026-11-02",
-      "xAffinity": 0.386,
+      "xAffinity": 0.385,
       "tier": 3
     },
     {
@@ -692,7 +692,7 @@
         "pdf": "moduli-stacks/EYNTKA-moduli-stacks.pdf"
       },
       "lastUpdated": "2026-10-20",
-      "xAffinity": -0.768,
+      "xAffinity": -0.769,
       "tier": 4
     },
     {
@@ -709,8 +709,8 @@
         "pdf": "nonlinear-wave-pde/EYNTKA-nonlinear-wave.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-nonlinear-wave.pdf&name=Nonlinear%20Wave%20and%20Dispersive%20PDE&source=books"
       },
-      "lastUpdated": "2026-07-20",
-      "xAffinity": 0.45,
+      "lastUpdated": "2026-10-21",
+      "xAffinity": 0.449,
       "tier": 3
     },
     {
@@ -727,8 +727,8 @@
         "pdf": "ODE/EYNTKA_ODE.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_ODE.pdf&name=Ordinary%20Differential%20Equations%20(ODE)&source=books"
       },
-      "lastUpdated": "2026-07-16",
-      "xAffinity": 0.284,
+      "lastUpdated": "2026-10-18",
+      "xAffinity": 0.283,
       "tier": 1
     },
     {
@@ -740,7 +740,7 @@
       "webPublished": false,
       "clusters": [],
       "links": {
-        "pdf": "preliminary-chapter/preliminary-chapter.pdf"
+        "pdf": "preliminary-chapter/EYNTKA-preliminary-chapter.pdf"
       },
       "lastUpdated": "2026-05-31",
       "xAffinity": 0,
@@ -760,7 +760,7 @@
         "pdf": "probability/EYNTKA-probability.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-Probability.pdf&name=Probability&source=books"
       },
-      "lastUpdated": "2026-07-18",
+      "lastUpdated": "2026-09-28",
       "xAffinity": 0.485,
       "tier": 2
     },
@@ -778,7 +778,7 @@
         "pdf": "real-analysis/EYNTKA-real-analysis.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-real-analysis.pdf&name=Real%20Analysis&source=books"
       },
-      "lastUpdated": "2026-10-22",
+      "lastUpdated": "2026-11-02",
       "xAffinity": 1,
       "tier": 1
     },
@@ -796,7 +796,7 @@
         "pdf": "riemannian-geometry/EYNTKA-riemannian-geometry.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-riemannian-geometry.pdf&name=Riemannian%20Geometry&source=books"
       },
-      "lastUpdated": "2026-07-12",
+      "lastUpdated": "2026-11-03",
       "xAffinity": 0,
       "tier": 2
     },
@@ -814,7 +814,7 @@
         "pdf": "shimura-varieties/EYNTKA-shimura-varieties.pdf"
       },
       "lastUpdated": "2026-07-17",
-      "xAffinity": -0.61,
+      "xAffinity": -0.605,
       "tier": 4
     },
     {
@@ -831,7 +831,7 @@
         "pdf": "statistics/EYNTKA-statistics.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA-statistics.pdf&name=Mathematical%20Statistics&source=books"
       },
-      "lastUpdated": "2026-08-24",
+      "lastUpdated": "2026-10-19",
       "xAffinity": 0.672,
       "tier": 3
     },
@@ -847,7 +847,7 @@
         "pdf": "topology/EYNTKA_topology.pdf",
         "web": "/pdf-viewer?src=.%2F.%2Fassets%2Fpdfs%2Fbooks%2FEYNTKA_topology.pdf&name=Topology&source=books"
       },
-      "lastUpdated": "2026-10-21",
+      "lastUpdated": "2026-11-09",
       "xAffinity": 0,
       "tier": 1
     },
@@ -880,7 +880,7 @@
         "pdf": "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.pdf"
       },
       "lastUpdated": "2026-09-29",
-      "xAffinity": -0.76,
+      "xAffinity": -0.763,
       "tier": 4
     }
   ],
@@ -891,70 +891,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch07-open.tex",
-        "abelian-varieties/drafts/scratch/ch07-s01.tex",
-        "abelian-varieties/drafts/scratch/ch07-s02.tex",
-        "abelian-varieties/drafts/scratch/ch07-s03.tex",
-        "abelian-varieties/drafts/scratch/ch07-s04.tex",
-        "abelian-varieties/drafts/scratch/ch08-s01.tex",
-        "abelian-varieties/drafts/scratch/ch08-s03.tex",
-        "abelian-varieties/drafts/scratch/ch08-s04.tex",
-        "abelian-varieties/drafts/scratch/ch09-s01.tex",
-        "abelian-varieties/drafts/scratch/ch09-s04.tex",
-        "abelian-varieties/drafts/scratch/ch10-s01.tex",
-        "abelian-varieties/drafts/scratch/ch10-s02.tex",
-        "abelian-varieties/drafts/scratch/ch10-s04.tex",
-        "abelian-varieties/drafts/scratch/ch10-s05.tex",
-        "abelian-varieties/drafts/scratch/ch11-s01.tex",
-        "abelian-varieties/drafts/scratch/ch11-s03.tex",
-        "abelian-varieties/drafts/scratch/ch11-s04.tex",
-        "abelian-varieties/drafts/scratch/ch12-s01.tex",
-        "abelian-varieties/drafts/scratch/ch12-s02.tex",
-        "abelian-varieties/drafts/scratch/ch12-s03.tex",
-        "abelian-varieties/drafts/scratch/ch12-s04.tex",
-        "abelian-varieties/drafts/scratch/ch13-s01.tex",
-        "abelian-varieties/drafts/scratch/ch13-s02.tex",
-        "abelian-varieties/drafts/scratch/ch13-s05.tex",
-        "abelian-varieties/drafts/scratch/chevalley-core.tex",
-        "abelian-varieties/drafts/scratch/chevalley-sec2.tex",
-        "abelian-varieties/drafts/scratch/chevprep-I.tex",
-        "abelian-varieties/drafts/scratch/ex/groupPicard.tex",
-        "abelian-varieties/drafts/scratch/proposition-A.tex",
-        "abelian-varieties/drafts/scratch/sec/abelJacobi.tex",
-        "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
-        "abelian-varieties/drafts/scratch/sec/dualConstruction.tex",
-        "abelian-varieties/drafts/scratch/sec/finiteGroupSchemesP.tex",
-        "abelian-varieties/drafts/scratch/sec/frobeniusCharPoly.tex",
-        "abelian-varieties/drafts/scratch/sec/groupPicard.tex",
-        "abelian-varieties/drafts/scratch/sec/groupVarieties.tex",
-        "abelian-varieties/drafts/scratch/sec/isogeniesDegree.tex",
-        "abelian-varieties/drafts/scratch/sec/multByN.tex",
-        "abelian-varieties/drafts/scratch/sec/neronSeveriAmpleness.tex",
-        "abelian-varieties/drafts/scratch/sec/ordinarySupersingularFF.tex",
-        "abelian-varieties/drafts/scratch/sec/phiLKL.tex",
-        "abelian-varieties/drafts/scratch/sec/picardVariety.tex",
-        "abelian-varieties/drafts/scratch/sec/poincareBiduality.tex",
-        "abelian-varieties/drafts/scratch/sec/poincareReducibilityAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/projectivity.tex",
-        "abelian-varieties/drafts/scratch/sec/rigidity.tex",
-        "abelian-varieties/drafts/scratch/sec/rosatiAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/theoremCube.tex",
-        "abelian-varieties/drafts/scratch/sec/thetaDivisorJacobian.tex",
-        "abelian-varieties/drafts/scratch/sec/torelli.tex",
-        "abelian-varieties/drafts/scratch/sec/weilPairingAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/weilRH.tex",
-        "abelian-varieties/drafts/scratch/severi-weil.tex"
-      ]
-    },
-    {
-      "source": "NateAbelianVarieties",
-      "target": "NateAlgNumberTheory",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "abelian-varieties/drafts/scratch/ch06-s04.tex",
-        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -963,9 +900,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch01-s03.tex",
-        "abelian-varieties/drafts/scratch/sec/torusCohomology.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -974,12 +909,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex",
-        "abelian-varieties/drafts/scratch/ch13-s04.tex",
-        "abelian-varieties/drafts/scratch/ch14-open.tex",
-        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex",
-        "abelian-varieties/drafts/scratch/sec/hondaTate.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -988,8 +918,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/severi-weil.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -998,10 +927,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/drafts/scratch/ch09-s01.tex",
-        "abelian-varieties/drafts/scratch/ch09-s04.tex",
-        "abelian-varieties/drafts/scratch/sec/finiteGroupSchemesP.tex",
-        "abelian-varieties/drafts/scratch/sec/isogeniesDegree.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1010,24 +936,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch01-s01.tex",
-        "abelian-varieties/drafts/scratch/ch01-s03.tex",
-        "abelian-varieties/drafts/scratch/ch01-s04.tex",
-        "abelian-varieties/drafts/scratch/ch02-s01.tex",
-        "abelian-varieties/drafts/scratch/ch02-s02.tex",
-        "abelian-varieties/drafts/scratch/ch04-s04.tex",
-        "abelian-varieties/drafts/scratch/ch04-s05.tex",
-        "abelian-varieties/drafts/scratch/ch11-s04.tex",
-        "abelian-varieties/drafts/scratch/ex/complexTori.tex",
-        "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
-        "abelian-varieties/drafts/scratch/sec/appellHumbert.tex",
-        "abelian-varieties/drafts/scratch/sec/complexTori.tex",
-        "abelian-varieties/drafts/scratch/sec/lefschetzEmbedding.tex",
-        "abelian-varieties/drafts/scratch/sec/picardExponential.tex",
-        "abelian-varieties/drafts/scratch/sec/thetaDivisor.tex",
-        "abelian-varieties/drafts/scratch/sec/torusAlgebraicity.tex",
-        "abelian-varieties/drafts/scratch/sec/torusCohomology.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1045,17 +954,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch02-s04.tex",
-        "abelian-varieties/drafts/scratch/ch03-s02.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex",
-        "abelian-varieties/drafts/scratch/ch11-s02.tex",
-        "abelian-varieties/drafts/scratch/ch13-s05.tex",
-        "abelian-varieties/drafts/scratch/sec/abelianVarietyDef.tex",
-        "abelian-varieties/drafts/scratch/sec/albertAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex",
-        "abelian-varieties/drafts/scratch/sec/ordinarySupersingularFF.tex",
-        "abelian-varieties/drafts/scratch/sec/thetaSections.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1064,11 +963,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch06-s01.tex",
-        "abelian-varieties/drafts/scratch/ch06-s03.tex",
-        "abelian-varieties/drafts/scratch/sec/albertClassification.tex",
-        "abelian-varieties/drafts/scratch/sec/endomorphismAlgebra.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1077,96 +972,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch01-s01.tex",
-        "abelian-varieties/drafts/scratch/ch01-s03.tex",
-        "abelian-varieties/drafts/scratch/ch01-s04.tex",
-        "abelian-varieties/drafts/scratch/ch02-s01.tex",
-        "abelian-varieties/drafts/scratch/ch02-s03.tex",
-        "abelian-varieties/drafts/scratch/ch02-s04.tex",
-        "abelian-varieties/drafts/scratch/ch03-s01.tex",
-        "abelian-varieties/drafts/scratch/ch03-s03.tex",
-        "abelian-varieties/drafts/scratch/ch03-s04.tex",
-        "abelian-varieties/drafts/scratch/ch04-s01.tex",
-        "abelian-varieties/drafts/scratch/ch04-s04.tex",
-        "abelian-varieties/drafts/scratch/ch05-s02.tex",
-        "abelian-varieties/drafts/scratch/ch06-s01.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex",
-        "abelian-varieties/drafts/scratch/ch07-s01.tex",
-        "abelian-varieties/drafts/scratch/ch07-s02.tex",
-        "abelian-varieties/drafts/scratch/ch07-s03.tex",
-        "abelian-varieties/drafts/scratch/ch07-s04.tex",
-        "abelian-varieties/drafts/scratch/ch08-s01.tex",
-        "abelian-varieties/drafts/scratch/ch08-s02.tex",
-        "abelian-varieties/drafts/scratch/ch08-s03.tex",
-        "abelian-varieties/drafts/scratch/ch08-s04.tex",
-        "abelian-varieties/drafts/scratch/ch09-s01.tex",
-        "abelian-varieties/drafts/scratch/ch09-s02.tex",
-        "abelian-varieties/drafts/scratch/ch09-s03.tex",
-        "abelian-varieties/drafts/scratch/ch09-s04.tex",
-        "abelian-varieties/drafts/scratch/ch10-s01.tex",
-        "abelian-varieties/drafts/scratch/ch10-s02.tex",
-        "abelian-varieties/drafts/scratch/ch10-s03.tex",
-        "abelian-varieties/drafts/scratch/ch10-s04.tex",
-        "abelian-varieties/drafts/scratch/ch10-s05.tex",
-        "abelian-varieties/drafts/scratch/ch11-s01.tex",
-        "abelian-varieties/drafts/scratch/ch11-s02.tex",
-        "abelian-varieties/drafts/scratch/ch11-s03.tex",
-        "abelian-varieties/drafts/scratch/ch11-s04.tex",
-        "abelian-varieties/drafts/scratch/ch12-open.tex",
-        "abelian-varieties/drafts/scratch/ch12-s01.tex",
-        "abelian-varieties/drafts/scratch/ch12-s02.tex",
-        "abelian-varieties/drafts/scratch/ch12-s05.tex",
-        "abelian-varieties/drafts/scratch/ch13-open.tex",
-        "abelian-varieties/drafts/scratch/ch13-s01.tex",
-        "abelian-varieties/drafts/scratch/ch13-s02.tex",
-        "abelian-varieties/drafts/scratch/ch13-s03.tex",
-        "abelian-varieties/drafts/scratch/ch13-s04.tex",
-        "abelian-varieties/drafts/scratch/ch13-s05.tex",
-        "abelian-varieties/drafts/scratch/ch14-open.tex",
-        "abelian-varieties/drafts/scratch/sec/abelJacobi.tex",
-        "abelian-varieties/drafts/scratch/sec/albertAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
-        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex",
-        "abelian-varieties/drafts/scratch/sec/complexTori.tex",
-        "abelian-varieties/drafts/scratch/sec/dualConstruction.tex",
-        "abelian-varieties/drafts/scratch/sec/ellAdicRep.tex",
-        "abelian-varieties/drafts/scratch/sec/endomorphismAlgebra.tex",
-        "abelian-varieties/drafts/scratch/sec/finiteGroupSchemesP.tex",
-        "abelian-varieties/drafts/scratch/sec/frobeniusCharPoly.tex",
-        "abelian-varieties/drafts/scratch/sec/groupPicard.tex",
-        "abelian-varieties/drafts/scratch/sec/groupVarieties.tex",
-        "abelian-varieties/drafts/scratch/sec/hondaTate.tex",
-        "abelian-varieties/drafts/scratch/sec/isogenies.tex",
-        "abelian-varieties/drafts/scratch/sec/isogeniesDegree.tex",
-        "abelian-varieties/drafts/scratch/sec/jacobianGenus1.tex",
-        "abelian-varieties/drafts/scratch/sec/lefschetzEmbedding.tex",
-        "abelian-varieties/drafts/scratch/sec/multByN.tex",
-        "abelian-varieties/drafts/scratch/sec/neronSeveri.tex",
-        "abelian-varieties/drafts/scratch/sec/neronSeveriAmpleness.tex",
-        "abelian-varieties/drafts/scratch/sec/ordinarySupersingularFF.tex",
-        "abelian-varieties/drafts/scratch/sec/phiLKL.tex",
-        "abelian-varieties/drafts/scratch/sec/picardExponential.tex",
-        "abelian-varieties/drafts/scratch/sec/picardVariety.tex",
-        "abelian-varieties/drafts/scratch/sec/poincareBiduality.tex",
-        "abelian-varieties/drafts/scratch/sec/poincareReducibilityAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/polarizationAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/projectivity.tex",
-        "abelian-varieties/drafts/scratch/sec/riemannRelations.tex",
-        "abelian-varieties/drafts/scratch/sec/riemannRoch.tex",
-        "abelian-varieties/drafts/scratch/sec/rigidity.tex",
-        "abelian-varieties/drafts/scratch/sec/rosatiAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/siegelModuli.tex",
-        "abelian-varieties/drafts/scratch/sec/tateIsogeny.tex",
-        "abelian-varieties/drafts/scratch/sec/theoremCube.tex",
-        "abelian-varieties/drafts/scratch/sec/theoremSquare.tex",
-        "abelian-varieties/drafts/scratch/sec/thetaGroup.tex",
-        "abelian-varieties/drafts/scratch/sec/thetaSections.tex",
-        "abelian-varieties/drafts/scratch/sec/torsionTate.tex",
-        "abelian-varieties/drafts/scratch/sec/torusAlgebraicity.tex",
-        "abelian-varieties/drafts/scratch/sec/torusCohomology.tex",
-        "abelian-varieties/drafts/scratch/sec/weilPairingAlgebraic.tex",
-        "abelian-varieties/drafts/scratch/sec/weilRH.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1175,8 +981,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch14-open.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1185,15 +990,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch09-s02.tex",
-        "abelian-varieties/drafts/scratch/ch09-s03.tex",
-        "abelian-varieties/drafts/scratch/ch10-s04.tex",
-        "abelian-varieties/drafts/scratch/ch13-s03.tex",
-        "abelian-varieties/drafts/scratch/sec/ellAdicRep.tex",
-        "abelian-varieties/drafts/scratch/sec/tateIsogeny.tex",
-        "abelian-varieties/drafts/scratch/sec/torsionTate.tex",
-        "abelian-varieties/drafts/scratch/sec/weilPairingAlgebraic.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1202,9 +999,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/chevalley-core.tex",
-        "abelian-varieties/drafts/scratch/chevalley-sec2.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1213,13 +1008,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch01-s03.tex",
-        "abelian-varieties/drafts/scratch/ch02-s02.tex",
-        "abelian-varieties/drafts/scratch/ch11-s04.tex",
-        "abelian-varieties/drafts/scratch/sec/analyticAlgebraicComparison.tex",
-        "abelian-varieties/drafts/scratch/sec/appellHumbert.tex",
-        "abelian-varieties/drafts/scratch/sec/torusCohomology.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1228,11 +1017,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch02-s01.tex",
-        "abelian-varieties/drafts/scratch/ch02-s02.tex",
-        "abelian-varieties/drafts/scratch/sec/appellHumbert.tex",
-        "abelian-varieties/drafts/scratch/sec/picardExponential.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1241,8 +1026,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch14-open.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
@@ -1251,27 +1035,12 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch14-open.tex",
-        "abelian-varieties/drafts/scratch/chevalley-core.tex"
+        "abelian-varieties/EYNTKA-abelian-varieties.tex"
       ]
     },
     {
       "source": "NateAbelianVarieties",
       "target": "NateShimuraVarieties",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "abelian-varieties/EYNTKA-abelian-varieties.tex",
-        "abelian-varieties/drafts/scratch/ch06-open.tex",
-        "abelian-varieties/drafts/scratch/ch06-s04.tex",
-        "abelian-varieties/drafts/scratch/ch14-open.tex",
-        "abelian-varieties/drafts/scratch/sec/complexMultiplication.tex"
-      ]
-    },
-    {
-      "source": "NateAbelianVarieties",
-      "target": "NateTopology",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1284,17 +1053,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r3.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/curve-lemma.tex",
-        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
-        "algebraic-geometry/drafts/scratch/frag-W3-valuative-dvr.tex",
-        "algebraic-geometry/drafts/scratch/weil-divisor-families.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1303,9 +1062,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1314,14 +1071,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
-        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1331,9 +1081,6 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/ch-II1-s05.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1344,9 +1091,8 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/limits-sec1.tex"
+        "algebraic-geometry/drafts/scratch/ch07-s02.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s03.tex"
       ]
     },
     {
@@ -1355,21 +1101,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
-        "algebraic-geometry/drafts/scratch/ch-II1-s05.tex",
-        "algebraic-geometry/drafts/scratch/ch-II2-s03.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r4.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r4.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
-        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex",
-        "algebraic-geometry/drafts/scratch/weil-divisor-families.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1379,30 +1111,15 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
-        "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r2.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r2.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r5.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r5.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-C.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-G.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-H.tex",
-        "algebraic-geometry/drafts/scratch/fix-P2.tex",
-        "algebraic-geometry/drafts/scratch/fix-P3.tex",
-        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
-        "algebraic-geometry/drafts/scratch/frag-W3-valuative-dvr.tex",
-        "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
-        "algebraic-geometry/drafts/scratch/g9-1-comparison.tex",
-        "algebraic-geometry/drafts/scratch/g9-2-formal-gaga.tex",
-        "algebraic-geometry/drafts/scratch/new-curves-fields-ch7.tex",
-        "algebraic-geometry/drafts/scratch/new-curves-fields.tex"
+        "algebraic-geometry/drafts/scratch/ch07-open.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s01.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s02.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s03.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s04.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s05.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s06.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s07.tex",
+        "algebraic-geometry/drafts/scratch/genericFreeness-proof.tex"
       ]
     },
     {
@@ -1412,9 +1129,6 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1424,6 +1138,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1434,19 +1149,9 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
-        "algebraic-geometry/drafts/scratch/bertini-irreducibility-ii.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r2.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r2.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
-        "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
-        "algebraic-geometry/drafts/scratch/frag-W5-krull-akizuki-CA.tex",
-        "algebraic-geometry/drafts/scratch/g9-1-comparison.tex",
-        "algebraic-geometry/drafts/scratch/limits-sec1.tex"
+        "algebraic-geometry/drafts/scratch/ch07-s01.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s04.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s05.tex"
       ]
     },
     {
@@ -1464,12 +1169,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
-        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
-        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1478,16 +1178,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r3.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r3.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
-        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1497,19 +1188,11 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r2.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r3.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/frag-W4-morphism-toolkit.tex",
-        "algebraic-geometry/drafts/scratch/glimpse-source.tex",
-        "algebraic-geometry/drafts/scratch/new-weil-section.tex",
-        "algebraic-geometry/drafts/scratch/sec-pointsOverFiniteFields.tex",
+        "algebraic-geometry/drafts/scratch/ch07-open.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s02.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s03.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s06.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s07.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1519,14 +1202,25 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
       "source": "NateAlgGeo",
       "target": "NateGaloisCohom",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex",
+        "algebraic-geometry/drafts/scratch/ch07-open.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s03.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s06.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s07.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateGeoRepTheory",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -1540,16 +1234,6 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r4.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r5.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
-        "algebraic-geometry/drafts/scratch/glimpse-source.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1559,18 +1243,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r2.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-G.tex",
-        "algebraic-geometry/drafts/scratch/fix-P2.tex",
-        "algebraic-geometry/drafts/scratch/frag-W1-ample-jets.tex",
-        "algebraic-geometry/drafts/scratch/g9-1-comparison.tex",
-        "algebraic-geometry/drafts/scratch/glimpse-source.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1579,21 +1252,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r4.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r4.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r5.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r5.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r6.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-G.tex",
-        "algebraic-geometry/drafts/scratch/glimpse-source.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1603,19 +1262,11 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex",
-        "algebraic-geometry/drafts/scratch/add-formal-smoothness.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r3.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r3.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r6.orig.tex",
-        "algebraic-geometry/drafts/scratch/ch7-r6.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
-        "algebraic-geometry/drafts/scratch/chevprep-G.tex",
-        "algebraic-geometry/drafts/scratch/glimpse-source.tex"
+        "algebraic-geometry/drafts/scratch/ch07-open.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s03.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s04.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s05.tex",
+        "algebraic-geometry/drafts/scratch/ch07-s07.tex"
       ]
     },
     {
@@ -1624,9 +1275,16 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-ch7-review.tex",
-        "algebraic-geometry/drafts/scratch/EYNTKA_algGeo.pre-splice.tex"
+        "algebraic-geometry/EYNTKA_algGeo.tex"
+      ]
+    },
+    {
+      "source": "NateAlgGeo",
+      "target": "NateTopology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "algebraic-geometry/EYNTKA_algGeo.tex"
       ]
     },
     {
@@ -1636,8 +1294,6 @@
       "provenance": "both",
       "citedIn": [
         "algebraic-geometry/EYNTKA_algGeo.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.pre-rsfix.tex",
-        "algebraic-geometry/drafts/scratch/ch78-assembled.tex",
         "algebraic-geometry/sections/schemes-vs-manifolds.tex"
       ]
     },
@@ -1924,8 +1580,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-topology/EYNTKA-algebraic-topology.tex",
-        "algebraic-topology/drafts/scratch/ch09-s01.tex"
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
     {
@@ -1952,10 +1607,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "algebraic-topology/EYNTKA-algebraic-topology.tex",
-        "algebraic-topology/drafts/scratch/ch07-rank-two.tex",
-        "algebraic-topology/drafts/scratch/ch09-s01.tex",
-        "algebraic-topology/drafts/scratch/ch09-s03.tex"
+        "algebraic-topology/EYNTKA-algebraic-topology.tex"
       ]
     },
     {
@@ -1965,6 +1617,15 @@
       "provenance": "auto",
       "citedIn": [
         "algebraic-topology/EYNTKA-algebraic-topology.tex"
+      ]
+    },
+    {
+      "source": "NateAnalyticNumTheory",
+      "target": "NateAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "analytic-number-theory/EYNTKA-analytic-number-theory.tex"
       ]
     },
     {
@@ -2103,8 +1764,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "category-theory/EYNTKA-category-theory.tex",
-        "category-theory/drafts/scratch/ch01-s04.tex"
+        "category-theory/EYNTKA-category-theory.tex"
       ]
     },
     {
@@ -2113,25 +1773,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "category-theory/EYNTKA-category-theory.tex",
-        "category-theory/drafts/scratch/ch01-s01.tex",
-        "category-theory/drafts/scratch/ch01-s02.tex",
-        "category-theory/drafts/scratch/ch01-s04.tex",
-        "category-theory/drafts/scratch/ch01-s05.tex",
-        "category-theory/drafts/scratch/ch02-s01.tex",
-        "category-theory/drafts/scratch/ch03-s01.tex",
-        "category-theory/drafts/scratch/ch03-s03.tex",
-        "category-theory/drafts/scratch/ch03-s04.tex",
-        "category-theory/drafts/scratch/ch04-s01.tex",
-        "category-theory/drafts/scratch/ch04-s02.tex",
-        "category-theory/drafts/scratch/ch05-s01.tex",
-        "category-theory/drafts/scratch/ch05-s02.tex",
-        "category-theory/drafts/scratch/ch05-s04.tex",
-        "category-theory/drafts/scratch/ch07-s01.tex",
-        "category-theory/drafts/scratch/ch07-s02.tex",
-        "category-theory/drafts/scratch/ch07-s04.tex",
-        "category-theory/drafts/scratch/ch08-s01.tex",
-        "category-theory/drafts/scratch/ch08-s04.tex"
+        "category-theory/EYNTKA-category-theory.tex"
       ]
     },
     {
@@ -2140,8 +1782,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "category-theory/EYNTKA-category-theory.tex",
-        "category-theory/drafts/scratch/ch08-s04.tex"
+        "category-theory/EYNTKA-category-theory.tex"
       ]
     },
     {
@@ -2150,8 +1791,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "category-theory/EYNTKA-category-theory.tex",
-        "category-theory/drafts/scratch/ch07-s04.tex"
+        "category-theory/EYNTKA-category-theory.tex"
       ]
     },
     {
@@ -2445,6 +2085,15 @@
     {
       "source": "NateCommAlg",
       "target": "NateFuncAnalysis",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "commutative-algebra/EYNTKA-commutative-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateCommAlg",
+      "target": "NateGaloisCohom",
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
@@ -3035,15 +2684,6 @@
     },
     {
       "source": "NateCStarAlgebras",
-      "target": "NateCommAlg",
-      "type": "reference",
-      "provenance": "auto",
-      "citedIn": [
-        "cstar-algebras/drafts/scratch/ch03-s04.tex"
-      ]
-    },
-    {
-      "source": "NateCStarAlgebras",
       "target": "NateCoreAlgebra",
       "type": "reference",
       "provenance": "auto",
@@ -3066,18 +2706,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "cstar-algebras/EYNTKA-cstar-algebras.tex",
-        "cstar-algebras/drafts/scratch/ch01-open.tex",
-        "cstar-algebras/drafts/scratch/ch01-s01.tex",
-        "cstar-algebras/drafts/scratch/ch01-s02.tex",
-        "cstar-algebras/drafts/scratch/ch02-s02.tex",
-        "cstar-algebras/drafts/scratch/ch03-s01.tex",
-        "cstar-algebras/drafts/scratch/ch04-s01.tex",
-        "cstar-algebras/drafts/scratch/ch04-s02.tex",
-        "cstar-algebras/drafts/scratch/ch04-s03.tex",
-        "cstar-algebras/drafts/scratch/ch04-s04.tex",
-        "cstar-algebras/drafts/scratch/ch05-s02.tex",
-        "cstar-algebras/drafts/scratch/ch05-s03.tex"
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
       ]
     },
     {
@@ -3086,8 +2715,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "cstar-algebras/EYNTKA-cstar-algebras.tex",
-        "cstar-algebras/drafts/scratch/ch03-s04.tex"
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
       ]
     },
     {
@@ -3114,9 +2742,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "cstar-algebras/EYNTKA-cstar-algebras.tex",
-        "cstar-algebras/drafts/scratch/ch04-s01.tex",
-        "cstar-algebras/drafts/scratch/ch04-s02.tex"
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
       ]
     },
     {
@@ -3125,11 +2751,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "cstar-algebras/EYNTKA-cstar-algebras.tex",
-        "cstar-algebras/drafts/scratch/ch02-s02.tex",
-        "cstar-algebras/drafts/scratch/ch03-s01.tex",
-        "cstar-algebras/drafts/scratch/ch03-s02.tex",
-        "cstar-algebras/drafts/scratch/ch03-s03.tex"
+        "cstar-algebras/EYNTKA-cstar-algebras.tex"
       ]
     },
     {
@@ -3145,30 +2767,13 @@
     {
       "source": "NateDiffTop",
       "target": "NateAlgTop",
-      "type": "prereq",
+      "type": "coreq",
       "provenance": "both",
       "citedIn": [
         "differential-topology/EYNTKA-differential-topology.tex",
         "differential-topology/drafts/ch10-opening.tex",
         "differential-topology/drafts/ch9-opening.tex",
-        "differential-topology/drafts/scratch/ch10-s01.tex",
-        "differential-topology/drafts/scratch/ch10-s02.tex",
-        "differential-topology/drafts/scratch/ch10-s03.tex",
-        "differential-topology/drafts/scratch/ch10-s05.tex",
-        "differential-topology/drafts/scratch/ch11-body.tex",
-        "differential-topology/drafts/scratch/ch13-s04.tex",
-        "differential-topology/drafts/scratch/ch14-s04.tex",
-        "differential-topology/drafts/scratch/ch14-s05.tex",
-        "differential-topology/drafts/scratch/ch14-s06.tex",
-        "differential-topology/drafts/scratch/ch4-s02.tex",
-        "differential-topology/drafts/scratch/ch4-source-seeds.tex",
-        "differential-topology/drafts/scratch/ch8-s02.tex",
-        "differential-topology/drafts/scratch/ch8-s04.tex",
-        "differential-topology/drafts/scratch/ch8-s05.tex",
-        "differential-topology/drafts/scratch/ch8-s06.tex",
-        "differential-topology/drafts/scratch/ch9-s04.tex",
-        "differential-topology/drafts/scratch/ch9-s05.tex",
-        "differential-topology/drafts/scratch/ch9-s06.tex"
+        "differential-topology/drafts/scratch/ch14-bonus-lefschetz.tex"
       ]
     },
     {
@@ -3197,7 +2802,7 @@
       "citedIn": [
         "differential-topology/EYNTKA-differential-topology.tex",
         "differential-topology/drafts/ch12-opening.tex",
-        "differential-topology/drafts/scratch/ch12-s03.tex"
+        "differential-topology/drafts/scratch/ch14-bonus-lefschetz.tex"
       ]
     },
     {
@@ -3207,6 +2812,16 @@
       "provenance": "auto",
       "citedIn": [
         "differential-topology/EYNTKA-differential-topology.tex"
+      ]
+    },
+    {
+      "source": "NateDiffTop",
+      "target": "NateEtaleCohomology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "differential-topology/EYNTKA-differential-topology.tex",
+        "differential-topology/drafts/scratch/ch14-bonus-lefschetz.tex"
       ]
     },
     {
@@ -3242,11 +2857,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "differential-topology/EYNTKA-differential-topology.tex",
-        "differential-topology/drafts/scratch/ch4-open.tex",
-        "differential-topology/drafts/scratch/ch4-s01.tex",
-        "differential-topology/drafts/scratch/ch4-s03.tex",
-        "differential-topology/drafts/scratch/ch4-s04.tex"
+        "differential-topology/EYNTKA-differential-topology.tex"
       ]
     },
     {
@@ -3264,9 +2875,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "differential-topology/EYNTKA-differential-topology.tex",
-        "differential-topology/drafts/scratch/ch13-s01.tex",
-        "differential-topology/drafts/scratch/ch13-s05.tex"
+        "differential-topology/EYNTKA-differential-topology.tex"
       ]
     },
     {
@@ -3276,8 +2885,7 @@
       "provenance": "auto",
       "citedIn": [
         "differential-topology/EYNTKA-differential-topology.tex",
-        "differential-topology/drafts/intro-rewrite.tex",
-        "differential-topology/drafts/scratch/ch8-s06.tex"
+        "differential-topology/drafts/intro-rewrite.tex"
       ]
     },
     {
@@ -3286,9 +2894,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "differential-topology/EYNTKA-differential-topology.tex",
-        "differential-topology/drafts/scratch/ch4-s01.tex",
-        "differential-topology/drafts/scratch/ch4-s02.tex"
+        "differential-topology/EYNTKA-differential-topology.tex"
       ]
     },
     {
@@ -3324,14 +2930,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "elementary-analysis/EYNTKA-elementary-analysis.tex",
-        "elementary-analysis/drafts/scratch/ch02-consolidated/ch02-s01.tex",
-        "elementary-analysis/drafts/scratch/ch02-consolidated/ch02-s04.tex",
-        "elementary-analysis/drafts/scratch/ch02-consolidated/ch02-s06.tex",
-        "elementary-analysis/drafts/scratch/ch03-consolidated/ch03-s02.tex",
-        "elementary-analysis/drafts/scratch/ch03-snapshot/ch03-s02.tex",
-        "elementary-analysis/drafts/scratch/ch04-consolidated/ch04-s05.tex",
-        "elementary-analysis/drafts/scratch/ch04-snapshot/ch04-s05.tex"
+        "elementary-analysis/EYNTKA-elementary-analysis.tex"
       ]
     },
     {
@@ -3469,8 +3068,14 @@
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/ch06-snapshot/cohomologyOfCurve.tex",
         "etale-cohomology/drafts/ch06-snapshot/divisorsAndPicardOfCurve.tex",
-        "etale-cohomology/drafts/scratch/ch06-s01.tex",
-        "etale-cohomology/drafts/scratch/ch06-s03.tex"
+        "etale-cohomology/drafts/scratch/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/ch14-s01.tex",
+        "etale-cohomology/drafts/scratch/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/closing-whatnext.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s06.tex"
       ]
     },
     {
@@ -3487,50 +3092,95 @@
         "etale-cohomology/drafts/ch07-snapshot/curvesOverSeparablyClosed.tex",
         "etale-cohomology/drafts/ch07-snapshot/limitsEtaleCohomology.tex",
         "etale-cohomology/drafts/ch07-snapshot/torsionConstructibleSheaves.tex",
-        "etale-cohomology/drafts/ch09-snapshot/affineVanishing.tex",
-        "etale-cohomology/drafts/ch09-snapshot/baseChangeMorphism.tex",
-        "etale-cohomology/drafts/ch09-snapshot/compactSupport.tex",
-        "etale-cohomology/drafts/ch09-snapshot/finitenessProperMorphisms.tex",
-        "etale-cohomology/drafts/ch09-snapshot/henselianBase.tex",
-        "etale-cohomology/drafts/ch09-snapshot/properBaseChangeProof.tex",
-        "etale-cohomology/drafts/scratch/add-ch1.tex",
-        "etale-cohomology/drafts/scratch/add-ch2.tex",
-        "etale-cohomology/drafts/scratch/add-ch3.tex",
-        "etale-cohomology/drafts/scratch/add-ch4.tex",
-        "etale-cohomology/drafts/scratch/ch01-s01.tex",
-        "etale-cohomology/drafts/scratch/ch01-s03.tex",
-        "etale-cohomology/drafts/scratch/ch01-s04.tex",
-        "etale-cohomology/drafts/scratch/ch01-s05-henselian-pairs.tex",
-        "etale-cohomology/drafts/scratch/ch02-s01.tex",
-        "etale-cohomology/drafts/scratch/ch03-s01.tex",
-        "etale-cohomology/drafts/scratch/ch03-s02.tex",
-        "etale-cohomology/drafts/scratch/ch03-s03.tex",
-        "etale-cohomology/drafts/scratch/ch03-s04.tex",
-        "etale-cohomology/drafts/scratch/ch03-s05.tex",
-        "etale-cohomology/drafts/scratch/ch04-s01.tex",
-        "etale-cohomology/drafts/scratch/ch04-s02.tex",
-        "etale-cohomology/drafts/scratch/ch04-s04.tex",
-        "etale-cohomology/drafts/scratch/ch04-s05.tex",
-        "etale-cohomology/drafts/scratch/ch06-s01.tex",
-        "etale-cohomology/drafts/scratch/ch06-s02.tex",
-        "etale-cohomology/drafts/scratch/ch06-s03.tex",
-        "etale-cohomology/drafts/scratch/ch06-s04.tex",
-        "etale-cohomology/drafts/scratch/ch07-s01.tex",
-        "etale-cohomology/drafts/scratch/ch07-s02.tex",
-        "etale-cohomology/drafts/scratch/ch07-s03.tex",
-        "etale-cohomology/drafts/scratch/ch07-s04.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s01.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s02.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s03.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s04.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s05.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s06.tex",
-        "etale-cohomology/drafts/scratch/ch09-s01.tex",
-        "etale-cohomology/drafts/scratch/ch09-s02.tex",
-        "etale-cohomology/drafts/scratch/ch09-s03.tex",
-        "etale-cohomology/drafts/scratch/ch09-s04.tex",
-        "etale-cohomology/drafts/scratch/ch09-s05.tex",
-        "etale-cohomology/drafts/scratch/ch09-s06.tex"
+        "etale-cohomology/drafts/ch09-held-supplies.tex",
+        "etale-cohomology/drafts/scratch/ch10-open.tex",
+        "etale-cohomology/drafts/scratch/ch10-s01.tex",
+        "etale-cohomology/drafts/scratch/ch10-s02.tex",
+        "etale-cohomology/drafts/scratch/ch10-s03.tex",
+        "etale-cohomology/drafts/scratch/ch10-s05.tex",
+        "etale-cohomology/drafts/scratch/ch10-s06.tex",
+        "etale-cohomology/drafts/scratch/ch10-s07.tex",
+        "etale-cohomology/drafts/scratch/ch11-s01.tex",
+        "etale-cohomology/drafts/scratch/ch11-s02.tex",
+        "etale-cohomology/drafts/scratch/ch11-s03.tex",
+        "etale-cohomology/drafts/scratch/ch11-s04.tex",
+        "etale-cohomology/drafts/scratch/ch11-s05.tex",
+        "etale-cohomology/drafts/scratch/ch11-s06.tex",
+        "etale-cohomology/drafts/scratch/ch11-s07.tex",
+        "etale-cohomology/drafts/scratch/ch12-s01.tex",
+        "etale-cohomology/drafts/scratch/ch12-s02.tex",
+        "etale-cohomology/drafts/scratch/ch12-s03.tex",
+        "etale-cohomology/drafts/scratch/ch12-s04.tex",
+        "etale-cohomology/drafts/scratch/ch12-s05.tex",
+        "etale-cohomology/drafts/scratch/ch12-s06.tex",
+        "etale-cohomology/drafts/scratch/ch13-s05.tex",
+        "etale-cohomology/drafts/scratch/ch13-s06.tex",
+        "etale-cohomology/drafts/scratch/ch13-s07.tex",
+        "etale-cohomology/drafts/scratch/ch14-s01.tex",
+        "etale-cohomology/drafts/scratch/ch14-s02.tex",
+        "etale-cohomology/drafts/scratch/ch14-s04.tex",
+        "etale-cohomology/drafts/scratch/ch14-s05.tex",
+        "etale-cohomology/drafts/scratch/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/ch15-s02.tex",
+        "etale-cohomology/drafts/scratch/ch15-s03.tex",
+        "etale-cohomology/drafts/scratch/ch15-s04.tex",
+        "etale-cohomology/drafts/scratch/ch15-s05.tex",
+        "etale-cohomology/drafts/scratch/ch15-s06.tex",
+        "etale-cohomology/drafts/scratch/ch15-s07.tex",
+        "etale-cohomology/drafts/scratch/ch16-s01.tex",
+        "etale-cohomology/drafts/scratch/ch16-s03.tex",
+        "etale-cohomology/drafts/scratch/ch16-s05.tex",
+        "etale-cohomology/drafts/scratch/ch16-s06.tex",
+        "etale-cohomology/drafts/scratch/ch16-s07.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex",
+        "etale-cohomology/drafts/scratch/part4-opener.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s07.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateAlgNumberTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/ch15-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s06.tex"
       ]
     },
     {
@@ -3541,21 +3191,26 @@
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/armA/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/armA2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/armB/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/armB2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-A1/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-A2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-A3/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-B1/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-B2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-B3/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-C1/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-C2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-C3/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/ch02-s04.tex",
-        "etale-cohomology/drafts/scratch/ch05-s04.tex"
+        "etale-cohomology/drafts/scratch/ch10-s04.tex",
+        "etale-cohomology/drafts/scratch/ch10-s06.tex",
+        "etale-cohomology/drafts/scratch/ch10-s07.tex",
+        "etale-cohomology/drafts/scratch/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s07.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateAnalyticNumTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/closing-whatnext.tex"
       ]
     },
     {
@@ -3564,8 +3219,35 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateCFT",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
-        "etale-cohomology/drafts/scratch/add-ch3.tex"
+        "etale-cohomology/drafts/scratch/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s06.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateClassicalAlgGeo",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/ch13-s06.tex",
+        "etale-cohomology/drafts/scratch/ch15-s02.tex",
+        "etale-cohomology/drafts/scratch/ch15-s05.tex",
+        "etale-cohomology/drafts/scratch/ch15-s07.tex",
+        "etale-cohomology/drafts/scratch/ch16-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s07.tex"
       ]
     },
     {
@@ -3579,29 +3261,68 @@
         "etale-cohomology/drafts/ch07-snapshot/cdTwiceDimension.tex",
         "etale-cohomology/drafts/ch07-snapshot/curvesOverSeparablyClosed.tex",
         "etale-cohomology/drafts/ch07-snapshot/torsionConstructibleSheaves.tex",
-        "etale-cohomology/drafts/ch09-snapshot/affineVanishing.tex",
-        "etale-cohomology/drafts/ch09-snapshot/compactSupport.tex",
-        "etale-cohomology/drafts/ch09-snapshot/finitenessProperMorphisms.tex",
-        "etale-cohomology/drafts/ch09-snapshot/henselianBase.tex",
-        "etale-cohomology/drafts/ch09-snapshot/properBaseChangeProof.tex",
-        "etale-cohomology/drafts/scratch/add-ch1.tex",
-        "etale-cohomology/drafts/scratch/add-ch3.tex",
-        "etale-cohomology/drafts/scratch/add-ch4.tex",
-        "etale-cohomology/drafts/scratch/ch01-s05-henselian-pairs.tex",
-        "etale-cohomology/drafts/scratch/ch06-s01.tex",
-        "etale-cohomology/drafts/scratch/ch07-s02.tex",
-        "etale-cohomology/drafts/scratch/ch07-s03.tex",
-        "etale-cohomology/drafts/scratch/ch07-s04.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s02.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s03.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s04.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s05.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s06.tex",
-        "etale-cohomology/drafts/scratch/ch09-s02.tex",
-        "etale-cohomology/drafts/scratch/ch09-s03.tex",
-        "etale-cohomology/drafts/scratch/ch09-s04.tex",
-        "etale-cohomology/drafts/scratch/ch09-s05.tex",
-        "etale-cohomology/drafts/scratch/ch09-s06.tex"
+        "etale-cohomology/drafts/ch09-held-supplies.tex",
+        "etale-cohomology/drafts/scratch/ch10-s01.tex",
+        "etale-cohomology/drafts/scratch/ch10-s02.tex",
+        "etale-cohomology/drafts/scratch/ch10-s03.tex",
+        "etale-cohomology/drafts/scratch/ch10-s05.tex",
+        "etale-cohomology/drafts/scratch/ch11-s02.tex",
+        "etale-cohomology/drafts/scratch/ch11-s04.tex",
+        "etale-cohomology/drafts/scratch/ch11-s06.tex",
+        "etale-cohomology/drafts/scratch/ch12-s02.tex",
+        "etale-cohomology/drafts/scratch/ch12-s03.tex",
+        "etale-cohomology/drafts/scratch/ch12-s04.tex",
+        "etale-cohomology/drafts/scratch/ch12-s05.tex",
+        "etale-cohomology/drafts/scratch/ch12-s06.tex",
+        "etale-cohomology/drafts/scratch/ch13-s01.tex",
+        "etale-cohomology/drafts/scratch/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/ch13-s03.tex",
+        "etale-cohomology/drafts/scratch/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/ch13-s05.tex",
+        "etale-cohomology/drafts/scratch/ch13-s07.tex",
+        "etale-cohomology/drafts/scratch/ch14-s02.tex",
+        "etale-cohomology/drafts/scratch/ch14-s05.tex",
+        "etale-cohomology/drafts/scratch/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/ch15-s02.tex",
+        "etale-cohomology/drafts/scratch/ch15-s03.tex",
+        "etale-cohomology/drafts/scratch/ch15-s05.tex",
+        "etale-cohomology/drafts/scratch/ch15-s06.tex",
+        "etale-cohomology/drafts/scratch/ch15-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s06.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateComplexAnalyticGeometry",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex"
       ]
     },
     {
@@ -3613,13 +3334,53 @@
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/ch07-snapshot/cdTwiceDimension.tex",
         "etale-cohomology/drafts/ch07-snapshot/torsionConstructibleSheaves.tex",
-        "etale-cohomology/drafts/ch09-snapshot/affineVanishing.tex",
-        "etale-cohomology/drafts/scratch/add-ch2.tex",
-        "etale-cohomology/drafts/scratch/ch07-s01.tex",
-        "etale-cohomology/drafts/scratch/ch07-s02.tex",
-        "etale-cohomology/drafts/scratch/ch07-s04.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s06.tex",
-        "etale-cohomology/drafts/scratch/ch09-s06.tex"
+        "etale-cohomology/drafts/ch09-held-supplies.tex",
+        "etale-cohomology/drafts/scratch/ch12-s01.tex",
+        "etale-cohomology/drafts/scratch/ch13-s01.tex",
+        "etale-cohomology/drafts/scratch/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/ch13-s03.tex",
+        "etale-cohomology/drafts/scratch/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/ch13-s05.tex",
+        "etale-cohomology/drafts/scratch/ch13-s06.tex",
+        "etale-cohomology/drafts/scratch/ch14-s03.tex",
+        "etale-cohomology/drafts/scratch/ch14-s04.tex",
+        "etale-cohomology/drafts/scratch/ch14-s05.tex",
+        "etale-cohomology/drafts/scratch/ch15-s02.tex",
+        "etale-cohomology/drafts/scratch/ch15-s04.tex",
+        "etale-cohomology/drafts/scratch/ch15-s05.tex",
+        "etale-cohomology/drafts/scratch/ch16-s02.tex",
+        "etale-cohomology/drafts/scratch/ch16-s03.tex",
+        "etale-cohomology/drafts/scratch/ch16-s05.tex",
+        "etale-cohomology/drafts/scratch/ch16-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s05.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateDiffTop",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/ch10-s03.tex",
+        "etale-cohomology/drafts/scratch/ch10-s06.tex",
+        "etale-cohomology/drafts/scratch/ch10-s07.tex",
+        "etale-cohomology/drafts/scratch/ch14-s02.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s07.tex"
       ]
     },
     {
@@ -3629,7 +3390,11 @@
       "provenance": "auto",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
-        "etale-cohomology/drafts/scratch/ch02-s04.tex"
+        "etale-cohomology/drafts/scratch/ch13-s06.tex",
+        "etale-cohomology/drafts/scratch/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/closing-whatnext.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s06.tex"
       ]
     },
     {
@@ -3643,65 +3408,34 @@
         "etale-cohomology/drafts/ch07-snapshot/cdTwiceDimension.tex",
         "etale-cohomology/drafts/ch07-snapshot/curvesOverSeparablyClosed.tex",
         "etale-cohomology/drafts/ch07-snapshot/limitsEtaleCohomology.tex",
-        "etale-cohomology/drafts/ch09-snapshot/affineVanishing.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s01.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s02.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/armA/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/armA/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/armA/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/armA2/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/armA2/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/armA2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/armB/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/armB/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/armB/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/armB2/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/armB2/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/armB2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-A1/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-A1/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-A1/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-A2/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-A2/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-A2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-A3/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-A3/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-A3/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-B1/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-B1/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-B1/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-B2/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-B2/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-B2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-B3/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-B3/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-B3/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-C1/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-C1/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-C1/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-C2/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-C2/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-C2/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/bench-C3/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/bench-C3/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/bench-C3/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/ch02-s03.tex",
-        "etale-cohomology/drafts/scratch/ch03-s05.tex",
-        "etale-cohomology/drafts/scratch/ch04-open.tex",
-        "etale-cohomology/drafts/scratch/ch04-s02.tex",
-        "etale-cohomology/drafts/scratch/ch04-s03.tex",
-        "etale-cohomology/drafts/scratch/ch04-s04.tex",
-        "etale-cohomology/drafts/scratch/ch04-s05.tex",
-        "etale-cohomology/drafts/scratch/ch05-s01.tex",
-        "etale-cohomology/drafts/scratch/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/ch05-s04.tex",
-        "etale-cohomology/drafts/scratch/ch06-s02.tex",
-        "etale-cohomology/drafts/scratch/ch07-s01.tex",
-        "etale-cohomology/drafts/scratch/ch07-s03.tex",
-        "etale-cohomology/drafts/scratch/ch07-s04.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s06.tex",
-        "etale-cohomology/drafts/scratch/ch09-s06.tex"
+        "etale-cohomology/drafts/scratch/ch10-s04.tex",
+        "etale-cohomology/drafts/scratch/ch11-s02.tex",
+        "etale-cohomology/drafts/scratch/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/ch16-s05.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s04.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateHodgeTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/ch12-s06.tex",
+        "etale-cohomology/drafts/scratch/closing-whatnext.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s07.tex"
       ]
     },
     {
@@ -3713,24 +3447,68 @@
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/ch07-snapshot/curvesOverSeparablyClosed.tex",
         "etale-cohomology/drafts/ch07-snapshot/limitsEtaleCohomology.tex",
-        "etale-cohomology/drafts/ch09-snapshot/baseChangeMorphism.tex",
-        "etale-cohomology/drafts/ch09-snapshot/compactSupport.tex",
-        "etale-cohomology/drafts/ch09-snapshot/properBaseChangeProof.tex",
-        "etale-cohomology/drafts/scratch/add-ch3.tex",
-        "etale-cohomology/drafts/scratch/add-ch4.tex",
-        "etale-cohomology/drafts/scratch/ch04-open.tex",
-        "etale-cohomology/drafts/scratch/ch04-s01.tex",
-        "etale-cohomology/drafts/scratch/ch04-s02.tex",
-        "etale-cohomology/drafts/scratch/ch04-s03.tex",
-        "etale-cohomology/drafts/scratch/ch04-s05.tex",
-        "etale-cohomology/drafts/scratch/ch07-s01.tex",
-        "etale-cohomology/drafts/scratch/ch07-s03.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s01.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s03.tex",
-        "etale-cohomology/drafts/scratch/ch09-run2-pre-repair/ch09-s05.tex",
-        "etale-cohomology/drafts/scratch/ch09-s01.tex",
-        "etale-cohomology/drafts/scratch/ch09-s03.tex",
-        "etale-cohomology/drafts/scratch/ch09-s05.tex"
+        "etale-cohomology/drafts/ch09-held-supplies.tex",
+        "etale-cohomology/drafts/scratch/ch10-s01.tex",
+        "etale-cohomology/drafts/scratch/ch10-s02.tex",
+        "etale-cohomology/drafts/scratch/ch10-s03.tex",
+        "etale-cohomology/drafts/scratch/ch10-s04.tex",
+        "etale-cohomology/drafts/scratch/ch10-s06.tex",
+        "etale-cohomology/drafts/scratch/ch10-s07.tex",
+        "etale-cohomology/drafts/scratch/ch11-s01.tex",
+        "etale-cohomology/drafts/scratch/ch11-s02.tex",
+        "etale-cohomology/drafts/scratch/ch11-s03.tex",
+        "etale-cohomology/drafts/scratch/ch11-s04.tex",
+        "etale-cohomology/drafts/scratch/ch11-s06.tex",
+        "etale-cohomology/drafts/scratch/ch12-s01.tex",
+        "etale-cohomology/drafts/scratch/ch12-s02.tex",
+        "etale-cohomology/drafts/scratch/ch12-s04.tex",
+        "etale-cohomology/drafts/scratch/ch13-s01.tex",
+        "etale-cohomology/drafts/scratch/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/ch13-s03.tex",
+        "etale-cohomology/drafts/scratch/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/ch14-s02.tex",
+        "etale-cohomology/drafts/scratch/ch14-s03.tex",
+        "etale-cohomology/drafts/scratch/ch14-s04.tex",
+        "etale-cohomology/drafts/scratch/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/ch15-s03.tex",
+        "etale-cohomology/drafts/scratch/ch15-s07.tex",
+        "etale-cohomology/drafts/scratch/ch16-s06.tex",
+        "etale-cohomology/drafts/scratch/closing-whatnext.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch12/ch12-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch10-s07.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair/ch11-s06.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateIntersectionTheory",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/closing-whatnext.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex"
       ]
     },
     {
@@ -3740,7 +3518,23 @@
       "provenance": "both",
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
-        "etale-cohomology/drafts/scratch/ch01-s02.tex"
+        "etale-cohomology/drafts/scratch/ch13-s01.tex",
+        "etale-cohomology/drafts/scratch/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/ch13-s03.tex",
+        "etale-cohomology/drafts/scratch/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/ch13-s05.tex",
+        "etale-cohomology/drafts/scratch/ch14-s05.tex",
+        "etale-cohomology/drafts/scratch/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/ch16-s02.tex",
+        "etale-cohomology/drafts/scratch/ch16-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s01.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s02.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s03.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s04.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s05.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch14/ch14-s06.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch15/ch15-s01.tex"
       ]
     },
     {
@@ -3751,15 +3545,9 @@
       "citedIn": [
         "etale-cohomology/EYNTKA-etale-cohomology.tex",
         "etale-cohomology/drafts/gate-snapshot/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/add-ch4.tex",
-        "etale-cohomology/drafts/scratch/armA/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/armB/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/armB2/ch05-s02.tex",
-        "etale-cohomology/drafts/scratch/ch03-open.tex",
-        "etale-cohomology/drafts/scratch/ch03-s01.tex",
-        "etale-cohomology/drafts/scratch/ch03-s02.tex",
-        "etale-cohomology/drafts/scratch/ch03-s05.tex",
-        "etale-cohomology/drafts/scratch/ch04-s04.tex"
+        "etale-cohomology/drafts/scratch/ch13-s05.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex",
+        "etale-cohomology/drafts/scratch/pre-repair-ch13/ch13-s05.tex"
       ]
     },
     {
@@ -3768,7 +3556,19 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "etale-cohomology/EYNTKA-etale-cohomology.tex"
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex"
+      ]
+    },
+    {
+      "source": "NateEtaleCohomology",
+      "target": "NateUnstableMotivic",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "etale-cohomology/EYNTKA-etale-cohomology.tex",
+        "etale-cohomology/drafts/scratch/closing-whatnext.tex",
+        "etale-cohomology/drafts/scratch/front-intro.tex"
       ]
     },
     {
@@ -3831,8 +3631,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "functional-analysis/EYNTKA-functional-analysis.tex",
-        "functional-analysis/drafts/scratch/unbounded-s5.tex"
+        "functional-analysis/EYNTKA-functional-analysis.tex"
       ]
     },
     {
@@ -4222,8 +4021,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "harmonic-analysis/EYNTKA-harmonic-analysis.tex",
-        "harmonic-analysis/drafts/scratch/rellich-bessel.tex"
+        "harmonic-analysis/EYNTKA-harmonic-analysis.tex"
       ]
     },
     {
@@ -4270,8 +4068,6 @@
       "provenance": "both",
       "citedIn": [
         "higher-category-theory/EYNTKA-higher-category-theory.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s06.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s06.tex",
         "higher-category-theory/drafts/scratch/ch01-open.tex",
         "higher-category-theory/drafts/scratch/ch01-s02.tex",
         "higher-category-theory/drafts/scratch/ch01-s04.tex",
@@ -4308,22 +4104,6 @@
       "provenance": "both",
       "citedIn": [
         "higher-category-theory/EYNTKA-higher-category-theory.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s01.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s02.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s03.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s04.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s05.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s06.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s07.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s08.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s01.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s02.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s03.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s04.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s05.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s06.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s07.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s08.tex",
         "higher-category-theory/drafts/scratch/ch01-open.tex",
         "higher-category-theory/drafts/scratch/ch01-s01.tex",
         "higher-category-theory/drafts/scratch/ch01-s02.tex",
@@ -4391,8 +4171,6 @@
       "provenance": "both",
       "citedIn": [
         "higher-category-theory/EYNTKA-higher-category-theory.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-post-phaseE/ch07-s07.tex",
-        "higher-category-theory/drafts/scratch/backup-2026-11-02-predraft-repairs/ch07-s07.tex",
         "higher-category-theory/drafts/scratch/ch01-s03.tex",
         "higher-category-theory/drafts/scratch/ch02-open.tex",
         "higher-category-theory/drafts/scratch/ch02-s04.tex",
@@ -4429,11 +4207,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch04-s04.tex",
-        "hodge-theory/drafts/scratch/ch05-s02.tex",
-        "hodge-theory/drafts/scratch/ch05-s03.tex",
-        "hodge-theory/drafts/scratch/ch05-s04.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4442,22 +4216,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch02-open.tex",
-        "hodge-theory/drafts/scratch/ch02-s01.tex",
-        "hodge-theory/drafts/scratch/ch02-s03.tex",
-        "hodge-theory/drafts/scratch/ch02-s04.tex",
-        "hodge-theory/drafts/scratch/ch04-s03.tex",
-        "hodge-theory/drafts/scratch/ch05-s03.tex",
-        "hodge-theory/drafts/scratch/ch05-s04.tex",
-        "hodge-theory/drafts/scratch/ch06-s03.tex",
-        "hodge-theory/drafts/scratch/ch07-s01.tex",
-        "hodge-theory/drafts/scratch/ch07-s04.tex",
-        "hodge-theory/drafts/scratch/ch08-s04.tex",
-        "hodge-theory/drafts/scratch/ch09-s02.tex",
-        "hodge-theory/drafts/scratch/ch10-s01.tex",
-        "hodge-theory/drafts/scratch/ch10-s02.tex",
-        "hodge-theory/drafts/scratch/ch10-s04.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4466,17 +4225,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch02-s04.tex",
-        "hodge-theory/drafts/scratch/ch06-s02.tex",
-        "hodge-theory/drafts/scratch/ch06-s03.tex",
-        "hodge-theory/drafts/scratch/ch06-s04.tex",
-        "hodge-theory/drafts/scratch/ch07-s01.tex",
-        "hodge-theory/drafts/scratch/ch07-s04.tex",
-        "hodge-theory/drafts/scratch/ch09-s02.tex",
-        "hodge-theory/drafts/scratch/ch09-s03.tex",
-        "hodge-theory/drafts/scratch/ch10-s01.tex",
-        "hodge-theory/drafts/scratch/ch10-s02.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4494,12 +4243,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch02-s01.tex",
-        "hodge-theory/drafts/scratch/ch02-s02.tex",
-        "hodge-theory/drafts/scratch/ch02-s04.tex",
-        "hodge-theory/drafts/scratch/ch08-s01.tex",
-        "hodge-theory/drafts/scratch/ch09-s04.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4517,17 +4261,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch02-s01.tex",
-        "hodge-theory/drafts/scratch/ch06-s03.tex",
-        "hodge-theory/drafts/scratch/ch06-s04.tex",
-        "hodge-theory/drafts/scratch/ch07-s01.tex",
-        "hodge-theory/drafts/scratch/ch07-s02.tex",
-        "hodge-theory/drafts/scratch/ch07-s03.tex",
-        "hodge-theory/drafts/scratch/ch07-s04.tex",
-        "hodge-theory/drafts/scratch/ch08-s04.tex",
-        "hodge-theory/drafts/scratch/ch09-s02.tex",
-        "hodge-theory/drafts/scratch/ch10-s02.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4536,12 +4270,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch05-s04.tex",
-        "hodge-theory/drafts/scratch/ch06-s04.tex",
-        "hodge-theory/drafts/scratch/ch07-s01.tex",
-        "hodge-theory/drafts/scratch/ch07-s03.tex",
-        "hodge-theory/drafts/scratch/ch09-s04.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4550,8 +4279,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch08-s02.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4560,13 +4288,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch02-s04.tex",
-        "hodge-theory/drafts/scratch/ch09-s02.tex",
-        "hodge-theory/drafts/scratch/ch09-s03.tex",
-        "hodge-theory/drafts/scratch/ch10-s01.tex",
-        "hodge-theory/drafts/scratch/ch10-s02.tex",
-        "hodge-theory/drafts/scratch/ch10-s03.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4575,8 +4297,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch11-open.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4594,12 +4315,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch05-s03.tex",
-        "hodge-theory/drafts/scratch/ch06-s01.tex",
-        "hodge-theory/drafts/scratch/ch06-s02.tex",
-        "hodge-theory/drafts/scratch/ch08-s01.tex",
-        "hodge-theory/drafts/scratch/ch08-s04.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4608,8 +4324,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch07-s02.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4627,15 +4342,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch03-s02.tex",
-        "hodge-theory/drafts/scratch/ch03-s03.tex",
-        "hodge-theory/drafts/scratch/ch04-open.tex",
-        "hodge-theory/drafts/scratch/ch04-s01.tex",
-        "hodge-theory/drafts/scratch/ch04-s02.tex",
-        "hodge-theory/drafts/scratch/ch07-s01.tex",
-        "hodge-theory/drafts/scratch/ch07-s02.tex",
-        "hodge-theory/drafts/scratch/ch08-s01.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4644,9 +4351,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "hodge-theory/EYNTKA-hodge-theory.tex",
-        "hodge-theory/drafts/scratch/ch08-s02.tex",
-        "hodge-theory/drafts/scratch/ch08-s04.tex"
+        "hodge-theory/EYNTKA-hodge-theory.tex"
       ]
     },
     {
@@ -4655,8 +4360,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4665,9 +4369,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/ch3-s2-derived.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4676,8 +4378,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4686,8 +4387,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4696,8 +4396,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4706,8 +4405,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4716,8 +4414,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4726,8 +4423,16 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
+      ]
+    },
+    {
+      "source": "NateHomologicalAlg",
+      "target": "NateEtaleCohomology",
+      "type": "reference",
+      "provenance": "auto",
+      "citedIn": [
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4736,8 +4441,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4746,10 +4450,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/ch05u-s04.tex",
-        "homological-algebra/drafts/scratch/ch3-s1-triangulated.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4758,8 +4459,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "homological-algebra/EYNTKA-homological-algebra.tex",
-        "homological-algebra/drafts/scratch/d9/HEAD-copy.tex"
+        "homological-algebra/EYNTKA-homological-algebra.tex"
       ]
     },
     {
@@ -4777,10 +4477,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "intersection-theory/EYNTKA-intersection-theory.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch03-s01.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch05-s04.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch06-s02.tex"
+        "intersection-theory/EYNTKA-intersection-theory.tex"
       ]
     },
     {
@@ -4789,9 +4486,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "intersection-theory/EYNTKA-intersection-theory.tex",
-        "intersection-theory/drafts/scratch/ch07-s02.tex",
-        "intersection-theory/drafts/scratch/ch07-s03.tex"
+        "intersection-theory/EYNTKA-intersection-theory.tex"
       ]
     },
     {
@@ -4800,13 +4495,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "intersection-theory/EYNTKA-intersection-theory.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch03-s01.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch03-s02.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch03-s03.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch06-s02.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch07-s01-body.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch07-s01-moved.tex"
+        "intersection-theory/EYNTKA-intersection-theory.tex"
       ]
     },
     {
@@ -4815,10 +4504,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "intersection-theory/EYNTKA-intersection-theory.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch08-s01.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch08-s02.tex",
-        "intersection-theory/drafts/scratch/ch08-open.tex"
+        "intersection-theory/EYNTKA-intersection-theory.tex"
       ]
     },
     {
@@ -4827,9 +4513,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "intersection-theory/EYNTKA-intersection-theory.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch03-s04.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch05-s04.tex"
+        "intersection-theory/EYNTKA-intersection-theory.tex"
       ]
     },
     {
@@ -4845,12 +4529,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "intersection-theory/EYNTKA-intersection-theory.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch03-s03.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch07-s01-body.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch07-s01-moved.tex",
-        "intersection-theory/drafts/scratch/_consolidated/ch08-s02.tex",
-        "intersection-theory/drafts/scratch/ch07-s02.tex"
+        "intersection-theory/EYNTKA-intersection-theory.tex"
       ]
     },
     {
@@ -4877,8 +4556,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "intersection-theory/EYNTKA-intersection-theory.tex",
-        "intersection-theory/drafts/scratch/ch07-s02.tex"
+        "intersection-theory/EYNTKA-intersection-theory.tex"
       ]
     },
     {
@@ -4923,8 +4601,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex",
-        "vector-bundles-and-k-theory/drafts/scratch/ch02-sec02-bott-draft.tex"
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
       ]
     },
     {
@@ -4960,8 +4637,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex",
-        "vector-bundles-and-k-theory/drafts/scratch/ch02-sec02-bott-draft.tex"
+        "vector-bundles-and-k-theory/EYNTKA_Vector_bundles_and_K-theory.tex"
       ]
     },
     {
@@ -5007,7 +4683,6 @@
       "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
-        "langlands-gl2/drafts/scratch/ch10-s02.tex",
         "langlands-gl2/drafts/scratch/ch11-s03.tex"
       ]
     },
@@ -5018,12 +4693,6 @@
       "provenance": "both",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
-        "langlands-gl2/drafts/scratch/aborted-run-2026-08-19/ch08-s05.tex",
-        "langlands-gl2/drafts/scratch/ch08-s04.tex",
-        "langlands-gl2/drafts/scratch/ch08-s05.tex",
-        "langlands-gl2/drafts/scratch/ch09-s01.tex",
-        "langlands-gl2/drafts/scratch/ch09-s02.tex",
-        "langlands-gl2/drafts/scratch/ch09-s03.tex",
         "langlands-gl2/drafts/scratch/ch11-s01.tex"
       ]
     },
@@ -5046,7 +4715,6 @@
       "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
-        "langlands-gl2/drafts/scratch/ch08-s02.tex",
         "langlands-gl2/drafts/scratch/ch11-s03.tex"
       ]
     },
@@ -5084,7 +4752,6 @@
       "provenance": "auto",
       "citedIn": [
         "langlands-gl2/EYNTKA-langlands-gl2.tex",
-        "langlands-gl2/drafts/scratch/ch09-s02.tex",
         "langlands-gl2/drafts/scratch/ch11-s01.tex",
         "langlands-gl2/drafts/scratch/ch11-s03.tex"
       ]
@@ -5267,9 +4934,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/done-ch10/ch10-s04.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5278,9 +4943,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/ch01-nonlinear-passage.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5289,9 +4952,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/ch01-nonlinear-passage.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5300,8 +4961,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5310,9 +4970,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/ch01-nonlinear-passage.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5321,9 +4979,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/consolidated/ch04-s01.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5332,13 +4988,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/ch01-nonlinear-passage.tex",
-        "linear-algebra/drafts/scratch/ch12-s02.tex",
-        "linear-algebra/drafts/scratch/done-ch09/ch09-s01.tex",
-        "linear-algebra/drafts/scratch/done-ch10/ch10-s02.tex",
-        "linear-algebra/drafts/scratch/done-ch10/ch10-s03.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5347,8 +4997,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5357,8 +5006,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5367,9 +5015,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/ch12-s05.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5378,9 +5024,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/done-ch08b/ch08-s05.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5389,8 +5033,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5399,10 +5042,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/consolidated/ch05-open.tex",
-        "linear-algebra/drafts/scratch/ch12-s05.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5411,8 +5051,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5421,11 +5060,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/consolidated/ch05-s04.tex",
-        "linear-algebra/drafts/scratch/ch12-s04.tex",
-        "linear-algebra/drafts/scratch/ch12-s05.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5434,8 +5069,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5444,10 +5078,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/ch12-s05.tex",
-        "linear-algebra/drafts/scratch/ch12-s06.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5456,8 +5087,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5466,8 +5096,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5476,8 +5105,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5486,8 +5114,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-algebra/EYNTKA-linear-algebra.tex",
-        "linear-algebra/drafts/scratch/la-announce-snapshot.tex"
+        "linear-algebra/EYNTKA-linear-algebra.tex"
       ]
     },
     {
@@ -5496,18 +5123,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "linear-pde/EYNTKA-linear-pde.tex",
-        "linear-pde/drafts/scratch/ch1-s1.tex",
-        "linear-pde/drafts/scratch/ch1-s2.tex",
-        "linear-pde/drafts/scratch/ch1-s3.tex",
-        "linear-pde/drafts/scratch/ch2-s1.tex",
-        "linear-pde/drafts/scratch/ch2-s2.tex",
-        "linear-pde/drafts/scratch/ch3-s1.tex",
-        "linear-pde/drafts/scratch/ch3-s2.tex",
-        "linear-pde/drafts/scratch/ch3-s3.tex",
-        "linear-pde/drafts/scratch/ch5-s2.tex",
-        "linear-pde/drafts/scratch/ch5-s3.tex",
-        "linear-pde/drafts/scratch/ch8-s1.tex"
+        "linear-pde/EYNTKA-linear-pde.tex"
       ]
     },
     {
@@ -5516,9 +5132,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "linear-pde/EYNTKA-linear-pde.tex",
-        "linear-pde/drafts/scratch/ch2-s1.tex",
-        "linear-pde/drafts/scratch/ch5-s1.tex"
+        "linear-pde/EYNTKA-linear-pde.tex"
       ]
     },
     {
@@ -5527,8 +5141,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-pde/EYNTKA-linear-pde.tex",
-        "linear-pde/drafts/scratch/ch5-s3.tex"
+        "linear-pde/EYNTKA-linear-pde.tex"
       ]
     },
     {
@@ -5537,8 +5150,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "linear-pde/EYNTKA-linear-pde.tex",
-        "linear-pde/drafts/scratch/ch2-s1.tex"
+        "linear-pde/EYNTKA-linear-pde.tex"
       ]
     },
     {
@@ -5644,11 +5256,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "metric-function-spaces/EYNTKA-metric-function-spaces.tex",
-        "metric-function-spaces/drafts/scratch/ch02-s01.tex",
-        "metric-function-spaces/drafts/scratch/ch02-s02.tex",
-        "metric-function-spaces/drafts/scratch/ch02-s03.tex",
-        "metric-function-spaces/drafts/scratch/ch02-s04.tex"
+        "metric-function-spaces/EYNTKA-metric-function-spaces.tex"
       ]
     },
     {
@@ -5666,8 +5274,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "metric-function-spaces/EYNTKA-metric-function-spaces.tex",
-        "metric-function-spaces/drafts/scratch/ch02-s04.tex"
+        "metric-function-spaces/EYNTKA-metric-function-spaces.tex"
       ]
     },
     {
@@ -5685,8 +5292,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "metric-function-spaces/EYNTKA-metric-function-spaces.tex",
-        "metric-function-spaces/drafts/scratch/ch02-s02.tex"
+        "metric-function-spaces/EYNTKA-metric-function-spaces.tex"
       ]
     },
     {
@@ -5704,12 +5310,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
-        "microlocal-analysis/drafts/scratch/ch1-s3.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s1.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s2.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s3.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s5.tex"
+        "microlocal-analysis/EYNTKA-microlocal-analysis.tex"
       ]
     },
     {
@@ -5718,14 +5319,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
-        "microlocal-analysis/drafts/scratch/ch1-s1.tex",
-        "microlocal-analysis/drafts/scratch/ch1-s2.tex",
-        "microlocal-analysis/drafts/scratch/ch2-s1.tex",
-        "microlocal-analysis/drafts/scratch/ch2-s3.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s3.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s4.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s6.tex"
+        "microlocal-analysis/EYNTKA-microlocal-analysis.tex"
       ]
     },
     {
@@ -5734,15 +5328,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
-        "microlocal-analysis/drafts/scratch/ch1-s2.tex",
-        "microlocal-analysis/drafts/scratch/ch1-s3.tex",
-        "microlocal-analysis/drafts/scratch/ch2-s1.tex",
-        "microlocal-analysis/drafts/scratch/ch2-s2.tex",
-        "microlocal-analysis/drafts/scratch/ch2-s3.tex",
-        "microlocal-analysis/drafts/scratch/ch3-s2.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s2.tex",
-        "microlocal-analysis/drafts/scratch/ch4-s6.tex"
+        "microlocal-analysis/EYNTKA-microlocal-analysis.tex"
       ]
     },
     {
@@ -5752,9 +5338,7 @@
       "provenance": "both",
       "citedIn": [
         "microlocal-analysis/EYNTKA-microlocal-analysis.tex",
-        "microlocal-analysis/drafts/opening-ch3.tex",
-        "microlocal-analysis/drafts/scratch/ch3-s1.tex",
-        "microlocal-analysis/drafts/scratch/ch3-s3.tex"
+        "microlocal-analysis/drafts/opening-ch3.tex"
       ]
     },
     {
@@ -5773,13 +5357,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/scratch/ch02-s01.tex",
-        "moduli-stacks/drafts/scratch/ch02-s02.tex",
-        "moduli-stacks/drafts/scratch/ch02-s03.tex",
-        "moduli-stacks/drafts/scratch/ch02-s05.tex",
-        "moduli-stacks/drafts/scratch/ch08-s04.tex",
-        "moduli-stacks/drafts/scratch/ch10-s04.tex"
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
@@ -5797,11 +5375,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/scratch/ch06-s01.tex",
-        "moduli-stacks/drafts/scratch/ch06-s02.tex",
-        "moduli-stacks/drafts/scratch/ch07-s01.tex",
-        "moduli-stacks/drafts/scratch/ch07-s04.tex"
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
@@ -5811,15 +5385,7 @@
       "provenance": "both",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/picard-section.tex",
-        "moduli-stacks/drafts/scratch/ch04-s01.tex",
-        "moduli-stacks/drafts/scratch/ch04-s04.tex",
-        "moduli-stacks/drafts/scratch/ch05-s03.tex",
-        "moduli-stacks/drafts/scratch/ch06-s02.tex",
-        "moduli-stacks/drafts/scratch/ch06-s03.tex",
-        "moduli-stacks/drafts/scratch/ch06-s04.tex",
-        "moduli-stacks/drafts/scratch/ch07-s02.tex",
-        "moduli-stacks/drafts/scratch/ch08-s04.tex"
+        "moduli-stacks/drafts/picard-section.tex"
       ]
     },
     {
@@ -5846,12 +5412,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/scratch/ch01-s03.tex",
-        "moduli-stacks/drafts/scratch/ch01-s04.tex",
-        "moduli-stacks/drafts/scratch/ch04-s04.tex",
-        "moduli-stacks/drafts/scratch/ch10-s03.tex",
-        "moduli-stacks/drafts/scratch/ch10-s04.tex"
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
@@ -5860,8 +5421,7 @@
       "type": "coreq",
       "provenance": "both",
       "citedIn": [
-        "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/scratch/ch09-s02.tex"
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
@@ -5870,12 +5430,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/scratch/ch06-s03.tex",
-        "moduli-stacks/drafts/scratch/ch06-s04.tex",
-        "moduli-stacks/drafts/scratch/ch06-s05.tex",
-        "moduli-stacks/drafts/scratch/ch09-s02.tex",
-        "moduli-stacks/drafts/scratch/ch09-s03.tex"
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
@@ -5884,9 +5439,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/scratch/ch03-open.tex",
-        "moduli-stacks/drafts/scratch/ch03-s01.tex"
+        "moduli-stacks/EYNTKA-moduli-stacks.tex"
       ]
     },
     {
@@ -5905,12 +5458,7 @@
       "provenance": "both",
       "citedIn": [
         "moduli-stacks/EYNTKA-moduli-stacks.tex",
-        "moduli-stacks/drafts/picard-section.tex",
-        "moduli-stacks/drafts/scratch/ch02-s04.tex",
-        "moduli-stacks/drafts/scratch/ch04-s04.tex",
-        "moduli-stacks/drafts/scratch/ch05-s02.tex",
-        "moduli-stacks/drafts/scratch/ch06-s05.tex",
-        "moduli-stacks/drafts/scratch/ch09-s01.tex"
+        "moduli-stacks/drafts/picard-section.tex"
       ]
     },
     {
@@ -6032,8 +5580,6 @@
       "provenance": "both",
       "citedIn": [
         "probability/EYNTKA-probability.tex",
-        "probability/drafts/scratch/ch05-s04.tex",
-        "probability/drafts/scratch/ch07-s05.tex",
         "probability/drafts/whatnext.tex"
       ]
     },
@@ -6069,29 +5615,7 @@
       "provenance": "both",
       "citedIn": [
         "probability/EYNTKA-probability.tex",
-        "probability/drafts/frontmatter.tex",
-        "probability/drafts/scratch/ch01-open.tex",
-        "probability/drafts/scratch/ch01-s01.tex",
-        "probability/drafts/scratch/ch01-s03.tex",
-        "probability/drafts/scratch/ch02-s01.tex",
-        "probability/drafts/scratch/ch02-s03.tex",
-        "probability/drafts/scratch/ch03-open.tex",
-        "probability/drafts/scratch/ch03-s01.tex",
-        "probability/drafts/scratch/ch03-s02.tex",
-        "probability/drafts/scratch/ch03-s03.tex",
-        "probability/drafts/scratch/ch03-s04.tex",
-        "probability/drafts/scratch/ch05-s02.tex",
-        "probability/drafts/scratch/ch06-s01.tex",
-        "probability/drafts/scratch/ch06-s03.tex",
-        "probability/drafts/scratch/ch06-s04.tex",
-        "probability/drafts/scratch/ch07-s05.tex",
-        "probability/drafts/scratch/ch09-s01.tex",
-        "probability/drafts/scratch/ch09-s02.tex",
-        "probability/drafts/scratch/ch09-s04.tex",
-        "probability/drafts/scratch/ch10-s02.tex",
-        "probability/drafts/scratch/ch10-s03.tex",
-        "probability/drafts/scratch/ch10-s04.tex",
-        "probability/drafts/scratch/ch10-s05.tex"
+        "probability/drafts/frontmatter.tex"
       ]
     },
     {
@@ -6199,11 +5723,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "real-analysis/EYNTKA-real-analysis.tex",
-        "real-analysis/drafts/scratch/ch04-s01.tex",
-        "real-analysis/drafts/scratch/ch06-open.tex",
-        "real-analysis/drafts/scratch/ch06-s01.tex",
-        "real-analysis/drafts/scratch/ch06-s02.tex"
+        "real-analysis/EYNTKA-real-analysis.tex"
       ]
     },
     {
@@ -6361,17 +5881,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "statistics/EYNTKA-statistics.tex",
-        "statistics/drafts/scratch/ch01-s01.tex",
-        "statistics/drafts/scratch/ch01-s02.tex",
-        "statistics/drafts/scratch/ch01-s03.tex",
-        "statistics/drafts/scratch/ch01-s04.tex",
-        "statistics/drafts/scratch/ch02-s01.tex",
-        "statistics/drafts/scratch/ch02-s04.tex",
-        "statistics/drafts/scratch/ch03-s01.tex",
-        "statistics/drafts/scratch/ch03-s02.tex",
-        "statistics/drafts/scratch/ch03-s03.tex",
-        "statistics/drafts/scratch/ch03-s04.tex"
+        "statistics/EYNTKA-statistics.tex"
       ]
     },
     {
@@ -6380,14 +5890,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "statistics/EYNTKA-statistics.tex",
-        "statistics/drafts/scratch/ch01-s01.tex",
-        "statistics/drafts/scratch/ch01-s04.tex",
-        "statistics/drafts/scratch/ch02-s01.tex",
-        "statistics/drafts/scratch/ch02-s04.tex",
-        "statistics/drafts/scratch/ch03-s02.tex",
-        "statistics/drafts/scratch/ch03-s03.tex",
-        "statistics/drafts/scratch/ch03-s04.tex"
+        "statistics/EYNTKA-statistics.tex"
       ]
     },
     {
@@ -6414,10 +5917,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "topology/EYNTKA_topology.tex",
-        "topology/drafts/scratch/ch05-s03.tex",
-        "topology/drafts/scratch/ch05-s05.tex",
-        "topology/drafts/scratch/moved-topological-manifolds.tex"
+        "topology/EYNTKA_topology.tex"
       ]
     },
     {
@@ -6453,8 +5953,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "topology/EYNTKA_topology.tex",
-        "topology/drafts/scratch/ch05-s05.tex"
+        "topology/EYNTKA_topology.tex"
       ]
     },
     {
@@ -6544,8 +6043,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "toric-geometry/EYNTKA_toric_geometry.tex",
-        "toric-geometry/drafts/scratch/ch01-s01.tex"
+        "toric-geometry/EYNTKA_toric_geometry.tex"
       ]
     },
     {
@@ -6554,9 +6052,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "toric-geometry/EYNTKA_toric_geometry.tex",
-        "toric-geometry/drafts/scratch/ch01-s01.tex",
-        "toric-geometry/drafts/scratch/ch01-s02.tex"
+        "toric-geometry/EYNTKA_toric_geometry.tex"
       ]
     },
     {
@@ -6584,14 +6080,7 @@
       "provenance": "both",
       "citedIn": [
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s02.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex"
       ]
     },
     {
@@ -6600,9 +6089,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex"
       ]
     },
     {
@@ -6612,12 +6099,7 @@
       "provenance": "auto",
       "citedIn": [
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s01.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s03.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex"
       ]
     },
     {
@@ -6626,12 +6108,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s02.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex"
       ]
     },
     {
@@ -6640,8 +6117,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex"
       ]
     },
     {
@@ -6650,8 +6126,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex"
       ]
     },
     {
@@ -6660,8 +6135,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex"
       ]
     },
     {
@@ -6670,14 +6144,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-open.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s02.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s03.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex"
       ]
     },
     {
@@ -6687,10 +6154,7 @@
       "provenance": "auto",
       "citedIn": [
         "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex"
       ]
     },
     {
@@ -6699,8 +6163,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s02.tex"
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex"
       ]
     },
     {
@@ -6709,8 +6172,7 @@
       "type": "reference",
       "provenance": "auto",
       "citedIn": [
-        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch01-s04.tex"
+        "unstable-motivic-homotopy/EYNTKA-unstable-motivic-homotopy.tex"
       ]
     },
     {
@@ -6719,11 +6181,7 @@
       "type": "prereq",
       "provenance": "both",
       "citedIn": [
-        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s01.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s04.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s05.tex",
-        "unstable-motivic-homotopy/drafts/scratch/ch02-s06.tex"
+        "unstable-motivic-homotopy/drafts/classical/ch02-model-local-homotopy-2026-10-21.tex"
       ]
     }
   ],

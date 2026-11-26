@@ -5,9 +5,7 @@
     "message": "\\cite{NateBirationalGeometry} resolves to no known book. Fix the citation or add an alias/registry entry.",
     "refs": [
       "NateBirationalGeometry",
-      "algebraic-geometry/EYNTKA_algGeo.tex",
-      "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-      "algebraic-geometry/drafts/scratch/ch7-r4.tex"
+      "algebraic-geometry/EYNTKA_algGeo.tex"
     ]
   },
   {
@@ -16,9 +14,7 @@
     "message": "\\cite{NateDerivedAlgGeo} resolves to no known book. Fix the citation or add an alias/registry entry.",
     "refs": [
       "NateDerivedAlgGeo",
-      "algebraic-geometry/EYNTKA_algGeo.tex",
-      "algebraic-geometry/drafts/scratch/ch7-r1.tex",
-      "algebraic-geometry/drafts/scratch/ch7-r6.tex"
+      "algebraic-geometry/EYNTKA_algGeo.tex"
     ]
   },
   {
@@ -50,6 +46,14 @@
   {
     "kind": "phantom-node",
     "severity": "info",
+    "message": "'NatePerverseSheaves' is planned (cited/registered but has no folder yet).",
+    "refs": [
+      "NatePerverseSheaves"
+    ]
+  },
+  {
+    "kind": "phantom-node",
+    "severity": "info",
     "message": "'NateGeometricAnalysis' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NateGeometricAnalysis"
@@ -61,14 +65,6 @@
     "message": "'NatePadicHodge' is planned (cited/registered but has no folder yet).",
     "refs": [
       "NatePadicHodge"
-    ]
-  },
-  {
-    "kind": "phantom-node",
-    "severity": "info",
-    "message": "'NatePerverseSheaves' is planned (cited/registered but has no folder yet).",
-    "refs": [
-      "NatePerverseSheaves"
     ]
   },
   {
@@ -101,8 +97,7 @@
     "message": "\\cite{NateX} resolves to no known book. Fix the citation or add an alias/registry entry.",
     "refs": [
       "NateX",
-      "symplectic-geometry/EYNTKA-symplectic-geometry.tex",
-      "symplectic-geometry/drafts/scratch/ch01-s03.tex"
+      "symplectic-geometry/EYNTKA-symplectic-geometry.tex"
     ]
   },
   {
@@ -719,6 +714,42 @@
   {
     "kind": "unsupported-edge",
     "severity": "info",
+    "message": "Overlay prereq (NateAutomorphicForms -> NateThetaCorrespondence) is manual, no backing \\cite found.",
+    "refs": [
+      "NateAutomorphicForms",
+      "NateThetaCorrespondence"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NatePadicGroups -> NateThetaCorrespondence) is manual, no backing \\cite found.",
+    "refs": [
+      "NatePadicGroups",
+      "NateThetaCorrespondence"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateRealReductiveGroups -> NateThetaCorrespondence) is manual, no backing \\cite found.",
+    "refs": [
+      "NateRealReductiveGroups",
+      "NateThetaCorrespondence"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
+    "message": "Overlay prereq (NateUnitaryRepTheory -> NateThetaCorrespondence) is manual, no backing \\cite found.",
+    "refs": [
+      "NateUnitaryRepTheory",
+      "NateThetaCorrespondence"
+    ]
+  },
+  {
+    "kind": "unsupported-edge",
+    "severity": "info",
     "message": "Overlay prereq (NateGaloisCohom -> NatePadicHodge) is manual, no backing \\cite found.",
     "refs": [
       "NateGaloisCohom",
@@ -944,52 +975,7 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAbelianVarieties -> NateShimuraVarieties is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateShimuraVarieties"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAbelianVarieties -> NateHodgeTheory is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateHodgeTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAbelianVarieties -> NateCFT is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAbelianVarieties",
-      "NateCFT"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgGeo -> NateComplexAnalysis is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgGeo",
-      "NateComplexAnalysis"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgGeo -> NateEtaleCohomology is cited in 15 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgGeo",
-      "NateEtaleCohomology"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgGeo -> NateModuliStacks is cited in 14 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateModuliStacks is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
       "NateModuliStacks"
@@ -998,64 +984,28 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateFuncAnalysis is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateEtaleCohomology is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
-      "NateFuncAnalysis"
+      "NateEtaleCohomology"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateAlgNumberTheory is cited in 8 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateGaloisCohom is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
-      "NateAlgNumberTheory"
+      "NateGaloisCohom"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateAlgGeo -> NateIntersectionTheory is cited in 15 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateAlgGeo -> NateToposTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateAlgGeo",
-      "NateIntersectionTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgGeo -> NateEllipticCurves is cited in 10 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgGeo",
-      "NateEllipticCurves"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgGeo -> NateAbelianVarieties is cited in 11 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgGeo",
-      "NateAbelianVarieties"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgGeo -> NateAlgKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgGeo",
-      "NateAlgKTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateAlgGeo -> NateHodgeTheory is cited in 12 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateAlgGeo",
-      "NateHodgeTheory"
+      "NateToposTheory"
     ]
   },
   {
@@ -1079,25 +1029,34 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateDiffTop -> NateRiemannianGeometry is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NatePerverseSheaves is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateDiffTop",
-      "NateRiemannianGeometry"
+      "NateEtaleCohomology",
+      "NatePerverseSheaves"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateDiffTop -> NateLieGroups is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateUnstableMotivic is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateDiffTop",
-      "NateLieGroups"
+      "NateEtaleCohomology",
+      "NateUnstableMotivic"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 11 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateIntersectionTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateEtaleCohomology",
+      "NateIntersectionTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateEtaleCohomology -> NateModuliStacks is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
       "NateEtaleCohomology",
       "NateModuliStacks"
@@ -1106,145 +1065,28 @@
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateHodgeTheory -> NateEllipticCurves is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateHodgeTheory is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateHodgeTheory",
+      "NateEtaleCohomology",
+      "NateHodgeTheory"
+    ]
+  },
+  {
+    "kind": "heavy-reference",
+    "severity": "info",
+    "message": "NateEtaleCohomology -> NateEllipticCurves is cited in 6 files but is still a 'reference'; consider promoting to prereq.",
+    "refs": [
+      "NateEtaleCohomology",
       "NateEllipticCurves"
     ]
   },
   {
     "kind": "heavy-reference",
     "severity": "info",
-    "message": "NateHomologicalAlg -> NateHigherCategoryTheory is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
+    "message": "NateEtaleCohomology -> NateCFT is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
     "refs": [
-      "NateHomologicalAlg",
-      "NateHigherCategoryTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateHomologicalAlg -> NatePerverseSheaves is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateHomologicalAlg",
-      "NatePerverseSheaves"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateHomologicalAlg -> NateAlgKTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateHomologicalAlg",
-      "NateAlgKTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateCoreAlgebra is cited in 7 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateCoreAlgebra"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateFuncAnalysis is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateFuncAnalysis"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateODE is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateODE"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateClassicalAlgGeo is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateClassicalAlgGeo"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateAlgGeo is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateAlgGeo"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateAlgNumberTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateAlgNumberTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateLieGroups is cited in 5 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateLieGroups"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateUnitaryRepTheory is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateUnitaryRepTheory"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateDiffTop is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateDiffTop"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateAbelianVarieties is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateAbelianVarieties"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLinAlg -> NateCStarAlgebras is cited in 3 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLinAlg",
-      "NateCStarAlgebras"
-    ]
-  },
-  {
-    "kind": "heavy-reference",
-    "severity": "info",
-    "message": "NateLLM -> NateCoreProbability is cited in 4 files but is still a 'reference'; consider promoting to prereq.",
-    "refs": [
-      "NateLLM",
-      "NateCoreProbability"
+      "NateEtaleCohomology",
+      "NateCFT"
     ]
   },
   {
