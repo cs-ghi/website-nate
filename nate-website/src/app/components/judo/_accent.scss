@@ -1,0 +1,18 @@
+// The site's accent for the Judo study UI: the taupe $bg-secondary with dark
+// text, the same treatment the PDF reader gives its buttons.
+@use 'src/sass/variables';
+
+$accent: variables.$bg-secondary;          // #a49b96
+$accent-hover: #c0b6aa;                    // the site's heading colour
+$on-accent: #2a2b30;                       // $bg-primary (which carries !important, so can't be reused)
+$accent-soft: rgba(164, 155, 150, 0.16);   // fill for selected options
+$accent-line: rgba(164, 155, 150, 0.45);
+
+/// A filled call-to-action button.
+@mixin primary-button {
+  background: $accent;
+  color: $on-accent;
+  transition: background 0.15s;
+
+  &:hover:not(:disabled) { background: $accent-hover; }
+}

@@ -3,7 +3,6 @@ import { JudoTechnique, BeltLevel, MainCategory } from '../../interfaces/judo.mo
 import {
   BELT_OPTIONS, DEFAULT_SYLLABUS, SYLLABUS_OPTIONS, Syllabus, SyllabusId, getSyllabus,
 } from './data/syllabi';
-import { uniqueTechniques } from './data/technique-id';
 import { DeckService } from './flashcards/deck.service';
 import { StudyLauncher } from './flashcards/study-launcher.service';
 
@@ -138,11 +137,6 @@ export class JudoComponent implements OnInit, OnDestroy {
   toggleDeck(t: JudoTechnique, event: MouseEvent): void {
     event.stopPropagation();
     this.deck.toggle(t);
-  }
-
-  /** Distinct techniques on screen (U of T repeats a few across belts). */
-  get shownCount(): number {
-    return uniqueTechniques(this.filteredTechniques).length;
   }
 
   /** Shown techniques not yet in the deck; 0 means "remove all" is on offer instead. */

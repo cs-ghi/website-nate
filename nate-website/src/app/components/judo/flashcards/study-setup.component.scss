@@ -1,4 +1,5 @@
 @use 'src/sass/variables';
+@use 'src/app/components/judo/accent';
 
 :host {
   display: flex;
@@ -141,14 +142,15 @@ input[type='checkbox'] {
 
   &:hover { background: rgba(255, 255, 255, 0.03); }
 
-  &:has(input:focus-visible) { outline: 2px solid #64b5f6; outline-offset: -2px; }
+  &:has(input:focus-visible) { outline: 2px solid accent.$accent-hover; outline-offset: -2px; }
 }
 
 .seg__opt--on {
-  background: rgba(21, 101, 192, 0.25);
-  color: #e3f2fd;
+  background: accent.$accent-soft;
+  box-shadow: inset 0 0 0 1px accent.$accent-line;
+  color: #e0d9d3;
 
-  &:hover { background: rgba(21, 101, 192, 0.3); }
+  &:hover { background: rgba(164, 155, 150, 0.22); }
 }
 
 .seg__opt--disabled {
@@ -236,17 +238,17 @@ input[type='checkbox'] {
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 
   &:hover { border-color: variables.$bg-secondary; }
-  &:has(input:focus-visible) { outline: 2px solid #64b5f6; outline-offset: 2px; }
+  &:has(input:focus-visible) { outline: 2px solid accent.$accent-hover; outline-offset: 2px; }
 
   mat-icon { width: 1.1rem; height: 1.1rem; font-size: 1.1rem; margin-left: -0.25rem; }
 }
 
 .chip--on {
-  border-color: #1565c0;
-  background: rgba(21, 101, 192, 0.25);
-  color: #e3f2fd;
+  border-color: accent.$accent;
+  background: accent.$accent-soft;
+  color: #e0d9d3;
 
-  &:hover { border-color: #1976d2; }
+  &:hover { border-color: accent.$accent-hover; }
 }
 
 .stepper {
@@ -298,17 +300,14 @@ input[type='checkbox'] {
   min-height: 52px;
   border: none;
   border-radius: 4px;
-  background: #1565c0;
-  color: #e3f2fd;
+  @include accent.primary-button;
   font-family: inherit;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   cursor: pointer;
-  transition: background 0.15s;
 
-  &:hover:not(:disabled) { background: #1976d2; }
   &:disabled { opacity: 0.4; cursor: default; }
 }
 

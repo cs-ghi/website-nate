@@ -247,19 +247,15 @@
     </div>
   }
 
-  <!-- Deck bar: studies the deck, or what is shown when the deck is empty -->
-  @if (deck.size() || filteredTechniques.length) {
+  <!-- Deck bar: appears once the deck has a card -->
+  @if (deck.size()) {
     <div class="deck-bar">
       <span class="deck-bar__count">
-        <mat-icon>{{ deck.size() ? 'bookmarks' : 'bookmark_border' }}</mat-icon>
-        @if (deck.size()) {
-          Deck · {{ deck.size() }} {{ deck.size() === 1 ? 'card' : 'cards' }}
-        } @else {
-          Deck empty
-        }
+        <mat-icon>bookmarks</mat-icon>
+        Deck · {{ deck.size() }} {{ deck.size() === 1 ? 'card' : 'cards' }}
       </span>
       <button class="deck-bar__study" (click)="openStudy()">
-        {{ deck.size() ? 'Study' : 'Study the ' + shownCount + ' shown' }}
+        Study
         <mat-icon>arrow_forward</mat-icon>
       </button>
     </div>

@@ -1,5 +1,6 @@
 @use 'src/sass/variables';
 @use 'src/app/components/judo/badges';
+@use 'src/app/components/judo/accent';
 
 :host {
   display: block;
@@ -125,14 +126,14 @@
   align-items: flex-start;
   margin: 0;
   padding: 0.6rem 0.75rem;
-  border: 1px solid rgba(21, 101, 192, 0.4);
+  border: 1px solid accent.$accent-line;
   border-radius: 4px;
-  background: rgba(21, 101, 192, 0.12);
-  color: #bbdefb;
+  background: accent.$accent-soft;
+  color: #d3ccc5;
   font-size: 0.85rem;
   line-height: 1.45;
 
-  mat-icon { flex-shrink: 0; width: 1.1rem; height: 1.1rem; font-size: 1.1rem; color: #64b5f6; }
+  mat-icon { flex-shrink: 0; width: 1.1rem; height: 1.1rem; font-size: 1.1rem; color: accent.$accent; }
 }
 
 .back__description {

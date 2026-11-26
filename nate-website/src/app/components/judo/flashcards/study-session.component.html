@@ -58,11 +58,12 @@
 
         <div class="summary__actions">
           @if (!mastery && sum.missed.length) {
-            <button type="button" class="act act--right" (click)="reviewMissed()">
+            <button type="button" class="act act--primary" (click)="reviewMissed()">
               Review {{ sum.missed.length }} missed
             </button>
           }
-          <button type="button" class="act act--reveal" (click)="restart()">
+          <button type="button" class="act" (click)="restart()"
+            [class.act--primary]="mastery || !sum.missed.length" [class.act--quiet]="!mastery && sum.missed.length">
             {{ mastery ? 'Study again' : 'Restart all' }}
           </button>
           <button type="button" class="act act--quiet" (click)="close()">Done</button>
@@ -79,7 +80,7 @@
   @if (!finished()) {
     <footer class="actions">
       @if (!flipped()) {
-        <button type="button" class="act act--reveal act--wide" (click)="flip()">
+        <button type="button" class="act act--primary act--wide" (click)="flip()">
           Show answer <kbd>Space</kbd>
         </button>
       } @else {

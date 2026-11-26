@@ -1,4 +1,5 @@
 @use 'src/sass/variables';
+@use 'src/app/components/judo/accent';
 
 :host {
   display: block;
@@ -62,7 +63,7 @@
 
 .bar__fill {
   height: 100%;
-  background: #1565c0;
+  background: accent.$accent;
   transition: width 0.3s ease;
 }
 
@@ -233,10 +234,8 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.act--reveal {
-  background: #1565c0;
-  color: #e3f2fd;
-  &:hover { background: #1976d2; }
+.act--primary {
+  @include accent.primary-button;
 }
 
 .act--right {

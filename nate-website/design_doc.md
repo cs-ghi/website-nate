@@ -65,9 +65,8 @@ The application will encompass the following main categories and sub-categories:
 The code is in `src/app/components/judo/flashcards/`. The session rules are plain functions in `study-session.ts`, with unit tests.
 
 ### 4.1. Choosing cards
-*   **Study what is shown:** the directory filters (syllabus, belt, category, search) already pick a set, and the deck bar offers to study it.
-*   **Build a deck:** the bookmark on each card toggles it in the deck, and "Add N to deck" takes everything the filters show. The deck is saved in the browser (`localStorage`) and survives reloads. A technique is one deck entry however each syllabus spells it.
-*   A sticky deck bar at the bottom opens a setup sheet (a bottom sheet on phones): deck or shown cards, which card fronts, and the mode. The sheet remembers the last choices.
+*   **Build a deck:** the bookmark on each card toggles it in the deck, and "Add N to deck" takes everything the directory filters (syllabus, belt, category, search) show. The deck is saved in the browser (`localStorage`) and survives reloads. A technique is one deck entry however each syllabus spells it.
+*   Once the deck has a card, a sticky deck bar at the bottom opens a setup sheet (a bottom sheet on phones): the deck or the cards currently shown, which card fronts, and the mode. The sheet remembers the last choices.
 
 ### 4.2. What is on a card
 *   The front is one of **Video**, **Japanese** (romaji), **English** or **Kanji**. Several can be chosen, and each card picks one at random. The back always shows everything: names, belt, video, description, key points.
