@@ -196,41 +196,40 @@
 // Break out of the page's horizontal padding so the bar is full-bleed,
 // then add matching padding back inside. Frosted glass blends it into
 // the page instead of a harsh solid-black stripe.
+// appHideOnScroll adds is-pinned / is-hidden.
 .controls-wrapper {
-  display: grid;
-  grid-template-rows: 1fr;
   position: sticky;
   top: 50px;
   z-index: 50;
   // full-bleed breakout
   margin-left: -1.25rem;
   margin-right: -1.25rem;
-  // frosted-glass background
-  background: rgba(8, 8, 10, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(70, 66, 63, 0.45);
   margin-bottom: 1.25rem;
-  transition: grid-template-rows 0.28s ease, opacity 0.28s ease;
-  opacity: 1;
+  border-bottom: 1px solid transparent;
+  transition: transform 0.28s ease, opacity 0.28s ease, visibility 0s,
+    background-color 0.2s ease, border-color 0.2s ease;
 
-  &.controls-collapsed {
-    grid-template-rows: 0fr;
-    opacity: 0;
-    pointer-events: none;
+  // Stuck over the cards: frosted glass behind it.
+  &.is-pinned {
+    background-color: rgba(8, 8, 10, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom-color: rgba(70, 66, 63, 0.45);
   }
 
-  &.controls-at-top {
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom-color: transparent;
+  // Slid up behind the site header. Transform and opacity only: changing
+  // the bar's size here is what made it flicker half-open (see
+  // HideOnScrollDirective).
+  &.is-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.28s ease, opacity 0.28s ease, visibility 0s linear 0.28s,
+      background-color 0.2s ease, border-color 0.2s ease;
   }
 }
 
 .controls-inner {
-  overflow: hidden;
-  min-height: 0;
   padding: 0.6rem 1.25rem 0.85rem;
   display: flex;
   flex-wrap: wrap;

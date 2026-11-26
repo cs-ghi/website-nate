@@ -22,23 +22,12 @@ export class JudoComponent implements OnInit, OnDestroy {
   filteredTechniques: JudoTechnique[] = [];
   selectedTechnique: JudoTechnique | null = null;
 
-  controlsCollapsed = false;
-  atTop = true;
   glossaryOpen = false;
   playingCardId: string | null = null;
   modalVideoPlaying = false;
-  private lastScrollY = 0;
 
   readonly deck = inject(DeckService);
   private readonly study = inject(StudyLauncher);
-
-  @HostListener('window:scroll')
-  onScroll(): void {
-    const currentY = window.scrollY;
-    this.controlsCollapsed = currentY > 200 && currentY > this.lastScrollY;
-    this.atTop = currentY < 50;
-    this.lastScrollY = currentY;
-  }
 
   @HostListener('window:keydown.escape')
   onEscape(): void {

@@ -48,6 +48,7 @@ import { JudoComponent } from './components/judo/judo.component';
 import { SeriesMapComponent } from './components/series-map/series-map.component';
 import { CommandPaletteComponent } from './components/command-palette/command-palette.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { HideOnScrollDirective } from './components/shared/hide-on-scroll.directive';
 import { AudioService } from './services/audio.service';
 // import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
@@ -100,7 +101,8 @@ import { AudioService } from './services/audio.service';
         BrowserAnimationsModule,
         MatExpansionModule,
         MatOptionModule,
-        MatIconModule], providers: [
+        MatIconModule,
+        HideOnScrollDirective], providers: [
         DictionaryService,
         AudioService,
         provideHttpClient(withXhr(), withInterceptorsFromDi())
