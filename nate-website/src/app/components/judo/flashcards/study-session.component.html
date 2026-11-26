@@ -23,7 +23,7 @@
     </span>
   </header>
 
-  <main class="stage" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+  <main class="stage">
     @for (f of flash(); track f.id) {
       <div class="flash" [class.flash--right]="f.right" aria-hidden="true"></div>
     }
@@ -70,7 +70,22 @@
         </div>
       </section>
     } @else if (card(); as c) {
-      <app-flashcard [card]="c" [flipped]="flipped()" [streak]="streak()" (click)="onCardClick()" />
+      <div class="swipe" [appSwipeCard]="flipped()" (swiped)="onSwiped($event)"
+        [class.swipe--lesson]="lesson() && flipped()">
+        @if (flipped()) {
+          <div class="stamps" aria-hidden="true">
+            <span class="stamp stamp--right"><mat-icon>check</mat-icon>Got it</span>
+            <span class="stamp stamp--missed"><mat-icon>close</mat-icon>Missed</span>
+          </div>
+        }
+        <app-flashcard [card]="c" [flipped]="flipped()" [streak]="streak()" (click)="onCardClick()" />
+      </div>
+      @if (lesson() && flipped()) {
+        <p class="swipe-lesson">
+          <mat-icon>swipe</mat-icon>
+          Swipe the card right if you got it, left if you missed
+        </p>
+      }
       <p class="sr-only" aria-live="polite">
         @if (flipped()) { Answer: {{ c.technique.title_romaji }}, {{ c.technique.title_en }} }
       </p>
@@ -84,11 +99,13 @@
           Show answer <kbd>Space</kbd>
         </button>
       } @else {
-        <button type="button" class="act act--missed" (click)="grade(false)" title="Missed (← or h)">
-          <kbd>←</kbd> Missed
+        <button type="button" class="act act--missed" (click)="answer(false)" title="Missed (← or h)">
+          @if (touch) { <mat-icon>swipe_left</mat-icon> } @else { <kbd>←</kbd> }
+          Missed
         </button>
-        <button type="button" class="act act--right" (click)="grade(true)" title="Got it (→ or l)">
-          Got it <kbd>→</kbd>
+        <button type="button" class="act act--right" (click)="answer(true)" title="Got it (→ or l)">
+          Got it
+          @if (touch) { <mat-icon>swipe_right</mat-icon> } @else { <kbd>→</kbd> }
         </button>
       }
     </footer>
