@@ -235,8 +235,8 @@ for (const path of ROUTES) {
   const stateful = [];
 
   await nav('/judo'); await p.waitForTimeout(1200);
-  await click('.bookmark-btn', 600);              // the study FAB is gated on a bookmark
-  const studying = await click('.study-fab', 1200);
+  await click('.bookmark-btn', 600);              // put one card in the deck
+  const studying = await click('.deck-bar__study', 1200);
   await p.keyboard.press('Space'); await p.waitForTimeout(300);
   errs.length = 0;
   await nav('/programming'); await p.waitForTimeout(1000);

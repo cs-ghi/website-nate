@@ -13,3 +13,14 @@ export function techniqueId(t: Pick<JudoTechnique, 'title_romaji'>): string {
     .replace(/[^a-z0-9]/g, '')
     .replace(/barai/g, 'harai');
 }
+
+/** `ts` with later repeats of the same technique dropped (U of T lists a few at more than one belt). */
+export function uniqueTechniques(ts: readonly JudoTechnique[]): JudoTechnique[] {
+  const seen = new Set<string>();
+  return ts.filter(t => {
+    const id = techniqueId(t);
+    if (seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+}

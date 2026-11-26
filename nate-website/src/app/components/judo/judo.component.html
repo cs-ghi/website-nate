@@ -160,12 +160,25 @@
         Clear filters
       </button>
     }
+    @if (filteredTechniques.length) {
+      @if (shownNotInDeck > 0) {
+        <button class="clear-btn deck-all-btn" (click)="addShownToDeck()">
+          <mat-icon>bookmark_add</mat-icon>
+          Add {{ shownNotInDeck }} to deck
+        </button>
+      } @else {
+        <button class="clear-btn deck-all-btn" (click)="removeShownFromDeck()">
+          <mat-icon>bookmark_remove</mat-icon>
+          Remove these from deck
+        </button>
+      }
+    }
   </div>
 
   <!-- ── Cards grid ─────────────────────────────────────────────────── -->
   <div class="techniques-grid">
     @for (t of filteredTechniques; track t) {
-      <div class="technique-card" (click)="openModal(t)">
+      <div class="technique-card" [class.in-deck]="deck.has(t)" (click)="openModal(t)">
         <div class="media">
           <!-- Inline YouTube player -->
           @if (t.youtube_id) {
@@ -209,9 +222,10 @@
           </div>
           <div class="card-actions">
             <button class="icon-btn bookmark-btn"
-              (click)="toggleBookmark(t, $event)"
-              [title]="isBookmarked(t) ? 'Remove from study deck' : 'Add to study deck'">
-              <mat-icon>{{ isBookmarked(t) ? 'bookmark' : 'bookmark_border' }}</mat-icon>
+              (click)="toggleDeck(t, $event)"
+              [attr.aria-pressed]="deck.has(t)"
+              [title]="deck.has(t) ? 'Remove from study deck' : 'Add to study deck'">
+              <mat-icon>{{ deck.has(t) ? 'bookmark' : 'bookmark_border' }}</mat-icon>
             </button>
             <span class="expand-hint">
               <mat-icon>open_in_full</mat-icon>
@@ -233,15 +247,20 @@
     </div>
   }
 
-  <!-- Study FAB -->
-  @if (bookmarked.size > 0) {
-    <div class="study-fab-group">
-      <button class="study-fab" (click)="startStudy()">
-        <mat-icon>school</mat-icon>
-        Study {{ bookmarked.size }} {{ bookmarked.size === 1 ? 'technique' : 'techniques' }}
-      </button>
-      <button class="study-fab-clear" (click)="bookmarked.clear()" title="Clear all selected">
-        <mat-icon>close</mat-icon>
+  <!-- Deck bar: studies the deck, or what is shown when the deck is empty -->
+  @if (deck.size() || filteredTechniques.length) {
+    <div class="deck-bar">
+      <span class="deck-bar__count">
+        <mat-icon>{{ deck.size() ? 'bookmarks' : 'bookmark_border' }}</mat-icon>
+        @if (deck.size()) {
+          Deck · {{ deck.size() }} {{ deck.size() === 1 ? 'card' : 'cards' }}
+        } @else {
+          Deck empty
+        }
+      </span>
+      <button class="deck-bar__study" (click)="startStudy()">
+        {{ deck.size() ? 'Study' : 'Study the ' + shownCount + ' shown' }}
+        <mat-icon>arrow_forward</mat-icon>
       </button>
     </div>
   }

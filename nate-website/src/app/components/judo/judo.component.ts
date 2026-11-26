@@ -1,8 +1,10 @@
-import { Component, OnInit, HostListener, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectionStrategy, inject } from '@angular/core';
 import { JudoTechnique, BeltLevel, MainCategory } from '../../interfaces/judo.model';
 import {
-  BELT_OPTIONS, DEFAULT_SYLLABUS, SYLLABI, SYLLABUS_OPTIONS, Syllabus, SyllabusId, getSyllabus,
+  BELT_OPTIONS, DEFAULT_SYLLABUS, SYLLABUS_OPTIONS, Syllabus, SyllabusId, getSyllabus, resolveTechniques,
 } from './data/syllabi';
+import { uniqueTechniques } from './data/technique-id';
+import { DeckService } from './flashcards/deck.service';
 
 @Component({
     selector: 'app-judo',
@@ -18,7 +20,6 @@ export class JudoComponent implements OnInit {
   selectedCategory: MainCategory | 'all' = 'all';
   syllabus: SyllabusId = DEFAULT_SYLLABUS;
   filteredTechniques: JudoTechnique[] = [];
-  bookmarked: Set<string> = new Set();
   selectedTechnique: JudoTechnique | null = null;
 
   controlsCollapsed = false;
@@ -27,6 +28,8 @@ export class JudoComponent implements OnInit {
   playingCardId: string | null = null;
   modalVideoPlaying = false;
   private lastScrollY = 0;
+
+  readonly deck = inject(DeckService);
 
   // ── Flashcard study mode ──────────────────────────────────────────
   studyMode = false;
@@ -147,24 +150,34 @@ export class JudoComponent implements OnInit {
     this.playingCardId = youtubeId;
   }
 
-  toggleBookmark(t: JudoTechnique, event: MouseEvent): void {
+  toggleDeck(t: JudoTechnique, event: MouseEvent): void {
     event.stopPropagation();
-    const key = t.title_romaji;
-    if (this.bookmarked.has(key)) {
-      this.bookmarked.delete(key);
-    } else {
-      this.bookmarked.add(key);
-    }
+    this.deck.toggle(t);
   }
 
-  isBookmarked(t: JudoTechnique): boolean {
-    return this.bookmarked.has(t.title_romaji);
+  /** Distinct techniques on screen (U of T repeats a few across belts). */
+  get shownCount(): number {
+    return uniqueTechniques(this.filteredTechniques).length;
+  }
+
+  /** Shown techniques not yet in the deck; 0 means "remove all" is on offer instead. */
+  get shownNotInDeck(): number {
+    return this.deck.countMissing(this.filteredTechniques);
+  }
+
+  addShownToDeck(): void {
+    this.deck.add(this.filteredTechniques);
+  }
+
+  removeShownFromDeck(): void {
+    this.deck.remove(this.filteredTechniques);
   }
 
   // ── Flashcard methods ─────────────────────────────────────────────
   startStudy(): void {
-    const all = SYLLABI.flatMap(s => s.techniques);
-    const deck = all.filter(t => this.bookmarked.has(t.title_romaji));
+    const deck = this.deck.size()
+      ? resolveTechniques(this.deck.entries(), this.syllabus)
+      : uniqueTechniques(this.filteredTechniques);
     // Fisher-Yates shuffle
     for (let i = deck.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
