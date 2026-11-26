@@ -1,4 +1,4 @@
-import { JudoTechnique } from '../../interfaces/judo.model';
+import { JudoTechnique } from '../../../interfaces/judo.model';
 
 export const KODOKAN_TECHNIQUES: JudoTechnique[] = [
 
