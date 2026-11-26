@@ -60,22 +60,24 @@ The application will encompass the following main categories and sub-categories:
 
 ---
 
-## 4. Phase 2: In-Session Flashcard System
+## 4. Phase 2: Flashcard System (built)
 
-Once the core directory is built, Phase 2 will introduce the active study tool.
+The code is in `src/app/components/judo/flashcards/`. The session rules are plain functions in `study-session.ts`, with unit tests.
 
-### 4.1. Flashcard Deck Builder
-*   Users will build their deck via **Option A**: clicking a checkbox/bookmark icon on individual technique cards in the main view.
-*   A floating action button (FAB) or sticky footer will appear at the bottom of the screen: *"Study X Selected Techniques"*.
+### 4.1. Choosing cards
+*   **Study what is shown:** the directory filters (syllabus, belt, category, search) already pick a set, and the deck bar offers to study it.
+*   **Build a deck:** the bookmark on each card toggles it in the deck, and "Add N to deck" takes everything the filters show. The deck is saved in the browser (`localStorage`) and survives reloads. A technique is one deck entry however each syllabus spells it.
+*   A sticky deck bar at the bottom opens a setup sheet (a bottom sheet on phones): deck or shown cards, which card fronts, and the mode. The sheet remembers the last choices.
 
-### 4.2. Study Mode UX (Touch Optimized)
-*   Tapping the "Study" button triggers a full-screen, distraction-free overlay within the same browser tab.
-*   **The Card Front:** Displays a prompt. This could be randomized (e.g., showing the video and asking for the name, or showing the English name and asking for the Japanese name).
-*   **Gestures:**
-    *   **Tap:** Flips the card over to reveal the answer, detailed notes, and the official link.
-    *   **Swipe Left:** Move to the next card.
-    *   **Swipe Right:** Move to the previous card.
-*   **Session End:** Closing the overlay or refreshing the page clears the selected deck, acting as a true "in-session" temporary tool.
+### 4.2. What is on a card
+*   The front is one of **Video**, **Japanese** (romaji), **English** or **Kanji**. Several can be chosen, and each card picks one at random. The back always shows everything: names, belt, video, description, key points.
+*   The video front gives nothing away. It starts after the title card (the Kodokan videos open with the technique's name), loops before the end screen, is muted, crops YouTube's title bar, and covers the name caption printed in the corner.
+*   Cards without a video fall back to the Japanese name. Techniques that share a video list each other as right answers.
+
+### 4.3. Session
+*   **Graded:** one pass, then a score and the list of misses. "Review missed" runs a round of just those.
+*   **Until mastered:** a missed card comes back three cards later. A right one goes to the back of the queue until it has been answered right N times (N from 1 to 10, default 1). A miss does not reset the count.
+*   **Controls:** tap or Space shows the answer. Then Got it (→, l, swipe right) or Missed (←, h, swipe left). Z undoes the last answer, Esc exits.
 
 ---
 

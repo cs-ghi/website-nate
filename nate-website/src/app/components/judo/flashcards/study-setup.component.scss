@@ -1,0 +1,317 @@
+@use 'src/sass/variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+}
+
+.setup {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: inherit;
+  background: variables.$bg-primary;
+  border: 1px solid #46423f;
+  border-radius: 6px;
+  color: #c0b6aa;
+  font-family: variables.$font, sans-serif;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+  animation: setup-in 0.18s ease;
+}
+
+@keyframes setup-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+// On phones the sheet sits at the bottom edge (see StudyLauncher).
+@media (max-width: 600px) {
+  .setup {
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+    animation-name: sheet-in;
+  }
+}
+
+@keyframes sheet-in {
+  from { transform: translateY(100%); }
+  to   { transform: none; }
+}
+
+.setup__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.25rem;
+
+  h2 {
+    margin: 0;
+    color: #e0d9d3;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: #777;
+  cursor: pointer;
+
+  &:hover { color: #e0d9d3; }
+}
+
+.setup__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.25rem 1.25rem 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #46423f transparent;
+}
+
+.group {
+  margin: 0;
+  padding: 0.9rem 0;
+  border: none;
+
+  & + & { border-top: 1px solid #3a3733; }
+
+  legend {
+    padding: 0;
+    margin-bottom: 0.55rem;
+    color: #888;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+}
+
+.hint {
+  margin: 0.55rem 0 0;
+  color: #888;
+  font-size: 0.82rem;
+  line-height: 1.5;
+
+  &:empty { display: none; }
+}
+
+// Native radios and checkboxes, drawn as buttons. The inputs stay in the
+// page (visually hidden) so keyboard and screen-reader behaviour is the
+// browser's own.
+input[type='radio'],
+input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.seg {
+  display: flex;
+  border: 1px solid #46423f;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.seg__opt {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  color: #a49b96;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, color 0.15s;
+
+  & + & { border-left: 1px solid #46423f; }
+
+  &:hover { background: rgba(255, 255, 255, 0.03); }
+
+  &:has(input:focus-visible) { outline: 2px solid #64b5f6; outline-offset: -2px; }
+}
+
+.seg__opt--on {
+  background: rgba(21, 101, 192, 0.25);
+  color: #e3f2fd;
+
+  &:hover { background: rgba(21, 101, 192, 0.3); }
+}
+
+.seg__opt--disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.seg__n {
+  padding: 0 0.4rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.deck-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  max-height: 7.5rem;
+  overflow-y: auto;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deck-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.15rem 0.2rem 0.15rem 0.55rem;
+  border: 1px solid #46423f;
+  border-radius: 12px;
+  color: #c0b6aa;
+  font-size: 0.78rem;
+
+  button {
+    display: inline-flex;
+    padding: 0.1rem;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    color: #777;
+    cursor: pointer;
+
+    &:hover { color: #e57373; }
+  }
+
+  mat-icon { width: 0.9rem; height: 0.9rem; font-size: 0.9rem; }
+}
+
+.link-btn {
+  margin-top: 0.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #888;
+  font-family: inherit;
+  font-size: 0.78rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+
+  &:hover { color: #e57373; }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 40px;
+  padding: 0 0.95rem;
+  border: 1px solid #46423f;
+  border-radius: 20px;
+  color: #a49b96;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+
+  &:hover { border-color: variables.$bg-secondary; }
+  &:has(input:focus-visible) { outline: 2px solid #64b5f6; outline-offset: 2px; }
+
+  mat-icon { width: 1.1rem; height: 1.1rem; font-size: 1.1rem; margin-left: -0.25rem; }
+}
+
+.chip--on {
+  border-color: #1565c0;
+  background: rgba(21, 101, 192, 0.25);
+  color: #e3f2fd;
+
+  &:hover { border-color: #1976d2; }
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #46423f;
+    border-radius: 4px;
+    background: none;
+    color: #c0b6aa;
+    cursor: pointer;
+
+    &:hover:not(:disabled) { border-color: variables.$bg-secondary; }
+    &:disabled { opacity: 0.3; cursor: default; }
+  }
+
+  output {
+    min-width: 2ch;
+    text-align: center;
+    color: #e0d9d3;
+    font-size: 1.15rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.stepper__label {
+  flex: 1;
+  color: #a49b96;
+  font-size: 0.85rem;
+}
+
+.setup__foot {
+  padding: 0.75rem 1.25rem 1.1rem;
+  padding-bottom: max(1.1rem, env(safe-area-inset-bottom));
+  border-top: 1px solid #3a3733;
+}
+
+.start {
+  width: 100%;
+  min-height: 52px;
+  border: none;
+  border-radius: 4px;
+  background: #1565c0;
+  color: #e3f2fd;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover:not(:disabled) { background: #1976d2; }
+  &:disabled { opacity: 0.4; cursor: default; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .setup { animation: none; }
+}

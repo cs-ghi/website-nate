@@ -1,0 +1,208 @@
+@use 'src/sass/variables';
+@use 'src/app/components/judo/badges';
+
+:host {
+  display: block;
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  background: variables.$bg-primary;
+  border: 1px solid #3a3733;
+  border-radius: 6px;
+  animation: card-in 0.18s ease;
+}
+
+.card--back {
+  animation-name: card-turn;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes card-turn {
+  from { opacity: 0; transform: rotateX(-8deg); }
+  to   { opacity: 1; transform: none; }
+}
+
+// ── Front ──────────────────────────────────────────────────────────
+.front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  min-height: min(46vh, 380px);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.front--video {
+  min-height: 0;
+  padding: 0.75rem 0.75rem 1.25rem;
+  gap: 1rem;
+}
+
+.front__clip {
+  width: 100%;
+}
+
+.front__prompt {
+  margin: 0;
+  color: #e0d9d3;
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+}
+
+.front__prompt--kanji {
+  font-size: clamp(3.5rem, 14vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+}
+
+.front__ask {
+  margin: 0;
+  color: #888;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+// ── Back ───────────────────────────────────────────────────────────
+.back {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.back__names {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.9rem;
+  row-gap: 0.1rem;
+}
+
+.back__romaji {
+  margin: 0;
+  color: #e0d9d3;
+  font-size: clamp(1.6rem, 5vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.back__kanji {
+  color: variables.$bg-secondary;
+  font-size: 1.35rem;
+}
+
+.back__english {
+  flex-basis: 100%;
+  margin: 0;
+  color: #a49b96;
+  font-size: 1rem;
+}
+
+.back__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.back__note {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(21, 101, 192, 0.4);
+  border-radius: 4px;
+  background: rgba(21, 101, 192, 0.12);
+  color: #bbdefb;
+  font-size: 0.85rem;
+  line-height: 1.45;
+
+  mat-icon { flex-shrink: 0; width: 1.1rem; height: 1.1rem; font-size: 1.1rem; color: #64b5f6; }
+}
+
+.back__description {
+  margin: 0;
+  color: #bab0b0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.back__more {
+  border-top: 1px solid #3a3733;
+  padding-top: 0.75rem;
+
+  summary {
+    cursor: pointer;
+    color: #888;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    &:hover { color: #c0b6aa; }
+  }
+
+  ul {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1rem;
+    color: #a49b96;
+    font-size: 0.88rem;
+    line-height: 1.55;
+
+    &::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: #555;
+    }
+  }
+}
+
+// ── Mastery pips ───────────────────────────────────────────────────
+.pips {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.pip {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 1px solid #5a7d5c;
+}
+
+.pip--on {
+  background: #66bb6a;
+  border-color: #66bb6a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; }
+}

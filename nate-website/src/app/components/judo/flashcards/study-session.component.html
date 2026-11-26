@@ -1,0 +1,95 @@
+@let p = progress();
+<div class="session" #root tabindex="-1">
+
+  <header class="bar">
+    <button type="button" class="bar__btn" (click)="close()" title="Exit (Esc)">
+      <mat-icon>close</mat-icon><span class="bar__label">Exit</span>
+    </button>
+    <button type="button" class="bar__btn" (click)="undo()" [disabled]="!canUndo()" title="Undo (Z)">
+      <mat-icon>undo</mat-icon><span class="bar__label">Undo</span>
+    </button>
+
+    <div class="bar__progress" role="progressbar" aria-label="Progress"
+      aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="progressPercent()">
+      <div class="bar__fill" [style.width.%]="progressPercent()"></div>
+    </div>
+
+    <span class="bar__count">
+      <span class="bar__done">
+        {{ p.done }}/{{ p.total }}@if (mastery) {<span class="bar__unit"> mastered</span>}
+      </span>
+      <span class="tally tally--right" title="Right answers"><mat-icon>check</mat-icon>{{ p.right }}</span>
+      <span class="tally tally--missed" title="Misses"><mat-icon>close</mat-icon>{{ p.missed }}</span>
+    </span>
+  </header>
+
+  <main class="stage" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+    @for (f of flash(); track f.id) {
+      <div class="flash" [class.flash--right]="f.right" aria-hidden="true"></div>
+    }
+
+    @if (summary(); as sum) {
+      <section class="summary">
+        @if (mastery) {
+          <p class="summary__kicker">Session complete</p>
+          <h2 class="summary__score">All {{ sum.dealt }} mastered</h2>
+          <p class="summary__detail">
+            {{ sum.answers }} {{ sum.answers === 1 ? 'answer' : 'answers' }} ·
+            {{ sum.misses }} {{ sum.misses === 1 ? 'miss' : 'misses' }}
+          </p>
+        } @else {
+          <p class="summary__kicker">Round {{ state().round }} done</p>
+          <h2 class="summary__score">{{ sum.right }} / {{ sum.dealt }}</h2>
+          <p class="summary__detail">{{ percentRight() }}% right</p>
+        }
+
+        @if (sum.missed.length) {
+          <h3 class="summary__heading">{{ mastery ? 'Most missed' : 'Missed' }}</h3>
+          <ul class="summary__missed">
+            @for (m of sum.missed; track m.card.id) {
+              <li>
+                <span class="summary__romaji">{{ m.card.technique.title_romaji }}</span>
+                <span class="summary__english">{{ m.card.technique.title_en }}</span>
+                @if (mastery) { <span class="summary__times">×{{ m.times }}</span> }
+              </li>
+            }
+          </ul>
+        }
+
+        <div class="summary__actions">
+          @if (!mastery && sum.missed.length) {
+            <button type="button" class="act act--right" (click)="reviewMissed()">
+              Review {{ sum.missed.length }} missed
+            </button>
+          }
+          <button type="button" class="act act--reveal" (click)="restart()">
+            {{ mastery ? 'Study again' : 'Restart all' }}
+          </button>
+          <button type="button" class="act act--quiet" (click)="close()">Done</button>
+        </div>
+      </section>
+    } @else if (card(); as c) {
+      <app-flashcard [card]="c" [flipped]="flipped()" [streak]="streak()" (click)="onCardClick()" />
+      <p class="sr-only" aria-live="polite">
+        @if (flipped()) { Answer: {{ c.technique.title_romaji }}, {{ c.technique.title_en }} }
+      </p>
+    }
+  </main>
+
+  @if (!finished()) {
+    <footer class="actions">
+      @if (!flipped()) {
+        <button type="button" class="act act--reveal act--wide" (click)="flip()">
+          Show answer <kbd>Space</kbd>
+        </button>
+      } @else {
+        <button type="button" class="act act--missed" (click)="grade(false)" title="Missed (← or h)">
+          <kbd>←</kbd> Missed
+        </button>
+        <button type="button" class="act act--right" (click)="grade(true)" title="Got it (→ or l)">
+          Got it <kbd>→</kbd>
+        </button>
+      }
+    </footer>
+  }
+</div>

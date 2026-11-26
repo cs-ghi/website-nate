@@ -1,0 +1,98 @@
+@let count = techniques().length;
+<section class="setup">
+  <header class="setup__head">
+    <h2 id="study-setup-title">Study</h2>
+    <button type="button" class="icon-btn" (click)="close()" aria-label="Close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+
+  <div class="setup__body">
+    <fieldset class="group">
+      <legend>Cards</legend>
+      <div class="seg">
+        <label class="seg__opt" [class.seg__opt--on]="source() === 'deck'"
+          [class.seg__opt--disabled]="!deckTechniques().length">
+          <input type="radio" name="study-source" [checked]="source() === 'deck'"
+            [disabled]="!deckTechniques().length" (change)="source.set('deck')">
+          My deck <span class="seg__n">{{ deckTechniques().length }}</span>
+        </label>
+        <label class="seg__opt" [class.seg__opt--on]="source() === 'shown'"
+          [class.seg__opt--disabled]="!shownTechniques.length">
+          <input type="radio" name="study-source" [checked]="source() === 'shown'"
+            [disabled]="!shownTechniques.length" (change)="source.set('shown')">
+          Shown on page <span class="seg__n">{{ shownTechniques.length }}</span>
+        </label>
+      </div>
+
+      @if (source() === 'deck') {
+        <ul class="deck-list" aria-label="Cards in your deck">
+          @for (t of deckTechniques(); track t) {
+            <li class="deck-chip">
+              <span>{{ t.title_romaji }}</span>
+              <button type="button" (click)="removeFromDeck(t)" [attr.aria-label]="'Remove ' + t.title_romaji">
+                <mat-icon>close</mat-icon>
+              </button>
+            </li>
+          }
+        </ul>
+        <button type="button" class="link-btn" (click)="clearDeck()">Clear deck</button>
+      }
+    </fieldset>
+
+    <fieldset class="group">
+      <legend>Front of card</legend>
+      <div class="chips">
+        @for (f of faceOptions; track f.value) {
+          <label class="chip" [class.chip--on]="isFaceOn(f.value)">
+            <input #box type="checkbox" [checked]="isFaceOn(f.value)" (change)="toggleFace(f.value, box)">
+            @if (f.value === 'video') { <mat-icon>play_arrow</mat-icon> }
+            <span [attr.lang]="f.value === 'kanji' ? 'ja' : null">{{ f.label }}</span>
+          </label>
+        }
+      </div>
+      <p class="hint">
+        @if (faces().length > 1) { Each card shows one of these at random. }
+        {{ faceNote() }}
+      </p>
+    </fieldset>
+
+    <fieldset class="group">
+      <legend>Mode</legend>
+      <div class="seg">
+        <label class="seg__opt" [class.seg__opt--on]="mode() === 'graded'">
+          <input type="radio" name="study-mode" [checked]="mode() === 'graded'" (change)="mode.set('graded')">
+          Graded
+        </label>
+        <label class="seg__opt" [class.seg__opt--on]="mode() === 'mastery'">
+          <input type="radio" name="study-mode" [checked]="mode() === 'mastery'" (change)="mode.set('mastery')">
+          Until mastered
+        </label>
+      </div>
+      @if (mode() === 'graded') {
+        <p class="hint">One pass through the cards, then your score. You can review the ones you missed.</p>
+      } @else {
+        <p class="hint">
+          A missed card comes back a few cards later. A card leaves once you have got it right
+          {{ target() === 1 ? 'once' : target() + ' times' }}.
+        </p>
+        <div class="stepper">
+          <span class="stepper__label" id="study-target-label">Right answers per card</span>
+          <button type="button" (click)="stepTarget(-1)" [disabled]="target() <= minTarget" aria-label="Fewer">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <output aria-labelledby="study-target-label">{{ target() }}</output>
+          <button type="button" (click)="stepTarget(1)" [disabled]="target() >= maxTarget" aria-label="More">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      }
+    </fieldset>
+  </div>
+
+  <footer class="setup__foot">
+    <button type="button" class="start" [disabled]="!count" (click)="start()">
+      Start · {{ count }} {{ count === 1 ? 'card' : 'cards' }}
+    </button>
+  </footer>
+</section>

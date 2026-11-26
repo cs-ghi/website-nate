@@ -1,6 +1,6 @@
 import { Injectable, computed } from '@angular/core';
 import { JudoTechnique } from '../../../interfaces/judo.model';
-import { persistedSignal } from '../../../utils/persisted-signal';
+import { PersistedValue } from '../../../utils/persisted-value';
 import { techniqueId } from '../data/technique-id';
 
 const isStringArray = (v: unknown): v is string[] =>
@@ -12,11 +12,11 @@ const isStringArray = (v: unknown): v is string[] =>
  */
 @Injectable({ providedIn: 'root' })
 export class DeckService {
-  private readonly ids = persistedSignal<readonly string[]>('judo.deck.v1', [], isStringArray);
-  private readonly idSet = computed(() => new Set(this.ids()));
+  private readonly ids = new PersistedValue<readonly string[]>('judo.deck.v1', [], isStringArray);
+  private readonly idSet = computed(() => new Set(this.ids.value()));
 
-  readonly entries = this.ids.asReadonly();
-  readonly size = computed(() => this.ids().length);
+  readonly entries = this.ids.value;
+  readonly size = computed(() => this.ids.value().length);
 
   has(t: JudoTechnique): boolean {
     return this.idSet().has(techniqueId(t));
@@ -38,13 +38,13 @@ export class DeckService {
   }
 
   add(ts: readonly JudoTechnique[]): void {
-    const next = [...this.ids()];
+    const next = [...this.ids.value()];
     const seen = new Set(next);
     for (const t of ts) {
       const id = techniqueId(t);
       if (!seen.has(id)) { seen.add(id); next.push(id); }
     }
-    if (next.length !== this.ids().length) this.ids.set(next);
+    if (next.length !== this.ids.value().length) this.ids.set(next);
   }
 
   remove(ts: readonly JudoTechnique[]): void {

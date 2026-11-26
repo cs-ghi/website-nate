@@ -236,11 +236,16 @@ for (const path of ROUTES) {
 
   await nav('/judo'); await p.waitForTimeout(1200);
   await click('.bookmark-btn', 600);              // put one card in the deck
-  const studying = await click('.deck-bar__study', 1200);
+  await click('.deck-bar__study', 800);           // setup sheet
+  await click('app-study-setup .start', 1200);    // session dialog
+  const studying = (await p.locator('app-study-session').count()) > 0;
   await p.keyboard.press('Space'); await p.waitForTimeout(300);
   errs.length = 0;
   await nav('/programming'); await p.waitForTimeout(1000);
+  const leftOpen = await p.evaluate(() => !!document.querySelector('app-study-session')
+    || document.documentElement.classList.contains('cdk-global-scrollblock'));
   if (!studying) stateful.push('judo study mode never started');
+  else if (leftOpen) stateful.push('judo(study) -> programming: study dialog or scroll lock left behind');
   else if (errs.length || (await chars()) < 40) stateful.push('judo(study) -> programming: ' + (errs[0] || 'blank'));
 
   await click('.prog-card', 1500);                // programming detail

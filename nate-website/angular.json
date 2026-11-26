@@ -128,7 +128,12 @@
               "src/styles.scss",
               "node_modules/katex/dist/katex.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "."
+              ]
+            }
           }
         },
         "deploy": {

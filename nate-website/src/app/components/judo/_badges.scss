@@ -1,0 +1,54 @@
+// Badges shared by the directory and the flashcards. Each component that
+// @uses this gets its own (encapsulated) copy of the rules.
+@use "sass:list";
+
+// ── Belt color map ─────────────────────────────────────────────────
+$belt-colors: (
+  'white':  (#e8e3df, #212121),
+  'yellow': (#ffd600, #212121),
+  'orange': (#e65100, #fff),
+  'green':  (#2e7d32, #fff),
+  'blue':   (#1565c0, #fff),
+  'brown':  (#4e342e, #fff),
+  'black':  (#212121, #fff),
+);
+
+// ── Badges ───────────────────────────────────────────────────────
+.badge {
+  display: inline-block;
+  padding: 0.12rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sub-badge {
+  background: rgba(255, 255, 255, 0.06);
+  color: #a49b96;
+  border: 1px solid #46423f;
+}
+
+.kata-badge {
+  background: rgba(21, 101, 192, 0.2);
+  color: #90caf9;
+  border: 1px solid rgba(21, 101, 192, 0.4);
+}
+
+.theory-badge {
+  background: rgba(46, 125, 50, 0.2);
+  color: #a5d6a7;
+  border: 1px solid rgba(46, 125, 50, 0.4);
+}
+
+@each $belt, $colors in $belt-colors {
+  .belt-#{$belt} {
+    background: list.nth($colors, 1);
+    color: list.nth($colors, 2);
+
+    @if $belt == 'white' {
+      border: 1px solid #6d5e56;
+    }
+  }
+}

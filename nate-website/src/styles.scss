@@ -227,3 +227,12 @@ a, a:hover, a:focus {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// ── Judo study dialogs (CDK). StudyLauncher sets these classes. ──────
+.study-backdrop {
+  background: rgba(4, 4, 4, 0.82);
+}
+
+.study-pane .cdk-dialog-container:focus {
+  outline: none;
+}

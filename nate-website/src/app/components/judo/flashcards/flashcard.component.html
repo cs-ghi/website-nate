@@ -1,0 +1,82 @@
+@let t = technique();
+<article class="card" [class.card--back]="flipped()">
+
+  @if (!flipped()) {
+    <div class="front" [class.front--video]="card().face === 'video'">
+      @switch (card().face) {
+        @case ('video') {
+          <app-silent-clip class="front__clip" [videoId]="t.youtube_id!" />
+          <p class="front__ask">What is this technique?</p>
+        }
+        @case ('japanese') {
+          <h2 class="front__prompt">{{ t.title_romaji }}</h2>
+          <p class="front__ask">What does it mean, and how is it done?</p>
+        }
+        @case ('english') {
+          <h2 class="front__prompt">{{ t.title_en }}</h2>
+          <p class="front__ask">What is it called in Japanese?</p>
+        }
+        @case ('kanji') {
+          <h2 class="front__prompt front__prompt--kanji" lang="ja">{{ t.title_kanji }}</h2>
+          <p class="front__ask">How is it read?</p>
+        }
+      }
+    </div>
+  } @else {
+    <div class="back">
+      <header class="back__names">
+        <h2 class="back__romaji">{{ t.title_romaji }}</h2>
+        <span class="back__kanji" lang="ja">{{ t.title_kanji }}</span>
+        <p class="back__english">{{ t.title_en }}</p>
+      </header>
+
+      <div class="back__badges">
+        @if (t.belt_requirement) {
+          <span class="badge belt-badge belt-{{ t.belt_requirement }}">{{ t.belt_requirement }}</span>
+        }
+        <span class="badge sub-badge">{{ t.sub_category }}</span>
+        @if (t.is_kata) { <span class="badge kata-badge">kata</span> }
+        @if (t.is_theory) { <span class="badge theory-badge">theory</span> }
+      </div>
+
+      @if (card().sameClip.length) {
+        <p class="back__note">
+          <mat-icon>info</mat-icon>
+          <span>The same video is used for {{ card().sameClip.join(', ') }}, so that answer counts too.</span>
+        </p>
+      }
+
+      @if (t.youtube_id) {
+        <app-clip-player [videoId]="t.youtube_id" [label]="t.title_romaji" />
+      }
+
+      @if (t.description) {
+        <p class="back__description">{{ t.description }}</p>
+      }
+
+      @if (t.key_points?.length) {
+        <details class="back__more">
+          <summary>Key points ({{ t.key_points!.length }})</summary>
+          <ul>
+            @for (point of t.key_points; track $index) { <li>{{ point }}</li> }
+          </ul>
+        </details>
+      }
+
+      @if (t.kata_forms?.length) {
+        <details class="back__more" open>
+          <summary>Forms</summary>
+          <ul>
+            @for (form of t.kata_forms; track $index) { <li>{{ form }}</li> }
+          </ul>
+        </details>
+      }
+    </div>
+  }
+
+  @if (pips().length) {
+    <div class="pips" role="img" [attr.aria-label]="streak()!.right + ' of ' + streak()!.target + ' right answers'">
+      @for (on of pips(); track $index) { <span class="pip" [class.pip--on]="on"></span> }
+    </div>
+  }
+</article>

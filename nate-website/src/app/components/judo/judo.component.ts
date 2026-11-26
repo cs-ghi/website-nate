@@ -1,10 +1,11 @@
-import { Component, OnInit, HostListener, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, HostListener, ChangeDetectionStrategy, inject } from '@angular/core';
 import { JudoTechnique, BeltLevel, MainCategory } from '../../interfaces/judo.model';
 import {
-  BELT_OPTIONS, DEFAULT_SYLLABUS, SYLLABUS_OPTIONS, Syllabus, SyllabusId, getSyllabus, resolveTechniques,
+  BELT_OPTIONS, DEFAULT_SYLLABUS, SYLLABUS_OPTIONS, Syllabus, SyllabusId, getSyllabus,
 } from './data/syllabi';
 import { uniqueTechniques } from './data/technique-id';
 import { DeckService } from './flashcards/deck.service';
+import { StudyLauncher } from './flashcards/study-launcher.service';
 
 @Component({
     selector: 'app-judo',
@@ -13,7 +14,7 @@ import { DeckService } from './flashcards/deck.service';
     changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
-export class JudoComponent implements OnInit {
+export class JudoComponent implements OnInit, OnDestroy {
 
   searchQuery = '';
   selectedBelt: BeltLevel | 'all' = 'all';
@@ -30,16 +31,7 @@ export class JudoComponent implements OnInit {
   private lastScrollY = 0;
 
   readonly deck = inject(DeckService);
-
-  // ── Flashcard study mode ──────────────────────────────────────────
-  studyMode = false;
-  studyDeck: JudoTechnique[] = [];
-  deckIndex = 0;
-  cardFlipped = false;
-  studyVideoPlaying = false;
-  private touchStartX = 0;
-  private touchStartY = 0;
-  private didSwipe = false;
+  private readonly study = inject(StudyLauncher);
 
   @HostListener('window:scroll')
   onScroll(): void {
@@ -51,21 +43,7 @@ export class JudoComponent implements OnInit {
 
   @HostListener('window:keydown.escape')
   onEscape(): void {
-    if (this.studyMode) { this.exitStudy(); return; }
     this.closeModal();
-  }
-
-  @HostListener('window:keydown.arrowright')
-  onArrowRight(): void { if (this.studyMode) this.nextCard(); }
-
-  @HostListener('window:keydown.arrowleft')
-  onArrowLeft(): void { if (this.studyMode) this.prevCard(); }
-
-  // Typed as Event, not KeyboardEvent: Angular types a host listener's $event
-  // as Event, and preventDefault is all this needs.
-  @HostListener('window:keydown.space', ['$event'])
-  onSpace(e: Event): void {
-    if (this.studyMode) { e.preventDefault(); this.flipCard(); }
   }
 
   readonly beltOptions = BELT_OPTIONS;
@@ -97,6 +75,13 @@ export class JudoComponent implements OnInit {
 
   ngOnInit(): void {
     this.filteredTechniques = [...this.activeTechniques];
+  }
+
+  // Leaving the page with the modal or a study dialog open must not leave the
+  // body unscrollable or a dialog floating over the next page.
+  ngOnDestroy(): void {
+    this.closeModal();
+    this.study.closeAll();
   }
 
   get hasActiveFilters(): boolean {
@@ -173,62 +158,7 @@ export class JudoComponent implements OnInit {
     this.deck.remove(this.filteredTechniques);
   }
 
-  // ── Flashcard methods ─────────────────────────────────────────────
-  startStudy(): void {
-    const deck = this.deck.size()
-      ? resolveTechniques(this.deck.entries(), this.syllabus)
-      : uniqueTechniques(this.filteredTechniques);
-    // Fisher-Yates shuffle
-    for (let i = deck.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [deck[i], deck[j]] = [deck[j], deck[i]];
-    }
-    this.studyDeck = deck;
-    this.deckIndex = 0;
-    this.cardFlipped = false;
-    this.studyMode = true;
-    document.body.style.overflow = 'hidden';
-  }
-
-  exitStudy(): void {
-    this.studyMode = false;
-    document.body.style.overflow = '';
-  }
-
-  flipCard(): void {
-    if (this.didSwipe) { this.didSwipe = false; return; }
-    this.cardFlipped = !this.cardFlipped;
-  }
-
-  nextCard(): void {
-    if (this.deckIndex < this.studyDeck.length - 1) {
-      this.deckIndex++;
-      this.cardFlipped = false;
-      this.studyVideoPlaying = false;
-    }
-  }
-
-  prevCard(): void {
-    if (this.deckIndex > 0) {
-      this.deckIndex--;
-      this.cardFlipped = false;
-      this.studyVideoPlaying = false;
-    }
-  }
-
-  onTouchStart(e: TouchEvent): void {
-    this.touchStartX = e.touches[0].clientX;
-    this.touchStartY = e.touches[0].clientY;
-    this.didSwipe = false;
-  }
-
-  onTouchEnd(e: TouchEvent): void {
-    const dx = e.changedTouches[0].clientX - this.touchStartX;
-    const dy = Math.abs(e.changedTouches[0].clientY - this.touchStartY);
-    if (Math.abs(dx) > 50 && dy < 80) {
-      this.didSwipe = true;
-      if (dx < 0) this.nextCard();
-      else this.prevCard();
-    }
+  openStudy(): void {
+    this.study.open(this.filteredTechniques, this.syllabus);
   }
 }

@@ -258,7 +258,7 @@
           Deck empty
         }
       </span>
-      <button class="deck-bar__study" (click)="startStudy()">
+      <button class="deck-bar__study" (click)="openStudy()">
         {{ deck.size() ? 'Study' : 'Study the ' + shownCount + ' shown' }}
         <mat-icon>arrow_forward</mat-icon>
       </button>
@@ -357,112 +357,6 @@
           </a>
         </div>
       }
-    </div>
-  </div>
-}
-
-<!-- ── STUDY MODE OVERLAY ────────────────────────────────────────── -->
-@if (studyMode) {
-  <div class="study-overlay">
-    <!-- Header -->
-    <div class="study-header">
-      <button class="study-exit" (click)="exitStudy()">
-        <mat-icon>close</mat-icon>
-        Exit
-      </button>
-      <div class="study-progress-wrap">
-        <div class="study-progress-bar">
-          <div class="study-progress-fill"
-            [style.width.%]="((deckIndex + 1) / studyDeck.length) * 100">
-          </div>
-        </div>
-        <span class="study-counter">{{ deckIndex + 1 }} / {{ studyDeck.length }}</span>
-      </div>
-    </div>
-    <!-- Card area -->
-    <div class="study-area">
-      <div class="study-card-wrap"
-        (click)="flipCard()"
-        (touchstart)="onTouchStart($event)"
-        (touchend)="onTouchEnd($event)">
-        <div class="study-card" [class.flipped]="cardFlipped">
-          <!-- Front: kanji prompt -->
-          <div class="study-face card-front">
-            <div class="sf-badges">
-              <span class="badge sub-badge">{{ studyDeck[deckIndex].sub_category }}</span>
-              @if (studyDeck[deckIndex].belt_requirement) {
-                <span class="badge belt-badge belt-{{ studyDeck[deckIndex].belt_requirement }}"
-                  >
-                  {{ studyDeck[deckIndex].belt_requirement }}
-                </span>
-              }
-            </div>
-            <div class="sf-kanji">{{ studyDeck[deckIndex].title_kanji }}</div>
-            <div class="sf-romaji">{{ studyDeck[deckIndex].title_romaji }}</div>
-            <div class="sf-hint">
-              <mat-icon>touch_app</mat-icon>
-              Tap to reveal &nbsp;·&nbsp; Swipe to navigate
-            </div>
-          </div>
-          <!-- Back: answer + details -->
-          <div class="study-face card-back">
-            <div class="sb-inner">
-              <div class="sb-badges">
-                <span class="badge sub-badge">{{ studyDeck[deckIndex].sub_category }}</span>
-                @if (studyDeck[deckIndex].belt_requirement) {
-                  <span class="badge belt-badge belt-{{ studyDeck[deckIndex].belt_requirement }}"
-                    >
-                    {{ studyDeck[deckIndex].belt_requirement }}
-                  </span>
-                }
-              </div>
-              <h2 class="sb-title-en">{{ studyDeck[deckIndex].title_en }}</h2>
-              <p class="sb-romaji">{{ studyDeck[deckIndex].title_romaji }} &nbsp;·&nbsp; {{ studyDeck[deckIndex].title_kanji }}</p>
-              @if (studyDeck[deckIndex].description) {
-                <p class="sb-description">
-                  {{ studyDeck[deckIndex].description }}
-                </p>
-              }
-              @if (studyDeck[deckIndex].key_points?.length) {
-                <ul class="sb-key-points">
-                  @for (kp of studyDeck[deckIndex].key_points; track kp) {
-                    <li>{{ kp }}</li>
-                  }
-                </ul>
-              }
-              @if (studyDeck[deckIndex].youtube_id) {
-                <div class="sb-video" (click)="$event.stopPropagation()">
-                  @if (studyVideoPlaying) {
-                    <iframe
-                      [src]="'https://www.youtube.com/embed/' + studyDeck[deckIndex].youtube_id + '?autoplay=1' | safe"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen>
-                    </iframe>
-                  }
-                  @if (!studyVideoPlaying) {
-                    <div class="sb-thumb-wrap" (click)="studyVideoPlaying = true">
-                      <img [src]="'https://img.youtube.com/vi/' + studyDeck[deckIndex].youtube_id + '/mqdefault.jpg'"
-                        [alt]="studyDeck[deckIndex].title_romaji">
-                      <div class="sb-play-btn">&#9654;</div>
-                    </div>
-                  }
-                </div>
-              }
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Footer nav -->
-    <div class="study-footer">
-      <button class="study-nav-btn" (click)="prevCard()" [disabled]="deckIndex === 0">
-        <mat-icon>arrow_back</mat-icon>
-      </button>
-      <span class="study-flip-hint">Space / tap to flip</span>
-      <button class="study-nav-btn" (click)="nextCard()" [disabled]="deckIndex === studyDeck.length - 1">
-        <mat-icon>arrow_forward</mat-icon>
-      </button>
     </div>
   </div>
 }
